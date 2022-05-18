@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+
+Sitemap: http://cohanbb.github.io/sitemap.xml
+Sitemap: http://cohanbb.github.io/baidusitemap.xml
