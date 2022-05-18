@@ -1,192 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/02/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
-    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
-    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
-<ul>
-<li><a href="#颜色和大小">颜色和大小</a></li>
-<li><a href="#格式">格式</a></li>
-<li><a href="#字体">字体</a></li>
-<li><a href="#引用">引用</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
-<h2 id="颜色和大小">颜色和大小</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color=red size=6 >修改颜色和大小</font>
-<p style="color:blue; font-size:32px">
-修改颜色和大小
-</p>
-<h2 id="格式">格式</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
-<h2 id="字体">字体</h2>
-<p>常用的几款中、英文字体。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p style="font-family:Simsun;">
-宋体
-</p>
-<p style="font-family:STKaiti;">
-楷体
-</p>
-<p style="font-family:STHeiti;">
-黑体
-</p>
-<p style="font-family:Times New Roman;">
-Times New Roman
-</p>
-<p style="font-family:Arial;">
-Arial
-</p>
-<p style="font-family:Courier;">
-Courier
-</p>
-<p style="font-family:Consolas;">
-Consolas
-</p>
-<h2 id="引用">引用</h2>
-<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-第一层
-<blockquote>
-第二层
-</blockquote>
-第一层
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#hexo-博客搭建简单说明">Hexo 博客搭建简单说明</a>
-<ul>
-<li><a href="#配置-githexo">配置 git、hexo</a></li>
-<li><a href="#github-page-配置">Github Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="hexo-博客搭建简单说明">Hexo 博客搭建简单说明</h1>
-<h2 id="配置-githexo">配置 git、hexo</h2>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
-<ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h2 id="github-page-配置">Github Page 配置</h2>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">Github</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 github<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到Github Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h2 id="配置主题">配置主题</h2>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 github 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。 要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about 。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">body</span> &#123;</span><br><span class="line">   <span class="string">background:url(/images/background.jpg);</span>		<span class="string">//图片路径，默认</span></span><br><span class="line">   <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span>			<span class="string">//图片无法铺满时，是否重复及重复方式</span></span><br><span class="line">   <span class="string">background-attachment:fixed;</span>		<span class="string">//图片是否跟随滚动</span></span><br><span class="line">   <span class="string">background-size:cover;</span>				<span class="string">//覆盖</span></span><br><span class="line">   <span class="string">background-position:center;</span>		<span class="string">//图片显示</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line"><span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line"><span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>插入图片</strong></p>
-<p><strong>边栏设置</strong></p>
-<p><strong>social link</strong></p>
-<h2 id="发布博客">发布博客</h2>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>，由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML 与 CSS</title>
     <url>/2022/05/16/HTML%20%E4%B8%8E%20CSS/</url>
     <content><![CDATA[<p>前端 HTML 与 CSS 的基础知识整理。<br />
@@ -579,218 +393,190 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
+    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
+    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
 <hr>
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
 <ul>
-<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
 <ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
+<li><a href="#颜色和大小">颜色和大小</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#字体">字体</a></li>
+<li><a href="#引用">引用</a></li>
 </ul></li>
 </ul>
 <hr>
-<h1 id="数据结构-绪论">数据结构-绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
-<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
-数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
-数据项：数据不可分割的最小单位。<br />
-<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
-四者关系可以如此表示：<br />
-<img src="1.png"/></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。<br />
-<strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
-<strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。<br />
-<strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
+<h2 id="颜色和大小">颜色和大小</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color=red size=6 >修改颜色和大小</font>
+<p style="color:blue; font-size:32px">
+修改颜色和大小
+</p>
+<h2 id="格式">格式</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
+<h2 id="字体">字体</h2>
+<p>常用的几款中、英文字体。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="font-family:Simsun;">
+宋体
+</p>
+<p style="font-family:STKaiti;">
+楷体
+</p>
+<p style="font-family:STHeiti;">
+黑体
+</p>
+<p style="font-family:Times New Roman;">
+Times New Roman
+</p>
+<p style="font-family:Arial;">
+Arial
+</p>
+<p style="font-family:Courier;">
+Courier
+</p>
+<p style="font-family:Consolas;">
+Consolas
+</p>
+<h2 id="引用">引用</h2>
+<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+第一层
+<blockquote>
+第二层
 </blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。<br />
-非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
-如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
-换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
-拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
-<h2 id="算法">算法</h2>
-<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
-常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+第一层
+</blockquote>
 ]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据结构_线性表，栈、队列和数组</title>
-    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
-内容包括：<br />
-1. 线性表的概念和代码实现<br />
-2. 栈、队列的概念和代码实现<br />
-3. 特殊矩阵的压缩</p>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
 <hr>
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
 <ul>
-<li><a href="#数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</a>
+<li><a href="#hexo-博客搭建简单说明">Hexo 博客搭建简单说明</a>
 <ul>
-<li><a href="#线性表">线性表</a>
-<ul>
-<li><a href="#顺序表">顺序表</a>
-<ul>
-<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
-<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
-</ul></li>
-<li><a href="#链表">链表</a>
-<ul>
-<li><a href="#单链表">单链表</a></li>
-<li><a href="#静态链表">静态链表</a></li>
-<li><a href="#双向链表">双向链表</a></li>
-<li><a href="#循环链表">循环链表</a></li>
-</ul></li>
-<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
-</ul></li>
-<li><a href="#栈队列和数组">栈、队列和数组</a>
-<ul>
-<li><a href="#栈">栈</a>
-<ul>
-<li><a href="#顺序栈">顺序栈</a></li>
-<li><a href="#链式栈">链式栈</a></li>
-</ul></li>
-<li><a href="#队列">队列</a>
-<ul>
-<li><a href="#顺序队列">顺序队列</a></li>
-<li><a href="#链式队列">链式队列</a></li>
-</ul></li>
-<li><a href="#栈和队列的应用">栈和队列的应用</a></li>
-<li><a href="#特殊矩阵压缩">特殊矩阵压缩</a></li>
-</ul></li>
+<li><a href="#配置-githexo">配置 git、hexo</a></li>
+<li><a href="#github-page-配置">Github Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
 </ul></li>
 </ul>
 <hr>
-<h1 id="数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</h1>
-<h2 id="线性表">线性表</h2>
-<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。<br />
-线性表的基本操作：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">InitList</span>(&amp;L); <span class="comment">//初始化</span></span><br><span class="line"><span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line"><span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line"><span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line"><span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line"><span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line"><span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line"><span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line"><span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
-<h3 id="顺序表">顺序表</h3>
-<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
-<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
-<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
-<p>插入（在表 L 的第 i 个位置插入 e）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length<span class="number">-1</span>; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist &amp;L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链表">链表</h3>
-<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
-<h4 id="单链表">单链表</h4>
-<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
-单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的整表创建和销毁</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="静态链表">静态链表</h4>
-<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义静态链表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
-<h4 id="双向链表">双向链表</h4>
-<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（*p 后插入 *s）</span></span><br><span class="line">&#123;</span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = s;</span><br><span class="line">    s -&gt; prior = p;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除（删除 *p 后的 *q）</span></span><br><span class="line">&#123;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="循环链表">循环链表</h4>
-<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r -&gt; next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L -&gt; prior = r</code>.</p>
-<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
+<h1 id="hexo-博客搭建简单说明">Hexo 博客搭建简单说明</h1>
+<h2 id="配置-githexo">配置 git、hexo</h2>
 <ol type="1">
-<li>顺序表随机存取/读写，链表只能顺序存取/读写。<br />
-</li>
-<li>顺序表逻辑相邻的元素存储位置也相邻。<br />
-</li>
-<li>链表分配内存空间灵活高效。<br />
-</li>
-<li>链表的插入和删除更高效。<br />
-</li>
-<li>顺序表插入和删除需要移动大量的元素。</li>
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
 </ol>
-<h2 id="栈队列和数组">栈、队列和数组</h2>
-<p>栈和队列都是特殊的线性表，对数据的插入删除操作有特殊的规定，导致数据的进出策略不同。</p>
-<h3 id="栈">栈</h3>
-<p><strong>栈(Stack)</strong>是只允许在一端进行插入或删除操作的线性表。<br />
-允许插入或删除的一端称为<strong>栈顶(Top)</strong>，另一端称为<strong>栈底(Bottom)</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出(last in first out, LIFO)</strong>。</p>
-<blockquote>
-<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
-</blockquote>
-<h4 id="顺序栈">顺序栈</h4>
-<h4 id="链式栈">链式栈</h4>
-<h3 id="队列">队列</h3>
-<h4 id="顺序队列">顺序队列</h4>
-<h4 id="链式队列">链式队列</h4>
-<h3 id="栈和队列的应用">栈和队列的应用</h3>
-<h3 id="特殊矩阵压缩">特殊矩阵压缩</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h2 id="github-page-配置">Github Page 配置</h2>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">Github</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 github<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到Github Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h2 id="配置主题">配置主题</h2>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 github 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。 要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about 。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">body</span> &#123;</span><br><span class="line">   <span class="string">background:url(/images/background.jpg);</span>		<span class="string">//图片路径，默认</span></span><br><span class="line">   <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span>			<span class="string">//图片无法铺满时，是否重复及重复方式</span></span><br><span class="line">   <span class="string">background-attachment:fixed;</span>		<span class="string">//图片是否跟随滚动</span></span><br><span class="line">   <span class="string">background-size:cover;</span>				<span class="string">//覆盖</span></span><br><span class="line">   <span class="string">background-position:center;</span>		<span class="string">//图片显示</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line"><span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line"><span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>插入图片</strong></p>
+<p><strong>边栏设置</strong></p>
+<p><strong>social link</strong></p>
+<h2 id="发布博客">发布博客</h2>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>，由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/02/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>高等数学_一元函数微分学</title>
@@ -976,6 +762,220 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
       </categories>
       <tags>
         <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_线性表，栈、队列和数组</title>
+    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
+内容包括：<br />
+1. 线性表的概念和代码实现<br />
+2. 栈、队列的概念和代码实现<br />
+3. 特殊矩阵的压缩</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</a>
+<ul>
+<li><a href="#线性表">线性表</a>
+<ul>
+<li><a href="#顺序表">顺序表</a>
+<ul>
+<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
+<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
+</ul></li>
+<li><a href="#链表">链表</a>
+<ul>
+<li><a href="#单链表">单链表</a></li>
+<li><a href="#静态链表">静态链表</a></li>
+<li><a href="#双向链表">双向链表</a></li>
+<li><a href="#循环链表">循环链表</a></li>
+</ul></li>
+<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
+</ul></li>
+<li><a href="#栈队列和数组">栈、队列和数组</a>
+<ul>
+<li><a href="#栈">栈</a>
+<ul>
+<li><a href="#顺序栈">顺序栈</a></li>
+<li><a href="#链式栈">链式栈</a></li>
+</ul></li>
+<li><a href="#队列">队列</a>
+<ul>
+<li><a href="#顺序队列">顺序队列</a></li>
+<li><a href="#链式队列">链式队列</a></li>
+</ul></li>
+<li><a href="#栈和队列的应用">栈和队列的应用</a></li>
+<li><a href="#特殊矩阵压缩">特殊矩阵压缩</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</h1>
+<h2 id="线性表">线性表</h2>
+<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。<br />
+线性表的基本操作：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">InitList</span>(&amp;L); <span class="comment">//初始化</span></span><br><span class="line"><span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line"><span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line"><span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line"><span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line"><span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line"><span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line"><span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line"><span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
+<h3 id="顺序表">顺序表</h3>
+<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
+<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
+<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
+<p>插入（在表 L 的第 i 个位置插入 e）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length<span class="number">-1</span>; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist &amp;L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表">链表</h3>
+<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
+<h4 id="单链表">单链表</h4>
+<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
+单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的整表创建和销毁</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态链表">静态链表</h4>
+<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义静态链表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
+<h4 id="双向链表">双向链表</h4>
+<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（*p 后插入 *s）</span></span><br><span class="line">&#123;</span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = s;</span><br><span class="line">    s -&gt; prior = p;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除（删除 *p 后的 *q）</span></span><br><span class="line">&#123;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="循环链表">循环链表</h4>
+<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r -&gt; next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L -&gt; prior = r</code>.</p>
+<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
+<ol type="1">
+<li>顺序表随机存取/读写，链表只能顺序存取/读写。<br />
+</li>
+<li>顺序表逻辑相邻的元素存储位置也相邻。<br />
+</li>
+<li>链表分配内存空间灵活高效。<br />
+</li>
+<li>链表的插入和删除更高效。<br />
+</li>
+<li>顺序表插入和删除需要移动大量的元素。</li>
+</ol>
+<h2 id="栈队列和数组">栈、队列和数组</h2>
+<p>栈和队列都是特殊的线性表，对数据的插入删除操作有特殊的规定，导致数据的进出策略不同。</p>
+<h3 id="栈">栈</h3>
+<p><strong>栈(Stack)</strong>是只允许在一端进行插入或删除操作的线性表。<br />
+允许插入或删除的一端称为<strong>栈顶(Top)</strong>，另一端称为<strong>栈底(Bottom)</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出(last in first out, LIFO)</strong>。</p>
+<blockquote>
+<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
+</blockquote>
+<h4 id="顺序栈">顺序栈</h4>
+<h4 id="链式栈">链式栈</h4>
+<h3 id="队列">队列</h3>
+<h4 id="顺序队列">顺序队列</h4>
+<h4 id="链式队列">链式队列</h4>
+<h3 id="栈和队列的应用">栈和队列的应用</h3>
+<h3 id="特殊矩阵压缩">特殊矩阵压缩</h3>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构-绪论">数据结构-绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
+<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
+数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
+数据项：数据不可分割的最小单位。<br />
+<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
+四者关系可以如此表示：<br />
+<img src="1.png"/></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。<br />
+<strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
+<strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。<br />
+<strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。<br />
+非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
+如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
+换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
+拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+<h2 id="算法">算法</h2>
+<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
+常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
