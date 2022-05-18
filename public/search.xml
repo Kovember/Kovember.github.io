@@ -47,7 +47,7 @@
 <code>&lt;p&gt;</code> 标签：定义一个段落。<br />
 <code>&lt;br /&gt;</code> 标签：换行标签。</p>
 <p><strong>注：莫要忘记加上结束标签！</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">			Hello World!<span class="tag">&lt;<span class="name">br</span> /&gt;</span>Hello Web! </span><br><span class="line">		<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            Hello World!<span class="tag">&lt;<span class="name">br</span> /&gt;</span>Hello Web! </span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 这段代码在浏览器中的效果：
 <html>
 <title>
@@ -81,21 +81,21 @@ Hello World!<br />Hello Web!
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://i-1-lanrentuku.52tup.com/2020/7/10/b87c8e05-344a-48d1-869f-ef6929fc8b17.jpg?imageView2/2/w/1024/&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片加载失败&quot;</span> <span class="attr">width</span>=<span class="string">&quot;300&quot;</span> <span class="attr">height</span>=<span class="string">&quot;300&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://i-1-lanrentuku.52tup.com/2020/7/10/b87c8e05-344a-48d1-869f-ef6929fc8b17.jpg?imageView2/2/w/1024/" alt="图片加载失败" width="300" height="300"/></p>
 <p><strong>预格式文本</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">	预格式文本</span><br><span class="line">		文本会保留换行和空格</span><br><span class="line">			文本换为等线体，常用于表示代码块</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    预格式文本</span><br><span class="line">        文本会保留换行和空格</span><br><span class="line">            文本换为等线体，常用于表示代码块</span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <pre>
     预格式文本
         文本会保留换行和空格
             文本换为等线体，常用于表示代码块
 </pre>
 <p><strong>代码和代码块</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span>printf(&#x27;代码&#x27;)<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">code</span>&gt;</span>printf(&#x27;代码块&#x27;);<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">code</span>&gt;</span>return;<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">code</span>&gt;</span>printf(&#x27;代码&#x27;)<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">code</span>&gt;</span>printf(&#x27;代码块&#x27;);<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">code</span>&gt;</span>return;<span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>printf('代码')</code></p>
 <pre>
     <code>printf('代码块');</code>
     <code>return;</code>
 </pre>
 <p><strong>表格</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>标题2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>标题1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>标题2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 1, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>row 2, cell 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <table border="1">
 <tr>
 <th>
@@ -123,7 +123,7 @@ row 2, cell 2
 </tr>
 </table>
 <p><strong>列表</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">有序列表</span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>YES<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>NO<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"></span><br><span class="line">无序列表</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>yes<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>no<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">自定义列表</span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>YES<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>yes<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>NO<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>no<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">有序列表</span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>YES<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>NO<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"></span><br><span class="line">无序列表</span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>yes<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>no<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">自定义列表</span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>YES<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>yes<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>NO<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>no<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
 有序列表
 <ol>
 <li>
@@ -158,7 +158,7 @@ no
 </dd>
 </dl>
 <p><strong>引用</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> </span><br><span class="line">	一级引用</span><br><span class="line">	<span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">		二级引用</span><br><span class="line">	<span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> </span><br><span class="line">    一级引用</span><br><span class="line">    <span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">        二级引用</span><br><span class="line">    <span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 一级引用
 <blockquote>
@@ -173,28 +173,28 @@ no
 </div>
 <p>2.这是一个<span> 内联元素，不会以新行开始 </span></p>
 <p><strong>表单</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;URL&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get or post&quot;</span>&gt;</span></span><br><span class="line">	username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	password: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	单选框<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span> /&gt;</span>	</span><br><span class="line">	复选框<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;number&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>1<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;number&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	提交表单<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;URL&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get or post&quot;</span>&gt;</span></span><br><span class="line">    username: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    password: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    单选框<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span> /&gt;</span>	</span><br><span class="line">    复选框<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;number&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>1<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;number&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>2<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    提交表单<span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <form action="URL" method="get or post">
 username: <input type="text" name="username"><br /> password: <input type="password" name="password"><br /> 单选框<br /> <input type="radio" name="sex" value="male">男<br /> <input type="radio" name="sex" value="female">女<br /><br />
 复选框<br /> <input type="checkbox" name="number" value="1">1<br /> <input type="checkbox" name="number" value="2">2<br /> 提交表单<br /> <input type="submit" value="submit"/>
 </form>
 <p><strong>脚本</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	script code, such <span class="keyword">as</span> <span class="title class_">JavaScript</span>.</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    script code, such <span class="keyword">as</span> <span class="title class_">JavaScript</span>.</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>样式</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	css <span class="selector-tag">code</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    css <span class="selector-tag">code</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h1 id="css">CSS</h1>
 <h2 id="简介-1">简介</h2>
 <p>CSS(Cascading Style Sheets) 层叠样式表，用以定义 HTML 中元素的样式，HTML 使用 CSS 的方式有三种： 1. 内联样式：在 HTML 元素标签中使用 "style" 属性。</p>
-<pre><code><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue;font-family:consolas;&quot;</span>&gt;</span></span><br><span class="line">	inline</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre>
+<pre><code><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue;font-family:consolas;&quot;</span>&gt;</span></span><br><span class="line">    inline</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre>
 <ol start="2" type="1">
 <li><p>内部样式表：在 HTML 文档 <code>&lt;header&gt;</code> 区域使用 <code>&lt;style&gt;</code> 包含 CSS。</p>
-<p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	CSS <span class="selector-tag">code</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
+<p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    CSS <span class="selector-tag">code</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
 <li><p>外部引用：使用外部 CSS 文件定义样式。</p>
-<p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;xxx.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
+<p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;xxx.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h2 id="css-语法">CSS 语法</h2>
 <h3 id="基本形式">基本形式</h3>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-attr">[选择器]</span> &#123;</span><br><span class="line">	<span class="selector-attr">[属性]</span>: [描述];</span><br><span class="line">		......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-attr">[选择器]</span> &#123;</span><br><span class="line">    <span class="selector-attr">[属性]</span>: [描述];</span><br><span class="line">        ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>选择器可以是 HTML 标签，也可以是 id 或 class。 * id 选择器只能定义标有特定 id 的元素的样式，形式为 <code>#[id]</code>。 * class 选择器可以定义一类元素的样式，形式为 <code>.[class]</code>。</p>
 <h3 id="文本属性">文本属性</h3>
 <p><strong>background</strong></p>
@@ -293,7 +293,7 @@ CSS 中表示字体大小有多种形式：
 <li>a:hover：鼠标放置的链接。</li>
 <li>a:active：鼠标点击的链接。</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> or visited or hover or active &#123;</span><br><span class="line">	<span class="attribute">background-color</span>:; <span class="comment">/*链接背景颜色*/</span></span><br><span class="line">	<span class="attribute">color</span>:; <span class="comment">/*链接字体颜色*/</span></span><br><span class="line">	<span class="attribute">text-decoration</span>:; <span class="comment">/*链接文本画线修饰*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> or visited or hover or active &#123;</span><br><span class="line">    <span class="attribute">background-color</span>:; <span class="comment">/*链接背景颜色*/</span></span><br><span class="line">    <span class="attribute">color</span>:; <span class="comment">/*链接字体颜色*/</span></span><br><span class="line">    <span class="attribute">text-decoration</span>:; <span class="comment">/*链接文本画线修饰*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="结构属性">结构属性</h3>
 <p><strong>盒子模型</strong><br />
 所有的 HTML 元素都可以看成一个盒子模型，包括外边距(margin)、边框(border)、内边距(padding)、内容(content)，内容指的是文本或图像等。</p>
@@ -579,6 +579,100 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构-绪论">数据结构-绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
+<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
+数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
+数据项：数据不可分割的最小单位。<br />
+<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
+四者关系可以如此表示：<br />
+<img src="1.png"/></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。<br />
+<strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
+<strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。<br />
+<strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。<br />
+非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
+如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
+换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
+拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+<h2 id="算法">算法</h2>
+<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
+常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构_线性表，栈、队列和数组</title>
     <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
@@ -699,97 +793,110 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+    <title>高等数学笔记_函数与极限</title>
+    <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
+    <content><![CDATA[高等数学<strong>函数与极限</strong>部分的知识总结<br />
+内容包括：<br />
+1. 数列的极限、求数列极限的方法<br />
+2. 函数的极限、求函数极限的方法<br />
+3. 函数的连续性和间断点的判断<br />
+
 <hr>
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
 <ul>
-<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<li><a href="#高等数学_函数与极限">高等数学_函数与极限</a>
 <ul>
-<li><a href="#数据结构">数据结构</a>
+<li><a href="#数列的极限">数列的极限</a>
 <ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
+<li><a href="#定义和性质">定义和性质</a>
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#性质">性质</a></li>
 </ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
+<li><a href="#求数列极限的方法">求数列极限的方法</a></li>
+</ul></li>
+<li><a href="#函数">函数</a></li>
+<li><a href="#函数的极限">函数的极限</a>
 <ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+<li><a href="#定义和性质-1">定义和性质</a>
+<ul>
+<li><a href="#定义-1">定义</a></li>
+<li><a href="#性质-1">性质</a></li>
+</ul></li>
+<li><a href="#求函数极限的方法">求函数极限的方法</a>
+<ul>
+<li><a href="#极限存在准则">极限存在准则</a></li>
+<li><a href="#无穷小与无穷大">无穷小与无穷大</a></li>
+<li><a href="#无穷的比较">无穷的比较</a></li>
+<li><a href="#泰勒公式">泰勒公式</a></li>
+<li><a href="#洛必达法则">洛必达法则</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#函数的连续与间断">函数的连续与间断</a>
+<ul>
+<li><a href="#连续性">连续性</a></li>
+<li><a href="#间断点">间断点</a></li>
+</ul></li>
+<li><a href="#连续函数的性质">连续函数的性质</a>
+<ul>
+<li><a href="#连续性运算法则">连续性运算法则</a></li>
+<li><a href="#闭区间上的连续函数定理">闭区间上的连续函数定理</a>
+<ul>
+<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
+<li><a href="#介值定理">介值定理</a></li>
+<li><a href="#零点定理">零点定理</a></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
 <hr>
-<h1 id="数据结构-绪论">数据结构-绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
-<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
-数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
-数据项：数据不可分割的最小单位。<br />
-<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
-四者关系可以如此表示：<br />
-<img src="1.png"/></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。<br />
-<strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
-<strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。<br />
-<strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<h1 id="高等数学_函数与极限">高等数学_函数与极限</h1>
+<h2 id="数列的极限">数列的极限</h2>
+<h3 id="定义和性质">定义和性质</h3>
+<h4 id="定义">定义</h4>
+<p><span class="math display">\[\lim x_n=a \Leftrightarrow  {\forall\varepsilon&gt;0,\exists N\in \textbf{N}^+,当n&gt;N时,恒有\left |x_n-a  \right |&lt;0. }\]</span> 若数列 {x<sub>n</sub>} 存在极限 a，则称数列 {x<sub>n</sub>} 收敛于 a，否则称数列 {x<sub>n</sub>} 是发散的。</p>
+<h4 id="性质">性质</h4>
+<ul>
+<li><p><strong>定理</strong>：若 {x<sub>n</sub>} 收敛于 a，则其子列也收敛于 a.</p>
 <blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。<br />
-非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
-如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
-换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
-拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
-<h2 id="算法">算法</h2>
-<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
-常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+<p>在数列 {x<sub>n</sub>} 中选取无穷多项，按照原来的先后顺序排列成的新数列成为 {x<sub>n</sub>} 的<strong>子列</strong>。</p>
+</blockquote></li>
+</ul>
+<h3 id="求数列极限的方法">求数列极限的方法</h3>
+<h2 id="函数">函数</h2>
+<h2 id="函数的极限">函数的极限</h2>
+<h3 id="定义和性质-1">定义和性质</h3>
+<h4 id="定义-1">定义</h4>
+<h4 id="性质-1">性质</h4>
+<h3 id="求函数极限的方法">求函数极限的方法</h3>
+<h4 id="极限存在准则">极限存在准则</h4>
+<h4 id="无穷小与无穷大">无穷小与无穷大</h4>
+<h4 id="无穷的比较">无穷的比较</h4>
+<h4 id="泰勒公式">泰勒公式</h4>
+<h4 id="洛必达法则">洛必达法则</h4>
+<h2 id="函数的连续与间断">函数的连续与间断</h2>
+<h3 id="连续性">连续性</h3>
+<h3 id="间断点">间断点</h3>
+<h2 id="连续函数的性质">连续函数的性质</h2>
+<h3 id="连续性运算法则">连续性运算法则</h3>
+<h3 id="闭区间上的连续函数定理">闭区间上的连续函数定理</h3>
+<h4 id="有界性与最值定理">有界性与最值定理</h4>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则在 <span class="math inline">\([a,b]\)</span> 上一定有界，且存在最大值和最小值。</p>
+<h4 id="介值定理">介值定理</h4>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in (a,b)，\text{使得} f(\xi) = \mu.\]</span></p>
+<p><strong>推论1</strong><br />
+<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，M 和 m 为最大值和最小值，则 <span class="math display">\[\forall m \le \mu \le M\text{，}\exists \xi \in [a,b]\text{，使得} f(\xi)= \mu.\]</span><br />
+<strong>推论2 平均值定理</strong><br />
+<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
+<h4 id="零点定理">零点定理</h4>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
 ]]></content>
       <categories>
-        <category>Computer Science</category>
+        <category>数学</category>
       </categories>
       <tags>
-        <tag>数据结构</tag>
+        <tag>高等数学</tag>
       </tags>
   </entry>
   <entry>
@@ -970,113 +1077,6 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 这七种情况均可使用洛必达法则求极限。</p>
 <h3 id="微分中值定理的应用">微分中值定理的应用</h3>
 <h2 id="零点问题与微分不等式">零点问题与微分不等式</h2>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学笔记_函数与极限</title>
-    <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[高等数学<strong>函数与极限</strong>部分的知识总结<br />
-内容包括：<br />
-1. 数列的极限、求数列极限的方法<br />
-2. 函数的极限、求函数极限的方法<br />
-3. 函数的连续性和间断点的判断<br />
-
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#高等数学_函数与极限">高等数学_函数与极限</a>
-<ul>
-<li><a href="#数列的极限">数列的极限</a>
-<ul>
-<li><a href="#定义和性质">定义和性质</a>
-<ul>
-<li><a href="#定义">定义</a></li>
-<li><a href="#性质">性质</a></li>
-</ul></li>
-<li><a href="#求数列极限的方法">求数列极限的方法</a></li>
-</ul></li>
-<li><a href="#函数">函数</a></li>
-<li><a href="#函数的极限">函数的极限</a>
-<ul>
-<li><a href="#定义和性质-1">定义和性质</a>
-<ul>
-<li><a href="#定义-1">定义</a></li>
-<li><a href="#性质-1">性质</a></li>
-</ul></li>
-<li><a href="#求函数极限的方法">求函数极限的方法</a>
-<ul>
-<li><a href="#极限存在准则">极限存在准则</a></li>
-<li><a href="#无穷小与无穷大">无穷小与无穷大</a></li>
-<li><a href="#无穷的比较">无穷的比较</a></li>
-<li><a href="#泰勒公式">泰勒公式</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#函数的连续与间断">函数的连续与间断</a>
-<ul>
-<li><a href="#连续性">连续性</a></li>
-<li><a href="#间断点">间断点</a></li>
-</ul></li>
-<li><a href="#连续函数的性质">连续函数的性质</a>
-<ul>
-<li><a href="#连续性运算法则">连续性运算法则</a></li>
-<li><a href="#闭区间上的连续函数定理">闭区间上的连续函数定理</a>
-<ul>
-<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
-<li><a href="#介值定理">介值定理</a></li>
-<li><a href="#零点定理">零点定理</a></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="高等数学_函数与极限">高等数学_函数与极限</h1>
-<h2 id="数列的极限">数列的极限</h2>
-<h3 id="定义和性质">定义和性质</h3>
-<h4 id="定义">定义</h4>
-<p><span class="math display">\[\lim x_n=a \Leftrightarrow  {\forall\varepsilon&gt;0,\exists N\in \textbf{N}^+,当n&gt;N时,恒有\left |x_n-a  \right |&lt;0. }\]</span> 若数列 {x<sub>n</sub>} 存在极限 a，则称数列 {x<sub>n</sub>} 收敛于 a，否则称数列 {x<sub>n</sub>} 是发散的。</p>
-<h4 id="性质">性质</h4>
-<ul>
-<li><p><strong>定理</strong>：若 {x<sub>n</sub>} 收敛于 a，则其子列也收敛于 a.</p>
-<blockquote>
-<p>在数列 {x<sub>n</sub>} 中选取无穷多项，按照原来的先后顺序排列成的新数列成为 {x<sub>n</sub>} 的<strong>子列</strong>。</p>
-</blockquote></li>
-</ul>
-<h3 id="求数列极限的方法">求数列极限的方法</h3>
-<h2 id="函数">函数</h2>
-<h2 id="函数的极限">函数的极限</h2>
-<h3 id="定义和性质-1">定义和性质</h3>
-<h4 id="定义-1">定义</h4>
-<h4 id="性质-1">性质</h4>
-<h3 id="求函数极限的方法">求函数极限的方法</h3>
-<h4 id="极限存在准则">极限存在准则</h4>
-<h4 id="无穷小与无穷大">无穷小与无穷大</h4>
-<h4 id="无穷的比较">无穷的比较</h4>
-<h4 id="泰勒公式">泰勒公式</h4>
-<h4 id="洛必达法则">洛必达法则</h4>
-<h2 id="函数的连续与间断">函数的连续与间断</h2>
-<h3 id="连续性">连续性</h3>
-<h3 id="间断点">间断点</h3>
-<h2 id="连续函数的性质">连续函数的性质</h2>
-<h3 id="连续性运算法则">连续性运算法则</h3>
-<h3 id="闭区间上的连续函数定理">闭区间上的连续函数定理</h3>
-<h4 id="有界性与最值定理">有界性与最值定理</h4>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则在 <span class="math inline">\([a,b]\)</span> 上一定有界，且存在最大值和最小值。</p>
-<h4 id="介值定理">介值定理</h4>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in (a,b)，\text{使得} f(\xi) = \mu.\]</span></p>
-<p><strong>推论1</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，M 和 m 为最大值和最小值，则 <span class="math display">\[\forall m \le \mu \le M\text{，}\exists \xi \in [a,b]\text{，使得} f(\xi)= \mu.\]</span><br />
-<strong>推论2 平均值定理</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
-<h4 id="零点定理">零点定理</h4>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
