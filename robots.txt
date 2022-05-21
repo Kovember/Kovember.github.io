@@ -1,6 +1,14 @@
 User-agent: *
+
 Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /sitemap.xml
+Allow: /about/
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /lib/
 
-
-Sitemap: http://cohanbb.github.io/sitemap.xml
-Sitemap: http://cohanbb.github.io/baidusitemap.xml
+Sitemap: https://cohanbb.github.io/sitemap.xml
