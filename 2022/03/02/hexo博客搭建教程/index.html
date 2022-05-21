@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="<meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q" />">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -325,7 +325,7 @@ categories 与以上同理。</p>
 <li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
 <li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">body</span> &#123;</span><br><span class="line">   <span class="string">background:url(/images/background.jpg);</span>		<span class="string">//图片路径，默认</span></span><br><span class="line">   <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span>			<span class="string">//图片无法铺满时，是否重复及重复方式</span></span><br><span class="line">   <span class="string">background-attachment:fixed;</span>		<span class="string">//图片是否跟随滚动</span></span><br><span class="line">   <span class="string">background-size:cover;</span>				<span class="string">//覆盖</span></span><br><span class="line">   <span class="string">background-position:center;</span>		<span class="string">//图片显示</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">body</span> &#123;</span><br><span class="line">   <span class="string">background:url(/images/background.jpg);</span>        <span class="string">//图片路径，默认</span></span><br><span class="line">   <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span>            <span class="string">//图片无法铺满时，是否重复及重复方式</span></span><br><span class="line">   <span class="string">background-attachment:fixed;</span>        <span class="string">//图片是否跟随滚动</span></span><br><span class="line">   <span class="string">background-size:cover;</span>                <span class="string">//覆盖</span></span><br><span class="line">   <span class="string">background-position:center;</span>        <span class="string">//图片显示</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>启用search</strong><br />
 安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
 根目录/_config.yml 文件中加入：</p>
