@@ -119,13 +119,6 @@
 
   
   <url>
-    <loc>http://cohanbb.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://cohanbb.github.io/tags/Hexo/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -133,14 +126,21 @@
   </url>
   
   <url>
-    <loc>http://cohanbb.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://cohanbb.github.io/tags/Markdown/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://cohanbb.github.io/tags/Markdown/</loc>
+    <loc>http://cohanbb.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2022-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://cohanbb.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
+    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
+    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
+<ul>
+<li><a href="#颜色和大小">颜色和大小</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#字体">字体</a></li>
+<li><a href="#引用">引用</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
+<h2 id="颜色和大小">颜色和大小</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color=red size=6 >修改颜色和大小</font>
+<p style="color:blue; font-size:32px">
+修改颜色和大小
+</p>
+<h2 id="格式">格式</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
+<h2 id="字体">字体</h2>
+<p>常用的几款中、英文字体。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="font-family:Simsun;">
+宋体
+</p>
+<p style="font-family:STKaiti;">
+楷体
+</p>
+<p style="font-family:STHeiti;">
+黑体
+</p>
+<p style="font-family:Times New Roman;">
+Times New Roman
+</p>
+<p style="font-family:Arial;">
+Arial
+</p>
+<p style="font-family:Courier;">
+Courier
+</p>
+<p style="font-family:Consolas;">
+Consolas
+</p>
+<h2 id="引用">引用</h2>
+<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+第一层
+<blockquote>
+第二层
+</blockquote>
+第一层
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 与 CSS</title>
     <url>/2022/05/16/HTML%20%E4%B8%8E%20CSS/</url>
     <content><![CDATA[<p>前端 HTML 与 CSS 的基础知识整理。<br />
@@ -632,259 +699,6 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
-    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
-    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
-<ul>
-<li><a href="#颜色和大小">颜色和大小</a></li>
-<li><a href="#格式">格式</a></li>
-<li><a href="#字体">字体</a></li>
-<li><a href="#引用">引用</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
-<h2 id="颜色和大小">颜色和大小</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color=red size=6 >修改颜色和大小</font>
-<p style="color:blue; font-size:32px">
-修改颜色和大小
-</p>
-<h2 id="格式">格式</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
-<h2 id="字体">字体</h2>
-<p>常用的几款中、英文字体。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p style="font-family:Simsun;">
-宋体
-</p>
-<p style="font-family:STKaiti;">
-楷体
-</p>
-<p style="font-family:STHeiti;">
-黑体
-</p>
-<p style="font-family:Times New Roman;">
-Times New Roman
-</p>
-<p style="font-family:Arial;">
-Arial
-</p>
-<p style="font-family:Courier;">
-Courier
-</p>
-<p style="font-family:Consolas;">
-Consolas
-</p>
-<h2 id="引用">引用</h2>
-<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-第一层
-<blockquote>
-第二层
-</blockquote>
-第一层
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学_一元函数微分学</title>
-    <url>/2022/03/01/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
-    <content><![CDATA[高等数学<strong>一元函数微分学</strong>的知识总结<br />
-内容包括：<br />
-1. 导数和微分的概念<br />
-2. 各种求导数的方法<br />
-3. 导数的应用<br />
-4. 微分中值定理及其应用<br />
-5. 零点问题与微分不等式<br />
-
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#导数与微分">导数与微分</a>
-<ul>
-<li><a href="#导数的定义">导数的定义</a></li>
-<li><a href="#导函数">导函数</a></li>
-<li><a href="#微分的定义">微分的定义</a></li>
-<li><a href="#求导数的方法">求导数的方法</a>
-<ul>
-<li><a href="#基本公式求导法">基本公式求导法</a></li>
-<li><a href="#导数的四则运算法则">导数的四则运算法则</a></li>
-<li><a href="#复合函数的求导法">复合函数的求导法</a></li>
-<li><a href="#反函数的导数法">反函数的导数法</a></li>
-<li><a href="#对数求导法">对数求导法</a></li>
-<li><a href="#幂指函数求导法">幂指函数求导法</a></li>
-<li><a href="#变限积分求导法">变限积分求导法</a></li>
-</ul></li>
-<li><a href="#特殊函数的求导">特殊函数的求导</a>
-<ul>
-<li><a href="#分段函数求导">分段函数求导</a></li>
-<li><a href="#隐函数求导">隐函数求导</a></li>
-<li><a href="#参数方程求导">参数方程求导</a></li>
-<li><a href="#高阶导数">高阶导数</a></li>
-</ul></li>
-<li><a href="#导数的应用">导数的应用</a>
-<ul>
-<li><a href="#单调性与极值点">单调性与极值点</a></li>
-<li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
-<li><a href="#渐近线">渐近线</a></li>
-<li><a href="#求最值或取值范围">求最值或取值范围</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#微分中值定理">微分中值定理</a>
-<ul>
-<li><a href="#微分中值定理及其推导">微分中值定理及其推导</a>
-<ul>
-<li><a href="#费马引理">费马引理</a></li>
-<li><a href="#罗尔定理">罗尔定理</a></li>
-<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
-<li><a href="#柯西中值定理">柯西中值定理</a></li>
-<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-</ul></li>
-<li><a href="#微分中值定理的应用">微分中值定理的应用</a></li>
-</ul></li>
-<li><a href="#零点问题与微分不等式">零点问题与微分不等式</a></li>
-</ul>
-<hr>
-<h2 id="导数与微分">导数与微分</h2>
-<h3 id="导数的定义">导数的定义</h3>
-<p>若 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 的某一邻域内有定义，当 <span class="math inline">\(x\)</span> 有增量 <span class="math inline">\(\Delta x\)</span> 时相应的 <span class="math inline">\(y\)</span> 有增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span>，当 <span class="math inline">\(\Delta x \to 0\)</span> 时， <span class="math display">\[\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.\]</span> 若该极限存在，则<strong>极限值</strong>称为 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数并说该函数在 <span class="math inline">\(x_0\)</span> 处可导，导数记为 <span class="math inline">\(f’(x_0)\)</span>， <span class="math display">\[f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}.\]</span> <strong>注意：</strong></p>
-<ul>
-<li><p>导数的本质是一种<strong>极限</strong>，存在的充要条件是左右极限都存在且相等。</p>
-<blockquote>
-<p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
-</blockquote></li>
-<li><p>导数的几何意义为函数所表示的曲线上某一点的切线斜率。</p></li>
-<li><p>函数在某处可导，则必然在此处连续。<strong>反之未必</strong>。</p>
-<blockquote>
-<p><strong>证</strong><br />
-设 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数为 A，则<br />
-<span class="math inline">\(\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = A\)</span>，<br />
-当 <span class="math inline">\(\Delta x \to 0\)</span> 时，<br />
-<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0) = A\Delta x+o(|\Delta x |)\)</span>，<br />
-显然 <span class="math inline">\(\Delta y \to 0\)</span>，即函数在 <span class="math inline">\(x_0\)</span> 处连续。<br />
-反之不成立的例子：<span class="math inline">\(y = |x|\)</span>，<span class="math inline">\(y = x\sin(x)\)</span>.</p>
-</blockquote></li>
-</ul>
-<h3 id="导函数">导函数</h3>
-<p><span class="math inline">\(y = f(x)\)</span>，<span class="math inline">\(x\in D\)</span>，<span class="math inline">\(f’(x_0)\)</span> 为函数在 <span class="math inline">\(x_0\)</span> 处的导数，则 <span class="math inline">\(y = f’(x)\)</span>，<span class="math inline">\(x \in D\)</span> 为该函数的导函数。</p>
-<ul>
-<li>达布定理：<br />
-若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续）， <span class="math inline">\(f’(a) \ne f’(b)\)</span>，则 <span class="math inline">\(\forall \mu\)</span> 位于 <span class="math inline">\(f’(a)\)</span> 和 <span class="math inline">\(f’(b)\)</span> 之间，都 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math inline">\(f’(\xi)=\mu\)</span>.</li>
-<li>导函数无第一类间断点，若 <span class="math inline">\(y=f(x)\)</span> 可导，则 <span class="math inline">\(f’(x)\)</span> <strong>连续或存在振荡间断点</strong>。</li>
-</ul>
-<h3 id="微分的定义">微分的定义</h3>
-<p><span class="math inline">\(y’|x=x_0=f’(x_0)\)</span></p>
-<h3 id="求导数的方法">求导数的方法</h3>
-<h4 id="基本公式求导法">基本公式求导法</h4>
-<h4 id="导数的四则运算法则">导数的四则运算法则</h4>
-<h4 id="复合函数的求导法">复合函数的求导法</h4>
-<h4 id="反函数的导数法">反函数的导数法</h4>
-<h4 id="对数求导法">对数求导法</h4>
-<h4 id="幂指函数求导法">幂指函数求导法</h4>
-<h4 id="变限积分求导法">变限积分求导法</h4>
-<h3 id="特殊函数的求导">特殊函数的求导</h3>
-<h4 id="分段函数求导">分段函数求导</h4>
-<h4 id="隐函数求导">隐函数求导</h4>
-<h4 id="参数方程求导">参数方程求导</h4>
-<h4 id="高阶导数">高阶导数</h4>
-<h3 id="导数的应用">导数的应用</h3>
-<h4 id="单调性与极值点">单调性与极值点</h4>
-<h4 id="凹凸性与拐点">凹凸性与拐点</h4>
-<h4 id="渐近线">渐近线</h4>
-<h4 id="求最值或取值范围">求最值或取值范围</h4>
-<h2 id="微分中值定理">微分中值定理</h2>
-<h3 id="微分中值定理及其推导">微分中值定理及其推导</h3>
-<h4 id="费马引理">费马引理</h4>
-<p><span class="math inline">\(y=f(x)\)</span> 在某领域 <span class="math inline">\(\text{U}(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in \text{U}(\xi)\)</span>，都有 <span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span> 则 <span class="math inline">\(f’(\xi)=0\)</span>.<br />
-即若 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，且 <span class="math inline">\(f’(x_0)\)</span> 存在，则 <span class="math inline">\(f’(x_0)=0\)</span>.</p>
-<blockquote>
-<p><strong>证</strong><br />
-不妨设 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点，则 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，都有 <span class="math inline">\(\Delta y=f(x)-f(x_0) \le 0\)</span>，则<br />
-<span class="math inline">\(f_-’(x_0)=\lim_{x \to x_0^-} \frac{f(x)-f(x_0)}{x-x_0} \ge 0\)</span>，<br />
-<span class="math inline">\(f_+’(x_0)=\lim_{x \to x_0^+} \frac{f(x)-f(x_0)}{x-x_0} \le 0\)</span>，<br /> 又 <span class="math inline">\(f’(x_0)\)</span> 存在，故 <span class="math inline">\(f_-’(x_0)=f_+’(x_0)=0\)</span>.</p>
-</blockquote>
-<p><strong>推论</strong><br />
-若 <span class="math inline">\(x=a\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，则 <span class="math inline">\(f’(a)=0\)</span> 或不存在。</p>
-<h4 id="罗尔定理">罗尔定理</h4>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续 2. 在 <span class="math inline">\((a,b)\)</span> 上可导 3. <span class="math inline">\(f(a)=f(b)\)</span></p>
-<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span></p>
-<blockquote>
-<p><strong>证</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 连续，由最大值最小值定理可知 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 内存在最大值最小值，<br />
-设 M 为最大值，m 为最小值<br />
-若 M = m，</p>
-<blockquote>
-<p>即 <span class="math inline">\(f(x)\)</span> 为常函数，则 <span class="math inline">\(f’(x)=0\)</span>.</p>
-</blockquote>
-<p>若 m &lt; M，</p>
-<blockquote>
-<p>因为 <span class="math inline">\(f(a)=f(b)\)</span>，<br />
-故 m、M 至少有一点在 <span class="math inline">\((a,b)\)</span> 内取得，<br />
-不妨设 <span class="math inline">\(\xi \in (a,b)\)</span>，使得 <span class="math inline">\(f(\xi)=M\)</span>，<br />
-由费马引理，<span class="math inline">\(f’(\xi)=0\)</span>.</p>
-</blockquote>
-<p>得证。</p>
-</blockquote>
-<p><strong>推论</strong></p>
-<h4 id="拉格朗日中值定理">拉格朗日中值定理</h4>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续 2. 在 <span class="math inline">\((a,b)\)</span> 上可导</p>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h4 id="柯西中值定理">柯西中值定理</h4>
-<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续<br />
-2. 在 <span class="math inline">\((a,b)\)</span> 上可导 3. <span class="math inline">\(g’(x) \ne 0\)</span></p>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h4 id="泰勒中值定理">泰勒中值定理</h4>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)，\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0).\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[\begin{aligned}
-&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
-&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).
-\end{aligned}\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。<br />
-另一种写法为，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处 n 阶导数存在，则存在一领域 <span class="math inline">\(\text{U}(x_0)\)</span>，对于 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，有 <span class="math display">\[\begin{aligned}
-&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
-&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+o((x-x_0)^n)(\text{佩亚诺余项}).
-\end{aligned}\]</span> 当 <span class="math inline">\(x_0=0\)</span> 时，泰勒公式称为<strong>麦克劳林公式</strong>，几个重要麦克劳林公式 <span class="math display">\[
-\begin{aligned}
-&amp;(1)  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
-&amp;(2)  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
-&amp;(3)  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
-&amp;(4)  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
-&amp;(5)  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
-&amp;(6)  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
-&amp;(7)  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
-\end{aligned}\]</span></p>
-<h4 id="洛必达法则">洛必达法则</h4>
-<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span> 2. <span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span> 3. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></p>
-<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 这七种情况均可使用洛必达法则求极限。</p>
-<h3 id="微分中值定理的应用">微分中值定理的应用</h3>
-<h2 id="零点问题与微分不等式">零点问题与微分不等式</h2>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构_绪论</title>
     <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
     <content><![CDATA[<p>数据结构与算法的入门概念</p>
@@ -1077,6 +891,192 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
 <h4 id="零点定理">零点定理</h4>
 <p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高等数学_一元函数微分学</title>
+    <url>/2022/03/01/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
+    <content><![CDATA[高等数学<strong>一元函数微分学</strong>的知识总结<br />
+内容包括：<br />
+1. 导数和微分的概念<br />
+2. 各种求导数的方法<br />
+3. 导数的应用<br />
+4. 微分中值定理及其应用<br />
+5. 零点问题与微分不等式<br />
+
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#导数与微分">导数与微分</a>
+<ul>
+<li><a href="#导数的定义">导数的定义</a></li>
+<li><a href="#导函数">导函数</a></li>
+<li><a href="#微分的定义">微分的定义</a></li>
+<li><a href="#求导数的方法">求导数的方法</a>
+<ul>
+<li><a href="#基本公式求导法">基本公式求导法</a></li>
+<li><a href="#导数的四则运算法则">导数的四则运算法则</a></li>
+<li><a href="#复合函数的求导法">复合函数的求导法</a></li>
+<li><a href="#反函数的导数法">反函数的导数法</a></li>
+<li><a href="#对数求导法">对数求导法</a></li>
+<li><a href="#幂指函数求导法">幂指函数求导法</a></li>
+<li><a href="#变限积分求导法">变限积分求导法</a></li>
+</ul></li>
+<li><a href="#特殊函数的求导">特殊函数的求导</a>
+<ul>
+<li><a href="#分段函数求导">分段函数求导</a></li>
+<li><a href="#隐函数求导">隐函数求导</a></li>
+<li><a href="#参数方程求导">参数方程求导</a></li>
+<li><a href="#高阶导数">高阶导数</a></li>
+</ul></li>
+<li><a href="#导数的应用">导数的应用</a>
+<ul>
+<li><a href="#单调性与极值点">单调性与极值点</a></li>
+<li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
+<li><a href="#渐近线">渐近线</a></li>
+<li><a href="#求最值或取值范围">求最值或取值范围</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#微分中值定理">微分中值定理</a>
+<ul>
+<li><a href="#微分中值定理及其推导">微分中值定理及其推导</a>
+<ul>
+<li><a href="#费马引理">费马引理</a></li>
+<li><a href="#罗尔定理">罗尔定理</a></li>
+<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
+<li><a href="#柯西中值定理">柯西中值定理</a></li>
+<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
+<li><a href="#洛必达法则">洛必达法则</a></li>
+</ul></li>
+<li><a href="#微分中值定理的应用">微分中值定理的应用</a></li>
+</ul></li>
+<li><a href="#零点问题与微分不等式">零点问题与微分不等式</a></li>
+</ul>
+<hr>
+<h2 id="导数与微分">导数与微分</h2>
+<h3 id="导数的定义">导数的定义</h3>
+<p>若 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 的某一邻域内有定义，当 <span class="math inline">\(x\)</span> 有增量 <span class="math inline">\(\Delta x\)</span> 时相应的 <span class="math inline">\(y\)</span> 有增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span>，当 <span class="math inline">\(\Delta x \to 0\)</span> 时， <span class="math display">\[\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.\]</span> 若该极限存在，则<strong>极限值</strong>称为 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数并说该函数在 <span class="math inline">\(x_0\)</span> 处可导，导数记为 <span class="math inline">\(f’(x_0)\)</span>， <span class="math display">\[f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}.\]</span> <strong>注意：</strong></p>
+<ul>
+<li><p>导数的本质是一种<strong>极限</strong>，存在的充要条件是左右极限都存在且相等。</p>
+<blockquote>
+<p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
+</blockquote></li>
+<li><p>导数的几何意义为函数所表示的曲线上某一点的切线斜率。</p></li>
+<li><p>函数在某处可导，则必然在此处连续。<strong>反之未必</strong>。</p>
+<blockquote>
+<p><strong>证</strong><br />
+设 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数为 A，则<br />
+<span class="math inline">\(\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = A\)</span>，<br />
+当 <span class="math inline">\(\Delta x \to 0\)</span> 时，<br />
+<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0) = A\Delta x+o(|\Delta x |)\)</span>，<br />
+显然 <span class="math inline">\(\Delta y \to 0\)</span>，即函数在 <span class="math inline">\(x_0\)</span> 处连续。<br />
+反之不成立的例子：<span class="math inline">\(y = |x|\)</span>，<span class="math inline">\(y = x\sin(x)\)</span>.</p>
+</blockquote></li>
+</ul>
+<h3 id="导函数">导函数</h3>
+<p><span class="math inline">\(y = f(x)\)</span>，<span class="math inline">\(x\in D\)</span>，<span class="math inline">\(f’(x_0)\)</span> 为函数在 <span class="math inline">\(x_0\)</span> 处的导数，则 <span class="math inline">\(y = f’(x)\)</span>，<span class="math inline">\(x \in D\)</span> 为该函数的导函数。</p>
+<ul>
+<li>达布定理：<br />
+若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续）， <span class="math inline">\(f’(a) \ne f’(b)\)</span>，则 <span class="math inline">\(\forall \mu\)</span> 位于 <span class="math inline">\(f’(a)\)</span> 和 <span class="math inline">\(f’(b)\)</span> 之间，都 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math inline">\(f’(\xi)=\mu\)</span>.</li>
+<li>导函数无第一类间断点，若 <span class="math inline">\(y=f(x)\)</span> 可导，则 <span class="math inline">\(f’(x)\)</span> <strong>连续或存在振荡间断点</strong>。</li>
+</ul>
+<h3 id="微分的定义">微分的定义</h3>
+<p><span class="math inline">\(y’|x=x_0=f’(x_0)\)</span></p>
+<h3 id="求导数的方法">求导数的方法</h3>
+<h4 id="基本公式求导法">基本公式求导法</h4>
+<h4 id="导数的四则运算法则">导数的四则运算法则</h4>
+<h4 id="复合函数的求导法">复合函数的求导法</h4>
+<h4 id="反函数的导数法">反函数的导数法</h4>
+<h4 id="对数求导法">对数求导法</h4>
+<h4 id="幂指函数求导法">幂指函数求导法</h4>
+<h4 id="变限积分求导法">变限积分求导法</h4>
+<h3 id="特殊函数的求导">特殊函数的求导</h3>
+<h4 id="分段函数求导">分段函数求导</h4>
+<h4 id="隐函数求导">隐函数求导</h4>
+<h4 id="参数方程求导">参数方程求导</h4>
+<h4 id="高阶导数">高阶导数</h4>
+<h3 id="导数的应用">导数的应用</h3>
+<h4 id="单调性与极值点">单调性与极值点</h4>
+<h4 id="凹凸性与拐点">凹凸性与拐点</h4>
+<h4 id="渐近线">渐近线</h4>
+<h4 id="求最值或取值范围">求最值或取值范围</h4>
+<h2 id="微分中值定理">微分中值定理</h2>
+<h3 id="微分中值定理及其推导">微分中值定理及其推导</h3>
+<h4 id="费马引理">费马引理</h4>
+<p><span class="math inline">\(y=f(x)\)</span> 在某领域 <span class="math inline">\(\text{U}(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in \text{U}(\xi)\)</span>，都有 <span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span> 则 <span class="math inline">\(f’(\xi)=0\)</span>.<br />
+即若 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，且 <span class="math inline">\(f’(x_0)\)</span> 存在，则 <span class="math inline">\(f’(x_0)=0\)</span>.</p>
+<blockquote>
+<p><strong>证</strong><br />
+不妨设 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点，则 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，都有 <span class="math inline">\(\Delta y=f(x)-f(x_0) \le 0\)</span>，则<br />
+<span class="math inline">\(f_-’(x_0)=\lim_{x \to x_0^-} \frac{f(x)-f(x_0)}{x-x_0} \ge 0\)</span>，<br />
+<span class="math inline">\(f_+’(x_0)=\lim_{x \to x_0^+} \frac{f(x)-f(x_0)}{x-x_0} \le 0\)</span>，<br /> 又 <span class="math inline">\(f’(x_0)\)</span> 存在，故 <span class="math inline">\(f_-’(x_0)=f_+’(x_0)=0\)</span>.</p>
+</blockquote>
+<p><strong>推论</strong><br />
+若 <span class="math inline">\(x=a\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，则 <span class="math inline">\(f’(a)=0\)</span> 或不存在。</p>
+<h4 id="罗尔定理">罗尔定理</h4>
+<p>若 <span class="math inline">\(y=f(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续 2. 在 <span class="math inline">\((a,b)\)</span> 上可导 3. <span class="math inline">\(f(a)=f(b)\)</span></p>
+<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span></p>
+<blockquote>
+<p><strong>证</strong><br />
+<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 连续，由最大值最小值定理可知 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 内存在最大值最小值，<br />
+设 M 为最大值，m 为最小值<br />
+若 M = m，</p>
+<blockquote>
+<p>即 <span class="math inline">\(f(x)\)</span> 为常函数，则 <span class="math inline">\(f’(x)=0\)</span>.</p>
+</blockquote>
+<p>若 m &lt; M，</p>
+<blockquote>
+<p>因为 <span class="math inline">\(f(a)=f(b)\)</span>，<br />
+故 m、M 至少有一点在 <span class="math inline">\((a,b)\)</span> 内取得，<br />
+不妨设 <span class="math inline">\(\xi \in (a,b)\)</span>，使得 <span class="math inline">\(f(\xi)=M\)</span>，<br />
+由费马引理，<span class="math inline">\(f’(\xi)=0\)</span>.</p>
+</blockquote>
+<p>得证。</p>
+</blockquote>
+<p><strong>推论</strong></p>
+<h4 id="拉格朗日中值定理">拉格朗日中值定理</h4>
+<p>若 <span class="math inline">\(y=f(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续 2. 在 <span class="math inline">\((a,b)\)</span> 上可导</p>
+<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
+<blockquote>
+<p><strong>证</strong></p>
+</blockquote>
+<h4 id="柯西中值定理">柯西中值定理</h4>
+<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. 在 <span class="math inline">\([a,b]\)</span> 上连续<br />
+2. 在 <span class="math inline">\((a,b)\)</span> 上可导 3. <span class="math inline">\(g’(x) \ne 0\)</span></p>
+<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
+<blockquote>
+<p><strong>证</strong></p>
+</blockquote>
+<h4 id="泰勒中值定理">泰勒中值定理</h4>
+<p>若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)，\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0).\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[\begin{aligned}
+&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
+&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).
+\end{aligned}\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。<br />
+另一种写法为，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处 n 阶导数存在，则存在一领域 <span class="math inline">\(\text{U}(x_0)\)</span>，对于 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，有 <span class="math display">\[\begin{aligned}
+&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
+&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+o((x-x_0)^n)(\text{佩亚诺余项}).
+\end{aligned}\]</span> 当 <span class="math inline">\(x_0=0\)</span> 时，泰勒公式称为<strong>麦克劳林公式</strong>，几个重要麦克劳林公式 <span class="math display">\[
+\begin{aligned}
+&amp;(1)  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
+&amp;(2)  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
+&amp;(3)  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
+&amp;(4)  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
+&amp;(5)  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
+&amp;(6)  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
+&amp;(7)  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
+\end{aligned}\]</span></p>
+<h4 id="洛必达法则">洛必达法则</h4>
+<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span> 2. <span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span> 3. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></p>
+<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 这七种情况均可使用洛必达法则求极限。</p>
+<h3 id="微分中值定理的应用">微分中值定理的应用</h3>
+<h2 id="零点问题与微分不等式">零点问题与微分不等式</h2>
 ]]></content>
       <categories>
         <category>数学</category>
