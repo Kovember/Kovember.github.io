@@ -393,6 +393,26 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/02/28/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
     <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
     <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
@@ -458,26 +478,6 @@ Consolas
         <tag>Hexo</tag>
         <tag>Markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/02/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>Hexo 博客搭建简单说明</title>
@@ -579,6 +579,100 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构-绪论">数据结构-绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
+<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
+数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
+数据项：数据不可分割的最小单位。<br />
+<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
+四者关系可以如此表示：<br />
+<img src="1.png"/></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。<br />
+<strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
+<strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。<br />
+<strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。<br />
+非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
+如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
+换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
+拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+<h2 id="算法">算法</h2>
+<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
+常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构_线性表，栈、队列和数组</title>
     <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
@@ -642,7 +736,7 @@ categories 与以上同理。</p>
 <p>插入（在表 L 的第 i 个位置插入 e）</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length<span class="number">-1</span>; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L.length; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="链表">链表</h3>
@@ -650,9 +744,9 @@ categories 与以上同理。</p>
 <h4 id="单链表">单链表</h4>
 <p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
 单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>单链表的基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>单链表的整表创建和销毁</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="静态链表">静态链表</h4>
@@ -885,163 +979,6 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构-绪论">数据结构-绪论</a>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="数据结构-绪论">数据结构-绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
-<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
-数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
-数据项：数据不可分割的最小单位。<br />
-<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
-四者关系可以如此表示：<br />
-<img src="1.png"/></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。<br />
-<strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
-<strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。<br />
-<strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。<br />
-非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
-如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
-换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
-拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
-<h2 id="算法">算法</h2>
-<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
-常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学_连续函数的十大定理</title>
-    <url>/2022/03/11/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0%E5%8D%81%E5%A4%A7%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[连续函数的十大定理：<br />
-有界性与最值定理、介值定理、零点定理、费马引理、罗尔定理、拉格朗日中值定理、柯西中值定理、泰勒中值定理、洛必达法则、积分中值定理。
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#连续函数十大定理">连续函数十大定理</a>
-<ul>
-<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
-<li><a href="#介值定理">介值定理</a></li>
-<li><a href="#零点定理">零点定理</a></li>
-<li><a href="#费马引理">费马引理</a></li>
-<li><a href="#罗尔定理">罗尔定理</a></li>
-<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
-<li><a href="#柯西中值定理">柯西中值定理</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
-<li><a href="#积分中值定理">积分中值定理</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="连续函数十大定理">连续函数十大定理</h1>
-<h2 id="有界性与最值定理">有界性与最值定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则一定有界，且存在最大值和最小值。</p>
-<h2 id="介值定理">介值定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in [a,b]，\text{使得} f(\xi) = \mu.\]</span></p>
-<p><strong>推论：平均值定理</strong><br />
-<span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
-<h2 id="零点定理">零点定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
-<h2 id="费马引理">费马引理</h2>
-<p><span class="math inline">\(f(x)\)</span> 在某领域 <span class="math inline">\(U(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in U(\xi)\)</span>，都有 <span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span> 则 <span class="math inline">\(f’(\xi)=0\)</span>.</p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h2 id="罗尔定理">罗尔定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 满足 1. 在 [a,b] 上连续 2. 在 (a,b) 上可导 3. <span class="math inline">\(f(a)=f(b)\)</span></p>
-<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span> <strong>推论</strong></p>
-<h2 id="拉格朗日中值定理">拉格朗日中值定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 满足 1. 在 [a,b] 上连续 2. 在 (a,b) 上可导</p>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
-<h2 id="柯西中值定理">柯西中值定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. 在 [a,b] 上连续<br />
-2. 在 (a,b) 上可导 3. <span class="math inline">\(g’(x) \ne 0\)</span></p>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
-<h2 id="洛必达法则">洛必达法则</h2>
-<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span> 2. <span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span> 3. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></p>
-<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 七种情况均可使用洛必达法则求极限。</p>
-<h2 id="泰勒中值定理">泰勒中值定理</h2>
-<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0)\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 (a,b) 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\]</span> <span class="math display">\[+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。</p>
-<h2 id="积分中值定理">积分中值定理</h2>
-<p><span class="math inline">\(f(x)\)</span> 在 [a,b] 上连续，则 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math display">\[\int_{a}^{b} f(x)dx = f(\xi)(b-a).\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高等数学笔记_函数与极限</title>
     <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
     <content><![CDATA[高等数学<strong>函数与极限</strong>部分的知识总结<br />
@@ -1140,6 +1077,69 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
 <h4 id="零点定理">零点定理</h4>
 <p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高等数学_连续函数的十大定理</title>
+    <url>/2022/03/11/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0%E5%8D%81%E5%A4%A7%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[连续函数的十大定理：<br />
+有界性与最值定理、介值定理、零点定理、费马引理、罗尔定理、拉格朗日中值定理、柯西中值定理、泰勒中值定理、洛必达法则、积分中值定理。
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#连续函数十大定理">连续函数十大定理</a>
+<ul>
+<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
+<li><a href="#介值定理">介值定理</a></li>
+<li><a href="#零点定理">零点定理</a></li>
+<li><a href="#费马引理">费马引理</a></li>
+<li><a href="#罗尔定理">罗尔定理</a></li>
+<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
+<li><a href="#柯西中值定理">柯西中值定理</a></li>
+<li><a href="#洛必达法则">洛必达法则</a></li>
+<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
+<li><a href="#积分中值定理">积分中值定理</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="连续函数十大定理">连续函数十大定理</h1>
+<h2 id="有界性与最值定理">有界性与最值定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则一定有界，且存在最大值和最小值。</p>
+<h2 id="介值定理">介值定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in [a,b]，\text{使得} f(\xi) = \mu.\]</span></p>
+<p><strong>推论：平均值定理</strong><br />
+<span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
+<h2 id="零点定理">零点定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
+<h2 id="费马引理">费马引理</h2>
+<p><span class="math inline">\(f(x)\)</span> 在某领域 <span class="math inline">\(U(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in U(\xi)\)</span>，都有 <span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span> 则 <span class="math inline">\(f’(\xi)=0\)</span>.</p>
+<blockquote>
+<p><strong>证</strong></p>
+</blockquote>
+<h2 id="罗尔定理">罗尔定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 满足 1. 在 [a,b] 上连续 2. 在 (a,b) 上可导 3. <span class="math inline">\(f(a)=f(b)\)</span></p>
+<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span> <strong>推论</strong></p>
+<h2 id="拉格朗日中值定理">拉格朗日中值定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 满足 1. 在 [a,b] 上连续 2. 在 (a,b) 上可导</p>
+<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
+<h2 id="柯西中值定理">柯西中值定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. 在 [a,b] 上连续<br />
+2. 在 (a,b) 上可导 3. <span class="math inline">\(g’(x) \ne 0\)</span></p>
+<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
+<h2 id="洛必达法则">洛必达法则</h2>
+<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足 1. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span> 2. <span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span> 3. <span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></p>
+<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 七种情况均可使用洛必达法则求极限。</p>
+<h2 id="泰勒中值定理">泰勒中值定理</h2>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0)\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 (a,b) 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\]</span> <span class="math display">\[+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。</p>
+<h2 id="积分中值定理">积分中值定理</h2>
+<p><span class="math inline">\(f(x)\)</span> 在 [a,b] 上连续，则 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math display">\[\int_{a}^{b} f(x)dx = f(\xi)(b-a).\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
