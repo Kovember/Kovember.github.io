@@ -1,6 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git 教程及其远程仓库 GitHub</title>
+    <url>/2022/06/09/Git-%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="摘要">摘要</h1>
+<p>Git 是一个开源的分布式版本控制系统，是 Linus Torvalds 为 Linux 内核开发的开放源码的版本控制软件。与其他版本控制工具不同，Git 采用了分布式版本库的方式，同时还是一个内容管理系统，为不同设备和用户间的内容同步提供了便利。Git 目前被广泛运用在 GitHub、GitLab 以及中国的 Gitee 等代码托管和版本控制系统。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#摘要">摘要</a></li>
+<li><a href="#git-安装和配置">Git 安装和配置</a>
+<ul>
+<li><a href="#安装-git">安装 Git</a></li>
+<li><a href="#配置-git">配置 Git</a></li>
+</ul></li>
+<li><a href="#git-原理">Git 原理</a>
+<ul>
+<li><a href="#git-基本工作流程">Git 基本工作流程</a></li>
+<li><a href="#git-工作区暂存区和版本库">Git 工作区、暂存区和版本库</a></li>
+<li><a href="#深入理解-git">深入理解 Git</a></li>
+</ul></li>
+<li><a href="#git-常用命令">Git 常用命令</a>
+<ul>
+<li><a href="#创建和克隆-git-仓库">创建和克隆 Git 仓库</a></li>
+<li><a href="#配置-git-1">配置 Git</a></li>
+<li><a href="#提交和修改">提交和修改</a></li>
+<li><a href="#分支">分支</a></li>
+</ul></li>
+<li><a href="#github">GitHub</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ul>
+<hr>
+<h1 id="git-安装和配置">Git 安装和配置</h1>
+<h2 id="安装-git">安装 Git</h2>
+<p>Git 有良好的跨平台性，目前支持在 Linux、MacOS、FreeBSD 和 Windows 平台上运行。 Windows 上可进入官网下载 Git：<a href="http://git-scm.com/download/win">git download</a>，若无法下载或下载缓慢可使用国内镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/Git%20for%20Windows%202.36.1/">清华大学 git for windows update 镜像</a>，下载并安装成功后将 Git 的 bin 目录加入环境变量。 Linux 上可以直接使用 shell，以 Debian 系为例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install git</span><br></pre></td></tr></table></figure>
+<p>终端输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">git version 2.32.1</span><br></pre></td></tr></table></figure>
+<p>若终端输出 Git 的版本号，则证明安装成功。</p>
+<h2 id="配置-git">配置 Git</h2>
+<p>配置个人信息，终端输入用户名和邮箱地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="git-原理">Git 原理</h1>
+<h2 id="git-基本工作流程">Git 基本工作流程</h2>
+<ol type="1">
+<li>克隆 Git 资源到工作区。</li>
+<li>在工作区对资源进行修改。</li>
+<li>将工作区的资源提交。</li>
+<li>若发现提交的内容有问题，可以撤回提交。</li>
+</ol>
+<h2 id="git-工作区暂存区和版本库">Git 工作区、暂存区和版本库</h2>
+<ul>
+<li>工作区：本地的资源目录。</li>
+<li>暂存区：位于工作区的 .git/index 文件中。</li>
+<li>版本库：位于工作区的 .git 目录。</li>
+</ul>
+<p><img src="image/ACA7C7AA-A862-4052-A3D8-CCF726A39110.jpeg" /></p>
+<ul>
+<li>使用 <code>git init</code> 可使用当前目录作为 Git 仓库，该命令会在当前目录生成一个 <strong>.git</strong> 目录作为版本库。</li>
+<li>图中左侧为<strong>工作区</strong>，右侧为<strong>版本库</strong> 即 <strong>.git</strong> 目录，在版本库中有 <strong>index</strong> 文件代表<strong>暂存区</strong>。</li>
+<li><strong>HEAD</strong> 为游标文件指向最后一次提交的分支，master 文件中存放着对象库中 master 分支的提交信息。</li>
+<li><strong>objects</strong> 文件是 Git 的<strong>对象库</strong>，实际位于 .git/objects 目录，里面包含了文件内容、目录树等对象。</li>
+<li>当使用 <code>git add</code> 命令时，即工作区增加或修改文件时，index 会生成新的文件信息和目录树，同时工作区增加或修改的文件内容被写入 objects 中的一个新的对象中。</li>
+<li>当执行提交操作 <code>git commit</code> 的时候，index 中的目录树写入 objects 中，并生成一个提交信息，master 中写入这个提交信息，其中含有刚刚提交的目录树等信息。</li>
+<li>当执行 <code>git reset HEAD</code> 命令时，index 中的目录树会被重写，被 master 中提交信息的目录树所替换，但工作区不受影响。</li>
+<li>当执行 <code>git rm --cached &lt;file&gt;</code> 命令时，只从 index 中删除文件，工作区不受改变。</li>
+<li>当执行 <code>git checkout .</code> 或者 <code>git checkout -- &lt;file&gt;</code> 命令时，会用 index 中全部或指定的文件替换工作区的文件。这个操作非常危险，会清除工作区中未添加到 index 的改动。</li>
+<li>当执行 <code>git checkout HEAD .</code> 或者 <code>git checkout HEAD &lt;file&gt;</code> 命令时，会用 HEAD 指向 master 分支中全部或者部分文件替换 index 以及工作区的文件。这个文件也是极具危险性的，因为不仅会清空工作区中为提交的改动，也会清楚暂存区中未提交的改动。</li>
+</ul>
+<h2 id="深入理解-git">深入理解 Git</h2>
+<p>下面以实际的操作来更深刻地理解 Git：</p>
+<ol type="1">
+<li>首先生成一个目录 test 作为工作区，并初始化 git：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> <span class="built_in">test</span> </span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>可查看到初始化后的工作区有一个隐藏目录 .git，查看该目录的内容：</li>
+</ol>
+<p><img src="image/2022-05-30-22-48-10.png" /></p>
+<p>查看 .git/config 文件，并配置身份信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">$ git config user.name <span class="string">&quot;Cohanbb&quot;</span></span><br><span class="line">$ git config user.email <span class="string">&quot;cohanbb777@163.com&quot;</span></span><br><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">[user]</span><br><span class="line">    name = Cohanbb</span><br><span class="line">    email = cohanbb777@163.com</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>新建一个文件 1.txt 添加内容 ”helloworld“，并使用 <code>git add 1.txt</code>，之后再次查看 .git 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 1.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;helloworld&quot;</span> &gt; 1.txt</span><br><span class="line">$ <span class="built_in">cat</span> 1.txt</span><br><span class="line">helloworld</span><br><span class="line">$ git add 1.txt</span><br><span class="line"><span class="comment">#再次查看 .git 目录内容</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
+<p><img src="image/2022-05-30-23-08-01.png" /></p>
+<p>发现与之前相比多了两个文件：</p>
+<ul>
+<li>index 文件</li>
+<li>objects/31 目录以及目录下的文件 e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</li>
+</ul>
+<p>index 文件是暂存区，无法直接查看，objects/31 是新生成的对象，e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8 是以哈希为名的文件，使用 <code>git cat-file -p</code> 可以读取该文件的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -p 31e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>在工作区新建文件文件 2.txt 添加内容 ”1234“，并使用 <code>git add 2.txt</code>，再次查看 .git 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 2.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 2.txt</span><br><span class="line">$ git add 2.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
+<p><img src="image/16540518361014.jpg" /></p>
+<p>发现 object 目录下生成了一个新的对象 81，使用 <code>git cat-file -p 81c545efebe5f57d4cab2ba9ec294c4b0cadf672</code> 进行读取得到 1234。</p>
+<ol type="1">
+<li>修改 1.txt 文件的内容，修改为 “1234”，并使用 <code>git add 1.txt</code>，再次查看 .git/objects 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 1.txt</span><br><span class="line">$ git add 1.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
+<p><img src="image/16540524299481.jpg" /></p>
+<p>发现与之前没有任何该改变，故可知 objects 目录里的对象仅仅存储添加/修改的文件内容，与文件的名称无关。</p>
+<p>直接查看 index 文件的内容，发现是乱码，但可看到刚刚创建的文件名 1.txt 和 2.txt：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/index</span><br><span class="line">DIRCb���</span><br><span class="line">        ��b���</span><br><span class="line">              ��~3�����E����&#125;L�+��)LK</span><br><span class="line">                                     ��r1.txtb��P<span class="string">&quot;_�b��P&quot;</span>_�~3�����E����&#125;L�+��)LK</span><br><span class="line">                   ��r2.txt0�8��?D.JN��</span><br><span class="line"></span><br><span class="line">                                       u���</span><br></pre></td></tr></table></figure>
+<p>实际上 index 文件是虚拟的工作区，但仅仅是一个文件索引，包含了工作区的目录树，目录树上存储了各文件的文件名、文件的最终修改时间、文件的长度、文件的类型以及文件的哈希值。<br />
+文件的具体内容并未存储在 index，而是存储在 objects 目录之中。objects 目录中除了 info 和 pack 其他的目录名称都是两个字符构成，这是因为文件的哈希值有 40 位，取前两位作为目录，后 38 位作为目录下的文件名。<br />
+在 objects 目录下，存有四种类型的哈希值：blob 型、tree 型、commit 型和 parent 型。 * blob 型用来存储添加/修改文件的内容 * tree 型存储某个目录下的文件信息，包括文件名、文件权限、文件的哈希值 * commit 型存储提交的信息 * parent 型存储上一次提交产生的 commit</p>
+<p>到这里仍然觉得一头雾水，再做一个实验来深刻理解他们的运作过程：</p>
+<ol type="1">
+<li>在刚刚实验的基础上，使用 <code>git commit</code> 命令进行提交，并查看 objects 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="string">&#x27;1&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
+<p><img src="image/16540563672772.jpg" /></p>
+<p>与之前向比多了哪些内容呢？多了两个新的对象：95 和 da，读取这两条哈希值的类型和内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 953ee820</span><br><span class="line">commit <span class="comment">#commit 型</span></span><br><span class="line">$ git cat-file -t dadc6837</span><br><span class="line">tree <span class="comment">#tree 型</span></span><br><span class="line">$ git cat-file -p 953ee820 </span><br><span class="line"><span class="comment">#commit 型的内容</span></span><br><span class="line">tree dadc6837ad6c06f0a9f21eb90a385f88338a97fa</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line"></span><br><span class="line">1 </span><br><span class="line">$ git cat-file -p dadc6837</span><br><span class="line"><span class="comment">#tree 型的内容</span></span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt </span><br></pre></td></tr></table></figure>
+<p>可看出 95 对象为 commit 型的哈希值，da 对象为 tree 型的哈希值，commit 里面存储了提交的目录树、作者和提交者的身份信息以及提交的名称。tree 里面存储了提交文件的权限、提交文件的哈希值及其类型、提交的文件名。</p>
+<ol type="1">
+<li>创建一个新的文件 3.txt 添加内容 “1234”，并使用 <code>git add</code> 以及 <code>git commit</code> 提交：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 3.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 3.txt</span><br><span class="line">$ git add 3.txt</span><br><span class="line">$ git commit -m <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="image/16540575293261.jpg" /></p>
+<p>发现新增了 0b 和 93 两个新的对象，依然是读取他们的哈希类型和内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 0b8e2a12</span><br><span class="line">commit</span><br><span class="line">$ git cat-file -t 933c6a92</span><br><span class="line">tree</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">$ git cat-file -p 933c6a92</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    3.txt</span><br></pre></td></tr></table></figure>
+<p>发现这次的 commit 与上一次有所不同，即多了一个 parent 项，观察发现这一项是上一次提交产生的 commit。tree 里面存储了三个文件的信息。</p>
+<p>此时我们来查看一下 HEAD 的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/HEAD </span><br><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
+<p>出现一个文件的路径，查看 refs/heads/master 文件的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/refs/heads/master</span><br><span class="line">0b8e2a12653a0600b8d0f3bf34d2b32c5218b5d9</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>发现 master 文件中存储着一个哈希值，正是刚刚提交所生成的 commit。</p>
+<p><strong>总结</strong><br />
+index 是工作区的一个文件索引，存储着各文件各版本的信息，但是并没有存放文件的具体内容，当执行 <code>git add</code> 操作，文件的具体内容被存放在 objects 中的 blob 对象中，当执行 <code>git commit</code> 操作，index 将目录树存入 objects 并生成了 commit 对象，HEAD 指向最后一次提交的分支，master 中存放刚生成的 commit 对象，包含 tree 对象、作者的身份信息等。</p>
+<h1 id="git-常用命令">Git 常用命令</h1>
+<h2 id="创建和克隆-git-仓库">创建和克隆 Git 仓库</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init <span class="comment">#初始化仓库</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; <span class="comment">#克隆仓库到本地</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; &lt;directory&gt; <span class="comment">#克隆仓库到指定目录下</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置-git-1">配置 Git</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list <span class="comment">#列出 git 配置</span></span><br><span class="line">git config -e <span class="comment">#编辑 git 配置</span></span><br><span class="line">git config -e --global <span class="comment">#编辑全局 git 配置 </span></span><br></pre></td></tr></table></figure>
+<h2 id="提交和修改">提交和修改</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;file1&gt; &lt;file2&gt; ... <span class="comment">#添加一个或者多个文件到暂存区</span></span><br><span class="line">git add &lt;<span class="built_in">dir</span>&gt; <span class="comment">#添加指定目录到缓存区</span></span><br><span class="line"></span><br><span class="line">git status <span class="comment">#查看上次提交之后有无对文件进行再次的修改</span></span><br><span class="line"></span><br><span class="line">git diff &lt;file&gt; <span class="comment">#显示缓存区和工作区文件的差异</span></span><br><span class="line">git diff --cached &lt;file&gt; <span class="comment">#显示暂存区和上一次提交的差异</span></span><br><span class="line"></span><br><span class="line">git commit &lt;file1&gt; &lt;file2&gt; ... -m &lt;message&gt; <span class="comment">#提交暂存区的文件到仓库区</span></span><br><span class="line">git commit -a <span class="comment">#不需要 git add 直接提交</span></span><br><span class="line"></span><br><span class="line">git reset --mixed &lt;HEAD&gt; <span class="comment">#重置暂存区与上一次提交的保持一致</span></span><br><span class="line">git reset --soft &lt;HEAD&gt; <span class="comment">#退回到某个版本 </span></span><br><span class="line">git reset --hard &lt;HEAD&gt; <span class="comment">#撤销工作区所有未提交的修改内容，将暂存区和工作区都回到上一次的版本，并删除之前的所有信息提交</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> -f &lt;file&gt; <span class="comment">#删除暂存区和工作区的文件</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt; <span class="comment">#仅仅删除暂存区的文件，工作区的文件仍然保留</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">mv</span> &lt;file&gt; &lt;newfile&gt; <span class="comment">#移动或重命名一个文件、目录或软链接</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> <span class="comment">#查看历史提交记录</span></span><br><span class="line">git blame &lt;file&gt; <span class="comment">#以列表的形式查看指定文件的修改历史</span></span><br><span class="line"></span><br><span class="line">git remote <span class="comment">#操作远程仓库</span></span><br><span class="line">git fetch <span class="comment"># 从远程仓库取代码库</span></span><br><span class="line">git pull <span class="comment">#下载远程代码并合并</span></span><br><span class="line">git push <span class="comment">#上传远程代码并合并</span></span><br></pre></td></tr></table></figure>
+<h2 id="分支">分支</h2>
+<p>每一种版本控制系统都支持分支，一个分支代表一条独立的开发线，使用分支意味着可以从开发主线上分离开，然后在不影响主线的同时继续工作。<br />
+Git 的分支即意味着与 master 分支提交的内容独立，在 master 分支提交的内容不会影响其他分支，在其他分支提交的内容也不会影响 master。</p>
+<blockquote>
+<p>注意：在任何分支进行提交操作之前，工作区的修改内容在任何分支都可见，一旦有任何分支进行提交操作，则其他分支回到上次提交操作后的状态。</p>
+</blockquote>
+<p>基本使用方法：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch <span class="comment"># 列出分支</span></span><br><span class="line">git branch &lt;branchname&gt; <span class="comment">#创建分支</span></span><br><span class="line">git checkout &lt;branchname&gt; <span class="comment">#切换分支</span></span><br><span class="line">git merge &lt;branchname&gt; <span class="comment">#合并分支</span></span><br><span class="line">git branch -d  &lt;branchname&gt; <span class="comment">#删除分支</span></span><br></pre></td></tr></table></figure>
+<h1 id="github">GitHub</h1>
+<p>GitHub 是基于 Git 的代码托管和版本控制平台，可以在上面创建仓库或项目。<br />
+首先需要注册一个 GitHub 账号，然后在本地创建 SSH KEY：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+<p>公钥在 ~/.ssh/id_rsa.pub 中，进入 GitHub 进入 account settings 选择 SSH Keys，Add SSH Key，添加在电脑上生成的公钥。添加后使用下面的命令验证是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>会弹出警告，输入 yes 就行了。然后在本地配置 Git：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span>  </span><br></pre></td></tr></table></figure>
+<p>在 GitHub 新建一个仓库(repositry)，譬如 mycode，然后即可在本地进行远程仓库操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> mycode <span class="comment">#创建本地仓库</span></span><br><span class="line">$ <span class="built_in">cd</span> mycode</span><br><span class="line">$ git init</span><br><span class="line">$ <span class="built_in">touch</span> hello.md</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;this is mycode&quot;</span> &gt; hello.md</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;添加 hello.md&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后添加远程仓库的 SSH 地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github.com:yourName/yourRepo.git</span><br></pre></td></tr></table></figure>
+<p>其中 yourName 是 GitHub 的用户名 yourRepo 是要上传的 GitHub 仓库名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git push <span class="comment">#提交给远程仓库</span></span><br><span class="line">$ git pull <span class="comment">#从远程仓库获取代码并与本地的代码库合并</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的一点是，GitHub 的默认主分支的名称不再是 master 而是 main，故最好将 Git 的默认主分支名称也改为 main：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global init.defaultBranch main</span><br></pre></td></tr></table></figure>
+<p>其他操作并不影响，上述与 master 有关的所有内容都替换 main 即可。</p>
+<h1 id="参考文献">参考文献</h1>
+<p>[1] 菜鸟教程. Git 教程[EB/OL]. https://www.runoob.com/git/git-tutorial.html<br />
+[2] 菜鸟教程. Github 简明教程[EB/OL]. https://www.runoob.com/w3cnote/git-guide.html<br />
+[3] VGtime. Git基本原理介绍[EB/OL]. https://blog.csdn.net/JKR10000/article/details/110453547<br />
+[4] raoxiaoya. git深入理解(一)：暂存区(Stage)，索引(index)[EB/OL]. https://blog.csdn.net/raoxiaoya/article/details/110824019</p>
+]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 与 CSS</title>
     <url>/2022/05/16/HTML%20%E4%B8%8E%20CSS/</url>
     <content><![CDATA[<p>前端 HTML 与 CSS 的基础知识整理。<br />
@@ -185,7 +361,7 @@ username: <input type="text" name="username"><br /> password: <input type="passw
 <h1 id="css">CSS</h1>
 <h2 id="简介-1">简介</h2>
 <p>CSS(Cascading Style Sheets) 层叠样式表，用以定义 HTML 中元素的样式，HTML 使用 CSS 的方式有三种： 1. 内联样式：在 HTML 元素标签中使用 "style" 属性。</p>
-<pre><code><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue;font-family:consolas;&quot;</span>&gt;</span></span><br><span class="line">    inline</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue;font-family:consolas;&quot;</span>&gt;</span></span><br><span class="line">    inline</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol start="2" type="1">
 <li><p>内部样式表：在 HTML 文档 <code>&lt;header&gt;</code> 区域使用 <code>&lt;style&gt;</code> 包含 CSS。</p>
 <p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    CSS <span class="selector-tag">code</span></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p></li>
@@ -211,23 +387,23 @@ username: <input type="text" name="username"><br /> password: <input type="passw
 <blockquote>
 <p>repeat, repeats-x, repeat-y, no-repeat</p>
 </blockquote></li>
-<li><p>background-attachment：背景图像是否跟随页面滚动。</p></li>
+<li>background-attachment：背景图像是否跟随页面滚动。</li>
 <li><p>background-position：背景图像的位置。</p></li>
 </ul>
 <p><strong>text</strong></p>
 <ul>
-<li><p>color：文本颜色。</p></li>
-<li><p>direction：文本方向。</p></li>
-<li><p>letter-spacing：字符间隔。</p></li>
-<li><p>word-spacing：单词间隔。</p></li>
-<li><p>line-height：行高。</p></li>
+<li>color：文本颜色。</li>
+<li>direction：文本方向。</li>
+<li>letter-spacing：字符间隔。</li>
+<li>word-spacing：单词间隔。</li>
+<li>line-height：行高。</li>
 <li><p>text-align：对齐方式。</p>
 <blockquote>
 <p>left, right, center, justify, inherit</p>
 </blockquote></li>
-<li><p>text-indent：首行缩紧。</p></li>
-<li><p>text-shadow：文本阴影。</p></li>
-<li><p>text-decoration：文本画线修饰。</p></li>
+<li>text-indent：首行缩紧。</li>
+<li>text-shadow：文本阴影。</li>
+<li>text-decoration：文本画线修饰。</li>
 <li><p>white-space：空白元素的处理方式。</p>
 <blockquote>
 <p>默认 normal，即空白元素会被浏览器忽略。<br />
@@ -235,7 +411,7 @@ nowrap 文本不会换行，一直到 <code>&lt;br&gt;</code> 标签。<br />
 pre 保留空白，pre-wrap 保留空白，但是正常换行。<br />
 pre-line 合并空白元素，但是保留一个空格，正常换行。</p>
 </blockquote></li>
-<li><p>word-wrap：单词的换行方式，一般用 break-word。</p></li>
+<li>word-wrap：单词的换行方式，一般用 break-word。</li>
 <li><p>word-break：是否允许单词内断开，若用 break-all，则会在单词内部断开。</p></li>
 </ul>
 <p><strong>font</strong></p>
@@ -283,7 +459,7 @@ CSS 中表示字体大小有多种形式：
 <li>使用绝对大小和相对大小值。</li>
 </ol>
 </blockquote></li>
-<li><p>font-style：斜体样式。</p></li>
+<li>font-style：斜体样式。</li>
 <li><p>font-weight：字体粗细。</p></li>
 </ul>
 <p><strong>链接</strong></p>
@@ -389,28 +565,8 @@ CSS 中表示字体大小有多种形式：
         <category>Computer Science</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>Web 前端</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/02/28/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
@@ -480,31 +636,51 @@ Consolas
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/06/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo 博客搭建简单说明</title>
     <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
 步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
 <hr>
 <span id="more"></span>
-<p><strong>本文索引</strong></p>
+<p>*<strong>本文索引</strong></p>
 <ul>
 <li><a href="#hexo-博客搭建简单说明">Hexo 博客搭建简单说明</a>
 <ul>
-<li><a href="#配置-githexo">配置 git、hexo</a></li>
-<li><a href="#github-page-配置">Github Page 配置</a></li>
+<li><a href="#配置-githexo">配置 Git、hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
 <li><a href="#配置主题">配置主题</a></li>
 <li><a href="#发布博客">发布博客</a></li>
 </ul></li>
 </ul>
 <hr>
 <h1 id="hexo-博客搭建简单说明">Hexo 博客搭建简单说明</h1>
-<h2 id="配置-githexo">配置 git、hexo</h2>
+<h2 id="配置-githexo">配置 Git、hexo</h2>
 <ol type="1">
 <li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">git</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
 <li><p>命令行输入命令检验是否安装成功</p></li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
 <ol type="1">
 <li><p>安装 hexo<br />
 命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
@@ -522,57 +698,57 @@ Consolas
 启动服务器，输入 <code>hexo server</code><br />
 可在 http://localhost:4000/ 查看网站。</p></li>
 </ol>
-<h2 id="github-page-配置">Github Page 配置</h2>
+<h2 id="github-page-配置">GitHub Page 配置</h2>
 <ol type="1">
-<li><p>登录 <a href="https://github.com">Github</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单。</p></li>
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
 <li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
 </ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
 <ol start="4" type="1">
-<li><p>部署 github<br />
+<li><p>部署 GitHub<br />
 需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到Github Page<br />
+发布网站到GitHub Page<br />
 <code>hexo deploy</code></p></li>
 <li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
 </ol>
 <h2 id="配置主题">配置主题</h2>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 github 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
 <p><strong>获取主题</strong><br />
 theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。 要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
 <p><strong>tags 和 categories</strong><br />
 tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
 categories 与以上同理。</p>
 <p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about 。<br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
 根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
 <p><strong>修改头像，网站的图标、背景</strong></p>
 <ul>
 <li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
 <li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
 </ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">body</span> &#123;</span><br><span class="line">   <span class="string">background:url(/images/background.jpg);</span>        <span class="string">//图片路径，默认</span></span><br><span class="line">   <span class="attr">background-repeat:</span> <span class="literal">no</span><span class="string">-repeat;</span>            <span class="string">//图片无法铺满时，是否重复及重复方式</span></span><br><span class="line">   <span class="string">background-attachment:fixed;</span>        <span class="string">//图片是否跟随滚动</span></span><br><span class="line">   <span class="string">background-size:cover;</span>                <span class="string">//覆盖</span></span><br><span class="line">   <span class="string">background-position:center;</span>        <span class="string">//图片显示</span> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>启用search</strong><br />
 安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
 根目录/_config.yml 文件中加入：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
 <p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line"><span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line"><span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>插入图片</strong></p>
-<p><strong>边栏设置</strong></p>
-<p><strong>social link</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
 <h2 id="发布博客">发布博客</h2>
 <p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
 <p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
 编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>，由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -605,24 +781,27 @@ categories 与以上同理。</p>
 </ul></li>
 </ul>
 <hr>
+<blockquote>
+<p>本篇所有代码均由 C++ 实现。</p>
+</blockquote>
 <h1 id="数据结构-绪论">数据结构-绪论</h1>
 <h2 id="数据结构">数据结构</h2>
 <h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。<br />
-<strong>数据元素</strong>：组成数据的基本单位，如数组的一项。<br />
-数据对象：相同性质的数据元素的集合，是数据的子集合。<br />
-数据项：数据不可分割的最小单位。<br />
-<strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。<br />
-四者关系可以如此表示：<br />
-<img src="1.png"/></p>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
 <h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
 <p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。<br />
-<strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。<br />
-<strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。<br />
-<strong>图装结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
 数据元素是多对多关系。</p>
 <h3 id="数据运算">数据运算</h3>
 <p>数据的查找、插入和删除等操作。</p>
@@ -631,13 +810,15 @@ categories 与以上同理。</p>
 <blockquote>
 <p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
 </blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。<br />
-非顺序存储：链式存储、索引存储、散列存储。</p>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
 <h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。<br />
-如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。<br />
-换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。<br />
-拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+</blockquote>
 <h2 id="算法">算法</h2>
 <p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
 <p>算法的特性：有穷性、可行性、确定性。</p>
@@ -648,21 +829,26 @@ categories 与以上同理。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
 <p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。 <span class="math display">\[
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
 T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span> 故上述算法的时间复杂度为 T(n) = O(n).<br />
-常见算法的时间复杂度（从小到达排列）: <span class="math display">\[
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
 O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span> 算法的时间复杂度相加，只保留最高阶的项。 <span class="math display">\[
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
 T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \]</span></p>
 <h3 id="算法的空间复杂度">算法的空间复杂度</h3>
 <p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
 ]]></content>
       <categories>
@@ -861,7 +1047,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <blockquote>
 <p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
 </blockquote></li>
-<li><p>导数的几何意义为函数所表示的曲线上某一点的切线斜率。</p></li>
+<li>导数的几何意义为函数所表示的曲线上某一点的切线斜率。</li>
 <li><p>函数在某处可导，则必然在此处连续。<strong>反之未必</strong>。</p>
 <blockquote>
 <p><strong>证</strong><br />
