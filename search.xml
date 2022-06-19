@@ -177,6 +177,607 @@ Git 的分支即意味着与 master 分支提交的内容独立，在 master 分
       </tags>
   </entry>
   <entry>
+    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
+    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
+    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
+<ul>
+<li><a href="#颜色和大小">颜色和大小</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#字体">字体</a></li>
+<li><a href="#引用">引用</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
+<h2 id="颜色和大小">颜色和大小</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color=red size=6 >修改颜色和大小</font>
+<p style="color:blue; font-size:32px">
+修改颜色和大小
+</p>
+<h2 id="格式">格式</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
+<h2 id="字体">字体</h2>
+<p>常用的几款中、英文字体。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="font-family:Simsun;">
+宋体
+</p>
+<p style="font-family:STKaiti;">
+楷体
+</p>
+<p style="font-family:STHeiti;">
+黑体
+</p>
+<p style="font-family:Times New Roman;">
+Times New Roman
+</p>
+<p style="font-family:Arial;">
+Arial
+</p>
+<p style="font-family:Courier;">
+Courier
+</p>
+<p style="font-family:Consolas;">
+Consolas
+</p>
+<h2 id="引用">引用</h2>
+<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+第一层
+<blockquote>
+第二层
+</blockquote>
+第一层
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/06/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>PHP-A Fundamental Perspective</title>
+    <url>/2022/06/05/PHP/</url>
+    <content><![CDATA[<h1 id="摘要">摘要</h1>
+<p>PHP(Hypertext Preprocessor)超文本预处理器，一种开源的、常运行在服务器上的开源脚本语言，它跨平台、与几乎所有 Web 服务器兼容、与大量的数据库兼容。<br />
+PHP 文件可以包含 PHP 代码、HTML 和 JavaScript 代码，在服务端执行，与数据库进行交互后生成 HTML 文件通过 Web 服务器返回给浏览器。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#摘要">摘要</a></li>
+<li><a href="#基本形式">基本形式</a></li>
+<li><a href="#php-基础语法">PHP 基础语法</a>
+<ul>
+<li><a href="#常变量和数据类型">常变量和数据类型</a>
+<ul>
+<li><a href="#php-数据类型">PHP 数据类型</a></li>
+<li><a href="#php-常量">PHP 常量</a></li>
+<li><a href="#php-变量及全局变量">PHP 变量及全局变量</a></li>
+<li><a href="#php-字符串">PHP 字符串</a></li>
+<li><a href="#php-数组">PHP 数组</a></li>
+</ul></li>
+<li><a href="#语句">语句</a>
+<ul>
+<li><a href="#选择语句">选择语句</a></li>
+<li><a href="#循环语句">循环语句</a></li>
+</ul></li>
+<li><a href="#函数">函数</a></li>
+</ul></li>
+<li><a href="#php-进阶">PHP 进阶</a>
+<ul>
+<li><a href="#php-面向对象">PHP 面向对象</a></li>
+<li><a href="#php-http">PHP HTTP</a>
+<ul>
+<li><a href="#http">HTTP</a></li>
+</ul></li>
+<li><a href="#"></a>
+<ul>
+<li><a href="#get-和-post">GET 和 POST</a></li>
+<li><a href="#cookie-和-session">Cookie 和 Session</a></li>
+</ul></li>
+<li><a href="#php-操作数据库">PHP 操作数据库</a></li>
+<li><a href="#php-文件包含">PHP 文件包含</a></li>
+<li><a href="#php-文件读写">PHP 文件读写</a></li>
+<li><a href="#php-文件上传">PHP 文件上传</a></li>
+<li><a href="#php-命令执行">PHP 命令执行</a></li>
+<li><a href="#php-过滤器">PHP 过滤器</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="基本形式">基本形式</h1>
+<p>一个 PHP 文件通常包含 HTML 和 PHP 脚本，基本形式为：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    <span class="meta">&lt;?php</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">    <span class="meta">?&gt;</span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="php-基础语法">PHP 基础语法</h1>
+<h2 id="常变量和数据类型">常变量和数据类型</h2>
+<h3 id="php-数据类型">PHP 数据类型</h3>
+<p>与 C/C++、Java、C#、Go 这些强类型语言不同，PHP 是一种弱类型语言，PHP 有 8 种数据类型：</p>
+<ul>
+<li>Integer：整数型</li>
+<li>Float：浮点数型</li>
+<li>String：字符串型</li>
+<li>Boolean：布尔型</li>
+<li>Array：数组</li>
+<li>Object：对象</li>
+<li>Null：空</li>
+<li>Resource：资源型</li>
+</ul>
+<p>各种变量的定义方式：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*整型*/</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*浮点型*/</span></span><br><span class="line">    <span class="variable">$b1</span> = <span class="number">1.1</span>;</span><br><span class="line">    <span class="variable">$b2</span> = <span class="number">9.9e-10</span>;</span><br><span class="line">    <span class="variable">$b3</span> = <span class="number">5E-10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*字符串*/</span></span><br><span class="line">    <span class="variable">$c</span> = <span class="string">&quot;PHP&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*bool 型*/</span></span><br><span class="line">    <span class="variable">$d1</span> = <span class="literal">TRUE</span>;</span><br><span class="line">    <span class="variable">$d2</span> = <span class="literal">FALSE</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*数组*/</span></span><br><span class="line">    <span class="variable">$e</span> = <span class="keyword">array</span>(<span class="string">&quot;I&quot;</span>, <span class="string">&quot;LOVE&quot;</span>, <span class="string">&quot;YOU&quot;</span>); </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*类与对象*/</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">F</span> </span>&#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$f</span> = <span class="keyword">new</span> F;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*Null*/</span></span><br><span class="line">    <span class="variable">$g</span> = <span class="literal">null</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*resource 型*/</span></span><br><span class="line">    <span class="variable">$h1</span> = <span class="title function_ invoke__">mysqli_connect</span>(...);</span><br><span class="line">    <span class="variable">$h2</span> = <span class="title function_ invoke__">fopen</span>(...);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由于 PHP 是弱类型语言，故 PHP 有两种比较方式：</p>
+<ul>
+<li>松散比较：使用两个等号 <code>==</code> 进行比较，只比较值，不比较数据类型。</li>
+<li>严格比较：使用三个等号 <code>===</code> 进行比较，既比较值，又比较数据类型。</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">TRUE</span> == <span class="string">&quot;TRUE&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;相等1&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="literal">TRUE</span> === <span class="string">&quot;TRUE&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;相等2&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将输出 相等1</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="php-常量">PHP 常量</h3>
+<p>PHP 常量的定义需要使用 <code>define()</code> 函数，函数用法为：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">bool</span> <span class="title function_ invoke__">define</span>(<span class="keyword">string</span> <span class="variable">$name</span>, <span class="keyword">mixed</span> <span class="variable">$value</span> [, <span class="keyword">bool</span> <span class="variable">$case_insensitive</span> = <span class="literal">false</span>])</span><br><span class="line">    <span class="comment">/*$name 为常量名，$value 为常量值，$case_insensitive 表示常量名是否大小写不敏感*/</span></span><br><span class="line"></span><br><span class="line">    <span class="title function_ invoke__">define</span>(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;123&quot;</span>, <span class="literal">TRUE</span>);</span><br><span class="line">    <span class="keyword">echo</span> a;</span><br><span class="line">    <span class="keyword">echo</span> A; </span><br><span class="line">    <span class="comment">/*将输出两次 123</span></span><br><span class="line"><span class="comment">     *若没有设置为大小写不敏感，则 echo a 将报错</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="php-变量及全局变量">PHP 变量及全局变量</h3>
+<p>PHP 一个变量需要在变量名前加上符号 <code>$</code>，变量名是区分大小写的，例如：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$x</span> = <span class="number">7</span>;</span><br><span class="line">    <span class="variable">$y</span> = <span class="number">7.7</span>;</span><br><span class="line">    <span class="variable">$zz</span> = <span class="string">&quot;Hello PHP!&quot;</span>;</span><br><span class="line">    <span class="variable">$ZZ</span> = <span class="string">&quot;Hi PHP!&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>PHP 在局部使用全局变量：</p>
+<ol type="1">
+<li><p>使用 global 关键字声明全局变量，如：</p>
+<p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="number">5</span>;</span><br><span class="line">    <span class="variable">$b</span> = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Maxab</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">global</span> <span class="variable">$a</span>, <span class="variable">$b</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$a</span> &gt;= <span class="variable">$b</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$a</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$b</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>使用 <code>$GLOBALS</code> 超级全局变量数组直接调用变量，如：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="number">5</span>;</span><br><span class="line">    <span class="variable">$b</span> = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Maxab</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$GLOBALS</span>[<span class="string">&quot;a&quot;</span>] &gt;= <span class="variable">$GLOBALS</span>[<span class="string">&quot;b&quot;</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$GLOBALS</span>[<span class="string">&quot;a&quot;</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$GLOBALS</span>[<span class="string">&quot;b&quot;</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>$GLOBALS</code> 是包含了全部变量的数组，除了 <code>$GLOBALS</code> 之外，PHP 还有几个超级全局变量：</p>
+<ol type="1">
+<li><code>$_SERVER</code>：存储服务器信息和执行环境。</li>
+<li><code>$_REQUEST</code>：收集 HTML 表单提交的数据，包括 get 和 post 方式提交的数据以及 cookie。</li>
+<li><code>$_POST</code>：收集 HTML 表单使用 post 方式提交的数据。</li>
+<li><code>$_GET</code>：收集 HTML 表单使用 get 方式提交的数据，或 URL 提交的数据。</li>
+<li><code>$_FILES</code>：存储上传文件的信息。</li>
+<li><code>$_ENV</code>：存储服务器的环境变量。</li>
+<li><code>$_COOKIE</code>：存储 cookie 信息。</li>
+<li><code>$_SESSION</code>：存储 session 信息。</li>
+</ol>
+<h3 id="php-字符串">PHP 字符串</h3>
+<p>PHP 中需掌握三种字符串操作：</p>
+<ol type="1">
+<li><p>并置运算符 <code>.</code> 用于连接两个字符串，如：</p>
+<p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$str1</span> = <span class="string">&quot;Hel&quot;</span>;</span><br><span class="line">    <span class="variable">$str2</span> = <span class="string">&quot;leo&quot;</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$str1</span> . <span class="variable">$str2</span>; <span class="comment">//将输出 Hello</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><code>strlen()</code> 函数，同 C 语言，返回字符串的长度。</li>
+<li><p><code>strpos()</code> 函数，在字符串内查找一段文本，若查找到会返回该文本第一次出现的位置，若未查找到则返回 <code>FALSE</code>，如： <figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">strpos</span>(<span class="string">&quot;Hello Hello&quot;</span>, <span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<p>字符串既可以用单引号也可以用双引号，二者的主要区别： 1. 双引号可以解释变量，单引号不解释变量。 2. 单引号的解析速度更快。</p>
+<h3 id="php-数组">PHP 数组</h3>
+<p>PHP 中数组类型：</p>
+<ol type="1">
+<li>数值数组：带有数字键值的数组，键值为从 0 开始的数字。</li>
+<li>关联数组：自定义键值的数组。</li>
+<li>多维数组：多维度的数组。</li>
+</ol>
+<p>定义方式如下：</p>
+<p><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line">     <span class="comment">/*数值数组*/</span></span><br><span class="line">     <span class="variable">$a</span> = <span class="keyword">array</span>(<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">     <span class="keyword">echo</span> a[<span class="number">0</span>];</span><br><span class="line">     <span class="keyword">echo</span> a[<span class="number">1</span>];</span><br><span class="line">     <span class="keyword">echo</span> a[<span class="number">2</span>];</span><br><span class="line">     <span class="keyword">foreach</span> (<span class="variable">$a</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123;</span><br><span class="line">         <span class="keyword">echo</span> <span class="variable">$value</span>;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*关联数组*/</span></span><br><span class="line">    <span class="variable">$b</span> = <span class="keyword">array</span>(<span class="string">&quot;a&quot;</span> =&gt; <span class="string">&quot;1&quot;</span>, <span class="string">&quot;b&quot;</span> =&gt; <span class="string">&quot;2&quot;</span>, <span class="string">&quot;c&quot;</span> =&gt; <span class="string">&quot;3&quot;</span>);</span><br><span class="line">    <span class="keyword">echo</span> b[<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">    <span class="keyword">echo</span> b[<span class="string">&#x27;b&#x27;</span>];</span><br><span class="line">    <span class="keyword">echo</span> b[<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$b</span> <span class="keyword">as</span> <span class="variable">$x</span> =&gt; <span class="variable">$x_value</span>) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$x</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$x_value</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*多维数组*/</span></span><br><span class="line">    <span class="variable">$c</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&quot;c1&quot;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="keyword">array</span>(<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>),</span><br><span class="line">            <span class="keyword">array</span>(<span class="string">&quot;4&quot;</span>, <span class="string">&quot;5&quot;</span>, <span class="string">&quot;6&quot;</span>)</span><br><span class="line">        ),</span><br><span class="line">        <span class="string">&quot;c2&quot;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="keyword">array</span>(<span class="string">&quot;7&quot;</span>, <span class="string">&quot;8&quot;</span>, <span class="string">&quot;9&quot;</span>),</span><br><span class="line">            <span class="keyword">array</span>(<span class="string">&quot;10&quot;</span>, <span class="string">&quot;11&quot;</span>, <span class="string">&quot;12&quot;</span>)</span><br><span class="line">        )</span><br><span class="line">    )</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>常用函数：</p>
+<ul>
+<li><code>count()</code>：可以返回数组的长度。</li>
+<li><code>sort()</code>：进行升序排序。</li>
+<li><code>rsort()</code>：进行降序排序。</li>
+<li><code>asort()</code>：根据关联值进行升序排序。</li>
+<li><code>ksort()</code>：根据关联键值进行升序排序。</li>
+<li><code>arsort()</code>：根据关联值进行降序排序。</li>
+<li><code>krsort()</code>：根据关联键值进行降序排序。</li>
+</ul>
+<h2 id="语句">语句</h2>
+<h3 id="选择语句">选择语句</h3>
+<p>PHP 中的选择语句与 C 语言完全相同，使用 <code>if-else</code> 语句或 <code>switch-case</code> 语句。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*if-else 语句*/</span></span><br><span class="line">    <span class="keyword">if</span> (condition1) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            执行体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (condition2) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            执行体    </span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            执行体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*switch-case 语句*/</span></span><br><span class="line">    <span class="keyword">switch</span> (...) &#123;</span><br><span class="line">        <span class="keyword">case</span> ... : &#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                执行体</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> ... : &#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                执行体</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/* </span></span><br><span class="line"><span class="comment">         ...... </span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>: &#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">                执行体</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="循环语句">循环语句</h3>
+<p>PHP 中的循环语句在 C 语言提供的 <code>while</code>、<code>do while</code>、<code>for</code> 的基础上又提供了一种 <code>foreach</code>。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*while 循环*/</span></span><br><span class="line">    <span class="keyword">while</span> (condition) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            循环体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*do while 循环*/</span></span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            循环体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (condition)</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*for 循环*/</span></span><br><span class="line">    <span class="keyword">for</span> (initializing; condition; addition) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            循环体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*foreach 循环用于遍历数组*/</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="keyword">array</span> (<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$a</span> <span class="keyword">as</span> <span class="variable">$value</span>) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$value</span>;</span><br><span class="line">    &#125; <span class="comment">//将输出 123</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数">函数</h2>
+<p>PHP 内建了大量的函数，功能强大，在下文会列举几个关键函数。<br />
+PHP 是脚本语言，直接由 PHP 解释器解释执行，不需要进行编译，故函数可以在代码中的任意位置定义，不需要在调用前进行声明，函数的定义方法：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">function_name</span>(<span class="params">parameter_list</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            函数主体</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">return</span> ... ; <span class="comment">//返回值    </span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="php-进阶">PHP 进阶</h1>
+<h2 id="php-面向对象">PHP 面向对象</h2>
+<p>PHP 面向对象的使用方法与 C++ 类似：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">php_class</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*成员变量*/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$var1</span>;</span><br><span class="line">    <span class="comment">//var $var1;</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$var2</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$var3</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*构造函数*/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$par1</span>, <span class="variable">$par2</span></span>) </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;var1 = <span class="variable">$par1</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;var2 = <span class="variable">$par2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*析构函数*/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;销毁对象&quot;</span> . this-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*成员函数*/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"><span class="variable">$par</span></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable">$par</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*声明对象*/</span></span><br><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">php_class</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*调用成员函数*/</span></span><br><span class="line"><span class="variable">$obj</span> -&gt; <span class="title function_ invoke__">fun</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*继承*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">child_class</span> <span class="keyword">extends</span> <span class="title">php_class</span> </span>&#123;</span><br><span class="line">    <span class="comment">/* 代码 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*接口*/</span></span><br><span class="line"><span class="comment">//声明接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">parameter_list</span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">a</span> <span class="keyword">implements</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">parameter_list</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*function code*/</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*抽象类*/</span></span><br><span class="line"><span class="comment">//定义抽象类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params">parameter_list</span>)</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">b</span> <span class="keyword">extends</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params">parameter_list</span>) </span>&#123;</span><br><span class="line">        <span class="comment">/*function code*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="php-http">PHP HTTP</h2>
+<h3 id="http">HTTP</h3>
+<p>使用 <code>header()</code> 函数向浏览器发送 HTTP 报头，函数原型为：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="keyword">string</span>, replace, http_response_code)</span><br><span class="line">    <span class="comment">/*string 表示要发送的报头字符串</span></span><br><span class="line"><span class="comment">     *replace 表示是否代替原来的报头，默认 TRUE</span></span><br><span class="line"><span class="comment">     *http_response_code 可选，表示把 HTTP 响应强制为指定的值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="section"></h2>
+<p>例如想要在新的页面定向到某个 URL：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">header</span>(<span class="string">&quot;Location: https://cohanbb.github.io/&quot;</span>, <span class="literal">FALSE</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="get-和-post">GET 和 POST</h3>
+<p><code>$_GET[]</code> 和 <code>$_POST[]</code> 两个数组分别用来收集 HTML 使用 get 和 post 方式提交的数据。</p>
+<p>例如想要收集 get 方式提交的数据 DEMO:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">//demo.php</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;form action=<span class="string">&quot;demo.php&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;DEMO&quot;</span>/&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;submit&quot;</span> name=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;submit&quot;</span>/&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$demo</span> = <span class="variable">$_GET</span>[<span class="string">&quot;DEMO&quot;</span>];</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$demo</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="cookie-和-session">Cookie 和 Session</h3>
+<p>何谓 Cookie？</p>
+<blockquote>
+<p>cookie 常用于识别用户，cookie 是一种服务器留在用户计算机上的小文件。每当同一台计算机通过浏览器请求页面时，这台计算机将会发送 cookie。</p>
+</blockquote>
+<p>PHP 使用 <code>setcookie()</code> 函数设置 cookie：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*函数原型*/</span></span><br><span class="line">    <span class="title function_ invoke__">setcookie</span>(name, value, expire, path, domain);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*设置 cookie 并于 3600 秒后过期*/</span></span><br><span class="line">    <span class="title function_ invoke__">setcookie</span>(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;Cohanbb&quot;</span>, <span class="title function_ invoke__">time</span>() + <span class="number">3600</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>$_COOKIE_</code> 存储设置的 cookie 值：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$_COOKIE</span>[<span class="string">&quot;user&quot;</span>];</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>删除 cookie：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*将时间设为过去的时间即可删除 cookie*/</span></span><br><span class="line">    <span class="title function_ invoke__">setcookie</span>(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="title function_ invoke__">time</span>() - <span class="number">1</span>); </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>何谓 Session？</p>
+<blockquote>
+<p>在计算机上操作某个应用程序时，打开它、做些更改、关闭它，这很像一次对话。你所操作的计算机知道你是谁，它清楚你在何时打开和关闭应用程序。然而由于 HTTP 地址无法保持状态，Web 服务器并不知道你是谁以及你做了什么。<br />
+session 解决了这个问题，它通过在服务器上存储用户信息以便随后使用（比如用户名称、购买商品等）。会话信息是临时的，在用户离开网站后将被删除。如果需要永久存储信息，可以把数据存储在数据库中。<br />
+session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并基于这个 UID 来存储变量。UID 存储在 cookie 中，或者通过 URL 进行传导。</p>
+</blockquote>
+<p>PHP 操作 session：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="title function_ invoke__">session_start</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*设置 session*/</span></span><br><span class="line">    <span class="variable">$_SESSION</span>[<span class="string">&quot;name&quot;</span>] = <span class="string">&quot;Cohanbb&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*获取 session*/</span></span><br><span class="line">    <span class="variable">$name</span> = <span class="variable">$_SESSION</span>[<span class="string">&quot;name&quot;</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*清空 session*/</span></span><br><span class="line">    <span class="title function_ invoke__">session_unset</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*销毁 session*/</span></span><br><span class="line">    <span class="title function_ invoke__">session_destroy</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="php-操作数据库">PHP 操作数据库</h2>
+<p>PHP 通过 <code>MySQLi</code> 或 <code>PDO</code> 连接和操作数据库，<code>PDO</code> 可以应用在12种不同的数据库，<code>MySQLi</code> 只能应用在 MySQL 数据库。 在此仅演示 <code>MySQLi</code>。 <code>MySQLi</code> 可以面向过程也可以面向对象，写法上有一些差异。</p>
+<p><strong>连接数据库</strong><br />
+使用 <code>mysqli_connect()</code> 函数连接数据库，或面向对象：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*面向过程*/</span></span><br><span class="line">    <span class="variable">$conn</span> = <span class="title function_ invoke__">mysqli_connect</span>(<span class="string">&quot;localhost&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (!<span class="variable">$conn</span>) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;数据库连接失败：&quot;</span> . <span class="title function_ invoke__">mysqli_connect_error</span>()));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;数据库连接成功&quot;</span>;</span><br><span class="line">    <span class="title function_ invoke__">mysqli_close</span>(<span class="variable">$conn</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*面向对象*/</span></span><br><span class="line">    <span class="variable">$conn</span> = <span class="keyword">new</span> <span class="title class_">mysqli</span>(<span class="string">&quot;localhost&quot;</span>, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$conn</span>-&gt;connect_error) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;数据库连接失败：&quot;</span> . <span class="variable">$conn</span>-&gt;connect_error);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;数据库连接成功&quot;</span>;</span><br><span class="line">    <span class="variable">$conn</span>-&gt;<span class="title function_ invoke__">close</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>使用 SQL 语句</strong><br />
+使用 <code>mysqli_query()</code> 函数连接 SQL 语句，或面向对象：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*面向过程*/</span></span><br><span class="line">    <span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM users&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$conn</span>, <span class="variable">$sql</span>)) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;查询失败&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*面向对象*/</span></span><br><span class="line">    <span class="variable">$sql</span> = <span class="string">&quot;SELECT * FROM users&quot;</span>;</span><br><span class="line">    <span class="keyword">if</span> (!(<span class="variable">$conn</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$sql</span>))) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">&quot;查询失败&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>其他常用函数</strong></p>
+<ul>
+<li>使用 <code>mysqli_error()</code> 函数返回最近调用函数的最后一个错误的描述。</li>
+<li>使用 <code>mysqli_errno()</code> 函数返回最近调用函数的最后一个错误代码。</li>
+<li>使用 <code>mysqli_affected_rows()</code> 函数返回上一个 SQL 语句影响的行。<br />
+</li>
+<li>使用 <code>mysqli_real_escape_string()</code> 函数转义 SQL 语句中的特殊字符，可用于防注入。<br />
+</li>
+<li><p>使用 <code>mysqli_fetch_xxx()</code> 函数从查询结构中返回一些数据：</p>
+<ul>
+<li><code>mysqli_fetch_all()</code> 从结果集中取得所有行作为关联/数值数组<br />
+</li>
+<li><code>mysqli_fetch_array()</code> 从结果集中取得一行作为关联/数值数组<br />
+</li>
+<li><code>mysqli_fetch_assoc()</code> 从结果中取得一行作为关联数组<br />
+</li>
+<li><code>mysqli_fetch_object()</code> 从结果中取得一行作为对象</li>
+</ul></li>
+</ul>
+<h2 id="php-文件包含">PHP 文件包含</h2>
+<p>PHP 有四种文件包含方式：</p>
+<ul>
+<li><code>include</code></li>
+<li><code>include_once</code></li>
+<li><code>require</code></li>
+<li><code>require_once</code></li>
+</ul>
+<p>其中 <code>include</code> 和 <code>require</code> 的区别是，二者处理错误的方式不同，前者生成一个警告，出错后脚本继续执行，后者生成一个致命错误，脚本停止执行。<br />
+后面带上 <code>_once</code> 的作用是如果之前已经包含了该文件，则不会再次包含，即防止多次包含同一个文件。<br />
+常用文件包含语句：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*普通方式包含*/</span></span><br><span class="line">    <span class="keyword">include</span> <span class="string">&quot;file.php&quot;</span>;</span><br><span class="line">    <span class="keyword">require</span> <span class="string">&quot;file.php&quot;</span>;</span><br><span class="line">    <span class="keyword">include_once</span> <span class="string">&quot;file.php&quot;</span>;</span><br><span class="line">    <span class="keyword">require_once</span> <span class="string">&quot;file.php&quot;</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">/*get 方式传参包含*/</span></span><br><span class="line">    <span class="variable">$file</span> = <span class="variable">$_GET</span>[<span class="string">&quot;FILE&quot;</span>];</span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$file</span>);</span><br><span class="line">    <span class="keyword">require</span>(<span class="variable">$file</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="php-文件读写">PHP 文件读写</h2>
+<p>PHP 中使用 <code>fopen()</code> 函数打开文件，<code>fwrite()</code> 函数写入文件，<code>fclose()</code> 函数关闭文件，用法如下：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$file</span> = <span class="title function_ invoke__">fopen</span>(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;r&quot;</span>); <span class="comment">//以只读方式打开 test.txt 文件</span></span><br><span class="line">    <span class="variable">$str</span> = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">    <span class="title function_ invoke__">fwrite</span>(<span class="variable">$file</span>, <span class="string">&quot;str&quot;</span>);</span><br><span class="line">    <span class="title function_ invoke__">fclose</span>(<span class="variable">$file</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>fopen()</code> 函数第二个参数表示打开文件的模式：</p>
+<table>
+<thead>
+<tr class="header">
+<th>Patterns</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>r</td>
+<td>只读，从文件开头开始。</td>
+</tr>
+<tr class="even">
+<td>r+</td>
+<td>读写，从文件开头开始。</td>
+</tr>
+<tr class="odd">
+<td>w</td>
+<td>只写，且清空文件内容，若文件不存在则新建。</td>
+</tr>
+<tr class="even">
+<td>w+</td>
+<td>读写，且清空文件内容，若文件不存在则新建。</td>
+</tr>
+<tr class="odd">
+<td>a</td>
+<td>只写，从文件末尾进行追加，若文件不存在则新建。</td>
+</tr>
+<tr class="even">
+<td>a+</td>
+<td>读写，从文件末尾进行追加，若文件不存在则新建。</td>
+</tr>
+<tr class="odd">
+<td>x</td>
+<td>只写，创建一个新文件，若文件已存在则返回 FALSE 并报错。</td>
+</tr>
+<tr class="even">
+<td>x+</td>
+<td>读写，创建一个新文件，若文件已存在则返回 FALSE 并报错。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="php-文件上传">PHP 文件上传</h2>
+<p>PHP 使用 <code>$_FILES</code> 超级全局变量进行文件上传，<code>$_FILES</code> 是一个二维数组，结构如下：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$_FILES</span> = <span class="keyword">array</span>(</span><br><span class="line">    <span class="comment">/*假设 filename 为 HTML 表单中 &lt;input &quot;name&quot; /&gt; 的值*/</span></span><br><span class="line">    <span class="string">&quot;filename&quot;</span> =&gt; <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&quot;name&quot;</span> =&gt; 被上传的文件名称</span><br><span class="line">        <span class="string">&quot;type&quot;</span> =&gt; 被上传的文件类型</span><br><span class="line">        <span class="string">&quot;tmp_name&quot;</span> =&gt; 被上传的文件在服务器中暂时的路径和名称</span><br><span class="line">        <span class="string">&quot;error&quot;</span> =&gt; 上传过程有无错误</span><br><span class="line">        <span class="string">&quot;size&quot;</span> =&gt; 被上传文件的大小</span><br><span class="line">        )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在此我给出一个简单的文件上传程序：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;upload.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span>&gt;</span>请上传文件：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;filename&quot;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">name</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;确认上传&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">upload.php</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">/*限制上传文件的类型和大小*/</span></span><br><span class="line">    <span class="keyword">if</span> (((<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;type&quot;</span>] == <span class="string">&quot;image/gif&quot;</span>) </span><br><span class="line">      || (<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;type&quot;</span>] == <span class="string">&quot;image/jpeg&quot;</span>) </span><br><span class="line">      || (<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;type&quot;</span>] ==<span class="string">&quot;image/pjpeg&quot;</span>)) </span><br><span class="line">      &amp;&amp; (<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;size&quot;</span>] &lt; <span class="number">20000</span>)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;error&quot;</span>]) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;错误：&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;error&quot;</span>] . <span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">/*输出上传的文件信息*/</span></span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;文件名：&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;name&quot;</span>] . <span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;文件类型：&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;type&quot;</span>] . <span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;文件大小&quot;</span> . (<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;size&quot;</span>] / <span class="number">1024</span>) . <span class="string">&quot;Kb&lt;br /&gt;&quot;</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;文件副本：&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;tmp_name&quot;</span>] . <span class="string">&quot;&lt;br /&gt;&quot;</span>;</span><br><span class="line">            <span class="comment">/*将文件存储在服务器*/</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="title function_ invoke__">file_exists</span>(<span class="string">&quot;upload/&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;name&quot;</span>])) &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;name&quot;</span>] . <span class="string">&quot;已经存在&quot;</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="title function_ invoke__">move_uploaded_file</span>(<span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;tmp_name&quot;</span>], <span class="string">&quot;upload/&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;name&quot;</span>]);</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&quot;文件存储在&quot;</span> . <span class="string">&quot;upload/&quot;</span> . <span class="variable">$_FILES</span>[<span class="string">&quot;filename&quot;</span>][<span class="string">&quot;name&quot;</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;无法上传该文件&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="php-命令执行">PHP 命令执行</h2>
+<p>PHP 调用系统命令函数：</p>
+<ul>
+<li><code>system()</code>：执行系统命令，输出执行结果。</li>
+<li><code>passthru()</code>：与 <code>system()</code>函数相似。</li>
+<li><code>exec()</code>：执行系统命令，无回显，返回最后一行结果。</li>
+<li><code>shell_exec()</code>：执行系统命令，返回完整的输出结果。</li>
+<li><code>popen(command, mode)</code>：command 为执行的命令，mode 规定连接模式，可以是 r（只读）、w（只写）等。</li>
+<li><code>proc_open()</code>：不直接返回执行结果，返回一个文件指针。</li>
+<li><code>pcntl_exec()</code>：执行发生错误返回 FALSE，无错误不返回。</li>
+</ul>
+<p>命令执行的例子：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$ip</span> = <span class="variable">$_GET</span>[<span class="string">&quot;ip&quot;</span>];</span><br><span class="line">    <span class="variable">$command</span> = <span class="string">&quot;ping -c 3 <span class="subst">$ip</span>&quot;</span>;</span><br><span class="line">    <span class="title function_ invoke__">system</span>(<span class="string">&quot;<span class="subst">$command</span>&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="php-过滤器">PHP 过滤器</h2>
+<p>以网络安全为目的，常在 PHP 程序中使用 <code>Filter</code> 函数对外部数据进行过滤，外部数据指表单提交的数据、cookie、Web 服务器信息、数据库查询结果等。<br />
+常用的过滤函数：</p>
+<ul>
+<li><code>filter_var()</code>：对单一的变量使用指定过滤器过滤。</li>
+<li><code>filter_var_array()</code>：对多个变量使用多个过滤器过滤。</li>
+<li><code>filter_input()</code>：获取一个表单输入的内容，并指定过滤器进行过滤。</li>
+<li><code>filter_input_array()</code>：获取多个表单输入的内容，并通过多个过滤器进行过滤。</li>
+</ul>
+<p>下面的例子使用 <code>filter_var()</code> 进行过滤：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$int</span> = <span class="number">777</span>;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="title function_ invoke__">filter_var</span>(<span class="variable">$int</span>, FILTER_VALIDATE_INT)) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;不是合法的整数&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;是合法整数&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+<hr>
+<span id="more"></span>
+<p>*<strong>本文索引</strong></p>
+<ul>
+<li><a href="#hexo-博客搭建简单说明">Hexo 博客搭建简单说明</a>
+<ul>
+<li><a href="#配置-githexo">配置 Git、hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="hexo-博客搭建简单说明">Hexo 博客搭建简单说明</h1>
+<h2 id="配置-githexo">配置 Git、hexo</h2>
+<ol type="1">
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h2 id="github-page-配置">GitHub Page 配置</h2>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 GitHub<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到GitHub Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h2 id="配置主题">配置主题</h2>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
+<h2 id="发布博客">发布博客</h2>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>，由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_线性表，栈、队列和数组</title>
+    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
+内容包括：<br />
+1. 线性表的概念和代码实现<br />
+2. 栈、队列的概念和代码实现<br />
+3. 特殊矩阵的压缩</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</a>
+<ul>
+<li><a href="#线性表">线性表</a>
+<ul>
+<li><a href="#顺序表">顺序表</a>
+<ul>
+<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
+<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
+</ul></li>
+<li><a href="#链表">链表</a>
+<ul>
+<li><a href="#单链表">单链表</a></li>
+<li><a href="#静态链表">静态链表</a></li>
+<li><a href="#双向链表">双向链表</a></li>
+<li><a href="#循环链表">循环链表</a></li>
+</ul></li>
+<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
+</ul></li>
+<li><a href="#栈队列和数组">栈、队列和数组</a>
+<ul>
+<li><a href="#栈">栈</a>
+<ul>
+<li><a href="#顺序栈">顺序栈</a></li>
+<li><a href="#链式栈">链式栈</a></li>
+</ul></li>
+<li><a href="#队列">队列</a>
+<ul>
+<li><a href="#顺序队列">顺序队列</a></li>
+<li><a href="#链式队列">链式队列</a></li>
+</ul></li>
+<li><a href="#栈和队列的应用">栈和队列的应用</a></li>
+<li><a href="#特殊矩阵压缩">特殊矩阵压缩</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</h1>
+<h2 id="线性表">线性表</h2>
+<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。<br />
+线性表的基本操作：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">InitList</span>(&amp;L); <span class="comment">//初始化</span></span><br><span class="line"><span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line"><span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line"><span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line"><span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line"><span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line"><span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line"><span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line"><span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
+<h3 id="顺序表">顺序表</h3>
+<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
+<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
+<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
+<p>插入（在表 L 的第 i 个位置插入 e）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L.length; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表">链表</h3>
+<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
+<h4 id="单链表">单链表</h4>
+<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
+单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的整表创建和销毁</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态链表">静态链表</h4>
+<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义静态链表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
+<h4 id="双向链表">双向链表</h4>
+<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（*p 后插入 *s）</span></span><br><span class="line">&#123;</span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = s;</span><br><span class="line">    s -&gt; prior = p;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除（删除 *p 后的 *q）</span></span><br><span class="line">&#123;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="循环链表">循环链表</h4>
+<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r -&gt; next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L -&gt; prior = r</code>.</p>
+<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
+<ol type="1">
+<li>顺序表随机存取/读写，链表只能顺序存取/读写。<br />
+</li>
+<li>顺序表逻辑相邻的元素存储位置也相邻。<br />
+</li>
+<li>链表分配内存空间灵活高效。<br />
+</li>
+<li>链表的插入和删除更高效。<br />
+</li>
+<li>顺序表插入和删除需要移动大量的元素。</li>
+</ol>
+<h2 id="栈队列和数组">栈、队列和数组</h2>
+<p>栈和队列都是特殊的线性表，对数据的插入删除操作有特殊的规定，导致数据的进出策略不同。</p>
+<h3 id="栈">栈</h3>
+<p><strong>栈(Stack)</strong>是只允许在一端进行插入或删除操作的线性表。<br />
+允许插入或删除的一端称为<strong>栈顶(Top)</strong>，另一端称为<strong>栈底(Bottom)</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出(last in first out, LIFO)</strong>。</p>
+<blockquote>
+<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
+</blockquote>
+<h4 id="顺序栈">顺序栈</h4>
+<h4 id="链式栈">链式栈</h4>
+<h3 id="队列">队列</h3>
+<h4 id="顺序队列">顺序队列</h4>
+<h4 id="链式队列">链式队列</h4>
+<h3 id="栈和队列的应用">栈和队列的应用</h3>
+<h3 id="特殊矩阵压缩">特殊矩阵压缩</h3>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>HTML 与 CSS</title>
     <url>/2022/05/16/HTML%20%E4%B8%8E%20CSS/</url>
     <content><![CDATA[<p>前端 HTML 与 CSS 的基础知识整理。<br />
@@ -569,416 +1170,6 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
-    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
-    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
-    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
-<ul>
-<li><a href="#颜色和大小">颜色和大小</a></li>
-<li><a href="#格式">格式</a></li>
-<li><a href="#字体">字体</a></li>
-<li><a href="#引用">引用</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
-<h2 id="颜色和大小">颜色和大小</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color=red size=6 >修改颜色和大小</font>
-<p style="color:blue; font-size:32px">
-修改颜色和大小
-</p>
-<h2 id="格式">格式</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
-<h2 id="字体">字体</h2>
-<p>常用的几款中、英文字体。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p style="font-family:Simsun;">
-宋体
-</p>
-<p style="font-family:STKaiti;">
-楷体
-</p>
-<p style="font-family:STHeiti;">
-黑体
-</p>
-<p style="font-family:Times New Roman;">
-Times New Roman
-</p>
-<p style="font-family:Arial;">
-Arial
-</p>
-<p style="font-family:Courier;">
-Courier
-</p>
-<p style="font-family:Consolas;">
-Consolas
-</p>
-<h2 id="引用">引用</h2>
-<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-第一层
-<blockquote>
-第二层
-</blockquote>
-第一层
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/06/19/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
-<hr>
-<span id="more"></span>
-<p>*<strong>本文索引</strong></p>
-<ul>
-<li><a href="#hexo-博客搭建简单说明">Hexo 博客搭建简单说明</a>
-<ul>
-<li><a href="#配置-githexo">配置 Git、hexo</a></li>
-<li><a href="#github-page-配置">GitHub Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="hexo-博客搭建简单说明">Hexo 博客搭建简单说明</h1>
-<h2 id="配置-githexo">配置 Git、hexo</h2>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
-<ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h2 id="github-page-配置">GitHub Page 配置</h2>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 GitHub<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到GitHub Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h2 id="配置主题">配置主题</h2>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
-要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>插入图片</strong><br />
-需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
-<h2 id="发布博客">发布博客</h2>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>，由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构-绪论">数据结构-绪论</a>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<blockquote>
-<p>本篇所有代码均由 C++ 实现。</p>
-</blockquote>
-<h1 id="数据结构-绪论">数据结构-绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
-</blockquote>
-<h2 id="算法">算法</h2>
-<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
-<p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
-<p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
-<p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_线性表，栈、队列和数组</title>
-    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
-内容包括：<br />
-1. 线性表的概念和代码实现<br />
-2. 栈、队列的概念和代码实现<br />
-3. 特殊矩阵的压缩</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</a>
-<ul>
-<li><a href="#线性表">线性表</a>
-<ul>
-<li><a href="#顺序表">顺序表</a>
-<ul>
-<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
-<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
-</ul></li>
-<li><a href="#链表">链表</a>
-<ul>
-<li><a href="#单链表">单链表</a></li>
-<li><a href="#静态链表">静态链表</a></li>
-<li><a href="#双向链表">双向链表</a></li>
-<li><a href="#循环链表">循环链表</a></li>
-</ul></li>
-<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
-</ul></li>
-<li><a href="#栈队列和数组">栈、队列和数组</a>
-<ul>
-<li><a href="#栈">栈</a>
-<ul>
-<li><a href="#顺序栈">顺序栈</a></li>
-<li><a href="#链式栈">链式栈</a></li>
-</ul></li>
-<li><a href="#队列">队列</a>
-<ul>
-<li><a href="#顺序队列">顺序队列</a></li>
-<li><a href="#链式队列">链式队列</a></li>
-</ul></li>
-<li><a href="#栈和队列的应用">栈和队列的应用</a></li>
-<li><a href="#特殊矩阵压缩">特殊矩阵压缩</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</h1>
-<h2 id="线性表">线性表</h2>
-<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。<br />
-线性表的基本操作：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">InitList</span>(&amp;L); <span class="comment">//初始化</span></span><br><span class="line"><span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line"><span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line"><span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line"><span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line"><span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line"><span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line"><span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line"><span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
-<h3 id="顺序表">顺序表</h3>
-<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
-<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
-<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
-<p>插入（在表 L 的第 i 个位置插入 e）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L.length; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链表">链表</h3>
-<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
-<h4 id="单链表">单链表</h4>
-<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
-单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的整表创建和销毁</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="静态链表">静态链表</h4>
-<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义静态链表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
-<h4 id="双向链表">双向链表</h4>
-<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（*p 后插入 *s）</span></span><br><span class="line">&#123;</span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = s;</span><br><span class="line">    s -&gt; prior = p;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除（删除 *p 后的 *q）</span></span><br><span class="line">&#123;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="循环链表">循环链表</h4>
-<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r -&gt; next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L -&gt; prior = r</code>.</p>
-<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
-<ol type="1">
-<li>顺序表随机存取/读写，链表只能顺序存取/读写。<br />
-</li>
-<li>顺序表逻辑相邻的元素存储位置也相邻。<br />
-</li>
-<li>链表分配内存空间灵活高效。<br />
-</li>
-<li>链表的插入和删除更高效。<br />
-</li>
-<li>顺序表插入和删除需要移动大量的元素。</li>
-</ol>
-<h2 id="栈队列和数组">栈、队列和数组</h2>
-<p>栈和队列都是特殊的线性表，对数据的插入删除操作有特殊的规定，导致数据的进出策略不同。</p>
-<h3 id="栈">栈</h3>
-<p><strong>栈(Stack)</strong>是只允许在一端进行插入或删除操作的线性表。<br />
-允许插入或删除的一端称为<strong>栈顶(Top)</strong>，另一端称为<strong>栈底(Bottom)</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出(last in first out, LIFO)</strong>。</p>
-<blockquote>
-<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
-</blockquote>
-<h4 id="顺序栈">顺序栈</h4>
-<h4 id="链式栈">链式栈</h4>
-<h3 id="队列">队列</h3>
-<h4 id="顺序队列">顺序队列</h4>
-<h4 id="链式队列">链式队列</h4>
-<h3 id="栈和队列的应用">栈和队列的应用</h3>
-<h3 id="特殊矩阵压缩">特殊矩阵压缩</h3>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高等数学_一元函数微分学</title>
     <url>/2022/03/01/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
     <content><![CDATA[高等数学<strong>一元函数微分学</strong>的知识总结<br />
@@ -1162,6 +1353,110 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
       </categories>
       <tags>
         <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构-绪论">数据结构-绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote>
+<p>本篇所有代码均由 C++ 实现。</p>
+</blockquote>
+<h1 id="数据结构-绪论">数据结构-绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>

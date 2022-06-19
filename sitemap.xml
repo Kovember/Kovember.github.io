@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cohanbb.github.io/2022/06/05/PHP/</loc>
+    
+    <lastmod>2022-06-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://cohanbb.github.io/2022/06/09/Git-%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2022-06-19</lastmod>
@@ -135,13 +144,6 @@
   </url>
   
   <url>
-    <loc>https://cohanbb.github.io/tags/Web-%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://cohanbb.github.io/tags/Hexo/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -156,7 +158,21 @@
   </url>
   
   <url>
+    <loc>https://cohanbb.github.io/tags/PHP/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://cohanbb.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://cohanbb.github.io/tags/Web-%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
