@@ -34,7 +34,9 @@
 <hr>
 <h1 id="git-安装和配置">Git 安装和配置</h1>
 <h2 id="安装-git">安装 Git</h2>
-<p>Git 有良好的跨平台性，目前支持在 Linux、MacOS、FreeBSD 和 Windows 平台上运行。 Windows 上可进入官网下载 Git：<a href="http://git-scm.com/download/win">git download</a>，若无法下载或下载缓慢可使用国内镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/Git%20for%20Windows%202.36.1/">清华大学 git for windows update 镜像</a>，下载并安装成功后将 Git 的 bin 目录加入环境变量。 Linux 上可以直接使用 shell，以 Debian 系为例：</p>
+<p>Git 有良好的跨平台性，目前支持在 Linux、MacOS、FreeBSD 和 Windows 平台上运行。</p>
+<p>Windows 上可进入官网下载 Git：<a href="http://git-scm.com/download/win">git download</a>，若无法下载或下载缓慢可使用国内镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/Git%20for%20Windows%202.36.1/">清华大学 git for windows update 镜像</a>，下载并安装成功后将 Git 的 bin 目录加入环境变量。</p>
+<p>Linux 上可以直接使用 shell，以 Debian 系为例：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install git</span><br></pre></td></tr></table></figure>
 <p>终端输入：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">git version 2.32.1</span><br></pre></td></tr></table></figure>
@@ -56,7 +58,7 @@
 <li>暂存区：位于工作区的 .git/index 文件中。</li>
 <li>版本库：位于工作区的 .git 目录。</li>
 </ul>
-<p><img src="image/ACA7C7AA-A862-4052-A3D8-CCF726A39110.jpeg" /></p>
+<p><img src="ACA7C7AA-A862-4052-A3D8-CCF726A39110.jpeg" /></p>
 <ul>
 <li>使用 <code>git init</code> 可使用当前目录作为 Git 仓库，该命令会在当前目录生成一个 <strong>.git</strong> 目录作为版本库。</li>
 <li>图中左侧为<strong>工作区</strong>，右侧为<strong>版本库</strong> 即 <strong>.git</strong> 目录，在版本库中有 <strong>index</strong> 文件代表<strong>暂存区</strong>。</li>
@@ -78,14 +80,14 @@
 <ol start="2" type="1">
 <li>可查看到初始化后的工作区有一个隐藏目录 .git，查看该目录的内容：</li>
 </ol>
-<p><img src="image/2022-05-30-22-48-10.png" /></p>
+<p><img src="2022-05-30-22-48-10.png" /></p>
 <p>查看 .git/config 文件，并配置身份信息：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">$ git config user.name <span class="string">&quot;Cohanbb&quot;</span></span><br><span class="line">$ git config user.email <span class="string">&quot;cohanbb777@163.com&quot;</span></span><br><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">[user]</span><br><span class="line">    name = Cohanbb</span><br><span class="line">    email = cohanbb777@163.com</span><br></pre></td></tr></table></figure>
 <ol start="3" type="1">
-<li>新建一个文件 1.txt 添加内容 ”helloworld“，并使用 <code>git add 1.txt</code>，之后再次查看 .git 目录的内容：</li>
+<li>新建一个文件 1.txt 添加内容“helloworld”，并使用 <code>git add 1.txt</code>，之后再次查看 .git 目录的内容：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 1.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;helloworld&quot;</span> &gt; 1.txt</span><br><span class="line">$ <span class="built_in">cat</span> 1.txt</span><br><span class="line">helloworld</span><br><span class="line">$ git add 1.txt</span><br><span class="line"><span class="comment">#再次查看 .git 目录内容</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
-<p><img src="image/2022-05-30-23-08-01.png" /></p>
+<p><img src="2022-05-30-23-08-01.png" /></p>
 <p>发现与之前相比多了两个文件：</p>
 <ul>
 <li>index 文件</li>
@@ -93,37 +95,43 @@
 </ul>
 <p>index 文件是暂存区，无法直接查看，objects/31 是新生成的对象，e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8 是以哈希为名的文件，使用 <code>git cat-file -p</code> 可以读取该文件的内容：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -p 31e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li>在工作区新建文件文件 2.txt 添加内容 ”1234“，并使用 <code>git add 2.txt</code>，再次查看 .git 目录的内容：</li>
+<ol start="4" type="1">
+<li>在工作区新建文件文件 2.txt 添加内容“1234”，并使用 <code>git add 2.txt</code>，再次查看 .git 目录的内容：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 2.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 2.txt</span><br><span class="line">$ git add 2.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
-<p><img src="image/16540518361014.jpg" /></p>
+<p><img src="16540518361014.jpg" /></p>
 <p>发现 object 目录下生成了一个新的对象 81，使用 <code>git cat-file -p 81c545efebe5f57d4cab2ba9ec294c4b0cadf672</code> 进行读取得到 1234。</p>
-<ol type="1">
+<ol start="5" type="1">
 <li>修改 1.txt 文件的内容，修改为 “1234”，并使用 <code>git add 1.txt</code>，再次查看 .git/objects 目录的内容：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 1.txt</span><br><span class="line">$ git add 1.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
-<p><img src="image/16540524299481.jpg" /></p>
+<p><img src="16540524299481.jpg" /></p>
 <p>发现与之前没有任何该改变，故可知 objects 目录里的对象仅仅存储添加/修改的文件内容，与文件的名称无关。</p>
 <p>直接查看 index 文件的内容，发现是乱码，但可看到刚刚创建的文件名 1.txt 和 2.txt：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/index</span><br><span class="line">DIRCb���</span><br><span class="line">        ��b���</span><br><span class="line">              ��~3�����E����&#125;L�+��)LK</span><br><span class="line">                                     ��r1.txtb��P<span class="string">&quot;_�b��P&quot;</span>_�~3�����E����&#125;L�+��)LK</span><br><span class="line">                   ��r2.txt0�8��?D.JN��</span><br><span class="line"></span><br><span class="line">                                       u���</span><br></pre></td></tr></table></figure>
 <p>实际上 index 文件是虚拟的工作区，但仅仅是一个文件索引，包含了工作区的目录树，目录树上存储了各文件的文件名、文件的最终修改时间、文件的长度、文件的类型以及文件的哈希值。<br />
-文件的具体内容并未存储在 index，而是存储在 objects 目录之中。objects 目录中除了 info 和 pack 其他的目录名称都是两个字符构成，这是因为文件的哈希值有 40 位，取前两位作为目录，后 38 位作为目录下的文件名。<br />
-在 objects 目录下，存有四种类型的哈希值：blob 型、tree 型、commit 型和 parent 型。 * blob 型用来存储添加/修改文件的内容 * tree 型存储某个目录下的文件信息，包括文件名、文件权限、文件的哈希值 * commit 型存储提交的信息 * parent 型存储上一次提交产生的 commit</p>
+文件的具体内容并未存储在 index，而是存储在 objects 目录之中。objects 目录中除了 info 和 pack 其他的目录名称都是两个字符构成，这是因为文件的哈希值有 40 位，取前两位作为目录，后 38 位作为目录下的文件名。</p>
+<p>在 objects 目录下，存有四种类型的哈希值：blob 型、tree 型、commit 型和 parent 型。</p>
+<ul>
+<li>blob 型用来存储添加/修改文件的内容</li>
+<li>tree 型存储某个目录下的文件信息，包括文件名、文件权限、文件的哈希值</li>
+<li>commit 型存储提交的信息</li>
+<li>parent 型存储上一次提交产生的 commit</li>
+</ul>
 <p>到这里仍然觉得一头雾水，再做一个实验来深刻理解他们的运作过程：</p>
 <ol type="1">
 <li>在刚刚实验的基础上，使用 <code>git commit</code> 命令进行提交，并查看 objects 目录的内容：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="string">&#x27;1&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
-<p><img src="image/16540563672772.jpg" /></p>
+<p><img src="16540563672772.jpg" /></p>
 <p>与之前向比多了哪些内容呢？多了两个新的对象：95 和 da，读取这两条哈希值的类型和内容：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 953ee820</span><br><span class="line">commit <span class="comment">#commit 型</span></span><br><span class="line">$ git cat-file -t dadc6837</span><br><span class="line">tree <span class="comment">#tree 型</span></span><br><span class="line">$ git cat-file -p 953ee820 </span><br><span class="line"><span class="comment">#commit 型的内容</span></span><br><span class="line">tree dadc6837ad6c06f0a9f21eb90a385f88338a97fa</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line"></span><br><span class="line">1 </span><br><span class="line">$ git cat-file -p dadc6837</span><br><span class="line"><span class="comment">#tree 型的内容</span></span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt </span><br></pre></td></tr></table></figure>
 <p>可看出 95 对象为 commit 型的哈希值，da 对象为 tree 型的哈希值，commit 里面存储了提交的目录树、作者和提交者的身份信息以及提交的名称。tree 里面存储了提交文件的权限、提交文件的哈希值及其类型、提交的文件名。</p>
-<ol type="1">
+<ol start="2" type="1">
 <li>创建一个新的文件 3.txt 添加内容 “1234”，并使用 <code>git add</code> 以及 <code>git commit</code> 提交：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 3.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 3.txt</span><br><span class="line">$ git add 3.txt</span><br><span class="line">$ git commit -m <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><img src="image/16540575293261.jpg" /></p>
+<p><img src="16540575293261.jpg" /></p>
 <p>发现新增了 0b 和 93 两个新的对象，依然是读取他们的哈希类型和内容：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 0b8e2a12</span><br><span class="line">commit</span><br><span class="line">$ git cat-file -t 933c6a92</span><br><span class="line">tree</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">$ git cat-file -p 933c6a92</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    3.txt</span><br></pre></td></tr></table></figure>
 <p>发现这次的 commit 与上一次有所不同，即多了一个 parent 项，观察发现这一项是上一次提交产生的 commit。tree 里面存储了三个文件的信息。</p>
@@ -142,22 +150,22 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 <h2 id="提交和修改">提交和修改</h2>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;file1&gt; &lt;file2&gt; ... <span class="comment">#添加一个或者多个文件到暂存区</span></span><br><span class="line">git add &lt;<span class="built_in">dir</span>&gt; <span class="comment">#添加指定目录到缓存区</span></span><br><span class="line"></span><br><span class="line">git status <span class="comment">#查看上次提交之后有无对文件进行再次的修改</span></span><br><span class="line"></span><br><span class="line">git diff &lt;file&gt; <span class="comment">#显示缓存区和工作区文件的差异</span></span><br><span class="line">git diff --cached &lt;file&gt; <span class="comment">#显示暂存区和上一次提交的差异</span></span><br><span class="line"></span><br><span class="line">git commit &lt;file1&gt; &lt;file2&gt; ... -m &lt;message&gt; <span class="comment">#提交暂存区的文件到仓库区</span></span><br><span class="line">git commit -a <span class="comment">#不需要 git add 直接提交</span></span><br><span class="line"></span><br><span class="line">git reset --mixed &lt;HEAD&gt; <span class="comment">#重置暂存区与上一次提交的保持一致</span></span><br><span class="line">git reset --soft &lt;HEAD&gt; <span class="comment">#退回到某个版本 </span></span><br><span class="line">git reset --hard &lt;HEAD&gt; <span class="comment">#撤销工作区所有未提交的修改内容，将暂存区和工作区都回到上一次的版本，并删除之前的所有信息提交</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> -f &lt;file&gt; <span class="comment">#删除暂存区和工作区的文件</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt; <span class="comment">#仅仅删除暂存区的文件，工作区的文件仍然保留</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">mv</span> &lt;file&gt; &lt;newfile&gt; <span class="comment">#移动或重命名一个文件、目录或软链接</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> <span class="comment">#查看历史提交记录</span></span><br><span class="line">git blame &lt;file&gt; <span class="comment">#以列表的形式查看指定文件的修改历史</span></span><br><span class="line"></span><br><span class="line">git remote <span class="comment">#操作远程仓库</span></span><br><span class="line">git fetch <span class="comment"># 从远程仓库取代码库</span></span><br><span class="line">git pull <span class="comment">#下载远程代码并合并</span></span><br><span class="line">git push <span class="comment">#上传远程代码并合并</span></span><br></pre></td></tr></table></figure>
 <h2 id="分支">分支</h2>
-<p>每一种版本控制系统都支持分支，一个分支代表一条独立的开发线，使用分支意味着可以从开发主线上分离开，然后在不影响主线的同时继续工作。<br />
-Git 的分支即意味着与 master 分支提交的内容独立，在 master 分支提交的内容不会影响其他分支，在其他分支提交的内容也不会影响 master。</p>
+<p>每一种版本控制系统都支持分支，一个分支代表一条独立的开发线，使用分支意味着可以从开发主线上分离开，然后在不影响主线的同时继续工作。</p>
+<p>Git 的分支即意味着与 master 分支提交的内容独立，在 master 分支提交的内容不会影响其他分支，在其他分支提交的内容也不会影响 master。</p>
 <blockquote>
 <p>注意：在任何分支进行提交操作之前，工作区的修改内容在任何分支都可见，一旦有任何分支进行提交操作，则其他分支回到上次提交操作后的状态。</p>
 </blockquote>
 <p>基本使用方法：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch <span class="comment"># 列出分支</span></span><br><span class="line">git branch &lt;branchname&gt; <span class="comment">#创建分支</span></span><br><span class="line">git checkout &lt;branchname&gt; <span class="comment">#切换分支</span></span><br><span class="line">git merge &lt;branchname&gt; <span class="comment">#合并分支</span></span><br><span class="line">git branch -d  &lt;branchname&gt; <span class="comment">#删除分支</span></span><br></pre></td></tr></table></figure>
 <h1 id="github">GitHub</h1>
-<p>GitHub 是基于 Git 的代码托管和版本控制平台，可以在上面创建仓库或项目。<br />
-首先需要注册一个 GitHub 账号，然后在本地创建 SSH KEY：</p>
+<p>GitHub 是基于 Git 的代码托管和版本控制平台，可以在上面创建仓库或项目。</p>
+<p>首先需要注册一个 GitHub 账号，然后在本地创建 SSH KEY：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
 <p>公钥在 ~/.ssh/id_rsa.pub 中，进入 GitHub 进入 account settings 选择 SSH Keys，Add SSH Key，添加在电脑上生成的公钥。添加后使用下面的命令验证是否成功：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <p>会弹出警告，输入 yes 就行了。然后在本地配置 Git：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span>  </span><br></pre></td></tr></table></figure>
-<p>在 GitHub 新建一个仓库(repositry)，譬如 mycode，然后即可在本地进行远程仓库操作：</p>
+<p>在 GitHub 新建一个仓库（repositry），譬如 mycode，然后即可在本地进行远程仓库操作：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> mycode <span class="comment">#创建本地仓库</span></span><br><span class="line">$ <span class="built_in">cd</span> mycode</span><br><span class="line">$ git init</span><br><span class="line">$ <span class="built_in">touch</span> hello.md</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;this is mycode&quot;</span> &gt; hello.md</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;添加 hello.md&quot;</span></span><br></pre></td></tr></table></figure>
 <p>然后添加远程仓库的 SSH 地址：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github.com:yourName/yourRepo.git</span><br></pre></td></tr></table></figure>
@@ -174,6 +182,73 @@ Git 的分支即意味着与 master 分支提交的内容独立，在 master 分
 ]]></content>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
+    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
+    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
+<ul>
+<li><a href="#颜色和大小">颜色和大小</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#字体">字体</a></li>
+<li><a href="#引用">引用</a></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
+<h2 id="颜色和大小">颜色和大小</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color=red size=6 >修改颜色和大小</font>
+<p style="color:blue; font-size:32px">
+修改颜色和大小
+</p>
+<h2 id="格式">格式</h2>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
+<h2 id="字体">字体</h2>
+<p>常用的几款中、英文字体。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="font-family:Simsun;">
+宋体
+</p>
+<p style="font-family:STKaiti;">
+楷体
+</p>
+<p style="font-family:STHeiti;">
+黑体
+</p>
+<p style="font-family:Times New Roman;">
+Times New Roman
+</p>
+<p style="font-family:Arial;">
+Arial
+</p>
+<p style="font-family:Courier;">
+Courier
+</p>
+<p style="font-family:Consolas;">
+Consolas
+</p>
+<h2 id="引用">引用</h2>
+<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+第一层
+<blockquote>
+第二层
+</blockquote>
+第一层
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -237,7 +312,7 @@ Hello World!<br />Hello Web!
 </html>
 <h2 id="html-标签">HTML 标签</h2>
 <h3 id="基本标签">基本标签</h3>
-<p><code>html</code> 标签：表示是一个 HTML 文档。<br />
+<p><code>&lt;html&gt;</code> 标签：表示是一个 HTML 文档。<br />
 <code>&lt;title&gt;</code> 标签：定义文档的标题。<br />
 <code>&lt;body&gt;</code> 标签：定义文档的内容主体。<br />
 <code>&lt;p&gt;</code> 标签：定义一个段落。<br />
@@ -569,93 +644,6 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
-    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
-    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
-    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</a>
-<ul>
-<li><a href="#颜色和大小">颜色和大小</a></li>
-<li><a href="#格式">格式</a></li>
-<li><a href="#字体">字体</a></li>
-<li><a href="#引用">引用</a></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="使用-htmlcss-修饰-markdown-中的字体格式">使用 HTML/CSS 修饰 Markdown 中的字体格式</h1>
-<h2 id="颜色和大小">颜色和大小</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color=red size=6 >修改颜色和大小</font>
-<p style="color:blue; font-size:32px">
-修改颜色和大小
-</p>
-<h2 id="格式">格式</h2>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
-<h2 id="字体">字体</h2>
-<p>常用的几款中、英文字体。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p style="font-family:Simsun;">
-宋体
-</p>
-<p style="font-family:STKaiti;">
-楷体
-</p>
-<p style="font-family:STHeiti;">
-黑体
-</p>
-<p style="font-family:Times New Roman;">
-Times New Roman
-</p>
-<p style="font-family:Arial;">
-Arial
-</p>
-<p style="font-family:Courier;">
-Courier
-</p>
-<p style="font-family:Consolas;">
-Consolas
-</p>
-<h2 id="引用">引用</h2>
-<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-第一层
-<blockquote>
-第二层
-</blockquote>
-第一层
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/02/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>PHP-A Fundamental Perspective</title>
     <url>/2022/06/05/PHP/</url>
     <content><![CDATA[<h1 id="摘要">摘要</h1>
@@ -951,6 +939,26 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/02/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo 博客搭建简单说明</title>
     <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
@@ -1047,6 +1055,288 @@ categories 与以上同理。</p>
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_线性表，栈、队列和数组</title>
+    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
+内容包括：<br />
+1. 线性表的概念和代码实现<br />
+2. 栈、队列的概念和代码实现<br />
+3. 特殊矩阵的压缩</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构_线性表栈队列和数组">数据结构_线性表，栈、队列和数组</a>
+<ul>
+<li><a href="#线性表">线性表</a>
+<ul>
+<li><a href="#顺序表">顺序表</a>
+<ul>
+<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
+<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
+</ul></li>
+<li><a href="#链表">链表</a>
+<ul>
+<li><a href="#单链表">单链表</a></li>
+<li><a href="#静态链表">静态链表</a></li>
+<li><a href="#双向链表">双向链表</a></li>
+<li><a href="#循环链表">循环链表</a></li>
+</ul></li>
+<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
+</ul></li>
+<li><a href="#栈队列和数组">栈、队列和数组</a>
+<ul>
+<li><a href="#栈">栈</a>
+<ul>
+<li><a href="#顺序栈">顺序栈</a></li>
+<li><a href="#链式栈">链式栈</a></li>
+</ul></li>
+<li><a href="#队列">队列</a>
+<ul>
+<li><a href="#顺序队列循环队列">顺序队列（循环队列）</a></li>
+<li><a href="#链式队列">链式队列</a></li>
+<li><a href="#双端队列">双端队列</a></li>
+</ul></li>
+<li><a href="#栈和队列的应用">栈和队列的应用</a>
+<ul>
+<li><a href="#栈_括号匹配">栈_括号匹配</a></li>
+<li><a href="#栈_表达式">栈_表达式</a></li>
+<li><a href="#栈_递归函数调用">栈_递归函数调用</a></li>
+<li><a href="#队列_层次遍历">队列_层次遍历</a></li>
+<li><a href="#队列_计算机系统">队列_计算机系统</a></li>
+</ul></li>
+<li><a href="#数组_矩阵的压缩存储">数组_矩阵的压缩存储</a>
+<ul>
+<li><a href="#对称矩阵">对称矩阵</a></li>
+<li><a href="#三角矩阵">三角矩阵</a></li>
+<li><a href="#三对角矩阵">三对角矩阵</a></li>
+<li><a href="#稀疏矩阵">稀疏矩阵</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<h1 id="数据结构_线性表栈队列和数组">数据结构_线性表，栈、队列和数组</h1>
+<p>线性表、栈和队列的完整代码均已上传到我的 GitHub：</p>
+<ul>
+<li><a href="https://github.com/Cohanbb/mycode/tree/main/c-cpp/DS">C/C++ 实现</a> <!--* [Go 实现](https://github.com/Cohanbb/mycode/tree/main/go/DS)--></li>
+</ul>
+<h2 id="线性表">线性表</h2>
+<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。</p>
+<p>线性表的抽象数据类型：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ADT List</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(&amp;L)</span></span>; <span class="comment">//初始化</span></span><br><span class="line">    <span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line">    <span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line">    <span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line">    <span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line">    <span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line">    <span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line">    <span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line">    <span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
+<h3 id="顺序表">顺序表</h3>
+<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
+<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
+<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*定义顺序表*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/*初始化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/*实例化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*定义顺序表*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*初始化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*实例化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
+<p>插入（在表 L 的第 i 个位置插入 e）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length + <span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j - <span class="number">1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i - <span class="number">1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length - <span class="number">1</span>; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j - <span class="number">1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length - <span class="number">1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist &amp;L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表">链表</h3>
+<p>链表是一种非常非常非常重要的数据结构！</p>
+<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
+<h4 id="单链表">单链表</h4>
+<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。</p>
+<p>单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点 的方式更直观但是不方便进行操作。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*定义结点*/</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*带头结点初始化*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*判断是否为空*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*按位查找*/</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*按值查找*/</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p-&gt;data != e)</span><br><span class="line">        p-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*插入（后插）*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = p-&gt;next; </span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*拓展：前插*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p-&gt;data;</span><br><span class="line">    p-&gt;data = s-&gt;data;</span><br><span class="line">    s-&gt;data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*删除*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = p-&gt;next-&gt;data;</span><br><span class="line">    p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的整表创建和销毁</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*头插法*/</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        s-&gt;next = List-&gt;next;</span><br><span class="line">        List-&gt;next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*尾插法*/</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        r-&gt;next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*销毁表*/</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *p;</span><br><span class="line">    <span class="keyword">while</span> (List) &#123;</span><br><span class="line">        p = List;</span><br><span class="line">        List = List-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="静态链表">静态链表</h4>
+<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*定义静态链表*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
+<h4 id="双向链表">双向链表</h4>
+<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*定义双向链表*/</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*插入（*p 后插入 *s）*/</span></span><br><span class="line">&#123;</span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next-&gt; prior = s;</span><br><span class="line">    s-&gt;prior = p;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*删除（删除 *p 后的 *q）*/</span></span><br><span class="line">&#123;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    p-&gt;next-&gt;prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="循环链表">循环链表</h4>
+<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r-&gt;next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L-&gt;prior = r</code>。</p>
+<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
+<ol type="1">
+<li>顺序表随机存取/读写，链表只能顺序存取/读写。</li>
+<li>顺序表逻辑相邻的元素存储位置也相邻。</li>
+<li>链表分配内存空间灵活高效。</li>
+<li>链表的插入和删除更高效。</li>
+<li>顺序表插入和删除需要移动大量的元素。</li>
+</ol>
+<h2 id="栈队列和数组">栈、队列和数组</h2>
+<p>栈和队列都是特殊的线性表，对数据的插入和删除操作有特殊的规定，使得数据的进出策略有所不同。</p>
+<h3 id="栈">栈</h3>
+<p><strong>栈（Stack）</strong>是只允许在一端进行插入或删除操作的线性表。</p>
+<p>允许插入或删除的一端称为<strong>栈顶（Top）</strong>，另一端称为<strong>栈底（Bottom）</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出（Last In First Out, LIFO）</strong>。</p>
+<blockquote>
+<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
+</blockquote>
+<h4 id="顺序栈">顺序栈</h4>
+<p>使用顺序结构存储栈元素的栈。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">//Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqStack</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> top, maxsize;</span><br><span class="line">&#125; sqstack;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Initialize Sequential Stack 初始化顺序结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(sqstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S.maxsize = Initsize;</span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize);</span><br><span class="line">    S.top = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top == <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Extend Size of Stack 扩充栈容量*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendStack</span><span class="params">(sqstack &amp;S, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = S.data; <span class="comment">//p 指向原地址</span></span><br><span class="line">    S.maxsize += n; <span class="comment">//扩容</span></span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize); <span class="comment">//开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        S.data[i] = p[i];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">//释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">//p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Push Element 元素入栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(sqstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (S.top + <span class="number">1</span> == S.maxsize)</span><br><span class="line">        <span class="built_in">ExtendStack</span>(S, <span class="number">1</span>);</span><br><span class="line">    S.data[++S.top] = e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Pop Element 元素出栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(sqstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = S.data[S.top--];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Print Sequential Stack 打印顺序结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, S.data[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Destroy Sequential Stack 销毁顺序结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(sqstack *S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!S)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(S-&gt;data); <span class="comment">//释放数组内存</span></span><br><span class="line">    S-&gt;data = <span class="literal">NULL</span>; <span class="comment">//指针置空</span></span><br><span class="line">    S-&gt;top = <span class="number">-1</span>;</span><br><span class="line">    S-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链式栈">链式栈</h4>
+<p>使用链式结构存储栈元素的栈。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; LNode, *linkstack;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Initialize Link Stack 初始化链式结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    <span class="keyword">if</span> (S == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Fail To Init!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(linkstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *p = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode)); <span class="comment">//开辟新结点作为栈顶</span></span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = S-&gt;next;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(linkstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next; <span class="comment">//p 指向栈顶</span></span><br><span class="line">    e = p-&gt;data;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">//释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Print Link Stack 打印链式结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty List!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Destroy Link Stack 销毁链式结构栈*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    lnode *p;</span><br><span class="line">    <span class="keyword">while</span> (S) &#123;</span><br><span class="line">        p = S;</span><br><span class="line">        S = S-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p); <span class="comment">//释放该结点内存 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="队列">队列</h3>
+<p><strong>队列（Queue）</strong>也是一种操作受限制的先行表，只允许在表的一端进行插入，在表的另一端进行删除。</p>
+<p>向队列插入元素的操作称为入队或进队，删除元素的操作称为出队。允许删除数据的一端称为<strong>队头（Front）</strong>，允许插入元素的一端称为<strong>队尾（Rear）</strong>。其数据的进出策略可以简单概括为<strong>先进先出（First In First Out, FIFO）</strong>。</p>
+<h4 id="顺序队列循环队列">顺序队列（循环队列）</h4>
+<p>使用顺序结构存储队列元素的循环队列。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">//Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqQueue</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> front, rear, maxsize;</span><br><span class="line">&#125; sqqueue;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Initialize Sequential Queue 初始化顺序结构循环队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(sqqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.maxsize = Initsize;</span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize);</span><br><span class="line">    Q.rear = Q.front = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Q.maxsize; i++)</span><br><span class="line">        Q.data[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.rear == Q.front;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Extend Size of Queue 扩充循环队列的容量*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = Q.data; <span class="comment">//p 指向原地址</span></span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    j = Q.maxsize;</span><br><span class="line">    Q.maxsize += n; <span class="comment">//扩容</span></span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize); <span class="comment">//开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; (Q.rear + j - Q.front) % j; i++)</span><br><span class="line">        Q.data[i] = p[(Q.front + i) % j];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">//释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">//p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Element Enter Queue 元素进入队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % Q.maxsize == Q.front)</span><br><span class="line">        <span class="built_in">ExtendQueue</span>(Q, <span class="number">1</span>);</span><br><span class="line">    Q.data[Q.rear] = e;</span><br><span class="line">    Q.rear = (Q.rear + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Element Exit Queue 元素退出队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = Q.data[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Print Sequential Queue 打印顺序结构循环队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (Q.rear + Q.maxsize - Q.front) % Q.maxsize; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Q.data[(Q.front + i) % Q.maxsize]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Destroy Sequential Queue 销毁顺序结构循环队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(sqqueue *Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!Q)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(Q-&gt;data); <span class="comment">//释放数组的内存</span></span><br><span class="line">    Q-&gt;data = <span class="literal">NULL</span>; <span class="comment">//指针置空</span></span><br><span class="line">    Q-&gt;rear = Q-&gt;front = <span class="number">0</span>;</span><br><span class="line">    Q-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链式队列">链式队列</h4>
+<p>使用链式结构存储队列元素的队列。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; lnode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LinkQueue</span> &#123;</span><br><span class="line">    lnode *front;</span><br><span class="line">    lnode *rear;</span><br><span class="line">&#125; linkqueue;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Initialize Link Queue 初始化链式结构队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.front = Q.rear = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.front == Q.rear;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Elements Enter Queue 元素入队*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *s = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear-&gt;next = s;</span><br><span class="line">    Q.rear = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Element Exit Queue 元素出队*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = Q.front-&gt;next; <span class="comment">//p 指向要删除的结点</span></span><br><span class="line">    e = Q.front-&gt;data;</span><br><span class="line">    Q.front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (p ==  Q.rear) <span class="comment">//若 p 等于尾结点，则队列置空</span></span><br><span class="line">        Q.rear = Q.front;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">//释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Print Link Queue 打印链式结构队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Destroy Link Queue 销毁链式结构队列*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="双端队列">双端队列</h4>
+<p>将队列的两端称作前端和后端，两端都可以进行入队和出队操作的队列。</p>
+<ul>
+<li><p>输入受限的双端队列</p></li>
+<li><p>输出受限的双端队列</p></li>
+</ul>
+<h3 id="栈和队列的应用">栈和队列的应用</h3>
+<h4 id="栈_括号匹配">栈_括号匹配</h4>
+<h4 id="栈_表达式">栈_表达式</h4>
+<h4 id="栈_递归函数调用">栈_递归函数调用</h4>
+<h4 id="队列_层次遍历">队列_层次遍历</h4>
+<h4 id="队列_计算机系统">队列_计算机系统</h4>
+<h3 id="数组_矩阵的压缩存储">数组_矩阵的压缩存储</h3>
+<h4 id="对称矩阵">对称矩阵</h4>
+<h4 id="三角矩阵">三角矩阵</h4>
+<h4 id="三对角矩阵">三对角矩阵</h4>
+<h4 id="稀疏矩阵">稀疏矩阵</h4>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构_绪论">数据结构_绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote>
+<p>Preface:</p>
+<ol type="1">
+<li><p>本篇所有代码均由 C++ 实现</p></li>
+<li>参考文献：</li>
+</ol>
+<ul>
+<li>大话数据结构（程杰）</li>
+<li>数据结构考研指导（王道论坛）</li>
+</ul>
+</blockquote>
+<h1 id="数据结构_绪论">数据结构_绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型（abstract data type, ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface, API）。</p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
+<p>递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
+<p>若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1236,126 +1526,6 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>数据结构_线性表，栈、队列和数组</title>
-    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
-内容包括：<br />
-1. 线性表的概念和代码实现<br />
-2. 栈、队列的概念和代码实现<br />
-3. 特殊矩阵的压缩</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</a>
-<ul>
-<li><a href="#线性表">线性表</a>
-<ul>
-<li><a href="#顺序表">顺序表</a>
-<ul>
-<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
-<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
-</ul></li>
-<li><a href="#链表">链表</a>
-<ul>
-<li><a href="#单链表">单链表</a></li>
-<li><a href="#静态链表">静态链表</a></li>
-<li><a href="#双向链表">双向链表</a></li>
-<li><a href="#循环链表">循环链表</a></li>
-</ul></li>
-<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
-</ul></li>
-<li><a href="#栈队列和数组">栈、队列和数组</a>
-<ul>
-<li><a href="#栈">栈</a>
-<ul>
-<li><a href="#顺序栈">顺序栈</a></li>
-<li><a href="#链式栈">链式栈</a></li>
-</ul></li>
-<li><a href="#队列">队列</a>
-<ul>
-<li><a href="#顺序队列">顺序队列</a></li>
-<li><a href="#链式队列">链式队列</a></li>
-</ul></li>
-<li><a href="#栈和队列的应用">栈和队列的应用</a></li>
-<li><a href="#特殊矩阵压缩">特殊矩阵压缩</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="数据结构-线性表栈队列和数组">数据结构-线性表，栈、队列和数组</h1>
-<h2 id="线性表">线性表</h2>
-<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。<br />
-线性表的基本操作：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">InitList</span>(&amp;L); <span class="comment">//初始化</span></span><br><span class="line"><span class="built_in">Empty</span>(L); <span class="comment">//判断是否是空表</span></span><br><span class="line"><span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">//在第 i 个位置插入 e</span></span><br><span class="line"><span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">//删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line"><span class="built_in">LocateElem</span>(L, e); <span class="comment">//按值查找</span></span><br><span class="line"><span class="built_in">GetElem</span>(L, i); <span class="comment">//按位查找</span></span><br><span class="line"><span class="built_in">Length</span>(L); <span class="comment">//求表长</span></span><br><span class="line"><span class="built_in">PrintList</span>(L); <span class="comment">//打印表</span></span><br><span class="line"><span class="built_in">DestroyList</span>(&amp;L); <span class="comment">//销毁表</span></span><br></pre></td></tr></table></figure>
-<h3 id="顺序表">顺序表</h3>
-<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
-<h4 id="顺序表的定义和初始化">顺序表的定义和初始化</h4>
-<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">//N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">//ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">//顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义顺序表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">//顺序表的初始最大长度</span></span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">//指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化顺序表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">//初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">//初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">//避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化顺序表</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="顺序表的基本操作">顺序表的基本操作</h4>
-<p>插入（在表 L 的第 i 个位置插入 e）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length+<span class="number">1</span>) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">//表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">//从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j<span class="number">-1</span>]; <span class="comment">//赋值给后面的元素</span></span><br><span class="line">    L.data[i<span class="number">-1</span>] = e; <span class="comment">//将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">//实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">//超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; L.length; j++) <span class="comment">//将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j<span class="number">-1</span>] = L.data[j]; <span class="comment">//赋值给前面的元素</span></span><br><span class="line">    L.data[L.length<span class="number">-1</span>] = <span class="number">0</span>; <span class="comment">//将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">//实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>; <span class="comment">//找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链表">链表</h3>
-<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
-<h4 id="单链表">单链表</h4>
-<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。<br />
-单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点的方式更直观但是不方便进行操作。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义结点</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">//自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">//指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">//结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带头结点初始化</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">//创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否为空</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List -&gt; next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//按位查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">//头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">//结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p -&gt; next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//按值查找</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p -&gt; data != e)</span><br><span class="line">        p -&gt; next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（后插）</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s -&gt; data = e;</span><br><span class="line">    s -&gt; next = p -&gt; next; </span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//拓展：前插</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//先后插</span></span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">    <span class="comment">//交换前后数据</span></span><br><span class="line">    temp = p -&gt; data;</span><br><span class="line">    p -&gt; data = s -&gt; data;</span><br><span class="line">    s -&gt; data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i<span class="number">-1</span>); <span class="comment">//找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = <span class="keyword">new</span> LNode;</span><br><span class="line">    q = p -&gt; next;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    e = q -&gt; data;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的整表创建和销毁</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        s -&gt; next = List -&gt; next;</span><br><span class="line">        List -&gt; next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//尾插法</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s -&gt; data = x;</span><br><span class="line">        r -&gt; next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r -&gt; next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//销毁表</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *q, *p = List -&gt; next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        q = p -&gt; next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = q;</span><br><span class="line">    &#125;</span><br><span class="line">    List -&gt; next = <span class="literal">NULL</span>; <span class="comment">//置为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="静态链表">静态链表</h4>
-<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义静态链表</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">//下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
-<h4 id="双向链表">双向链表</h4>
-<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入（*p 后插入 *s）</span></span><br><span class="line">&#123;</span><br><span class="line">    s -&gt; next = p -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = s;</span><br><span class="line">    s -&gt; prior = p;</span><br><span class="line">    p -&gt; next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除（删除 *p 后的 *q）</span></span><br><span class="line">&#123;</span><br><span class="line">    p -&gt; next = q -&gt; next;</span><br><span class="line">    p -&gt; next -&gt; prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="循环链表">循环链表</h4>
-<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r -&gt; next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L -&gt; prior = r</code>.</p>
-<h3 id="顺序表和链表的比较">顺序表和链表的比较</h3>
-<ol type="1">
-<li>顺序表随机存取/读写，链表只能顺序存取/读写。<br />
-</li>
-<li>顺序表逻辑相邻的元素存储位置也相邻。<br />
-</li>
-<li>链表分配内存空间灵活高效。<br />
-</li>
-<li>链表的插入和删除更高效。<br />
-</li>
-<li>顺序表插入和删除需要移动大量的元素。</li>
-</ol>
-<h2 id="栈队列和数组">栈、队列和数组</h2>
-<p>栈和队列都是特殊的线性表，对数据的插入删除操作有特殊的规定，导致数据的进出策略不同。</p>
-<h3 id="栈">栈</h3>
-<p><strong>栈(Stack)</strong>是只允许在一端进行插入或删除操作的线性表。<br />
-允许插入或删除的一端称为<strong>栈顶(Top)</strong>，另一端称为<strong>栈底(Bottom)</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出(last in first out, LIFO)</strong>。</p>
-<blockquote>
-<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
-</blockquote>
-<h4 id="顺序栈">顺序栈</h4>
-<h4 id="链式栈">链式栈</h4>
-<h3 id="队列">队列</h3>
-<h4 id="顺序队列">顺序队列</h4>
-<h4 id="链式队列">链式队列</h4>
-<h3 id="栈和队列的应用">栈和队列的应用</h3>
-<h3 id="特殊矩阵压缩">特殊矩阵压缩</h3>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高等数学笔记_函数与极限</title>
     <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
     <content><![CDATA[高等数学<strong>函数与极限</strong>部分的知识总结<br />
@@ -1460,110 +1630,6 @@ categories 与以上同理。</p>
       </categories>
       <tags>
         <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构-绪论">数据结构-绪论</a>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<blockquote>
-<p>本篇所有代码均由 C++ 实现。</p>
-</blockquote>
-<h1 id="数据结构-绪论">数据结构-绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构(data structure)</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系。</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型(abstract data type, ADT)是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体(struct)、C++/Java/Python 中的类(class)等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口(application programming interface, API).</p>
-</blockquote>
-<h2 id="算法">算法</h2>
-<p>算法(algorithm)是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">//1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">//n+1</span></span><br><span class="line">        i++; <span class="comment">//n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">//n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">//1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
-<p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
-<p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
-<p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">//4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n). 递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">//8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n). 若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">//n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">//函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n,n-1,…,1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
