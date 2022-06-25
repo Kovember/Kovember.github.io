@@ -194,6 +194,7 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 <h1 id="摘要">摘要</h1>
 <p>一个 Web 页面是如何在浏览器上展示的？我们在浏览器上查看网页源代码，可看到众多的标签、符号和文字，这就是一个 HTML 文件，而浏览器可以将这个文件解析成一个 Web 页面。一个 Web 页面如何设计样式、呈现出精美的视觉效果？则需要通过 CSS 对 HTML 进行加工美化。</p>
 <hr>
+<span id="more"></span>
 <p><strong>文章索引</strong></p>
 <ul>
 <li><a href="#摘要">摘要</a></li>
@@ -657,6 +658,7 @@ Consolas
 <p>PHP(Hypertext Preprocessor)超文本预处理器，一种开源的、常运行在服务器上的开源脚本语言，它跨平台、与几乎所有 Web 服务器兼容、与大量的数据库兼容。<br />
 PHP 文件可以包含 PHP 代码、HTML 和 JavaScript 代码，在服务端执行，与数据库进行交互后生成 HTML 文件通过 Web 服务器返回给浏览器。</p>
 <hr>
+<span id="more"></span>
 <p><strong>本文索引</strong></p>
 <ul>
 <li><a href="#摘要">摘要</a></li>
