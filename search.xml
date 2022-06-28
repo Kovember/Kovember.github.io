@@ -948,6 +948,26 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/02/13/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo 博客搭建简单说明</title>
     <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
@@ -1215,24 +1235,118 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/02/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念</p>
+<hr>
 <span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构_绪论">数据结构_绪论</a>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote>
+<p>Preface:</p>
+<ol type="1">
+<li><p>本篇所有代码均由 C++ 实现</p></li>
+<li>参考文献：</li>
+</ol>
+<ul>
+<li>大话数据结构（程杰）</li>
+<li>数据结构考研指导（王道论坛）</li>
+</ul>
+</blockquote>
+<h1 id="数据结构_绪论">数据结构_绪论</h1>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
+<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h3>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h3 id="数据运算">数据运算</h3>
+<p>数据的查找、插入和删除等操作。</p>
+<h3 id="数据的物理结构">数据的物理结构</h3>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
+<h3 id="抽象数据类型">抽象数据类型</h3>
+<p>抽象数据类型（abstract data type, ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface, API）。</p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h2 id="算法效率的度量">算法效率的度量</h2>
+<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
+<p>递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
+<p>若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
 ]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title>高等数学_一元函数微分学</title>
@@ -1418,120 +1532,6 @@ categories 与以上同理。</p>
       </categories>
       <tags>
         <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构_绪论">数据结构_绪论</a>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<blockquote>
-<p>Preface:</p>
-<ol type="1">
-<li><p>本篇所有代码均由 C++ 实现</p></li>
-<li>参考文献：</li>
-</ol>
-<ul>
-<li>大话数据结构（程杰）</li>
-<li>数据结构考研指导（王道论坛）</li>
-</ul>
-</blockquote>
-<h1 id="数据结构_绪论">数据结构_绪论</h1>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="基本概念">基本概念</h3>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h3 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h3>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h3 id="数据运算">数据运算</h3>
-<p>数据的查找、插入和删除等操作。</p>
-<h3 id="数据的物理结构">数据的物理结构</h3>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h3 id="抽象数据类型">抽象数据类型</h3>
-<p>抽象数据类型（abstract data type, ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface, API）。</p>
-</blockquote>
-<h2 id="算法">算法</h2>
-<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h2 id="算法效率的度量">算法效率的度量</h2>
-<h3 id="算法的时间复杂度">算法的时间复杂度</h3>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
-<p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
-<p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
-<p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h3 id="算法的空间复杂度">算法的空间复杂度</h3>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
-<p>递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
-<p>若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
