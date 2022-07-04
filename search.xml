@@ -401,69 +401,6 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
-    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
-    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
-    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#颜色和大小">颜色和大小</a></li>
-<li><a href="#格式">格式</a></li>
-<li><a href="#字体">字体</a></li>
-<li><a href="#引用">引用</a></li>
-</ul>
-<hr>
-<h1 id="颜色和大小">颜色和大小</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color=red size=6 >修改颜色和大小</font>
-<p style="color:blue; font-size:32px">
-修改颜色和大小
-</p>
-<h1 id="格式">格式</h1>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
-<h1 id="字体">字体</h1>
-<p>常用的几款中、英文字体。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p style="font-family:Simsun;">
-宋体
-</p>
-<p style="font-family:STKaiti;">
-楷体
-</p>
-<p style="font-family:STHeiti;">
-黑体
-</p>
-<p style="font-family:Times New Roman;">
-Times New Roman
-</p>
-<p style="font-family:Arial;">
-Arial
-</p>
-<p style="font-family:Courier;">
-Courier
-</p>
-<p style="font-family:Consolas;">
-Consolas
-</p>
-<h1 id="引用">引用</h1>
-<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-第一层
-<blockquote>
-第二层
-</blockquote>
-第一层
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git 教程及其远程仓库 GitHub</title>
     <url>/2022/06/09/Git-%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="摘要">摘要</h1>
@@ -645,6 +582,69 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 ]]></content>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 HTML/CSS 修饰 Markdown 中的字体格式</title>
+    <url>/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</url>
+    <content><![CDATA[<p>Markdown 是轻量级的文本标记语言，想要更好、更细致地设置文本则需要借助 HTML/CSS 修饰。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#颜色和大小">颜色和大小</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#字体">字体</a></li>
+<li><a href="#引用">引用</a></li>
+</ul>
+<hr>
+<h1 id="颜色和大小">颜色和大小</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">6</span> &gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color:blue; font-size:32px&quot;</span>&gt;</span>修改颜色和大小<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color=red size=6 >修改颜色和大小</font>
+<p style="color:blue; font-size:32px">
+修改颜色和大小
+</p>
+<h1 id="格式">格式</h1>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">I</span>&gt;</span>斜体<span class="tag">&lt;/<span class="name">I</span>&gt;</span> <span class="tag">&lt;<span class="name">U</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">U</span>&gt;</span> <span class="tag">&lt;<span class="name">S</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">S</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">sub</span>&gt;</span>下标<span class="tag">&lt;/<span class="name">sub</span>&gt;</span> <span class="tag">&lt;<span class="name">sup</span>&gt;</span>上标<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><b>加粗</b> <I>斜体</I> <U>下划线</U> <S>删除线</S> <sub>下标</sub> <sup>上标</sup></p>
+<h1 id="字体">字体</h1>
+<p>常用的几款中、英文字体。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Simsun;&quot;</span>&gt;</span>宋体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STKaiti;&quot;</span>&gt;</span>楷体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:STHeiti;&quot;</span>&gt;</span>黑体<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Times New Roman;&quot;</span>&gt;</span>Times New Roman<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Arial;&quot;</span>&gt;</span>Arial<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Courier;&quot;</span>&gt;</span>Courier<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;font-family:Consolas;&quot;</span>&gt;</span>Consolas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p style="font-family:Simsun;">
+宋体
+</p>
+<p style="font-family:STKaiti;">
+楷体
+</p>
+<p style="font-family:STHeiti;">
+黑体
+</p>
+<p style="font-family:Times New Roman;">
+Times New Roman
+</p>
+<p style="font-family:Arial;">
+Arial
+</p>
+<p style="font-family:Courier;">
+Courier
+</p>
+<p style="font-family:Consolas;">
+Consolas
+</p>
+<h1 id="引用">引用</h1>
+<p>Markdown 自带的引用 <code>&gt;</code> 并不好用，可使用 HTML 实现。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第二层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br><span class="line">第一层</span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+第一层
+<blockquote>
+第二层
+</blockquote>
+第一层
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -964,6 +964,102 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
 ]]></content>
   </entry>
   <entry>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
+</ul>
+<hr>
+<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
+<ol type="1">
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h1 id="github-page-配置">GitHub Page 配置</h1>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 GitHub<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到GitHub Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h1 id="配置主题">配置主题</h1>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
+<h1 id="发布博客">发布博客</h1>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
+<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构_线性表，栈、队列和数组</title>
     <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
@@ -1238,99 +1334,105 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
       </tags>
   </entry>
   <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+    <title>高等数学笔记_函数与极限</title>
+    <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
+    <content><![CDATA[<p>高等数学<strong>函数与极限</strong>部分的知识总结<br />
+内容包括：</p>
+<ol type="1">
+<li>数列的极限、求数列极限的方法</li>
+<li>函数的极限、求函数极限的方法</li>
+<li>函数的连续性和间断点的判断
 <hr>
-<span id="more"></span>
+<span id="more"></span></li>
+</ol>
 <p><strong>本文索引</strong></p>
 <ul>
-<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
-<li><a href="#github-page-配置">GitHub Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
+<li><a href="#数列的极限">数列的极限</a>
+<ul>
+<li><a href="#定义和性质">定义和性质</a>
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#性质">性质</a></li>
+</ul></li>
+<li><a href="#求数列极限的方法">求数列极限的方法</a></li>
+</ul></li>
+<li><a href="#函数的极限">函数的极限</a>
+<ul>
+<li><a href="#定义和性质-1">定义和性质</a>
+<ul>
+<li><a href="#定义-1">定义</a></li>
+<li><a href="#性质-1">性质</a></li>
+</ul></li>
+<li><a href="#求函数极限的方法">求函数极限的方法</a>
+<ul>
+<li><a href="#极限存在准则">极限存在准则</a></li>
+<li><a href="#无穷小与无穷大">无穷小与无穷大</a></li>
+<li><a href="#无穷的比较">无穷的比较</a></li>
+<li><a href="#泰勒公式">泰勒公式</a></li>
+<li><a href="#洛必达法则">洛必达法则</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#函数的连续与间断">函数的连续与间断</a>
+<ul>
+<li><a href="#连续性">连续性</a></li>
+<li><a href="#间断点">间断点</a></li>
+</ul></li>
+<li><a href="#连续函数的性质">连续函数的性质</a>
+<ul>
+<li><a href="#连续性运算法则">连续性运算法则</a></li>
+<li><a href="#闭区间上的连续函数定理">闭区间上的连续函数定理</a>
+<ul>
+<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
+<li><a href="#介值定理">介值定理</a></li>
+<li><a href="#零点定理">零点定理</a></li>
+</ul></li>
+</ul></li>
 </ul>
 <hr>
-<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
+<h1 id="数列的极限">数列的极限</h1>
+<h2 id="定义和性质">定义和性质</h2>
+<h3 id="定义">定义</h3>
+<p><span class="math display">\[\lim x_n=a \Leftrightarrow  {\forall\varepsilon&gt;0,\exists N\in \textbf{N}^+,当n&gt;N时,恒有\left |x_n-a  \right |&lt;0. }\]</span> 若数列 {x<sub>n</sub>} 存在极限 a，则称数列 {x<sub>n</sub>} 收敛于 a，否则称数列 {x<sub>n</sub>} 是发散的。</p>
+<h3 id="性质">性质</h3>
 <ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h1 id="github-page-配置">GitHub Page 配置</h1>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 GitHub<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到GitHub Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h1 id="配置主题">配置主题</h1>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
-要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+<li><p><strong>定理</strong>：若 {x<sub>n</sub>} 收敛于 a，则其子列也收敛于 a.</p>
+<blockquote>
+<p>在数列 {x<sub>n</sub>} 中选取无穷多项，按照原来的先后顺序排列成的新数列成为 {x<sub>n</sub>} 的<strong>子列</strong>。</p>
+</blockquote></li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>插入图片</strong><br />
-需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
-<h1 id="发布博客">发布博客</h1>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
-<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+<h2 id="求数列极限的方法">求数列极限的方法</h2>
+<h1 id="函数的极限">函数的极限</h1>
+<h2 id="定义和性质-1">定义和性质</h2>
+<h3 id="定义-1">定义</h3>
+<h3 id="性质-1">性质</h3>
+<h2 id="求函数极限的方法">求函数极限的方法</h2>
+<h3 id="极限存在准则">极限存在准则</h3>
+<h3 id="无穷小与无穷大">无穷小与无穷大</h3>
+<h3 id="无穷的比较">无穷的比较</h3>
+<h3 id="泰勒公式">泰勒公式</h3>
+<h3 id="洛必达法则">洛必达法则</h3>
+<h1 id="函数的连续与间断">函数的连续与间断</h1>
+<h2 id="连续性">连续性</h2>
+<h2 id="间断点">间断点</h2>
+<h1 id="连续函数的性质">连续函数的性质</h1>
+<h2 id="连续性运算法则">连续性运算法则</h2>
+<h2 id="闭区间上的连续函数定理">闭区间上的连续函数定理</h2>
+<h3 id="有界性与最值定理">有界性与最值定理</h3>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则在 <span class="math inline">\([a,b]\)</span> 上一定有界，且存在最大值和最小值。</p>
+<h3 id="介值定理">介值定理</h3>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in (a,b)，\text{使得} f(\xi) = \mu.\]</span></p>
+<p><strong>推论1</strong><br />
+<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，M 和 m 为最大值和最小值，则 <span class="math display">\[\forall m \le \mu \le M\text{，}\exists \xi \in [a,b]\text{，使得} f(\xi)= \mu.\]</span></p>
+<p><strong>推论2 平均值定理</strong><br />
+<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
+<h3 id="零点定理">零点定理</h3>
+<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
 ]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>高等数学</tag>
       </tags>
   </entry>
   <entry>
@@ -1537,108 +1639,6 @@ categories 与以上同理。</p>
 <p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 这七种情况均可使用洛必达法则求极限。</p>
 <h2 id="微分中值定理的应用">微分中值定理的应用</h2>
 <h1 id="零点问题与微分不等式">零点问题与微分不等式</h1>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学笔记_函数与极限</title>
-    <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[<p>高等数学<strong>函数与极限</strong>部分的知识总结<br />
-内容包括：</p>
-<ol type="1">
-<li>数列的极限、求数列极限的方法</li>
-<li>函数的极限、求函数极限的方法</li>
-<li>函数的连续性和间断点的判断
-<hr>
-<span id="more"></span></li>
-</ol>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数列的极限">数列的极限</a>
-<ul>
-<li><a href="#定义和性质">定义和性质</a>
-<ul>
-<li><a href="#定义">定义</a></li>
-<li><a href="#性质">性质</a></li>
-</ul></li>
-<li><a href="#求数列极限的方法">求数列极限的方法</a></li>
-</ul></li>
-<li><a href="#函数的极限">函数的极限</a>
-<ul>
-<li><a href="#定义和性质-1">定义和性质</a>
-<ul>
-<li><a href="#定义-1">定义</a></li>
-<li><a href="#性质-1">性质</a></li>
-</ul></li>
-<li><a href="#求函数极限的方法">求函数极限的方法</a>
-<ul>
-<li><a href="#极限存在准则">极限存在准则</a></li>
-<li><a href="#无穷小与无穷大">无穷小与无穷大</a></li>
-<li><a href="#无穷的比较">无穷的比较</a></li>
-<li><a href="#泰勒公式">泰勒公式</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#函数的连续与间断">函数的连续与间断</a>
-<ul>
-<li><a href="#连续性">连续性</a></li>
-<li><a href="#间断点">间断点</a></li>
-</ul></li>
-<li><a href="#连续函数的性质">连续函数的性质</a>
-<ul>
-<li><a href="#连续性运算法则">连续性运算法则</a></li>
-<li><a href="#闭区间上的连续函数定理">闭区间上的连续函数定理</a>
-<ul>
-<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
-<li><a href="#介值定理">介值定理</a></li>
-<li><a href="#零点定理">零点定理</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="数列的极限">数列的极限</h1>
-<h2 id="定义和性质">定义和性质</h2>
-<h3 id="定义">定义</h3>
-<p><span class="math display">\[\lim x_n=a \Leftrightarrow  {\forall\varepsilon&gt;0,\exists N\in \textbf{N}^+,当n&gt;N时,恒有\left |x_n-a  \right |&lt;0. }\]</span> 若数列 {x<sub>n</sub>} 存在极限 a，则称数列 {x<sub>n</sub>} 收敛于 a，否则称数列 {x<sub>n</sub>} 是发散的。</p>
-<h3 id="性质">性质</h3>
-<ul>
-<li><p><strong>定理</strong>：若 {x<sub>n</sub>} 收敛于 a，则其子列也收敛于 a.</p>
-<blockquote>
-<p>在数列 {x<sub>n</sub>} 中选取无穷多项，按照原来的先后顺序排列成的新数列成为 {x<sub>n</sub>} 的<strong>子列</strong>。</p>
-</blockquote></li>
-</ul>
-<h2 id="求数列极限的方法">求数列极限的方法</h2>
-<h1 id="函数的极限">函数的极限</h1>
-<h2 id="定义和性质-1">定义和性质</h2>
-<h3 id="定义-1">定义</h3>
-<h3 id="性质-1">性质</h3>
-<h2 id="求函数极限的方法">求函数极限的方法</h2>
-<h3 id="极限存在准则">极限存在准则</h3>
-<h3 id="无穷小与无穷大">无穷小与无穷大</h3>
-<h3 id="无穷的比较">无穷的比较</h3>
-<h3 id="泰勒公式">泰勒公式</h3>
-<h3 id="洛必达法则">洛必达法则</h3>
-<h1 id="函数的连续与间断">函数的连续与间断</h1>
-<h2 id="连续性">连续性</h2>
-<h2 id="间断点">间断点</h2>
-<h1 id="连续函数的性质">连续函数的性质</h1>
-<h2 id="连续性运算法则">连续性运算法则</h2>
-<h2 id="闭区间上的连续函数定理">闭区间上的连续函数定理</h2>
-<h3 id="有界性与最值定理">有界性与最值定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则在 <span class="math inline">\([a,b]\)</span> 上一定有界，且存在最大值和最小值。</p>
-<h3 id="介值定理">介值定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in (a,b)，\text{使得} f(\xi) = \mu.\]</span></p>
-<p><strong>推论1</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，M 和 m 为最大值和最小值，则 <span class="math display">\[\forall m \le \mu \le M\text{，}\exists \xi \in [a,b]\text{，使得} f(\xi)= \mu.\]</span></p>
-<p><strong>推论2 平均值定理</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
-<h3 id="零点定理">零点定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
