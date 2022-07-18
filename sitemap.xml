@@ -74,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://cohanbb.github.io/2022/03/19/HTMLCSS%E4%BF%AE%E9%A5%B0Markdown/</loc>
-    
-    <lastmod>2022-07-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://cohanbb.github.io/2022/05/16/HTML%20%E4%B8%8E%20CSS/</loc>
     
     <lastmod>2022-06-25</lastmod>
@@ -160,21 +151,14 @@
   </url>
   
   <url>
-    <loc>https://cohanbb.github.io/tags/Hexo/</loc>
-    <lastmod>2022-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://cohanbb.github.io/tags/Markdown/</loc>
-    <lastmod>2022-07-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://cohanbb.github.io/tags/PHP/</loc>
+    <lastmod>2022-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://cohanbb.github.io/tags/Hexo/</loc>
     <lastmod>2022-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
