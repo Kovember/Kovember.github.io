@@ -175,11 +175,10 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global init.defaultBranch main</span><br></pre></td></tr></table></figure>
 <p>其他操作并不影响，上述与 master 有关的所有内容都替换 main 即可。</p>
 <h1 id="参考文献">参考文献</h1>
-<p># 参考文献</p>
-<p>[1] 菜鸟教程.Git 教程[EB/OL].<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a><br />
-[2] 菜鸟教程.Github 简明教程[EB/OL].<a href="https://www.runoob.com/w3cnote/git-guide.html">https://www.runoob.com/w3cnote/git-guide.html</a><br />
-[3] VGtime.Git基本原理介绍[EB/OL].<a href="https://blog.csdn.net/JKR10000/article/details/110453547">https://blog.csdn.net/JKR10000/article/details/110453547</a><br />
-[4] raoxiaoya.git深入理解(一)：暂存区(Stage)，索引(index)[EB/OL].<a href="https://blog.csdn.net/raoxiaoya/article/details/110824019">https://blog.csdn.net/raoxiaoya/article/details/110824019</a></p>
+<p>[1] 菜鸟教程. Git 教程[EB/OL]. <a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a><br />
+[2] 菜鸟教程. Github 简明教程[EB/OL]. <a href="https://www.runoob.com/w3cnote/git-guide.html">https://www.runoob.com/w3cnote/git-guide.html</a><br />
+[3] VGtime. Git基本原理介绍[EB/OL]. <a href="https://blog.csdn.net/JKR10000/article/details/110453547">https://blog.csdn.net/JKR10000/article/details/110453547</a><br />
+[4] raoxiaoya. git深入理解(一)：暂存区(Stage)，索引(index)[EB/OL]. <a href="https://blog.csdn.net/raoxiaoya/article/details/110824019">https://blog.csdn.net/raoxiaoya/article/details/110824019</a></p>
 ]]></content>
       <categories>
         <category>Efficient Technology</category>
@@ -228,7 +227,7 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 <hr>
 <h1 id="html">HTML</h1>
 <h2 id="简介">简介</h2>
-<p>HTML(HyperText Markup Language) <strong>超文本标记语言</strong>，何谓超文本？简单来说，超文本指具有超链接功能的文本，即一个超文本可以由若干个超链接构成，最常见的应用场景便是 Web 页面，也用于其他领域，譬如 Markdown 文档是基于 HTML 简化而来。</p>
+<p>HTML (HyperText Markup Language) <strong>超文本标记语言</strong>，何谓超文本？简单来说，超文本指具有超链接功能的文本，即一个超文本可以由若干个超链接构成，最常见的应用场景便是 Web 页面，也用于其他领域，譬如 Markdown 文档是基于 HTML 简化而来。</p>
 <h2 id="基本架构">基本架构</h2>
 <p><code>&lt;html&gt;</code> 标签：表明是一个 HTML 文档。<br />
 <code>&lt;title&gt;</code> 标签：定义文档的标题。<br />
@@ -578,8 +577,8 @@ CSS 中表示字体大小有多种形式：
 <li>inherit：继承父元素的 overflow 属性值。</li>
 </ul>
 <h1 id="参考文献">参考文献</h1>
-<p>[1] 菜鸟教程.HTML 教程[EB/OL].<a href="https://www.runoob.com/html/html-tutorial.html">https://www.runoob.com/html/html-tutorial.html</a><br />
-[2] 菜鸟教程.CSS 教程[EB/OL].<a href="https://www.runoob.com/css/css-tutorial.html">https://www.runoob.com/css/css-tutorial.html</a></p>
+<p>[1] 菜鸟教程. HTML 教程[EB/OL]. <a href="https://www.runoob.com/html/html-tutorial.html">https://www.runoob.com/html/html-tutorial.html</a><br />
+[2] 菜鸟教程. CSS 教程[EB/OL]. <a href="https://www.runoob.com/css/css-tutorial.html">https://www.runoob.com/css/css-tutorial.html</a></p>
 ]]></content>
       <categories>
         <category>Programming Language</category>
@@ -592,7 +591,7 @@ CSS 中表示字体大小有多种形式：
     <title>PHP_A Fundamental Perspective</title>
     <url>/2022/05/10/PHP/</url>
     <content><![CDATA[<h1 id="摘要">摘要</h1>
-<p>PHP(Hypertext Preprocessor)超文本预处理器，一种开源的、一般运行在服务器上的开源脚本语言，具有跨平台性、与几乎所有 Web 服务器兼容、与大量的数据库兼容。<br />
+<p>PHP (Hypertext Preprocessor) 超文本预处理器，一种开源的、一般运行在服务器上的开源脚本语言，具有跨平台性、与几乎所有 Web 服务器兼容、与大量的数据库兼容。<br />
 PHP 属于类 C 语言，解释器也使用 C 语言编写，大部分语法与 C 语言相通，如果有良好的 C 语言的基础，可以快速地入门 PHP。<br />
 PHP 文件可以包含 PHP 代码、HTML 和 JavaScript 代码，在服务端执行，与数据库进行交互后生成 HTML 文件通过 Web 服务器返回给浏览器。</p>
 <hr>
@@ -907,102 +906,6 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
 ]]></content>
   </entry>
   <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
-<li><a href="#github-page-配置">GitHub Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
-</ul>
-<hr>
-<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
-<ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h1 id="github-page-配置">GitHub Page 配置</h1>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 GitHub<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到GitHub Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h1 id="配置主题">配置主题</h1>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
-要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>插入图片</strong><br />
-需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
-<h1 id="发布博客">发布博客</h1>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
-<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构_线性表，栈、队列和数组</title>
     <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
@@ -1164,6 +1067,102 @@ categories 与以上同理。</p>
       </categories>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
+</ul>
+<hr>
+<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
+<ol type="1">
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h1 id="github-page-配置">GitHub Page 配置</h1>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 GitHub<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到GitHub Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h1 id="配置主题">配置主题</h1>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
+<h1 id="发布博客">发布博客</h1>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
+<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
