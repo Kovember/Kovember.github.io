@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
+  </script>
+
+  <meta name="description" content="高等数学一元函数微分学的概念和计算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一元函数微分学">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Cohanbb Wiki">
+<meta property="og:description" content="高等数学一元函数微分学的概念和计算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-08T13:46:43.000Z">
+<meta property="article:modified_time" content="2022-09-08T15:47:20.414Z">
+<meta property="article:author" content="Cohanbb">
+<meta property="article:tag" content="高等数学">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>一元函数微分学 | Cohanbb Wiki</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cohanbb Wiki</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Cohanbb Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-链接">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>链接</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cohanbb">
+      <meta itemprop="description" content="Technological blogs about Computer Science.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cohanbb Wiki">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一元函数微分学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-08 21:46:43 / 修改时间：23:47:20" itemprop="dateCreated datePublished" datetime="2022-09-08T21:46:43+08:00">2022-09-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">高等数学</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高等数学一元函数微分学的概念和计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=4 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#导数">导数</a></li>
+<li><a href="#微分">微分</a></li>
+</ul></li>
+<li><a href="#计算">计算</a>
+<ul>
+<li><a href="#基本求导公式和导数运算法则">基本求导公式和导数运算法则</a></li>
+<li><a href="#特殊函数求导方法">特殊函数求导方法</a>
+<ul>
+<li><a href="#复合函数求导法">复合函数求导法</a></li>
+<li><a href="#反函数求导法">反函数求导法</a></li>
+<li><a href="#参数方程求导法">参数方程求导法</a></li>
+<li><a href="#隐函数求导法">隐函数求导法</a></li>
+<li><a href="#变限积分求导公式">变限积分求导公式</a></li>
+<li><a href="#对数求导法">对数求导法</a></li>
+<li><a href="#幂指函数求导法">幂指函数求导法</a></li>
+</ul></li>
+<li><a href="#分段函数求导">分段函数求导</a></li>
+<li><a href="#高阶导数">高阶导数</a></li>
+</ul></li>
+<li><a href="#一元函数微分学的几何应用">一元函数微分学的几何应用</a>
+<ul>
+<li><a href="#单调性与极值点">单调性与极值点</a></li>
+<li><a href="#求最值或取值范围">求最值或取值范围</a></li>
+<li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
+<li><a href="#渐近线">渐近线</a></li>
+<li><a href="#曲率">曲率</a></li>
+</ul></li>
+<li><a href="#一元函数微分学的物理应用">一元函数微分学的物理应用</a></li>
+<li><a href="#应试技巧">应试技巧</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="导数">导数</h3>
+<p>若函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，当 <em>y</em> 的增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span> 与 <span class="math inline">\(\Delta x\)</span> 的比值的极限在 <span class="math inline">\(\Delta x \to 0\)</span> 时存在，则 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可导</strong>』，该<strong>极限</strong>称为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>导数</strong>』，导数记为 <span class="math inline">\(f’(x_0)\)</span>。即</p>
+<p><span class="math display">\[
+\begin{align}
+f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\\
+&amp;= \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}
+\end{align}
+\]</span></p>
+<ul>
+<li>(1)式称为增量式，(2) 式称为差值式。</li>
+<li><p>导数的本质是一种<strong>极限</strong>，存在的充要条件是左右极限都存在且相等。</p>
+<blockquote>
+<p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
+</blockquote></li>
+<li>下面三种说法等价：
+<ul>
+<li><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处可导。</li>
+<li><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处导数存在。</li>
+<li><span class="math inline">\(f&#39;(x_0) = A \; (A \in \mathbb{R})\)</span>。</li>
+</ul></li>
+<li>导数代表 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『（瞬时）变化率』，几何意义为函数图形上某一点的『切线斜率』。<br />
+</li>
+<li><p>函数在某处可导，则必然在此处连续。<strong>反之不成立</strong>。</p>
+<blockquote>
+<p><strong>证</strong><br />
+设函数 <span class="math inline">\(y=f(x)\)</span> 在 <em>x</em><sub>0</sub> 处的导数为 A，<br />
+则 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A\)</span>，<br />
+<span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \alpha \; (\lim_{\Delta x \to 0} \alpha = 0)\)</span>，<br />
+当 <span class="math inline">\(\Delta x \to 0\)</span>，<br />
+<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0)= A\Delta x + \alpha \Delta x = A\Delta x+o(\Delta x)\)</span>，<br />
+显然 <span class="math inline">\(\Delta y \to 0\)</span>，即 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续。<br />
+反之不成立的例子：<span class="math inline">\(y = |x|\)</span>，<span class="math inline">\(y = x\sin(x)\)</span>。</p>
+</blockquote></li>
+</ul>
+<p>函数 <span class="math inline">\(y = f&#39;(x)\)</span> 为 <span class="math inline">\(f(x)\)</span> 的导函数，导函数具有特殊的性质：</p>
+<ul>
+<li>导函数零点定理：<br />
+若函数 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续），<span class="math inline">\(f’_+(a) \cdot f’_-(b) &lt; 0\)</span>，则 <span class="math inline">\(\exists \xi \in (a, b)\)</span>，使得 <span class="math inline">\(f&#39;(\xi) = 0\)</span>。</li>
+<li>达布定理（导函数介值定理）：<br />
+若函数 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续），<span class="math inline">\(f’(a) \ne f’(b)\)</span>，则对于 <span class="math inline">\(\forall \mu\)</span> 位于 <span class="math inline">\(f’(a)\)</span> 和 <span class="math inline">\(f’(b)\)</span> 之间，都 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math inline">\(f’(\xi)=\mu\)</span>。</li>
+<li>在可导区间内导函数无第一类间断点和无穷间断点。即若函数 <span class="math inline">\(y=f(x)\)</span> 在某处可导，则 <span class="math inline">\(f&#39;(x)\)</span> 在此处<strong>连续或存在振荡间断点</strong>。</li>
+<li><span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上可导，<span class="math inline">\(f&#39;(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上有界，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上有界。换个说法，<span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上可导且无界，则 <span class="math inline">\(f&#39;(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上无界。</li>
+</ul>
+<h3 id="微分">微分</h3>
+<p>设函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，对于函数增量 <span class="math inline">\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)</span>，若存在与 <span class="math inline">\(\Delta x\)</span> 无关的常数 <em>A</em>，使得</p>
+<p><span class="math display">\[
+\Delta y = A\Delta x + o(\Delta x)
+\]</span></p>
+<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作 <span class="math inline">\(\text{d}y\)</span>。所以</p>
+<p><span class="math display">\[
+\Delta y = \text{d}y + o(\Delta x)
+\]</span></p>
+<p>又因为 <span class="math inline">\(\Delta x = 1 \cdot \Delta x + 0 \Rightarrow 1 \cdot \Delta x + o(\Delta x)\)</span>，所以 <span class="math inline">\(\text{d}x = \Delta x\)</span>。</p>
+<p>所以</p>
+<p><span class="math display">\[
+\text{d}y = A\text{d}x
+\]</span></p>
+<p>又 <span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \frac{o(\Delta x)}{\Delta x}\)</span>，所以 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A + 0 = A\)</span>，即</p>
+<p><span class="math display">\[
+A = f&#39;(x_0)
+\]</span></p>
+<p>故</p>
+<p><span class="math display">\[
+\text{d}y = f&#39;(x_0)\text{d}x
+\]</span></p>
+<p>跟据以上分析，可得出两个重要结论：</p>
+<ol type="1">
+<li>导数的第三个定义式：</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+f&#39;(x) = \frac{\text{d}y}{\text{d}x}
+\end{align}
+\]</span></p>
+<ol start="2" type="1">
+<li>若函数在某处可微，则必在此处可导。反之也成立。即<strong>函数在某处可微等价于在某处可导</strong>。</li>
+</ol>
+<blockquote>
+<p><strong>证</strong><br />
+设函数 <span class="math inline">\(y=f(x)\)</span> 在 <em>x</em><sub>0</sub> 处的导数为 A，<br />
+则 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A\)</span>，<br />
+<span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \alpha \; (\lim_{\Delta x \to 0} \alpha = 0)\)</span>，<br />
+当 <span class="math inline">\(\Delta x \to 0\)</span>，<br />
+<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0)= A\Delta x + \alpha \Delta x = A\Delta x+o(\Delta x)\)</span>，<br />
+即 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处可微。</p>
+</blockquote>
+<h2 id="计算">计算</h2>
+<h3 id="基本求导公式和导数运算法则">基本求导公式和导数运算法则</h3>
+<p>基本求导公式：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left(x^{\alpha}\right)&#39;=\alpha x^{\alpha - 1}, \quad \left(a^{x}\right)&#39; = a^{x} \ln a \;(a&gt;0, a \neq 1), \quad\left(\mathrm{e}^{x}\right)^{\prime}=\mathrm{e}^{x}, \\ &amp;\left(\log _{a} x\right)^{\prime}=\frac{1}{x \ln a} \;(a&gt;0, a \neq 1) ,\quad(\ln |x|)^{\prime}=\frac{1}{x}, \\ &amp;(\sin x)^{\prime}=\cos x, \quad(\cos x)^{\prime}=-\sin x, \quad(\tan x)^{\prime}=\sec ^{2} x, \quad(\cot x)^{\prime}=-\csc ^{2} x, \\
+&amp; (\arcsin x)^{\prime}=\frac{1}{\sqrt{1-x^{2}}} ,\quad(\arccos x)^{\prime}=-\frac{1}{\sqrt{1-x^{2}}}, \quad(\arctan x)^{\prime}=\frac{1}{1+x^{2}} ,\\
+&amp; (\operatorname{arccot} x)^{\prime}=-\frac{1}{1+x^{2}}, \quad(\sec x)^{\prime}=\sec x \tan x, \quad(\csc x)^{\prime}=-\csc x \cot x ,\\
+&amp; \left[\ln \left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}+1}}, \quad\left[\ln \left(x+\sqrt{x^{2}-1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}-1}}
+\end{aligned}
+\]</span></p>
+<p>导数和微分的运算法则：</p>
+<ul>
+<li><span class="math inline">\((ku)&#39; = ku&#39;,\; \text{d}(ku) = k\text{d}u\)</span>，<em>k</em> 为常数。</li>
+<li><span class="math inline">\((u \pm v)&#39; = u&#39; \pm v&#39;,\;\text{d}(u \pm v) = \text{d}u \pm \text{d}v\)</span></li>
+<li><span class="math inline">\((uv)&#39; = u&#39;v + v&#39;u, \; \text{d}(uv) = v\text{d}u + u\text{d}v\)</span></li>
+<li><span class="math inline">\(\left(\frac{u}{v}\right)&#39; = \frac{u&#39;v - v&#39;u}{v^2}, \;\text{d}\left(\frac{u}{v}\right) = \frac{v\text{d}u - u\text{d}v}{v^2},\; v \neq 0\)</span></li>
+</ul>
+<h3 id="特殊函数求导方法">特殊函数求导方法</h3>
+<h4 id="复合函数求导法">复合函数求导法</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;f[g(x)]&#39; = g&#39;(x)f&#39;[g(x)]\\
+&amp;\text{d}\{f[g(x)]\} = f&#39;[g(x)]\text{d}g(x)= g&#39;(x)f&#39;[g(x)]\text{d}x
+\end{aligned}
+\]</span></p>
+<h4 id="反函数求导法">反函数求导法</h4>
+<p>若 <span class="math inline">\(f(x)\)</span> 可导且 <span class="math inline">\(f&#39;(x) \neq 0\)</span>，则 <span class="math inline">\(f(x)\)</span> 是单调函数，存在反函数 <span class="math inline">\(x = f^{-1}(y) = \varphi(y)\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+\varphi&#39;(y) &amp;= \frac{\text{d}x}{\text{d}y} = \frac{1}{f&#39;(x)}\\
+\varphi&#39;&#39;(y) &amp;= \frac{\text{d}\left(\frac{\text{d}x}{\text{d}y}\right)}{\text{d}y} = \frac{\text{d}\left(\frac{\text{d}x}{\text{d}y}\right)}{\text{d}x}\cdot \frac{\text{d}x}{\text{d}y} = \frac{\text{d}\left(\frac{1}{f&#39;(x)}\right)}{\text{d}x} \cdot \frac{1}{f&#39;(x)} \\&amp;= - \frac{f&#39;&#39;(x)}{[f&#39;(x)]^2} \cdot \frac{1}{f&#39;(x)} = - \frac{f&#39;&#39;(x)}{[f&#39;(x)]^3}
+\end{aligned}
+\]</span></p>
+<h4 id="参数方程求导法">参数方程求导法</h4>
+$$
+<span class="math display">\[\begin{aligned}
+&amp;\left\{
+\begin{aligned}
+&amp; x = \varphi(t)\\
+&amp; y = \psi(t)
+\end{aligned}
+\right.\\
+&amp; y&#39; = \frac{\text{d}y}{\text{d}x} = \frac{\text{d}y/\text{d}t}{\text{d}x/\text{d}t} = \frac{\psi&#39;(t)}{\varphi&#39;(t)}\\
+&amp; y&#39;&#39; = \frac{\text{d}\left(\frac{\text{d}y}{\text{d}x}\right)}{\text{d}x} = \frac{\text{d}\left(\frac{\text{d}y}{\text{d}x}\right)/\text{d}t}{\text{d}x/\text{d}t} = \frac{\psi&#39;&#39;(t)\varphi(t) - \varphi&#39;&#39;(t)\psi&#39;(t)}{[\varphi&#39;(t)]^3}
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h4 id="隐函数求导法">隐函数求导法</h4>
+<p>函数由方程 <span class="math inline">\(F(x,y) = 0\)</span> 确定，对方程两侧求导，注意 <span class="math inline">\(y = y(x)\)</span>，得到一个由 <span class="math inline">\(x,\;y,\;y&#39;\)</span> 构成的方程，求解可得到 <span class="math inline">\(y&#39;\)</span>。</p>
+<h4 id="变限积分求导公式">变限积分求导公式</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;F(x) = \int _{\varphi_1(x)}^{\varphi_2(x)} f(t) \text{d}t\\
+&amp;F&#39;(x) = f[\varphi_2(x)]\varphi_2&#39;(x)-f[\varphi_1(x)]\varphi_1&#39;(x)
+\end{aligned}
+\]</span></p>
+<p>注意：如果被积函数中含有『求导变量』<em>x</em>，如：<span class="math inline">\(F(x)= \int_a^x xf(t)\text{d}x\)</span>，则无法直接使用变限积分求导公式。</p>
+<h4 id="对数求导法">对数求导法</h4>
+<p>多项式相乘除、幂运算的式子，可先取对数再求导：</p>
+<p><span class="math display">\[
+y = f(x) \Rightarrow \ln y = \ln f(x) \Rightarrow \frac{y&#39;}{y} = \frac{f&#39;(x)}{f(x)} \Rightarrow y&#39; = \frac{yf&#39;(x)}{f(x)}
+\]</span></p>
+<h4 id="幂指函数求导法">幂指函数求导法</h4>
+<p>形如 <span class="math inline">\(u(x)^{v(x)}\)</span>，可恒等变形为指数形式 <span class="math inline">\(e^{v(x)\ln u(x)}\)</span> 然后求导：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left[e^{v(x)\ln u(x)}\right]&#39;&amp; = e^{v(x)\ln u(x)}\left[v&#39;(x)\ln u(x) + \frac{u&#39;(x)v(x)}{u(x)}\right]\\
+&amp; = u(x)^{v(x)}\left[v&#39;(x)\ln u(x) + \frac{u&#39;(x)v(x)}{u(x)}\right]
+\end{aligned}
+\]</span></p>
+<h3 id="分段函数求导">分段函数求导</h3>
+<h3 id="高阶导数">高阶导数</h3>
+<h2 id="一元函数微分学的几何应用">一元函数微分学的几何应用</h2>
+<h3 id="单调性与极值点">单调性与极值点</h3>
+<p>若<strong>存在</strong>点 <em>x</em><sub>0</sub> 的某邻域 <span class="math inline">\(U(x_0)\)</span>，使得对于 <span class="math inline">\(\forall x \in U(x_0)\)</span>，都有</p>
+<p><span class="math display">\[
+f(x) \leq f(x_0)\; (\text{or} \; f(x) \geq f(x_0))
+\]</span></p>
+<p>成立，则称点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的<strong>广义的极大值点（或极小值点）</strong>。</p>
+<p>若<strong>存在</strong>点 <em>x</em><sub>0</sub> 的某去心邻域 <span class="math inline">\(\mathring{U}(x_0)\)</span>，使得对于 <span class="math inline">\(\forall x \in \mathring{U}(x_0)\)</span>，都有</p>
+<p><span class="math display">\[
+f(x) &lt; f(x_0)\; (\text{or} \; f(x) &gt; f(x_0))
+\]</span></p>
+<p>成立，则称点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的<strong>真正的极大值点（或极小值点）</strong>。</p>
+<p><strong>注意：</strong></p>
+<p>极值点是一个非常宽松的概念，只要在该点的某个邻域内取得最值，该点便是一个极值点。极值点两侧的<strong>单调性不一定发生改变</strong>，该点<strong>不一定可导</strong>，也<strong>不一定连续</strong>。譬如 <span class="math inline">\(x = 0\)</span> 为下面函数的极大值点：</p>
+<p><span class="math display">\[
+\begin{array}{l}
+f(x) =
+\left\{\begin{array}{l}
+1, &amp; x = 0 \\
+x, &amp; x \neq 0
+\end{array}\right.
+\end{array}
+\]</span></p>
+<p><strong>判断极值点的第一充分条件：</strong></p>
+<p>若函数在点 <em>x</em><sub>0</sub> 两侧的<strong>单调性发生改变</strong>，则点 <em>x</em><sub>0</sub> 是函数的一个极值点。</p>
+<p>即若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，且在点 <em>x</em><sub>0</sub> 的某去心 <span class="math inline">\(\delta\)</span> 邻域 <span class="math inline">\(\mathring{U}(x, \delta)\)</span> 内可导：</p>
+<ul>
+<li><span class="math inline">\(x \in (x_0-\delta, x_0),\; f&#39;(x) &lt; 0,\;x \in (x_0, x_0+\delta),\; f&#39;(x) &gt; 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li><span class="math inline">\(x \in (x_0-\delta, x_0),\; f&#39;(x) &gt; 0,\;x \in (x_0, x_0+\delta),\; f&#39;(x) &lt; 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>判断极值点的第二充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处二阶可导，且 <span class="math inline">\(f&#39;(x_0) = 0, \;f&#39;&#39;(x_0) \neq 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点。</p>
+<ul>
+<li>当 <span class="math inline">\(f&#39;&#39;(x_0) &gt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li>当 <span class="math inline">\(f&#39;&#39;(x_0) &lt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>第二充分条件的推广形式：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处 $ n;(n 2)$ 阶可导，且 <span class="math inline">\(f^{(m)}(x_0) = 0 \;(m = 1,2,...,n-1), \;f^{(n)}(x_0) \neq 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点。</p>
+<ul>
+<li>当 <em>n</em> 为偶数且 <span class="math inline">\(f^{(n)}(x_0) &gt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li>当 <em>n</em> 为偶数且 <span class="math inline">\(f^{(n)}(x_0) &lt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>极值点的必要条件：</strong></p>
+<p>点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，若 <span class="math inline">\(f(x)\)</span> 在点 <span class="math inline">\(x_0\)</span> 处可导，则 <span class="math inline">\(f&#39;(x)=0\)</span>。</p>
+<h3 id="求最值或取值范围">求最值或取值范围</h3>
+<h3 id="凹凸性与拐点">凹凸性与拐点</h3>
+<p>若 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上连续，若对于 <span class="math inline">\(\forall x_1,x_2 \in I \;(x_1 \neq x_2)\)</span>，都有</p>
+<p><span class="math display">\[
+f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\left(\frac{x_1+x_2}{2}\right) &gt; \frac{f(x_1)+f(x_2)}{2})
+\]</span></p>
+<p>成立，则称 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上的图形是凹（或凸）的。函数图形上凹凸性发生变化的点称为<strong>拐点</strong>。</p>
+<p><strong>判断拐点的第一充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，在点 <em>x</em><sub>0</sub> 的某去心邻域内二阶可导，且在左、右邻域内的二阶导数异号，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<p><strong>判断拐点的第二充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处三阶可导，且 <span class="math inline">\(f&#39;&#39;( x_0) = 0,\;f&#39;&#39;&#39;(x_0) \neq 0\)</span>，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<p><strong>第二充分条件的推广形式：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处 <span class="math inline">\(n \;(n \geq 3)\)</span> 阶可导，且 <span class="math inline">\(f^{(m)}( x_0) = 0\; (m = 2,3,...,n-1),\;f^{(n)}(x_0) \neq 0\)</span>，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<h3 id="渐近线">渐近线</h3>
+<ol type="1">
+<li>铅垂渐近线</li>
+</ol>
+<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{i}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{i}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条铅垂渐近线。</p>
+<blockquote>
+<p>注：此处的 <span class="math inline">\(x_{0}\)</span> 或是函数的无定义点，或是函数定义区间的端点，或是分段函数的分段点。</p>
+</blockquote>
+<ol start="2" type="1">
+<li>水平渐近线</li>
+</ol>
+<ul>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条水平渐近线。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条水平渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条水平渐近线。</li>
+</ul>
+<ol start="3" type="1">
+<li>斜渐近线</li>
+</ol>
+<ul>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}\)</span>，<span class="math inline">\(x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}\)</span>，<span class="math inline">\(x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。</li>
+</ul>
+<h3 id="曲率">曲率</h3>
+<p>设曲线的直角坐标方程为 <span class="math inline">\(y=f(x)\)</span>， 且 <span class="math inline">\(y=f(x)\)</span> 具有二阶导数，曲线在点 <em>M</em> 处的切线的斜率为 <span class="math inline">\(y=\tan \alpha\)</span>， 所以</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sec ^{2} \alpha \times \frac{\text{d}\alpha}{\text{d} x} = y^{\prime \prime} &amp;\Rightarrow \frac{\text{d} \alpha}{\text{d} x}=\frac{y^{\prime \prime}}{1+\tan ^{2} \alpha}=\frac{y^{\prime \prime}}{1+y^{\prime 2}}\\
+\text{d} \alpha &amp;= \frac{y^{\prime \prime}}{1+y^{\prime 2}} \text{d} x
+\end{aligned}
+\]</span></p>
+<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的曲率为：</p>
+<p><span class="math display">\[
+K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \prime}\right|}{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}
+\]</span></p>
+<p>设曲线是由参数方程 <span class="math inline">\(\left\{\begin{array}{l}x=\varphi(t) \\ y=\psi(t)\end{array}\right.\)</span> 给出，利用参数方程求导法可得：</p>
+<p><span class="math display">\[
+K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varphi^{\prime \prime}(t)\right|}{\left[\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)\right]^{\frac{3}{2}}}
+\]</span></p>
+<h2 id="一元函数微分学的物理应用">一元函数微分学的物理应用</h2>
+<p>相关变化率。</p>
+<h2 id="应试技巧">应试技巧</h2>
+<ul>
+<li><span class="math inline">\((\ln |x|)&#39; = \frac{1}{x}\)</span></li>
+<li><span class="math inline">\(f(0) = 0 \Rightarrow f&#39;(0) = \lim_{h \to 0} \frac{f(h)}{h}\)</span></li>
+<li>根据导函数的零点定理，<span class="math inline">\(f(x)\)</span>（在区间内）可导，<span class="math inline">\(f&#39;(x) \neq 0\)</span>，则 <span class="math inline">\(f&#39;(x)\)</span> 恒正或恒负，即 <span class="math inline">\(f(x)\)</span>（在区间内）严格单调递增或递减。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Cohanbb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cohanbb.github.io/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" title="一元函数微分学">https://cohanbb.github.io/2022/09/08/一元函数微分学/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag"># 高等数学</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/07/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E6%8B%BE%E9%81%97/" rel="prev" title="数学知识拾遗">
+      <i class="fa fa-chevron-left"></i> 数学知识拾遗
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">微分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%B1%82%E5%AF%BC%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AF%BC%E6%95%B0%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99"><span class="nav-number">2.1.</span> <span class="nav-text">基本求导公式和导数运算法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">特殊函数求导方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">复合函数求导法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.2.</span> <span class="nav-text">反函数求导法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%96%B9%E7%A8%8B%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.3.</span> <span class="nav-text">参数方程求导法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.4.</span> <span class="nav-text">隐函数求导法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%99%90%E7%A7%AF%E5%88%86%E6%B1%82%E5%AF%BC%E5%85%AC%E5%BC%8F"><span class="nav-number">2.2.5.</span> <span class="nav-text">变限积分求导公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.6.</span> <span class="nav-text">对数求导法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%82%E6%8C%87%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC%E6%B3%95"><span class="nav-number">2.2.7.</span> <span class="nav-text">幂指函数求导法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC"><span class="nav-number">2.3.</span> <span class="nav-text">分段函数求导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%AF%BC%E6%95%B0"><span class="nav-number">2.4.</span> <span class="nav-text">高阶导数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6%E7%9A%84%E5%87%A0%E4%BD%95%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">一元函数微分学的几何应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%80%A7%E4%B8%8E%E6%9E%81%E5%80%BC%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">单调性与极值点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E6%9C%80%E5%80%BC%E6%88%96%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4"><span class="nav-number">3.2.</span> <span class="nav-text">求最值或取值范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%B9%E5%87%B8%E6%80%A7%E4%B8%8E%E6%8B%90%E7%82%B9"><span class="nav-number">3.3.</span> <span class="nav-text">凹凸性与拐点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%90%E8%BF%91%E7%BA%BF"><span class="nav-number">3.4.</span> <span class="nav-text">渐近线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-number">3.5.</span> <span class="nav-text">曲率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6%E7%9A%84%E7%89%A9%E7%90%86%E5%BA%94%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">一元函数微分学的物理应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">5.</span> <span class="nav-text">应试技巧</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cohanbb"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cohanbb</p>
+  <div class="site-description" itemprop="description">Technological blogs about Computer Science.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    不得真假  不做挣扎  不惧笑话
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Cohanbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Cohanbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/m0_48857872" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_48857872" rel="noopener" target="_blank"><i class="fa fa-keyboard fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cohanbb</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

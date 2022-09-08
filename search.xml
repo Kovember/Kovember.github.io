@@ -8,6 +8,8 @@
 <hr>
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
 <li><a href="#摘要">摘要</a></li>
 <li><a href="#git-安装和配置">Git 安装和配置</a>
@@ -18,7 +20,7 @@
 <li><a href="#git-原理">Git 原理</a>
 <ul>
 <li><a href="#git-基本工作流程">Git 基本工作流程</a></li>
-<li><a href="#git-工作区暂存区和版本库">Git 工作区、暂存区和版本库</a></li>
+<li><a href="#git-工作区-暂存区和版本库">Git 工作区、暂存区和版本库</a></li>
 <li><a href="#深入理解-git">深入理解 Git</a></li>
 </ul></li>
 <li><a href="#git-常用命令">Git 常用命令</a>
@@ -31,6 +33,7 @@
 <li><a href="#github">GitHub</a></li>
 <li><a href="#参考文献">参考文献</a></li>
 </ul>
+<!-- /code_chunk_output -->
 <hr>
 <h1 id="git-安装和配置">Git 安装和配置</h1>
 <h2 id="安装-git">安装 Git</h2>
@@ -201,6 +204,8 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 <hr>
 <span id="more"></span>
 <p><strong>文章索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
 <li><a href="#摘要">摘要</a></li>
 <li><a href="#html">HTML</a>
@@ -226,6 +231,7 @@ index 是工作区的一个文件索引，存储着各文件各版本的信息�
 </ul></li>
 <li><a href="#参考文献">参考文献</a></li>
 </ul>
+<!-- /code_chunk_output -->
 <hr>
 <h1 id="html">HTML</h1>
 <h2 id="简介">简介</h2>
@@ -592,26 +598,6 @@ CSS 中表示字体大小有多种形式：
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/02/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>PHP_A Fundamental Perspective</title>
     <url>/2022/05/10/PHP/</url>
     <content><![CDATA[<h1 id="摘要">摘要</h1>
@@ -910,6 +896,679 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
       </tags>
   </entry>
   <entry>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr>
+<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
+<ol type="1">
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h1 id="github-page-配置">GitHub Page 配置</h1>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 GitHub<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到GitHub Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h1 id="配置主题">配置主题</h1>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
+<h1 id="发布博客">发布博客</h1>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
+<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一元函数微分学</title>
+    <url>/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
+    <content><![CDATA[<p>高等数学一元函数微分学的概念和计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=4 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#导数">导数</a></li>
+<li><a href="#微分">微分</a></li>
+</ul></li>
+<li><a href="#计算">计算</a>
+<ul>
+<li><a href="#基本求导公式和导数运算法则">基本求导公式和导数运算法则</a></li>
+<li><a href="#特殊函数求导方法">特殊函数求导方法</a>
+<ul>
+<li><a href="#复合函数求导法">复合函数求导法</a></li>
+<li><a href="#反函数求导法">反函数求导法</a></li>
+<li><a href="#参数方程求导法">参数方程求导法</a></li>
+<li><a href="#隐函数求导法">隐函数求导法</a></li>
+<li><a href="#变限积分求导公式">变限积分求导公式</a></li>
+<li><a href="#对数求导法">对数求导法</a></li>
+<li><a href="#幂指函数求导法">幂指函数求导法</a></li>
+</ul></li>
+<li><a href="#分段函数求导">分段函数求导</a></li>
+<li><a href="#高阶导数">高阶导数</a></li>
+</ul></li>
+<li><a href="#一元函数微分学的几何应用">一元函数微分学的几何应用</a>
+<ul>
+<li><a href="#单调性与极值点">单调性与极值点</a></li>
+<li><a href="#求最值或取值范围">求最值或取值范围</a></li>
+<li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
+<li><a href="#渐近线">渐近线</a></li>
+<li><a href="#曲率">曲率</a></li>
+</ul></li>
+<li><a href="#一元函数微分学的物理应用">一元函数微分学的物理应用</a></li>
+<li><a href="#应试技巧">应试技巧</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="导数">导数</h3>
+<p>若函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，当 <em>y</em> 的增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span> 与 <span class="math inline">\(\Delta x\)</span> 的比值的极限在 <span class="math inline">\(\Delta x \to 0\)</span> 时存在，则 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可导</strong>』，该<strong>极限</strong>称为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>导数</strong>』，导数记为 <span class="math inline">\(f’(x_0)\)</span>。即</p>
+<p><span class="math display">\[
+\begin{align}
+f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\\
+&amp;= \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}
+\end{align}
+\]</span></p>
+<ul>
+<li>(1)式称为增量式，(2) 式称为差值式。</li>
+<li><p>导数的本质是一种<strong>极限</strong>，存在的充要条件是左右极限都存在且相等。</p>
+<blockquote>
+<p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
+</blockquote></li>
+<li>下面三种说法等价：
+<ul>
+<li><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处可导。</li>
+<li><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处导数存在。</li>
+<li><span class="math inline">\(f&#39;(x_0) = A \; (A \in \mathbb{R})\)</span>。</li>
+</ul></li>
+<li>导数代表 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『（瞬时）变化率』，几何意义为函数图形上某一点的『切线斜率』。<br />
+</li>
+<li><p>函数在某处可导，则必然在此处连续。<strong>反之不成立</strong>。</p>
+<blockquote>
+<p><strong>证</strong><br />
+设函数 <span class="math inline">\(y=f(x)\)</span> 在 <em>x</em><sub>0</sub> 处的导数为 A，<br />
+则 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A\)</span>，<br />
+<span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \alpha \; (\lim_{\Delta x \to 0} \alpha = 0)\)</span>，<br />
+当 <span class="math inline">\(\Delta x \to 0\)</span>，<br />
+<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0)= A\Delta x + \alpha \Delta x = A\Delta x+o(\Delta x)\)</span>，<br />
+显然 <span class="math inline">\(\Delta y \to 0\)</span>，即 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续。<br />
+反之不成立的例子：<span class="math inline">\(y = |x|\)</span>，<span class="math inline">\(y = x\sin(x)\)</span>。</p>
+</blockquote></li>
+</ul>
+<p>函数 <span class="math inline">\(y = f&#39;(x)\)</span> 为 <span class="math inline">\(f(x)\)</span> 的导函数，导函数具有特殊的性质：</p>
+<ul>
+<li>导函数零点定理：<br />
+若函数 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续），<span class="math inline">\(f’_+(a) \cdot f’_-(b) &lt; 0\)</span>，则 <span class="math inline">\(\exists \xi \in (a, b)\)</span>，使得 <span class="math inline">\(f&#39;(\xi) = 0\)</span>。</li>
+<li>达布定理（导函数介值定理）：<br />
+若函数 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续），<span class="math inline">\(f’(a) \ne f’(b)\)</span>，则对于 <span class="math inline">\(\forall \mu\)</span> 位于 <span class="math inline">\(f’(a)\)</span> 和 <span class="math inline">\(f’(b)\)</span> 之间，都 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math inline">\(f’(\xi)=\mu\)</span>。</li>
+<li>在可导区间内导函数无第一类间断点和无穷间断点。即若函数 <span class="math inline">\(y=f(x)\)</span> 在某处可导，则 <span class="math inline">\(f&#39;(x)\)</span> 在此处<strong>连续或存在振荡间断点</strong>。</li>
+<li><span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上可导，<span class="math inline">\(f&#39;(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上有界，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上有界。换个说法，<span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上可导且无界，则 <span class="math inline">\(f&#39;(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上无界。</li>
+</ul>
+<h3 id="微分">微分</h3>
+<p>设函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，对于函数增量 <span class="math inline">\(\Delta y = f(x_0 + \Delta x) - f(x_0)\)</span>，若存在与 <span class="math inline">\(\Delta x\)</span> 无关的常数 <em>A</em>，使得</p>
+<p><span class="math display">\[
+\Delta y = A\Delta x + o(\Delta x)
+\]</span></p>
+<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作 <span class="math inline">\(\text{d}y\)</span>。所以</p>
+<p><span class="math display">\[
+\Delta y = \text{d}y + o(\Delta x)
+\]</span></p>
+<p>又因为 <span class="math inline">\(\Delta x = 1 \cdot \Delta x + 0 \Rightarrow 1 \cdot \Delta x + o(\Delta x)\)</span>，所以 <span class="math inline">\(\text{d}x = \Delta x\)</span>。</p>
+<p>所以</p>
+<p><span class="math display">\[
+\text{d}y = A\text{d}x
+\]</span></p>
+<p>又 <span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \frac{o(\Delta x)}{\Delta x}\)</span>，所以 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A + 0 = A\)</span>，即</p>
+<p><span class="math display">\[
+A = f&#39;(x_0)
+\]</span></p>
+<p>故</p>
+<p><span class="math display">\[
+\text{d}y = f&#39;(x_0)\text{d}x
+\]</span></p>
+<p>跟据以上分析，可得出两个重要结论：</p>
+<ol type="1">
+<li>导数的第三个定义式：</li>
+</ol>
+<p><span class="math display">\[
+\begin{align}
+f&#39;(x) = \frac{\text{d}y}{\text{d}x}
+\end{align}
+\]</span></p>
+<ol start="2" type="1">
+<li>若函数在某处可微，则必在此处可导。反之也成立。即<strong>函数在某处可微等价于在某处可导</strong>。</li>
+</ol>
+<blockquote>
+<p><strong>证</strong><br />
+设函数 <span class="math inline">\(y=f(x)\)</span> 在 <em>x</em><sub>0</sub> 处的导数为 A，<br />
+则 <span class="math inline">\(\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = A\)</span>，<br />
+<span class="math inline">\(\frac{\Delta y}{\Delta x} = A + \alpha \; (\lim_{\Delta x \to 0} \alpha = 0)\)</span>，<br />
+当 <span class="math inline">\(\Delta x \to 0\)</span>，<br />
+<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0)= A\Delta x + \alpha \Delta x = A\Delta x+o(\Delta x)\)</span>，<br />
+即 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处可微。</p>
+</blockquote>
+<h2 id="计算">计算</h2>
+<h3 id="基本求导公式和导数运算法则">基本求导公式和导数运算法则</h3>
+<p>基本求导公式：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left(x^{\alpha}\right)&#39;=\alpha x^{\alpha - 1}, \quad \left(a^{x}\right)&#39; = a^{x} \ln a \;(a&gt;0, a \neq 1), \quad\left(\mathrm{e}^{x}\right)^{\prime}=\mathrm{e}^{x}, \\ &amp;\left(\log _{a} x\right)^{\prime}=\frac{1}{x \ln a} \;(a&gt;0, a \neq 1) ,\quad(\ln |x|)^{\prime}=\frac{1}{x}, \\ &amp;(\sin x)^{\prime}=\cos x, \quad(\cos x)^{\prime}=-\sin x, \quad(\tan x)^{\prime}=\sec ^{2} x, \quad(\cot x)^{\prime}=-\csc ^{2} x, \\
+&amp; (\arcsin x)^{\prime}=\frac{1}{\sqrt{1-x^{2}}} ,\quad(\arccos x)^{\prime}=-\frac{1}{\sqrt{1-x^{2}}}, \quad(\arctan x)^{\prime}=\frac{1}{1+x^{2}} ,\\
+&amp; (\operatorname{arccot} x)^{\prime}=-\frac{1}{1+x^{2}}, \quad(\sec x)^{\prime}=\sec x \tan x, \quad(\csc x)^{\prime}=-\csc x \cot x ,\\
+&amp; \left[\ln \left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}+1}}, \quad\left[\ln \left(x+\sqrt{x^{2}-1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}-1}}
+\end{aligned}
+\]</span></p>
+<p>导数和微分的运算法则：</p>
+<ul>
+<li><span class="math inline">\((ku)&#39; = ku&#39;,\; \text{d}(ku) = k\text{d}u\)</span>，<em>k</em> 为常数。</li>
+<li><span class="math inline">\((u \pm v)&#39; = u&#39; \pm v&#39;,\;\text{d}(u \pm v) = \text{d}u \pm \text{d}v\)</span></li>
+<li><span class="math inline">\((uv)&#39; = u&#39;v + v&#39;u, \; \text{d}(uv) = v\text{d}u + u\text{d}v\)</span></li>
+<li><span class="math inline">\(\left(\frac{u}{v}\right)&#39; = \frac{u&#39;v - v&#39;u}{v^2}, \;\text{d}\left(\frac{u}{v}\right) = \frac{v\text{d}u - u\text{d}v}{v^2},\; v \neq 0\)</span></li>
+</ul>
+<h3 id="特殊函数求导方法">特殊函数求导方法</h3>
+<h4 id="复合函数求导法">复合函数求导法</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;f[g(x)]&#39; = g&#39;(x)f&#39;[g(x)]\\
+&amp;\text{d}\{f[g(x)]\} = f&#39;[g(x)]\text{d}g(x)= g&#39;(x)f&#39;[g(x)]\text{d}x
+\end{aligned}
+\]</span></p>
+<h4 id="反函数求导法">反函数求导法</h4>
+<p>若 <span class="math inline">\(f(x)\)</span> 可导且 <span class="math inline">\(f&#39;(x) \neq 0\)</span>，则 <span class="math inline">\(f(x)\)</span> 是单调函数，存在反函数 <span class="math inline">\(x = f^{-1}(y) = \varphi(y)\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+\varphi&#39;(y) &amp;= \frac{\text{d}x}{\text{d}y} = \frac{1}{f&#39;(x)}\\
+\varphi&#39;&#39;(y) &amp;= \frac{\text{d}\left(\frac{\text{d}x}{\text{d}y}\right)}{\text{d}y} = \frac{\text{d}\left(\frac{\text{d}x}{\text{d}y}\right)}{\text{d}x}\cdot \frac{\text{d}x}{\text{d}y} = \frac{\text{d}\left(\frac{1}{f&#39;(x)}\right)}{\text{d}x} \cdot \frac{1}{f&#39;(x)} \\&amp;= - \frac{f&#39;&#39;(x)}{[f&#39;(x)]^2} \cdot \frac{1}{f&#39;(x)} = - \frac{f&#39;&#39;(x)}{[f&#39;(x)]^3}
+\end{aligned}
+\]</span></p>
+<h4 id="参数方程求导法">参数方程求导法</h4>
+$$
+<span class="math display">\[\begin{aligned}
+&amp;\left\{
+\begin{aligned}
+&amp; x = \varphi(t)\\
+&amp; y = \psi(t)
+\end{aligned}
+\right.\\
+&amp; y&#39; = \frac{\text{d}y}{\text{d}x} = \frac{\text{d}y/\text{d}t}{\text{d}x/\text{d}t} = \frac{\psi&#39;(t)}{\varphi&#39;(t)}\\
+&amp; y&#39;&#39; = \frac{\text{d}\left(\frac{\text{d}y}{\text{d}x}\right)}{\text{d}x} = \frac{\text{d}\left(\frac{\text{d}y}{\text{d}x}\right)/\text{d}t}{\text{d}x/\text{d}t} = \frac{\psi&#39;&#39;(t)\varphi(t) - \varphi&#39;&#39;(t)\psi&#39;(t)}{[\varphi&#39;(t)]^3}
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h4 id="隐函数求导法">隐函数求导法</h4>
+<p>函数由方程 <span class="math inline">\(F(x,y) = 0\)</span> 确定，对方程两侧求导，注意 <span class="math inline">\(y = y(x)\)</span>，得到一个由 <span class="math inline">\(x,\;y,\;y&#39;\)</span> 构成的方程，求解可得到 <span class="math inline">\(y&#39;\)</span>。</p>
+<h4 id="变限积分求导公式">变限积分求导公式</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;F(x) = \int _{\varphi_1(x)}^{\varphi_2(x)} f(t) \text{d}t\\
+&amp;F&#39;(x) = f[\varphi_2(x)]\varphi_2&#39;(x)-f[\varphi_1(x)]\varphi_1&#39;(x)
+\end{aligned}
+\]</span></p>
+<p>注意：如果被积函数中含有『求导变量』<em>x</em>，如：<span class="math inline">\(F(x)= \int_a^x xf(t)\text{d}x\)</span>，则无法直接使用变限积分求导公式。</p>
+<h4 id="对数求导法">对数求导法</h4>
+<p>多项式相乘除、幂运算的式子，可先取对数再求导：</p>
+<p><span class="math display">\[
+y = f(x) \Rightarrow \ln y = \ln f(x) \Rightarrow \frac{y&#39;}{y} = \frac{f&#39;(x)}{f(x)} \Rightarrow y&#39; = \frac{yf&#39;(x)}{f(x)}
+\]</span></p>
+<h4 id="幂指函数求导法">幂指函数求导法</h4>
+<p>形如 <span class="math inline">\(u(x)^{v(x)}\)</span>，可恒等变形为指数形式 <span class="math inline">\(e^{v(x)\ln u(x)}\)</span> 然后求导：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left[e^{v(x)\ln u(x)}\right]&#39;&amp; = e^{v(x)\ln u(x)}\left[v&#39;(x)\ln u(x) + \frac{u&#39;(x)v(x)}{u(x)}\right]\\
+&amp; = u(x)^{v(x)}\left[v&#39;(x)\ln u(x) + \frac{u&#39;(x)v(x)}{u(x)}\right]
+\end{aligned}
+\]</span></p>
+<h3 id="分段函数求导">分段函数求导</h3>
+<h3 id="高阶导数">高阶导数</h3>
+<h2 id="一元函数微分学的几何应用">一元函数微分学的几何应用</h2>
+<h3 id="单调性与极值点">单调性与极值点</h3>
+<p>若<strong>存在</strong>点 <em>x</em><sub>0</sub> 的某邻域 <span class="math inline">\(U(x_0)\)</span>，使得对于 <span class="math inline">\(\forall x \in U(x_0)\)</span>，都有</p>
+<p><span class="math display">\[
+f(x) \leq f(x_0)\; (\text{or} \; f(x) \geq f(x_0))
+\]</span></p>
+<p>成立，则称点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的<strong>广义的极大值点（或极小值点）</strong>。</p>
+<p>若<strong>存在</strong>点 <em>x</em><sub>0</sub> 的某去心邻域 <span class="math inline">\(\mathring{U}(x_0)\)</span>，使得对于 <span class="math inline">\(\forall x \in \mathring{U}(x_0)\)</span>，都有</p>
+<p><span class="math display">\[
+f(x) &lt; f(x_0)\; (\text{or} \; f(x) &gt; f(x_0))
+\]</span></p>
+<p>成立，则称点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的<strong>真正的极大值点（或极小值点）</strong>。</p>
+<p><strong>注意：</strong></p>
+<p>极值点是一个非常宽松的概念，只要在该点的某个邻域内取得最值，该点便是一个极值点。极值点两侧的<strong>单调性不一定发生改变</strong>，该点<strong>不一定可导</strong>，也<strong>不一定连续</strong>。譬如 <span class="math inline">\(x = 0\)</span> 为下面函数的极大值点：</p>
+<p><span class="math display">\[
+\begin{array}{l}
+f(x) =
+\left\{\begin{array}{l}
+1, &amp; x = 0 \\
+x, &amp; x \neq 0
+\end{array}\right.
+\end{array}
+\]</span></p>
+<p><strong>判断极值点的第一充分条件：</strong></p>
+<p>若函数在点 <em>x</em><sub>0</sub> 两侧的<strong>单调性发生改变</strong>，则点 <em>x</em><sub>0</sub> 是函数的一个极值点。</p>
+<p>即若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，且在点 <em>x</em><sub>0</sub> 的某去心 <span class="math inline">\(\delta\)</span> 邻域 <span class="math inline">\(\mathring{U}(x, \delta)\)</span> 内可导：</p>
+<ul>
+<li><span class="math inline">\(x \in (x_0-\delta, x_0),\; f&#39;(x) &lt; 0,\;x \in (x_0, x_0+\delta),\; f&#39;(x) &gt; 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li><span class="math inline">\(x \in (x_0-\delta, x_0),\; f&#39;(x) &gt; 0,\;x \in (x_0, x_0+\delta),\; f&#39;(x) &lt; 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>判断极值点的第二充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处二阶可导，且 <span class="math inline">\(f&#39;(x_0) = 0, \;f&#39;&#39;(x_0) \neq 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点。</p>
+<ul>
+<li>当 <span class="math inline">\(f&#39;&#39;(x_0) &gt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li>当 <span class="math inline">\(f&#39;&#39;(x_0) &lt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>第二充分条件的推广形式：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处 $ n;(n 2)$ 阶可导，且 <span class="math inline">\(f^{(m)}(x_0) = 0 \;(m = 1,2,...,n-1), \;f^{(n)}(x_0) \neq 0\)</span>，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点。</p>
+<ul>
+<li>当 <em>n</em> 为偶数且 <span class="math inline">\(f^{(n)}(x_0) &gt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极小值点。</li>
+<li>当 <em>n</em> 为偶数且 <span class="math inline">\(f^{(n)}(x_0) &lt; 0\)</span>，点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点。</li>
+</ul>
+<p><strong>极值点的必要条件：</strong></p>
+<p>点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，若 <span class="math inline">\(f(x)\)</span> 在点 <span class="math inline">\(x_0\)</span> 处可导，则 <span class="math inline">\(f&#39;(x)=0\)</span>。</p>
+<h3 id="求最值或取值范围">求最值或取值范围</h3>
+<h3 id="凹凸性与拐点">凹凸性与拐点</h3>
+<p>若 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上连续，若对于 <span class="math inline">\(\forall x_1,x_2 \in I \;(x_1 \neq x_2)\)</span>，都有</p>
+<p><span class="math display">\[
+f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\left(\frac{x_1+x_2}{2}\right) &gt; \frac{f(x_1)+f(x_2)}{2})
+\]</span></p>
+<p>成立，则称 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上的图形是凹（或凸）的。函数图形上凹凸性发生变化的点称为<strong>拐点</strong>。</p>
+<p><strong>判断拐点的第一充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，在点 <em>x</em><sub>0</sub> 的某去心邻域内二阶可导，且在左、右邻域内的二阶导数异号，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<p><strong>判断拐点的第二充分条件：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处三阶可导，且 <span class="math inline">\(f&#39;&#39;( x_0) = 0,\;f&#39;&#39;&#39;(x_0) \neq 0\)</span>，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<p><strong>第二充分条件的推广形式：</strong></p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处 <span class="math inline">\(n \;(n \geq 3)\)</span> 阶可导，且 <span class="math inline">\(f^{(m)}( x_0) = 0\; (m = 2,3,...,n-1),\;f^{(n)}(x_0) \neq 0\)</span>，则点 <span class="math inline">\((x_0,f(x_0))\)</span> 为 <span class="math inline">\(f(x)\)</span> 图形上的拐点。</p>
+<h3 id="渐近线">渐近线</h3>
+<ol type="1">
+<li>铅垂渐近线</li>
+</ol>
+<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{i}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{i}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条铅垂渐近线。</p>
+<blockquote>
+<p>注：此处的 <span class="math inline">\(x_{0}\)</span> 或是函数的无定义点，或是函数定义区间的端点，或是分段函数的分段点。</p>
+</blockquote>
+<ol start="2" type="1">
+<li>水平渐近线</li>
+</ol>
+<ul>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条水平渐近线。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条水平渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条水平渐近线。</li>
+</ul>
+<ol start="3" type="1">
+<li>斜渐近线</li>
+</ol>
+<ul>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}\)</span>，<span class="math inline">\(x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}\)</span>，<span class="math inline">\(x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。</li>
+</ul>
+<h3 id="曲率">曲率</h3>
+<p>设曲线的直角坐标方程为 <span class="math inline">\(y=f(x)\)</span>， 且 <span class="math inline">\(y=f(x)\)</span> 具有二阶导数，曲线在点 <em>M</em> 处的切线的斜率为 <span class="math inline">\(y=\tan \alpha\)</span>， 所以</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sec ^{2} \alpha \times \frac{\text{d}\alpha}{\text{d} x} = y^{\prime \prime} &amp;\Rightarrow \frac{\text{d} \alpha}{\text{d} x}=\frac{y^{\prime \prime}}{1+\tan ^{2} \alpha}=\frac{y^{\prime \prime}}{1+y^{\prime 2}}\\
+\text{d} \alpha &amp;= \frac{y^{\prime \prime}}{1+y^{\prime 2}} \text{d} x
+\end{aligned}
+\]</span></p>
+<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的曲率为：</p>
+<p><span class="math display">\[
+K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \prime}\right|}{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}
+\]</span></p>
+<p>设曲线是由参数方程 <span class="math inline">\(\left\{\begin{array}{l}x=\varphi(t) \\ y=\psi(t)\end{array}\right.\)</span> 给出，利用参数方程求导法可得：</p>
+<p><span class="math display">\[
+K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varphi^{\prime \prime}(t)\right|}{\left[\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)\right]^{\frac{3}{2}}}
+\]</span></p>
+<h2 id="一元函数微分学的物理应用">一元函数微分学的物理应用</h2>
+<p>相关变化率。</p>
+<h2 id="应试技巧">应试技巧</h2>
+<ul>
+<li><span class="math inline">\((\ln |x|)&#39; = \frac{1}{x}\)</span></li>
+<li><span class="math inline">\(f(0) = 0 \Rightarrow f&#39;(0) = \lim_{h \to 0} \frac{f(h)}{h}\)</span></li>
+<li>根据导函数的零点定理，<span class="math inline">\(f(x)\)</span>（在区间内）可导，<span class="math inline">\(f&#39;(x) \neq 0\)</span>，则 <span class="math inline">\(f&#39;(x)\)</span> 恒正或恒负，即 <span class="math inline">\(f(x)\)</span>（在区间内）严格单调递增或递减。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>高等数学</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数学知识拾遗</title>
+    <url>/2022/09/07/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E6%8B%BE%E9%81%97/</url>
+    <content><![CDATA[<p>大学前数学知识拾遗。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=3 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#函数">函数</a>
+<ul>
+<li><a href="#函数性质">函数性质</a></li>
+<li><a href="#函数图像">函数图像</a></li>
+</ul></li>
+<li><a href="#常用知识">常用知识</a>
+<ul>
+<li><a href="#数列求和">数列求和</a></li>
+<li><a href="#三角函数变换">三角函数变换</a></li>
+<li><a href="#对数和指数运算">对数和指数运算</a></li>
+<li><a href="#常用因式分解">常用因式分解</a></li>
+<li><a href="#一元二次方程的根">一元二次方程的根</a></li>
+<li><a href="#常用不等式">常用不等式</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="函数">函数</h2>
+<h3 id="函数性质">函数性质</h3>
+<ol type="1">
+<li>奇偶性</li>
+</ol>
+<p>函数 <span class="math inline">\(y = f(x)\)</span> 的定义域 <em>D</em> 关于原点对称，且：</p>
+<ul>
+<li>恒有 <span class="math inline">\(f(x) = f(-x)\)</span>，则函数是<strong>偶函数</strong>。偶函数图像关于 <em>y</em> 轴对称。</li>
+<li>恒有 <span class="math inline">\(f(x) = -f(-x)\)</span>，则函数是<strong>奇函数</strong>。奇函数图像关于原点对称，若函数在原点处有定义，则 <span class="math inline">\(f(0)=0\)</span>。</li>
+</ul>
+<ol start="2" type="1">
+<li>单调性</li>
+</ol>
+<p>函数 <span class="math inline">\(y = f(x)\)</span> 的定义域为 <em>D</em>，区间 <span class="math inline">\(I \subset D\)</span>，若对于 <span class="math inline">\(\forall x_1,x_2 \in I \;(x_1 \neq x_2)\)</span>，满足：</p>
+<ul>
+<li><span class="math inline">\([f(x_1)-f(x_2)] (x_1 - x_2)&gt; 0 \; \text{or} \; \frac{f(x_1)-f(x_2)}{x_1-x_2} &gt; 0\)</span>，则 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上<strong>单调递增</strong>。</li>
+<li><span class="math inline">\([f(x_1)-f(x_2)] (x_1 - x_2)&lt; 0 \; \text{or} \; \frac{f(x_1)-f(x_2)}{x_1-x_2} &lt; 0\)</span>，则 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上<strong>单调递减</strong>。</li>
+</ul>
+<ol start="3" type="1">
+<li>有界性</li>
+</ol>
+<p>函数 <span class="math inline">\(y = f(x)\)</span> 的定义域为 <em>D</em>，区间 <span class="math inline">\(I \subset D\)</span>，若对于 <span class="math inline">\(\forall x \in I\)</span>，都 <span class="math inline">\(\exists M &gt; 0\)</span>，使得 <span class="math inline">\(|f(x)| \leq M\)</span>，则称 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上<strong>有界</strong>。若 <em>M</em> 不存在，则称 <span class="math inline">\(f(x)\)</span> 在区间 <em>I</em> 上<strong>无界</strong>。</p>
+<p>函数在闭区间内单调，则在闭区间内有界。</p>
+<ol start="4" type="1">
+<li>周期性</li>
+</ol>
+<p>函数 <span class="math inline">\(y = f(x)\)</span> 的定义域为 <em>D</em>，若 <span class="math inline">\(\exists T &gt; 0\)</span>，使得对于 <span class="math inline">\(\forall x \in D\)</span>，都有 <span class="math inline">\(x + T \in D\)</span>，且 <span class="math inline">\(f(x + T) =f(x)\)</span>，则称 <span class="math inline">\(f(x)\)</span> 为周期函数，称 <em>T</em> 为 <span class="math inline">\(f(x)\)</span> 的周期。</p>
+<ol start="5" type="1">
+<li>反函数</li>
+</ol>
+<p>函数 <span class="math inline">\(y = f(x)\)</span> 的定义域为 <em>D</em>，值域为 <em>R</em>，若对于 <span class="math inline">\(\forall y \in R\)</span>，都存在唯一的 <span class="math inline">\(x \in D\)</span>，使得 <span class="math inline">\(y = f(x)\)</span> 成立，则由此定义一个新的函数 <span class="math inline">\(x = \varphi (y)\)</span>，这个函数称为函数 <span class="math inline">\(y = f(x)\)</span> 的<strong>反函数</strong>，记作 <span class="math inline">\(x = f^{-1}(y)\)</span>。</p>
+<p>（严格）单调的函数必有反函数，但有反函数的函数不一定是单调函数。</p>
+<h3 id="函数图像">函数图像</h3>
+<ol type="1">
+<li><p>直角坐标系 <span class="math inline">\(f(x,y) = 0\)</span></p></li>
+<li><p>极坐标系 <span class="math inline">\(g(r,\theta) = 0\)</span></p></li>
+</ol>
+<p>极坐标系与直角坐标系的转化：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; r = x^2 + y^2, \; \tan \theta = \frac{y}{x} \\
+&amp; x = r \cos \theta, \; y = r\sin \theta
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li>参数方程 <span class="math inline">\(\left\{\begin{aligned}&amp; x = \varphi(t) \\&amp; y = \psi(t)\end{aligned}\right.\)</span></li>
+</ol>
+<h2 id="常用知识">常用知识</h2>
+<h3 id="数列求和">数列求和</h3>
+<p>等差数列前 <em>n</em> 项和：<span class="math inline">\(S_n = \frac{n}{2}(a_1+a_n)\)</span></p>
+<p>等比数列1前 <em>n</em> 项和：<span class="math inline">\(S_n = \frac{a_1(1-q^n)}{1-q}\)</span></p>
+<p>其他：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}\\
+&amp; \sum_{k=1}^n \frac{1}{k(k+1)} = \frac{n}{n+1}\\
+\end{aligned}
+\]</span></p>
+<h3 id="三角函数变换">三角函数变换</h3>
+<ol type="1">
+<li>基本关系</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\csc \alpha = \frac{1}{\sin \alpha}, \quad \sec \alpha =  \frac{1}{\cos\alpha}, \quad \tan \alpha =  \frac{\sin \alpha}{\cos \alpha}, \quad\cot \alpha =  \frac{1}{\tan \alpha}, \\
+&amp;\sin ^2 \alpha + \cos ^2 \alpha = 1, \quad 1 + \tan^2 \alpha = \sec ^2 \alpha, \quad 1+\cot^2\alpha = \csc ^2 \alpha
+\end{aligned}
+\]</span></p>
+<ol start="2" type="1">
+<li>倍角公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sin 2\alpha = 2\sin \alpha \cos \alpha, \quad \cos 2\alpha = \cos^2\alpha -\sin^2\alpha = 1 - 2\sin^2\alpha = 2\cos^2\alpha -1, \\
+&amp; \tan 2\alpha = \frac{2\tan \alpha}{1 - \tan^2\alpha},\quad \cot 2\alpha = \frac{\cot^2\alpha-1}{2\cot \alpha}, \\
+&amp; \sin 3\alpha = -4\sin^3\alpha + 3\sin \alpha, \quad \cos 3\alpha = 4\cos^3\alpha - 3\cos \alpha
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li>半角公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sin^2 \frac{\alpha}{2} = \frac {1}{2}(1 - \cos \alpha), \quad  \cos^2 \frac{\alpha}{2} = \frac {1}{2}(1 + \cos \alpha),\\
+&amp; \sin \frac{\alpha}{2} = \pm \sqrt{\frac {1}{2}(1 - \cos \alpha)}, \quad  \cos \frac{\alpha}{2} =\pm \sqrt{ \frac {1}{2}(1 + \cos \alpha)},\\
+&amp; \tan \frac {\alpha}{2} = \frac {1 - \cos \alpha}{\sin \alpha} = \frac{\sin \alpha}{1 + \cos \alpha} = \pm \sqrt{\frac{1 - \cos \alpha}{1 + \cos \alpha}}, \\
+&amp; \cot \frac {\alpha}{2} = \frac {\sin \alpha}{1 - \cos \alpha} = \frac{1 + \cos \alpha}{\sin \alpha} = \pm \sqrt{\frac{1 + \cos \alpha}{1 - \cos \alpha}}
+\end{aligned}
+\]</span></p>
+<ol start="4" type="1">
+<li>万能公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; u = \tan \frac{\alpha}{2} \\
+&amp; \sin \alpha=\frac{2u}{1+u^2}, \quad \cos \alpha=\frac{1-u^2}{1+u^2}, \quad \tan \alpha=\frac{2u}{1-u^2}
+\end{aligned}
+\]</span></p>
+<ol start="5" type="1">
+<li>诱导公式</li>
+</ol>
+<p>所谓『<strong>奇变偶不变，符号看象限</strong>』。即 <span class="math inline">\(f(\frac{k}{2}\pi + \alpha), \; k \in \mathbf{Z}, \; f\)</span> 表示 <span class="math inline">\(\sin,\; \cos\)</span> 中的一个。则当 <em>k</em> 为奇数时变为异名函数，当 <em>k</em> 为偶数时函数名不变。前面加上把 <span class="math inline">\(\alpha\)</span> 当作锐角时原来函数的符号。</p>
+<p><span class="math inline">\(\sin \theta\)</span> 在第一、二象限符号为正，在第三、四象限符号为负，<span class="math inline">\(\cos \theta\)</span> 在第一、四象限符号为正，在第二、三象限符号为负。</p>
+<ol start="6" type="1">
+<li>两角和差的三角函数公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sin (\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta, \quad \cos (\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta l,\\
+&amp; \tan (\alpha \pm \beta) = \frac{\tan \alpha \pm \tan \beta}{1\mp \tan \alpha \tan\beta},\quad  \cot (\alpha\pm\beta) = \frac{ \cot \alpha \cot \beta \mp 1}{\cot \beta \pm \cot \alpha}
+\end{aligned}
+\]</span></p>
+<ol start="7" type="1">
+<li>和差化积公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sin \alpha + \sin \beta = 2 \sin \frac{\alpha + \beta}{2}\cos\frac{\alpha - \beta}{2}, \quad \sin \alpha - \sin \beta = 2 \sin \frac{\alpha - \beta}{2}\cos\frac{\alpha + \beta}{2} \\
+&amp; \cos \alpha + \cos \beta = 2 \cos \frac{\alpha + \beta}{2}\cos\frac{\alpha - \beta}{2}, \quad \cos \alpha - \cos \beta = -2 \sin \frac{\alpha + \beta}{2}\sin\frac{\alpha - \beta}{2} \\
+&amp; \tan \alpha \pm \tan \beta=\frac{\sin \alpha}{\cos \alpha} \pm \frac{\sin \beta}{\cos \beta}=\frac{\sin \alpha \cos \beta \pm \cos \alpha \sin \beta}{\cos \alpha \cos \beta}=\frac{\sin (\alpha \pm \beta)}{\cos \alpha \cos \beta}
+\end{aligned}
+\]</span></p>
+<ol start="8" type="1">
+<li>积化和差公式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \cos \alpha \cos \beta =\frac{1}{2}[\cos (\alpha+\beta)+\cos (\alpha-\beta)], \quad \sin \alpha \sin \beta =-\frac{1}{2}[\cos (\alpha+\beta)-\cos (\alpha-\beta)] \\
+&amp; \sin \alpha \cos \beta =\frac{1}{2}[\sin (\alpha+\beta)+\sin (\alpha-\beta)], \quad \cos \alpha \sin \beta =\frac{1}{2}[\sin (\alpha+\beta)-\sin (\alpha-\beta)]
+\end{aligned}
+\]</span></p>
+<h3 id="对数和指数运算">对数和指数运算</h3>
+<p>指数运算法则：</p>
+<p><span class="math display">\[
+a^\alpha \cdot a^\beta = a ^{\alpha + \beta}, \quad \frac{a^\alpha}{a^\beta} = a^{\alpha - \beta},  \quad (a^\alpha)^\beta = a^{\alpha \beta},  \quad (ab)^\alpha = a^\alpha b^\alpha, \quad \left(\frac{a}{b}\right)^\alpha = \frac{a^\alpha}{b^\alpha}
+\]</span></p>
+<p>对数运算法则：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \log _a MN = \log _a M + \log _a N, \quad  \log _a \frac{M}{N} = \log _a M - \log _a N, \\
+&amp; \log _a M^k = k \log _a M, \quad  \log _a \sqrt[k]{M}  = \frac{1}{k} \log _a M
+\end{aligned}
+\]</span></p>
+<p>指对数互相转换：</p>
+<p><span class="math display">\[
+a^k = N \Rightarrow \log _a N = k
+\]</span></p>
+<p>指对数恒等式：</p>
+<p><span class="math display">\[
+a^{\log _a N} = N
+\]</span></p>
+<h3 id="常用因式分解">常用因式分解</h3>
+<p><span class="math display">\[
+\begin{aligned}
+(1) \; &amp;(a + b)^3 = a^3 + 3a^2b +3b^2a +b^3, \quad (a + b)^3 = a^3 + 3a^2b +3b^2a +b^3, \\
+&amp; \begin{aligned}(a + b)^n = \sum _{k = 0}^n C_n^k a^{n-k}b^k = &amp;a^n + na^{n-1}b + \frac{n(n-1)}{2!}a^{n-2}b^2+ ... + \\
+&amp;\frac{n(n-1)...(n - k + 1)}{k!}a^{n-k}b^k +...+ nab^{n-1} + b^n
+\end{aligned} \\
+(2) \; &amp; a^3 - b^3 = (a - b)\left(a^2 + ab + b^2\right), \quad a^3 + b^3 = (a + b)\left(a^2 - ab + b^2\right), \\
+&amp; a^n - b^n = (a - b)\left(a^{n-1} + a^{n-2}b +...+b^{n-2}a + b^{n-1}\right), \\
+&amp; a^n + b^n \; (n = 2k + 1, k \in \mathbb{Z})  = (a+b)\left(a^{n-1} - a^{n-2}b + a^{n-3}b^2 -... - ab^{n-2} + b^{n-1}\right)
+\end{aligned}
+\]</span></p>
+<h3 id="一元二次方程的根">一元二次方程的根</h3>
+<p>对于一元二次方程 <span class="math inline">\(ax^2 + bx + c = 0 \;(a \neq 0)\)</span>：</p>
+<ul>
+<li>判别式 <span class="math inline">\(\Delta = b^2 -4ac\)</span>，<span class="math inline">\(\Delta ＞0\)</span> 方程有两个不等实根，<span class="math inline">\(\Delta =0\)</span> 方程有两个相等实根，<span class="math inline">\(\Delta &lt; 0\)</span> 方程有一对共轭复根。</li>
+<li>求根公式：</li>
+</ul>
+<p><span class="math display">\[
+x_{1,2} = \frac{-b \pm \sqrt{\Delta}}{2a}
+\]</span></p>
+<ul>
+<li>韦达定理：</li>
+</ul>
+<p><span class="math display">\[
+x_1 + x_2 = -\frac{b}{a}, \quad x_1x_2 = \frac{c}{a}
+\]</span></p>
+<h3 id="常用不等式">常用不等式</h3>
+<ol type="1">
+<li>绝对值不等式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; |a \pm b| \leq |a| + |b|, \; ||a|-|b|| \leq |a-b| \; (a,b \in \mathbb{R})\\
+&amp; |a_1\pm a_2 \pm...\pm a_n| \leq |a_1| + |a_2| +...+ |a_n| \;(a_1,a_2,...,a_n \in \mathbb{R})\\
+&amp; \left| \int _a^b f(x)\text{d}x\right| \leq \int _a^b \left|f(x)\right| \text{d} x
+\end{aligned}
+\]</span></p>
+<ol start="2" type="1">
+<li>均值不等式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sqrt{ab} \leq \frac{a+b}{2} \leq \sqrt{\frac{a^2+b^2}{2}} \;(a,b &gt; 0)\\
+&amp; \sqrt[3]{abc} \leq \frac{a+b+c}{3} \leq \sqrt{\frac{a^2+b^2+c^2}{3}} \;(a,b,c &gt; 0)
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li>柯西不等式</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; (ac+bd)^2 \leq (a^2+b^2)(c^2+d^2) \\
+&amp; \left|\vec{p}\cdot\vec{q}\right| \leq \left|\vec{p}\right|\cdot \left|\vec{q}\right| \;(\vec{p} = (p_1,p_2,...,p_n), \; \vec{q} = (q_1,q_2,...,q_n))\\
+&amp; \left(\int _a^b f(x)g(x) \text{d}x\right)^2 \leq \int _a^b f^2(x) \text{d}x \int _a^b g^2(x) \text{d}x
+\end{aligned}
+\]</span></p>
+<p>4.其他不等式</p>
+<p><span class="math display">\[
+\begin{aligned}
+(1) \; &amp; a &gt; b &gt; 0, \; m &gt;0, \; n &lt; 0 \Rightarrow a^m &gt; b^m, \; a^n &lt; b^n \\
+(2) \; &amp; \sin x &lt; x \;(x &gt;0) \\
+(3) \; &amp; \sin x &lt; x &lt; \tan x \;\left(0 &lt; x &lt; \frac{\pi}{2}\right)\\
+(4) \; &amp; \arctan x \leq x \leq \arcsin x \;(0 \leq x \leq 1) \\
+(5) \; &amp; e^x \leq x + 1 \\
+(6) \; &amp; \ln x \leq x - 1 \;(x &gt; 0) \\
+(7) \; &amp; \frac{1}{x+1} &lt; \ln \left( 1 + \frac{1}{x} \right) &lt; \frac{1}{x} 
+\end{aligned}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>高等数学</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据结构_线性表，栈、队列和数组</title>
     <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
@@ -1074,102 +1733,6 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
       </tags>
   </entry>
   <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
-<li><a href="#github-page-配置">GitHub Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
-</ul>
-<hr>
-<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
-<ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h1 id="github-page-配置">GitHub Page 配置</h1>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 GitHub<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到GitHub Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h1 id="配置主题">配置主题</h1>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
-要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>插入图片</strong><br />
-需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
-<h1 id="发布博客">发布博客</h1>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
-<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构_绪论</title>
     <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
     <content><![CDATA[<p>数据结构与算法的入门概念</p>
@@ -1280,392 +1843,265 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
       </tags>
   </entry>
   <entry>
-    <title>高等数学_一元函数微分学</title>
-    <url>/2022/03/01/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
-    <content><![CDATA[<p>高等数学<strong>一元函数微分学</strong>的知识总结<br />
-内容包括：</p>
-<ol type="1">
-<li>导数和微分的概念</li>
-<li>各种求导数的方法</li>
-<li>导数的应用</li>
-<li>微分中值定理及其应用</li>
-<li>零点问题与微分不等式
-<hr>
-<span id="more"></span></li>
-</ol>
-<p><strong>本文索引</strong></p>
+    <title>极限</title>
+    <url>/2022/09/05/%E6%9E%81%E9%99%90/</url>
+    <content><![CDATA[<p>高等数学数列极限和函数极限的概念与计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>文章索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=4 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
-<li><a href="#导数与微分">导数与微分</a>
+<li><a href="#概念">概念</a>
 <ul>
-<li><a href="#导数的定义">导数的定义</a></li>
-<li><a href="#导函数">导函数</a></li>
-<li><a href="#微分的定义">微分的定义</a></li>
-<li><a href="#求导数的方法">求导数的方法</a>
+<li><a href="#数列极限">数列极限</a></li>
+<li><a href="#收敛数列的性质">收敛数列的性质</a></li>
+<li><a href="#判断数列收敛">判断数列收敛</a>
 <ul>
-<li><a href="#基本公式求导法">基本公式求导法</a></li>
-<li><a href="#导数的四则运算法则">导数的四则运算法则</a></li>
-<li><a href="#复合函数的求导法">复合函数的求导法</a></li>
-<li><a href="#反函数的导数法">反函数的导数法</a></li>
-<li><a href="#对数求导法">对数求导法</a></li>
-<li><a href="#幂指函数求导法">幂指函数求导法</a></li>
-<li><a href="#变限积分求导法">变限积分求导法</a></li>
+<li><a href="#夹逼定理">夹逼定理</a></li>
+<li><a href="#单调有界定理">单调有界定理</a></li>
+<li><a href="#柯西极限存在准则">柯西极限存在准则</a></li>
 </ul></li>
-<li><a href="#特殊函数的求导">特殊函数的求导</a>
-<ul>
-<li><a href="#分段函数求导">分段函数求导</a></li>
-<li><a href="#隐函数求导">隐函数求导</a></li>
-<li><a href="#参数方程求导">参数方程求导</a></li>
-<li><a href="#高阶导数">高阶导数</a></li>
+<li><a href="#邻域">邻域</a></li>
+<li><a href="#函数极限">函数极限</a></li>
+<li><a href="#函数极限存在的性质">函数极限存在的性质</a></li>
+<li><a href="#无穷小">无穷小</a></li>
+<li><a href="#函数的连续与间断">函数的连续与间断</a></li>
 </ul></li>
-<li><a href="#导数的应用">导数的应用</a>
+<li><a href="#函数极限的计算">函数极限的计算</a>
 <ul>
-<li><a href="#单调性与极值点">单调性与极值点</a></li>
-<li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
-<li><a href="#渐近线">渐近线</a></li>
-<li><a href="#求最值或取值范围">求最值或取值范围</a></li>
+<li><a href="#无法直接计算">无法直接计算</a>
+<ul>
+<li><a href="#夹逼定理-1">夹逼定理</a></li>
+<li><a href="#单调有界准则">单调有界准则</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#微分中值定理">微分中值定理</a>
+<li><a href="#可直接计算">可直接计算</a>
 <ul>
-<li><a href="#微分中值定理及其推导">微分中值定理及其推导</a>
-<ul>
-<li><a href="#费马引理">费马引理</a></li>
-<li><a href="#罗尔定理">罗尔定理</a></li>
-<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
-<li><a href="#柯西中值定理">柯西中值定理</a></li>
-<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
+<li><a href="#化简">化简</a></li>
 <li><a href="#洛必达法则">洛必达法则</a></li>
+<li><a href="#泰勒公式">泰勒公式</a></li>
 </ul></li>
-<li><a href="#微分中值定理的应用">微分中值定理的应用</a></li>
 </ul></li>
-<li><a href="#零点问题与微分不等式">零点问题与微分不等式</a></li>
+<li><a href="#应试技巧">应试技巧</a></li>
 </ul>
-<hr>
-<h1 id="导数与微分">导数与微分</h1>
-<h2 id="导数的定义">导数的定义</h2>
-<p>若 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 的某一邻域内有定义，当 <span class="math inline">\(x\)</span> 有增量 <span class="math inline">\(\Delta x\)</span> 时相应的 <span class="math inline">\(y\)</span> 有增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span>，当 <span class="math inline">\(\Delta x \to 0\)</span> 时，</p>
-<p><span class="math display">\[\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}.\]</span></p>
-<p>若该极限存在，则<strong>极限值</strong>称为 <span class="math inline">\(y = f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数并说该函数在 <span class="math inline">\(x_0\)</span> 处可导，导数记为 <span class="math inline">\(f’(x_0)\)</span>，</p>
-<p><span class="math display">\[f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = \lim_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0}.\]</span></p>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="数列极限">数列极限</h3>
+<p>设 <span class="math inline">\(\{x_n\}\)</span> 为一数列，若存在常数 <em>a</em>，对于任意（无论多小）的 <span class="math inline">\(\varepsilon &gt; 0\)</span>，总存在正整数 <em>N</em>，使得当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(|x_n - a| &lt; \varepsilon\)</span> 恒成立，则称 <em>a</em> 为数列 <span class="math inline">\(\{x_n\}\)</span> 的极限，或称数列 <span class="math inline">\(\{x_n\}\)</span> 收敛于 <em>a</em>，记作：</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} x_n = a \; \text{or} \; x_n \to a \; (n \to \infty)
+\]</span></p>
+<p>否则称数列 <span class="math inline">\(\{x_n\}\)</span> 是发散的。</p>
+<ul>
+<li><span class="math inline">\(\varepsilon - N\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+(\lim_{n \to \infty} x_n = a) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists N \in \mathbf{N}_+)[(n &gt; N) \Rightarrow (|x_n - a| &lt; \varepsilon)]
+\]</span></p>
+<blockquote>
+<p>注：由于数列的下标使用正整数表示，此处的 <span class="math inline">\(\infty\)</span> 只能为 <span class="math inline">\(+\infty\)</span>。</p>
+</blockquote>
+<h3 id="收敛数列的性质">收敛数列的性质</h3>
+<ul>
+<li>唯一性</li>
+<li>有界性</li>
+<li>保号性</li>
+</ul>
+<h3 id="判断数列收敛">判断数列收敛</h3>
+<h4 id="夹逼定理">夹逼定理</h4>
+<h4 id="单调有界定理">单调有界定理</h4>
+<h4 id="柯西极限存在准则">柯西极限存在准则</h4>
+<h3 id="邻域">邻域</h3>
+<ul>
+<li>以 <em>x</em><sub>0</sub> 为中心的任何开区间称为点 <em>x</em><sub>0</sub> 的『邻域』，记作 <span class="math inline">\(U(x_0)\)</span>。</li>
+<li><span class="math inline">\(\delta\)</span> 为正数，<span class="math inline">\((x_0 - \delta, x_0 + \delta)\)</span> 为点 <em>x</em><sub>0</sub> 的『<span class="math inline">\(\delta\)</span> 邻域』，即 <span class="math inline">\(\\{ x\vert |x-x_0| &lt; \delta \\}\)</span>，记作 <span class="math inline">\(U(x_0, \delta)\)</span>。</li>
+<li>除去 <em>x</em><sub>0</sub> 本身的点 <em>x</em><sub>0</sub> 的 <span class="math inline">\(\delta\)</span> 邻域称为点 <em>x</em><sub>0</sub> 的『去心 <span class="math inline">\(\delta\)</span> 邻域』，即 <span class="math inline">\(\\{ x \vert 0 &lt; |x-x_0| &lt; \delta \\}\)</span>，记作 <span class="math inline">\(\mathring{U}(x_0, \delta)\)</span>。</li>
+<li>多元函数的一点 <em>P</em><sub>0</sub> 的 <span class="math inline">\(\delta\)</span> 邻域 <span class="math inline">\(U(P_0, \delta) = \\{ x \vert |PP_0| &lt; \delta \\}\)</span>，点 <em>P</em><sub>0</sub> 的去心 <span class="math inline">\(\delta\)</span> 邻域 <span class="math inline">\(\mathring{U}(P_0, \delta) = \\{ x\vert 0 &lt; |PP_0| &lt; \delta \\}\)</span>。</li>
+</ul>
+<h3 id="函数极限">函数极限</h3>
+<p><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某去心邻域内有定义，若存在常数 <em>A</em>，对于任意（无论多小）的 <span class="math inline">\(\varepsilon &gt; 0\)</span>，总存在正数 <span class="math inline">\(\delta\)</span>，在 <span class="math inline">\(\mathring{U}(x_0, \delta)\)</span> 内，有 <span class="math inline">\(| f(x) - A | &lt; \varepsilon\)</span> 恒成立，则 <em>A</em> 称为 <span class="math inline">\(f(x)\)</span> 当 <span class="math inline">\(x \to x_0\)</span> 时的『<strong>极限</strong>』，记作：</p>
+<p><span class="math display">\[
+\lim_{x \to x_0} f(x) = A \; \text{or} \; f(x) \to A \; (x \to x_0)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\varepsilon - \delta\)</span>：<span class="math display">\[(\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists \delta &gt; 0)[(0 &lt; | x -x _0 | &lt; \delta) \Rightarrow (|f(x)- A| &lt; \varepsilon)]\]</span></li>
+<li><span class="math inline">\(\varepsilon - X\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;(\lim_{x \to \infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(|x| &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]\\
+&amp;(\lim_{x \to +\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]\\
+&amp;(\lim_{x \to -\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(-x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]
+\end{aligned}
+\]</span> * <span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p>
+<p><span class="math display">\[
+(\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
+\]</span></p>
+<ul>
+<li><p><span class="math display">\[
+(\lim_{x \to x_0} f(x) = A) \Leftrightarrow [(x \to x_0) \Rightarrow (f(x) = A + \alpha (x))]
+\]</span></p></li>
+<li>在高等数学中，仅当极限值为某一确定实数时极限存在。极限值为 <span class="math inline">\(\infty\)</span> 时极限不存在。极限值在某处振荡时极限不存在。</li>
+<li>值得注意的是，与函数极限有关的所有讨论，都是基于 <span class="math inline">\(x \to x_0\)</span>，即点 <em>x</em><sub>0</sub> 的任意小的<strong>去心邻域</strong>，与点 <em>x</em><sub>0</sub> 处的函数值 <span class="math inline">\(f(x_0)\)</span> <strong>无任何关系</strong>。</li>
+<li><p>复合函数极限定理： <span class="math display">\[
+\begin{aligned}
+&amp;u = g(x),\; \lim_{x \to x_0} g(x) = u_0\;(g(x) \neq u_0) \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u)\\
+&amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = f(u_0) = f[\lim_{x \to x_0} g(x)]
+\end{aligned}
+\]</span></p></li>
+</ul>
+<h3 id="函数极限存在的性质">函数极限存在的性质</h3>
+<p>首先探讨一下函数极限何时存在？</p>
+<p>『<em>Y</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限存在，『<em>N</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限不存在，则：</p>
+<ul>
+<li><span class="math inline">\(Y \pm ,\times Y = Y\)</span></li>
+<li><span class="math inline">\(Y \pm N = N\)</span></li>
+<li><span class="math inline">\(Y \times N = Y \; (0 \cdot \infty) \; \text{or} \; N\)</span></li>
+<li><span class="math inline">\(N \pm , \times N = Y \; \text{or} \; N\)</span></li>
+</ul>
+<p>如果函数极限存在，则满足下列性质：</p>
+<ul>
+<li>极限是一个<strong>常数</strong>。使用场景：函数表达式中包含极限。</li>
+<li>极限是唯一的，<strong>极限 = 左极限 = 右极限</strong>。</li>
+<li><strong>局部有界性</strong>：存在某 <span class="math inline">\(\mathring{U}(x_0)\)</span> 内函数有界。</li>
+<li><strong>局部保号性</strong>：
+<ul>
+<li>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(f(x) \to A\)</span>，如果 <span class="math inline">\(A &gt; 0 \; (\text{or} \; A &lt; 0)\)</span>，则存在某 <span class="math inline">\(\mathring{U}(x_0)\)</span> 内 <span class="math inline">\(f(x) &gt; 0 \; (\text{or} \; f(x) &lt; 0)\)</span>。</li>
+<li>反之，如果在某 <span class="math inline">\(\mathring{U}(x_0)\)</span> 内 <span class="math inline">\(f(x) \ge 0 \; (\text{or} \; f(x) \le 0)\)</span>，且当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(f(x) \to A\)</span>，则 <span class="math inline">\(A \ge 0 \; (\text{or} \; A \le 0)\)</span>。注意把符号换成 &gt; 或 &lt; 则不成立。</li>
+</ul></li>
+</ul>
+<h3 id="无穷小">无穷小</h3>
+<p>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(f(x) \to 0\)</span>，称 <span class="math inline">\(f(x)\)</span> 为当 <span class="math inline">\(x \to x_0\)</span> 时的『无穷小』。</p>
+<blockquote>
+<p>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(f(x) \to \infty\)</span>，称 <span class="math inline">\(f(x)\)</span> 为当 <span class="math inline">\(x \to x_0\)</span> 时的『无穷大』， <span class="math inline">\(\frac{1}{f(x)}\)</span> 为无穷小。<br />
+当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(f(x)\)</span> 为无穷小且 <span class="math inline">\(f(x) \neq 0\)</span>，则 <span class="math inline">\(\frac{1}{f(x)}\)</span> 为无穷大。</p>
+</blockquote>
+<p>无穷小的比阶：</p>
+<p><span class="math inline">\(x \to x_0 ,\; \alpha(x) \to 0, \; \beta(x) \to 0, \; \beta(x) \neq 0\)</span>，则：</p>
+<ul>
+<li><span class="math inline">\(\lim \frac{\alpha(x)}{\beta(x)} = 0\)</span>，则 <span class="math inline">\(\alpha(x)\)</span> 是 <span class="math inline">\(\beta(x)\)</span> 的『<strong>高阶无穷小</strong>』，记作 <span class="math inline">\(\alpha(x) = o(\beta(x))\)</span>。</li>
+<li><span class="math inline">\(\lim \frac{\alpha(x)}{\beta(x)} = \infty\)</span>，则 <span class="math inline">\(\alpha(x)\)</span> 是 <span class="math inline">\(\beta(x)\)</span> 的『低阶无穷小』。</li>
+<li><span class="math inline">\(\lim \frac{\alpha(x)}{\beta(x)} = c \neq 0\)</span>，则二者是『同阶无穷小』，记作 <span class="math inline">\(\alpha(x) = O(\beta(x))\)</span>。</li>
+<li><span class="math inline">\(\lim \frac{\alpha(x)}{\beta(x)} = 1\)</span>，则二者是『<strong>等价无穷小</strong>』，记作 <span class="math inline">\(\alpha(x) \sim \beta(x)\)</span>。</li>
+<li><span class="math inline">\(\lim \frac{\alpha(x)}{[\beta(x)]^k} = c \neq 0\)</span>，<em>k</em> &gt; 0，则 <span class="math inline">\(\alpha(x)\)</span> 是 <span class="math inline">\(\beta(x)\)</span> 的『<em>k</em> 阶无穷小』。</li>
+</ul>
+<p>无穷小的一些性质：</p>
+<ul>
+<li>常数 0 可认为是最高阶的无穷小：<span class="math inline">\(\lim \frac{0}{\forall \alpha} = 0, \; \lim \frac{\forall \alpha}{0} = \infty\)</span>。</li>
+<li>有界函数与无穷小的积仍是无穷小。</li>
+<li>有限个无穷小的和、积仍是无穷小。</li>
+<li>无穷小加减，只需保留最低阶：<span class="math inline">\(o(x^m) \pm o(x^n) = o(x^{\min(m,n)})\)</span>。</li>
+<li>无穷小相乘，阶数相加：<span class="math inline">\(o(x^m) \cdot o(x^n) = o(x^{m+n})\)</span>。</li>
+</ul>
+<h3 id="函数的连续与间断">函数的连续与间断</h3>
+<p><span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 某邻域内有定义，则 <span class="math inline">\(\lim_{x \to x_0} f(x) = f(x_0) \Leftrightarrow\)</span> <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>连续</strong>』。</p>
+<blockquote>
+<p>若 <span class="math inline">\(\lim_{x \to x_0^+} f(x) = f(x_0) \Leftrightarrow\)</span> <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『右连续』。<br />
+若 <span class="math inline">\(\lim_{x \to x_0^-} f(x) = f(x_0) \Leftrightarrow\)</span> <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『左连续』。</p>
+</blockquote>
+<p>函数在某处连续是一个非常严格的条件，不连续有三种情况：</p>
+<ul>
+<li>函数在某处<strong>无定义</strong>。</li>
+<li>函数在某处<strong>极限不存在</strong>。</li>
+<li>函数在某处极限存在，但<strong>极限值不等于函数值</strong>。</li>
+</ul>
+<p><span class="math inline">\(f(x)\)</span> 在 <em>x</em><sub>0</sub> 某去心邻域内有定义，如果 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处不连续，则点 <em>x</em><sub>0</sub> 为 <span class="math inline">\(f(x)\)</span> 的一个间断点。</p>
+<ul>
+<li>第一类间断点：
+<ul>
+<li><strong>可去间断点</strong>：<span class="math inline">\(\lim_{x \to x_0} f(x)= A \neq f(x_0) \; (\text{or} \; x_0 \notin D_f)\)</span>。</li>
+<li><strong>跳跃间断点</strong>：<span class="math inline">\(\lim_{x \to x_0^-} f(x) = A, \;\lim_{x \to x_0^+} f(x) = B, \; A \neq B\)</span>。</li>
+</ul></li>
+<li>第二类间断点：
+<ul>
+<li><strong>无穷间断点</strong>：<span class="math inline">\(\lim_{x \to x_0} f(x) = \infty\)</span>。</li>
+<li><strong>振荡间断点</strong>：<span class="math inline">\(\lim_{x \to x_0} f(x)\)</span> 振荡不存在，如 <span class="math inline">\(y = \sin \frac{1}{x}\)</span>。</li>
+</ul></li>
+</ul>
+<p>函数连续的性质：</p>
+<ul>
+<li><span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上<strong>有界</strong>。换个说法，<span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上无界，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上不连续，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上存在不可导点。</li>
+<li><span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上连续，且 <span class="math inline">\(\lim_{x \to a^+}f(x)\)</span> 和 <span class="math inline">\(\lim_{x \to b^-}f(x)\)</span> 都存在，则 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上有界。</li>
+<li>基本初等函数在其定义域内连续，初等函数在其<strong>定义区间</strong>内连续。</li>
+<li>根据上一条性质，在高等数学中，初等函数的间断点只可能位于<strong>未定义的点</strong>，分段函数的间断点只可能位于<strong>未定义的点</strong>和<strong>分段点</strong>。</li>
+<li>连续函数相加减乘除（排除除数为 0 的点）后仍然连续，连续函数与不连续函数相加减乘除后必然不连续。</li>
+<li>函数 <span class="math inline">\(u = g(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，<span class="math inline">\(g(x_0) = u_0\)</span>，<span class="math inline">\(f(u)\)</span> 在点 <em>u</em><sub>0</sub> 处连续，则 <span class="math inline">\(f[g(x)]\)</span> 在点 <em>x</em><sub>0</sub> 处也连续。</li>
+</ul>
+<h2 id="函数极限的计算">函数极限的计算</h2>
+<h3 id="无法直接计算">无法直接计算</h3>
+<h4 id="夹逼定理-1">夹逼定理</h4>
+<p>若满足：</p>
+<ol type="1">
+<li><p><span class="math inline">\(\exists \delta &gt; 0\)</span>，当 <span class="math inline">\(x \in \mathring{U}(x_0,\delta)\)</span>，有 <span class="math inline">\(F(x) \leq f(x) \leq G(x)\)</span> 成立。</p></li>
+<li><p>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim F(x) = \lim G(x) = A\)</span>。</p></li>
+</ol>
+<p>则当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim f(x) = A\)</span>。</p>
+<h4 id="单调有界准则">单调有界准则</h4>
+<p>由数列的单调有界定理延伸而出，当 <span class="math inline">\(x \to +\infty\)</span>，<span class="math inline">\(f(x)\)</span> 单调递增（或递减），且 <span class="math inline">\(f(x)\)</span> 有上界（或下界），则 <span class="math inline">\(\lim_{x \to +\infty} f(x)\)</span> 存在。</p>
+<h3 id="可直接计算">可直接计算</h3>
+<p><span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\;/\;\infty-\infty\;/\;1^\infty\;/\;0^0\;/\;\infty^0\)</span> 七种未定式的计算。</p>
+<h4 id="化简">化简</h4>
+<ul>
+<li>查看是哪一种未定式形式：
+<ul>
+<li>若是 <span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\)</span>，则对分式进行化简，如『上下同除以最高次幂』，『根式代换』，『根式有理化』。</li>
+<li>若是 <span class="math inline">\(\infty - \infty\)</span>，如果有分数可进行通分转化成分式，如果没有分数可以『提取公因数』，『进行倒代换』等方式转化成分式。</li>
+<li>若是 <span class="math inline">\(\infty^0, \; 0^0\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^\beta = \exp(\lim \beta \ln \alpha)\)</span>。</li>
+<li>若是 <span class="math inline">\(1^\infty\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^{\beta} = \exp(\lim\beta(\alpha-1))\)</span>。 &gt; 如果式子中含有根式，且 <span class="math inline">\(x &lt; 0\)</span>，则最好使用 <span class="math inline">\(t = -x\)</span> 进行代换，以免计算错误。</li>
+</ul></li>
+<li>乘积形式可以直接使用等价无穷小替换：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;h \to 0 \\
+&amp;\sin h \sim h, \quad \tan h \sim h, \quad \arcsin h \sim h, \quad \arctan h \sim h, \quad 1-\cos h \sim \frac{1}{2}h^2\\
+&amp;\ln(1+h) \sim h, \quad e^h-1 \sim h, \quad a^h-1 \sim h\ln a, \quad  (1+h)^\alpha-1 \sim \alpha h
+\end{aligned}
+\]</span></p>
+<h4 id="洛必达法则">洛必达法则</h4>
+<p>若 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足：</p>
+<ol type="1">
+<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0 \; (\text{or} \; \infty)\)</span>，<span class="math inline">\(\lim g(x)=0 \; (\text{or} \; \infty)\)</span></li>
+<li><span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，且 <span class="math inline">\(g’(x) \ne 0\)</span></li>
+<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A \; (A \in \mathbb{R} \; \text{or} \; A = \infty)\)</span></li>
+</ol>
+<p>则</p>
+<p><span class="math display">\[
+\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A
+\]</span></p>
 <p><strong>注意：</strong></p>
 <ul>
-<li><p>导数的本质是一种<strong>极限</strong>，存在的充要条件是左右极限都存在且相等。</p>
-<blockquote>
-<p>当 <span class="math inline">\(\Delta x \to 0^{-}\)</span> 时，<span class="math inline">\(\lim \frac{\Delta y}{\Delta x}\)</span> 为左导数 <span class="math inline">\(f_{-}’(x_0)\)</span>，反之为右导数 <span class="math inline">\(f_{+}’(x_0)\)</span>.</p>
-</blockquote></li>
-<li>导数的几何意义为函数所表示的曲线上某一点的切线斜率。</li>
-<li><p>函数在某处可导，则必然在此处连续。<strong>反之未必</strong>。</p>
-<blockquote>
-<p><strong>证</strong><br />
-设 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的导数为 A，则<br />
-<span class="math inline">\(\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x} = A\)</span>，<br />
-当 <span class="math inline">\(\Delta x \to 0\)</span> 时，<br />
-<span class="math inline">\(\Delta y = f(x_0+\Delta x)-f(x_0) = A\Delta x+o(|\Delta x |)\)</span>，<br />
-显然 <span class="math inline">\(\Delta y \to 0\)</span>，即函数在 <span class="math inline">\(x_0\)</span> 处连续。<br />
-反之不成立的例子：<span class="math inline">\(y = |x|\)</span>，<span class="math inline">\(y = x\sin(x)\)</span>.</p>
-</blockquote></li>
+<li>洛必达法则用于 <span class="math inline">\(\frac{0}{0},\;\frac{\infty}{\infty}\)</span> 这两种未定式的计算。其他五种可以转化成这两种形式，然后使用洛必达法则。</li>
+<li>公式中等号右侧极限存在，左侧极限必存在。但左侧极限存在，右侧极限未必存在，即使用洛必达法则求极限可能失效。</li>
 </ul>
-<h2 id="导函数">导函数</h2>
-<p><span class="math inline">\(y = f(x)\)</span>，<span class="math inline">\(x\in D\)</span>，<span class="math inline">\(f’(x_0)\)</span> 为函数在 <span class="math inline">\(x_0\)</span> 处的导数，则 <span class="math inline">\(y = f’(x)\)</span>，<span class="math inline">\(x \in D\)</span> 为该函数的导函数。</p>
-<ul>
-<li>达布定理：<br />
-若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> <strong>可导</strong>（无需导函数连续）， <span class="math inline">\(f’(a) \ne f’(b)\)</span>，则 <span class="math inline">\(\forall \mu\)</span> 位于 <span class="math inline">\(f’(a)\)</span> 和 <span class="math inline">\(f’(b)\)</span> 之间，都 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math inline">\(f’(\xi)=\mu\)</span>.</li>
-<li>导函数无第一类间断点，若 <span class="math inline">\(y=f(x)\)</span> 可导，则 <span class="math inline">\(f’(x)\)</span> <strong>连续或存在振荡间断点</strong>。</li>
-</ul>
-<h2 id="微分的定义">微分的定义</h2>
-<p><span class="math inline">\(y’|x=x_0=f’(x_0)\)</span></p>
-<h2 id="求导数的方法">求导数的方法</h2>
-<h3 id="基本公式求导法">基本公式求导法</h3>
-<h3 id="导数的四则运算法则">导数的四则运算法则</h3>
-<h3 id="复合函数的求导法">复合函数的求导法</h3>
-<h3 id="反函数的导数法">反函数的导数法</h3>
-<h3 id="对数求导法">对数求导法</h3>
-<h3 id="幂指函数求导法">幂指函数求导法</h3>
-<h3 id="变限积分求导法">变限积分求导法</h3>
-<h2 id="特殊函数的求导">特殊函数的求导</h2>
-<h3 id="分段函数求导">分段函数求导</h3>
-<h3 id="隐函数求导">隐函数求导</h3>
-<h3 id="参数方程求导">参数方程求导</h3>
-<h3 id="高阶导数">高阶导数</h3>
-<h2 id="导数的应用">导数的应用</h2>
-<h3 id="单调性与极值点">单调性与极值点</h3>
-<h3 id="凹凸性与拐点">凹凸性与拐点</h3>
-<h3 id="渐近线">渐近线</h3>
-<h3 id="求最值或取值范围">求最值或取值范围</h3>
-<h1 id="微分中值定理">微分中值定理</h1>
-<h2 id="微分中值定理及其推导">微分中值定理及其推导</h2>
-<h3 id="费马引理">费马引理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在某领域 <span class="math inline">\(\text{U}(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in \text{U}(\xi)\)</span>，都有</p>
-<p><span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span></p>
-<p>则 <span class="math inline">\(f’(\xi)=0\)</span>.<br />
-即若 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，且 <span class="math inline">\(f’(x_0)\)</span> 存在，则 <span class="math inline">\(f’(x_0)=0\)</span>.</p>
-<blockquote>
-<p><strong>证</strong><br />
-不妨设 <span class="math inline">\(x_0\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极大值点，则 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，都有 <span class="math inline">\(\Delta y=f(x)-f(x_0) \le 0\)</span>，则<br />
-<span class="math inline">\(f_-’(x_0)=\lim_{x \to x_0^-} \frac{f(x)-f(x_0)}{x-x_0} \ge 0\)</span>，<br />
-<span class="math inline">\(f_+’(x_0)=\lim_{x \to x_0^+} \frac{f(x)-f(x_0)}{x-x_0} \le 0\)</span>，<br /> 又 <span class="math inline">\(f’(x_0)\)</span> 存在，故 <span class="math inline">\(f_-’(x_0)=f_+’(x_0)=0\)</span>.</p>
-</blockquote>
-<p><strong>推论</strong><br />
-若 <span class="math inline">\(x=a\)</span> 为 <span class="math inline">\(f(x)\)</span> 的一个极值点，则 <span class="math inline">\(f’(a)=0\)</span> 或不存在。</p>
-<h3 id="罗尔定理">罗尔定理</h3>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 <span class="math inline">\([a,b]\)</span> 上连续</li>
-<li>在 <span class="math inline">\((a,b)\)</span> 上可导</li>
-<li><span class="math inline">\(f(a)=f(b)\)</span></li>
-</ol>
-<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span></p>
-<blockquote>
-<p><strong>证</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 连续，由最大值最小值定理可知 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 内存在最大值最小值，<br />
-设 M 为最大值，m 为最小值<br />
-若 M = m，</p>
-<blockquote>
-<p>即 <span class="math inline">\(f(x)\)</span> 为常函数，则 <span class="math inline">\(f’(x)=0\)</span>.</p>
-</blockquote>
-<p>若 m &lt; M，</p>
-<blockquote>
-<p>因为 <span class="math inline">\(f(a)=f(b)\)</span>，<br />
-故 m、M 至少有一点在 <span class="math inline">\((a,b)\)</span> 内取得，<br />
-不妨设 <span class="math inline">\(\xi \in (a,b)\)</span>，使得 <span class="math inline">\(f(\xi)=M\)</span>，<br />
-由费马引理，<span class="math inline">\(f’(\xi)=0\)</span>.</p>
-</blockquote>
-<p>得证。</p>
-</blockquote>
-<p><strong>推论</strong></p>
-<h3 id="拉格朗日中值定理">拉格朗日中值定理</h3>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 <span class="math inline">\([a,b]\)</span> 上连续</li>
-<li>在 <span class="math inline">\((a,b)\)</span> 上可导</li>
-</ol>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h3 id="柯西中值定理">柯西中值定理</h3>
-<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 <span class="math inline">\([a,b]\)</span> 上连续<br />
-</li>
-<li>在 <span class="math inline">\((a,b)\)</span> 上可导</li>
-<li><span class="math inline">\(g’(x) \ne 0\)</span></li>
-</ol>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h3 id="泰勒中值定理">泰勒中值定理</h3>
-<p>若 <span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)，\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0).\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[\begin{aligned}
-&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
-&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).
-\end{aligned}\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。<br />
-另一种写法为，若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处 n 阶导数存在，则存在一领域 <span class="math inline">\(\text{U}(x_0)\)</span>，对于 <span class="math inline">\(\forall x \in \text{U}(x_0)\)</span>，有 <span class="math display">\[\begin{aligned}
-&amp;f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\\
-&amp;+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+o((x-x_0)^n)(\text{佩亚诺余项}).
-\end{aligned}\]</span> 当 <span class="math inline">\(x_0=0\)</span> 时，泰勒公式称为<strong>麦克劳林公式</strong>，几个重要麦克劳林公式 <span class="math display">\[
+<h4 id="泰勒公式">泰勒公式</h4>
+<p>常用泰勒（麦克劳林）公式：</p>
+<p><span class="math display">\[
 \begin{aligned}
-&amp;(1)  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
-&amp;(2)  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
-&amp;(3)  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
-&amp;(4)  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
-&amp;(5)  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
-&amp;(6)  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
-&amp;(7)  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
-\end{aligned}\]</span></p>
-<h3 id="洛必达法则">洛必达法则</h3>
-<p>若函数 <span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足</p>
-<ol type="1">
-<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span></li>
-<li><span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span></li>
-<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></li>
-</ol>
-<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 这七种情况均可使用洛必达法则求极限。</p>
-<h2 id="微分中值定理的应用">微分中值定理的应用</h2>
-<h1 id="零点问题与微分不等式">零点问题与微分不等式</h1>
+&amp;(1)\;  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
+&amp;(2)\;  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
+&amp;(3)\;  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
+&amp;(4)\;  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
+&amp;(5)\;  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
+&amp;(6)\;  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
+&amp;(7)\;  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
+\end{aligned}
+\]</span></p>
+<p><strong>展开原则：</strong></p>
+<ul>
+<li><span class="math inline">\(\frac{A}{B}\)</span>『上下同阶』：即分母和分子展开到相同次幂，或者分子至少展开到分母的次幂。</li>
+<li><span class="math inline">\(A - B\)</span>『幂次最低』：将 <em>A</em>、<em>B</em> 展开到系数不相等。</li>
+</ul>
+<h2 id="应试技巧">应试技巧</h2>
+<ul>
+<li><span class="math inline">\(x \to x_0, \; f(x) \to 0, \; g(x) \to 0 \Rightarrow e^{f(x)}-e^{g(x)} \sim f(x) - g(x)\)</span></li>
+<li>闭区间内的单调函数必有界。</li>
+<li><span class="math inline">\(x \to 0^+, \; x^x \to 1\)</span></li>
+</ul>
 ]]></content>
       <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学笔记_函数与极限</title>
-    <url>/2022/02/28/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[<p>高等数学<strong>函数与极限</strong>部分的知识总结<br />
-内容包括：</p>
-<ol type="1">
-<li>数列的极限、求数列极限的方法</li>
-<li>函数的极限、求函数极限的方法</li>
-<li>函数的连续性和间断点的判断
-<hr>
-<span id="more"></span></li>
-</ol>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数列的极限">数列的极限</a>
-<ul>
-<li><a href="#定义和性质">定义和性质</a>
-<ul>
-<li><a href="#定义">定义</a></li>
-<li><a href="#性质">性质</a></li>
-</ul></li>
-<li><a href="#求数列极限的方法">求数列极限的方法</a></li>
-</ul></li>
-<li><a href="#函数的极限">函数的极限</a>
-<ul>
-<li><a href="#定义和性质-1">定义和性质</a>
-<ul>
-<li><a href="#定义-1">定义</a></li>
-<li><a href="#性质-1">性质</a></li>
-</ul></li>
-<li><a href="#求函数极限的方法">求函数极限的方法</a>
-<ul>
-<li><a href="#极限存在准则">极限存在准则</a></li>
-<li><a href="#无穷小与无穷大">无穷小与无穷大</a></li>
-<li><a href="#无穷的比较">无穷的比较</a></li>
-<li><a href="#泰勒公式">泰勒公式</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#函数的连续与间断">函数的连续与间断</a>
-<ul>
-<li><a href="#连续性">连续性</a></li>
-<li><a href="#间断点">间断点</a></li>
-</ul></li>
-<li><a href="#连续函数的性质">连续函数的性质</a>
-<ul>
-<li><a href="#连续性运算法则">连续性运算法则</a></li>
-<li><a href="#闭区间上的连续函数定理">闭区间上的连续函数定理</a>
-<ul>
-<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
-<li><a href="#介值定理">介值定理</a></li>
-<li><a href="#零点定理">零点定理</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<h1 id="数列的极限">数列的极限</h1>
-<h2 id="定义和性质">定义和性质</h2>
-<h3 id="定义">定义</h3>
-<p><span class="math display">\[\lim x_n=a \Leftrightarrow  {\forall\varepsilon&gt;0,\exists N\in \textbf{N}^+,当n&gt;N时,恒有\left |x_n-a  \right |&lt;0. }\]</span> 若数列 {x<sub>n</sub>} 存在极限 a，则称数列 {x<sub>n</sub>} 收敛于 a，否则称数列 {x<sub>n</sub>} 是发散的。</p>
-<h3 id="性质">性质</h3>
-<ul>
-<li><p><strong>定理</strong>：若 {x<sub>n</sub>} 收敛于 a，则其子列也收敛于 a.</p>
-<blockquote>
-<p>在数列 {x<sub>n</sub>} 中选取无穷多项，按照原来的先后顺序排列成的新数列成为 {x<sub>n</sub>} 的<strong>子列</strong>。</p>
-</blockquote></li>
-</ul>
-<h2 id="求数列极限的方法">求数列极限的方法</h2>
-<h1 id="函数的极限">函数的极限</h1>
-<h2 id="定义和性质-1">定义和性质</h2>
-<h3 id="定义-1">定义</h3>
-<h3 id="性质-1">性质</h3>
-<h2 id="求函数极限的方法">求函数极限的方法</h2>
-<h3 id="极限存在准则">极限存在准则</h3>
-<h3 id="无穷小与无穷大">无穷小与无穷大</h3>
-<h3 id="无穷的比较">无穷的比较</h3>
-<h3 id="泰勒公式">泰勒公式</h3>
-<h3 id="洛必达法则">洛必达法则</h3>
-<h1 id="函数的连续与间断">函数的连续与间断</h1>
-<h2 id="连续性">连续性</h2>
-<h2 id="间断点">间断点</h2>
-<h1 id="连续函数的性质">连续函数的性质</h1>
-<h2 id="连续性运算法则">连续性运算法则</h2>
-<h2 id="闭区间上的连续函数定理">闭区间上的连续函数定理</h2>
-<h3 id="有界性与最值定理">有界性与最值定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则在 <span class="math inline">\([a,b]\)</span> 上一定有界，且存在最大值和最小值。</p>
-<h3 id="介值定理">介值定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in (a,b)，\text{使得} f(\xi) = \mu.\]</span></p>
-<p><strong>推论1</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，M 和 m 为最大值和最小值，则 <span class="math display">\[\forall m \le \mu \le M\text{，}\exists \xi \in [a,b]\text{，使得} f(\xi)= \mu.\]</span></p>
-<p><strong>推论2 平均值定理</strong><br />
-<span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
-<h3 id="零点定理">零点定理</h3>
-<p><span class="math inline">\(y=f(x)\)</span> 在 <span class="math inline">\([a,b]\)</span> 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高等数学_连续函数的十大定理</title>
-    <url>/2022/03/11/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E8%BF%9E%E7%BB%AD%E5%87%BD%E6%95%B0%E5%8D%81%E5%A4%A7%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[连续函数的十大定理：<br />
-有界性与最值定理、介值定理、零点定理、费马引理、罗尔定理、拉格朗日中值定理、柯西中值定理、泰勒中值定理、洛必达法则、积分中值定理。
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#有界性与最值定理">有界性与最值定理</a></li>
-<li><a href="#介值定理">介值定理</a></li>
-<li><a href="#零点定理">零点定理</a></li>
-<li><a href="#费马引理">费马引理</a></li>
-<li><a href="#罗尔定理">罗尔定理</a></li>
-<li><a href="#拉格朗日中值定理">拉格朗日中值定理</a></li>
-<li><a href="#柯西中值定理">柯西中值定理</a></li>
-<li><a href="#洛必达法则">洛必达法则</a></li>
-<li><a href="#泰勒中值定理">泰勒中值定理</a></li>
-<li><a href="#积分中值定理">积分中值定理</a></li>
-</ul>
-<hr>
-<h1 id="有界性与最值定理">有界性与最值定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则一定有界，且存在最大值和最小值。</p>
-<h1 id="介值定理">介值定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，则 <span class="math display">\[\forall \mu \in (min(f(a),f(b)),max(f(a),f(b))，\exists \xi \in [a,b]，\text{使得} f(\xi) = \mu.\]</span></p>
-<p><strong>推论：平均值定理</strong><br />
-<span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(a&lt;x_1&lt;x_2&lt;…&lt;x_n\)</span>，则 <span class="math inline">\(\exists \xi \in [x_1, x_n]\)</span>，使得 <span class="math display">\[f(\xi) = \frac {f(x_1)+f(x_2)+…+f(x_n)}{n}.\]</span></p>
-<h1 id="零点定理">零点定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 在闭区间 [a,b] 上连续，<span class="math inline">\(f(a) \cdot f(b)&lt;0\)</span>，则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得} f(\xi) = 0.\]</span></p>
-<h1 id="费马引理">费马引理</h1>
-<p><span class="math inline">\(f(x)\)</span> 在某领域 <span class="math inline">\(U(\xi)\)</span> 有定义且在 <span class="math inline">\(\xi\)</span> 处可导，若 <span class="math inline">\(\forall x \in U(\xi)\)</span>，都有 <span class="math display">\[f(x) \ge f(\xi)(\text{或} f(x) \le f(\xi))，\]</span> 则 <span class="math inline">\(f’(\xi)=0\)</span>.</p>
-<blockquote>
-<p><strong>证</strong></p>
-</blockquote>
-<h1 id="罗尔定理">罗尔定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 [a,b] 上连续</li>
-<li>在 (a,b) 上可导</li>
-<li><span class="math inline">\(f(a)=f(b)\)</span></li>
-</ol>
-<p>则 <span class="math display">\[\exists \xi \in (a,b)，\text{使得}f’(\xi)=0.\]</span> <strong>推论</strong></p>
-<h1 id="拉格朗日中值定理">拉格朗日中值定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 [a,b] 上连续</li>
-<li>在 (a,b) 上可导</li>
-</ol>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[f(b)-f(a)=f’(\xi)(b-a)，\]</span> 或写成 <span class="math display">\[f’(\xi)= \frac{f(b)-f(a)}{b-a}.\]</span></p>
-<h1 id="柯西中值定理">柯西中值定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足</p>
-<ol type="1">
-<li>在 [a,b] 上连续<br />
-</li>
-<li>在 (a,b) 上可导</li>
-<li><span class="math inline">\(g’(x) \ne 0\)</span></li>
-</ol>
-<p>则 <span class="math inline">\(\exists \xi \in (a,b)\)</span>，使得 <span class="math display">\[\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\xi)}{g’(\xi)}.\]</span></p>
-<h1 id="洛必达法则">洛必达法则</h1>
-<p><span class="math inline">\(f(x)\)</span> 和 <span class="math inline">\(g(x)\)</span> 满足</p>
-<ol type="1">
-<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim f(x)=0(\text{或}\infty)\)</span>，<span class="math inline">\(\lim g(x)=0(\text{或}\infty)\)</span></li>
-<li><span class="math inline">\(x \in \mathring{U}(a)\)</span>，<span class="math inline">\(f’(x)\)</span> 和 <span class="math inline">\(g’(x)\)</span> 都存在，<span class="math inline">\(g’(x) \ne 0\)</span></li>
-<li><span class="math inline">\(x \to a\)</span>，<span class="math inline">\(\lim \frac{f’(x)}{g’(x)}=A(A\text{为实数或}\infty)\)</span></li>
-</ol>
-<p>则 <span class="math display">\[\lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f’(x)}{g’(x)}=A.\]</span> 对于 <span class="math inline">\(\frac{0}{0}/\frac{\infty}{\infty}/0 \cdot \infty/\infty-\infty/1^\infty/0^0/\infty^0\)</span> 七种情况均可使用洛必达法则求极限。</p>
-<h1 id="泰勒中值定理">泰勒中值定理</h1>
-<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处可导，当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math display">\[f(x)-f(x_0)=f’(x_0)(x-x_0)+o(x-x_0)\]</span> 即 <span class="math display">\[f(x)=f(x_0)+f’(x_0)(x-x_0)+o(x-x_0)\]</span> 更加一般的，若 <span class="math inline">\(f(x)\)</span> 在 (a,b) 上具有 n+1 阶导数，<span class="math inline">\(x_0 \in (a,b)\)</span>，则 <span class="math display">\[f(x) = f(x_0)+f’(x_0)(x-x_0)+\frac{f’’(x_0)(x-x_0)^2}{2!}+…\]</span> <span class="math display">\[+\frac{f^{(n)}(x_0)(x-x_0)^n}{n!}+\frac{f^{(n+1)}(\xi)(x-x_0)^{n+1}}{(n+1)!}(\text{拉格朗日余项}).\]</span> 其中 <span class="math inline">\(\xi\)</span> 位于 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(x_0\)</span> 之间。</p>
-<h1 id="积分中值定理">积分中值定理</h1>
-<p><span class="math inline">\(f(x)\)</span> 在 [a,b] 上连续，则 <span class="math inline">\(\exists \xi \in [a,b]\)</span>，使得 <span class="math display">\[\int_{a}^{b} f(x)dx = f(\xi)(b-a).\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
+        <category>高等数学</category>
       </categories>
       <tags>
         <tag>高等数学</tag>
