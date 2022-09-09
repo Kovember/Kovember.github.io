@@ -29,7 +29,7 @@
 <meta property="og:description" content="高等数学数列极限和函数极限的概念与计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-05T13:46:43.000Z">
-<meta property="article:modified_time" content="2022-09-08T15:43:19.061Z">
+<meta property="article:modified_time" content="2022-09-09T01:23:05.275Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="高等数学">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-08 23:43:19" itemprop="dateModified" datetime="2022-09-08T23:43:19+08:00">2022-09-08</time>
+                <time title="修改时间：2022-09-09 09:23:05" itemprop="dateModified" datetime="2022-09-09T09:23:05+08:00">2022-09-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,7 +350,7 @@
 &amp;(\lim_{x \to +\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]\\
 &amp;(\lim_{x \to -\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(-x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]
 \end{aligned}
-\]</span> * <span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p>
+\]</span> * 当 <span class="math inline">\(x \to x_0^-\)</span> 时，<span class="math inline">\(\limf(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p>
 <p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
 \]</span></p>
@@ -459,13 +459,16 @@
 <p><span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\;/\;\infty-\infty\;/\;1^\infty\;/\;0^0\;/\;\infty^0\)</span> 七种未定式的计算。</p>
 <h4 id="化简">化简</h4>
 <ul>
-<li>查看是哪一种未定式形式：
-<ul>
+<li>查看是哪一种未定式形式：</li>
 <li>若是 <span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\)</span>，则对分式进行化简，如『上下同除以最高次幂』，『根式代换』，『根式有理化』。</li>
 <li>若是 <span class="math inline">\(\infty - \infty\)</span>，如果有分数可进行通分转化成分式，如果没有分数可以『提取公因数』，『进行倒代换』等方式转化成分式。</li>
 <li>若是 <span class="math inline">\(\infty^0, \; 0^0\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^\beta = \exp(\lim \beta \ln \alpha)\)</span>。</li>
-<li>若是 <span class="math inline">\(1^\infty\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^{\beta} = \exp(\lim\beta(\alpha-1))\)</span>。 &gt; 如果式子中含有根式，且 <span class="math inline">\(x &lt; 0\)</span>，则最好使用 <span class="math inline">\(t = -x\)</span> 进行代换，以免计算错误。</li>
-</ul></li>
+<li>若是 <span class="math inline">\(1^\infty\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^{\beta} = \exp(\lim\beta(\alpha-1))\)</span>。</li>
+</ul>
+<blockquote>
+<p>如果式子中含有根式，且 <span class="math inline">\(x &lt; 0\)</span>，则最好使用 <span class="math inline">\(t = -x\)</span> 进行代换，以免计算错误。</p>
+</blockquote>
+<ul>
 <li>乘积形式可以直接使用等价无穷小替换：</li>
 </ul>
 <p><span class="math display">\[
