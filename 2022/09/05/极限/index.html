@@ -21,17 +21,17 @@
     var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
   </script>
 
-  <meta name="description" content="高等数学数列极限和函数极限的概念与计算。">
+  <meta name="description" content="高等数学-数列极限、函数极限的概念与计算。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="极限">
 <meta property="og:url" content="https://cohanbb.github.io/2022/09/05/%E6%9E%81%E9%99%90/index.html">
 <meta property="og:site_name" content="Cohanbb Wiki">
-<meta property="og:description" content="高等数学数列极限和函数极限的概念与计算。">
+<meta property="og:description" content="高等数学-数列极限、函数极限的概念与计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-05T13:46:43.000Z">
-<meta property="article:modified_time" content="2022-09-09T01:23:05.275Z">
+<meta property="article:modified_time" content="2022-09-10T07:48:46.646Z">
 <meta property="article:author" content="Cohanbb">
-<meta property="article:tag" content="高等数学">
+<meta property="article:tag" content="Calulus">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://cohanbb.github.io/2022/09/05/%E6%9E%81%E9%99%90/">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-09 09:23:05" itemprop="dateModified" datetime="2022-09-09T09:23:05+08:00">2022-09-09</time>
+                <time title="修改时间：2022-09-10 15:48:46" itemprop="dateModified" datetime="2022-09-10T15:48:46+08:00">2022-09-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,7 +239,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">高等数学</span></a>
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
                 </span>
             </span>
 
@@ -261,7 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>高等数学数列极限和函数极限的概念与计算。</p>
+        <p>高等数学-数列极限、函数极限的概念与计算。</p>
 <hr />
 <span id="more"></span>
 <p><strong>文章索引</strong></p>
@@ -274,8 +274,8 @@
 <li><a href="#收敛数列的性质">收敛数列的性质</a></li>
 <li><a href="#判断数列收敛">判断数列收敛</a>
 <ul>
-<li><a href="#夹逼定理">夹逼定理</a></li>
-<li><a href="#单调有界定理">单调有界定理</a></li>
+<li><a href="#夹逼准则">夹逼准则</a></li>
+<li><a href="#单调有界准则">单调有界准则</a></li>
 <li><a href="#柯西极限存在准则">柯西极限存在准则</a></li>
 </ul></li>
 <li><a href="#邻域">邻域</a></li>
@@ -288,8 +288,8 @@
 <ul>
 <li><a href="#无法直接计算">无法直接计算</a>
 <ul>
-<li><a href="#夹逼定理-1">夹逼定理</a></li>
-<li><a href="#单调有界准则">单调有界准则</a></li>
+<li><a href="#夹逼定理">夹逼定理</a></li>
+<li><a href="#单调有界准则-1">单调有界准则</a></li>
 </ul></li>
 <li><a href="#可直接计算">可直接计算</a>
 <ul>
@@ -320,13 +320,21 @@
 </blockquote>
 <h3 id="收敛数列的性质">收敛数列的性质</h3>
 <ul>
-<li>唯一性</li>
-<li>有界性</li>
-<li>保号性</li>
+<li>唯一性：如果数列收敛，那么它的极限唯一。</li>
+<li>有界性：如果数列收敛，那么它一定有界。</li>
+<li>保号性：如果数列 <span class="math inline">\(\{x_n\}\)</span> 的极限为 <em>a</em>，且 <span class="math inline">\(a &gt; 0 \; (\text{or} \;a &lt; 0)\)</span>，则存在正整数 <em>N</em>，当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(x_n &gt; 0\;(\text{or} \; x_n &lt; 0)\)</span>。<br />
+推论：如果数列 <span class="math inline">\(\{x_n\}\)</span> 从某项起有 <span class="math inline">\(x_n \geq 0\)</span>，且 <span class="math inline">\(\lim x_n = a\)</span>，则 <span class="math inline">\(a \geq 0\)</span>。</li>
 </ul>
 <h3 id="判断数列收敛">判断数列收敛</h3>
-<h4 id="夹逼定理">夹逼定理</h4>
-<h4 id="单调有界定理">单调有界定理</h4>
+<h4 id="夹逼准则">夹逼准则</h4>
+<p>如果数列 <span class="math inline">\(\{x_n\},\{y_n\}, \{z_n\}\)</span> 满足：</p>
+<ol type="1">
+<li><span class="math inline">\(\exists N \in \mathbf{N_+},\; n &gt; N,\; \{y_n\} \leq \{x_n\} \leq \{z_n\}\)</span></li>
+<li><span class="math inline">\(\lim y_n = \lim z_n = a\)</span></li>
+</ol>
+<p>则 <span class="math inline">\(\lim x_n = a\)</span>。</p>
+<h4 id="单调有界准则">单调有界准则</h4>
+<p>若数列单调递增（或递减）且有上界（或下界），则数列的极限存在。</p>
 <h4 id="柯西极限存在准则">柯西极限存在准则</h4>
 <h3 id="邻域">邻域</h3>
 <ul>
@@ -350,23 +358,28 @@
 &amp;(\lim_{x \to +\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]\\
 &amp;(\lim_{x \to -\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(-x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]
 \end{aligned}
-\]</span> * 当 <span class="math inline">\(x \to x_0^-\)</span> 时，<span class="math inline">\(\limf(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p>
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p></li>
+<li><p>极限存在的<strong>充分必要条件</strong>：</p></li>
+</ul>
 <p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
 \]</span></p>
-<ul>
-<li><p><span class="math display">\[
+<p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow [(x \to x_0) \Rightarrow (f(x) = A + \alpha (x))]
-\]</span></p></li>
+\]</span></p>
+<ul>
 <li>在高等数学中，仅当极限值为某一确定实数时极限存在。极限值为 <span class="math inline">\(\infty\)</span> 时极限不存在。极限值在某处振荡时极限不存在。</li>
 <li>值得注意的是，与函数极限有关的所有讨论，都是基于 <span class="math inline">\(x \to x_0\)</span>，即点 <em>x</em><sub>0</sub> 的任意小的<strong>去心邻域</strong>，与点 <em>x</em><sub>0</sub> 处的函数值 <span class="math inline">\(f(x_0)\)</span> <strong>无任何关系</strong>。</li>
-<li><p>复合函数极限定理： <span class="math display">\[
+<li>复合函数极限定理：</li>
+</ul>
+<p><span class="math display">\[
 \begin{aligned}
 &amp;u = g(x),\; \lim_{x \to x_0} g(x) = u_0\;(g(x) \neq u_0) \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u)\\
 &amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = f(u_0) = f[\lim_{x \to x_0} g(x)]
 \end{aligned}
-\]</span></p></li>
-</ul>
+\]</span></p>
 <h3 id="函数极限存在的性质">函数极限存在的性质</h3>
 <p>首先探讨一下函数极限何时存在？</p>
 <p>『<em>Y</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限存在，『<em>N</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限不存在，则：</p>
@@ -446,20 +459,21 @@
 </ul>
 <h2 id="函数极限的计算">函数极限的计算</h2>
 <h3 id="无法直接计算">无法直接计算</h3>
-<h4 id="夹逼定理-1">夹逼定理</h4>
+<h4 id="夹逼定理">夹逼定理</h4>
 <p>若满足：</p>
 <ol type="1">
 <li><p><span class="math inline">\(\exists \delta &gt; 0\)</span>，当 <span class="math inline">\(x \in \mathring{U}(x_0,\delta)\)</span>，有 <span class="math inline">\(F(x) \leq f(x) \leq G(x)\)</span> 成立。</p></li>
 <li><p>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim F(x) = \lim G(x) = A\)</span>。</p></li>
 </ol>
 <p>则当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim f(x) = A\)</span>。</p>
-<h4 id="单调有界准则">单调有界准则</h4>
+<h4 id="单调有界准则-1">单调有界准则</h4>
 <p>由数列的单调有界定理延伸而出，当 <span class="math inline">\(x \to +\infty\)</span>，<span class="math inline">\(f(x)\)</span> 单调递增（或递减），且 <span class="math inline">\(f(x)\)</span> 有上界（或下界），则 <span class="math inline">\(\lim_{x \to +\infty} f(x)\)</span> 存在。</p>
 <h3 id="可直接计算">可直接计算</h3>
 <p><span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\;/\;\infty-\infty\;/\;1^\infty\;/\;0^0\;/\;\infty^0\)</span> 七种未定式的计算。</p>
 <h4 id="化简">化简</h4>
 <ul>
-<li>查看是哪一种未定式形式：</li>
+<li>查看是哪一种未定式形式：
+<ul>
 <li>若是 <span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\)</span>，则对分式进行化简，如『上下同除以最高次幂』，『根式代换』，『根式有理化』。</li>
 <li>若是 <span class="math inline">\(\infty - \infty\)</span>，如果有分数可进行通分转化成分式，如果没有分数可以『提取公因数』，『进行倒代换』等方式转化成分式。</li>
 <li>若是 <span class="math inline">\(\infty^0, \; 0^0\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^\beta = \exp(\lim \beta \ln \alpha)\)</span>。</li>
@@ -467,8 +481,7 @@
 </ul>
 <blockquote>
 <p>如果式子中含有根式，且 <span class="math inline">\(x &lt; 0\)</span>，则最好使用 <span class="math inline">\(t = -x\)</span> 进行代换，以免计算错误。</p>
-</blockquote>
-<ul>
+</blockquote></li>
 <li>乘积形式可以直接使用等价无穷小替换：</li>
 </ul>
 <p><span class="math display">\[
@@ -544,7 +557,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag"># 高等数学</a>
+              <a href="/tags/Calulus/" rel="tag"># Calulus</a>
           </div>
 
         
@@ -623,7 +636,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90"><span class="nav-number">1.1.</span> <span class="nav-text">数列极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.</span> <span class="nav-text">收敛数列的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%95%B0%E5%88%97%E6%94%B6%E6%95%9B"><span class="nav-number">1.3.</span> <span class="nav-text">判断数列收敛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%B9%E9%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.1.</span> <span class="nav-text">夹逼定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.2.</span> <span class="nav-text">单调有界定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%AF%E8%A5%BF%E6%9E%81%E9%99%90%E5%AD%98%E5%9C%A8%E5%87%86%E5%88%99"><span class="nav-number">1.3.3.</span> <span class="nav-text">柯西极限存在准则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F"><span class="nav-number">1.4.</span> <span class="nav-text">邻域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90"><span class="nav-number">1.5.</span> <span class="nav-text">函数极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E5%AD%98%E5%9C%A8%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.6.</span> <span class="nav-text">函数极限存在的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%B0%8F"><span class="nav-number">1.7.</span> <span class="nav-text">无穷小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E9%97%B4%E6%96%AD"><span class="nav-number">1.8.</span> <span class="nav-text">函数的连续与间断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">函数极限的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97"><span class="nav-number">2.1.</span> <span class="nav-text">无法直接计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%B9%E9%80%BC%E5%AE%9A%E7%90%86-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">夹逼定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E5%87%86%E5%88%99"><span class="nav-number">2.1.2.</span> <span class="nav-text">单调有界准则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">可直接计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E7%AE%80"><span class="nav-number">2.2.1.</span> <span class="nav-text">化简</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99"><span class="nav-number">2.2.2.</span> <span class="nav-text">洛必达法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">泰勒公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">3.</span> <span class="nav-text">应试技巧</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90"><span class="nav-number">1.1.</span> <span class="nav-text">数列极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.</span> <span class="nav-text">收敛数列的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%95%B0%E5%88%97%E6%94%B6%E6%95%9B"><span class="nav-number">1.3.</span> <span class="nav-text">判断数列收敛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%B9%E9%80%BC%E5%87%86%E5%88%99"><span class="nav-number">1.3.1.</span> <span class="nav-text">夹逼准则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E5%87%86%E5%88%99"><span class="nav-number">1.3.2.</span> <span class="nav-text">单调有界准则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%AF%E8%A5%BF%E6%9E%81%E9%99%90%E5%AD%98%E5%9C%A8%E5%87%86%E5%88%99"><span class="nav-number">1.3.3.</span> <span class="nav-text">柯西极限存在准则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%BB%E5%9F%9F"><span class="nav-number">1.4.</span> <span class="nav-text">邻域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90"><span class="nav-number">1.5.</span> <span class="nav-text">函数极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E5%AD%98%E5%9C%A8%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.6.</span> <span class="nav-text">函数极限存在的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%A9%B7%E5%B0%8F"><span class="nav-number">1.7.</span> <span class="nav-text">无穷小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E4%B8%8E%E9%97%B4%E6%96%AD"><span class="nav-number">1.8.</span> <span class="nav-text">函数的连续与间断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">函数极限的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97"><span class="nav-number">2.1.</span> <span class="nav-text">无法直接计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%B9%E9%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.1.1.</span> <span class="nav-text">夹逼定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E5%87%86%E5%88%99-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">单调有界准则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97"><span class="nav-number">2.2.</span> <span class="nav-text">可直接计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E7%AE%80"><span class="nav-number">2.2.1.</span> <span class="nav-text">化简</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99"><span class="nav-number">2.2.2.</span> <span class="nav-text">洛必达法则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">2.2.3.</span> <span class="nav-text">泰勒公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E8%AF%95%E6%8A%80%E5%B7%A7"><span class="nav-number">3.</span> <span class="nav-text">应试技巧</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -639,7 +652,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

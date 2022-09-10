@@ -997,7 +997,7 @@ categories 与以上同理。</p>
   <entry>
     <title>一元函数微分学</title>
     <url>/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
-    <content><![CDATA[<p>高等数学一元函数微分学的概念和计算。</p>
+    <content><![CDATA[<p>高等数学-一元函数微分学的概念和计算。</p>
 <hr />
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
@@ -1032,6 +1032,7 @@ categories 与以上同理。</p>
 <li><a href="#凹凸性与拐点">凹凸性与拐点</a></li>
 <li><a href="#渐近线">渐近线</a></li>
 <li><a href="#曲率">曲率</a></li>
+<li><a href="#相关变化率">相关变化率</a></li>
 </ul></li>
 <li><a href="#一元函数微分学的物理应用">一元函数微分学的物理应用</a></li>
 <li><a href="#应试技巧">应试技巧</a></li>
@@ -1040,7 +1041,7 @@ categories 与以上同理。</p>
 <hr />
 <h2 id="概念">概念</h2>
 <h3 id="导数">导数</h3>
-<p>若函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，当 <em>y</em> 的增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span> 与 <span class="math inline">\(\Delta x\)</span> 的比值的极限在 <span class="math inline">\(\Delta x \to 0\)</span> 时存在，则 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可导</strong>』，该<strong>极限</strong>称为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>导数</strong>』，导数记为 <span class="math inline">\(f’(x_0)\)</span>。即</p>
+<p>设函数 <span class="math inline">\(y = f(x)\)</span> 在点 <em>x</em><sub>0</sub> 的某邻域内有定义，若 <em>y</em> 的增量 <span class="math inline">\(\Delta y=f(x_0+\Delta x)-f(x_0)\)</span> 与 <span class="math inline">\(\Delta x\)</span> 的比值在 <span class="math inline">\(\Delta x \to 0\)</span> 时的极限存在，则 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可导</strong>』，该<strong>极限</strong>称为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>导数</strong>』，记作 <span class="math inline">\(f’(x_0)\)</span>，即</p>
 <p><span class="math display">\[
 \begin{align}
 f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\\
@@ -1160,14 +1161,7 @@ f&#39;(x) = \frac{\text{d}y}{\text{d}x}
 \end{aligned}
 \]</span></p>
 <h4 id="参数方程求导法">参数方程求导法</h4>
-<p><span class="math display">\[
-\left\{
-\begin{aligned}
-&amp; x = \varphi(t)\\
-&amp; y = \psi(t)
-\end{aligned}
-\right.
-\]</span></p>
+<p>函数以参数方程形式表示：<span class="math inline">\(\left\{\begin{aligned}&amp; x = \varphi(t)\\&amp; y = \psi(t)\end{aligned}\right.\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; y&#39; = \frac{\text{d}y}{\text{d}x} = \frac{\text{d}y/\text{d}t}{\text{d}x/\text{d}t} = \frac{\psi&#39;(t)}{\varphi&#39;(t)}\\
@@ -1175,7 +1169,7 @@ f&#39;(x) = \frac{\text{d}y}{\text{d}x}
 \end{aligned}
 \]</span></p>
 <h4 id="隐函数求导法">隐函数求导法</h4>
-<p>函数由方程 <span class="math inline">\(F(x,y) = 0\)</span> 确定，对方程两侧求导，注意 <span class="math inline">\(y = y(x)\)</span>，得到一个由 <span class="math inline">\(x,\;y,\;y&#39;\)</span> 构成的方程，求解可得到 <span class="math inline">\(y&#39;\)</span>。</p>
+<p>函数由方程 <span class="math inline">\(F(x,y) = 0\)</span> 确定，对方程两侧求导，注意 <span class="math inline">\(y = y(x)\)</span>，得到一个由 <span class="math inline">\(x,y,y&#39;\)</span> 构成的方程，求解可得到 <span class="math inline">\(y&#39;\)</span>。</p>
 <h4 id="变限积分求导公式">变限积分求导公式</h4>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1260,7 +1254,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <ol type="1">
 <li>铅垂渐近线</li>
 </ol>
-<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条铅垂渐近线。</p>
+<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条『铅垂渐近线』。</p>
 <blockquote>
 <p>注：此处的 <span class="math inline">\(x_{0}\)</span> 或是函数的无定义点，或是函数定义区间的端点，或是分段函数的分段点。</p>
 </blockquote>
@@ -1268,19 +1262,19 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <li>水平渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条水平渐近线。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条水平渐近线。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条『水平渐近线』。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条『水平渐近线』。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条水平渐近线。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条『水平渐近线』。</li>
 </ul>
 <ol start="3" type="1">
 <li>斜渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。</li>
 </ul>
 <h3 id="曲率">曲率</h3>
 <p>设曲线的直角坐标方程为 <span class="math inline">\(y=f(x)\)</span>， 且 <span class="math inline">\(y=f(x)\)</span> 具有二阶导数，曲线在点 <em>M</em> 处的切线的斜率为 <span class="math inline">\(y=\tan \alpha\)</span>， 所以</p>
@@ -1290,7 +1284,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 \text{d} \alpha &amp;= \frac{y^{\prime \prime}}{1+y^{\prime 2}} \text{d} x
 \end{aligned}
 \]</span></p>
-<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的曲率为：</p>
+<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的『曲率』为：</p>
 <p><span class="math display">\[
 K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \prime}\right|}{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}
 \]</span></p>
@@ -1298,8 +1292,16 @@ K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \pri
 <p><span class="math display">\[
 K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varphi^{\prime \prime}(t)\right|}{\left[\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)\right]^{\frac{3}{2}}}
 \]</span></p>
+<p>曲率半径：</p>
+<p><span class="math display">\[
+\rho = \frac{1}{K} = \frac{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}{\left|y^{\prime \prime}\right|}
+\]</span></p>
+<h3 id="相关变化率">相关变化率</h3>
+<p>已知 <span class="math inline">\(\frac{\text{d}A}{\text{d}B},\frac{\text{d}B}{\text{d}C}\)</span>，则</p>
+<p><span class="math display">\[
+\frac{\text{d}A}{\text{d}C} = \frac{\text{d}A}{\text{d}B} \cdot \frac{\text{d}B}{\text{d}C}
+\]</span></p>
 <h2 id="一元函数微分学的物理应用">一元函数微分学的物理应用</h2>
-<p>相关变化率。</p>
 <h2 id="应试技巧">应试技巧</h2>
 <ul>
 <li><span class="math inline">\((\ln |x|)&#39; = \frac{1}{x}\)</span></li>
@@ -1308,16 +1310,205 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 </ul>
 ]]></content>
       <categories>
-        <category>高等数学</category>
+        <category>Mathematics</category>
       </categories>
       <tags>
-        <tag>高等数学</tag>
+        <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常微分方程</title>
+    <url>/2022/09/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</url>
+    <content><![CDATA[<p>高等数学-常微分方程的概念与计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a></li>
+<li><a href="#计算">计算</a>
+<ul>
+<li><a href="#变量可分离型微分方程">变量可分离型微分方程</a></li>
+<li><a href="#一阶线性微分方程">一阶线性微分方程</a></li>
+<li><a href="#二阶可降阶微分方程">二阶可降阶微分方程</a></li>
+<li><a href="#高阶线性微分方程">高阶线性微分方程</a>
+<ul>
+<li><a href="#二阶线性微分方程解的结构">二阶线性微分方程解的结构</a></li>
+<li><a href="#二阶常系数齐次微分方程的通解">二阶常系数齐次微分方程的通解</a></li>
+<li><a href="#二阶常系数非齐次微分方程的特解">二阶常系数非齐次微分方程的特解</a></li>
+<li><a href="#n-阶常系数齐次线性微分方程的解"><em>n</em> 阶常系数齐次线性微分方程的解</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#微分方程的应用">微分方程的应用</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<ol type="1">
+<li>微分方程是什么？</li>
+</ol>
+<p>描述未知<strong>函数及其导数（或微分）与自变量</strong>之间的关系的方程，称为<strong>微分方程</strong>，一般记作：</p>
+<p><span class="math display">\[
+F[x,y,y&#39;,...,y^{(n)}] = 0
+\]</span></p>
+<p>未知函数是<strong>一元函数</strong>的微分方程称为<strong>常微分方程</strong>，未知函数是多元函数的微分方程称为<strong>偏微分方程</strong>。</p>
+<ol start="2" type="1">
+<li>微分方程的阶数？微分方程的解？通解和特解？</li>
+</ol>
+<p>微分方程中未知函数的最高阶导数的阶数称为微分方程的<strong>阶数</strong>。</p>
+<p>将一个函数代入微分方程，使得方程恒成立，则称该函数是微分方程的一个<strong>解</strong>。</p>
+<p>若微分方程的解中含有<strong>独立常数的个数等于微分方程的阶数</strong>，则该解称为微分方程的<strong>通解</strong>。</p>
+<p>用<strong>初始条件</strong>将微分方程通解中的常数全部确定的解称为微分方程的<strong>特解</strong>。</p>
+<ol start="3" type="1">
+<li>线性微分方程？齐次和非齐次？</li>
+</ol>
+<ul>
+<li>形如 <span class="math inline">\(y&#39; + p(x)y = q(x)\)</span> 的方程称为<strong>一阶线性微分方程</strong>。</li>
+<li>形如 <span class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y = f(x)\)</span> 的方程（或阶数更高）称为<strong>高阶线性微分方程</strong>。
+<ul>
+<li>若 <span class="math inline">\(p(x), q(x)\)</span> 为常数函数，则方程称为<strong>高阶常系数线性微分方程</strong></li>
+<li>若 <span class="math inline">\(f(x) \equiv 0\)</span>，则方程称为<strong>高阶齐次线性微分方程</strong>。</li>
+<li>若 <span class="math inline">\(f(x) \not\equiv 0\)</span>，则方程称为<strong>高阶非齐次线性微分方程</strong></li>
+</ul></li>
+</ul>
+<h2 id="计算">计算</h2>
+<h3 id="变量可分离型微分方程">变量可分离型微分方程</h3>
+<ol type="1">
+<li>形如 <span class="math inline">\(y&#39; = f(x) g(y)\)</span>，分离变量转化为 <span class="math inline">\(\frac {\text{d}y}{g(y)} = f(x)\text{d}x \Rightarrow \int \frac {\text{d}y}{g(y)} = \int f(x)\text{d}x\)</span>。</li>
+<li>形如 <span class="math inline">\(y&#39; = f(ax+by+c)\)</span></li>
+</ol>
+<ul>
+<li>令 <span class="math inline">\(u = ax+by+c \Rightarrow u’ = a + by&#39; = a + bf(u)\)</span>。</li>
+<li>分离变量转化为 <span class="math inline">\(\frac{\text{d}u}{a+bf(u)} = \text{d}x \Rightarrow \int \frac{\text{d}u}{a+bf(u)} = \int \text{d}x\)</span>。</li>
+</ul>
+<ol start="3" type="1">
+<li>形如 <span class="math inline">\(y’ = f \left(\frac{y}{x}\right)\)</span></li>
+</ol>
+<ul>
+<li>令 <span class="math inline">\(\frac{y}{x} = u \Rightarrow y = ux \Rightarrow \frac{\text{d}y}{\text{d}x} = u + x \frac{\text{d}u}{\text{d}x}\)</span>，故原方程转化为 <span class="math inline">\(u + x \frac{\text{d}u}{\text{d}x} = f(u)\)</span>。</li>
+<li>分离变量转化为 <span class="math inline">\(\frac{\text{d}u}{f(u)-u} = \frac{\text{d}x}{x} \Rightarrow \int \frac{\text{d}u}{f(u)-u} = \int \frac{\text{d}x}{x}\)</span>。</li>
+</ul>
+<ol start="4" type="1">
+<li>形如 <span class="math inline">\(\frac{1}{y‘} = f \left(\frac{x}{y}\right)\)</span></li>
+</ol>
+<ul>
+<li>令 <span class="math inline">\(\frac{x}{y} = u \Rightarrow x = uy \Rightarrow \frac{\text{d}x}{\text{d}y} = u + y \frac{\text{d}u}{\text{d}y}\)</span>，故原方程转化为 <span class="math inline">\(u + y \frac{\text{d}u}{\text{d}y} = f(u)\)</span>。</li>
+<li>分离变量转化为 <span class="math inline">\(\frac{\text{d}u}{f(u)-u} = \frac{\text{d}y}{y} \Rightarrow \int \frac{\text{d}u}{f(u)-u} = \int \frac{\text{d}y}{y}\)</span>。</li>
+</ul>
+<h3 id="一阶线性微分方程">一阶线性微分方程</h3>
+<ol type="1">
+<li>形如 <span class="math inline">\(y&#39; + p(x)y = q(x)\)</span>，方程两边同时乘 <span class="math inline">\(e^{\int p(x) \text{d}x}\)</span>，得</li>
+</ol>
+<p><span class="math display">\[
+\text{e}^{\int p(x) \text{d}x}y&#39; + \text{e}^{\int p(x) \text{d}x}p(x)y = \text{e}^{\int p(x) \text{d}x}q(x) \Rightarrow
+\left[\text{e}^{\int p(x) \text{d}x}y\right]&#39; = \text{e}^{\int p(x) \text{d}x}q(x)
+\]</span></p>
+<p>两边积分得</p>
+<p><span class="math display">\[
+\text{e}^{\int p(x) \text{d}x}y = \int \text{e}^{\int p(x) \text{d}x}q(x) \text{d}x + C
+\]</span></p>
+<p>所以</p>
+<p><span class="math display">\[
+y = \text{e}^{-\int p(x) \text{d}x}\left[\text{e}^{\int p(x) \text{d}x}q(x)\text{d}x + C\right]
+\]</span></p>
+<ol start="2" type="1">
+<li>形如 <span class="math inline">\(y&#39; + p(x) y = q(x)y^n\)</span>，即伯努利方程：</li>
+</ol>
+<ul>
+<li>先变形为 <span class="math inline">\(y^{-n}y&#39; + p(x)y^{1-n} = q(x)\)</span>。<br />
+</li>
+<li>令 <span class="math inline">\(z = y^{1-n}\)</span>，得 <span class="math inline">\(\frac{\text{d}z}{\text{d}x} = (1-n)y^{-n}\frac{\text{d}y}{\text{d}x}\)</span>，则 <span class="math inline">\(\frac{1}{1-n}\frac{\text{d}z}{\text{d}x} + p(x)z = q(x)\)</span>。<br />
+</li>
+<li>化为一阶线性微分方程。</li>
+</ul>
+<h3 id="二阶可降阶微分方程">二阶可降阶微分方程</h3>
+<ol type="1">
+<li>形如 <span class="math inline">\(y&#39;&#39; = f(x,y&#39;)\)</span></li>
+</ol>
+<ul>
+<li>令 <span class="math inline">\(y&#39; = p,\; y&#39;&#39; = p&#39; = \frac{\text{d}p}{\text{d}x}\)</span>，原方程化为一阶方程 <span class="math inline">\(\frac{\text{d}p}{\text{d}x} = f(x,p)\)</span>。<br />
+</li>
+<li>求出上述方程通解 <span class="math inline">\(p = \varphi(x,C_1)\)</span>，即 <span class="math inline">\(y&#39; = \varphi(x,C_1) \Rightarrow y = \int \varphi(x,C_1) \text{d}x + C_2\)</span>。</li>
+</ul>
+<ol start="2" type="1">
+<li>形如 <span class="math inline">\(y&#39;&#39; = f(y,y&#39;)\)</span></li>
+</ol>
+<ul>
+<li>令 <span class="math inline">\(y&#39; = p, \; y&#39;&#39; = \frac{\text{d}p}{\text{d}x} = p\frac{\text{d}p}{\text{d}y}\)</span>，原方程化为一阶方程 <span class="math inline">\(p\frac{\text{d}p}{\text{d}y} = f(y,p)\)</span>。</li>
+<li>求出上述方程通解为 <span class="math inline">\(p = \varphi(y,C_1)\)</span>，即 <span class="math inline">\(\frac{\text{d}y}{\text{d}x} = \varphi(y,C_1)\)</span>，分离变量得 <span class="math inline">\(\frac{\text{d}y}{\varphi(y,C_1)}= \text{d}x \Rightarrow \int \frac{\text{d}y}{\varphi(y,C_1)}= x + C_2\)</span>。</li>
+</ul>
+<h3 id="高阶线性微分方程">高阶线性微分方程</h3>
+<h4 id="二阶线性微分方程解的结构">二阶线性微分方程解的结构</h4>
+<ul>
+<li><strong>齐次方程的通解：</strong></li>
+</ul>
+<p>若 <span class="math inline">\(y_1(x),y_2(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = 0\)</span> 的两个解，且 <span class="math inline">\(\frac{y_1(x)}{y_2(x)} \neq C\)</span>，则称 <span class="math inline">\(y_1(x),y_2(x)\)</span> 是该方程的两个<strong>线性无关解</strong>，且 <span class="math inline">\(y(x) = C_1y_1(x) + C_2y_2(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = 0\)</span> 的通解。</p>
+<ul>
+<li><strong>非齐次方程的通解：</strong></li>
+</ul>
+<p>若 <span class="math inline">\(y(x) = C_1y_1(x) + C_2y_2(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = 0\)</span> 的通解，<span class="math inline">\(y^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f(x)\)</span> 的一个特解，则 <span class="math inline">\(y(x) + y^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f(x)\)</span> 的通解。</p>
+<ul>
+<li><strong>非齐次方程的特解：</strong></li>
+</ul>
+<p>若 <span class="math inline">\(y_1^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_1(x)\)</span> 的一个特解，<span class="math inline">\(y_2^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_2(x)\)</span> 的一个特解，则 <span class="math inline">\(y_1^*(x) + y_2 ^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_1(x) + f_2(x)\)</span> 的一个特解。</p>
+<h4 id="二阶常系数齐次微分方程的通解">二阶常系数齐次微分方程的通解</h4>
+<p>方程 <span class="math inline">\(y&#39;&#39; + py + q= 0\)</span> 对应的特征方程为 <span class="math inline">\(r^2 + pr + q = 0\)</span>，求其特征根：</p>
+<p><span class="math display">\[
+\Delta = p^2 - 4q
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta &gt; 0\)</span>，特征方程有两个不等实根 <span class="math inline">\(r_1,r_2\)</span>。此时微分方程的通解为：</li>
+</ul>
+<p><span class="math display">\[
+y = C_1 \text{e}^{r_1x} + C_2 \text{e}^{r_2x}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta = 0\)</span>，特征方程有两个相等实根 <span class="math inline">\(r_1 = r_2 = r\)</span>。此时微分方程的通解为：</li>
+</ul>
+<p><span class="math display">\[
+y = \text{e}^{rx}(C_1 + C_2 x)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta &lt; 0\)</span>，特征方程有一对共轭复根 <span class="math inline">\(\alpha \pm \beta i\)</span>。此时微分方程的通解为：</li>
+</ul>
+<p><span class="math display">\[
+y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
+\]</span></p>
+<h4 id="二阶常系数非齐次微分方程的特解">二阶常系数非齐次微分方程的特解</h4>
+<p>对于微分方程 <span class="math inline">\(y&#39;&#39; + py&#39; + qy = f(x)\)</span>，当 <span class="math inline">\(f(x)\)</span> 的形式为：</p>
+<ul>
+<li><span class="math inline">\(e^{\alpha x}P_n(x)\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x} Q_n(x)x^k\)</span>，其中
+<ul>
+<li><span class="math inline">\(Q_n(x)\)</span> 为 <em>x</em> 的 <em>n</em> 次多项式。</li>
+<li><em>k</em> 表示 <span class="math inline">\(\alpha\)</span> 是齐次方程的特征根的个数（可能是 0、1、2）。</li>
+</ul></li>
+<li><span class="math inline">\(e^{\alpha x}[P_m(x) \cos \beta x + P_m(x) \sin \beta x]\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x}[Q_l^{(1)}(x) \cos \beta x + Q_l^{(2)}(x) \sin \beta x]x^k\)</span>，其中：
+<ul>
+<li><span class="math inline">\(l = \max\{m,n\}\)</span>，<span class="math inline">\(Q_l^{(1)}(x),Q_l^{(2)}(x)\)</span> 表示 <em>x</em> 的两个不同的 <em>l</em> 次多项式。</li>
+<li><em>k</em> 表示 <span class="math inline">\(\alpha \pm \beta i\)</span> 是不是齐次方程的特征根（可能是 0、1）。</li>
+</ul></li>
+</ul>
+<h4 id="n-阶常系数齐次线性微分方程的解"><em>n</em> 阶常系数齐次线性微分方程的解</h4>
+<p>形如 <span class="math inline">\(y^{(n)} + p_1y^{(n-1)} +...+ p_n y = 0 \; (n \geq 3)\)</span> 的微分方程，其对应的特征方程为 <span class="math inline">\(r^n + p_1 r^{n-1} + ... + p_n = 0\)</span>，<em>r</em> 为特征根：</p>
+<ul>
+<li>若 <em>r</em> 为单实根，则微分方程的通解为 <span class="math inline">\(C\text{e}^{rx}\)</span>。</li>
+<li>若 <em>r</em> 为 <em>k</em> 重实根，则微分方程的通解为 <span class="math inline">\(\text{e}^{rx}(C_1 + C_2x +...+ C_kx^{k-1})\)</span>。</li>
+<li>若 <em>r</em> 为单复根 <span class="math inline">\(\alpha \pm \beta i\)</span>，则微分方程的通解为 <span class="math inline">\(\text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)\)</span>。</li>
+</ul>
+<h2 id="微分方程的应用">微分方程的应用</h2>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Calulus</tag>
       </tags>
   </entry>
   <entry>
     <title>数学知识拾遗</title>
     <url>/2022/09/07/%E6%95%B0%E5%AD%A6%E7%9F%A5%E8%AF%86%E6%8B%BE%E9%81%97/</url>
-    <content><![CDATA[<p>大学前数学知识拾遗。</p>
+    <content><![CDATA[<p>大学前的数学知识拾遗。</p>
 <hr />
 <span id="more"></span>
 <p><strong>本文索引</strong></p>
@@ -1563,120 +1754,10 @@ x_1 + x_2 = -\frac{b}{a}, \quad x_1x_2 = \frac{c}{a}
 \]</span></p>
 ]]></content>
       <categories>
-        <category>高等数学</category>
+        <category>Mathematics</category>
       </categories>
       <tags>
-        <tag>高等数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul>
-<hr>
-<blockquote>
-<p>Preface:</p>
-<ol type="1">
-<li><p>本篇所有代码均由 C++ 实现</p></li>
-<li>参考文献：</li>
-</ol>
-<ul>
-<li>大话数据结构（程杰）</li>
-<li>数据结构考研指导（王道论坛）</li>
-</ul>
-</blockquote>
-<h1 id="数据结构">数据结构</h1>
-<h2 id="基本概念">基本概念</h2>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h2 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h2>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h2 id="数据运算">数据运算</h2>
-<p>数据的查找、插入和删除等操作。</p>
-<h2 id="数据的物理结构">数据的物理结构</h2>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h2 id="抽象数据类型">抽象数据类型</h2>
-<p>抽象数据类型（abstract data type，ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface，API）。</p>
-</blockquote>
-<h1 id="算法">算法</h1>
-<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h1 id="算法效率的度量">算法效率的度量</h1>
-<h2 id="算法的时间复杂度">算法的时间复杂度</h2>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
-<p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
-<p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
-<p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h2 id="算法的空间复杂度">算法的空间复杂度</h2>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
-<p>递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
-<p>若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
+        <tag>Calulus</tag>
       </tags>
   </entry>
   <entry>
@@ -1844,9 +1925,119 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
       </tags>
   </entry>
   <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote>
+<p>Preface:</p>
+<ol type="1">
+<li><p>本篇所有代码均由 C++ 实现</p></li>
+<li>参考文献：</li>
+</ol>
+<ul>
+<li>大话数据结构（程杰）</li>
+<li>数据结构考研指导（王道论坛）</li>
+</ul>
+</blockquote>
+<h1 id="数据结构">数据结构</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
+<h2 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h2>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h2 id="数据运算">数据运算</h2>
+<p>数据的查找、插入和删除等操作。</p>
+<h2 id="数据的物理结构">数据的物理结构</h2>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
+<h2 id="抽象数据类型">抽象数据类型</h2>
+<p>抽象数据类型（abstract data type，ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface，API）。</p>
+</blockquote>
+<h1 id="算法">算法</h1>
+<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h1 id="算法效率的度量">算法效率的度量</h1>
+<h2 id="算法的时间复杂度">算法的时间复杂度</h2>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h2 id="算法的空间复杂度">算法的空间复杂度</h2>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
+<p>递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
+<p>若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>极限</title>
     <url>/2022/09/05/%E6%9E%81%E9%99%90/</url>
-    <content><![CDATA[<p>高等数学数列极限和函数极限的概念与计算。</p>
+    <content><![CDATA[<p>高等数学-数列极限、函数极限的概念与计算。</p>
 <hr />
 <span id="more"></span>
 <p><strong>文章索引</strong></p>
@@ -1859,8 +2050,8 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li><a href="#收敛数列的性质">收敛数列的性质</a></li>
 <li><a href="#判断数列收敛">判断数列收敛</a>
 <ul>
-<li><a href="#夹逼定理">夹逼定理</a></li>
-<li><a href="#单调有界定理">单调有界定理</a></li>
+<li><a href="#夹逼准则">夹逼准则</a></li>
+<li><a href="#单调有界准则">单调有界准则</a></li>
 <li><a href="#柯西极限存在准则">柯西极限存在准则</a></li>
 </ul></li>
 <li><a href="#邻域">邻域</a></li>
@@ -1873,8 +2064,8 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <ul>
 <li><a href="#无法直接计算">无法直接计算</a>
 <ul>
-<li><a href="#夹逼定理-1">夹逼定理</a></li>
-<li><a href="#单调有界准则">单调有界准则</a></li>
+<li><a href="#夹逼定理">夹逼定理</a></li>
+<li><a href="#单调有界准则-1">单调有界准则</a></li>
 </ul></li>
 <li><a href="#可直接计算">可直接计算</a>
 <ul>
@@ -1905,13 +2096,21 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </blockquote>
 <h3 id="收敛数列的性质">收敛数列的性质</h3>
 <ul>
-<li>唯一性</li>
-<li>有界性</li>
-<li>保号性</li>
+<li>唯一性：如果数列收敛，那么它的极限唯一。</li>
+<li>有界性：如果数列收敛，那么它一定有界。</li>
+<li>保号性：如果数列 <span class="math inline">\(\{x_n\}\)</span> 的极限为 <em>a</em>，且 <span class="math inline">\(a &gt; 0 \; (\text{or} \;a &lt; 0)\)</span>，则存在正整数 <em>N</em>，当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(x_n &gt; 0\;(\text{or} \; x_n &lt; 0)\)</span>。<br />
+推论：如果数列 <span class="math inline">\(\{x_n\}\)</span> 从某项起有 <span class="math inline">\(x_n \geq 0\)</span>，且 <span class="math inline">\(\lim x_n = a\)</span>，则 <span class="math inline">\(a \geq 0\)</span>。</li>
 </ul>
 <h3 id="判断数列收敛">判断数列收敛</h3>
-<h4 id="夹逼定理">夹逼定理</h4>
-<h4 id="单调有界定理">单调有界定理</h4>
+<h4 id="夹逼准则">夹逼准则</h4>
+<p>如果数列 <span class="math inline">\(\{x_n\},\{y_n\}, \{z_n\}\)</span> 满足：</p>
+<ol type="1">
+<li><span class="math inline">\(\exists N \in \mathbf{N_+},\; n &gt; N,\; \{y_n\} \leq \{x_n\} \leq \{z_n\}\)</span></li>
+<li><span class="math inline">\(\lim y_n = \lim z_n = a\)</span></li>
+</ol>
+<p>则 <span class="math inline">\(\lim x_n = a\)</span>。</p>
+<h4 id="单调有界准则">单调有界准则</h4>
+<p>若数列单调递增（或递减）且有上界（或下界），则数列的极限存在。</p>
 <h4 id="柯西极限存在准则">柯西极限存在准则</h4>
 <h3 id="邻域">邻域</h3>
 <ul>
@@ -1935,23 +2134,28 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 &amp;(\lim_{x \to +\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]\\
 &amp;(\lim_{x \to -\infty} f(x) = A) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists X &gt; 0)[(-x &gt; X) \Rightarrow (|f(x) - A| &lt; \varepsilon)]
 \end{aligned}
-\]</span> * 当 <span class="math inline">\(x \to x_0^-\)</span> 时，<span class="math inline">\(\limf(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p>
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p></li>
+<li><p>极限存在的<strong>充分必要条件</strong>：</p></li>
+</ul>
 <p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
 \]</span></p>
-<ul>
-<li><p><span class="math display">\[
+<p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow [(x \to x_0) \Rightarrow (f(x) = A + \alpha (x))]
-\]</span></p></li>
+\]</span></p>
+<ul>
 <li>在高等数学中，仅当极限值为某一确定实数时极限存在。极限值为 <span class="math inline">\(\infty\)</span> 时极限不存在。极限值在某处振荡时极限不存在。</li>
 <li>值得注意的是，与函数极限有关的所有讨论，都是基于 <span class="math inline">\(x \to x_0\)</span>，即点 <em>x</em><sub>0</sub> 的任意小的<strong>去心邻域</strong>，与点 <em>x</em><sub>0</sub> 处的函数值 <span class="math inline">\(f(x_0)\)</span> <strong>无任何关系</strong>。</li>
-<li><p>复合函数极限定理： <span class="math display">\[
+<li>复合函数极限定理：</li>
+</ul>
+<p><span class="math display">\[
 \begin{aligned}
 &amp;u = g(x),\; \lim_{x \to x_0} g(x) = u_0\;(g(x) \neq u_0) \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u)\\
 &amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = f(u_0) = f[\lim_{x \to x_0} g(x)]
 \end{aligned}
-\]</span></p></li>
-</ul>
+\]</span></p>
 <h3 id="函数极限存在的性质">函数极限存在的性质</h3>
 <p>首先探讨一下函数极限何时存在？</p>
 <p>『<em>Y</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限存在，『<em>N</em>』代表在 <span class="math inline">\(x \to x_0\)</span> 时极限不存在，则：</p>
@@ -2031,20 +2235,21 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </ul>
 <h2 id="函数极限的计算">函数极限的计算</h2>
 <h3 id="无法直接计算">无法直接计算</h3>
-<h4 id="夹逼定理-1">夹逼定理</h4>
+<h4 id="夹逼定理">夹逼定理</h4>
 <p>若满足：</p>
 <ol type="1">
 <li><p><span class="math inline">\(\exists \delta &gt; 0\)</span>，当 <span class="math inline">\(x \in \mathring{U}(x_0,\delta)\)</span>，有 <span class="math inline">\(F(x) \leq f(x) \leq G(x)\)</span> 成立。</p></li>
 <li><p>当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim F(x) = \lim G(x) = A\)</span>。</p></li>
 </ol>
 <p>则当 <span class="math inline">\(x \to x_0\)</span> 时 <span class="math inline">\(\lim f(x) = A\)</span>。</p>
-<h4 id="单调有界准则">单调有界准则</h4>
+<h4 id="单调有界准则-1">单调有界准则</h4>
 <p>由数列的单调有界定理延伸而出，当 <span class="math inline">\(x \to +\infty\)</span>，<span class="math inline">\(f(x)\)</span> 单调递增（或递减），且 <span class="math inline">\(f(x)\)</span> 有上界（或下界），则 <span class="math inline">\(\lim_{x \to +\infty} f(x)\)</span> 存在。</p>
 <h3 id="可直接计算">可直接计算</h3>
 <p><span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\;/\;\infty-\infty\;/\;1^\infty\;/\;0^0\;/\;\infty^0\)</span> 七种未定式的计算。</p>
 <h4 id="化简">化简</h4>
 <ul>
-<li>查看是哪一种未定式形式：</li>
+<li>查看是哪一种未定式形式：
+<ul>
 <li>若是 <span class="math inline">\(\frac{0}{0}\;/\;\frac{\infty}{\infty}\;/\;0 \cdot \infty\)</span>，则对分式进行化简，如『上下同除以最高次幂』，『根式代换』，『根式有理化』。</li>
 <li>若是 <span class="math inline">\(\infty - \infty\)</span>，如果有分数可进行通分转化成分式，如果没有分数可以『提取公因数』，『进行倒代换』等方式转化成分式。</li>
 <li>若是 <span class="math inline">\(\infty^0, \; 0^0\)</span>，则指对数转化 <span class="math inline">\(\lim \alpha^\beta = \exp(\lim \beta \ln \alpha)\)</span>。</li>
@@ -2052,8 +2257,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </ul>
 <blockquote>
 <p>如果式子中含有根式，且 <span class="math inline">\(x &lt; 0\)</span>，则最好使用 <span class="math inline">\(t = -x\)</span> 进行代换，以免计算错误。</p>
-</blockquote>
-<ul>
+</blockquote></li>
 <li>乘积形式可以直接使用等价无穷小替换：</li>
 </ul>
 <p><span class="math display">\[
@@ -2105,10 +2309,10 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </ul>
 ]]></content>
       <categories>
-        <category>高等数学</category>
+        <category>Mathematics</category>
       </categories>
       <tags>
-        <tag>高等数学</tag>
+        <tag>Calulus</tag>
       </tags>
   </entry>
 </search>
