@@ -1483,7 +1483,7 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 <li><span class="math inline">\(Q_n(x)\)</span> 为 <em>x</em> 的 <em>n</em> 次多项式。</li>
 <li><em>k</em> 表示 <span class="math inline">\(\alpha\)</span> 是齐次方程的特征根的个数（可能是 0、1、2）。</li>
 </ul></li>
-<li><span class="math inline">\(e^{\alpha x}[P_m(x) \cos \beta x + P_m(x) \sin \beta x]\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x}[Q_l^{(1)}(x) \cos \beta x + Q_l^{(2)}(x) \sin \beta x]x^k\)</span>，其中：
+<li><span class="math inline">\(e^{\alpha x}[P_m(x) \cos \beta x + P_n(x) \sin \beta x]\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x}[Q_l^{(1)}(x) \cos \beta x + Q_l^{(2)}(x) \sin \beta x]x^k\)</span>，其中：
 <ul>
 <li><span class="math inline">\(l = \max\{m,n\}\)</span>，<span class="math inline">\(Q_l^{(1)}(x),Q_l^{(2)}(x)\)</span> 表示 <em>x</em> 的两个不同的 <em>l</em> 次多项式。</li>
 <li><em>k</em> 表示 <span class="math inline">\(\alpha \pm \beta i\)</span> 是不是齐次方程的特征根（可能是 0、1）。</li>
