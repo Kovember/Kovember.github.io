@@ -29,7 +29,7 @@
 <meta property="og:description" content="高等数学-一元函数微分学的概念和计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-08T13:46:43.000Z">
-<meta property="article:modified_time" content="2022-09-10T07:48:57.795Z">
+<meta property="article:modified_time" content="2022-09-13T02:14:07.877Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="Calulus">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-10 15:48:57" itemprop="dateModified" datetime="2022-09-10T15:48:57+08:00">2022-09-10</time>
+                <time title="修改时间：2022-09-13 10:14:07" itemprop="dateModified" datetime="2022-09-13T10:14:07+08:00">2022-09-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -352,9 +352,9 @@ f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \lim_{\Delta 
 <p><span class="math display">\[
 \Delta y = A\Delta x + o(\Delta x)
 \]</span></p>
-<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作 <span class="math inline">\(\text{d}y\)</span>。所以</p>
+<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作</p>
 <p><span class="math display">\[
-\Delta y = \text{d}y + o(\Delta x)
+\text{d}y \bigg|_{x = x_0} = A\Delta x
 \]</span></p>
 <p>又因为 <span class="math inline">\(\Delta x = 1 \cdot \Delta x + 0 \Rightarrow 1 \cdot \Delta x + o(\Delta x)\)</span>，所以 <span class="math inline">\(\text{d}x = \Delta x\)</span>。</p>
 <p>所以</p>
@@ -375,7 +375,7 @@ A = f&#39;(x_0)
 </ol>
 <p><span class="math display">\[
 \begin{align}
-f&#39;(x) = \frac{\text{d}y}{\text{d}x}
+f&#39;(x_0) = \frac{\text{d}y}{\text{d}x}\bigg|_{x = x_0}
 \end{align}
 \]</span></p>
 <ol start="2" type="1">
@@ -518,7 +518,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <ol type="1">
 <li>铅垂渐近线</li>
 </ol>
-<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条『铅垂渐近线』。</p>
+<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条铅垂渐近线。</p>
 <blockquote>
 <p>注：此处的 <span class="math inline">\(x_{0}\)</span> 或是函数的无定义点，或是函数定义区间的端点，或是分段函数的分段点。</p>
 </blockquote>
@@ -526,19 +526,19 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <li>水平渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条『水平渐近线』。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条『水平渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条水平渐近线。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条水平渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条『水平渐近线』。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条水平渐近线。</li>
 </ul>
 <ol start="3" type="1">
 <li>斜渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。</li>
 </ul>
 <h3 id="曲率">曲率</h3>
 <p>设曲线的直角坐标方程为 <span class="math inline">\(y=f(x)\)</span>， 且 <span class="math inline">\(y=f(x)\)</span> 具有二阶导数，曲线在点 <em>M</em> 处的切线的斜率为 <span class="math inline">\(y=\tan \alpha\)</span>， 所以</p>
@@ -548,7 +548,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 \text{d} \alpha &amp;= \frac{y^{\prime \prime}}{1+y^{\prime 2}} \text{d} x
 \end{aligned}
 \]</span></p>
-<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的『曲率』为：</p>
+<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的曲率为：</p>
 <p><span class="math display">\[
 K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \prime}\right|}{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}
 \]</span></p>
@@ -561,10 +561,7 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 \rho = \frac{1}{K} = \frac{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}{\left|y^{\prime \prime}\right|}
 \]</span></p>
 <h3 id="相关变化率">相关变化率</h3>
-<p>已知 <span class="math inline">\(\frac{\text{d}A}{\text{d}B},\frac{\text{d}B}{\text{d}C}\)</span>，则</p>
-<p><span class="math display">\[
-\frac{\text{d}A}{\text{d}C} = \frac{\text{d}A}{\text{d}B} \cdot \frac{\text{d}B}{\text{d}C}
-\]</span></p>
+<p>已知 <span class="math inline">\(\frac{\text{d}A}{\text{d}B},\frac{\text{d}B}{\text{d}C}\)</span>，则 <span class="math inline">\(\frac{\text{d}A}{\text{d}C} = \frac{\text{d}A}{\text{d}B} \cdot \frac{\text{d}B}{\text{d}C}\)</span>。</p>
 <h2 id="一元函数微分学的物理应用">一元函数微分学的物理应用</h2>
 <h2 id="应试技巧">应试技巧</h2>
 <ul>

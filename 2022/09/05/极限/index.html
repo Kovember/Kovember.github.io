@@ -29,7 +29,7 @@
 <meta property="og:description" content="高等数学-数列极限、函数极限的概念与计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-05T13:46:43.000Z">
-<meta property="article:modified_time" content="2022-09-10T07:48:46.646Z">
+<meta property="article:modified_time" content="2022-09-13T02:12:58.219Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="Calulus">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-10 15:48:46" itemprop="dateModified" datetime="2022-09-10T15:48:46+08:00">2022-09-10</time>
+                <time title="修改时间：2022-09-13 10:12:58" itemprop="dateModified" datetime="2022-09-13T10:12:58+08:00">2022-09-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,7 +313,7 @@
 <li><span class="math inline">\(\varepsilon - N\)</span>：</li>
 </ul>
 <p><span class="math display">\[
-(\lim_{n \to \infty} x_n = a) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists N \in \mathbf{N}_+)[(n &gt; N) \Rightarrow (|x_n - a| &lt; \varepsilon)]
+(\lim_{n \to \infty} x_n = a) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists N \in \mathbf{N_+})[(n &gt; N) \Rightarrow (|x_n - a| &lt; \varepsilon)]
 \]</span></p>
 <blockquote>
 <p>注：由于数列的下标使用正整数表示，此处的 <span class="math inline">\(\infty\)</span> 只能为 <span class="math inline">\(+\infty\)</span>。</p>
@@ -336,6 +336,13 @@
 <h4 id="单调有界准则">单调有界准则</h4>
 <p>若数列单调递增（或递减）且有上界（或下界），则数列的极限存在。</p>
 <h4 id="柯西极限存在准则">柯西极限存在准则</h4>
+<p>数列 <span class="math inline">\(\{x_n\}\)</span> 收敛的<strong>充分必要条件：</strong></p>
+<p>对于 <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>，都存在正整数 <em>N</em>，使得当 <span class="math inline">\(n&gt;N,m&gt;N\)</span> 时有</p>
+<p><span class="math display">\[
+|x_n - x_m | &lt; \varepsilon
+\]</span></p>
+<p>我们把满足该条件的 <span class="math inline">\(\{x_n\}\)</span> 称为『柯西序列』，那么上述定理可表述成：数列{xn}收敛，当且仅当它是一个柯西序列。</p>
+<p>该准则的几何意义表示，收敛数列中的元素随着序数的增加而愈发靠近，即足够靠后的任意两项都无限接近。</p>
 <h3 id="邻域">邻域</h3>
 <ul>
 <li>以 <em>x</em><sub>0</sub> 为中心的任何开区间称为点 <em>x</em><sub>0</sub> 的『邻域』，记作 <span class="math inline">\(U(x_0)\)</span>。</li>
@@ -361,7 +368,7 @@
 \]</span></p>
 <ul>
 <li><p><span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p></li>
-<li><p>极限存在的<strong>充分必要条件</strong>：</p></li>
+<li><p>函数极限存在的<strong>充分必要条件</strong>：</p></li>
 </ul>
 <p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
@@ -377,7 +384,7 @@
 <p><span class="math display">\[
 \begin{aligned}
 &amp;u = g(x),\; \lim_{x \to x_0} g(x) = u_0\;(g(x) \neq u_0) \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u)\\
-&amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = f(u_0) = f[\lim_{x \to x_0} g(x)]
+&amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)]= \lim_{u \to u_0} f(u) = f(u_0) = f\left[\lim_{x \to x_0} g(x)\right]
 \end{aligned}
 \]</span></p>
 <h3 id="函数极限存在的性质">函数极限存在的性质</h3>
@@ -455,7 +462,7 @@
 <li>基本初等函数在其定义域内连续，初等函数在其<strong>定义区间</strong>内连续。</li>
 <li>根据上一条性质，在高等数学中，初等函数的间断点只可能位于<strong>未定义的点</strong>，分段函数的间断点只可能位于<strong>未定义的点</strong>和<strong>分段点</strong>。</li>
 <li>连续函数相加减乘除（排除除数为 0 的点）后仍然连续，连续函数与不连续函数相加减乘除后必然不连续。</li>
-<li>函数 <span class="math inline">\(u = g(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，<span class="math inline">\(g(x_0) = u_0\)</span>，<span class="math inline">\(f(u)\)</span> 在点 <em>u</em><sub>0</sub> 处连续，则 <span class="math inline">\(f[g(x)]\)</span> 在点 <em>x</em><sub>0</sub> 处也连续。</li>
+<li>函数 <span class="math inline">\(u = g(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续且 <span class="math inline">\(g(x_0) = u_0\)</span>，<span class="math inline">\(f(u)\)</span> 在点 <em>u</em><sub>0</sub> 处连续，则 <span class="math inline">\(f[g(x)]\)</span> 在点 <em>x</em><sub>0</sub> 处也连续。</li>
 </ul>
 <h2 id="函数极限的计算">函数极限的计算</h2>
 <h3 id="无法直接计算">无法直接计算</h3>
@@ -486,7 +493,7 @@
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;h \to 0 \\
+&amp;\text{if} \; h \to 0 :\\
 &amp;\sin h \sim h, \quad \tan h \sim h, \quad \arcsin h \sim h, \quad \arctan h \sim h, \quad 1-\cos h \sim \frac{1}{2}h^2\\
 &amp;\ln(1+h) \sim h, \quad e^h-1 \sim h, \quad a^h-1 \sim h\ln a, \quad  (1+h)^\alpha-1 \sim \alpha h
 \end{aligned}
@@ -511,13 +518,13 @@
 <p>常用泰勒（麦克劳林）公式：</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;(1)\;  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
-&amp;(2)\;  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
-&amp;(3)\;  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
-&amp;(4)\;  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
-&amp;(5)\;  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
-&amp;(6)\;  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
-&amp;(7)\;  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
+&amp;(1)\;  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) \\
+&amp;(2)\;  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) \\
+&amp;(3)\;  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) \\
+&amp;(4)\;  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) \\
+&amp;(5)\;  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) \\
+&amp;(6)\;  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) \\
+&amp;(7)\;  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) 
 \end{aligned}
 \]</span></p>
 <p><strong>展开原则：</strong></p>

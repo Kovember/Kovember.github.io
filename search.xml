@@ -896,105 +896,6 @@ session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并
       </tags>
   </entry>
   <entry>
-    <title>Hexo 博客搭建简单说明</title>
-    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
-步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
-<li><a href="#github-page-配置">GitHub Page 配置</a></li>
-<li><a href="#配置主题">配置主题</a></li>
-<li><a href="#发布博客">发布博客</a></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr>
-<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
-<ol type="1">
-<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
-<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
-<li><p>命令行输入命令检验是否安装成功</p></li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li><p>安装 hexo<br />
-命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
-<li><p>初始化 hexo<br />
-命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
-<li><p>根目录的结构</p>
-<ul>
-<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
-<li>package.json: 应用程序的信息，可以查看安装的包。</li>
-<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
-<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
-<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
-</ul></li>
-<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
-启动服务器，输入 <code>hexo server</code><br />
-可在 http://localhost:4000/ 查看网站。</p></li>
-</ol>
-<h1 id="github-page-配置">GitHub Page 配置</h1>
-<ol type="1">
-<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
-<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
-<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
-</ol>
-<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<ol start="4" type="1">
-<li><p>部署 GitHub<br />
-需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
-发布网站到GitHub Page<br />
-<code>hexo deploy</code></p></li>
-<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
-</ol>
-<h1 id="配置主题">配置主题</h1>
-<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
-<p><strong>获取主题</strong><br />
-theme文件夹下命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
-要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
-<p><strong>tags 和 categories</strong><br />
-tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
-categories 与以上同理。</p>
-<p><strong>about</strong><br />
-在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
-根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
-<p><strong>修改头像，网站的图标、背景</strong></p>
-<ul>
-<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
-<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>启用search</strong><br />
-安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
-根目录/_config.yml 文件中加入：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><strong>插入图片</strong><br />
-需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
-<h1 id="发布博客">发布博客</h1>
-<p>在根目录命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
-<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
-编辑完成后根目录命令行输入以下命令发布博客。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
-<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一元函数微分学</title>
     <url>/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
     <content><![CDATA[<p>高等数学-一元函数微分学的概念和计算。</p>
@@ -1088,9 +989,9 @@ f’(x_0) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} &amp;= \lim_{\Delta 
 <p><span class="math display">\[
 \Delta y = A\Delta x + o(\Delta x)
 \]</span></p>
-<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作 <span class="math inline">\(\text{d}y\)</span>。所以</p>
+<p>则称 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处『<strong>可微</strong>』，并称 <span class="math inline">\(A\Delta x\)</span> 为 <span class="math inline">\(f(x)\)</span> 在点 <em>x</em><sub>0</sub> 处的『<strong>微分</strong>』（线性主部），记作</p>
 <p><span class="math display">\[
-\Delta y = \text{d}y + o(\Delta x)
+\text{d}y \bigg|_{x = x_0} = A\Delta x
 \]</span></p>
 <p>又因为 <span class="math inline">\(\Delta x = 1 \cdot \Delta x + 0 \Rightarrow 1 \cdot \Delta x + o(\Delta x)\)</span>，所以 <span class="math inline">\(\text{d}x = \Delta x\)</span>。</p>
 <p>所以</p>
@@ -1111,7 +1012,7 @@ A = f&#39;(x_0)
 </ol>
 <p><span class="math display">\[
 \begin{align}
-f&#39;(x) = \frac{\text{d}y}{\text{d}x}
+f&#39;(x_0) = \frac{\text{d}y}{\text{d}x}\bigg|_{x = x_0}
 \end{align}
 \]</span></p>
 <ol start="2" type="1">
@@ -1254,7 +1155,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <ol type="1">
 <li>铅垂渐近线</li>
 </ol>
-<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条『铅垂渐近线』。</p>
+<p>若 <span class="math inline">\(\lim _{x \rightarrow x_{0}^{+}} f(x)=\infty\; (\text{or} \lim _{x \rightarrow x_{0}^{-}} f(x)=\infty)\)</span>，则 <span class="math inline">\(x=x_{0}\)</span> 为一条铅垂渐近线。</p>
 <blockquote>
 <p>注：此处的 <span class="math inline">\(x_{0}\)</span> 或是函数的无定义点，或是函数定义区间的端点，或是分段函数的分段点。</p>
 </blockquote>
@@ -1262,19 +1163,19 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 <li>水平渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条『水平渐近线』。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条『水平渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=y_{1}\)</span>， 则 <span class="math inline">\(y=y_{1}\)</span> 为一条水平渐近线。若 <span class="math inline">\(\lim _{x \rightarrow-\infty} f(x)=y_{2}\)</span>，则 <span class="math inline">\(y=y_{2}\)</span> 为一条水平渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条『水平渐近线』。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} f(x)=\lim _{x \rightarrow-\infty} f(x)=y_{0}\)</span>，则 <span class="math inline">\(y=y_{0}\)</span> 为一条水平渐近线。</li>
 </ul>
 <ol start="3" type="1">
 <li>斜渐近线</li>
 </ol>
 <ul>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=a_{1}\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}\left[f(x)-a_{1} x\right]=b_{1}\)</span>，则 <span class="math inline">\(y=a_{1}x+b_{1}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。<br />
+<li>若 <span class="math inline">\(\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a_{2}\)</span>，<span class="math inline">\(lim _{x \rightarrow-\infty}\left[f(x)-a_{2} x\right]=b_{2}\)</span>，则 <span class="math inline">\(y=a_{2}x+b_{2}\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。<br />
 </li>
-<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条『斜渐近线』。</li>
+<li>若 <span class="math inline">\(\lim _{x \rightarrow+\infty} \frac{f(x)}{x}=\lim _{x \rightarrow-\infty} \frac{f(x)}{x}=a\)</span>，<span class="math inline">\(\lim _{x \rightarrow+\infty}[f(x)-a x]=\lim _{x \rightarrow-\infty}[f(x)-a x]=b\)</span>，则 <span class="math inline">\(y=a x+b\)</span> 是曲线 <span class="math inline">\(y=f(x)\)</span> 的一条斜渐近线。</li>
 </ul>
 <h3 id="曲率">曲率</h3>
 <p>设曲线的直角坐标方程为 <span class="math inline">\(y=f(x)\)</span>， 且 <span class="math inline">\(y=f(x)\)</span> 具有二阶导数，曲线在点 <em>M</em> 处的切线的斜率为 <span class="math inline">\(y=\tan \alpha\)</span>， 所以</p>
@@ -1284,7 +1185,7 @@ f\left(\frac{x_1+x_2}{2}\right) &lt; \frac{f(x_1)+f(x_2)}{2} \;(\text{or} \;f\le
 \text{d} \alpha &amp;= \frac{y^{\prime \prime}}{1+y^{\prime 2}} \text{d} x
 \end{aligned}
 \]</span></p>
-<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的『曲率』为：</p>
+<p>又 <span class="math inline">\(\text{d} s=\sqrt{1+y^{\prime 2}} \text{d}x\)</span>，故曲线 <em>L</em> 在 <em>M</em> 点处的曲率为：</p>
 <p><span class="math display">\[
 K= \left|\frac{\text{d} \alpha}{\text{d} s} \right| = \frac{\left|y^{\prime \prime}\right|}{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}
 \]</span></p>
@@ -1297,10 +1198,7 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 \rho = \frac{1}{K} = \frac{\left(1+y^{\prime 2}\right)^{\frac{3}{2}}}{\left|y^{\prime \prime}\right|}
 \]</span></p>
 <h3 id="相关变化率">相关变化率</h3>
-<p>已知 <span class="math inline">\(\frac{\text{d}A}{\text{d}B},\frac{\text{d}B}{\text{d}C}\)</span>，则</p>
-<p><span class="math display">\[
-\frac{\text{d}A}{\text{d}C} = \frac{\text{d}A}{\text{d}B} \cdot \frac{\text{d}B}{\text{d}C}
-\]</span></p>
+<p>已知 <span class="math inline">\(\frac{\text{d}A}{\text{d}B},\frac{\text{d}B}{\text{d}C}\)</span>，则 <span class="math inline">\(\frac{\text{d}A}{\text{d}C} = \frac{\text{d}A}{\text{d}B} \cdot \frac{\text{d}B}{\text{d}C}\)</span>。</p>
 <h2 id="一元函数微分学的物理应用">一元函数微分学的物理应用</h2>
 <h2 id="应试技巧">应试技巧</h2>
 <ul>
@@ -1314,6 +1212,105 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
       </categories>
       <tags>
         <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 博客搭建简单说明</title>
+    <url>/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<p>本站使用 Hexo 进行搭建，发布在 Github Page 上，Github地址：https://github.com/cohanbb <br />本文为使用 Hexo 和 Github Page 搭建个人博客网站的详细教程。<br />
+步骤为：配置 git 和 hexo、配置 github、配置主题、发布文章。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#安装-git-和-hexo">安装 Git 和 hexo</a></li>
+<li><a href="#github-page-配置">GitHub Page 配置</a></li>
+<li><a href="#配置主题">配置主题</a></li>
+<li><a href="#发布博客">发布博客</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr>
+<h1 id="安装-git-和-hexo">安装 Git 和 hexo</h1>
+<ol type="1">
+<li><p>安装 <a href="https://nodejs.org/en/">node.js</a>。</p></li>
+<li><p>安装 <a href="https://git-scm.com/download/win">Git</a>。</p></li>
+<li><p>命令行输入命令检验是否安装成功</p></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>安装 hexo<br />
+命令行输入 <code>npm install hexo-cli -g</code>，输入 <code>hexo -v</code> 检验是否安装成功。</p></li>
+<li><p>初始化 hexo<br />
+命令行输入 <code>hexo init [folder]</code>，[folder] 为自定义名字，作为博客的根目录。</p></li>
+<li><p>根目录的结构</p>
+<ul>
+<li>_config.yml : 网站的配置信息，在此配置网站的功能和结构。</li>
+<li>package.json: 应用程序的信息，可以查看安装的包。</li>
+<li>scaffolds: 模版文件夹，Hexo 根据此来建立文件。</li>
+<li>source: 资源文件夹，如 post、tags 等文件存放在此。</li>
+<li>themes: 主题 文件夹。Hexo 会根据主题来生成静态页面。</li>
+</ul></li>
+<li><p>生成静态文件，在根目录下命令行输入 <code>hexo generate</code><br />
+启动服务器，输入 <code>hexo server</code><br />
+可在 http://localhost:4000/ 查看网站。</p></li>
+</ol>
+<h1 id="github-page-配置">GitHub Page 配置</h1>
+<ol type="1">
+<li><p>登录 <a href="https://github.com">GitHub</a>，新建 repository，名字必须设为 <strong>username.github.io</strong></p></li>
+<li><p>复制仓库的地址 SSH/HTTPs，推荐使用HTTPs，操作简单，但是网路状况不佳；使用 SSH 方式首先需要在本地生成 SSH Key，在终端输入 <code>$ ssh-keygen -t rsa -b 4096 -C "your github email"</code>，然后登录 GitHub 将刚刚生成的公钥添加到 SSH Key 即可。</p></li>
+<li><p>进入根目录下的 **_config.yml** 文件，在末尾加入：</p></li>
+</ol>
+<p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> <span class="attr">repo:</span> <span class="string">https://github.com/username/username.github.io.git</span></span><br><span class="line"> <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<ol start="4" type="1">
+<li><p>部署 GitHub<br />
+需要下载插件，根目录命令行输入 <code>npm install hexo-deployer-git --save</code><br />
+发布网站到GitHub Page<br />
+<code>hexo deploy</code></p></li>
+<li><p>然后在浏览器访问 https://username.github.io 即可进入博客主页。</p></li>
+</ol>
+<h1 id="配置主题">配置主题</h1>
+<p>Hexo 博客默认主题为 landscape，若想修改主题，在 GitHub 上找到主题，克隆到 theme 文件夹下。本例为 next 主题。</p>
+<p><strong>获取主题</strong><br />
+theme文件夹下命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>打开 next 的 _config.yml 文件，里面是 next 主题的配置信息，阅读该文档内的注释即可大致明白各部分的作用。<br />
+要修改的主要内容为 <code>tags</code>, <code>categories</code>, <code>about</code>, <code>social</code>, <code>avatar</code>, <code>search</code>，网站的背景等。</p>
+<p><strong>tags 和 categories</strong><br />
+tags 为标签，categories 为类别。在根目录下命令行输入 <code>hexo new page tags</code> ，进入 ./source/tags/index.md，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">xxxxx</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>如果想要文章加上标签，只用在文章上加入 <code>tags: xxxx</code> 即可。<br />
+categories 与以上同理。</p>
+<p><strong>about</strong><br />
+在 next/_config.yml 文件中找到 <code>menu</code> ，可在网站中增加 about。<br />
+根目录命令行输入 <code>hexo new page about</code> ，进入 ./source/about/index.md 可编辑 about 的内容。</p>
+<p><strong>修改头像，网站的图标、背景</strong></p>
+<ul>
+<li>修改头像，next/_config.yml 文件中找到 <code>avatar</code> 可配置头像。next/source/image/ 下 avatar.gif 为头像图片，进行更改即可。更改 logo.svg 以及 favicon 图片可以修改网站的图标。</li>
+<li>修改背景，在 next/_config.yml 文件查找 <code>custom</code> 可配置 style <code>style: source/_data/styles.styl</code> 后新建 ./source/_data/styles.styl 加入以下代码，后在 next/source/image 中增添背景图片，命名为 background.jpg 即可。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">/images/background.jpg</span>); //图片路径，默认</span><br><span class="line">    <span class="attribute">background-repeat</span>: no-repeat;    //图片无法铺满时，是否重复及重复方式</span><br><span class="line">    <span class="attribute">background-attachment</span>: fixed;    //图片是否跟随滚动</span><br><span class="line">    <span class="attribute">background-size</span>: cover;    //覆盖</span><br><span class="line">    <span class="attribute">background-position</span>: center; //图片显示 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>启用search</strong><br />
+安装插件，根目录下命令行输入 <code>npm install hexo-generator-searchdb --save</code><br />
+根目录/_config.yml 文件中加入：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>next/_config.yml 文件中找到 <code>localsearch</code> 修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>插入图片</strong><br />
+需要将 _config.yml 中的 <code>post_asset_folder</code> 设为 true，这样新建一个博客文件将生成一个同名的目录（文件夹），将图片放入该文件夹，在 markdown 文件中使用 <code>![](图片的名称)</code> 即可正常显示图片了。</p>
+<h1 id="发布博客">发布博客</h1>
+<p>在根目录命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new [pagename]</span><br></pre></td></tr></table></figure>
+<p>即可创建新的文章，进入 ./source/_post/ 可找到该文章文件夹，编辑里面的 index.md 即为文章内容。<br />
+编辑完成后根目录命令行输入以下命令发布博客。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>如果 markdown 内容中有数学公式，需要在文章上方加入 <code>mathjax: true</code>，或是在 next/_config.yml 文件中找到 <code>mathjax</code>，将 <code>per_page</code> 后改为 <code>true</code>，后者会使所有文章都自动加入 <code>mathjax: true</code>。</p>
+<p>由于数学公式与 hexo 默认的 marked 渲染器有冲突，故建议卸载 marked 渲染器，使用 pandoc 渲染器。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1335,41 +1332,41 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <li><a href="#高阶线性微分方程">高阶线性微分方程</a>
 <ul>
 <li><a href="#二阶线性微分方程解的结构">二阶线性微分方程解的结构</a></li>
-<li><a href="#二阶常系数齐次微分方程的通解">二阶常系数齐次微分方程的通解</a></li>
-<li><a href="#二阶常系数非齐次微分方程的特解">二阶常系数非齐次微分方程的特解</a></li>
+<li><a href="#二阶常系数齐次线性微分方程的通解">二阶常系数齐次线性微分方程的通解</a></li>
+<li><a href="#二阶常系数非齐次线性微分方程的特解">二阶常系数非齐次线性微分方程的特解</a></li>
+<li><a href="#欧拉方程">欧拉方程</a></li>
 <li><a href="#n-阶常系数齐次线性微分方程的解"><em>n</em> 阶常系数齐次线性微分方程的解</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#微分方程的应用">微分方程的应用</a></li>
 </ul>
 <!-- /code_chunk_output -->
 <hr />
-<h2 id="概念">概念</h2>
+<h3 id="概念">概念</h3>
 <ol type="1">
 <li>微分方程是什么？</li>
 </ol>
-<p>描述未知<strong>函数及其导数（或微分）与自变量</strong>之间的关系的方程，称为<strong>微分方程</strong>，一般记作：</p>
+<p>描述未知函数及其导数（或微分）与自变量之间的关系的方程，称为『<strong>微分方程</strong>』，一般记作：</p>
 <p><span class="math display">\[
-F[x,y,y&#39;,...,y^{(n)}] = 0
+F\left[x,y,y&#39;,...,y^{(n)}\right] = 0
 \]</span></p>
-<p>未知函数是<strong>一元函数</strong>的微分方程称为<strong>常微分方程</strong>，未知函数是多元函数的微分方程称为<strong>偏微分方程</strong>。</p>
+<p>未知函数是一元函数的微分方程称为『<strong>常微分方程</strong>』，未知函数是多元函数的微分方程称为『<strong>偏微分方程</strong>』。</p>
 <ol start="2" type="1">
 <li>微分方程的阶数？微分方程的解？通解和特解？</li>
 </ol>
 <p>微分方程中未知函数的最高阶导数的阶数称为微分方程的<strong>阶数</strong>。</p>
 <p>将一个函数代入微分方程，使得方程恒成立，则称该函数是微分方程的一个<strong>解</strong>。</p>
-<p>若微分方程的解中含有<strong>独立常数的个数等于微分方程的阶数</strong>，则该解称为微分方程的<strong>通解</strong>。</p>
-<p>用<strong>初始条件</strong>将微分方程通解中的常数全部确定的解称为微分方程的<strong>特解</strong>。</p>
+<p>若微分方程的解中含有<strong>独立常数的个数等于微分方程的阶数</strong>，则该解称为微分方程的『<strong>通解</strong>』。</p>
+<p>用初始条件将微分方程通解中的<strong>常数全部确定</strong>的解称为微分方程的『<strong>特解</strong>』。</p>
 <ol start="3" type="1">
 <li>线性微分方程？齐次和非齐次？</li>
 </ol>
 <ul>
-<li>形如 <span class="math inline">\(y&#39; + p(x)y = q(x)\)</span> 的方程称为<strong>一阶线性微分方程</strong>。</li>
-<li>形如 <span class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y = f(x)\)</span> 的方程（或阶数更高）称为<strong>高阶线性微分方程</strong>。
+<li>形如 <span class="math inline">\(y&#39; + p(x)y = q(x)\)</span> 的方程称为『<strong>一阶线性微分方程</strong>』。</li>
+<li>形如 <span class="math inline">\(y&#39;&#39; + p(x)y&#39; + q(x)y = f(x)\)</span> 的方程（或阶数更高）称为『<strong>高阶线性微分方程</strong>』。
 <ul>
-<li>若 <span class="math inline">\(p(x), q(x)\)</span> 为常数函数，则方程称为<strong>高阶常系数线性微分方程</strong></li>
-<li>若 <span class="math inline">\(f(x) \equiv 0\)</span>，则方程称为<strong>高阶齐次线性微分方程</strong>。</li>
-<li>若 <span class="math inline">\(f(x) \not\equiv 0\)</span>，则方程称为<strong>高阶非齐次线性微分方程</strong></li>
+<li>若 <span class="math inline">\(p(x), q(x)\)</span> 为常数函数，则方程称为『<strong>高阶常系数线性微分方程</strong>』。</li>
+<li>若 <span class="math inline">\(f(x) \equiv 0\)</span>，则方程称为『<strong>高阶齐次线性微分方程</strong>』。</li>
+<li>若 <span class="math inline">\(f(x) \not\equiv 0\)</span>，则方程称为『<strong>高阶非齐次线性微分方程</strong>』。</li>
 </ul></li>
 </ul>
 <h2 id="计算">计算</h2>
@@ -1390,7 +1387,7 @@ F[x,y,y&#39;,...,y^{(n)}] = 0
 <li>分离变量转化为 <span class="math inline">\(\frac{\text{d}u}{f(u)-u} = \frac{\text{d}x}{x} \Rightarrow \int \frac{\text{d}u}{f(u)-u} = \int \frac{\text{d}x}{x}\)</span>。</li>
 </ul>
 <ol start="4" type="1">
-<li>形如 <span class="math inline">\(\frac{1}{y‘} = f \left(\frac{x}{y}\right)\)</span></li>
+<li>形如 <span class="math inline">\(\frac{1}{y&#39;} = f \left(\frac{x}{y}\right)\)</span></li>
 </ol>
 <ul>
 <li>令 <span class="math inline">\(\frac{x}{y} = u \Rightarrow x = uy \Rightarrow \frac{\text{d}x}{\text{d}y} = u + y \frac{\text{d}u}{\text{d}y}\)</span>，故原方程转化为 <span class="math inline">\(u + y \frac{\text{d}u}{\text{d}y} = f(u)\)</span>。</li>
@@ -1412,15 +1409,18 @@ F[x,y,y&#39;,...,y^{(n)}] = 0
 <p><span class="math display">\[
 y = \text{e}^{-\int p(x) \text{d}x}\left[\text{e}^{\int p(x) \text{d}x}q(x)\text{d}x + C\right]
 \]</span></p>
+<blockquote>
+<p>注：若求得 <span class="math inline">\(\int p(x)\text{d}x = \ln |x| + C\)</span>，仅在求解一阶线性微分方程时，可省略掉绝对值符号。即 <span class="math inline">\(\int p(x)\text{d}x = \ln |x| + C\)</span>。</p>
+</blockquote>
 <ol start="2" type="1">
-<li>形如 <span class="math inline">\(y&#39; + p(x) y = q(x)y^n\)</span>，即伯努利方程：</li>
+<li>形如 <span class="math inline">\(y&#39; + p(x) y = q(x)y^n\)</span>，即『<strong>伯努利方程</strong>』：</li>
 </ol>
 <ul>
 <li>先变形为 <span class="math inline">\(y^{-n}y&#39; + p(x)y^{1-n} = q(x)\)</span>。<br />
 </li>
 <li>令 <span class="math inline">\(z = y^{1-n}\)</span>，得 <span class="math inline">\(\frac{\text{d}z}{\text{d}x} = (1-n)y^{-n}\frac{\text{d}y}{\text{d}x}\)</span>，则 <span class="math inline">\(\frac{1}{1-n}\frac{\text{d}z}{\text{d}x} + p(x)z = q(x)\)</span>。<br />
 </li>
-<li>化为一阶线性微分方程。</li>
+<li>化为一阶线性微分方程进行求解。</li>
 </ul>
 <h3 id="二阶可降阶微分方程">二阶可降阶微分方程</h3>
 <ol type="1">
@@ -1452,7 +1452,7 @@ y = \text{e}^{-\int p(x) \text{d}x}\left[\text{e}^{\int p(x) \text{d}x}q(x)\text
 <li><strong>非齐次方程的特解：</strong></li>
 </ul>
 <p>若 <span class="math inline">\(y_1^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_1(x)\)</span> 的一个特解，<span class="math inline">\(y_2^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_2(x)\)</span> 的一个特解，则 <span class="math inline">\(y_1^*(x) + y_2 ^*(x)\)</span> 是方程 <span class="math inline">\(y&#39;&#39; + p(x)y + q(x) = f_1(x) + f_2(x)\)</span> 的一个特解。</p>
-<h4 id="二阶常系数齐次微分方程的通解">二阶常系数齐次微分方程的通解</h4>
+<h4 id="二阶常系数齐次线性微分方程的通解">二阶常系数齐次线性微分方程的通解</h4>
 <p>方程 <span class="math inline">\(y&#39;&#39; + py + q= 0\)</span> 对应的特征方程为 <span class="math inline">\(r^2 + pr + q = 0\)</span>，求其特征根：</p>
 <p><span class="math display">\[
 \Delta = p^2 - 4q
@@ -1475,7 +1475,7 @@ y = \text{e}^{rx}(C_1 + C_2 x)
 <p><span class="math display">\[
 y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 \]</span></p>
-<h4 id="二阶常系数非齐次微分方程的特解">二阶常系数非齐次微分方程的特解</h4>
+<h4 id="二阶常系数非齐次线性微分方程的特解">二阶常系数非齐次线性微分方程的特解</h4>
 <p>对于微分方程 <span class="math inline">\(y&#39;&#39; + py&#39; + qy = f(x)\)</span>，当 <span class="math inline">\(f(x)\)</span> 的形式为：</p>
 <ul>
 <li><span class="math inline">\(e^{\alpha x}P_n(x)\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x} Q_n(x)x^k\)</span>，其中
@@ -1483,20 +1483,40 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 <li><span class="math inline">\(Q_n(x)\)</span> 为 <em>x</em> 的 <em>n</em> 次多项式。</li>
 <li><em>k</em> 表示 <span class="math inline">\(\alpha\)</span> 是齐次方程的特征根的个数（可能是 0、1、2）。</li>
 </ul></li>
-<li><span class="math inline">\(e^{\alpha x}[P_m(x) \cos \beta x + P_n(x) \sin \beta x]\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x}[Q_l^{(1)}(x) \cos \beta x + Q_l^{(2)}(x) \sin \beta x]x^k\)</span>，其中：
+<li><span class="math inline">\(e^{\alpha x}[P_m(x) \cos \beta x + P_m(x) \sin \beta x]\)</span>，其特解形式为 <span class="math inline">\(y^* = e^{\alpha x}[Q_l^{(1)}(x) \cos \beta x + Q_l^{(2)}(x) \sin \beta x]x^k\)</span>，其中：
 <ul>
 <li><span class="math inline">\(l = \max\{m,n\}\)</span>，<span class="math inline">\(Q_l^{(1)}(x),Q_l^{(2)}(x)\)</span> 表示 <em>x</em> 的两个不同的 <em>l</em> 次多项式。</li>
 <li><em>k</em> 表示 <span class="math inline">\(\alpha \pm \beta i\)</span> 是不是齐次方程的特征根（可能是 0、1）。</li>
 </ul></li>
 </ul>
-<h4 id="n-阶常系数齐次线性微分方程的解"><em>n</em> 阶常系数齐次线性微分方程的解</h4>
-<p>形如 <span class="math inline">\(y^{(n)} + p_1y^{(n-1)} +...+ p_n y = 0 \; (n \geq 3)\)</span> 的微分方程，其对应的特征方程为 <span class="math inline">\(r^n + p_1 r^{n-1} + ... + p_n = 0\)</span>，<em>r</em> 为特征根：</p>
+<h4 id="欧拉方程">欧拉方程</h4>
+<p>形如 <span class="math inline">\(x^2 y&#39;&#39; + pxy&#39; + qy = 0\)</span> 的方程称为<strong>欧拉方程</strong>，它的固定解法：</p>
 <ul>
-<li>若 <em>r</em> 为单实根，则微分方程的通解为 <span class="math inline">\(C\text{e}^{rx}\)</span>。</li>
-<li>若 <em>r</em> 为 <em>k</em> 重实根，则微分方程的通解为 <span class="math inline">\(\text{e}^{rx}(C_1 + C_2x +...+ C_kx^{k-1})\)</span>。</li>
-<li>若 <em>r</em> 为单复根 <span class="math inline">\(\alpha \pm \beta i\)</span>，则微分方程的通解为 <span class="math inline">\(\text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)\)</span>。</li>
+<li>当 <span class="math inline">\(x &gt; 0\)</span> 时，令 <span class="math inline">\(x = \text{e}^t\)</span>，则 <span class="math inline">\(t = \ln x,\; \frac{\text{d}t}{\text{d}x} = \frac{1}{x}\)</span>，则</li>
 </ul>
-<h2 id="微分方程的应用">微分方程的应用</h2>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\frac{\text{d}y}{\text{d}x} = \frac{\text{d}y}{\text{d}t} \cdot \frac{\text{d}t}{\text{d}x} = \frac{\text{d}y}{\text{d}t} \cdot \frac{1}{x}\\
+&amp;\begin{aligned}
+\frac{\text{d}^2y}{\text{d}x^2} = \frac{\text{d}\left(\frac{1}{x}\frac{\text{d}y}{\text{d}t}\right)}{\text{d}x} &amp;= \frac{\frac{\text{d}y}{\text{d}t}\text{d}\left(\frac{1}{x}\right)}{\text{d}x}+\frac{\frac{1}{x}\text{d}\left(\frac{\text{d}y}{\text{d}t}\right)}{\text{d}x} \\&amp;= -\frac{1}{x^2}\frac{\text{d}y}{\text{d}t}+\frac{\frac{1}{x}\text{d}\left(\frac{\text{d}y}{\text{d}t}\right)}{\text{d}t} \frac{\text{d}t}{\text{d}x} = -\frac{1}{x^2}\frac{\text{d}y}{\text{d}t} +\frac{1}{x^2}\frac{\text{d}^2y}{\text{d}t^2}
+\end{aligned}
+\end{aligned}
+\]</span></p>
+<p>故方程可化为：</p>
+<p><span class="math display">\[
+\frac{\text{d}^2y}{\text{d}t^2} + (p-1) \frac{\text{d}y}{\text{d}t} +qy = f(\text{e}^t)
+\]</span></p>
+<p>按照求解<a href="#二阶常系数齐次线性微分方程的通解">二阶常系数线性微分方程</a>的方式进行求解，最后使用 <span class="math inline">\(t = \ln x\)</span> 回代成关于 <em>x</em> 的函数。</p>
+<ul>
+<li>当 <span class="math inline">\(x &lt; 0\)</span> 时，令 <span class="math inline">\(x = -e^t\)</span>，同理可求解方程。</li>
+</ul>
+<h4 id="n-阶常系数齐次线性微分方程的解"><em>n</em> 阶常系数齐次线性微分方程的解</h4>
+<p>形如 <span class="math inline">\(y^{(n)} + p_1y^{(n-1)} +...+ p_n y = 0 \; (n \geq 3)\)</span> 的微分方程，其对应的特征方程为 <span class="math inline">\(r^n + p_1 r^{n-1} + ... + p_n = 0\)</span>，设特征根为 <em>r</em>：</p>
+<ul>
+<li>若 <em>r</em> 为单实根，对应微分方程通解的一项 <span class="math inline">\(C\text{e}^{rx}\)</span>。</li>
+<li>若 <em>r</em> 为 <em>k</em> 重实根，对于微分方程通解的 <em>k</em> 项 <span class="math inline">\(\text{e}^{rx}(C_1 + C_2x +...+ C_kx^{k-1})\)</span>。</li>
+<li>若 <em>r</em> 为单复根 <span class="math inline">\(\alpha \pm \beta i\)</span>，对应微分方程通解的两项 <span class="math inline">\(\text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)\)</span>。</li>
+</ul>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -1596,8 +1616,11 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\csc \alpha = \frac{1}{\sin \alpha}, \quad \sec \alpha =  \frac{1}{\cos\alpha}, \quad \tan \alpha =  \frac{\sin \alpha}{\cos \alpha}, \quad\cot \alpha =  \frac{1}{\tan \alpha}, \\
-&amp;\sin ^2 \alpha + \cos ^2 \alpha = 1, \quad 1 + \tan^2 \alpha = \sec ^2 \alpha, \quad 1+\cot^2\alpha = \csc ^2 \alpha
+&amp;\csc \alpha = \frac{1}{\sin \alpha}, \quad \sec \alpha =  \frac{1}{\cos\alpha}, \quad\cot \alpha =  \frac{1}{\tan \alpha}, \\
+&amp;\tan \alpha =  \frac{\sin \alpha}{\cos \alpha} = \sin \alpha \sec \alpha, \quad \sin \alpha = \tan \alpha \cos \alpha = \frac{\tan \alpha}{\sec \alpha}, \\
+&amp;\sin ^2 \alpha + \cos ^2 \alpha = 1, \quad 1 + \tan^2 \alpha = \sec ^2 \alpha, \quad 1+\cot^2\alpha = \csc ^2 \alpha, \\
+&amp;\sin^2\alpha = (1 + \cos \alpha)(1- \cos \alpha), \quad \cos ^2 \alpha = (1+\sin \alpha)(1 - \sin \alpha), \\
+&amp;\cos \alpha = \frac{1}{\sec \alpha} = \frac{1}{\sqrt{1 + \tan^2 \alpha}}, \quad \sin \alpha = \tan \alpha \cos \alpha = \frac{\tan \alpha}{\sqrt{1 + \tan^2 \alpha}}
 \end{aligned}
 \]</span></p>
 <ol start="2" type="1">
@@ -1758,6 +1781,116 @@ x_1 + x_2 = -\frac{b}{a}, \quad x_1x_2 = \frac{c}{a}
       </categories>
       <tags>
         <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_绪论</title>
+    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
+    <content><![CDATA[<p>数据结构与算法的入门概念。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#数据结构">数据结构</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
+<li><a href="#数据运算">数据运算</a></li>
+<li><a href="#数据的物理结构">数据的物理结构</a></li>
+<li><a href="#抽象数据类型">抽象数据类型</a></li>
+</ul></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#算法效率的度量">算法效率的度量</a>
+<ul>
+<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
+<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+</ul></li>
+</ul>
+<hr>
+<blockquote>
+<p>Preface:</p>
+<ol type="1">
+<li><p>本篇所有代码均由 C++ 实现</p></li>
+<li>参考文献：</li>
+</ol>
+<ul>
+<li>大话数据结构（程杰）</li>
+<li>数据结构考研指导（王道论坛）</li>
+</ul>
+</blockquote>
+<h1 id="数据结构">数据结构</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
+<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
+<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
+<p>数据项：数据不可分割的最小单位。</p>
+<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
+<p>四者关系可以如此表示：</p>
+<p><img src="1.png" /></p>
+<h2 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h2>
+<p><strong>集合结构</strong><br />
+数据元素除了同属一个集合外没有其他关系。</p>
+<p><strong>线性结构</strong><br />
+数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
+<p><strong>树形结构</strong><br />
+数据元素是一对多关系，有唯一的前驱和多个后继。</p>
+<p><strong>图装结构</strong><br />
+数据元素是多对多关系。</p>
+<h2 id="数据运算">数据运算</h2>
+<p>数据的查找、插入和删除等操作。</p>
+<h2 id="数据的物理结构">数据的物理结构</h2>
+<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<blockquote>
+<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+</blockquote>
+<p>顺序存储：数据元素存放在连续的存储单元中。</p>
+<p>非顺序存储：链式存储、索引存储、散列存储。</p>
+<h2 id="抽象数据类型">抽象数据类型</h2>
+<p>抽象数据类型（abstract data type，ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
+<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
+<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
+<blockquote>
+<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface，API）。</p>
+</blockquote>
+<h1 id="算法">算法</h1>
+<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
+<p>算法的特性：有穷性、可行性、确定性。</p>
+<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
+<h1 id="算法效率的度量">算法效率的度量</h1>
+<h2 id="算法的时间复杂度">算法的时间复杂度</h2>
+<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
+<p><strong>大O表示法</strong><br />
+上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p><span class="math display">\[
+T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\]</span></p>
+<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
+<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p><span class="math display">\[
+O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+\]</span></p>
+<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p><span class="math display">\[
+T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\]</span></p>
+<h2 id="算法的空间复杂度">算法的空间复杂度</h2>
+<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
+<p>递归函数调用的内存开销：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
+<p>若将程序改为：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1925,116 +2058,6 @@ x_1 + x_2 = -\frac{b}{a}, \quad x_1x_2 = \frac{c}{a}
       </tags>
   </entry>
   <entry>
-    <title>数据结构_绪论</title>
-    <url>/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/</url>
-    <content><![CDATA[<p>数据结构与算法的入门概念。</p>
-<hr />
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#数据结构">数据结构</a>
-<ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
-</ul></li>
-</ul>
-<hr>
-<blockquote>
-<p>Preface:</p>
-<ol type="1">
-<li><p>本篇所有代码均由 C++ 实现</p></li>
-<li>参考文献：</li>
-</ol>
-<ul>
-<li>大话数据结构（程杰）</li>
-<li>数据结构考研指导（王道论坛）</li>
-</ul>
-</blockquote>
-<h1 id="数据结构">数据结构</h1>
-<h2 id="基本概念">基本概念</h2>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h2 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h2>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h2 id="数据运算">数据运算</h2>
-<p>数据的查找、插入和删除等操作。</p>
-<h2 id="数据的物理结构">数据的物理结构</h2>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
-<blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
-</blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h2 id="抽象数据类型">抽象数据类型</h2>
-<p>抽象数据类型（abstract data type，ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface，API）。</p>
-</blockquote>
-<h1 id="算法">算法</h1>
-<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h1 id="算法效率的度量">算法效率的度量</h1>
-<h2 id="算法的时间复杂度">算法的时间复杂度</h2>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
-<p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
-\]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
-<p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
-\]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
-<p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
-\]</span></p>
-<h2 id="算法的空间复杂度">算法的空间复杂度</h2>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
-<p>递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
-<p>若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>极限</title>
     <url>/2022/09/05/%E6%9E%81%E9%99%90/</url>
     <content><![CDATA[<p>高等数学-数列极限、函数极限的概念与计算。</p>
@@ -2089,7 +2112,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li><span class="math inline">\(\varepsilon - N\)</span>：</li>
 </ul>
 <p><span class="math display">\[
-(\lim_{n \to \infty} x_n = a) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists N \in \mathbf{N}_+)[(n &gt; N) \Rightarrow (|x_n - a| &lt; \varepsilon)]
+(\lim_{n \to \infty} x_n = a) \Leftrightarrow (\forall \varepsilon &gt; 0)(\exists N \in \mathbf{N_+})[(n &gt; N) \Rightarrow (|x_n - a| &lt; \varepsilon)]
 \]</span></p>
 <blockquote>
 <p>注：由于数列的下标使用正整数表示，此处的 <span class="math inline">\(\infty\)</span> 只能为 <span class="math inline">\(+\infty\)</span>。</p>
@@ -2112,6 +2135,13 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <h4 id="单调有界准则">单调有界准则</h4>
 <p>若数列单调递增（或递减）且有上界（或下界），则数列的极限存在。</p>
 <h4 id="柯西极限存在准则">柯西极限存在准则</h4>
+<p>数列 <span class="math inline">\(\{x_n\}\)</span> 收敛的<strong>充分必要条件：</strong></p>
+<p>对于 <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>，都存在正整数 <em>N</em>，使得当 <span class="math inline">\(n&gt;N,m&gt;N\)</span> 时有</p>
+<p><span class="math display">\[
+|x_n - x_m | &lt; \varepsilon
+\]</span></p>
+<p>我们把满足该条件的 <span class="math inline">\(\{x_n\}\)</span> 称为『柯西序列』，那么上述定理可表述成：数列{xn}收敛，当且仅当它是一个柯西序列。</p>
+<p>该准则的几何意义表示，收敛数列中的元素随着序数的增加而愈发靠近，即足够靠后的任意两项都无限接近。</p>
 <h3 id="邻域">邻域</h3>
 <ul>
 <li>以 <em>x</em><sub>0</sub> 为中心的任何开区间称为点 <em>x</em><sub>0</sub> 的『邻域』，记作 <span class="math inline">\(U(x_0)\)</span>。</li>
@@ -2137,7 +2167,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \]</span></p>
 <ul>
 <li><p><span class="math inline">\(\lim_{x \to x_0^-}f(x)\)</span> 为 <span class="math inline">\(x \to x_0\)</span> 时的『左极限』，反之为『右极限』。</p></li>
-<li><p>极限存在的<strong>充分必要条件</strong>：</p></li>
+<li><p>函数极限存在的<strong>充分必要条件</strong>：</p></li>
 </ul>
 <p><span class="math display">\[
 (\lim_{x \to x_0} f(x) = A) \Leftrightarrow (\lim_{x \to x_0^-}f(x) = \lim_{x \to x_0^+}f(x) = A)
@@ -2153,7 +2183,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <p><span class="math display">\[
 \begin{aligned}
 &amp;u = g(x),\; \lim_{x \to x_0} g(x) = u_0\;(g(x) \neq u_0) \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u)\\
-&amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)] = \lim_{u \to u_0} f(u) = f(u_0) = f[\lim_{x \to x_0} g(x)]
+&amp;\text{if} \; f \;\text{is}\; continuous \;\text{at} \; u_0 \Rightarrow \lim_{x \to x_0} f[g(x)]= \lim_{u \to u_0} f(u) = f(u_0) = f\left[\lim_{x \to x_0} g(x)\right]
 \end{aligned}
 \]</span></p>
 <h3 id="函数极限存在的性质">函数极限存在的性质</h3>
@@ -2231,7 +2261,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li>基本初等函数在其定义域内连续，初等函数在其<strong>定义区间</strong>内连续。</li>
 <li>根据上一条性质，在高等数学中，初等函数的间断点只可能位于<strong>未定义的点</strong>，分段函数的间断点只可能位于<strong>未定义的点</strong>和<strong>分段点</strong>。</li>
 <li>连续函数相加减乘除（排除除数为 0 的点）后仍然连续，连续函数与不连续函数相加减乘除后必然不连续。</li>
-<li>函数 <span class="math inline">\(u = g(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续，<span class="math inline">\(g(x_0) = u_0\)</span>，<span class="math inline">\(f(u)\)</span> 在点 <em>u</em><sub>0</sub> 处连续，则 <span class="math inline">\(f[g(x)]\)</span> 在点 <em>x</em><sub>0</sub> 处也连续。</li>
+<li>函数 <span class="math inline">\(u = g(x)\)</span> 在点 <em>x</em><sub>0</sub> 处连续且 <span class="math inline">\(g(x_0) = u_0\)</span>，<span class="math inline">\(f(u)\)</span> 在点 <em>u</em><sub>0</sub> 处连续，则 <span class="math inline">\(f[g(x)]\)</span> 在点 <em>x</em><sub>0</sub> 处也连续。</li>
 </ul>
 <h2 id="函数极限的计算">函数极限的计算</h2>
 <h3 id="无法直接计算">无法直接计算</h3>
@@ -2262,7 +2292,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </ul>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;h \to 0 \\
+&amp;\text{if} \; h \to 0 :\\
 &amp;\sin h \sim h, \quad \tan h \sim h, \quad \arcsin h \sim h, \quad \arctan h \sim h, \quad 1-\cos h \sim \frac{1}{2}h^2\\
 &amp;\ln(1+h) \sim h, \quad e^h-1 \sim h, \quad a^h-1 \sim h\ln a, \quad  (1+h)^\alpha-1 \sim \alpha h
 \end{aligned}
@@ -2287,13 +2317,13 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <p>常用泰勒（麦克劳林）公式：</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;(1)\;  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) .\\
-&amp;(2)\;  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) .\\
-&amp;(3)\;  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) .\\
-&amp;(4)\;  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) .\\
-&amp;(5)\;  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) .\\
-&amp;(6)\;  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) .\\
-&amp;(7)\;  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) .
+&amp;(1)\;  \mathrm{e}^{x}=1+x+\frac{1}{2 !} x^{2}+\cdots+\frac{1}{n !} x^{n}+o\left(x^{n}\right) \\
+&amp;(2)\;  \sin x=x-\frac{x^{3}}{3 !}+\cdots+(-1)^{n} \frac{x^{2 n+1}}{(2 n+1) !}+o\left(x^{2 n+1}\right) \\
+&amp;(3)\;  \cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+o\left(x^{2 n}\right) \\
+&amp;(4)\;  \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o\left(x^{n}\right) \\
+&amp;(5)\;  \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n} x^{n}+o\left(x^{n}\right) \\
+&amp;(6)\;  \ln (1+x)=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots+(-1)^{n-1} \frac{x^{n}}{n}+o\left(x^{n}\right) \\
+&amp;(7)\;  (1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+o\left(x^{n}\right) 
 \end{aligned}
 \]</span></p>
 <p><strong>展开原则：</strong></p>
