@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
+  </script>
+
+  <meta name="description" content="线性代数-矩阵理论的概念与计算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵理论">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Cohanbb Wiki">
+<meta property="og:description" content="线性代数-矩阵理论的概念与计算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-20T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-09-28T14:54:09.604Z">
+<meta property="article:author" content="Cohanbb">
+<meta property="article:tag" content="Linear Algebra">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>矩阵理论 | Cohanbb Wiki</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cohanbb Wiki</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Cohanbb Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-链接">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>链接</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cohanbb">
+      <meta itemprop="description" content="Technological blogs about Computer Science.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cohanbb Wiki">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          矩阵理论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-20 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-20T22:24:35+08:00">2022-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-28 22:54:09" itemprop="dateModified" datetime="2022-09-28T22:54:09+08:00">2022-09-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>线性代数-矩阵理论的概念与计算。</p>
+<span id="more"></span>
+<hr />
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#矩阵运算法则">矩阵运算法则</a></li>
+<li><a href="#矩阵的转置">矩阵的转置</a></li>
+<li><a href="#初等矩阵">初等矩阵</a></li>
+<li><a href="#逆矩阵">逆矩阵</a></li>
+<li><a href="#伴随矩阵">伴随矩阵</a></li>
+<li><a href="#分块矩阵">分块矩阵</a></li>
+<li><a href="#矩阵的秩">矩阵的秩</a></li>
+<li><a href="#矩阵的等价和等价标准形">矩阵的等价和等价标准形</a></li>
+</ul></li>
+<li><a href="#计算">计算</a>
+<ul>
+<li><a href="#求矩阵的幂">求矩阵的幂</a></li>
+<li><a href="#求逆矩阵">求逆矩阵</a></li>
+<li><a href="#矩阵方程">矩阵方程</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="矩阵运算法则">矩阵运算法则</h3>
+<ul>
+<li>矩阵加法：若 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 都是 <span class="math inline">\(m \times n\)</span> 矩阵，则</li>
+</ul>
+<p><span class="math display">\[
+\boldsymbol{A} + \boldsymbol{B} = \left[\begin{matrix}
+a_{11}+b_{11} &amp;a_{12}+b_{12} &amp;\cdots &amp;a_{1n}+b_{1n} \\
+a_{21}+b_{21} &amp;a_{22}+b_{22} &amp;\cdots &amp;a_{2n}+b_{2n} \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+a_{m1}+b_{m1} &amp;a_{m2}+b_{m2} &amp;\cdots &amp;a_{mn}+b_{mn}
+\end{matrix}
+\right]
+\]</span></p>
+<ul>
+<li>数乘：</li>
+</ul>
+<p><span class="math display">\[
+k\boldsymbol{A} = \left[\begin{matrix}
+ka_{11} &amp;ka_{12} &amp;\cdots &amp;ka_{1n}\\
+ka_{21} &amp;ka_{22} &amp;\cdots &amp;ka_{2n}\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+ka_{m1} &amp;ka_{m2} &amp;\cdots &amp;ka_{mn}
+\end{matrix}
+\right]
+\]</span></p>
+<ul>
+<li>矩阵乘法：若 <strong><em>A</em></strong> 是 <span class="math inline">\(m \times n\)</span> 矩阵，<strong><em>B</em></strong> 是 <span class="math inline">\(n \times s\)</span> 矩阵，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} &amp;= \left[\begin{matrix}
+a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n}\\
+a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n}\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+a_{m1} &amp;a_{m2} &amp;\cdots &amp;a_{mn}
+\end{matrix}
+\right]
+\left[\begin{matrix}
+b_{11} &amp;b_{12} &amp;\cdots &amp;b_{1s}\\
+b_{21} &amp;b_{22} &amp;\cdots &amp;b_{2s}\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+b_{n1} &amp;b_{n2} &amp;\cdots &amp;b_{ns}
+\end{matrix}
+\right] =\left[\begin{matrix}
+c_{11} &amp;c_{12} &amp;\cdots &amp;c_{1s}\\
+c_{21} &amp;c_{22} &amp;\cdots &amp;c_{2s}\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
+\end{matrix}
+\right] \\ c_{ij} &amp;= a_{i1}b_{1j} + a_{i2}b_{2j} +...+a_{in}b_{nj} =\sum_{k=1}^n a_{ik}b_{kj}\;(i = 1,2,...,m, \; j = 1,2,...,s)
+\end{aligned}
+\]</span></p>
+<p>矩阵的运算满足以下规律：</p>
+<ul>
+<li>加法交换律：<span class="math inline">\(\boldsymbol{A}+\boldsymbol{B} = \boldsymbol{B}+\boldsymbol{A}\)</span>。</li>
+<li>加法结合律：<span class="math inline">\((\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C} = \boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C})\)</span>。</li>
+<li>加法单位元：<span class="math inline">\(\boldsymbol{A}+\boldsymbol{O} = \boldsymbol{A}\)</span>。</li>
+<li>加法逆元：<span class="math inline">\(\boldsymbol{A}+(-\boldsymbol{A}) = \boldsymbol{O}\)</span>。</li>
+<li>数乘交换律：<span class="math inline">\(k\boldsymbol{A} = \boldsymbol{A}k\)</span>。</li>
+<li>数乘与加法分配律：<span class="math inline">\((k+l)\boldsymbol{A} = k\boldsymbol{A} + l\boldsymbol{A}, \; k(\boldsymbol{A}+\boldsymbol{B}) =k\boldsymbol{A} + k\boldsymbol{B}\)</span>。</li>
+<li>乘法结合律：<span class="math inline">\(\boldsymbol{A}\boldsymbol{B}\boldsymbol{C} = (\boldsymbol{A}\boldsymbol{B})\boldsymbol{C} = \boldsymbol{A}(\boldsymbol{B}\boldsymbol{C})\)</span>。</li>
+<li>乘法与加法分配律：<span class="math inline">\(\boldsymbol{A}(\boldsymbol{B}+\boldsymbol{C}) = \boldsymbol{A}\boldsymbol{B} +\boldsymbol{A}\boldsymbol{C}, \;(\boldsymbol{A}+\boldsymbol{B})\boldsymbol{C} = \boldsymbol{A}\boldsymbol{C} +\boldsymbol{B}\boldsymbol{C}\)</span>。</li>
+<li>乘法单位元：<span class="math inline">\(\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A} = \boldsymbol{A}\)</span>。</li>
+<li>乘法逆元：<span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
+</ul>
+<p>注：</p>
+<ul>
+<li><p>矩阵乘法只在下面三种情况满足交换律：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{n \times n},\; \boldsymbol{A}\boldsymbol{B} = \boldsymbol{E} \Leftrightarrow \boldsymbol{B}\boldsymbol{A} =\boldsymbol{E}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^* = \boldsymbol{A}^*\boldsymbol{A}\)</span></li>
+</ul></li>
+<li>矩阵乘法不满足消去律：<span class="math inline">\(\boldsymbol{AB} = \boldsymbol{AC} \not\Rightarrow \boldsymbol{B} = \boldsymbol{C}\)</span>，除非 <strong><em>A</em></strong> 可逆。</li>
+<li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{O} \not\Rightarrow \boldsymbol{A} = \boldsymbol{O} \; \text{or}\; \boldsymbol{B} = \boldsymbol{O}\)</span></p></li>
+</ul>
+<h3 id="矩阵的转置">矩阵的转置</h3>
+<p>若矩阵 <span class="math inline">\(\boldsymbol{A} = [a_{ij}]_{m \times n}\)</span>，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的转置为 <span class="math inline">\(\boldsymbol{A}^{\text{T}} = [a_{ji}]_{n \times m}\)</span>，也就是 <span class="math inline">\(\boldsymbol{A}\)</span> 的第 <em>i</em> 行等于 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 的第 <em>i</em> 列，<span class="math inline">\(\boldsymbol{A}\)</span> 的第 <em>j</em> 列等于 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 的第 <em>j</em> 行。</p>
+<p>矩阵的转置满足以下运算规律：</p>
+<ul>
+<li><span class="math inline">\({\left(\boldsymbol{A}^{\text{T}}\right)}^{\text{T}} =\boldsymbol{A}\)</span></li>
+<li><span class="math inline">\((\boldsymbol{A}+\boldsymbol{B})^{\text{T}} = \boldsymbol{A}^{\text{T}} + \boldsymbol{B}^{\text{T}}\)</span></li>
+<li><span class="math inline">\((k\boldsymbol{A})^{\text{T}} = k\boldsymbol{A}^{\text{T}}\)</span></li>
+<li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})^{\text{T}} = \boldsymbol{B}^{\text{T}}\boldsymbol{A}^{\text{T}}\)</span>（<strong>穿脱原则</strong>）</li>
+<li><span class="math inline">\(\text{det}\left(\boldsymbol{A}^{\text{T}}\right) =\text{det}(\boldsymbol{A})\)</span></li>
+</ul>
+<h3 id="初等矩阵">初等矩阵</h3>
+<p>矩阵有三种初等变换：</p>
+<ol type="1">
+<li>倍乘：一个非零常数乘矩阵的某一行（或列）。</li>
+<li>互换：互换矩阵某两行（或列）的位置。</li>
+<li>倍加：将矩阵的某一行（或列）的常数倍加到另一行（或列）。</li>
+</ol>
+<p>这三种初等变换对应三种初等矩阵：</p>
+<ol type="1">
+<li><span class="math inline">\(\boldsymbol{E}_i(k)\;(k \neq 0)\)</span> 表示将单位矩阵 <strong><em>E</em></strong> 的第 <em>i</em> 行（或列）乘 <em>k</em> 所得的初等矩阵。</li>
+</ol>
+<p><span class="math display">\[
+\text{e.g.} \; \boldsymbol{E}_2(k) = \left[\begin{matrix}
+1 &amp;0 &amp;0 \\
+0 &amp;k &amp;0 \\
+0 &amp;0 &amp;1
+\end{matrix}
+\right]
+\]</span></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(\boldsymbol{E}_{ij}\)</span> 表示将单位矩阵 <strong><em>E</em></strong> 第 <em>i</em> 行（或列）和第 <em>j</em> 行（或列）交换所得的初等矩阵。</li>
+</ol>
+<p><span class="math display">\[
+\text{e.g.} \; \boldsymbol{E}_{12} = \left[\begin{matrix}
+0 &amp;1 &amp;0 \\
+1 &amp;0 &amp;0 \\
+0 &amp;0 &amp;1
+\end{matrix}
+\right]
+\]</span></p>
+<ol start="3" type="1">
+<li><span class="math inline">\(\boldsymbol{E}_{ij}(k)\)</span> 表示将单位矩阵 <strong><em>E</em></strong> 的第 <em>j</em> 行的 <em>k</em> 倍加到第 <em>i</em> 行（或第 <em>i</em> 列的 <em>k</em> 倍加到第 <em>j</em> 列）所得的初等矩阵。</li>
+</ol>
+<p><span class="math display">\[
+\text{e.g.} \; \boldsymbol{E}_{12}(k) = \left[\begin{matrix}
+1 &amp;k &amp;0 \\
+0 &amp;1 &amp;0 \\
+0 &amp;0 &amp;1
+\end{matrix}
+\right]
+\]</span></p>
+<p>初等变换的重要结论：</p>
+<ul>
+<li>初等矩阵一定<a href="#逆矩阵">可逆</a>，故使用 <strong><em>P</em></strong> 来表示初等矩阵。</li>
+<li>左行右列定理：矩阵<strong><em>A</em></strong> <strong>左乘</strong>初等矩阵 <strong><em>P</em></strong> 即 <strong><em>PA</em></strong> 相当于对 <strong><em>A</em></strong> 做一次与 <strong><em>P</em></strong> 相同的<strong>初等行变换</strong>，矩阵<strong><em>A</em></strong> <strong>右乘</strong>初等矩阵 <strong><em>P</em></strong> 即 <strong><em>AP</em></strong> 相当于对 <strong><em>A</em></strong> 做一次与 <strong><em>P</em></strong> 相同的<strong>初等列变换</strong>。</li>
+<li>对系数矩阵做初等行变换不改变齐次线性方程组的解，对增广矩阵做初等行变换不改变非齐次线性方程组的解。</li>
+<li>初等行变换不改变矩阵列向量组的线性相关性。</li>
+</ul>
+<p>初等矩阵的逆和 <em>n</em> 次方：</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+{\boldsymbol{E}_{ij}}^{-1} = \boldsymbol{E}_{ij},&amp; {\boldsymbol{E}_{ij}}^n = \left\{ \begin{array}{ll} \boldsymbol{E}, &amp;n = 2k \\ \boldsymbol{E}_{ij}, &amp;n = 2k+1 \end{array} \right.\\
+[\boldsymbol{E}_{ij}(k)]^{-1} =\boldsymbol{E}_{ij}(-k), &amp;[\boldsymbol{E}_{ij}(k)]^n = \boldsymbol{E}_{ij}(nk)\\
+[\boldsymbol{E}_i(k)]^{-1} =\boldsymbol{E}_i(\frac{1}{k}), &amp;[\boldsymbol{E}_i(k)]^n = \boldsymbol{E}_i(nk)
+\end{array}
+\]</span></p>
+<h3 id="逆矩阵">逆矩阵</h3>
+<p><span class="math inline">\(\boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{n \times n}, \; \boldsymbol{AB} = \boldsymbol{E} \Leftrightarrow \boldsymbol{BA} = \boldsymbol{E} \Leftrightarrow \boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol{E} \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 互为逆矩阵『<strong>逆矩阵</strong>』，记作 <span class="math inline">\(\boldsymbol{B} = \boldsymbol{A}^{-1},\;\boldsymbol{A} = \boldsymbol{B^{-1}}\)</span>。</p>
+<p>逆矩阵满足以下运算规律：</p>
+<ul>
+<li><span class="math inline">\({\left(\boldsymbol{A}^{-1}\right)}^{-1} = \boldsymbol{A}\)</span></li>
+<li><span class="math inline">\({(k\boldsymbol{A})}^{-1} = \frac{1}{k}\boldsymbol{A}^{-1} \;(k \neq 0)\)</span></li>
+<li><span class="math inline">\({(\boldsymbol{AB})}^{-1} =\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}\)</span>（<strong>穿脱原则</strong>）</li>
+<li><span class="math inline">\(\text{det}\left(\boldsymbol{A}^{-1}\right) = \frac{1}{\text{det}(\boldsymbol{A})}\)</span></li>
+</ul>
+<p><span class="math inline">\(\boldsymbol{A}_{n \times n}\)</span> 可逆 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}_{n \times n}) = n\Leftrightarrow \boldsymbol{A}_{n \times n} \cong \boldsymbol{E}_{n} \Leftrightarrow \text{det}(\boldsymbol{A}) \neq 0\)</span>。</p>
+<p><strong><a href="#矩阵的秩">满秩</a>是可逆的充分必要条件，故可逆矩阵<a href="#矩阵的等价和等价标准形">等价</a>于同阶单位矩阵</strong>，即可逆矩阵可以由同阶单位矩阵通过有限次初等变换得到，因为矩阵乘单位矩阵满足交换律，故</p>
+<p><span class="math display">\[
+\boldsymbol{P} =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{E}\cdots\boldsymbol{P}_k = \boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{E} = \boldsymbol{E}\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k
+\]</span></p>
+<p><strong>即可逆矩阵可以由同阶单位矩阵通过有限次初等行变换或有限次初等列变换得到，可逆矩阵等价于有限个初等矩阵的乘积。故左乘可逆矩阵等价于做有限次初等行变换，右乘可逆矩阵等价于做有限次初等列变换。</strong></p>
+<h3 id="伴随矩阵">伴随矩阵</h3>
+<p><span class="math inline">\(\boldsymbol{A}^* = \left[\begin{matrix}A_{11} &amp;A_{21} &amp;\cdots &amp;A_{n1} \\A_{12} &amp;A_{22} &amp;\cdots &amp;A_{n2} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ A_{1n} &amp; A_{2n} &amp;\cdots &amp;A_{nn}\end{matrix} \right]\)</span> 称为 <strong><em>A</em></strong> 的『<strong>伴随矩阵</strong>』，即 <strong><em>A</em></strong> 的伴随矩阵是 <strong><em>A</em></strong> 的代数余子式矩阵的转置。</p>
+<p>伴随矩阵的运算规律：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{AA}^* = \boldsymbol{A}^*\boldsymbol{A} = |\boldsymbol{A}|\boldsymbol{E}\)</span></li>
+<li>若 <strong><em>A</em></strong> 可逆，则 <span class="math inline">\(\boldsymbol{A}^* = |\boldsymbol{A}|\boldsymbol{A}^{-1}\)</span>。</li>
+<li><span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}, \;(k\boldsymbol{A})^* = k^{n-1}\boldsymbol{A}^*\)</span></li>
+<li><span class="math inline">\((\boldsymbol{AB})^* = \boldsymbol{B}^*\boldsymbol{A}^*\)</span>（<strong>穿脱原则</strong>）</li>
+<li><span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}\)</span>
+<ul>
+<li><span class="math inline">\(|\boldsymbol{A}^*| = |\boldsymbol{A}|^{n-1}\)</span></li>
+<li><span class="math inline">\({\left(\boldsymbol{A}^*\right)}^*= |\boldsymbol{A}|^{n-2}\boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(\left|{\left(\boldsymbol{A}^*\right)}^*\right|=|\boldsymbol{A}|^{(n-1)^2}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}, \; r(\boldsymbol{A}^*) = \left\{\begin{aligned} &amp;n, \quad r(\boldsymbol{A}) = n \\ &amp;1, \quad r(\boldsymbol{A}) = n - 1 \\ &amp;0, \quad r(\boldsymbol{A}) &lt; n-1 \end{aligned}\right.\)</span></li>
+</ul>
+<p><strong>矩阵的转置、逆和伴随运算两两可交换：</strong></p>
+<ul>
+<li><span class="math inline">\({\left(\boldsymbol{A}^*\right)}^{-1} = {\left(\boldsymbol{A}^{-1}\right)}^*\)</span></li>
+<li><span class="math inline">\(\left(\boldsymbol{A}^*\right)^{\text{T}} = \left(\boldsymbol{A}^{\text{T}}\right)^*\)</span></li>
+<li><span class="math inline">\({\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = { \left(\boldsymbol{A}^{\text{T}}\right)}^{-1}\)</span></li>
+</ul>
+<h3 id="分块矩阵">分块矩阵</h3>
+<ul>
+<li>线性运算和乘法：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;k_1\left[\begin{matrix}
+\boldsymbol{A}_1 &amp;\boldsymbol{A}_2\\
+\boldsymbol{A}_3 &amp;\boldsymbol{A}_4
+\end{matrix}\right] +
+k_2\left[\begin{matrix}
+\boldsymbol{B}_1 &amp;\boldsymbol{B}_2\\
+\boldsymbol{B}_3 &amp;\boldsymbol{B}_4
+\end{matrix}\right]
+=\left[\begin{matrix}
+k_1\boldsymbol{A}_1 +k_2\boldsymbol{B}_1 &amp;k_1\boldsymbol{A}_2 +k_2\boldsymbol{B}_2\\
+k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol{B}_4
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{A} &amp;\boldsymbol{B}\\
+\boldsymbol{C} &amp;\boldsymbol{D}
+\end{matrix}\right]
+\left[\begin{matrix}
+\boldsymbol{X} &amp;\boldsymbol{Y}\\
+\boldsymbol{Z} &amp;\boldsymbol{W}
+\end{matrix}\right] =
+\left[\begin{matrix}
+\boldsymbol{AX}+\boldsymbol{BZ} &amp;\boldsymbol{AY}+\boldsymbol{BW}\\
+\boldsymbol{CX}+\boldsymbol{BZ} &amp;\boldsymbol{CY}+\boldsymbol{DW}
+\end{matrix}\right] \\
+\end{aligned}
+\]</span></p>
+<ul>
+<li>转置、幂和逆运算：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\left[\begin{matrix}
+\boldsymbol{A} &amp;\boldsymbol{B}\\
+\boldsymbol{C} &amp;\boldsymbol{D}
+\end{matrix}\right]^{\text{T}} =
+\left[\begin{matrix}
+\boldsymbol{A}^{\text{T}} &amp;\boldsymbol{C}^{\text{T}} \\
+\boldsymbol{B}^{\text{T}} &amp;\boldsymbol{D}^{\text{T}}
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{B}_{k \times k} &amp;\boldsymbol{O}\\
+\boldsymbol{O} &amp;\boldsymbol{C}_{l \times l}
+\end{matrix}\right]^n = 
+\left[\begin{matrix}
+\boldsymbol{B}^n &amp;\boldsymbol{O}\\
+\boldsymbol{O} &amp;\boldsymbol{C}^n
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{P} &amp;\boldsymbol{O}\\
+\boldsymbol{O} &amp;\boldsymbol{Q}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+\boldsymbol{P}^{-1} &amp;\boldsymbol{O}\\
+\boldsymbol{O} &amp;\boldsymbol{Q}^{-1}
+\end{matrix}\right], \quad
+\left[\begin{matrix}
+\boldsymbol{O} &amp;\boldsymbol{P}\\
+\boldsymbol{Q} &amp;\boldsymbol{O}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+\boldsymbol{O} &amp;\boldsymbol{Q}^{-1}\\
+\boldsymbol{P}^{-1} &amp;\boldsymbol{O}
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{P} &amp;\boldsymbol{O}\\
+\boldsymbol{X} &amp;\boldsymbol{Q}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+\boldsymbol{P}^{-1} &amp;\boldsymbol{O}\\
+-\boldsymbol{Q}^{-1}\boldsymbol{XP}^{-1} &amp;\boldsymbol{Q}^{-1}
+\end{matrix}\right]\\
+&amp;\left[\begin{matrix}
+\boldsymbol{P} &amp;\boldsymbol{X}\\
+\boldsymbol{O} &amp;\boldsymbol{Q}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+\boldsymbol{P}^{-1} &amp;-\boldsymbol{P}^{-1}\boldsymbol{XQ}^{-1}\\
+\boldsymbol{O} &amp;\boldsymbol{Q}^{-1}
+\end{matrix}\right]\\
+&amp;\left[\begin{matrix}
+\boldsymbol{X} &amp;\boldsymbol{P}\\
+\boldsymbol{Q} &amp;\boldsymbol{O}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+-\boldsymbol{Q}^{-1}\boldsymbol{XP}^{-1} &amp;\boldsymbol{Q}^{-1}\\
+\boldsymbol{P}^{-1} &amp;\boldsymbol{O}
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{O} &amp;\boldsymbol{P}\\
+\boldsymbol{Q} &amp;\boldsymbol{X}
+\end{matrix}\right]^{-1} = 
+\left[\begin{matrix}
+\boldsymbol{O} &amp;\boldsymbol{Q}^{-1}\\
+\boldsymbol{P}^{-1} &amp;-\boldsymbol{P}^{-1}\boldsymbol{XQ}^{-1}
+\end{matrix}\right]
+\end{aligned}
+\]</span></p>
+<ul>
+<li>主对角线分块矩阵和副对角线分块矩阵：</li>
+</ul>
+<p><span class="math display">\[
+\boldsymbol{A} = \begin{bmatrix} \boldsymbol{A}_1 &amp;\; &amp;\; &amp;\; \\ \; &amp;\boldsymbol{A}_2 &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;\boldsymbol{A}_s\end{bmatrix},\;
+\boldsymbol{B} = \begin{bmatrix} 
+\; &amp;\; &amp;\; &amp;\boldsymbol{B}_1 \\ 
+\;  &amp;\; &amp;\boldsymbol{B}_2 &amp;\; \\ 
+\; &amp;\cdots &amp;\; &amp;\; \\ 
+\boldsymbol{B}_s &amp;\; &amp;\; &amp;\;
+\end{bmatrix}
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+\boldsymbol{A}^{\text{T}} = \begin{bmatrix} {\boldsymbol{A}_1}^{\text{T}} &amp;\; &amp;\; &amp;\; \\ \; &amp;{\boldsymbol{A}_2}^{\text{T}} &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;{\boldsymbol{A}_s}^{\text{T}} \end{bmatrix} ,\;
+\boldsymbol{B}^{\text{T}} = \begin{bmatrix} 
+\; &amp;\; &amp;\; &amp;{\boldsymbol{B}_s}^{\text{T}} \\ 
+\;  &amp;\; &amp;\cdots &amp;\; \\
+\;  &amp;{\boldsymbol{B}_2}^{\text{T}} &amp;\;  &amp;\; \\  
+{\boldsymbol{B}_1}^{\text{T}} &amp;\; &amp;\; &amp;\;
+\end{bmatrix}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{A}_i,\boldsymbol{B}_i\;(i=1,2,\ldots,s)\)</span> 均可逆，则 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 可逆：</p>
+<p><span class="math display">\[
+\boldsymbol{A}^{-1} = \begin{bmatrix} {\boldsymbol{A}_1}^{-1} &amp;\; &amp;\; &amp;\; \\ \; &amp;{\boldsymbol{A}_2}^{-1} &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;{\boldsymbol{A}_s}^{-1} \end{bmatrix} ,\;
+\boldsymbol{B}^{-1} = \begin{bmatrix} 
+\; &amp;\; &amp;\; &amp;{\boldsymbol{B}_s}^{-1} \\ 
+\;  &amp;\; &amp;\cdots &amp;\; \\ 
+\;  &amp;{\boldsymbol{B}_2}^{-1} &amp;\;  &amp;\; \\ 
+{\boldsymbol{B}_1}^{-1} &amp;\; &amp;\; &amp;\;
+\end{bmatrix}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{A}_i \;(i =1,2,\ldots,s)\)</span> 均为方阵，则</p>
+<p><span class="math display">\[
+\boldsymbol{A}^{k} = \begin{bmatrix} 
+{\boldsymbol{A}_1}^{k} &amp;\; &amp;\; &amp;\; \\ 
+\; &amp;{\boldsymbol{A}_2}^{k} &amp;\; &amp;\; \\ 
+\; &amp;\; &amp;\ddots &amp;\; \\ 
+\; &amp;\; &amp;\; &amp;{\boldsymbol{A}_s}^{k}
+\end{bmatrix}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{B}_i \;(i =1,2,\ldots,s)\)</span> 均为同阶方阵，则</p>
+<p><span class="math display">\[
+\boldsymbol{B}^{2} = \begin{bmatrix} 
+\boldsymbol{B}_1\boldsymbol{B}_s &amp;\; &amp;\; &amp;\; \\ 
+\; &amp;\boldsymbol{B}_2\boldsymbol{B}_{s-1} &amp;\; &amp;\; \\ 
+\; &amp;\; &amp;\ddots &amp;\; \\ 
+\; &amp;\; &amp;\; &amp;\boldsymbol{B}_s\boldsymbol{B}_1
+\end{bmatrix}
+\]</span></p>
+<p>注：若 <span class="math inline">\(\boldsymbol{A}_i,\boldsymbol{B}_i\;(i=1,2,\ldots,s)\)</span> 均为常数，则 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 分别为『对角矩阵』和『反对角矩阵』，以上的性质仍成立。</p>
+<h3 id="矩阵的秩">矩阵的秩</h3>
+<p>矩阵的秩的定义：<span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n}\)</span>，<strong><em>A</em></strong> 中最大的不为零的『子式』的阶数称为 <strong><em>A</em></strong> 的秩，记作 <span class="math inline">\(r(\boldsymbol{A})\)</span>。或者说若 <strong><em>A</em></strong> 存在 <em>k</em> 阶不为零子式，而任意 <span class="math inline">\(k + 1\)</span> 阶子式全为零或不存在，则 <span class="math inline">\(r(\boldsymbol{A}) = k\)</span>。</p>
+<ol type="1">
+<li>阶梯形矩阵</li>
+</ol>
+<p>高斯消元法：对矩阵做初等行变换，从上到下依次消元，得到『阶梯形矩阵』。</p>
+<p><span class="math display">\[
+\text{e.g.} \; 
+\left[\begin{matrix}
+1 &amp;2 &amp;3 \\
+3 &amp;1 &amp;2 \\
+2 &amp;3 &amp;1
+\end{matrix}
+\right] \xrightarrow[-2r_1+r_3]{-3r_1+r_2} 
+\left[\begin{matrix}
+1 &amp;2 &amp;3 \\
+0 &amp;-5 &amp;-7 \\
+0 &amp;-1 &amp;-5
+\end{matrix}
+\right]
+\xrightarrow[-r_2,-r_3]{r_2 \leftrightarrow r_3}
+\left[\begin{matrix}
+1 &amp;2 &amp;3 \\
+0 &amp;1 &amp;5 \\
+0 &amp;5 &amp;7
+\end{matrix}
+\right]
+\xrightarrow[-r_3]{-5r_2+r_3}
+\left[\begin{matrix}
+1 &amp;2 &amp;3 \\
+0 &amp;1 &amp;5 \\
+0 &amp;0 &amp;18
+\end{matrix}
+\right]
+\]</span></p>
+<p>将矩阵化为阶梯形矩阵后，每一行从左至右第一个非零元素称为『主元』，主元所在的的列称为矩阵的『主元列』，其他列称为『自由列』。</p>
+<p>对阶梯形矩阵进行初等行变换，使每个主元等于 1，且每个主列除了主元为 1 外其他元素都为 0，称这样的矩阵为『行最简形矩阵』。</p>
+<p><strong>矩阵 <em>A</em> 的秩等于 <em>A</em> 的阶梯矩阵的『阶梯数』即主元（列）数。自由列数 <span class="math inline">\(s = n - r(\boldsymbol{A})\)</span>。</strong></p>
+<ol start="2" type="1">
+<li>重要结论：</li>
+</ol>
+<ul>
+<li><span class="math inline">\(0 \leq r(\boldsymbol{A}_{m \times n}) \leq \min(m,n)\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{A}^{\text{T}}) = r(\boldsymbol{AA}^{\text{T}}) = r(\boldsymbol{A}^{\text{T}}\boldsymbol{A})\)</span></li>
+<li>初等变换不改变矩阵的秩 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{PAQ}) = r(\boldsymbol{A})\)</span>。</li>
+<li><span class="math inline">\(r(\boldsymbol{A}) + r(\boldsymbol{B})-n \leq r(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s}) \leq \min(r(\boldsymbol{A}),r(\boldsymbol{B}))\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{O} \Rightarrow r(\boldsymbol{A})+r(\boldsymbol{B}) \leq n\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A}+\boldsymbol{B}) \leq r[\boldsymbol{A},\boldsymbol{B}] \leq r(\boldsymbol{A}) + r(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A})+r(\boldsymbol{B}) = r\left(\left[ \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{matrix}\right]\right)\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A},\boldsymbol{B},\boldsymbol{C} \in \mathbb{R}^{n \times n} \Rightarrow r(\boldsymbol{A})+r(\boldsymbol{B}) \leq r\left(\left[ \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{C} &amp;\boldsymbol{B}\end{matrix}\right]\right) \leq r(\boldsymbol{A})+r(\boldsymbol{B}) + r(\boldsymbol{C})\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{A} \Rightarrow r(\boldsymbol{A}) + r(\boldsymbol{A}-\boldsymbol{E}) = n\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow r(\boldsymbol{A+\boldsymbol{E}}) + r(\boldsymbol{A}-\boldsymbol{E}) = n\)</span></li>
+</ul>
+<h3 id="矩阵的等价和等价标准形">矩阵的等价和等价标准形</h3>
+<p><span class="math inline">\(\boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵，若 <span class="math inline">\(\boldsymbol{PAQ} = \boldsymbol{B}\)</span>，则称矩阵 <strong><em>A</em></strong> 『<strong>等价</strong>』于矩阵 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span>。</p>
+<p>推论：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow \boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{m \times n},\;r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span> 注意 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 必须<strong>同型</strong>。</li>
+</ul>
+<p>任何矩阵都可以通过有限次初等变换化为其『等价标准形』：</p>
+<p><span class="math display">\[
+\boldsymbol{A} \xrightarrow{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{A}\cdots \boldsymbol{P}_k} \left[
+\begin{matrix}
+\boldsymbol{E_r} &amp;\boldsymbol{O} \\
+\boldsymbol{O} &amp;\boldsymbol{O}
+\end{matrix}
+\right]
+\]</span></p>
+<h2 id="计算">计算</h2>
+<h3 id="求矩阵的幂">求矩阵的幂</h3>
+<h3 id="求逆矩阵">求逆矩阵</h3>
+<ol type="1">
+<li>具体型</li>
+</ol>
+<ul>
+<li>通过初等变换：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;[\begin{matrix}\boldsymbol{A} &amp;\boldsymbol{E}\end{matrix}] \xrightarrow[\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{E}]{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k \boldsymbol{A}} [\begin{matrix}\boldsymbol{E} &amp;\boldsymbol{A}^{-1}\end{matrix}] ,\;\boldsymbol{A}^{-1} = \boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k \\
+&amp;\left[\begin{matrix}\boldsymbol{A} \\ \boldsymbol{E} \end{matrix}\right] \xrightarrow[\boldsymbol{E}\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k]{\boldsymbol{A}\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k} \left[ \begin{matrix}\boldsymbol{E} \\ \boldsymbol{A}^{-1} \end{matrix}\right], \;\boldsymbol{A}^{-1} = \boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k \\
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}^* = |\boldsymbol{A}|\boldsymbol{A}^{-1}\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li>抽象型</li>
+</ol>
+<ul>
+<li>变形得 <span class="math inline">\(\boldsymbol{AB} = \boldsymbol{E} \Rightarrow \boldsymbol{A}^{-1} = \boldsymbol{B}\)</span>。</li>
+<li>变形得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{BC} \Rightarrow \boldsymbol{A}^{-1} = \boldsymbol{C}^{-1}\boldsymbol{B}^{-1}\)</span>。</li>
+</ul>
+<h3 id="矩阵方程">矩阵方程</h3>
+<!--
+$$
+\text{上岸} = 
+\left|\begin{matrix}
+\text{稳} &\sqrt{\text{批}}\\
+\sqrt{\text{批}} &\text{得}
+\end{matrix}\right|
+$$
+-->
+<ul>
+<li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{O}\)</span></p></li>
+<li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{B}\)</span></p></li>
+<li><p><span class="math inline">\(r(\boldsymbol{A}) = 1\)</span></p></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Cohanbb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cohanbb.github.io/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/" title="矩阵理论">https://cohanbb.github.io/2022/09/20/矩阵理论/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" rel="prev" title="多元函数微分学">
+      <i class="fa fa-chevron-left"></i> 多元函数微分学
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/22/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/" rel="next" title="向量空间和线性方程组解的结构">
+      向量空间和线性方程组解的结构 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵运算法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.</span> <span class="nav-text">初等矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">1.4.</span> <span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number">1.5.</span> <span class="nav-text">伴随矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="nav-number">1.6.</span> <span class="nav-text">分块矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵的秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%AD%89%E4%BB%B7%E5%92%8C%E7%AD%89%E4%BB%B7%E6%A0%87%E5%87%86%E5%BD%A2"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵的等价和等价标准形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B9%82"><span class="nav-number">2.1.</span> <span class="nav-text">求矩阵的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">2.2.</span> <span class="nav-text">求逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">矩阵方程</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cohanbb"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cohanbb</p>
+  <div class="site-description" itemprop="description">Technological blogs about Computer Science.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    不得真假  不做挣扎  不惧笑话
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Cohanbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Cohanbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/m0_48857872" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_48857872" rel="noopener" target="_blank"><i class="fa fa-keyboard fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cohanbb</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

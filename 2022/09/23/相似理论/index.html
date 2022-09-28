@@ -21,22 +21,20 @@
     var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
   </script>
 
-  <meta name="description" content="数据结构与算法的入门概念。">
+  <meta name="description" content="线性代数-相似理论的概念与计算。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构_绪论">
-<meta property="og:url" content="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/index.html">
+<meta property="og:title" content="相似理论">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Cohanbb Wiki">
-<meta property="og:description" content="数据结构与算法的入门概念。">
+<meta property="og:description" content="线性代数-相似理论的概念与计算。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/1.png">
-<meta property="article:published_time" content="2022-03-16T13:46:43.000Z">
-<meta property="article:modified_time" content="2022-09-10T07:46:42.853Z">
+<meta property="article:published_time" content="2022-09-23T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-09-28T14:54:11.684Z">
 <meta property="article:author" content="Cohanbb">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/1.png">
 
-<link rel="canonical" href="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/">
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/">
 
 
 <script id="page-configurations">
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>数据结构_绪论 | Cohanbb Wiki</title>
+  <title>相似理论 | Cohanbb Wiki</title>
   
 
 
@@ -203,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -216,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          数据结构_绪论
+          相似理论
         </h1>
 
         <div class="post-meta">
@@ -226,14 +224,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-03-16 21:46:43" itemprop="dateCreated datePublished" datetime="2022-03-16T21:46:43+08:00">2022-03-16</time>
+              <time title="创建时间：2022-09-23 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-23T22:24:35+08:00">2022-09-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-10 15:46:42" itemprop="dateModified" datetime="2022-09-10T15:46:42+08:00">2022-09-10</time>
+                <time title="修改时间：2022-09-28 22:54:11" itemprop="dateModified" datetime="2022-09-28T22:54:11+08:00">2022-09-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +239,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
                 </span>
             </span>
 
@@ -263,105 +261,190 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>数据结构与算法的入门概念。</p>
-<hr />
+        <p>线性代数-相似理论的概念与计算。</p>
 <span id="more"></span>
+<hr />
 <p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
 <ul>
-<li><a href="#数据结构">数据结构</a>
+<li><a href="#概念">概念</a>
 <ul>
-<li><a href="#基本概念">基本概念</a></li>
-<li><a href="#逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</a></li>
-<li><a href="#数据运算">数据运算</a></li>
-<li><a href="#数据的物理结构">数据的物理结构</a></li>
-<li><a href="#抽象数据类型">抽象数据类型</a></li>
-</ul></li>
-<li><a href="#算法">算法</a></li>
-<li><a href="#算法效率的度量">算法效率的度量</a>
-<ul>
-<li><a href="#算法的时间复杂度">算法的时间复杂度</a></li>
-<li><a href="#算法的空间复杂度">算法的空间复杂度</a></li>
+<li><a href="#特征值和特征向量">特征值和特征向量</a></li>
+<li><a href="#矩阵的相似">矩阵的相似</a></li>
+<li><a href="#相似对角化">相似对角化</a></li>
 </ul></li>
 </ul>
-<hr>
-<blockquote>
-<p>Preface:</p>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="特征值和特征向量">特征值和特征向量</h3>
 <ol type="1">
-<li><p>本篇所有代码均由 C++ 实现</p></li>
-<li>参考文献：</li>
+<li><strong><em>A</em></strong> 是 <em>n</em> 阶矩阵，<span class="math inline">\(\lambda\)</span> 是一个数，若存在 <em>n</em> 维非零列向量 <span class="math inline">\(\boldsymbol{\xi}\)</span>，使得</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi}
+\]</span></p>
+<p>则 <span class="math inline">\(\lambda\)</span> 是 <strong><em>A</em></strong> 的『<strong>特征值</strong>』，<span class="math inline">\(\boldsymbol{\xi}\)</span> 是 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda\)</span> 的『<strong>特征向量</strong>』。</p>
+<ol start="2" type="1">
+<li>求特征值</li>
+</ol>
+<p><span class="math inline">\(\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi} \Rightarrow (\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{\xi} = \boldsymbol{0}\)</span>，又因为 <span class="math inline">\(\boldsymbol{\xi} \neq 0\)</span>，即方程组 <span class="math inline">\((\lambda \boldsymbol{E} -\boldsymbol{A})x = 0\)</span> 有非零解，故</p>
+<p><span class="math display">\[
+|\lambda \boldsymbol{E} -\boldsymbol{A}| = \left|
+\begin{matrix}
+\lambda - a_{11} &amp;-a_{12} &amp;\cdots &amp;-a_{1n} \\
+-a_{21} &amp;\lambda - a_{22} &amp;\cdots &amp;-a_{2n} \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+-a_{n1} &amp;-a_{n2} &amp;\cdots &amp;\lambda - a_{nn}
+\end{matrix}
+\right| = 0
+\]</span></p>
+<p>该式称为 <strong><em>A</em></strong> 的特征方程，是未知量 <span class="math inline">\(\lambda\)</span> 的 <em>n</em> 次方程，有 <em>n</em> 个根（按重数计）<span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span>。</p>
+<ol start="3" type="1">
+<li>求特征向量</li>
+</ol>
+<p>将求出的特征值 <span class="math inline">\(\lambda_i\)</span> 代回 <span class="math inline">\((\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)</span>，方程组的解向量即为 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</p>
+<ol start="4" type="1">
+<li>重要结论</li>
 </ol>
 <ul>
-<li>大话数据结构（程杰）</li>
-<li>数据结构考研指导（王道论坛）</li>
+<li><em>n</em> 阶矩阵一定有 <em>n</em> 个特征值（按重数计）。</li>
+<li>若 <span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span> 是 <strong><em>A</em></strong> 的特征值，则 <span class="math inline">\(\text{det}(\boldsymbol{A})= \lambda_1\lambda_2\cdots\lambda_n, \; \text{tr}(\boldsymbol{A}) = \lambda_1 + \lambda_2 +\cdots+\lambda_n\)</span>。</li>
+<li>根据上一条结论，方阵 <strong><em>A</em></strong> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <strong><em>A</em></strong> 的特征值。</li>
+<li>上（下）三角矩阵、对角矩阵的特征值就是主对角线元素。</li>
+<li><p>下表要谨记：</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>矩阵</th>
+<th><span class="math inline">\(\boldsymbol{A}\)</span></th>
+<th><span class="math inline">\(k\boldsymbol{A}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^k\)</span></th>
+<th><span class="math inline">\(f(\boldsymbol{A})\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^{-1}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^*\)</span></th>
+<th><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>特征值</td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(k\lambda\)</span></td>
+<td><span class="math inline">\(\lambda^k\)</span></td>
+<td><span class="math inline">\(f(\lambda)\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\frac{1}{\lambda}\)</span></td>
+<td><span class="math inline">\(\frac{\text{det}(\boldsymbol{A})}{\lambda}\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+</tr>
+<tr class="even">
+<td>对应特征值的特征向量</td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td>未知</td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{\xi}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>推论：若 <span class="math inline">\(f(\boldsymbol{A}) = \boldsymbol{O}, \; \lambda\)</span> 是 <strong><em>A</em></strong> 任意特征值，则 <span class="math inline">\(f(\lambda)=0\)</span>。</p>
+<p>注意：<span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 特征值不变，但特征向量需要重新计算得出。</p></li>
+<li><p>代数重数 <span class="math inline">\(\geq\)</span> 几何重数：<em>k</em> 重特征值<strong>最多</strong>有 <em>k</em> 个线性无关的特征向量。</p></li>
+<li><p>不同特征值对应的特征向量必线性无关。</p></li>
+<li>根据解空间理论，同一特征值对应的特征向量的非零线性组合仍是该特征值对应的特征向量。</li>
+<li><p><span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2\)</span> 是不同特征值对应的特征向量，则 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2\; (k_1 \neq 0,k_2 \neq 0)\)</span> 不是 <strong><em>A</em></strong> 的特征向量。</p></li>
 </ul>
-</blockquote>
-<h1 id="数据结构">数据结构</h1>
-<h2 id="基本概念">基本概念</h2>
-<p>数据：描述客观事物的符号，计算机的可操作对象，是一个整体的概念。</p>
-<p><strong>数据元素</strong>：组成数据的基本单位，如数组的一项。</p>
-<p>数据对象：相同性质的数据元素的集合，是数据的子集合。</p>
-<p>数据项：数据不可分割的最小单位。</p>
-<p><strong>数据结构（data structure）</strong>：相互之间存在一种或多种特定关系的数据元素的集合。</p>
-<p>四者关系可以如此表示：</p>
-<p><img src="1.png" /></p>
-<h2 id="逻辑结构数据元素之间的相互关系">逻辑结构：数据元素之间的相互关系</h2>
-<p><strong>集合结构</strong><br />
-数据元素除了同属一个集合外没有其他关系。</p>
-<p><strong>线性结构</strong><br />
-数据元素是一对一关系，除第一个元素外均有唯一前驱，除最后一个元素外均有唯一后继。</p>
-<p><strong>树形结构</strong><br />
-数据元素是一对多关系，有唯一的前驱和多个后继。</p>
-<p><strong>图装结构</strong><br />
-数据元素是多对多关系。</p>
-<h2 id="数据运算">数据运算</h2>
-<p>数据的查找、插入和删除等操作。</p>
-<h2 id="数据的物理结构">数据的物理结构</h2>
-<p>数据的存储结构影响着数据运算的效率和可行性。</p>
+<h3 id="矩阵的相似">矩阵的相似</h3>
+<p>矩阵 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 是两个 <em>n</em> 阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 相似于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span></li>
+<li><span class="math inline">\(\text{det}(\boldsymbol{A}) = \text{det}(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(\text{tr}(\boldsymbol{A}) = \text{tr}(\boldsymbol{B})\)</span></li>
+</ul>
 <blockquote>
-<p>此部分知识在<a href="操作系统_文件管理.md">操作系统_文件管理</a>章节有详细说明。</p>
+<p>这是 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span> 的基本必要条件，任何一个不成立则 <span class="math inline">\(\boldsymbol{A} \not\sim \boldsymbol{B}\)</span>。</p>
 </blockquote>
-<p>顺序存储：数据元素存放在连续的存储单元中。</p>
-<p>非顺序存储：链式存储、索引存储、散列存储。</p>
-<h2 id="抽象数据类型">抽象数据类型</h2>
-<p>抽象数据类型（abstract data type，ADT）是数学的抽象、对实现原理的抽象，即使用者只关心数据对象和相关的操作 <strong>“是什么”</strong>，而不关心 <strong>“如何实现”</strong>。</p>
-<p>如 C语言中的结构体（struct）、C++/Java/Python 中的类（class）等。</p>
-<p>换言之，对于一门计算机语言来说，只要不是基本数据类型，即为抽象数据类型。</p>
-<blockquote>
-<p>拓展：同样采取抽象思想的还有应用程序接口（application programming interface，API）。</p>
-</blockquote>
-<h1 id="算法">算法</h1>
-<p>算法（algorithm）是处理问题的方法、步骤，不仅涉及计算机科学，在计算机中是由程序实现，如函数、方法、类或是整个程序框架。</p>
-<p>算法的特性：有穷性、可行性、确定性。</p>
-<p>算法设计的要求：正确性、可读性、健壮性、时间效率高和存储量低。</p>
-<h1 id="算法效率的度量">算法效率的度量</h1>
-<h2 id="算法的时间复杂度">算法的时间复杂度</h2>
-<p>算法的时间复杂度即事先预估算法的时间开销与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= n) &#123; <span class="comment">// n+1</span></span><br><span class="line">        i++; <span class="comment">// n</span></span><br><span class="line">        std::cout &lt;&lt; “Hello”; <span class="comment">// n</span></span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; “World\n”; <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述程序的时间复杂度为 T(n) = 3n+3.</p>
-<p><strong>大O表示法</strong><br />
-上限表示法，即算法在最坏的情况下的时间复杂度。</p>
+<p>重要结论：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A}^{\text{T}} \sim \boldsymbol{B}^{\text{T}},\boldsymbol{A}^{-1} \sim \boldsymbol{B}^{-1},\boldsymbol{A}^* \sim \boldsymbol{B}^*\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow k\boldsymbol{A} \sim k\boldsymbol{B},\boldsymbol{A}^k \sim \boldsymbol{B}^k,f(\boldsymbol{A}) \sim f(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Leftrightarrow \boldsymbol{B} \sim \boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{C} \Rightarrow \boldsymbol{A} \sim \boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{C},\boldsymbol{B} \sim \boldsymbol{D} \Rightarrow \left[\begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B} \end{matrix}\right] \sim \left[\begin{matrix} \boldsymbol{C} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{D} \end{matrix}\right]\)</span></li>
+</ul>
+<h3 id="相似对角化">相似对角化</h3>
+<p>对角矩阵的良好性质，对角矩阵 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}[ \lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>：</p>
+<ul>
+<li><span class="math inline">\(\text{det}(\boldsymbol{\Lambda}) = \lambda_1\lambda_2\cdots\lambda_n\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^{\text{T}} = \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^{-1} = \text{diag}\left[\frac{1}{\lambda_1},\frac{1}{\lambda_2},\ldots,\frac{1}{\lambda_n}\right]\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^k = \text{diag}\left[{\lambda_1}^k,{\lambda_2}^k,\ldots,{\lambda_n}^k\right]\)</span></li>
+</ul>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>，则称 <strong><em>A</em></strong> 可以『<strong>相似对角化</strong>』，称 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的『相似标准形』。</p>
+<ol type="1">
+<li>相似对角化的推导</li>
+</ol>
+<p><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{AP} = \boldsymbol{\Lambda} \Rightarrow \boldsymbol{AP} = \boldsymbol{P\Lambda}\)</span>，令 <span class="math inline">\(\boldsymbol{P} = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n],\; \boldsymbol{\Lambda} = \text{diag}[\lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>，则</p>
 <p><span class="math display">\[
-T(n)=O(f(n)) \Leftrightarrow \lim_{n \to \infty} \frac{T(n)}{f(n)}=c(c\text{为常数}).
+\boldsymbol{A}[\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] \begin{bmatrix} \lambda_1 &amp;\; &amp;\; &amp;\; \\ \; &amp;\lambda_2 &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;\lambda_n\end{bmatrix}
 \]</span></p>
-<p>故上述算法的时间复杂度为 T(n) = O(n).</p>
-<p>常见算法的时间复杂度（从小到达排列）:</p>
+<p>即</p>
 <p><span class="math display">\[
-O(1)&lt;O(log_2n)&lt;O(n)&lt;O(n^2)&lt;O(n^3)&lt;O(2^n)&lt;O(n!)&lt;O(n^n).
+[\boldsymbol{A\xi}_1,\boldsymbol{A\xi}_2,\ldots,\boldsymbol{A\xi}_n] =[\lambda_1\boldsymbol{\xi}_1,\lambda_2\boldsymbol{\xi}_2,\ldots,\lambda_n\boldsymbol{\xi}_n]
 \]</span></p>
-<p>算法的时间复杂度相加，只保留最高阶的项。</p>
+<p>故</p>
 <p><span class="math display">\[
-T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
+\boldsymbol{A\xi}_i = \lambda_i\boldsymbol{\xi}_i \;(i =1,2,\ldots,n)
 \]</span></p>
-<h2 id="算法的空间复杂度">算法的空间复杂度</h2>
-<p>程序的指令和数据存储在内存中，算法的空间复杂度即为程序占内存的大小与问题规模 n 的关系。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="type">int</span> i; <span class="comment">// 4 Byte</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代码的空间复杂度为 S(n) = n+1，同样使用大O表示法，则 S(n) = O(n).</p>
-<p>递归函数调用的内存开销：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i, j; <span class="comment">// 8 Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>该函数递归调用 n 次，每次在内存中增加两个 int 型变量，故 S(n) = O(n).</p>
-<p>若将程序改为：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> array[n]; <span class="comment">// n Byte</span></span><br><span class="line">    <span class="built_in">func</span>(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span>; <span class="comment">// 函数递归调用 n 次</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则函数每次调用需在内存中增加一个 int 型数组，从 n 到 1 数组的长度分别为 n, n-1, … , 1，则总的长度为 <span class="math inline">\(\frac{1}{2}(n^2+n)\)</span>，故 S(n) = O(n<sup>2</sup>).</p>
+<p>因为 <strong><em>P</em></strong> 可逆，故 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span> 线性无关，故得出结论：</p>
+<ul>
+<li><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em> 有 <em>n</em> 个线性无关的特征向量。</strong></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <strong><em>A</em></strong> 的 <em>n</em> 个（按重数计）特征值构成的对角矩阵，<strong><em>P</em></strong> 的列向量是 <strong><em>A</em></strong> 的特征向量，且 <strong><em>P</em></strong> 中特征向量的位置与 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 中特征值的位置相对应。</li>
+</ul>
+<ol start="2" type="1">
+<li>重要结论：</li>
+</ol>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分必要条件：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 有 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li>几何重数等于代数重数，即 <em>k</em> 重特征值具有 <em>k</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow n_i = n - r(\lambda_i\boldsymbol{E}-\boldsymbol{A}) \Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分条件：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li><strong><em>A</em></strong> 有 <em>n</em> 个不同的特征值 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{A} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A})=1\)</span> 且 <span class="math inline">\(\text{tr}(\boldsymbol{A}) \neq 0 \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>必要条件：</strong></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计）。</li>
+<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \not\Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>，但如果 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 均可相似对角化，则 <span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>。</li>
+<li>根据上一条结论，『<strong>实对称矩阵</strong>』 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 相似 <span class="math inline">\(\Leftrightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>。</li>
+</ul>
 
     </div>
 
@@ -377,7 +460,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://cohanbb.github.io/2022/03/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BB%AA%E8%AE%BA/" title="数据结构_绪论">https://cohanbb.github.io/2022/03/16/数据结构_绪论/</a>
+    <a href="https://cohanbb.github.io/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/" title="相似理论">https://cohanbb.github.io/2022/09/23/相似理论/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -388,7 +471,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+              <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
           </div>
 
         
@@ -402,13 +485,10 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/03/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" rel="prev" title="Hexo 博客搭建简单说明">
-      <i class="fa fa-chevron-left"></i> Hexo 博客搭建简单说明
+    <a href="/2022/09/22/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/" rel="prev" title="向量空间和线性方程组解的结构">
+      <i class="fa fa-chevron-left"></i> 向量空间和线性方程组解的结构
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/" rel="next" title="数据结构_线性表，栈、队列和数组">
-      数据结构_线性表，栈、队列和数组 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -467,7 +547,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E5%85%B3%E7%B3%BB"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑结构：数据元素之间的相互关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.</span> <span class="nav-text">数据运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%A9%E7%90%86%E7%BB%93%E6%9E%84"><span class="nav-number">1.4.</span> <span class="nav-text">数据的物理结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.5.</span> <span class="nav-text">抽象数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">算法效率的度量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">3.1.</span> <span class="nav-text">算法的时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">3.2.</span> <span class="nav-text">算法的空间复杂度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">1.1.</span> <span class="nav-text">特征值和特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的相似</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96"><span class="nav-number">1.3.</span> <span class="nav-text">相似对角化</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

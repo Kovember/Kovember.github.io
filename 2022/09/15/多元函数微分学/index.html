@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
+  </script>
+
+  <meta name="description" content="高等数学-多元函数微分学的概念与计算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多元函数微分学">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/index.html">
+<meta property="og:site_name" content="Cohanbb Wiki">
+<meta property="og:description" content="高等数学-多元函数微分学的概念与计算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/image-20220928221708716.png">
+<meta property="article:published_time" content="2022-09-15T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-09-28T14:46:51.831Z">
+<meta property="article:author" content="Cohanbb">
+<meta property="article:tag" content="Calulus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/image-20220928221708716.png">
+
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>多元函数微分学 | Cohanbb Wiki</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cohanbb Wiki</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Cohanbb Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-链接">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>链接</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cohanbb">
+      <meta itemprop="description" content="Technological blogs about Computer Science.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cohanbb Wiki">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多元函数微分学
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-15 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-15T22:24:35+08:00">2022-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-28 22:46:51" itemprop="dateModified" datetime="2022-09-28T22:46:51+08:00">2022-09-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>高等数学-多元函数微分学的概念与计算。</p>
+<span id="more"></span>
+<hr />
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#极限">极限</a></li>
+<li><a href="#连续">连续</a></li>
+<li><a href="#偏导数">偏导数</a></li>
+<li><a href="#可微">可微</a></li>
+<li><a href="#偏导数的连续性">偏导数的连续性</a></li>
+</ul></li>
+<li><a href="#计算">计算</a>
+<ul>
+<li><a href="#多元复合函数求导">多元复合函数求导</a>
+<ul>
+<li><a href="#全导数">全导数</a></li>
+<li><a href="#链式求导规则">链式求导规则</a></li>
+<li><a href="#全微分形式不变性">全微分形式不变性</a></li>
+</ul></li>
+<li><a href="#多元隐函数求导">多元隐函数求导</a></li>
+<li><a href="#多元函数的极值和最值">多元函数的极值和最值</a>
+<ul>
+<li><a href="#多元函数的泰勒公式">多元函数的泰勒公式</a></li>
+<li><a href="#无条件极值">无条件极值</a></li>
+<li><a href="#有条件最值">有条件最值</a></li>
+</ul></li>
+<li><a href="#偏微分方程">偏微分方程</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="基本概念">基本概念</h3>
+<ol type="1">
+<li>邻域</li>
+</ol>
+<p>设 <em>M</em><sub>0</sub> 为平面上一个点，<span class="math inline">\(\delta\)</span> 为正数，<em>M</em> 为平面上的点，则 <span class="math inline">\(\{M \vert \rho(M_0,M) &lt; \delta\}\)</span> 为点 <em>M</em><sub>0</sub> 的『<strong><span class="math inline">\(\delta\)</span> 邻域</strong>』，记作 <span class="math inline">\(U(M_0,\delta)\)</span>，<span class="math inline">\(\{M \vert 0 &lt; \rho(M_0,M) &lt; \delta\}\)</span> 为点 <em>M</em><sub>0</sub> 的『<strong>去心 <span class="math inline">\(\delta\)</span> 邻域</strong>』，记作 <span class="math inline">\(\mathring{U}(M_0,\delta)\)</span>。</p>
+<ol start="2" type="1">
+<li>边界</li>
+</ol>
+<p>给定平面上的一个点集 <em>E</em>，若 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得 <span class="math inline">\(U(M,\delta) \subset E\)</span>，则 <em>M</em> 为点集 <em>E</em> 的『<strong>内点</strong>』。若 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得 <span class="math inline">\(U(M,\delta) \cap E = \varnothing\)</span>，则 <em>M</em> 为点集 <em>E</em> 的『<strong>外点</strong>』。若对于 <span class="math inline">\(\forall \delta &gt; 0\)</span>，<span class="math inline">\(U(M,\delta)\)</span> 中既有 <em>E</em> 中的点也有 <em>E</em> 外的点，则 <em>M</em> 为点集 <em>E</em> 的『<strong>边界点</strong>』。</p>
+<p>点集 <em>E</em> 的所有边界点的集合称为 <em>E</em> 的『<strong>边界</strong>』，记作 <span class="math inline">\(\partial E\)</span>。</p>
+<ol start="3" type="1">
+<li>区域</li>
+</ol>
+<p>设 <em>E</em> 是一个平面点集，对于其中的任意两点，都可用一条完全属于 <em>E</em> 的曲线将这两点连起来，则这样的 <em>E</em> 为『连通集』。连通的开集称为『<strong>开区域</strong>』，一个开区域和它的边界的并集称为『<strong>闭区域</strong>』。</p>
+<p>设 <em>E</em> 是一个区域，若其中任意一条不交叉的简单闭曲线的内部还在 <em>E</em> 内，则 <em>E</em> 称为『<strong>单连通区域</strong>』，否则称为『<strong>多连通区域</strong>』。</p>
+<ol start="4" type="1">
+<li>聚点</li>
+</ol>
+<p>设 <em>E</em> 是一个平面点集，<em>M</em><sub>0</sub> 是平面上一个点，若对于 <span class="math inline">\(\forall \delta &gt; 0\)</span>，总有 <span class="math inline">\(\mathring{U}(M_0,\delta) \cap E \neq \varnothing\)</span>，则称 <em>M</em><sub>0</sub> 为 <em>E</em> 的『<strong>聚点</strong>』。开区域的内点和边界点都是聚点，闭区域内的任何一点都是聚点。</p>
+<h3 id="极限">极限</h3>
+<p>设二元函数 <span class="math inline">\(f(P) = f(x,y)\)</span> 的定义域为 <em>D</em>，<span class="math inline">\(P(x_0,y_0)\)</span> 是 <em>D</em> 的聚点如果存在常数 <em>A</em>，对于 <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>，都 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得但点 <span class="math inline">\(P(x,y) \in D \cap \mathring{U}(P_0,\delta)\)</span> 时，都有</p>
+<p><span class="math display">\[
+\left|f(x,y) - A\right| &lt; \varepsilon
+\]</span></p>
+<p>则称 <em>A</em> 为 <span class="math inline">\(f(x,y)\)</span> 当 <span class="math inline">\((x,y) \to (x_0,y_0)\)</span> 时的『<strong>极限</strong>』，记作</p>
+<p><span class="math display">\[
+\lim_{(x,y) \to (x_0,y_0)}f(x,y) = A \; \text{or} \; f(x,y) \to A \;((x,y) \to (x_0,y_0))
+\]</span></p>
+<h3 id="连续">连续</h3>
+<p>若 <span class="math inline">\(\lim_{(x,y) \to (x_0,y_0)} f(x,y) = f(x_0,y_0) \Leftrightarrow f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处『<strong>连续</strong>』。</p>
+<blockquote>
+<p>多元函数的间断点类型不在考试范围内。</p>
+</blockquote>
+<h3 id="偏导数">偏导数</h3>
+<p>设函数 <span class="math inline">\(z =f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 的某邻域内有定义，若极限</p>
+<p><span class="math display">\[
+\lim _{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}
+\]</span></p>
+<p>存在，则称此极限为 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处对 <em>x</em> 的『<strong>偏导数</strong>』，记作</p>
+<p><span class="math display">\[
+f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} \; 
+\frac{\partial f}{\partial x} \bigg |_{x = x_0,y=y_0} \; \text{or} \; \frac{\partial z}{\partial x} \bigg |_{x = x_0,y=y_0} 
+\]</span></p>
+<p>故 <span class="math inline">\(f(x,y)\)</span> 的偏导数：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; f&#39;_x(x_0,y_0) = \lim_{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x} = \lim_{x \to x_0}\frac{f(x,y) - f(x_0,y_0)}{x - x_0} \\
+&amp; f&#39;_y(x_0,y_0) = \lim_{\Delta y \to 0}\frac{f(x_0,y_0 + \Delta y)-f(x_0,y_0)}{\Delta y} = \lim_{y \to y_0}\frac{f(x,y) - f(x_0,y_0)}{y - y_0}
+\end{aligned}
+\]</span></p>
+<p>若函数 <span class="math inline">\(z = f(x,y)\)</span> 在区域 <em>D</em> 内的偏导数 <span class="math inline">\(f&#39;_x(x,y),f&#39;_y(x,y)\)</span> 仍具有偏导数，则它们的偏导数称为 <span class="math inline">\(f(x,y)\)</span> 的『<strong>二阶偏导数</strong>』，根据对变量求导的顺序不同分为四个二阶偏导数：</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = f&#39;&#39;_{xx}(x,y), \quad \frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = f&#39;&#39;_{yy}(x,y), \\
+&amp; \frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x\partial y} = f&#39;&#39;_{xy}(x,y), \quad \frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y\partial x} = f&#39;&#39;_{yx}(x,y)
+\end{aligned}
+\]</span></p>
+<p>其中 <span class="math inline">\(f&#39;&#39;_{xy}(x,y),f&#39;&#39;_{yx}(x,y)\)</span> 称为『<strong>二阶混合偏导数</strong>』。</p>
+<h3 id="可微">可微</h3>
+<p>函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处的『<strong>全增量</strong>』 <span class="math inline">\(\Delta z = f(x + \Delta x, y + \Delta y) - f(x,y)\)</span> 可表示为</p>
+<p><span class="math display">\[
+\Delta z = A\Delta x + B\Delta y + o(\rho)
+\]</span></p>
+<p>其中 <span class="math inline">\(\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)</span>，<span class="math inline">\(A,B\)</span> 不依赖于 <span class="math inline">\(\Delta x,\Delta y\)</span> 仅与 <span class="math inline">\(x,y\)</span> 有关，则称函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处『<strong>可微</strong>』，称 <span class="math inline">\(A\Delta x + B\Delta y\)</span> 为函数 <span class="math inline">\(z =f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处的『<strong>全微分</strong>』，记作</p>
+<p><span class="math display">\[
+\text{d} z = A\Delta x + B\Delta y
+\]</span></p>
+<p>定理：若函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处可微，则函数在该点的偏导数必存在，则函数在该点的全微分为：</p>
+<p><span class="math display">\[
+\text{d} z = f&#39;_x(x,y)\Delta x + f&#39;_y(x,y)\Delta y
+\]</span></p>
+<p><strong>判断函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处可微：</strong></p>
+<ul>
+<li>写出全增量 <span class="math inline">\(\Delta z = f(x_0 + \Delta x, y_0 + \Delta y)-f(x,y)\)</span>。</li>
+<li>写出线性增量 <span class="math inline">\(f&#39;_x(x_0,y_0)\Delta x + f&#39;_y(x_0,y_0)\Delta y\)</span>。</li>
+<li>计算极限</li>
+</ul>
+<p><span class="math display">\[
+\lim_{\Delta x \to 0,\Delta y \to 0} \frac{\Delta z - (f&#39;_x(x_0,y_0)\Delta x + f&#39;_y(x_0,y_0)\Delta y)}{\sqrt{(\Delta x)^2 + (\Delta y)^2}}
+\]</span></p>
+<p>若该极限等于 0，则 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处可微，否则不可微。</p>
+<h3 id="偏导数的连续性">偏导数的连续性</h3>
+<p><strong>判断函数 <span class="math inline">\(z = f(x,y)\)</span> 在某特殊点 <span class="math inline">\((x_0,y_0)\)</span> 处（如分段点）偏导数是否连续：</strong></p>
+<ul>
+<li>定义法求 <span class="math inline">\(f&#39;_x(x_0,y_0),f&#39;_y(x_0,y_0)\)</span>。</li>
+<li>用公式法求 <span class="math inline">\(f&#39;_x(x,y),f&#39;_y(x,y)\)</span>。</li>
+<li>计算极限</li>
+</ul>
+<p><span class="math display">\[
+\lim_{x \to x_0,y \to y_0}f&#39;_x(x_0,y_0),\lim_{x \to x_0,y \to y_0}f&#39;_y(x_0,y_0)
+\]</span></p>
+<ul>
+<li>若求出的两个极限与定义法求出的偏导数相等，则 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处的偏导数连续。</li>
+</ul>
+<p><strong>结论：两个偏导数连续，则二阶混合偏导数相等。</strong></p>
+<h2 id="计算">计算</h2>
+<h3 id="多元复合函数求导">多元复合函数求导</h3>
+<h4 id="全导数">全导数</h4>
+<p>若 <span class="math inline">\(z =f(u,v),\; u = u(x),\; v = v(x)\)</span>，即 <em>z</em> 最终是关于单一变量 <em>x</em> 的函数，则 <span class="math inline">\(\frac{\text{d} z}{\text{d} x}\)</span> 称为该函数的『<strong>全导数</strong>』，记作</p>
+<p><span class="math display">\[
+\frac{\text{d} z}{\text{d} x} = \frac{\partial z}{\partial u}\frac{\text{d} u}{\text{d} x} + \frac{\partial z}{\partial v}\frac{\text{d} v}{\text{d} x}
+\]</span></p>
+<h4 id="链式求导规则">链式求导规则</h4>
+<ol type="1">
+<li><p>画出函数的<strong>复合结构图</strong>。</p></li>
+<li><p>对哪个变量求导，就寻找通向这个变量的<strong>所有路线</strong>。</p></li>
+<li><p>将所有路线求得的导数相加。</p></li>
+</ol>
+<p><span class="math display">\[
+\text{e.g.} \;
+z = f(u,v,w),\; u =u(x,y),\; v = v(x),\; w = w(y) \\
+\]</span></p>
+<p><img src="image-20220928221708716.png" /></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\text{d} v}{\text{d} x}\\
+&amp; \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial w}\frac{\text{d} w}{\text{d} y}
+\end{aligned}
+\]</span></p>
+<p><strong>注：无论 <em>z</em> 对哪个变量求导，也无论 <em>z</em> 已经求了几阶导，求导后的新函数仍然具有与原本函数完全相同的复合结构。</strong></p>
+<h4 id="全微分形式不变性">全微分形式不变性</h4>
+<p>函数 <span class="math inline">\(z =f(u,v)\)</span> 可微，则其全微分为</p>
+<p><span class="math display">\[
+\text{d}z = \frac{\partial z}{\partial u}\text{d}u + \frac{\partial z}{\partial v}\text{d}v
+\]</span></p>
+<p>若 <span class="math inline">\(u,v\)</span> 作为函数的中间变量，是自变量 <span class="math inline">\(x,y\)</span> 的可微函数 <span class="math inline">\(u =u(x,y),\;v=v(x,y)\)</span>，则复合函数 <span class="math inline">\(z = f(u(x,y),v(x,y))\)</span> 也是可微的，其全微分为</p>
+<p><span class="math display">\[
+\text{d} z = \frac{\partial z}{\partial x}\text{d}x + \frac{\partial z}{\partial y}\text{d}y
+\]</span></p>
+<h3 id="多元隐函数求导">多元隐函数求导</h3>
+<ol type="1">
+<li>二元方程的隐函数</li>
+</ol>
+<p>设函数 <span class="math inline">\(F(x,y)\)</span> 在点 <span class="math inline">\(P(x_0,y_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(x_0,y_0) = 0,\;F&#39;_y(x_0,y_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y) = 0\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(y = f(x)\)</span>，且有</p>
+<p><span class="math display">\[
+\frac{\text{d}y}{\text{d}x} = - \frac{F&#39;_x}{F&#39;_y}
+\]</span></p>
+<ol start="2" type="1">
+<li>多元方程的隐函数</li>
+</ol>
+<p>设函数 <span class="math inline">\(F(x,y,z)\)</span> 在点 <span class="math inline">\(P(x_0,y_0,z_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(P_0) = 0,\;F&#39;_z(P_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y,z) = 0\)</span> 在点 <span class="math inline">\(P_0\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(z = z(x,y)\)</span>，且有</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial z}{\partial x} = -\frac{F&#39;_x}{F&#39;_z},\;\frac{\partial z}{\partial y} = -\frac{F&#39;_y}{F&#39;_z}
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li>多元方程组的隐函数</li>
+</ol>
+<h3 id="多元函数的极值和最值">多元函数的极值和最值</h3>
+<h4 id="多元函数的泰勒公式">多元函数的泰勒公式</h4>
+<h4 id="无条件极值">无条件极值</h4>
+<h4 id="有条件最值">有条件最值</h4>
+<h3 id="偏微分方程">偏微分方程</h3>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Cohanbb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cohanbb.github.io/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" title="多元函数微分学">https://cohanbb.github.io/2022/09/15/多元函数微分学/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Calulus/" rel="tag"># Calulus</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/10/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" rel="prev" title="常微分方程">
+      <i class="fa fa-chevron-left"></i> 常微分方程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/" rel="next" title="矩阵理论">
+      矩阵理论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-number">1.2.</span> <span class="nav-text">极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD"><span class="nav-number">1.3.</span> <span class="nav-text">连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">偏导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%BE%AE"><span class="nav-number">1.5.</span> <span class="nav-text">可微</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%AF%BC%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7"><span class="nav-number">1.6.</span> <span class="nav-text">偏导数的连续性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%A4%8D%E5%90%88%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC"><span class="nav-number">2.1.</span> <span class="nav-text">多元复合函数求导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%AF%BC%E6%95%B0"><span class="nav-number">2.1.1.</span> <span class="nav-text">全导数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%93%BE%E5%BC%8F%E6%B1%82%E5%AF%BC%E8%A7%84%E5%88%99"><span class="nav-number">2.1.2.</span> <span class="nav-text">链式求导规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">2.1.3.</span> <span class="nav-text">全微分形式不变性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E9%9A%90%E5%87%BD%E6%95%B0%E6%B1%82%E5%AF%BC"><span class="nav-number">2.2.</span> <span class="nav-text">多元隐函数求导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E5%80%BC%E5%92%8C%E6%9C%80%E5%80%BC"><span class="nav-number">2.3.</span> <span class="nav-text">多元函数的极值和最值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">多元函数的泰勒公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E6%9D%A1%E4%BB%B6%E6%9E%81%E5%80%BC"><span class="nav-number">2.3.2.</span> <span class="nav-text">无条件极值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E6%9D%A1%E4%BB%B6%E6%9C%80%E5%80%BC"><span class="nav-number">2.3.3.</span> <span class="nav-text">有条件最值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">2.4.</span> <span class="nav-text">偏微分方程</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cohanbb"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cohanbb</p>
+  <div class="site-description" itemprop="description">Technological blogs about Computer Science.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    不得真假  不做挣扎  不惧笑话
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Cohanbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Cohanbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/m0_48857872" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_48857872" rel="noopener" target="_blank"><i class="fa fa-keyboard fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cohanbb</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
