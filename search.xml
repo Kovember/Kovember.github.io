@@ -995,6 +995,254 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
+    <title>二次型</title>
+    <url>/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>线性代数-二次型的概念与计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#正交矩阵">正交矩阵</a></li>
+<li><a href="#实对称矩阵">实对称矩阵</a></li>
+<li><a href="#实对称矩阵的合同">实对称矩阵的合同</a></li>
+<li><a href="#二次型及其标准形和规范形">二次型及其标准形和规范形</a></li>
+<li><a href="#惯性定理">惯性定理</a></li>
+<li><a href="#正定二次型">正定二次型</a></li>
+</ul></li>
+<li><a href="#化二次型为标准形或规范形">化二次型为标准形或规范形</a>
+<ul>
+<li><a href="#正交变换法">正交变换法</a></li>
+<li><a href="#配方法">配方法</a></li>
+</ul></li>
+<li><a href="#结句">结句</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="正交矩阵">正交矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>正交矩阵</strong>』 <span class="math inline">\(\Leftrightarrow\boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Leftrightarrow \boldsymbol{A}^{-1} = \boldsymbol{A}^{\text{T}}\\
+&amp;\Leftrightarrow \boldsymbol{A}^{\text{T}}{\left(\boldsymbol{A}^{\text{T}}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E} \\
+&amp;\Leftrightarrow \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} =\boldsymbol{E}\\
+&amp;\Leftrightarrow -\boldsymbol{A}(-\boldsymbol{A})^{\text{T}} = \boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E} \\
+&amp;\Rightarrow |\boldsymbol{A}|^2 = |\boldsymbol{A}\boldsymbol{A}| = \left|\boldsymbol{A}\boldsymbol{A}^{-1}\right| = |\boldsymbol{E}| = 1 \Rightarrow |\boldsymbol{A}| = \pm 1\\
+&amp;\Leftrightarrow \boldsymbol{A}^*(\boldsymbol{A}^*)^{\text{T}} = |\boldsymbol{A}|\boldsymbol{A}^{-1}{\left(|\boldsymbol{A}|\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{E}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,-\boldsymbol{A}\)</span> 是正交矩阵。</li>
+<li><strong><em>A</em></strong> 必可逆，<span class="math inline">\(\text{det}(\boldsymbol{A}) = \pm 1\)</span>。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶正交矩阵，则 <strong><em>AB</em></strong> 必为正交矩阵（<strong><em>A</em></strong> + <strong><em>B</em></strong> 未必）。</li>
+</ul>
+<p><strong>正交矩阵与向量空间的关系：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组和行向量组都是<strong>单位正交向量组</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的 <em>n</em> 个列向量和 <em>n</em> 个行向量都是 <em>n</em> 维向量空间的<strong>规范正交基</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 是规范正交基到规范正交基的过渡矩阵。</li>
+</ul>
+<h3 id="实对称矩阵">实对称矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』<span class="math inline">\(\Leftrightarrow\boldsymbol{A} = \boldsymbol{A}^{\text{T}}\)</span> 且元素都是实数。</p>
+<p><strong>实对称矩阵的性质：</strong></p>
+<ul>
+<li><strong>实对称矩阵的 <em>k</em> 重特征值必有 <em>k</em> 个线性无关的特征向量。</strong></li>
+<li>根据上一条结论，<em>n</em> 阶实对称矩阵必有 <em>n</em> 个线性无关的特征向量，即<strong>必可以相似对角化</strong>。</li>
+<li><strong>实对称矩阵不同特征值对应的特征向量必正交。</strong></li>
+<li>根据上述结论，实对称矩阵<strong>必可以用『正交矩阵』相似对角化</strong>。</li>
+</ul>
+<blockquote>
+<p>注：只有对相同特征值对应的特征向量（即同一个特征子空间的基）进行施密特正交化，才能保证正交化后的特征向量仍是其对应特征值的特征向量（仍是其对应的特征子空间的基）。</p>
+<p>而实对称矩阵不同特征值对应的特征向量正交，故只需要对相同特征值的特征向量进行施密特正交化就可以得到正交矩阵，故实对称矩阵一定可以使用正交矩阵相似对角化（但可以<strong>用正交矩阵相似对角化的矩阵未必是实对称矩阵</strong>）。</p>
+</blockquote>
+<h3 id="实对称矩阵的合同">实对称矩阵的合同</h3>
+<ol type="1">
+<li>矩阵的合同</li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>合同</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>矩阵合同的性质：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B},\boldsymbol{B} \simeq \boldsymbol{C}\Rightarrow \boldsymbol{A} \simeq \boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Rightarrow \boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>实对称矩阵的合同</strong></li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 拥有相同的『<a href="#惯性定理">正、负惯性指数</a>』。</p>
+<p>重要结论：</p>
+<ul>
+<li><strong>实对称矩阵闭可以合同对角化</strong>。<strong><em>A</em></strong> 是实对称矩阵，则必有可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{AC} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p>证：<strong><em>A</em></strong> 为实对称矩阵，则必存在正交矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，因为 <span class="math inline">\(\boldsymbol{Q}^{-1} =\boldsymbol{Q}^{\text{T}}\)</span>，故 <span class="math inline">\(\boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</p>
+<blockquote>
+<p>注：通过正交矩阵对角化只是合同对角化的一种特殊情形，此时 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span> 且 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。详见<a href="#正交变换法">正交变换法</a>。<br />
+实际上即使不通过正交矩阵，仅仅通过可逆矩阵，就一定可以使实对称矩阵合同对角化。详见<a href="#配方法">配方法</a>。</p>
+</blockquote>
+<ul>
+<li><strong>实对称矩阵相似必合同</strong>。<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</li>
+</ul>
+<p>证 1：<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶实对称矩阵，故必有正交矩阵 <span class="math inline">\(\boldsymbol{Q}_1,\boldsymbol{Q}_2\)</span>，使得</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; {\boldsymbol{Q}_1}^{-1}\boldsymbol{AQ}_1 = {\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda}_1 \\
+&amp; {\boldsymbol{Q}_2}^{-1}\boldsymbol{BQ}_2 = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2 = \boldsymbol{\Lambda}_2
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则必存在 <span class="math inline">\(\boldsymbol{\Lambda} = \boldsymbol{\Lambda}_1 = \boldsymbol{\Lambda}_2\)</span>，使得</p>
+<p><span class="math display">\[
+{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda} = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2
+\]</span></p>
+<p>等式两边左乘 <span class="math inline">\(\boldsymbol{Q}_2\)</span> 右乘 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}}\)</span>，因为 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}} = {\boldsymbol{Q}_2}^{-1}\)</span>，故</p>
+<p><span class="math display">\[
+\boldsymbol{Q}_2{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1{\boldsymbol{Q}_2}^{\text{T}} = \boldsymbol{B}
+\]</span></p>
+<p>令 <span class="math inline">\(\boldsymbol{C} = \boldsymbol{Q}_1{\boldsymbol{Q}_2}^{\text{T}}\)</span>，则</p>
+<p><span class="math display">\[
+\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}
+\]</span></p>
+<p>因为 <strong><em>C</em></strong> 是可逆矩阵，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>证 2：<span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>，因为 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，故通过<a href="#正交变换法">正交变换法</a>得到的规范形的正、负惯性指数相同，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<blockquote>
+<p>注：反之，<strong>实对称矩阵合同无法推出相似</strong>。</p>
+</blockquote>
+<h3 id="二次型及其标准形和规范形">二次型及其标准形和规范形</h3>
+<ol type="1">
+<li>实二次型</li>
+</ol>
+<p><em>n</em> 元变量 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 的二次多项式</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n) =  &amp;a_{11}{x_1}^2 + a_{12} x_1x_2 +  \cdots + a_{1n}x_1x_n + \\
+&amp; a_{21}x_2x_1 + a_{22}{x_2}^2 +  \cdots + a_{2n}x_2x_n +\\
+&amp; \cdots \cdots+\\
+&amp;a_{n1}x_nx_1 + a_{n2} x_nx_2 +  \cdots + a_{nn}{x_n}^2 \\
+\end{aligned}
+\]</span></p>
+<p>称为 『<strong><em>n</em> 元二次型</strong>』，若 <span class="math inline">\(a_{ij} \in \mathbb{R}\:(i,j=1,2,\ldots,n)\)</span>，则称为『<strong>实二次型</strong>』。</p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}, \; \boldsymbol{A} = \begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\ a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn} \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n)
+&amp; = [x_1,x_2,\ldots,x_n]\begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\  a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn}  \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \\
+&amp; ={\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax}
+\end{aligned}
+\]</span></p>
+<p>称 <strong><em>A</em></strong> 为<strong>实二次型 <span class="math inline">\(f\)</span> 的矩阵</strong>，因为 <span class="math inline">\(a_{ij} = a_{ji}\)</span>，故 <strong><em>A</em></strong> 是实对称矩阵。</p>
+<ol start="2" type="1">
+<li>线性变换</li>
+</ol>
+<p>对于二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span>，若令</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp; x_1 = c_{11}y_1 + c_{12}y_2 + \cdots + c_{1n}y_n \\
+&amp; x_2 = c_{21}y_1 + c_{22}y_2 + \cdots + c_{2n}y_n \\
+&amp; \cdots \cdots \\
+&amp; x_1 = c_{n1}y_1 + c_{n2}y_2 + \cdots + c_{nn}y_n
+\end{aligned}
+\right.
+\]</span></p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2\\ \vdots \\ x_n \end{bmatrix},\; \boldsymbol{C} = \begin{bmatrix} c_{11} &amp;c_{12} &amp;\cdots &amp;c_{1n} \\ c_{21} &amp;c_{22} &amp;\cdots &amp;c_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ c_{n1} &amp;c_{n2} &amp;\cdots &amp;c_{nn} \end{bmatrix},\; \boldsymbol{y}= \begin{bmatrix} y_1 \\ y_2\\ \vdots \\ y_n \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\boldsymbol{x} = \boldsymbol{Cy}
+\]</span></p>
+<p>称上式为从 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 到 <span class="math inline">\(y_1,y_2,\ldots,y_n\)</span> 的『<strong>线性变换</strong>』，若 <strong><em>C</em></strong> 是可逆矩阵，则称为『<strong>可逆线性变换</strong>』，若 <strong><em>C</em></strong> 为正交矩阵，则称为『<strong>正交变换</strong>』。</p>
+<p>紧跟着继续探讨，可得</p>
+<p><span class="math display">\[
+{\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax} = {(\boldsymbol{Cy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Cy}) = {\boldsymbol{y}}^{\text{T}}\left({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC}\right) \boldsymbol{y}
+\]</span></p>
+<p>仅当 <span class="math inline">\({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC} = \boldsymbol{B}\)</span> 即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span> 时，二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span> 可转化为 <span class="math inline">\(g(y_1,y_2,\ldots,y_n) = \boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span>。</p>
+<p>即 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 可转化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span> 的<strong>充分必要条件</strong>为 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<ol start="3" type="1">
+<li>二次型的标准形和规范形</li>
+</ol>
+<p>二次型的『<strong>标准形</strong>』：二次型中<strong>只含平方项</strong>，即形如</p>
+<p><span class="math display">\[
+d_1{x_1}^2 + d_2{x_2}^2 + \cdots + d_n{x_n}^2
+\]</span></p>
+<p>二次型的『<strong>规范形</strong>』：标准形中的系数 <span class="math inline">\(d_i\;(i = 1,2,\ldots,n)\)</span> 仅为 1、-1、0 之一，即形如</p>
+<p><span class="math display">\[
+{x_1}^2 + \cdots + {x_p}^2 - {x_{p+1}}^2 - \cdots - {x_{p+q}}^2
+\]</span></p>
+<p>其中 <em>p</em>、<em>q</em> 为<a href="#惯性定理">正、负惯性指数</a>。</p>
+<h3 id="惯性定理">惯性定理</h3>
+<p>无论二次型通过何种可逆线性变换化为规范形或标准形，其正项个数 <em>p</em>、负项个数 <em>q</em> 都是不变的，<em>p</em> 称为『<strong>正惯性指数</strong>』，<em>q</em> 称为『<strong>负惯性指数</strong>』。</p>
+<p><strong><em>A</em></strong> 是实对称矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计），故 <span class="math inline">\(r(\boldsymbol{A}) = p+q\)</span>。</p>
+<h3 id="正定二次型">正定二次型</h3>
+<p><em>n</em> 元二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n) = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span>，若对于任意 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\x_2 \\ \vdots \\ x_n \end{bmatrix} \neq \boldsymbol{0}\)</span>，均有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>，则称 <span class="math inline">\(f\)</span> 为『<strong>正定二次型</strong>』，称 <strong><em>A</em></strong> 为『<strong>正定矩阵</strong>』。</p>
+<blockquote>
+<p>注：正定矩阵的前提是实对称矩阵。</p>
+</blockquote>
+<p><strong>二次型正定的充要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 对于 <span class="math inline">\(\forall \boldsymbol{x} \neq \boldsymbol{0}\)</span> 有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow f\)</span> 的正惯性指数 <span class="math inline">\(p = n\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的特征值都大于零。</li>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>D</em></strong>，使得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{D}^{\text{T}}\boldsymbol{D}\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A} \simeq \boldsymbol{E}\)</span></li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的所有『顺序主子式』大于零。</li>
+</ul>
+<p><strong>二次型正定的必要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Rightarrow a_{ii} &gt; 0\;(i =1,2,\ldots,n)\)</span></li>
+<li><span class="math inline">\(\Rightarrow\)</span> <strong><em>A</em></strong> 必可逆，且 <span class="math inline">\(\text{det}(\boldsymbol{A}) &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Rightarrow \boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,\boldsymbol{A}^k\;(k \in \mathbb{N}_+)\)</span> 均正定。</li>
+</ul>
+<p><strong>重要结论：</strong></p>
+<ul>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{A} + \boldsymbol{B}\)</span> 正定，<span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{bmatrix}\)</span> 正定。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{AB}\)</span> 正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{AB} = \boldsymbol{BA}\)</span>。</li>
+</ul>
+<blockquote>
+<p>注：此处注意与正交矩阵区分。</p>
+</blockquote>
+<ul>
+<li><strong><em>A</em></strong> 既正交又正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
+</ul>
+<h2 id="化二次型为标准形或规范形">化二次型为标准形或规范形</h2>
+<h3 id="正交变换法">正交变换法</h3>
+<p>将二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为标准形，即将 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}\)</span>，其充分必要条件是 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。因为实对称矩阵必可以使用正交矩阵相似对角化，这是合同对角化的一种特殊情形，其本质是<strong>通过相似理论求出正交矩阵 <em>Q</em>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</strong></p>
+<p>对于 <em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span></p>
+<ol type="1">
+<li>求 <strong><em>A</em></strong> 的特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span>。</li>
+<li>根据特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span> 求出 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span>。</li>
+<li>对相同特征值对应的特征向量进行正交化、单位化，得到 <span class="math inline">\(\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n\)</span>。</li>
+<li>设 <span class="math inline">\(\boldsymbol{Q} = [\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n]\)</span>，则 <strong><em>Q</em></strong> 为正交矩阵，且 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</li>
+</ol>
+<p>则</p>
+<p><span class="math display">\[
+f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax} \xlongequal{\boldsymbol{x} = \boldsymbol{Qy}} {(\boldsymbol{Qy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Qy}) = \boldsymbol{y}^{\text{T}}\boldsymbol{Q}^{\text{T}}\boldsymbol{AQy} =  \boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}
+\]</span></p>
+<blockquote>
+<p>注：因为正交变换法本质上是相似对角化，故得到的 <span class="math inline">\(\Lambda\)</span> 主对角线是 <strong><em>A</em></strong> 的特征值。所以<strong>正交变换法只能化为标准形，不能保证化为规范形</strong>。</p>
+</blockquote>
+<h3 id="配方法">配方法</h3>
+<p>即使不通过正交矩阵，实对称矩阵也必可以合同对角化，那就是使用配方法：</p>
+<ul>
+<li>若二次型含有平方项，则将某个变量的平方项与其有关的项合并在一起，配成一个完全平方项，直至配完所有项。</li>
+<li>若二次型不含平方项，则通过平方差公式创造平方项，然后再按照上一个步骤配方。</li>
+</ul>
+<blockquote>
+<p>注：配方法必可以将二次型化为规范形。</p>
+</blockquote>
+<h2 id="结句">结句</h2>
+<p>行列式、矩阵的幂、可逆矩阵、伴随矩阵、特征值和特征向量、相似理论、矩阵的合同、实对称矩阵、正交矩阵、正定矩阵所探讨的对象都是『方阵』。</p>
+<p>矩阵的初等变换、矩阵的秩、向量组、线性方程组所探讨的对象未必是方阵。</p>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一元函数微分学</title>
     <url>/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
     <content><![CDATA[<p>高等数学-一元函数微分学的概念和计算。</p>
@@ -1414,8 +1662,13 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <li><a href="#线性相关和线性无关">线性相关和线性无关</a></li>
 <li><a href="#向量组的秩">向量组的秩</a></li>
 <li><a href="#向量空间和基">向量空间和基</a></li>
+</ul></li>
 <li><a href="#以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</a></li>
-<li><a href="#线性方程组解的结构">线性方程组解的结构</a></li>
+<li><a href="#线性方程组解的结构">线性方程组解的结构</a>
+<ul>
+<li><a href="#矩阵的零空间">矩阵的零空间</a></li>
+<li><a href="#矩阵的列空间">矩阵的列空间</a></li>
+<li><a href="#同解和公共解">同解和公共解</a></li>
 </ul></li>
 </ul>
 <!-- /code_chunk_output -->
@@ -1423,12 +1676,13 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <h2 id="概念">概念</h2>
 <h3 id="线性相关和线性无关">线性相关和线性无关</h3>
 <ol type="1">
-<li>向量组</li>
+<li>向量</li>
 </ol>
 <p>向量（vector）这一概念被提出用以<strong>表示一组有序的数据（即数组）</strong>。<em>n</em> 个数构成的一个有序数组被称为一个 <em>n</em> 维『<strong>向量</strong>』。设 <span class="math inline">\(\boldsymbol{\alpha}=[a_1,a_2,\ldots,a_n]^{\text{T}}\)</span>，则 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 是一个 <em>n</em> 维『<strong>列向量</strong>』，<span class="math inline">\(\boldsymbol{\alpha}^{\text{T}} = [a_1,a_2,\ldots,a_n]\)</span> 是一个 <em>n</em> 维『<strong>行向量</strong>』。</p>
-<blockquote>
-<p>一般情况下，向量默认为列向量，使用列向量的转置表示行向量。</p>
-</blockquote>
+<ul>
+<li>一般情况下，向量默认为列向量，使用列向量的转置来表示行向量。</li>
+<li><em>n</em> 维列向量可看作 <em>n</em> 行 1 列的矩阵，<em>n</em> 维行向量可看作 1 行 <em>n</em> 列的矩阵。</li>
+</ul>
 <ol start="2" type="1">
 <li>线性组合 &amp; 线性表示</li>
 </ol>
@@ -1437,7 +1691,7 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 k_1\boldsymbol{\boldsymbol{\alpha}}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n
 \]</span></p>
 <p>称为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的『<strong>线性组合</strong>』。若向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能表示为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的线性组合，则称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能被向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 『<strong>线性表示</strong>』。</p>
-<p>线性组合可以用矩阵乘列向量的方式表示：</p>
+<p>线性组合可以用<a href="#以向量的角度定义矩阵和矩阵乘法">矩阵乘列向量的方式</a>表示：</p>
 <p><span class="math display">\[
 k_1 \boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n = [\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n] \left[ \begin{matrix}k_1 \\k_2\\ \vdots \\k_n\end{matrix}\right]
 \]</span></p>
@@ -1557,6 +1811,9 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 \boldsymbol{e}_i = \frac{\boldsymbol{\beta}_i}{\|\boldsymbol{\beta}_i\|}\;(i = 1,2,\ldots,n)
 \]</span></p>
 <p>可得一组与 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 等价的规范正交基 <span class="math inline">\(\boldsymbol{e}_1,\boldsymbol{e}_2,\ldots,\boldsymbol{e}_n\)</span>。</p>
+<blockquote>
+<p>注：施密特正交化的对象是<strong>同一向量空间</strong>的基向量，经过施密特正交化后仍是该向量空间的基。不同特征值对应的特征向量属于不同『特征子空间』，不能使用施密特正交化。</p>
+</blockquote>
 <ol start="6" type="1">
 <li>基变换和坐标变换</li>
 </ol>
@@ -1571,46 +1828,92 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{C}
 \]</span></p>
 <p>则 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 是规范正交基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是正交矩阵。</p>
-<h3 id="以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</h3>
+<h2 id="以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</h2>
 <p><strong>一个 <em>m</em> 行 <em>n</em> 列的矩阵就是 <em>n</em> 个 <em>m</em> 维列向量</strong>，当然也可认为是 <em>m</em> 个 <em>n</em> 维行向量：</p>
 <p><span class="math display">\[
-\boldsymbol{A}_{m \times n} = [\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n] = \left[
+\boldsymbol{A}_{m \times n} = [\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n] = 
+\left[
 \begin{matrix}
-{\boldsymbol{\beta}_1}^{\text{T}}\\
-{\boldsymbol{\beta}_2}^{\text{T}}\\
+{\boldsymbol{w}_1}^{\text{T}}\\
+{\boldsymbol{w}_2}^{\text{T}}\\
 \vdots \\
-{\boldsymbol{\beta_m}}^{\text{T}}
+{\boldsymbol{w}_m}^{\text{T}}
 \end{matrix}
-\right] \; (\boldsymbol{\alpha}_{1,2,\ldots,n} \in \mathbb{R}^m,\; \boldsymbol{\beta}_{1,2,\ldots,m} \in \mathbb{R}^n)
+\right] 
+\; (\boldsymbol{v}_{1,2,\ldots,n} \in \mathbb{R}^m,\; \boldsymbol{w}_{1,2,\ldots,m} \in \mathbb{R}^n)
 \]</span></p>
-<p>矩阵的主元列是线性无关的，且自由列可由主元列线性表示，即矩阵的主元列是矩阵的列向量组的极大线性无关组。</p>
+<p>矩阵的主元列是线性无关的，且自由列可由主元列线性表示，故矩阵的主元列是矩阵的列向量组的极大线性无关组。</p>
 <p>故引出矩阵的秩的第二种定义：<strong>矩阵的秩 = 矩阵的列向量组的秩 = 矩阵的行向量组的秩 = 矩阵的列（或行）向量组张成的向量空间的维数。</strong></p>
-<ul>
-<li>矩阵乘向量：</li>
-</ul>
+<p><strong>矩阵乘向量：</strong></p>
 <ol type="1">
-<li>表示 <strong><em>A</em></strong> 的列向量组的线性组合：</li>
+<li>矩阵乘列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的列向量组的线性组合：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A} \boldsymbol{x} = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\left[ \begin{matrix}x_1 \\x_2\\ \vdots \\x_n\end{matrix}\right] = x_1\boldsymbol{\alpha}_1 + x_2\boldsymbol{\alpha}_2+\cdots+x_n\boldsymbol{\alpha}_n
 \]</span></p>
 <ol start="2" type="1">
-<li>表示 <strong><em>A</em></strong> 的行向量组与列向量 <strong><em>x</em></strong> 的内积：</li>
+<li>矩阵称列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的行向量组与列向量 <strong><em>x</em></strong> 的内积：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A} \boldsymbol{x} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\{\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] \boldsymbol{x}= \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \cdot \boldsymbol{x} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \cdot \boldsymbol{x}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \cdot \boldsymbol{x}\end{matrix}\right]
 \]</span></p>
-<ul>
-<li>矩阵乘矩阵：</li>
-</ul>
+<ol start="3" type="1">
+<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的行向量组的线性组合：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{x}^{\text{T}}\boldsymbol{B} = [x_1,x_2,\ldots,x_n]\left[
+\begin{matrix}
+{\boldsymbol{\beta}_1}^{\text{T}}\\
+{\boldsymbol{\beta}_2}^{\text{T}}\\
+\vdots \\
+{\boldsymbol{\beta_n}}^{\text{T}}
+\end{matrix}
+\right]
+= x_1 {\boldsymbol{\beta}_1}^{\text{T}} + x_2 {\boldsymbol{\beta}_2}^{\text{T}} + \cdots + x_n {\boldsymbol{\beta}_n}^{\text{T}}
+\]</span></p>
+<ol start="4" type="1">
+<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的列向量组与行向量 <strong><em>x</em></strong><sup>T</sup> 的内积：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{x}^{\text{T}}\boldsymbol{B} = \boldsymbol{x}^{\text{T}}
+\left[
+\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s
+\right]
+= \left[
+\boldsymbol{x}^{\text{T}} \cdot \boldsymbol{\beta}_1,\boldsymbol{x}^{\text{T}}\cdot \boldsymbol{\beta}_2,\ldots,\boldsymbol{x}^{\text{T}}\cdot\boldsymbol{\beta}_s
+\right]
+\]</span></p>
+<p><strong>矩阵乘矩阵：</strong></p>
 <ol type="1">
-<li>将 <strong><em>B</em></strong> 看作 <em>s</em> 个列向量，表示 <em>s</em> 个 <strong><em>A</em></strong> 的列向量组的线性组合构成的列向量组：</li>
+<li><strong><em>AB</em></strong> 表示矩阵 <strong><em>A</em></strong> 与 <strong><em>B</em></strong> 的每个列向量相乘，即转化为矩阵乘列向量的形式：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s] = [\boldsymbol{A\beta}_1,\boldsymbol{A\beta}_2,\ldots,\boldsymbol{A\beta}_s]
 \]</span></p>
 <ol start="2" type="1">
-<li>表示 <strong><em>A</em></strong> 的行向量组与 <strong><em>B</em></strong> 的列向量组的内积：</li>
+<li>当然 <strong><em>AB</em></strong> 也可以表示矩阵 <strong><em>B</em></strong> 与 <strong><em>A</em></strong> 的每个行向量相乘，即转化为行向量乘矩阵的形式：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} =
+\left[
+\begin{matrix}
+{\boldsymbol{\alpha}_1}^{\text{T}}\\
+{\boldsymbol{\alpha}_2}^{\text{T}}\\
+\vdots \\
+{\boldsymbol{\alpha}_m}^{\text{T}}
+\end{matrix}
+\right] \boldsymbol{B} = 
+\left[
+\begin{matrix}
+{\boldsymbol{\alpha}_1}^{\text{T}}\boldsymbol{B}\\
+{\boldsymbol{\alpha}_2}^{\text{T}}\boldsymbol{B}\\
+\vdots \\
+{\boldsymbol{\alpha}_m}^{\text{T}}\boldsymbol{B}
+\end{matrix}
+\right]
+\]</span></p>
+<ol start="3" type="1">
+<li><strong><em>AB</em></strong> 表示 <strong><em>A</em></strong> 的行向量组与 <strong><em>B</em></strong> 的列向量组的内积：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\{\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]= 
@@ -1623,16 +1926,14 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 \end{matrix}
 \right]
 \]</span></p>
-<h3 id="线性方程组解的结构">线性方程组解的结构</h3>
+<h2 id="线性方程组解的结构">线性方程组解的结构</h2>
 <p>线性方程组可表示为矩阵与列向量相乘的形式：</p>
 <ul>
 <li>齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span>。</li>
 <li>非齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span>。</li>
 </ul>
-<p><strong><em>A</em></strong> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<strong>0</strong> 为零向量，<strong><em>b</em></strong> 为 <em>m</em> 维列向量。<strong><em>x</em></strong> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <strong><em>v</em></strong> 为方程组的一个解向量。</p>
-<ol type="1">
-<li>矩阵的零空间</li>
-</ol>
+<p><strong><em>A</em></strong> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<strong>0</strong> 为零向量，<strong><em>b</em></strong> 为 <em>m</em> 维列向量。<strong><em>x</em></strong> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <strong><em>v</em></strong> 为方程组的一个『<strong>解向量</strong>』。</p>
+<h3 id="矩阵的零空间">矩阵的零空间</h3>
 <p>假设向量 <span class="math inline">\(\boldsymbol{v}_1,\boldsymbol{v}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的任意两个解向量，<em>k</em> 为任意常数，则必有</p>
 <p><span class="math display">\[
 \boldsymbol{A}(k\boldsymbol{v}_1) = k\boldsymbol{A}\boldsymbol{v}_1 = 0,\;\boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_2) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_2 = \boldsymbol{0}
@@ -1650,9 +1951,7 @@ N(\boldsymbol{A}) = \{\boldsymbol{x} \in \mathbb{R}^n \vert  \boldsymbol{Ax} = \
 <li><p>如果 <span class="math inline">\(m &lt; n\)</span>，即 <strong><em>A</em></strong> 的列向量个数大于列向量的维数，则 <strong><em>A</em></strong> 的列向量组必线性相关，则方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有（无穷）非零解。</p></li>
 <li><p><span class="math inline">\(N(\boldsymbol{A})\)</span> 的一组基称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>基础解系</strong>』，<span class="math inline">\(N(\boldsymbol{A})\)</span> 的维数取决于自由未知量的个数：<span class="math inline">\(\text{dim(}N(\boldsymbol{A})) = n -r(\boldsymbol{A})\)</span>，所以基础解系中有 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的向量。</p></li>
 </ul>
-<ol start="2" type="1">
-<li>矩阵的列空间</li>
-</ol>
+<h3 id="矩阵的列空间">矩阵的列空间</h3>
 <p>由 <strong><em>A</em></strong> 的列向量组张成的向量空间称为矩阵 <strong><em>A</em></strong> 的『<strong>列空间</strong>』，记作</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1685,9 +1984,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 \boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_n) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_n = \boldsymbol{b} + \boldsymbol{0} = \boldsymbol{b}
 \]</span></p>
 <p>即 <span class="math inline">\(\boldsymbol{v}_1 + \boldsymbol{v}_n\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解向量。由此可知，如果确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的一个特解 <span class="math inline">\(\boldsymbol{x}_p\)</span> 并确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解空间 <span class="math inline">\(N(\boldsymbol{A})\)</span>，即可表示出方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的通解 <span class="math inline">\(\boldsymbol{x}_p + N(\boldsymbol{A})\)</span>。</p>
-<ol start="3" type="1">
-<li>同解 &amp; 公共解</li>
-</ol>
+<h3 id="同解和公共解">同解和公共解</h3>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -1723,12 +2020,17 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 <li><a href="#链式求导规则">链式求导规则</a></li>
 <li><a href="#全微分形式不变性">全微分形式不变性</a></li>
 </ul></li>
-<li><a href="#多元隐函数求导">多元隐函数求导</a></li>
+<li><a href="#多元隐函数求导">多元隐函数求导</a>
+<ul>
+<li><a href="#一个二元方程的隐函数">一个二元方程的隐函数</a></li>
+<li><a href="#一个多元方程的隐函数">一个多元方程的隐函数</a></li>
+<li><a href="#多元方程组的隐函数">多元方程组的隐函数</a></li>
+</ul></li>
 <li><a href="#多元函数的极值和最值">多元函数的极值和最值</a>
 <ul>
-<li><a href="#多元函数的泰勒公式">多元函数的泰勒公式</a></li>
+<li><a href="#二元函数的泰勒公式">二元函数的泰勒公式</a></li>
 <li><a href="#无条件极值">无条件极值</a></li>
-<li><a href="#有条件最值">有条件最值</a></li>
+<li><a href="#条件极值">条件极值</a></li>
 </ul></li>
 <li><a href="#偏微分方程">偏微分方程</a></li>
 </ul></li>
@@ -1794,6 +2096,9 @@ f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} 
 \end{aligned}
 \]</span></p>
 <p>其中 <span class="math inline">\(f&#39;&#39;_{xy}(x,y),f&#39;&#39;_{yx}(x,y)\)</span> 称为『<strong>二阶混合偏导数</strong>』。</p>
+<blockquote>
+<p>注：求偏导数时把求导变量之外的变量视为<strong>常数</strong>。</p>
+</blockquote>
 <h3 id="可微">可微</h3>
 <p>函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处的『<strong>全增量</strong>』 <span class="math inline">\(\Delta z = f(x + \Delta x, y + \Delta y) - f(x,y)\)</span> 可表示为</p>
 <p><span class="math display">\[
@@ -1805,7 +2110,10 @@ f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} 
 \]</span></p>
 <p>定理：若函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处可微，则函数在该点的偏导数必存在，则函数在该点的全微分为：</p>
 <p><span class="math display">\[
-\text{d} z = f&#39;_x(x,y)\Delta x + f&#39;_y(x,y)\Delta y
+\begin{aligned}
+\text{d} z&amp; = f&#39;_x(x,y)\Delta x + f&#39;_y(x,y)\Delta y \\
+&amp; = \frac{\partial z}{\partial x}\text{d} x + \frac{\partial z}{\partial y}\text{d} y
+\end{aligned}
 \]</span></p>
 <p><strong>判断函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处可微：</strong></p>
 <ul>
@@ -1830,7 +2138,7 @@ f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} 
 <ul>
 <li>若求出的两个极限与定义法求出的偏导数相等，则 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处的偏导数连续。</li>
 </ul>
-<p><strong>结论：两个偏导数连续，则二阶混合偏导数相等。</strong></p>
+<p><strong>重要结论：两个偏导数连续，则二阶混合偏导数相等。</strong></p>
 <h2 id="计算">计算</h2>
 <h3 id="多元复合函数求导">多元复合函数求导</h3>
 <h4 id="全导数">全导数</h4>
@@ -1848,7 +2156,7 @@ f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} 
 \text{e.g.} \;
 z = f(u,v,w),\; u =u(x,y),\; v = v(x),\; w = w(y) \\
 \]</span></p>
-<p><img src="image-20220928221708716.png" /></p>
+<p><img src="16644273534436.jpg" /></p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\text{d} v}{\text{d} x}\\
@@ -1866,29 +2174,132 @@ z = f(u,v,w),\; u =u(x,y),\; v = v(x),\; w = w(y) \\
 \text{d} z = \frac{\partial z}{\partial x}\text{d}x + \frac{\partial z}{\partial y}\text{d}y
 \]</span></p>
 <h3 id="多元隐函数求导">多元隐函数求导</h3>
-<ol type="1">
-<li>二元方程的隐函数</li>
-</ol>
+<h4 id="一个二元方程的隐函数">一个二元方程的隐函数</h4>
 <p>设函数 <span class="math inline">\(F(x,y)\)</span> 在点 <span class="math inline">\(P(x_0,y_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(x_0,y_0) = 0,\;F&#39;_y(x_0,y_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y) = 0\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(y = f(x)\)</span>，且有</p>
 <p><span class="math display">\[
 \frac{\text{d}y}{\text{d}x} = - \frac{F&#39;_x}{F&#39;_y}
 \]</span></p>
-<ol start="2" type="1">
-<li>多元方程的隐函数</li>
-</ol>
+<ul>
+<li><span class="math inline">\(x,y\)</span> 是当作<strong>独立的中间变量</strong>，不必在意 <span class="math inline">\(x,y\)</span> 之间的关系。之后的两个情景同理。</li>
+<li>推导：<span class="math inline">\(F(x,y(x))=0\)</span> 的复合结构如图：</li>
+</ul>
+<p><img src="16644267691822.jpg" /></p>
+<p>方程两侧对 <em>x</em> 求导：</p>
+<p><span class="math display">\[
+F&#39;_x \frac{\text{d}x}{\text{d}x} + F&#39;_y \frac{\text{d}y}{\text{d}x} = 0
+\]</span></p>
+<p>故当 <span class="math inline">\(F&#39;_y \neq 0\)</span> 时，<span class="math inline">\(\frac{\text{d}y}{\text{d}x} = - \frac{F&#39;_x}{F&#39;_y}\)</span>。</p>
+<h4 id="一个多元方程的隐函数">一个多元方程的隐函数</h4>
 <p>设函数 <span class="math inline">\(F(x,y,z)\)</span> 在点 <span class="math inline">\(P(x_0,y_0,z_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(P_0) = 0,\;F&#39;_z(P_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y,z) = 0\)</span> 在点 <span class="math inline">\(P_0\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(z = z(x,y)\)</span>，且有</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{\partial z}{\partial x} = -\frac{F&#39;_x}{F&#39;_z},\;\frac{\partial z}{\partial y} = -\frac{F&#39;_y}{F&#39;_z}
 \end{aligned}
 \]</span></p>
-<ol start="3" type="1">
-<li>多元方程组的隐函数</li>
-</ol>
+<h4 id="多元方程组的隐函数">多元方程组的隐函数</h4>
+<p>设 <span class="math inline">\(\left\{ \begin{aligned}&amp;F(x,y,u,v) =0 \\ &amp;G(x,y,u,v) = 0 \end{aligned}\right.\)</span>，若记</p>
+<p><span class="math display">\[
+\left|\begin{matrix} F&#39;_u &amp;F&#39;_v \\ G&#39;_u &amp;G&#39;_v \end{matrix}\right | = \frac{\partial(F,G)}{\partial(u,v)}
+\]</span></p>
+<blockquote>
+<p>此处为二阶雅可比行列式。</p>
+</blockquote>
+<p>则当满足 <span class="math inline">\(\frac{\partial(F,G)}{\partial(u,v)} \neq 0\)</span> 时，可确定 <span class="math inline">\(\left\{ \begin{aligned}&amp;u=u(x,y)\\ &amp;v = v(x,y)\end{aligned}\right.\)</span>。</p>
+<p><img src="16644198249219.jpg" /></p>
+<p>且有</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\frac{\partial u}{\partial x} = -\frac{\frac{\partial(F,G)}{\partial (x,v)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \quad \frac{\partial v}{\partial x} = -\frac{\frac{\partial(F,G)}{\partial (u,x)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \\
+&amp;\frac{\partial u}{\partial y} = -\frac{\frac{\partial(F,G)}{\partial (y,v)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \quad \frac{\partial v}{\partial y} = -\frac{\frac{\partial(F,G)}{\partial (u,y)}}{\frac{\partial (F,G)}{\partial (u,v)}}
+\end{aligned}
+\]</span></p>
+<p><strong>简单形式</strong>：设 <span class="math inline">\(\left\{ \begin{aligned}&amp;F(x,y,z) =0 \\ &amp;G(x,y,z) = 0 \end{aligned}\right.\)</span>，当满足 <span class="math inline">\(\frac{\partial(F,G)}{\partial(y,z)} \neq 0\)</span> 时，可确定 <span class="math inline">\(\left\{ \begin{aligned}&amp; y =y(x) \\ &amp;z =z(x) \end{aligned}\right.\)</span>，其复合结构图为</p>
+<p><img src="16644206705903.jpg" /></p>
+<p>且有</p>
+<p><span class="math display">\[
+\frac{\text{d}y}{\text{d}x} = \frac{\frac{\partial(F,G)}{\partial(x,z)}}{\frac{\partial(F,G)}{\partial(y,z)}}, \quad \frac{\text{d}z}{\text{d}x} = \frac{\frac{\partial(F,G)}{\partial(y,x)}}{\frac{\partial(F,G)}{\partial(y,z)}}
+\]</span></p>
 <h3 id="多元函数的极值和最值">多元函数的极值和最值</h3>
-<h4 id="多元函数的泰勒公式">多元函数的泰勒公式</h4>
+<h4 id="二元函数的泰勒公式">二元函数的泰勒公式</h4>
+<p>设 <span class="math inline">\(f(x,y)\)</span> 二阶偏导数连续，记 <span class="math inline">\(P_0 = (x_0,y_0)\)</span>，<span class="math inline">\(\Delta x = x -x_0\)</span>，<span class="math inline">\(\Delta y = y -y_0\)</span>，则</p>
+<p><span class="math display">\[
+f(x, y)=f\left(x_{0}, y_{0}\right)+\left[\begin{array}{ll}
+f_{x}^{\prime} &amp; f_{y}^{\prime}
+\end{array}\right]_{P_0}\left[\begin{array}{c}
+\Delta x \\
+\Delta y
+\end{array}\right]+
+\frac{1}{2 !}
+\left[\begin{array}{ll}
+\Delta x &amp; \Delta y
+\end{array}\right]\left[\begin{array}{cc}
+f_{x x}^{\prime \prime} &amp; f_{x y}^{\prime \prime} \\
+f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
+\end{array}\right]_{P_0}\left[\begin{array}{l}
+\Delta x \\
+\Delta y
+\end{array}\right]+R_{2}
+\]</span></p>
 <h4 id="无条件极值">无条件极值</h4>
-<h4 id="有条件最值">有条件最值</h4>
+<p><strong><span class="math inline">\(f(x,y)\)</span> 取极值的必要条件：</strong></p>
+<p>极值点必为驻点，设 <span class="math inline">\(P_0 = (x_0,y_0)\)</span> 为驻点，则</p>
+<p><span class="math display">\[
+\left\{\begin{aligned}&amp;f&#39;_x(x_0,y_0) = 0 \\ &amp;f&#39;_y(x_0,y_0) = 0 \end{aligned}\right. \Rightarrow \left[\begin{matrix}f&#39;_x &amp;f&#39;_y\end{matrix}\right]_{P_0}= \boldsymbol{0}
+\]</span></p>
+<p><strong><span class="math inline">\(f(x,y)\)</span> 取极值的充分条件：</strong></p>
+<p><span class="math display">\[
+\left[\begin{matrix}f&#39;_x &amp;f&#39;_y\end{matrix}\right]_{P_0}= \boldsymbol{0} \xrightarrow{Taylor} f(x,y) - f(x_0,y_0) = \frac{1}{2 !}
+\left[\begin{array}{ll}
+\Delta x &amp; \Delta y
+\end{array}\right]\left[\begin{array}{cc}
+f_{x x}^{\prime \prime} &amp; f_{x y}^{\prime \prime} \\
+f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
+\end{array}\right]_{P_0}\left[\begin{array}{l}
+\Delta x \\
+\Delta y
+\end{array}\right]+R_{2}
+\]</span></p>
+<p>记 <span class="math inline">\(\left\{ \begin{aligned} &amp;f&#39;&#39;_{xx}(x_0,y_0) = A \\ &amp; f&#39;&#39;_{xy}(x_0,y_0) = f&#39;&#39;_{yx}(x_0,y_0) = B \\ &amp;f&#39;&#39;_{yy}(x_0,y_0) = C \end{aligned}\right.\)</span>，则</p>
+<ul>
+<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 且 <span class="math inline">\(A &gt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 为极小值。</li>
+<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 且 <span class="math inline">\(A &lt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 为极大值。</li>
+<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 非极值。</li>
+<li>当 <span class="math inline">\(\Delta = AC - B^2= 0\)</span> 时，无法判别是否为极值。</li>
+</ul>
+<blockquote>
+<p>注：该充分条件<strong>不适用于三元及以上的函数</strong>。</p>
+</blockquote>
+<h4 id="条件极值">条件极值</h4>
+<p><strong>二元情况：</strong></p>
+<p>函数 <span class="math inline">\(u =f(x,y)\)</span> 在条件 <span class="math inline">\(\varphi(x,y) = 0\)</span> 下取得最值，则</p>
+<ul>
+<li>构造辅助函数 <span class="math inline">\(F(x,y,\lambda) = f(x,y) + \lambda\varphi(x,y)\)</span></li>
+<li>令</li>
+</ul>
+<p>$$ { \begin{aligned} &amp; F'_x = f'_x + '_x = 0 \ &amp; F'_y = f'_y + '<em>y = 0 \ &amp; F'</em>{} = (x,y,z) = 0</p>
+<p>\end{aligned} . $$</p>
+<ul>
+<li>解上述方程组得到备选点 <span class="math inline">\(P_i\;(i = 1,2,\ldots)\)</span>，在备选点中计算最大值和最小值。</li>
+</ul>
+<p><strong>三元情况：</strong></p>
+<p>函数 <span class="math inline">\(u =f(x,y,z)\)</span> 在条件 <span class="math inline">\(\left\{ \begin{aligned}&amp;\varphi(x,y,z) = 0 \\ &amp;\psi(x,y,z) = 0 \end{aligned}\right.\)</span> 下取得最值，则</p>
+<ul>
+<li>构造辅助函数 <span class="math inline">\(F(x,y,z,\lambda,\mu) = f(x,y,z) + \lambda\varphi(x,y,z) + \mu\psi(x,y,z)\)</span></li>
+<li>令</li>
+</ul>
+<p><span class="math display">\[
+\left\{ \begin{aligned}
+&amp; F&#39;_x = f&#39;_x + \lambda \varphi&#39;_x + \mu\psi&#39;_x= 0 \\
+&amp; F&#39;_y = f&#39;_y + \lambda \varphi&#39;_y + \mu\psi&#39;_y = 0 \\
+&amp; F&#39;_z = f&#39;_z + \lambda \varphi&#39;_z + \mu\psi&#39;_z = 0 \\
+&amp; F&#39;_{\lambda} = \varphi(x,y,z) = 0 \\
+&amp; F&#39;_{\mu} = \psi(x,y,z) = 0 
+\end{aligned}
+\right.
+\]</span></p>
+<ul>
+<li>解上述方程组得到备选点 <span class="math inline">\(P_i\;(i = 1,2,\ldots)\)</span>，在备选点中计算 <span class="math inline">\(f(P_i)\)</span> 最大值和最小值。</li>
+</ul>
 <h3 id="偏微分方程">偏微分方程</h3>
 ]]></content>
       <categories>
@@ -1962,7 +2373,7 @@ F\left[x,y,y&#39;,\ldots,y^{(n)}\right] = 0
 <li>形如 <span class="math inline">\(y&#39; = f(ax+by+c)\)</span></li>
 </ol>
 <ul>
-<li>令 <span class="math inline">\(u = ax+by+c \Rightarrow u’ = a + by&#39; = a + bf(u)\)</span>。</li>
+<li>设 <span class="math inline">\(u = ax+by+c \Rightarrow u’ = a + by&#39; = a + bf(u)\)</span>。</li>
 <li>分离变量转化为 <span class="math inline">\(\frac{\text{d}u}{a+bf(u)} = \text{d}x \Rightarrow \int \frac{\text{d}u}{a+bf(u)} = \int \text{d}x\)</span>。</li>
 </ul>
 <ol start="3" type="1">
@@ -2004,7 +2415,7 @@ y = \text{e}^{-\int p(x) \text{d}x}\left[\text{e}^{\int p(x) \text{d}x}q(x)\text
 <ul>
 <li>先变形为 <span class="math inline">\(y^{-n}y&#39; + p(x)y^{1-n} = q(x)\)</span>。<br />
 </li>
-<li>令 <span class="math inline">\(z = y^{1-n}\)</span>，得 <span class="math inline">\(\frac{\text{d}z}{\text{d}x} = (1-n)y^{-n}\frac{\text{d}y}{\text{d}x}\)</span>，则 <span class="math inline">\(\frac{1}{1-n}\frac{\text{d}z}{\text{d}x} + p(x)z = q(x)\)</span>。<br />
+<li>设 <span class="math inline">\(z = y^{1-n}\)</span>，得 <span class="math inline">\(\frac{\text{d}z}{\text{d}x} = (1-n)y^{-n}\frac{\text{d}y}{\text{d}x}\)</span>，则 <span class="math inline">\(\frac{1}{1-n}\frac{\text{d}z}{\text{d}x} + p(x)z = q(x)\)</span>。<br />
 </li>
 <li>化为一阶线性微分方程进行求解。</li>
 </ul>
@@ -2110,170 +2521,6 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
       </categories>
       <tags>
         <tag>Calulus</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构_线性表，栈、队列和数组</title>
-    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
-内容包括：<br />
-1. 线性表的概念和代码实现<br />
-2. 栈、队列的概念和代码实现<br />
-3. 特殊矩阵的压缩</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<ul>
-<li><a href="#线性表">线性表</a>
-<ul>
-<li><a href="#顺序表">顺序表</a>
-<ul>
-<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
-<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
-</ul></li>
-<li><a href="#链表">链表</a>
-<ul>
-<li><a href="#单链表">单链表</a></li>
-<li><a href="#静态链表">静态链表</a></li>
-<li><a href="#双向链表">双向链表</a></li>
-<li><a href="#循环链表">循环链表</a></li>
-</ul></li>
-<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
-</ul></li>
-<li><a href="#栈队列和数组">栈、队列和数组</a>
-<ul>
-<li><a href="#栈">栈</a>
-<ul>
-<li><a href="#顺序栈">顺序栈</a></li>
-<li><a href="#链式栈">链式栈</a></li>
-</ul></li>
-<li><a href="#队列">队列</a>
-<ul>
-<li><a href="#顺序队列循环队列">顺序队列（循环队列）</a></li>
-<li><a href="#链式队列">链式队列</a></li>
-<li><a href="#双端队列">双端队列</a></li>
-</ul></li>
-<li><a href="#栈和队列的应用">栈和队列的应用</a>
-<ul>
-<li><a href="#栈_括号匹配">栈_括号匹配</a></li>
-<li><a href="#栈_表达式">栈_表达式</a></li>
-<li><a href="#栈_递归函数调用">栈_递归函数调用</a></li>
-<li><a href="#队列_层次遍历">队列_层次遍历</a></li>
-<li><a href="#队列_计算机系统">队列_计算机系统</a></li>
-</ul></li>
-<li><a href="#数组_矩阵的压缩存储">数组_矩阵的压缩存储</a>
-<ul>
-<li><a href="#对称矩阵">对称矩阵</a></li>
-<li><a href="#三角矩阵">三角矩阵</a></li>
-<li><a href="#三对角矩阵">三对角矩阵</a></li>
-<li><a href="#稀疏矩阵">稀疏矩阵</a></li>
-</ul></li>
-</ul></li>
-</ul>
-<hr>
-<p>线性表、栈和队列的完整代码均已上传到我的 GitHub：</p>
-<ul>
-<li><a href="https://github.com/Cohanbb/mycode/tree/main/c-cpp/DS">C/C++ 实现</a> <!--* [Go 实现](https://github.com/Cohanbb/mycode/tree/main/go/DS)--></li>
-</ul>
-<h1 id="线性表">线性表</h1>
-<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。</p>
-<p>线性表的抽象数据类型：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ADT List</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(&amp;L)</span></span>; <span class="comment">// 初始化</span></span><br><span class="line">    <span class="built_in">Empty</span>(L); <span class="comment">// 判断是否是空表</span></span><br><span class="line">    <span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">// 在第 i 个位置插入 e</span></span><br><span class="line">    <span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">// 删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line">    <span class="built_in">LocateElem</span>(L, e); <span class="comment">// 按值查找</span></span><br><span class="line">    <span class="built_in">GetElem</span>(L, i); <span class="comment">// 按位查找</span></span><br><span class="line">    <span class="built_in">Length</span>(L); <span class="comment">// 求表长</span></span><br><span class="line">    <span class="built_in">PrintList</span>(L); <span class="comment">// 打印表</span></span><br><span class="line">    <span class="built_in">DestroyList</span>(&amp;L); <span class="comment">// 销毁表</span></span><br></pre></td></tr></table></figure>
-<h2 id="顺序表">顺序表</h2>
-<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
-<h3 id="顺序表的定义和初始化">顺序表的定义和初始化</h3>
-<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义顺序表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">// N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">// ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">// 顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/* 初始化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span> <span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">// 初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">// 避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/* 实例化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义顺序表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">// 顺序表的初始最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">// 指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 初始化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">// 初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">// 初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">// 避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 实例化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="顺序表的基本操作">顺序表的基本操作</h3>
-<p>插入（在表 L 的第 i 个位置插入 e）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length + <span class="number">1</span>) <span class="comment">// 超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">// 表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">// 从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j - <span class="number">1</span>]; <span class="comment">// 赋值给后面的元素</span></span><br><span class="line">    L.data[i - <span class="number">1</span>] = e; <span class="comment">// 将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">// 实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">// 超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length - <span class="number">1</span>; j++) <span class="comment">// 将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j - <span class="number">1</span>] = L.data[j]; <span class="comment">// 赋值给前面的元素</span></span><br><span class="line">    L.data[L.length - <span class="number">1</span>] = <span class="number">0</span>; <span class="comment">// 将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">// 实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist &amp;L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span>; <span class="comment">// 找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="链表">链表</h2>
-<p>链表是一种非常非常非常重要的数据结构！</p>
-<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
-<h3 id="单链表">单链表</h3>
-<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。</p>
-<p>单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点 的方式更直观但是不方便进行操作。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义结点 */</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">// 自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">// 指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">// 结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 带头结点初始化 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">// 创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>; <span class="comment">// 初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 判断是否为空 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 按位查找 */</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">// 头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">// 结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 按值查找 */</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p-&gt;data != e)</span><br><span class="line">        p-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 插入（后插） */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">// 找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = p-&gt;next; </span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 拓展：前插 */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 先后插</span></span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="comment">// 交换前后数据</span></span><br><span class="line">    temp = p-&gt;data;</span><br><span class="line">    p-&gt;data = s-&gt;data;</span><br><span class="line">    s-&gt;data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 删除 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">// 找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = p-&gt;next-&gt;data;</span><br><span class="line">    p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>单链表的整表创建和销毁</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 头插法 */</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        s-&gt;next = List-&gt;next;</span><br><span class="line">        List-&gt;next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 尾插法 */</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        r-&gt;next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 销毁表 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *p;</span><br><span class="line">    <span class="keyword">while</span> (List) &#123;</span><br><span class="line">        p = List;</span><br><span class="line">        List = List-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="静态链表">静态链表</h3>
-<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义静态链表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">// 下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
-<h3 id="双向链表">双向链表</h3>
-<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义双向链表 */</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 插入（*p 后插入 *s） */</span></span><br><span class="line">&#123;</span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next-&gt; prior = s;</span><br><span class="line">    s-&gt;prior = p;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 删除（删除 *p 后的 *q） */</span></span><br><span class="line">&#123;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    p-&gt;next-&gt;prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="循环链表">循环链表</h3>
-<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r-&gt;next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L-&gt;prior = r</code>。</p>
-<h2 id="顺序表和链表的比较">顺序表和链表的比较</h2>
-<ol type="1">
-<li>顺序表随机存取/读写，链表只能顺序存取/读写。</li>
-<li>顺序表逻辑相邻的元素存储位置也相邻。</li>
-<li>链表分配内存空间灵活高效。</li>
-<li>链表的插入和删除更高效。</li>
-<li>顺序表插入和删除需要移动大量的元素。</li>
-</ol>
-<h1 id="栈队列和数组">栈、队列和数组</h1>
-<p>栈和队列都是特殊的线性表，对数据的插入和删除操作有特殊的规定，使得数据的进出策略有所不同。</p>
-<h2 id="栈">栈</h2>
-<p><strong>栈（Stack）</strong>是只允许在一端进行插入或删除操作的线性表。</p>
-<p>允许插入或删除的一端称为<strong>栈顶（Top）</strong>，另一端称为<strong>栈底（Bottom）</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出（Last In First Out, LIFO）</strong>。</p>
-<blockquote>
-<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
-</blockquote>
-<h3 id="顺序栈">顺序栈</h3>
-<p>使用顺序结构存储栈元素的栈。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">// Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqStack</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> top, maxsize;</span><br><span class="line">&#125; sqstack;</span><br></pre></td></tr></table></figure>
-<p>基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Sequential Stack 初始化顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(sqstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S.maxsize = Initsize;</span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize);</span><br><span class="line">    S.top = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top == <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Extend Size of Stack 扩充栈容量 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendStack</span><span class="params">(sqstack &amp;S, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = S.data; <span class="comment">// p 指向原地址</span></span><br><span class="line">    S.maxsize += n; <span class="comment">// 扩容</span></span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize); <span class="comment">// 开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        S.data[i] = p[i];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">// p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Push Element 元素入栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(sqstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (S.top + <span class="number">1</span> == S.maxsize)</span><br><span class="line">        <span class="built_in">ExtendStack</span>(S, <span class="number">1</span>);</span><br><span class="line">    S.data[++S.top] = e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Pop Element 元素出栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(sqstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = S.data[S.top--];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Sequential Stack 打印顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, S.data[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Sequential Stack 销毁顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(sqstack *S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!S)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(S-&gt;data); <span class="comment">// 释放数组内存</span></span><br><span class="line">    S-&gt;data = <span class="literal">NULL</span>; <span class="comment">// 指针置空</span></span><br><span class="line">    S-&gt;top = <span class="number">-1</span>;</span><br><span class="line">    S-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链式栈">链式栈</h3>
-<p>使用链式结构存储栈元素的栈。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; LNode, *linkstack;</span><br></pre></td></tr></table></figure>
-<p>基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Link Stack 初始化链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    <span class="keyword">if</span> (S == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Fail To Init!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(linkstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *p = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode)); <span class="comment">// 开辟新结点作为栈顶</span></span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = S-&gt;next;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(linkstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next; <span class="comment">// p 指向栈顶</span></span><br><span class="line">    e = p-&gt;data;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Link Stack 打印链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty List!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Link Stack 销毁链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    lnode *p;</span><br><span class="line">    <span class="keyword">while</span> (S) &#123;</span><br><span class="line">        p = S;</span><br><span class="line">        S = S-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="队列">队列</h2>
-<p><strong>队列（Queue）</strong>也是一种操作受限制的先行表，只允许在表的一端进行插入，在表的另一端进行删除。</p>
-<p>向队列插入元素的操作称为入队或进队，删除元素的操作称为出队。允许删除数据的一端称为<strong>队头（Front）</strong>，允许插入元素的一端称为<strong>队尾（Rear）</strong>。其数据的进出策略可以简单概括为<strong>先进先出（First In First Out, FIFO）</strong>。</p>
-<h3 id="顺序队列循环队列">顺序队列（循环队列）</h3>
-<p>使用顺序结构存储队列元素的循环队列。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">// Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqQueue</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> front, rear, maxsize;</span><br><span class="line">&#125; sqqueue;</span><br></pre></td></tr></table></figure>
-<p>基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Sequential Queue 初始化顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(sqqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.maxsize = Initsize;</span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize);</span><br><span class="line">    Q.rear = Q.front = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Q.maxsize; i++)</span><br><span class="line">        Q.data[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.rear == Q.front;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Extend Size of Queue 扩充循环队列的容量 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = Q.data; <span class="comment">// p 指向原地址</span></span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    j = Q.maxsize;</span><br><span class="line">    Q.maxsize += n; <span class="comment">// 扩容</span></span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize); <span class="comment">// 开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; (Q.rear + j - Q.front) % j; i++)</span><br><span class="line">        Q.data[i] = p[(Q.front + i) % j];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">// p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Enter Queue 元素进入队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % Q.maxsize == Q.front)</span><br><span class="line">        <span class="built_in">ExtendQueue</span>(Q, <span class="number">1</span>);</span><br><span class="line">    Q.data[Q.rear] = e;</span><br><span class="line">    Q.rear = (Q.rear + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Exit Queue 元素退出队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = Q.data[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Sequential Queue 打印顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (Q.rear + Q.maxsize - Q.front) % Q.maxsize; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Q.data[(Q.front + i) % Q.maxsize]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Sequential Queue 销毁顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(sqqueue *Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!Q)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(Q-&gt;data); <span class="comment">// 释放数组的内存</span></span><br><span class="line">    Q-&gt;data = <span class="literal">NULL</span>; <span class="comment">// 指针置空</span></span><br><span class="line">    Q-&gt;rear = Q-&gt;front = <span class="number">0</span>;</span><br><span class="line">    Q-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链式队列">链式队列</h3>
-<p>使用链式结构存储队列元素的队列。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; lnode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LinkQueue</span> &#123;</span><br><span class="line">    lnode *front;</span><br><span class="line">    lnode *rear;</span><br><span class="line">&#125; linkqueue;</span><br></pre></td></tr></table></figure>
-<p>基本操作</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Link Queue 初始化链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.front = Q.rear = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.front == Q.rear;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Elements Enter Queue 元素入队 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *s = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear-&gt;next = s;</span><br><span class="line">    Q.rear = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Exit Queue 元素出队 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = Q.front-&gt;next; <span class="comment">// p 指向要删除的结点</span></span><br><span class="line">    e = Q.front-&gt;data;</span><br><span class="line">    Q.front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (p ==  Q.rear) <span class="comment">// 若 p 等于尾结点，则队列置空</span></span><br><span class="line">        Q.rear = Q.front;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Link Queue 打印链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Link Queue 销毁链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="双端队列">双端队列</h3>
-<p>将队列的两端称作前端和后端，两端都可以进行入队和出队操作的队列。</p>
-<ul>
-<li><p>输入受限的双端队列</p></li>
-<li><p>输出受限的双端队列</p></li>
-</ul>
-<h2 id="栈和队列的应用">栈和队列的应用</h2>
-<h3 id="栈_括号匹配">栈_括号匹配</h3>
-<h3 id="栈_表达式">栈_表达式</h3>
-<h3 id="栈_递归函数调用">栈_递归函数调用</h3>
-<h3 id="队列_层次遍历">队列_层次遍历</h3>
-<h3 id="队列_计算机系统">队列_计算机系统</h3>
-<h2 id="数组_矩阵的压缩存储">数组_矩阵的压缩存储</h2>
-<h3 id="对称矩阵">对称矩阵</h3>
-<h3 id="三角矩阵">三角矩阵</h3>
-<h3 id="三对角矩阵">三对角矩阵</h3>
-<h3 id="稀疏矩阵">稀疏矩阵</h3>
-]]></content>
-      <categories>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -2461,7 +2708,7 @@ a^{\log _a N} = N
 <p><span class="math display">\[
 \begin{aligned}
 (1) \; &amp;(a + b)^3 = a^3 + 3a^2b +3b^2a +b^3, \quad (a + b)^3 = a^3 + 3a^2b +3b^2a +b^3, \\
-&amp; \begin{aligned}(a + b)^n = \sum _{k = 0}^n C_n^k a^{n-k}b^k = &amp;a^n + na^{n-1}b + \frac{n(n-1)}{2!}a^{n-2}b^2+ \cdots + \\
+&amp; \begin{aligned}(a + b)^n = \sum _{k = 0}^n \text{C}_n^k a^{n-k}b^k = &amp;a^n + na^{n-1}b + \frac{n(n-1)}{2!}a^{n-2}b^2+ \cdots + \\
 &amp;\frac{n(n-1)\cdots(n - k + 1)}{k!}a^{n-k}b^k +\cdots+ nab^{n-1} + b^n
 \end{aligned} \\
 (2) \; &amp; a^3 - b^3 = (a - b)\left(a^2 + ab + b^2\right), \quad a^3 + b^3 = (a + b)\left(a^2 - ab + b^2\right), \\
@@ -2532,6 +2779,170 @@ x_1 + x_2 = -\frac{b}{a}, \quad x_1x_2 = \frac{c}{a}
       </categories>
       <tags>
         <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构_线性表，栈、队列和数组</title>
+    <url>/2022/03/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84_%E7%BA%BF%E6%80%A7%E8%A1%A8%EF%BC%8C%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E5%92%8C%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<p>数据结构线性表部分的知识总结<br />
+内容包括：<br />
+1. 线性表的概念和代码实现<br />
+2. 栈、队列的概念和代码实现<br />
+3. 特殊矩阵的压缩</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<ul>
+<li><a href="#线性表">线性表</a>
+<ul>
+<li><a href="#顺序表">顺序表</a>
+<ul>
+<li><a href="#顺序表的定义和初始化">顺序表的定义和初始化</a></li>
+<li><a href="#顺序表的基本操作">顺序表的基本操作</a></li>
+</ul></li>
+<li><a href="#链表">链表</a>
+<ul>
+<li><a href="#单链表">单链表</a></li>
+<li><a href="#静态链表">静态链表</a></li>
+<li><a href="#双向链表">双向链表</a></li>
+<li><a href="#循环链表">循环链表</a></li>
+</ul></li>
+<li><a href="#顺序表和链表的比较">顺序表和链表的比较</a></li>
+</ul></li>
+<li><a href="#栈队列和数组">栈、队列和数组</a>
+<ul>
+<li><a href="#栈">栈</a>
+<ul>
+<li><a href="#顺序栈">顺序栈</a></li>
+<li><a href="#链式栈">链式栈</a></li>
+</ul></li>
+<li><a href="#队列">队列</a>
+<ul>
+<li><a href="#顺序队列循环队列">顺序队列（循环队列）</a></li>
+<li><a href="#链式队列">链式队列</a></li>
+<li><a href="#双端队列">双端队列</a></li>
+</ul></li>
+<li><a href="#栈和队列的应用">栈和队列的应用</a>
+<ul>
+<li><a href="#栈_括号匹配">栈_括号匹配</a></li>
+<li><a href="#栈_表达式">栈_表达式</a></li>
+<li><a href="#栈_递归函数调用">栈_递归函数调用</a></li>
+<li><a href="#队列_层次遍历">队列_层次遍历</a></li>
+<li><a href="#队列_计算机系统">队列_计算机系统</a></li>
+</ul></li>
+<li><a href="#数组_矩阵的压缩存储">数组_矩阵的压缩存储</a>
+<ul>
+<li><a href="#对称矩阵">对称矩阵</a></li>
+<li><a href="#三角矩阵">三角矩阵</a></li>
+<li><a href="#三对角矩阵">三对角矩阵</a></li>
+<li><a href="#稀疏矩阵">稀疏矩阵</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+<p>线性表、栈和队列的完整代码均已上传到我的 GitHub：</p>
+<ul>
+<li><a href="https://github.com/Cohanbb/mycode/tree/main/c-cpp/DS">C/C++ 实现</a> <!--* [Go 实现](https://github.com/Cohanbb/mycode/tree/main/go/DS)--></li>
+</ul>
+<h1 id="线性表">线性表</h1>
+<p>线性表是<strong>零或多个相同数据类型的有限序列</strong>。逻辑结构为线性结构，存储结构为顺序存储或链式存储，对应<a href="#顺序表">顺序表</a>或<a href="#链表">链表</a>。</p>
+<p>线性表的抽象数据类型：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">ADT List</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Data</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">Operation</span></span><br><span class="line"><span class="function">    <span class="title">InitList</span><span class="params">(&amp;L)</span></span>; <span class="comment">// 初始化</span></span><br><span class="line">    <span class="built_in">Empty</span>(L); <span class="comment">// 判断是否是空表</span></span><br><span class="line">    <span class="built_in">ListInsert</span>(&amp;L, i, e); <span class="comment">// 在第 i 个位置插入 e</span></span><br><span class="line">    <span class="built_in">ListDelete</span>(&amp;L, i, &amp;e); <span class="comment">// 删除第 i 个位置的数据并用 e 返回</span></span><br><span class="line">    <span class="built_in">LocateElem</span>(L, e); <span class="comment">// 按值查找</span></span><br><span class="line">    <span class="built_in">GetElem</span>(L, i); <span class="comment">// 按位查找</span></span><br><span class="line">    <span class="built_in">Length</span>(L); <span class="comment">// 求表长</span></span><br><span class="line">    <span class="built_in">PrintList</span>(L); <span class="comment">// 打印表</span></span><br><span class="line">    <span class="built_in">DestroyList</span>(&amp;L); <span class="comment">// 销毁表</span></span><br></pre></td></tr></table></figure>
+<h2 id="顺序表">顺序表</h2>
+<p>线性表的顺序表示指的是用一组地址连续的存储单元依次存储线性表的数据元素，这种存储结构称为顺序表。</p>
+<h3 id="顺序表的定义和初始化">顺序表的定义和初始化</h3>
+<p>地址连续的存储结构完全可以使用数组或者一个指向连续地址的指针来实现，故可以轻松写出顺序表的静态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义顺序表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N <span class="comment">// N 为自定义的整数，表示顺序表的最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType data[Maxsize]; <span class="comment">// ElemType 为元素数据类型</span></span><br><span class="line">    <span class="type">int</span> length; <span class="comment">// 顺序表实际存储数据的长度</span></span><br><span class="line">&#125;;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/* 初始化顺序表*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span> <span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">// 初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">// 避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/* 实例化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上定义的顺序表的最大长度为 Maxsize，若想顺序表的最大长度可变，则需动态创建：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义顺序表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize N <span class="comment">// 顺序表的初始最大长度</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Sqlist</span> &#123;</span><br><span class="line">    ElemType *data; <span class="comment">// 指向顺序表首地址</span></span><br><span class="line">    <span class="type">int</span> maxsize, length;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 初始化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitList</span><span class="params">(<span class="keyword">struct</span> Sqlist &amp;List)</span> </span>&#123;</span><br><span class="line">    List.maxsize = Initsize; <span class="comment">// 初始最大长度</span></span><br><span class="line">    List.length = <span class="number">0</span>; <span class="comment">// 初始长度为0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; List.maxsize; i++)</span><br><span class="line">        List.data[i] = <span class="number">0</span>; <span class="comment">// 避免脏数据</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 实例化顺序表 */</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Sqlist</span> L;</span><br><span class="line">    L.data = <span class="keyword">new</span> ElemType[Initsize];</span><br><span class="line">    <span class="built_in">InitList</span>(L);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="顺序表的基本操作">顺序表的基本操作</h3>
+<p>插入（在表 L 的第 i 个位置插入 e）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length + <span class="number">1</span>) <span class="comment">// 超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (L.length == Maxsize) <span class="comment">// 表已达最大长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = L.length; j &gt;= i; j--)  <span class="comment">// 从第 i 个位置循环后移</span></span><br><span class="line">        L.data[j] = L.data[j - <span class="number">1</span>]; <span class="comment">// 赋值给后面的元素</span></span><br><span class="line">    L.data[i - <span class="number">1</span>] = e; <span class="comment">// 将第 i 个位置赋值为 e</span></span><br><span class="line">    L.length++; <span class="comment">// 实际长度加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>删除（删除表 L 的第 i 个元素并用 e 返回删除值）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(Sqlist &amp;L, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">1</span> || i &gt; L.length) <span class="comment">// 超出表的实际长度</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = L.data[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt;= L.length - <span class="number">1</span>; j++) <span class="comment">// 将第 i 个位置后的元素前移</span></span><br><span class="line">        L.data[j - <span class="number">1</span>] = L.data[j]; <span class="comment">// 赋值给前面的元素</span></span><br><span class="line">    L.data[L.length - <span class="number">1</span>] = <span class="number">0</span>; <span class="comment">// 将末尾的元素设为 0</span></span><br><span class="line">    L.length--; <span class="comment">// 实际长度减一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按值查找（表 L 中的第一次出现的 e 的位置）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">LocateElem</span><span class="params">(Sqlist &amp;L, ElemType e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; L.length; i++)</span><br><span class="line">        <span class="keyword">if</span> (L.data[i] == e)</span><br><span class="line">            <span class="keyword">return</span> i + <span class="number">1</span>; <span class="comment">// 找到返回位置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 未找到</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="链表">链表</h2>
+<p>链表是一种非常非常非常重要的数据结构！</p>
+<p>顺序表插入和删除需要移动大量的元素，链表通过指针将逻辑上相邻的元素连接起来，不需要在连续地址上存储。</p>
+<h3 id="单链表">单链表</h3>
+<p>单链表的每个结点除了要存储自身数据外还要存储指向后继元素的指针。</p>
+<p>单链表必须有一个指向链表首地址的<strong>头指针</strong>，有两种定义方式，带头结点和不带头结点。不带头结点 的方式更直观但是不方便进行操作。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义结点 */</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    ElemType data; <span class="comment">// 自身数据</span></span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; <span class="comment">// 指向下一个结点</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> LNode, *LinkList; <span class="comment">// 结点，链表</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 带头结点初始化 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (List == <span class="literal">NULL</span>) <span class="comment">// 创建失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>; <span class="comment">// 初始为空表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 判断是否为空 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> List-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 按位查找 */</span></span><br><span class="line"><span class="function">LNode *<span class="title">GetElem</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> List; <span class="comment">// 头结点</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span>) <span class="comment">// 结点不存在</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p = List;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; i &gt; <span class="number">0</span>) &#123; </span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 按值查找 */</span></span><br><span class="line"><span class="function">LNode *<span class="title">LocateElem</span><span class="params">(LinkList &amp;List, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = List-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p &amp;&amp; p-&gt;data != e)</span><br><span class="line">        p-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 插入（后插） */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListInsert</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">// 找到前驱结点</span></span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 在前驱结点后插入</span></span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = p-&gt;next; </span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 拓展：前插 */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 先后插</span></span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="comment">// 交换前后数据</span></span><br><span class="line">    temp = p-&gt;data;</span><br><span class="line">    p-&gt;data = s-&gt;data;</span><br><span class="line">    s-&gt;data = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 删除 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;List, <span class="type">int</span> i, ElemType &amp;e)</span> </span>&#123;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(List, i - <span class="number">1</span>); <span class="comment">// 找到前驱结点 </span></span><br><span class="line">    <span class="keyword">if</span> (!p) </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    e = p-&gt;next-&gt;data;</span><br><span class="line">    p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>单链表的整表创建和销毁</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 头插法 */</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_HeadInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        s-&gt;next = List-&gt;next;</span><br><span class="line">        List-&gt;next = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 尾插法 */</span></span><br><span class="line"><span class="function">LinkList <span class="title">List_TailInsert</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *s, *r = List;</span><br><span class="line">    ElemType x;</span><br><span class="line">    List = <span class="keyword">new</span> LNode;</span><br><span class="line">    List-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">while</span> (std::cin &gt;&gt; x &amp;&amp; x != <span class="number">9999</span>) &#123;</span><br><span class="line">        s = <span class="keyword">new</span> LNode;</span><br><span class="line">        s-&gt;data = x;</span><br><span class="line">        r-&gt;next = s;</span><br><span class="line">        r = s;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">return</span> List;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 销毁表 */</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DestroyList</span><span class="params">(LinkList &amp;List)</span> </span>&#123;</span><br><span class="line">    LNode *p;</span><br><span class="line">    <span class="keyword">while</span> (List) &#123;</span><br><span class="line">        p = List;</span><br><span class="line">        List = List-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> p;</span><br><span class="line">        p = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="静态链表">静态链表</h3>
+<p>在早期的编程语言中没有指针、引用等机制，只能使用<strong>数组</strong>来代替指针，这样的链表内存固定，地址连续，称为静态链表。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义静态链表 */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> Maxsize N </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SLinkList</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> next; <span class="comment">// 下一个元素下标</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SLinkList</span> SLinkList[Maxsize];</span><br></pre></td></tr></table></figure>
+<h3 id="双向链表">双向链表</h3>
+<p>每个结点除了存有数据和指向下一个结点的指针 next 外，还存有指向上一个结点的指针 prior。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 定义双向链表 */</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">DNode</span> *next, *prior;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">DNode</span> DNode, *DLinkList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 插入（*p 后插入 *s） */</span></span><br><span class="line">&#123;</span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next-&gt; prior = s;</span><br><span class="line">    s-&gt;prior = p;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 删除（删除 *p 后的 *q） */</span></span><br><span class="line">&#123;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    p-&gt;next-&gt;prior = p;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="循环链表">循环链表</h3>
+<p>一种特殊的链表，即末尾结点 *r 的 next 指针指向头结点 <code>r-&gt;next = L</code>，好处是可以快速的找到尾结点而不用遍历表，如果是循环双链表还需要 <code>L-&gt;prior = r</code>。</p>
+<h2 id="顺序表和链表的比较">顺序表和链表的比较</h2>
+<ol type="1">
+<li>顺序表随机存取/读写，链表只能顺序存取/读写。</li>
+<li>顺序表逻辑相邻的元素存储位置也相邻。</li>
+<li>链表分配内存空间灵活高效。</li>
+<li>链表的插入和删除更高效。</li>
+<li>顺序表插入和删除需要移动大量的元素。</li>
+</ol>
+<h1 id="栈队列和数组">栈、队列和数组</h1>
+<p>栈和队列都是特殊的线性表，对数据的插入和删除操作有特殊的规定，使得数据的进出策略有所不同。</p>
+<h2 id="栈">栈</h2>
+<p><strong>栈（Stack）</strong>是只允许在一端进行插入或删除操作的线性表。</p>
+<p>允许插入或删除的一端称为<strong>栈顶（Top）</strong>，另一端称为<strong>栈底（Bottom）</strong>，由于只允许一端进行插入或删除，栈的数据进出策略简单概括为<strong>后进先出（Last In First Out, LIFO）</strong>。</p>
+<blockquote>
+<p>n 个不同元素进栈，出栈元素有 <span class="math inline">\(\frac{1}{n+1}C_{2n}^{n}\)</span> 种不同排列。</p>
+</blockquote>
+<h3 id="顺序栈">顺序栈</h3>
+<p>使用顺序结构存储栈元素的栈。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">// Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqStack</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> top, maxsize;</span><br><span class="line">&#125; sqstack;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Sequential Stack 初始化顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(sqstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S.maxsize = Initsize;</span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize);</span><br><span class="line">    S.top = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top == <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Extend Size of Stack 扩充栈容量 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendStack</span><span class="params">(sqstack &amp;S, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = S.data; <span class="comment">// p 指向原地址</span></span><br><span class="line">    S.maxsize += n; <span class="comment">// 扩容</span></span><br><span class="line">    S.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * S.maxsize); <span class="comment">// 开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        S.data[i] = p[i];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">// p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Push Element 元素入栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(sqstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (S.top + <span class="number">1</span> == S.maxsize)</span><br><span class="line">        <span class="built_in">ExtendStack</span>(S, <span class="number">1</span>);</span><br><span class="line">    S.data[++S.top] = e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Pop Element 元素出栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(sqstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = S.data[S.top--];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Sequential Stack 打印顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(sqstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= S.top; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, S.data[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Sequential Stack 销毁顺序结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(sqstack *S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!S)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(S-&gt;data); <span class="comment">// 释放数组内存</span></span><br><span class="line">    S-&gt;data = <span class="literal">NULL</span>; <span class="comment">// 指针置空</span></span><br><span class="line">    S-&gt;top = <span class="number">-1</span>;</span><br><span class="line">    S-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链式栈">链式栈</h3>
+<p>使用链式结构存储栈元素的栈。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; LNode, *linkstack;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Link Stack 初始化链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    S = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    <span class="keyword">if</span> (S == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Fail To Init!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Push</span><span class="params">(linkstack &amp;S, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *p = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode)); <span class="comment">// 开辟新结点作为栈顶</span></span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = S-&gt;next;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Pop</span><span class="params">(linkstack &amp;S, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Stack!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next; <span class="comment">// p 指向栈顶</span></span><br><span class="line">    e = p-&gt;data;</span><br><span class="line">    S-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Link Stack 打印链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintStack</span><span class="params">(linkstack S)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(S)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty List!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = S-&gt;next;</span><br><span class="line">    <span class="keyword">while</span> (p) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, p-&gt;data);</span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Link Stack 销毁链式结构栈 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyStack</span><span class="params">(linkstack &amp;S)</span> </span>&#123;</span><br><span class="line">    lnode *p;</span><br><span class="line">    <span class="keyword">while</span> (S) &#123;</span><br><span class="line">        p = S;</span><br><span class="line">        S = S-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="队列">队列</h2>
+<p><strong>队列（Queue）</strong>也是一种操作受限制的先行表，只允许在表的一端进行插入，在表的另一端进行删除。</p>
+<p>向队列插入元素的操作称为入队或进队，删除元素的操作称为出队。允许删除数据的一端称为<strong>队头（Front）</strong>，允许插入元素的一端称为<strong>队尾（Rear）</strong>。其数据的进出策略可以简单概括为<strong>先进先出（First In First Out, FIFO）</strong>。</p>
+<h3 id="顺序队列循环队列">顺序队列（循环队列）</h3>
+<p>使用顺序结构存储队列元素的循环队列。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> Initsize 20 <span class="comment">// Initial Size 初始容量</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">SeqQueue</span> &#123;</span><br><span class="line">    <span class="type">int</span> *data;</span><br><span class="line">    <span class="type">int</span> front, rear, maxsize;</span><br><span class="line">&#125; sqqueue;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Sequential Queue 初始化顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(sqqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.maxsize = Initsize;</span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize);</span><br><span class="line">    Q.rear = Q.front = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; Q.maxsize; i++)</span><br><span class="line">        Q.data[i] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.rear == Q.front;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Extend Size of Queue 扩充循环队列的容量 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExtendQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = Q.data; <span class="comment">// p 指向原地址</span></span><br><span class="line">    <span class="type">int</span> i, j;</span><br><span class="line">    j = Q.maxsize;</span><br><span class="line">    Q.maxsize += n; <span class="comment">// 扩容</span></span><br><span class="line">    Q.data = (<span class="type">int</span> *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>) * Q.maxsize); <span class="comment">// 开辟新地址</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; (Q.rear + j - Q.front) % j; i++)</span><br><span class="line">        Q.data[i] = p[(Q.front + i) % j];</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放原地址</span></span><br><span class="line">    p = <span class="literal">NULL</span>; <span class="comment">// p 置空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Enter Queue 元素进入队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((Q.rear + <span class="number">1</span>) % Q.maxsize == Q.front)</span><br><span class="line">        <span class="built_in">ExtendQueue</span>(Q, <span class="number">1</span>);</span><br><span class="line">    Q.data[Q.rear] = e;</span><br><span class="line">    Q.rear = (Q.rear + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Exit Queue 元素退出队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(sqqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = Q.data[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % Q.maxsize;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Sequential Queue 打印顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(sqqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (Q.rear + Q.maxsize - Q.front) % Q.maxsize; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Q.data[(Q.front + i) % Q.maxsize]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Sequential Queue 销毁顺序结构循环队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(sqqueue *Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!Q)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">free</span>(Q-&gt;data); <span class="comment">// 释放数组的内存</span></span><br><span class="line">    Q-&gt;data = <span class="literal">NULL</span>; <span class="comment">// 指针置空</span></span><br><span class="line">    Q-&gt;rear = Q-&gt;front = <span class="number">0</span>;</span><br><span class="line">    Q-&gt;maxsize = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链式队列">链式队列</h3>
+<p>使用链式结构存储队列元素的队列。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">LNode</span> *next; </span><br><span class="line">&#125; lnode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">LinkQueue</span> &#123;</span><br><span class="line">    lnode *front;</span><br><span class="line">    lnode *rear;</span><br><span class="line">&#125; linkqueue;</span><br></pre></td></tr></table></figure>
+<p>基本操作</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Initialize Link Queue 初始化链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line">    Q.front = Q.rear = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Empty</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Q.front == Q.rear;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Elements Enter Queue 元素入队 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">EnterQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> e)</span> </span>&#123;</span><br><span class="line">    lnode *s = (lnode *)<span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(lnode));</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear-&gt;next = s;</span><br><span class="line">    Q.rear = s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Element Exit Queue 元素出队 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ExitQueue</span><span class="params">(linkqueue &amp;Q, <span class="type">int</span> &amp;e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Empty</span>(Q)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Empty Queue!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    lnode *p = Q.front-&gt;next; <span class="comment">// p 指向要删除的结点</span></span><br><span class="line">    e = Q.front-&gt;data;</span><br><span class="line">    Q.front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (p ==  Q.rear) <span class="comment">// 若 p 等于尾结点，则队列置空</span></span><br><span class="line">        Q.rear = Q.front;</span><br><span class="line">    <span class="built_in">free</span>(p); <span class="comment">// 释放该结点内存</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Print Link Queue 打印链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">PrintQueue</span><span class="params">(linkqueue Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Destroy Link Queue 销毁链式结构队列 */</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">DestroyQueue</span><span class="params">(linkqueue &amp;Q)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双端队列">双端队列</h3>
+<p>将队列的两端称作前端和后端，两端都可以进行入队和出队操作的队列。</p>
+<ul>
+<li><p>输入受限的双端队列</p></li>
+<li><p>输出受限的双端队列</p></li>
+</ul>
+<h2 id="栈和队列的应用">栈和队列的应用</h2>
+<h3 id="栈_括号匹配">栈_括号匹配</h3>
+<h3 id="栈_表达式">栈_表达式</h3>
+<h3 id="栈_递归函数调用">栈_递归函数调用</h3>
+<h3 id="队列_层次遍历">队列_层次遍历</h3>
+<h3 id="队列_计算机系统">队列_计算机系统</h3>
+<h2 id="数组_矩阵的压缩存储">数组_矩阵的压缩存储</h2>
+<h3 id="对称矩阵">对称矩阵</h3>
+<h3 id="三角矩阵">三角矩阵</h3>
+<h3 id="三对角矩阵">三对角矩阵</h3>
+<h3 id="稀疏矩阵">稀疏矩阵</h3>
+]]></content>
+      <categories>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -2973,11 +3384,12 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \end{matrix}
 \right| = 0
 \]</span></p>
-<p>该式称为 <strong><em>A</em></strong> 的特征方程，是未知量 <span class="math inline">\(\lambda\)</span> 的 <em>n</em> 次方程，有 <em>n</em> 个根（按重数计）<span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span>。</p>
+<p>该式称为 <strong><em>A</em></strong> 的『特征方程』，是未知量 <span class="math inline">\(\lambda\)</span> 的 <em>n</em> 次方程，有 <em>n</em> 个根（按重数计）<span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span>。</p>
 <ol start="3" type="1">
 <li>求特征向量</li>
 </ol>
 <p>将求出的特征值 <span class="math inline">\(\lambda_i\)</span> 代回 <span class="math inline">\((\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)</span>，方程组的解向量即为 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</p>
+<p>特征值 <span class="math inline">\(\lambda_i\)</span> 对应的特征向量张成的向量空间，即 <span class="math inline">\(\lambda_i\boldsymbol{E} - \boldsymbol{A}\)</span> 的零空间，称为 <strong><em>A</em></strong> 的属于特征值 <span class="math inline">\(\lambda_i\)</span> 的『特征子空间』。</p>
 <ol start="4" type="1">
 <li>重要结论</li>
 </ol>
@@ -3045,7 +3457,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li><p><span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2\)</span> 是不同特征值对应的特征向量，则 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2\; (k_1 \neq 0,k_2 \neq 0)\)</span> 不是 <strong><em>A</em></strong> 的特征向量。</p></li>
 </ul>
 <h3 id="矩阵的相似">矩阵的相似</h3>
-<p>矩阵 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 是两个 <em>n</em> 阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 相似于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong>是两个同阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>相似</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
 <p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则：</p>
 <ul>
 <li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span></li>
@@ -3114,9 +3526,14 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 </ul>
 <p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>必要条件：</strong></p>
 <ul>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计）。</li>
+<li><strong><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计），则零特征值的重数为 <span class="math inline">\(n - r(\boldsymbol{A})\)</span>。</strong></li>
 <li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \not\Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>，但如果 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 均可相似对角化，则 <span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>。</li>
 <li>根据上一条结论，『<strong>实对称矩阵</strong>』 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 相似 <span class="math inline">\(\Leftrightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>。</li>
+</ul>
+<p>矩阵 <strong><em>A</em></strong> <strong>不可</strong>相似对角化的<strong>充分条件：</strong></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \neq \boldsymbol{O},\boldsymbol{A}^k = \boldsymbol{O}\;(k \in \mathbb{N}_+,k &gt; 1) \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span></li>
+<li><strong><em>A</em></strong> 的特征值全为 <em>k</em>，但 <span class="math inline">\(\boldsymbol{A} \neq k\boldsymbol{E} \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span>。</li>
 </ul>
 ]]></content>
       <categories>
@@ -3209,7 +3626,7 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 \right] \\ c_{ij} &amp;= a_{i1}b_{1j} + a_{i2}b_{2j} +...+a_{in}b_{nj} =\sum_{k=1}^n a_{ik}b_{kj}\;(i = 1,2,...,m, \; j = 1,2,...,s)
 \end{aligned}
 \]</span></p>
-<p>矩阵的运算满足以下规律：</p>
+<p>矩阵运算满足以下规律：</p>
 <ul>
 <li>加法交换律：<span class="math inline">\(\boldsymbol{A}+\boldsymbol{B} = \boldsymbol{B}+\boldsymbol{A}\)</span>。</li>
 <li>加法结合律：<span class="math inline">\((\boldsymbol{A}+\boldsymbol{B})+\boldsymbol{C} = \boldsymbol{A}+(\boldsymbol{B}+\boldsymbol{C})\)</span>。</li>
@@ -3222,15 +3639,15 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li>乘法单位元：<span class="math inline">\(\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A} = \boldsymbol{A}\)</span>。</li>
 <li>乘法逆元：<span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
 </ul>
-<p>注：</p>
+<p>矩阵运算不满足的运算规律：</p>
 <ul>
-<li><p>矩阵乘法只在下面三种情况满足交换律：</p>
+<li><p>矩阵乘法不满足交换律，除非以下的特殊情形：</p>
 <ul>
 <li><span class="math inline">\(\boldsymbol{A}\boldsymbol{E} = \boldsymbol{E}\boldsymbol{A}\)</span></li>
 <li><span class="math inline">\(\boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{n \times n},\; \boldsymbol{A}\boldsymbol{B} = \boldsymbol{E} \Leftrightarrow \boldsymbol{B}\boldsymbol{A} =\boldsymbol{E}\)</span></li>
 <li><span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^* = \boldsymbol{A}^*\boldsymbol{A}\)</span></li>
 </ul></li>
-<li>矩阵乘法不满足消去律：<span class="math inline">\(\boldsymbol{AB} = \boldsymbol{AC} \not\Rightarrow \boldsymbol{B} = \boldsymbol{C}\)</span>，除非 <strong><em>A</em></strong> 可逆。</li>
+<li>矩阵乘法不满足左右消去律：<span class="math inline">\(\boldsymbol{AB} = \boldsymbol{AC} \; \text{or} \; \boldsymbol{BA} = \boldsymbol{CA}\not\Rightarrow \boldsymbol{B} = \boldsymbol{C}\)</span>，除非 <strong><em>A</em></strong> 可逆。</li>
 <li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{O} \not\Rightarrow \boldsymbol{A} = \boldsymbol{O} \; \text{or}\; \boldsymbol{B} = \boldsymbol{O}\)</span></p></li>
 </ul>
 <h3 id="矩阵的转置">矩阵的转置</h3>
@@ -3291,12 +3708,12 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li>对系数矩阵做初等行变换不改变齐次线性方程组的解，对增广矩阵做初等行变换不改变非齐次线性方程组的解。</li>
 <li>初等行变换不改变矩阵列向量组的线性相关性。</li>
 </ul>
-<p>初等矩阵的逆和 <em>n</em> 次方：</p>
+<p>初等矩阵的转置、逆和幂运算：</p>
 <p><span class="math display">\[
 \begin{array}{ll}
-{\boldsymbol{E}_{ij}}^{-1} = \boldsymbol{E}_{ij},&amp; {\boldsymbol{E}_{ij}}^n = \left\{ \begin{array}{ll} \boldsymbol{E}, &amp;n = 2k \\ \boldsymbol{E}_{ij}, &amp;n = 2k+1 \end{array} \right.\\
-[\boldsymbol{E}_{ij}(k)]^{-1} =\boldsymbol{E}_{ij}(-k), &amp;[\boldsymbol{E}_{ij}(k)]^n = \boldsymbol{E}_{ij}(nk)\\
-[\boldsymbol{E}_i(k)]^{-1} =\boldsymbol{E}_i(\frac{1}{k}), &amp;[\boldsymbol{E}_i(k)]^n = \boldsymbol{E}_i(nk)
+[\boldsymbol{E}_i(k)]^{\text{T}} =\boldsymbol{E}_i(k) &amp;[\boldsymbol{E}_i(k)]^{-1} =\boldsymbol{E}_i(\frac{1}{k}), &amp;[\boldsymbol{E}_i(k)]^n = \boldsymbol{E}_i(nk)\\
+{\boldsymbol{E}_{ij}}^{\text{T}} = \boldsymbol{E}_{ij}, &amp;{\boldsymbol{E}_{ij}}^{-1} = \boldsymbol{E}_{ij},&amp; {\boldsymbol{E}_{ij}}^n = \left\{ \begin{array}{ll} \boldsymbol{E}, &amp;n = 2k \\ \boldsymbol{E}_{ij}, &amp;n = 2k+1 \end{array} \right.\\
+[\boldsymbol{E}_{ij}(k)]^{\text{T}} =\boldsymbol{E}_{ji}(k) &amp;[\boldsymbol{E}_{ij}(k)]^{-1} =\boldsymbol{E}_{ij}(-k), &amp;[\boldsymbol{E}_{ij}(k)]^n = \boldsymbol{E}_{ij}(nk)
 \end{array}
 \]</span></p>
 <h3 id="逆矩阵">逆矩阵</h3>
@@ -3313,7 +3730,12 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <p><span class="math display">\[
 \boldsymbol{P} =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{E}\cdots\boldsymbol{P}_k = \boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{E} = \boldsymbol{E}\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k
 \]</span></p>
-<p><strong>即可逆矩阵可以由同阶单位矩阵通过有限次初等行变换或有限次初等列变换得到，可逆矩阵等价于有限个初等矩阵的乘积。故左乘可逆矩阵等价于做有限次初等行变换，右乘可逆矩阵等价于做有限次初等列变换。</strong></p>
+<p>根据上述可知：</p>
+<ul>
+<li>可逆矩阵可由同阶单位矩阵通过<strong>有限次初等行变换或有限次初等列变换</strong>得到。</li>
+<li><strong>可逆矩阵等价于有限个初等矩阵的乘积。左乘可逆矩阵等价于做有限次初等行变换，右乘可逆矩阵等价于做有限次初等列变换。</strong></li>
+<li>可逆矩阵等价于有限个初等矩阵的乘积，故<strong>可逆矩阵乘可逆矩阵仍然是可逆矩阵</strong>。</li>
+</ul>
 <h3 id="伴随矩阵">伴随矩阵</h3>
 <p><span class="math inline">\(\boldsymbol{A}^* = \left[\begin{matrix}A_{11} &amp;A_{21} &amp;\cdots &amp;A_{n1} \\A_{12} &amp;A_{22} &amp;\cdots &amp;A_{n2} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ A_{1n} &amp; A_{2n} &amp;\cdots &amp;A_{nn}\end{matrix} \right]\)</span> 称为 <strong><em>A</em></strong> 的『<strong>伴随矩阵</strong>』，即 <strong><em>A</em></strong> 的伴随矩阵是 <strong><em>A</em></strong> 的代数余子式矩阵的转置。</p>
 <p>伴随矩阵的运算规律：</p>

@@ -29,7 +29,7 @@
 <meta property="og:description" content="线性代数-向量空间和线性方程组解的结构。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-22T14:24:35.000Z">
-<meta property="article:modified_time" content="2022-09-28T15:00:36.818Z">
+<meta property="article:modified_time" content="2022-09-30T14:27:39.304Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-09-28 23:00:36" itemprop="dateModified" datetime="2022-09-28T23:00:36+08:00">2022-09-28</time>
+                <time title="修改时间：2022-09-30 22:27:39" itemprop="dateModified" datetime="2022-09-30T22:27:39+08:00">2022-09-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,8 +273,13 @@
 <li><a href="#线性相关和线性无关">线性相关和线性无关</a></li>
 <li><a href="#向量组的秩">向量组的秩</a></li>
 <li><a href="#向量空间和基">向量空间和基</a></li>
+</ul></li>
 <li><a href="#以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</a></li>
-<li><a href="#线性方程组解的结构">线性方程组解的结构</a></li>
+<li><a href="#线性方程组解的结构">线性方程组解的结构</a>
+<ul>
+<li><a href="#矩阵的零空间">矩阵的零空间</a></li>
+<li><a href="#矩阵的列空间">矩阵的列空间</a></li>
+<li><a href="#同解和公共解">同解和公共解</a></li>
 </ul></li>
 </ul>
 <!-- /code_chunk_output -->
@@ -282,12 +287,13 @@
 <h2 id="概念">概念</h2>
 <h3 id="线性相关和线性无关">线性相关和线性无关</h3>
 <ol type="1">
-<li>向量组</li>
+<li>向量</li>
 </ol>
 <p>向量（vector）这一概念被提出用以<strong>表示一组有序的数据（即数组）</strong>。<em>n</em> 个数构成的一个有序数组被称为一个 <em>n</em> 维『<strong>向量</strong>』。设 <span class="math inline">\(\boldsymbol{\alpha}=[a_1,a_2,\ldots,a_n]^{\text{T}}\)</span>，则 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 是一个 <em>n</em> 维『<strong>列向量</strong>』，<span class="math inline">\(\boldsymbol{\alpha}^{\text{T}} = [a_1,a_2,\ldots,a_n]\)</span> 是一个 <em>n</em> 维『<strong>行向量</strong>』。</p>
-<blockquote>
-<p>一般情况下，向量默认为列向量，使用列向量的转置表示行向量。</p>
-</blockquote>
+<ul>
+<li>一般情况下，向量默认为列向量，使用列向量的转置来表示行向量。</li>
+<li><em>n</em> 维列向量可看作 <em>n</em> 行 1 列的矩阵，<em>n</em> 维行向量可看作 1 行 <em>n</em> 列的矩阵。</li>
+</ul>
 <ol start="2" type="1">
 <li>线性组合 &amp; 线性表示</li>
 </ol>
@@ -296,7 +302,7 @@
 k_1\boldsymbol{\boldsymbol{\alpha}}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n
 \]</span></p>
 <p>称为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的『<strong>线性组合</strong>』。若向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能表示为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的线性组合，则称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能被向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 『<strong>线性表示</strong>』。</p>
-<p>线性组合可以用矩阵乘列向量的方式表示：</p>
+<p>线性组合可以用<a href="#以向量的角度定义矩阵和矩阵乘法">矩阵乘列向量的方式</a>表示：</p>
 <p><span class="math display">\[
 k_1 \boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n = [\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n] \left[ \begin{matrix}k_1 \\k_2\\ \vdots \\k_n\end{matrix}\right]
 \]</span></p>
@@ -416,6 +422,9 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 \boldsymbol{e}_i = \frac{\boldsymbol{\beta}_i}{\|\boldsymbol{\beta}_i\|}\;(i = 1,2,\ldots,n)
 \]</span></p>
 <p>可得一组与 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 等价的规范正交基 <span class="math inline">\(\boldsymbol{e}_1,\boldsymbol{e}_2,\ldots,\boldsymbol{e}_n\)</span>。</p>
+<blockquote>
+<p>注：施密特正交化的对象是<strong>同一向量空间</strong>的基向量，经过施密特正交化后仍是该向量空间的基。不同特征值对应的特征向量属于不同『特征子空间』，不能使用施密特正交化。</p>
+</blockquote>
 <ol start="6" type="1">
 <li>基变换和坐标变换</li>
 </ol>
@@ -430,46 +439,92 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{C}
 \]</span></p>
 <p>则 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 是规范正交基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是正交矩阵。</p>
-<h3 id="以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</h3>
+<h2 id="以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</h2>
 <p><strong>一个 <em>m</em> 行 <em>n</em> 列的矩阵就是 <em>n</em> 个 <em>m</em> 维列向量</strong>，当然也可认为是 <em>m</em> 个 <em>n</em> 维行向量：</p>
 <p><span class="math display">\[
-\boldsymbol{A}_{m \times n} = [\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n] = \left[
+\boldsymbol{A}_{m \times n} = [\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n] = 
+\left[
 \begin{matrix}
-{\boldsymbol{\beta}_1}^{\text{T}}\\
-{\boldsymbol{\beta}_2}^{\text{T}}\\
+{\boldsymbol{w}_1}^{\text{T}}\\
+{\boldsymbol{w}_2}^{\text{T}}\\
 \vdots \\
-{\boldsymbol{\beta_m}}^{\text{T}}
+{\boldsymbol{w}_m}^{\text{T}}
 \end{matrix}
-\right] \; (\boldsymbol{\alpha}_{1,2,\ldots,n} \in \mathbb{R}^m,\; \boldsymbol{\beta}_{1,2,\ldots,m} \in \mathbb{R}^n)
+\right] 
+\; (\boldsymbol{v}_{1,2,\ldots,n} \in \mathbb{R}^m,\; \boldsymbol{w}_{1,2,\ldots,m} \in \mathbb{R}^n)
 \]</span></p>
-<p>矩阵的主元列是线性无关的，且自由列可由主元列线性表示，即矩阵的主元列是矩阵的列向量组的极大线性无关组。</p>
+<p>矩阵的主元列是线性无关的，且自由列可由主元列线性表示，故矩阵的主元列是矩阵的列向量组的极大线性无关组。</p>
 <p>故引出矩阵的秩的第二种定义：<strong>矩阵的秩 = 矩阵的列向量组的秩 = 矩阵的行向量组的秩 = 矩阵的列（或行）向量组张成的向量空间的维数。</strong></p>
-<ul>
-<li>矩阵乘向量：</li>
-</ul>
+<p><strong>矩阵乘向量：</strong></p>
 <ol type="1">
-<li>表示 <strong><em>A</em></strong> 的列向量组的线性组合：</li>
+<li>矩阵乘列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的列向量组的线性组合：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A} \boldsymbol{x} = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\left[ \begin{matrix}x_1 \\x_2\\ \vdots \\x_n\end{matrix}\right] = x_1\boldsymbol{\alpha}_1 + x_2\boldsymbol{\alpha}_2+\cdots+x_n\boldsymbol{\alpha}_n
 \]</span></p>
 <ol start="2" type="1">
-<li>表示 <strong><em>A</em></strong> 的行向量组与列向量 <strong><em>x</em></strong> 的内积：</li>
+<li>矩阵称列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的行向量组与列向量 <strong><em>x</em></strong> 的内积：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A} \boldsymbol{x} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\{\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] \boldsymbol{x}= \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \cdot \boldsymbol{x} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \cdot \boldsymbol{x}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \cdot \boldsymbol{x}\end{matrix}\right]
 \]</span></p>
-<ul>
-<li>矩阵乘矩阵：</li>
-</ul>
+<ol start="3" type="1">
+<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的行向量组的线性组合：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{x}^{\text{T}}\boldsymbol{B} = [x_1,x_2,\ldots,x_n]\left[
+\begin{matrix}
+{\boldsymbol{\beta}_1}^{\text{T}}\\
+{\boldsymbol{\beta}_2}^{\text{T}}\\
+\vdots \\
+{\boldsymbol{\beta_n}}^{\text{T}}
+\end{matrix}
+\right]
+= x_1 {\boldsymbol{\beta}_1}^{\text{T}} + x_2 {\boldsymbol{\beta}_2}^{\text{T}} + \cdots + x_n {\boldsymbol{\beta}_n}^{\text{T}}
+\]</span></p>
+<ol start="4" type="1">
+<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的列向量组与行向量 <strong><em>x</em></strong><sup>T</sup> 的内积：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{x}^{\text{T}}\boldsymbol{B} = \boldsymbol{x}^{\text{T}}
+\left[
+\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s
+\right]
+= \left[
+\boldsymbol{x}^{\text{T}} \cdot \boldsymbol{\beta}_1,\boldsymbol{x}^{\text{T}}\cdot \boldsymbol{\beta}_2,\ldots,\boldsymbol{x}^{\text{T}}\cdot\boldsymbol{\beta}_s
+\right]
+\]</span></p>
+<p><strong>矩阵乘矩阵：</strong></p>
 <ol type="1">
-<li>将 <strong><em>B</em></strong> 看作 <em>s</em> 个列向量，表示 <em>s</em> 个 <strong><em>A</em></strong> 的列向量组的线性组合构成的列向量组：</li>
+<li><strong><em>AB</em></strong> 表示矩阵 <strong><em>A</em></strong> 与 <strong><em>B</em></strong> 的每个列向量相乘，即转化为矩阵乘列向量的形式：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s] = [\boldsymbol{A\beta}_1,\boldsymbol{A\beta}_2,\ldots,\boldsymbol{A\beta}_s]
 \]</span></p>
 <ol start="2" type="1">
-<li>表示 <strong><em>A</em></strong> 的行向量组与 <strong><em>B</em></strong> 的列向量组的内积：</li>
+<li>当然 <strong><em>AB</em></strong> 也可以表示矩阵 <strong><em>B</em></strong> 与 <strong><em>A</em></strong> 的每个行向量相乘，即转化为行向量乘矩阵的形式：</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} =
+\left[
+\begin{matrix}
+{\boldsymbol{\alpha}_1}^{\text{T}}\\
+{\boldsymbol{\alpha}_2}^{\text{T}}\\
+\vdots \\
+{\boldsymbol{\alpha}_m}^{\text{T}}
+\end{matrix}
+\right] \boldsymbol{B} = 
+\left[
+\begin{matrix}
+{\boldsymbol{\alpha}_1}^{\text{T}}\boldsymbol{B}\\
+{\boldsymbol{\alpha}_2}^{\text{T}}\boldsymbol{B}\\
+\vdots \\
+{\boldsymbol{\alpha}_m}^{\text{T}}\boldsymbol{B}
+\end{matrix}
+\right]
+\]</span></p>
+<ol start="3" type="1">
+<li><strong><em>AB</em></strong> 表示 <strong><em>A</em></strong> 的行向量组与 <strong><em>B</em></strong> 的列向量组的内积：</li>
 </ol>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\{\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]= 
@@ -482,16 +537,14 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 \end{matrix}
 \right]
 \]</span></p>
-<h3 id="线性方程组解的结构">线性方程组解的结构</h3>
+<h2 id="线性方程组解的结构">线性方程组解的结构</h2>
 <p>线性方程组可表示为矩阵与列向量相乘的形式：</p>
 <ul>
 <li>齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span>。</li>
 <li>非齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span>。</li>
 </ul>
-<p><strong><em>A</em></strong> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<strong>0</strong> 为零向量，<strong><em>b</em></strong> 为 <em>m</em> 维列向量。<strong><em>x</em></strong> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <strong><em>v</em></strong> 为方程组的一个解向量。</p>
-<ol type="1">
-<li>矩阵的零空间</li>
-</ol>
+<p><strong><em>A</em></strong> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<strong>0</strong> 为零向量，<strong><em>b</em></strong> 为 <em>m</em> 维列向量。<strong><em>x</em></strong> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <strong><em>v</em></strong> 为方程组的一个『<strong>解向量</strong>』。</p>
+<h3 id="矩阵的零空间">矩阵的零空间</h3>
 <p>假设向量 <span class="math inline">\(\boldsymbol{v}_1,\boldsymbol{v}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的任意两个解向量，<em>k</em> 为任意常数，则必有</p>
 <p><span class="math display">\[
 \boldsymbol{A}(k\boldsymbol{v}_1) = k\boldsymbol{A}\boldsymbol{v}_1 = 0,\;\boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_2) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_2 = \boldsymbol{0}
@@ -509,9 +562,7 @@ N(\boldsymbol{A}) = \{\boldsymbol{x} \in \mathbb{R}^n \vert  \boldsymbol{Ax} = \
 <li><p>如果 <span class="math inline">\(m &lt; n\)</span>，即 <strong><em>A</em></strong> 的列向量个数大于列向量的维数，则 <strong><em>A</em></strong> 的列向量组必线性相关，则方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有（无穷）非零解。</p></li>
 <li><p><span class="math inline">\(N(\boldsymbol{A})\)</span> 的一组基称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>基础解系</strong>』，<span class="math inline">\(N(\boldsymbol{A})\)</span> 的维数取决于自由未知量的个数：<span class="math inline">\(\text{dim(}N(\boldsymbol{A})) = n -r(\boldsymbol{A})\)</span>，所以基础解系中有 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的向量。</p></li>
 </ul>
-<ol start="2" type="1">
-<li>矩阵的列空间</li>
-</ol>
+<h3 id="矩阵的列空间">矩阵的列空间</h3>
 <p>由 <strong><em>A</em></strong> 的列向量组张成的向量空间称为矩阵 <strong><em>A</em></strong> 的『<strong>列空间</strong>』，记作</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -544,9 +595,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 \boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_n) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_n = \boldsymbol{b} + \boldsymbol{0} = \boldsymbol{b}
 \]</span></p>
 <p>即 <span class="math inline">\(\boldsymbol{v}_1 + \boldsymbol{v}_n\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解向量。由此可知，如果确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的一个特解 <span class="math inline">\(\boldsymbol{x}_p\)</span> 并确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解空间 <span class="math inline">\(N(\boldsymbol{A})\)</span>，即可表示出方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的通解 <span class="math inline">\(\boldsymbol{x}_p + N(\boldsymbol{A})\)</span>。</p>
-<ol start="3" type="1">
-<li>同解 &amp; 公共解</li>
-</ol>
+<h3 id="同解和公共解">同解和公共解</h3>
 
     </div>
 
@@ -652,7 +701,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E5%92%8C%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">线性相关和线性无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9"><span class="nav-number">1.2.</span> <span class="nav-text">向量组的秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E5%9F%BA"><span class="nav-number">1.3.</span> <span class="nav-text">向量空间和基</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%90%91%E9%87%8F%E7%9A%84%E8%A7%92%E5%BA%A6%E5%AE%9A%E4%B9%89%E7%9F%A9%E9%98%B5%E5%92%8C%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">以向量的角度定义矩阵和矩阵乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.</span> <span class="nav-text">线性方程组解的结构</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E5%92%8C%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">线性相关和线性无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9"><span class="nav-number">1.2.</span> <span class="nav-text">向量组的秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E5%9F%BA"><span class="nav-number">1.3.</span> <span class="nav-text">向量空间和基</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%90%91%E9%87%8F%E7%9A%84%E8%A7%92%E5%BA%A6%E5%AE%9A%E4%B9%89%E7%9F%A9%E9%98%B5%E5%92%8C%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">以向量的角度定义矩阵和矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">线性方程组解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵的零空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4"><span class="nav-number">3.2.</span> <span class="nav-text">矩阵的列空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%A7%A3%E5%92%8C%E5%85%AC%E5%85%B1%E8%A7%A3"><span class="nav-number">3.3.</span> <span class="nav-text">同解和公共解</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -668,7 +717,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
+  </script>
+
+  <meta name="description" content="线性代数-二次型的概念与计算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二次型">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Cohanbb Wiki">
+<meta property="og:description" content="线性代数-二次型的概念与计算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-25T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-09-30T14:30:21.464Z">
+<meta property="article:author" content="Cohanbb">
+<meta property="article:tag" content="Linear Algebra">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>二次型 | Cohanbb Wiki</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cohanbb Wiki</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Cohanbb Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-链接">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>链接</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cohanbb">
+      <meta itemprop="description" content="Technological blogs about Computer Science.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cohanbb Wiki">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          二次型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-25 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-25T22:24:35+08:00">2022-09-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-30 22:30:21" itemprop="dateModified" datetime="2022-09-30T22:30:21+08:00">2022-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>线性代数-二次型的概念与计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#正交矩阵">正交矩阵</a></li>
+<li><a href="#实对称矩阵">实对称矩阵</a></li>
+<li><a href="#实对称矩阵的合同">实对称矩阵的合同</a></li>
+<li><a href="#二次型及其标准形和规范形">二次型及其标准形和规范形</a></li>
+<li><a href="#惯性定理">惯性定理</a></li>
+<li><a href="#正定二次型">正定二次型</a></li>
+</ul></li>
+<li><a href="#化二次型为标准形或规范形">化二次型为标准形或规范形</a>
+<ul>
+<li><a href="#正交变换法">正交变换法</a></li>
+<li><a href="#配方法">配方法</a></li>
+</ul></li>
+<li><a href="#结句">结句</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="正交矩阵">正交矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>正交矩阵</strong>』 <span class="math inline">\(\Leftrightarrow\boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Leftrightarrow \boldsymbol{A}^{-1} = \boldsymbol{A}^{\text{T}}\\
+&amp;\Leftrightarrow \boldsymbol{A}^{\text{T}}{\left(\boldsymbol{A}^{\text{T}}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E} \\
+&amp;\Leftrightarrow \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} =\boldsymbol{E}\\
+&amp;\Leftrightarrow -\boldsymbol{A}(-\boldsymbol{A})^{\text{T}} = \boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E} \\
+&amp;\Rightarrow |\boldsymbol{A}|^2 = |\boldsymbol{A}\boldsymbol{A}| = \left|\boldsymbol{A}\boldsymbol{A}^{-1}\right| = |\boldsymbol{E}| = 1 \Rightarrow |\boldsymbol{A}| = \pm 1\\
+&amp;\Leftrightarrow \boldsymbol{A}^*(\boldsymbol{A}^*)^{\text{T}} = |\boldsymbol{A}|\boldsymbol{A}^{-1}{\left(|\boldsymbol{A}|\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{E}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,-\boldsymbol{A}\)</span> 是正交矩阵。</li>
+<li><strong><em>A</em></strong> 必可逆，<span class="math inline">\(\text{det}(\boldsymbol{A}) = \pm 1\)</span>。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶正交矩阵，则 <strong><em>AB</em></strong> 必为正交矩阵（<strong><em>A</em></strong> + <strong><em>B</em></strong> 未必）。</li>
+</ul>
+<p><strong>正交矩阵与向量空间的关系：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组和行向量组都是<strong>单位正交向量组</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的 <em>n</em> 个列向量和 <em>n</em> 个行向量都是 <em>n</em> 维向量空间的<strong>规范正交基</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 是规范正交基到规范正交基的过渡矩阵。</li>
+</ul>
+<h3 id="实对称矩阵">实对称矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』<span class="math inline">\(\Leftrightarrow\boldsymbol{A} = \boldsymbol{A}^{\text{T}}\)</span> 且元素都是实数。</p>
+<p><strong>实对称矩阵的性质：</strong></p>
+<ul>
+<li><strong>实对称矩阵的 <em>k</em> 重特征值必有 <em>k</em> 个线性无关的特征向量。</strong></li>
+<li>根据上一条结论，<em>n</em> 阶实对称矩阵必有 <em>n</em> 个线性无关的特征向量，即<strong>必可以相似对角化</strong>。</li>
+<li><strong>实对称矩阵不同特征值对应的特征向量必正交。</strong></li>
+<li>根据上述结论，实对称矩阵<strong>必可以用『正交矩阵』相似对角化</strong>。</li>
+</ul>
+<blockquote>
+<p>注：只有对相同特征值对应的特征向量（即同一个特征子空间的基）进行施密特正交化，才能保证正交化后的特征向量仍是其对应特征值的特征向量（仍是其对应的特征子空间的基）。</p>
+<p>而实对称矩阵不同特征值对应的特征向量正交，故只需要对相同特征值的特征向量进行施密特正交化就可以得到正交矩阵，故实对称矩阵一定可以使用正交矩阵相似对角化（但可以<strong>用正交矩阵相似对角化的矩阵未必是实对称矩阵</strong>）。</p>
+</blockquote>
+<h3 id="实对称矩阵的合同">实对称矩阵的合同</h3>
+<ol type="1">
+<li>矩阵的合同</li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>合同</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>矩阵合同的性质：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B},\boldsymbol{B} \simeq \boldsymbol{C}\Rightarrow \boldsymbol{A} \simeq \boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Rightarrow \boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>实对称矩阵的合同</strong></li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 拥有相同的『<a href="#惯性定理">正、负惯性指数</a>』。</p>
+<p>重要结论：</p>
+<ul>
+<li><strong>实对称矩阵闭可以合同对角化</strong>。<strong><em>A</em></strong> 是实对称矩阵，则必有可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{AC} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p>证：<strong><em>A</em></strong> 为实对称矩阵，则必存在正交矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，因为 <span class="math inline">\(\boldsymbol{Q}^{-1} =\boldsymbol{Q}^{\text{T}}\)</span>，故 <span class="math inline">\(\boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</p>
+<blockquote>
+<p>注：通过正交矩阵对角化只是合同对角化的一种特殊情形，此时 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span> 且 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。详见<a href="#正交变换法">正交变换法</a>。<br />
+实际上即使不通过正交矩阵，仅仅通过可逆矩阵，就一定可以使实对称矩阵合同对角化。详见<a href="#配方法">配方法</a>。</p>
+</blockquote>
+<ul>
+<li><strong>实对称矩阵相似必合同</strong>。<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</li>
+</ul>
+<p>证 1：<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶实对称矩阵，故必有正交矩阵 <span class="math inline">\(\boldsymbol{Q}_1,\boldsymbol{Q}_2\)</span>，使得</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; {\boldsymbol{Q}_1}^{-1}\boldsymbol{AQ}_1 = {\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda}_1 \\
+&amp; {\boldsymbol{Q}_2}^{-1}\boldsymbol{BQ}_2 = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2 = \boldsymbol{\Lambda}_2
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则必存在 <span class="math inline">\(\boldsymbol{\Lambda} = \boldsymbol{\Lambda}_1 = \boldsymbol{\Lambda}_2\)</span>，使得</p>
+<p><span class="math display">\[
+{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda} = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2
+\]</span></p>
+<p>等式两边左乘 <span class="math inline">\(\boldsymbol{Q}_2\)</span> 右乘 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}}\)</span>，因为 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}} = {\boldsymbol{Q}_2}^{-1}\)</span>，故</p>
+<p><span class="math display">\[
+\boldsymbol{Q}_2{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1{\boldsymbol{Q}_2}^{\text{T}} = \boldsymbol{B}
+\]</span></p>
+<p>令 <span class="math inline">\(\boldsymbol{C} = \boldsymbol{Q}_1{\boldsymbol{Q}_2}^{\text{T}}\)</span>，则</p>
+<p><span class="math display">\[
+\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}
+\]</span></p>
+<p>因为 <strong><em>C</em></strong> 是可逆矩阵，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>证 2：<span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>，因为 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，故通过<a href="#正交变换法">正交变换法</a>得到的规范形的正、负惯性指数相同，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<blockquote>
+<p>注：反之，<strong>实对称矩阵合同无法推出相似</strong>。</p>
+</blockquote>
+<h3 id="二次型及其标准形和规范形">二次型及其标准形和规范形</h3>
+<ol type="1">
+<li>实二次型</li>
+</ol>
+<p><em>n</em> 元变量 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 的二次多项式</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n) =  &amp;a_{11}{x_1}^2 + a_{12} x_1x_2 +  \cdots + a_{1n}x_1x_n + \\
+&amp; a_{21}x_2x_1 + a_{22}{x_2}^2 +  \cdots + a_{2n}x_2x_n +\\
+&amp; \cdots \cdots+\\
+&amp;a_{n1}x_nx_1 + a_{n2} x_nx_2 +  \cdots + a_{nn}{x_n}^2 \\
+\end{aligned}
+\]</span></p>
+<p>称为 『<strong><em>n</em> 元二次型</strong>』，若 <span class="math inline">\(a_{ij} \in \mathbb{R}\:(i,j=1,2,\ldots,n)\)</span>，则称为『<strong>实二次型</strong>』。</p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}, \; \boldsymbol{A} = \begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\ a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn} \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n)
+&amp; = [x_1,x_2,\ldots,x_n]\begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\  a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn}  \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \\
+&amp; ={\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax}
+\end{aligned}
+\]</span></p>
+<p>称 <strong><em>A</em></strong> 为<strong>实二次型 <span class="math inline">\(f\)</span> 的矩阵</strong>，因为 <span class="math inline">\(a_{ij} = a_{ji}\)</span>，故 <strong><em>A</em></strong> 是实对称矩阵。</p>
+<ol start="2" type="1">
+<li>线性变换</li>
+</ol>
+<p>对于二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span>，若令</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp; x_1 = c_{11}y_1 + c_{12}y_2 + \cdots + c_{1n}y_n \\
+&amp; x_2 = c_{21}y_1 + c_{22}y_2 + \cdots + c_{2n}y_n \\
+&amp; \cdots \cdots \\
+&amp; x_1 = c_{n1}y_1 + c_{n2}y_2 + \cdots + c_{nn}y_n
+\end{aligned}
+\right.
+\]</span></p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2\\ \vdots \\ x_n \end{bmatrix},\; \boldsymbol{C} = \begin{bmatrix} c_{11} &amp;c_{12} &amp;\cdots &amp;c_{1n} \\ c_{21} &amp;c_{22} &amp;\cdots &amp;c_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ c_{n1} &amp;c_{n2} &amp;\cdots &amp;c_{nn} \end{bmatrix},\; \boldsymbol{y}= \begin{bmatrix} y_1 \\ y_2\\ \vdots \\ y_n \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\boldsymbol{x} = \boldsymbol{Cy}
+\]</span></p>
+<p>称上式为从 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 到 <span class="math inline">\(y_1,y_2,\ldots,y_n\)</span> 的『<strong>线性变换</strong>』，若 <strong><em>C</em></strong> 是可逆矩阵，则称为『<strong>可逆线性变换</strong>』，若 <strong><em>C</em></strong> 为正交矩阵，则称为『<strong>正交变换</strong>』。</p>
+<p>紧跟着继续探讨，可得</p>
+<p><span class="math display">\[
+{\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax} = {(\boldsymbol{Cy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Cy}) = {\boldsymbol{y}}^{\text{T}}\left({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC}\right) \boldsymbol{y}
+\]</span></p>
+<p>仅当 <span class="math inline">\({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC} = \boldsymbol{B}\)</span> 即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span> 时，二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span> 可转化为 <span class="math inline">\(g(y_1,y_2,\ldots,y_n) = \boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span>。</p>
+<p>即 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 可转化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span> 的<strong>充分必要条件</strong>为 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<ol start="3" type="1">
+<li>二次型的标准形和规范形</li>
+</ol>
+<p>二次型的『<strong>标准形</strong>』：二次型中<strong>只含平方项</strong>，即形如</p>
+<p><span class="math display">\[
+d_1{x_1}^2 + d_2{x_2}^2 + \cdots + d_n{x_n}^2
+\]</span></p>
+<p>二次型的『<strong>规范形</strong>』：标准形中的系数 <span class="math inline">\(d_i\;(i = 1,2,\ldots,n)\)</span> 仅为 1、-1、0 之一，即形如</p>
+<p><span class="math display">\[
+{x_1}^2 + \cdots + {x_p}^2 - {x_{p+1}}^2 - \cdots - {x_{p+q}}^2
+\]</span></p>
+<p>其中 <em>p</em>、<em>q</em> 为<a href="#惯性定理">正、负惯性指数</a>。</p>
+<h3 id="惯性定理">惯性定理</h3>
+<p>无论二次型通过何种可逆线性变换化为规范形或标准形，其正项个数 <em>p</em>、负项个数 <em>q</em> 都是不变的，<em>p</em> 称为『<strong>正惯性指数</strong>』，<em>q</em> 称为『<strong>负惯性指数</strong>』。</p>
+<p><strong><em>A</em></strong> 是实对称矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计），故 <span class="math inline">\(r(\boldsymbol{A}) = p+q\)</span>。</p>
+<h3 id="正定二次型">正定二次型</h3>
+<p><em>n</em> 元二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n) = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span>，若对于任意 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\x_2 \\ \vdots \\ x_n \end{bmatrix} \neq \boldsymbol{0}\)</span>，均有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>，则称 <span class="math inline">\(f\)</span> 为『<strong>正定二次型</strong>』，称 <strong><em>A</em></strong> 为『<strong>正定矩阵</strong>』。</p>
+<blockquote>
+<p>注：正定矩阵的前提是实对称矩阵。</p>
+</blockquote>
+<p><strong>二次型正定的充要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 对于 <span class="math inline">\(\forall \boldsymbol{x} \neq \boldsymbol{0}\)</span> 有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow f\)</span> 的正惯性指数 <span class="math inline">\(p = n\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的特征值都大于零。</li>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>D</em></strong>，使得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{D}^{\text{T}}\boldsymbol{D}\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A} \simeq \boldsymbol{E}\)</span></li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的所有『顺序主子式』大于零。</li>
+</ul>
+<p><strong>二次型正定的必要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Rightarrow a_{ii} &gt; 0\;(i =1,2,\ldots,n)\)</span></li>
+<li><span class="math inline">\(\Rightarrow\)</span> <strong><em>A</em></strong> 必可逆，且 <span class="math inline">\(\text{det}(\boldsymbol{A}) &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Rightarrow \boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,\boldsymbol{A}^k\;(k \in \mathbb{N}_+)\)</span> 均正定。</li>
+</ul>
+<p><strong>重要结论：</strong></p>
+<ul>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{A} + \boldsymbol{B}\)</span> 正定，<span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{bmatrix}\)</span> 正定。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{AB}\)</span> 正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{AB} = \boldsymbol{BA}\)</span>。</li>
+</ul>
+<blockquote>
+<p>注：此处注意与正交矩阵区分。</p>
+</blockquote>
+<ul>
+<li><strong><em>A</em></strong> 既正交又正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
+</ul>
+<h2 id="化二次型为标准形或规范形">化二次型为标准形或规范形</h2>
+<h3 id="正交变换法">正交变换法</h3>
+<p>将二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为标准形，即将 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}\)</span>，其充分必要条件是 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。因为实对称矩阵必可以使用正交矩阵相似对角化，这是合同对角化的一种特殊情形，其本质是<strong>通过相似理论求出正交矩阵 <em>Q</em>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</strong></p>
+<p>对于 <em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span></p>
+<ol type="1">
+<li>求 <strong><em>A</em></strong> 的特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span>。</li>
+<li>根据特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span> 求出 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span>。</li>
+<li>对相同特征值对应的特征向量进行正交化、单位化，得到 <span class="math inline">\(\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n\)</span>。</li>
+<li>设 <span class="math inline">\(\boldsymbol{Q} = [\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n]\)</span>，则 <strong><em>Q</em></strong> 为正交矩阵，且 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</li>
+</ol>
+<p>则</p>
+<p><span class="math display">\[
+f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax} \xlongequal{\boldsymbol{x} = \boldsymbol{Qy}} {(\boldsymbol{Qy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Qy}) = \boldsymbol{y}^{\text{T}}\boldsymbol{Q}^{\text{T}}\boldsymbol{AQy} =  \boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}
+\]</span></p>
+<blockquote>
+<p>注：因为正交变换法本质上是相似对角化，故得到的 <span class="math inline">\(\Lambda\)</span> 主对角线是 <strong><em>A</em></strong> 的特征值。所以<strong>正交变换法只能化为标准形，不能保证化为规范形</strong>。</p>
+</blockquote>
+<h3 id="配方法">配方法</h3>
+<p>即使不通过正交矩阵，实对称矩阵也必可以合同对角化，那就是使用配方法：</p>
+<ul>
+<li>若二次型含有平方项，则将某个变量的平方项与其有关的项合并在一起，配成一个完全平方项，直至配完所有项。</li>
+<li>若二次型不含平方项，则通过平方差公式创造平方项，然后再按照上一个步骤配方。</li>
+</ul>
+<blockquote>
+<p>注：配方法必可以将二次型化为规范形。</p>
+</blockquote>
+<h2 id="结句">结句</h2>
+<p>行列式、矩阵的幂、可逆矩阵、伴随矩阵、特征值和特征向量、相似理论、矩阵的合同、实对称矩阵、正交矩阵、正定矩阵所探讨的对象都是『方阵』。</p>
+<p>矩阵的初等变换、矩阵的秩、向量组、线性方程组所探讨的对象未必是方阵。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Cohanbb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cohanbb.github.io/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" title="二次型">https://cohanbb.github.io/2022/09/25/二次型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/" rel="prev" title="相似理论">
+      <i class="fa fa-chevron-left"></i> 相似理论
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.</span> <span class="nav-text">正交矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">实对称矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E7%9A%84%E5%90%88%E5%90%8C"><span class="nav-number">1.3.</span> <span class="nav-text">实对称矩阵的合同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E5%8F%8A%E5%85%B6%E6%A0%87%E5%87%86%E5%BD%A2%E5%92%8C%E8%A7%84%E8%8C%83%E5%BD%A2"><span class="nav-number">1.4.</span> <span class="nav-text">二次型及其标准形和规范形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%AF%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-number">1.5.</span> <span class="nav-text">惯性定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="nav-number">1.6.</span> <span class="nav-text">正定二次型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%96%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%BA%E6%A0%87%E5%87%86%E5%BD%A2%E6%88%96%E8%A7%84%E8%8C%83%E5%BD%A2"><span class="nav-number">2.</span> <span class="nav-text">化二次型为标准形或规范形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">正交变换法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">配方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E5%8F%A5"><span class="nav-number">3.</span> <span class="nav-text">结句</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cohanbb"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cohanbb</p>
+  <div class="site-description" itemprop="description">Technological blogs about Computer Science.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    不得真假  不做挣扎  不惧笑话
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Cohanbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Cohanbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/m0_48857872" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_48857872" rel="noopener" target="_blank"><i class="fa fa-keyboard fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cohanbb</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
