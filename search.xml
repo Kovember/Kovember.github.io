@@ -995,254 +995,6 @@ categories 与以上同理。</p>
       </tags>
   </entry>
   <entry>
-    <title>二次型</title>
-    <url>/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
-    <content><![CDATA[<p>线性代数-二次型的概念与计算。</p>
-<hr />
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#概念">概念</a>
-<ul>
-<li><a href="#正交矩阵">正交矩阵</a></li>
-<li><a href="#实对称矩阵">实对称矩阵</a></li>
-<li><a href="#实对称矩阵的合同">实对称矩阵的合同</a></li>
-<li><a href="#二次型及其标准形和规范形">二次型及其标准形和规范形</a></li>
-<li><a href="#惯性定理">惯性定理</a></li>
-<li><a href="#正定二次型">正定二次型</a></li>
-</ul></li>
-<li><a href="#化二次型为标准形或规范形">化二次型为标准形或规范形</a>
-<ul>
-<li><a href="#正交变换法">正交变换法</a></li>
-<li><a href="#配方法">配方法</a></li>
-</ul></li>
-<li><a href="#结句">结句</a></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr />
-<h2 id="概念">概念</h2>
-<h3 id="正交矩阵">正交矩阵</h3>
-<p><strong><em>A</em></strong> 是『<strong>正交矩阵</strong>』 <span class="math inline">\(\Leftrightarrow\boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E}\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\Leftrightarrow \boldsymbol{A}^{-1} = \boldsymbol{A}^{\text{T}}\\
-&amp;\Leftrightarrow \boldsymbol{A}^{\text{T}}{\left(\boldsymbol{A}^{\text{T}}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E} \\
-&amp;\Leftrightarrow \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} =\boldsymbol{E}\\
-&amp;\Leftrightarrow -\boldsymbol{A}(-\boldsymbol{A})^{\text{T}} = \boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E} \\
-&amp;\Rightarrow |\boldsymbol{A}|^2 = |\boldsymbol{A}\boldsymbol{A}| = \left|\boldsymbol{A}\boldsymbol{A}^{-1}\right| = |\boldsymbol{E}| = 1 \Rightarrow |\boldsymbol{A}| = \pm 1\\
-&amp;\Leftrightarrow \boldsymbol{A}^*(\boldsymbol{A}^*)^{\text{T}} = |\boldsymbol{A}|\boldsymbol{A}^{-1}{\left(|\boldsymbol{A}|\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{E}
-\end{aligned}
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,-\boldsymbol{A}\)</span> 是正交矩阵。</li>
-<li><strong><em>A</em></strong> 必可逆，<span class="math inline">\(\text{det}(\boldsymbol{A}) = \pm 1\)</span>。</li>
-<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶正交矩阵，则 <strong><em>AB</em></strong> 必为正交矩阵（<strong><em>A</em></strong> + <strong><em>B</em></strong> 未必）。</li>
-</ul>
-<p><strong>正交矩阵与向量空间的关系：</strong></p>
-<ul>
-<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组和行向量组都是<strong>单位正交向量组</strong>。</li>
-<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的 <em>n</em> 个列向量和 <em>n</em> 个行向量都是 <em>n</em> 维向量空间的<strong>规范正交基</strong>。</li>
-<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 是规范正交基到规范正交基的过渡矩阵。</li>
-</ul>
-<h3 id="实对称矩阵">实对称矩阵</h3>
-<p><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』<span class="math inline">\(\Leftrightarrow\boldsymbol{A} = \boldsymbol{A}^{\text{T}}\)</span> 且元素都是实数。</p>
-<p><strong>实对称矩阵的性质：</strong></p>
-<ul>
-<li><strong>实对称矩阵的 <em>k</em> 重特征值必有 <em>k</em> 个线性无关的特征向量。</strong></li>
-<li>根据上一条结论，<em>n</em> 阶实对称矩阵必有 <em>n</em> 个线性无关的特征向量，即<strong>必可以相似对角化</strong>。</li>
-<li><strong>实对称矩阵不同特征值对应的特征向量必正交。</strong></li>
-<li>根据上述结论，实对称矩阵<strong>必可以用『正交矩阵』相似对角化</strong>。</li>
-</ul>
-<blockquote>
-<p>注：只有对相同特征值对应的特征向量（即同一个特征子空间的基）进行施密特正交化，才能保证正交化后的特征向量仍是其对应特征值的特征向量（仍是其对应的特征子空间的基）。</p>
-<p>而实对称矩阵不同特征值对应的特征向量正交，故只需要对相同特征值的特征向量进行施密特正交化就可以得到正交矩阵，故实对称矩阵一定可以使用正交矩阵相似对角化（但可以<strong>用正交矩阵相似对角化的矩阵未必是实对称矩阵</strong>）。</p>
-</blockquote>
-<h3 id="实对称矩阵的合同">实对称矩阵的合同</h3>
-<ol type="1">
-<li>矩阵的合同</li>
-</ol>
-<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>合同</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
-<p>矩阵合同的性质：</p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B},\boldsymbol{B} \simeq \boldsymbol{C}\Rightarrow \boldsymbol{A} \simeq \boldsymbol{C}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Rightarrow \boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>实对称矩阵的合同</strong></li>
-</ol>
-<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 拥有相同的『<a href="#惯性定理">正、负惯性指数</a>』。</p>
-<p>重要结论：</p>
-<ul>
-<li><strong>实对称矩阵闭可以合同对角化</strong>。<strong><em>A</em></strong> 是实对称矩阵，则必有可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{AC} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</li>
-</ul>
-<p>证：<strong><em>A</em></strong> 为实对称矩阵，则必存在正交矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，因为 <span class="math inline">\(\boldsymbol{Q}^{-1} =\boldsymbol{Q}^{\text{T}}\)</span>，故 <span class="math inline">\(\boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</p>
-<blockquote>
-<p>注：通过正交矩阵对角化只是合同对角化的一种特殊情形，此时 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span> 且 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。详见<a href="#正交变换法">正交变换法</a>。<br />
-实际上即使不通过正交矩阵，仅仅通过可逆矩阵，就一定可以使实对称矩阵合同对角化。详见<a href="#配方法">配方法</a>。</p>
-</blockquote>
-<ul>
-<li><strong>实对称矩阵相似必合同</strong>。<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</li>
-</ul>
-<p>证 1：<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶实对称矩阵，故必有正交矩阵 <span class="math inline">\(\boldsymbol{Q}_1,\boldsymbol{Q}_2\)</span>，使得</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; {\boldsymbol{Q}_1}^{-1}\boldsymbol{AQ}_1 = {\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda}_1 \\
-&amp; {\boldsymbol{Q}_2}^{-1}\boldsymbol{BQ}_2 = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2 = \boldsymbol{\Lambda}_2
-\end{aligned}
-\]</span></p>
-<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则必存在 <span class="math inline">\(\boldsymbol{\Lambda} = \boldsymbol{\Lambda}_1 = \boldsymbol{\Lambda}_2\)</span>，使得</p>
-<p><span class="math display">\[
-{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda} = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2
-\]</span></p>
-<p>等式两边左乘 <span class="math inline">\(\boldsymbol{Q}_2\)</span> 右乘 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}}\)</span>，因为 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}} = {\boldsymbol{Q}_2}^{-1}\)</span>，故</p>
-<p><span class="math display">\[
-\boldsymbol{Q}_2{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1{\boldsymbol{Q}_2}^{\text{T}} = \boldsymbol{B}
-\]</span></p>
-<p>令 <span class="math inline">\(\boldsymbol{C} = \boldsymbol{Q}_1{\boldsymbol{Q}_2}^{\text{T}}\)</span>，则</p>
-<p><span class="math display">\[
-\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}
-\]</span></p>
-<p>因为 <strong><em>C</em></strong> 是可逆矩阵，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
-<p>证 2：<span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>，因为 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，故通过<a href="#正交变换法">正交变换法</a>得到的规范形的正、负惯性指数相同，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
-<blockquote>
-<p>注：反之，<strong>实对称矩阵合同无法推出相似</strong>。</p>
-</blockquote>
-<h3 id="二次型及其标准形和规范形">二次型及其标准形和规范形</h3>
-<ol type="1">
-<li>实二次型</li>
-</ol>
-<p><em>n</em> 元变量 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 的二次多项式</p>
-<p><span class="math display">\[
-\begin{aligned}
-f(x_1,x_2,\ldots,x_n) =  &amp;a_{11}{x_1}^2 + a_{12} x_1x_2 +  \cdots + a_{1n}x_1x_n + \\
-&amp; a_{21}x_2x_1 + a_{22}{x_2}^2 +  \cdots + a_{2n}x_2x_n +\\
-&amp; \cdots \cdots+\\
-&amp;a_{n1}x_nx_1 + a_{n2} x_nx_2 +  \cdots + a_{nn}{x_n}^2 \\
-\end{aligned}
-\]</span></p>
-<p>称为 『<strong><em>n</em> 元二次型</strong>』，若 <span class="math inline">\(a_{ij} \in \mathbb{R}\:(i,j=1,2,\ldots,n)\)</span>，则称为『<strong>实二次型</strong>』。</p>
-<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}, \; \boldsymbol{A} = \begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\ a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn} \end{bmatrix}\)</span>，则有</p>
-<p><span class="math display">\[
-\begin{aligned}
-f(x_1,x_2,\ldots,x_n)
-&amp; = [x_1,x_2,\ldots,x_n]\begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\  a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn}  \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \\
-&amp; ={\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax}
-\end{aligned}
-\]</span></p>
-<p>称 <strong><em>A</em></strong> 为<strong>实二次型 <span class="math inline">\(f\)</span> 的矩阵</strong>，因为 <span class="math inline">\(a_{ij} = a_{ji}\)</span>，故 <strong><em>A</em></strong> 是实对称矩阵。</p>
-<ol start="2" type="1">
-<li>线性变换</li>
-</ol>
-<p>对于二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span>，若令</p>
-<p><span class="math display">\[
-\left\{
-\begin{aligned}
-&amp; x_1 = c_{11}y_1 + c_{12}y_2 + \cdots + c_{1n}y_n \\
-&amp; x_2 = c_{21}y_1 + c_{22}y_2 + \cdots + c_{2n}y_n \\
-&amp; \cdots \cdots \\
-&amp; x_1 = c_{n1}y_1 + c_{n2}y_2 + \cdots + c_{nn}y_n
-\end{aligned}
-\right.
-\]</span></p>
-<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2\\ \vdots \\ x_n \end{bmatrix},\; \boldsymbol{C} = \begin{bmatrix} c_{11} &amp;c_{12} &amp;\cdots &amp;c_{1n} \\ c_{21} &amp;c_{22} &amp;\cdots &amp;c_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ c_{n1} &amp;c_{n2} &amp;\cdots &amp;c_{nn} \end{bmatrix},\; \boldsymbol{y}= \begin{bmatrix} y_1 \\ y_2\\ \vdots \\ y_n \end{bmatrix}\)</span>，则有</p>
-<p><span class="math display">\[
-\boldsymbol{x} = \boldsymbol{Cy}
-\]</span></p>
-<p>称上式为从 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 到 <span class="math inline">\(y_1,y_2,\ldots,y_n\)</span> 的『<strong>线性变换</strong>』，若 <strong><em>C</em></strong> 是可逆矩阵，则称为『<strong>可逆线性变换</strong>』，若 <strong><em>C</em></strong> 为正交矩阵，则称为『<strong>正交变换</strong>』。</p>
-<p>紧跟着继续探讨，可得</p>
-<p><span class="math display">\[
-{\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax} = {(\boldsymbol{Cy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Cy}) = {\boldsymbol{y}}^{\text{T}}\left({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC}\right) \boldsymbol{y}
-\]</span></p>
-<p>仅当 <span class="math inline">\({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC} = \boldsymbol{B}\)</span> 即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span> 时，二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span> 可转化为 <span class="math inline">\(g(y_1,y_2,\ldots,y_n) = \boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span>。</p>
-<p>即 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 可转化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span> 的<strong>充分必要条件</strong>为 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
-<ol start="3" type="1">
-<li>二次型的标准形和规范形</li>
-</ol>
-<p>二次型的『<strong>标准形</strong>』：二次型中<strong>只含平方项</strong>，即形如</p>
-<p><span class="math display">\[
-d_1{x_1}^2 + d_2{x_2}^2 + \cdots + d_n{x_n}^2
-\]</span></p>
-<p>二次型的『<strong>规范形</strong>』：标准形中的系数 <span class="math inline">\(d_i\;(i = 1,2,\ldots,n)\)</span> 仅为 1、-1、0 之一，即形如</p>
-<p><span class="math display">\[
-{x_1}^2 + \cdots + {x_p}^2 - {x_{p+1}}^2 - \cdots - {x_{p+q}}^2
-\]</span></p>
-<p>其中 <em>p</em>、<em>q</em> 为<a href="#惯性定理">正、负惯性指数</a>。</p>
-<h3 id="惯性定理">惯性定理</h3>
-<p>无论二次型通过何种可逆线性变换化为规范形或标准形，其正项个数 <em>p</em>、负项个数 <em>q</em> 都是不变的，<em>p</em> 称为『<strong>正惯性指数</strong>』，<em>q</em> 称为『<strong>负惯性指数</strong>』。</p>
-<p><strong><em>A</em></strong> 是实对称矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计），故 <span class="math inline">\(r(\boldsymbol{A}) = p+q\)</span>。</p>
-<h3 id="正定二次型">正定二次型</h3>
-<p><em>n</em> 元二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n) = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span>，若对于任意 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\x_2 \\ \vdots \\ x_n \end{bmatrix} \neq \boldsymbol{0}\)</span>，均有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>，则称 <span class="math inline">\(f\)</span> 为『<strong>正定二次型</strong>』，称 <strong><em>A</em></strong> 为『<strong>正定矩阵</strong>』。</p>
-<blockquote>
-<p>注：正定矩阵的前提是实对称矩阵。</p>
-</blockquote>
-<p><strong>二次型正定的充要条件：</strong></p>
-<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
-<ul>
-<li><span class="math inline">\(\Leftrightarrow\)</span> 对于 <span class="math inline">\(\forall \boldsymbol{x} \neq \boldsymbol{0}\)</span> 有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>。</li>
-<li><span class="math inline">\(\Leftrightarrow f\)</span> 的正惯性指数 <span class="math inline">\(p = n\)</span>。</li>
-<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的特征值都大于零。</li>
-<li><span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>D</em></strong>，使得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{D}^{\text{T}}\boldsymbol{D}\)</span>。</li>
-<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A} \simeq \boldsymbol{E}\)</span></li>
-<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的所有『顺序主子式』大于零。</li>
-</ul>
-<p><strong>二次型正定的必要条件：</strong></p>
-<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
-<ul>
-<li><span class="math inline">\(\Rightarrow a_{ii} &gt; 0\;(i =1,2,\ldots,n)\)</span></li>
-<li><span class="math inline">\(\Rightarrow\)</span> <strong><em>A</em></strong> 必可逆，且 <span class="math inline">\(\text{det}(\boldsymbol{A}) &gt; 0\)</span>。</li>
-<li><span class="math inline">\(\Rightarrow \boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,\boldsymbol{A}^k\;(k \in \mathbb{N}_+)\)</span> 均正定。</li>
-</ul>
-<p><strong>重要结论：</strong></p>
-<ul>
-<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{A} + \boldsymbol{B}\)</span> 正定，<span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{bmatrix}\)</span> 正定。</li>
-<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{AB}\)</span> 正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{AB} = \boldsymbol{BA}\)</span>。</li>
-</ul>
-<blockquote>
-<p>注：此处注意与正交矩阵区分。</p>
-</blockquote>
-<ul>
-<li><strong><em>A</em></strong> 既正交又正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
-</ul>
-<h2 id="化二次型为标准形或规范形">化二次型为标准形或规范形</h2>
-<h3 id="正交变换法">正交变换法</h3>
-<p>将二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为标准形，即将 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}\)</span>，其充分必要条件是 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。因为实对称矩阵必可以使用正交矩阵相似对角化，这是合同对角化的一种特殊情形，其本质是<strong>通过相似理论求出正交矩阵 <em>Q</em>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</strong></p>
-<p>对于 <em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span></p>
-<ol type="1">
-<li>求 <strong><em>A</em></strong> 的特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span>。</li>
-<li>根据特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span> 求出 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span>。</li>
-<li>对相同特征值对应的特征向量进行正交化、单位化，得到 <span class="math inline">\(\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n\)</span>。</li>
-<li>设 <span class="math inline">\(\boldsymbol{Q} = [\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n]\)</span>，则 <strong><em>Q</em></strong> 为正交矩阵，且 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</li>
-</ol>
-<p>则</p>
-<p><span class="math display">\[
-f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax} \xlongequal{\boldsymbol{x} = \boldsymbol{Qy}} {(\boldsymbol{Qy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Qy}) = \boldsymbol{y}^{\text{T}}\boldsymbol{Q}^{\text{T}}\boldsymbol{AQy} =  \boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}
-\]</span></p>
-<blockquote>
-<p>注：因为正交变换法本质上是相似对角化，故得到的 <span class="math inline">\(\Lambda\)</span> 主对角线是 <strong><em>A</em></strong> 的特征值。所以<strong>正交变换法只能化为标准形，不能保证化为规范形</strong>。</p>
-</blockquote>
-<h3 id="配方法">配方法</h3>
-<p>即使不通过正交矩阵，实对称矩阵也必可以合同对角化，那就是使用配方法：</p>
-<ul>
-<li>若二次型含有平方项，则将某个变量的平方项与其有关的项合并在一起，配成一个完全平方项，直至配完所有项。</li>
-<li>若二次型不含平方项，则通过平方差公式创造平方项，然后再按照上一个步骤配方。</li>
-</ul>
-<blockquote>
-<p>注：配方法必可以将二次型化为规范形。</p>
-</blockquote>
-<h2 id="结句">结句</h2>
-<p>行列式、矩阵的幂、可逆矩阵、伴随矩阵、特征值和特征向量、相似理论、矩阵的合同、实对称矩阵、正交矩阵、正定矩阵所探讨的对象都是『方阵』。</p>
-<p>矩阵的初等变换、矩阵的秩、向量组、线性方程组所探讨的对象未必是方阵。</p>
-]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一元函数微分学</title>
     <url>/2022/09/08/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/</url>
     <content><![CDATA[<p>高等数学-一元函数微分学的概念和计算。</p>
@@ -1645,6 +1397,254 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
       </categories>
       <tags>
         <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二次型</title>
+    <url>/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>线性代数-二次型的概念与计算。</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#正交矩阵">正交矩阵</a></li>
+<li><a href="#实对称矩阵">实对称矩阵</a></li>
+<li><a href="#实对称矩阵的合同">实对称矩阵的合同</a></li>
+<li><a href="#二次型及其标准形和规范形">二次型及其标准形和规范形</a></li>
+<li><a href="#惯性定理">惯性定理</a></li>
+<li><a href="#正定二次型">正定二次型</a></li>
+</ul></li>
+<li><a href="#化二次型为标准形或规范形">化二次型为标准形或规范形</a>
+<ul>
+<li><a href="#正交变换法">正交变换法</a></li>
+<li><a href="#配方法">配方法</a></li>
+</ul></li>
+<li><a href="#结句">结句</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="正交矩阵">正交矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>正交矩阵</strong>』 <span class="math inline">\(\Leftrightarrow\boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E}\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Leftrightarrow \boldsymbol{A}^{-1} = \boldsymbol{A}^{\text{T}}\\
+&amp;\Leftrightarrow \boldsymbol{A}^{\text{T}}{\left(\boldsymbol{A}^{\text{T}}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{E} \\
+&amp;\Leftrightarrow \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}\boldsymbol{A} =\boldsymbol{E}\\
+&amp;\Leftrightarrow -\boldsymbol{A}(-\boldsymbol{A})^{\text{T}} = \boldsymbol{A}\boldsymbol{A}^{\text{T}} = \boldsymbol{E} \\
+&amp;\Rightarrow |\boldsymbol{A}|^2 = |\boldsymbol{A}\boldsymbol{A}| = \left|\boldsymbol{A}\boldsymbol{A}^{-1}\right| = |\boldsymbol{E}| = 1 \Rightarrow |\boldsymbol{A}| = \pm 1\\
+&amp;\Leftrightarrow \boldsymbol{A}^*(\boldsymbol{A}^*)^{\text{T}} = |\boldsymbol{A}|\boldsymbol{A}^{-1}{\left(|\boldsymbol{A}|\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{A}^{-1}{\left(\boldsymbol{A}^{-1}\right)}^{\text{T}} = \boldsymbol{E}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,-\boldsymbol{A}\)</span> 是正交矩阵。</li>
+<li><strong><em>A</em></strong> 必可逆，<span class="math inline">\(\text{det}(\boldsymbol{A}) = \pm 1\)</span>。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶正交矩阵，则 <strong><em>AB</em></strong> 必为正交矩阵（<strong><em>A</em></strong> + <strong><em>B</em></strong> 未必）。</li>
+</ul>
+<p><strong>正交矩阵与向量空间的关系：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组和行向量组都是<strong>单位正交向量组</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的 <em>n</em> 个列向量和 <em>n</em> 个行向量都是 <em>n</em> 维向量空间的<strong>规范正交基</strong>。</li>
+<li><strong><em>A</em></strong> 是正交矩阵 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 是规范正交基到规范正交基的过渡矩阵。</li>
+</ul>
+<h3 id="实对称矩阵">实对称矩阵</h3>
+<p><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』<span class="math inline">\(\Leftrightarrow\boldsymbol{A} = \boldsymbol{A}^{\text{T}}\)</span> 且元素都是实数。</p>
+<p><strong>实对称矩阵的性质：</strong></p>
+<ul>
+<li><strong>实对称矩阵的 <em>k</em> 重特征值必有 <em>k</em> 个线性无关的特征向量。</strong></li>
+<li>根据上一条结论，<em>n</em> 阶实对称矩阵必有 <em>n</em> 个线性无关的特征向量，即<strong>必可以相似对角化</strong>。</li>
+<li><strong>实对称矩阵不同特征值对应的特征向量必正交。</strong></li>
+<li>根据上述结论，实对称矩阵<strong>必可以用『正交矩阵』相似对角化</strong>。</li>
+</ul>
+<blockquote>
+<p>注：只有对相同特征值对应的特征向量（即同一个特征子空间的基）进行施密特正交化，才能保证正交化后的特征向量仍是其对应特征值的特征向量（仍是其对应的特征子空间的基）。</p>
+<p>而实对称矩阵不同特征值对应的特征向量正交，故只需要对相同特征值的特征向量进行施密特正交化就可以得到正交矩阵，故实对称矩阵一定可以使用正交矩阵相似对角化（但可以<strong>用正交矩阵相似对角化的矩阵未必是实对称矩阵</strong>）。</p>
+</blockquote>
+<h3 id="实对称矩阵的合同">实对称矩阵的合同</h3>
+<ol type="1">
+<li>矩阵的合同</li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>合同</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>矩阵合同的性质：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B},\boldsymbol{B} \simeq \boldsymbol{C}\Rightarrow \boldsymbol{A} \simeq \boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Rightarrow \boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>实对称矩阵的合同</strong></li>
+</ol>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B} \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 拥有相同的『<a href="#惯性定理">正、负惯性指数</a>』。</p>
+<p>重要结论：</p>
+<ul>
+<li><strong>实对称矩阵闭可以合同对角化</strong>。<strong><em>A</em></strong> 是实对称矩阵，则必有可逆矩阵 <strong><em>C</em></strong>，使得 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{AC} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p>证：<strong><em>A</em></strong> 为实对称矩阵，则必存在正交矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，因为 <span class="math inline">\(\boldsymbol{Q}^{-1} =\boldsymbol{Q}^{\text{T}}\)</span>，故 <span class="math inline">\(\boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>，即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。</p>
+<blockquote>
+<p>注：通过正交矩阵对角化只是合同对角化的一种特殊情形，此时 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span> 且 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。详见<a href="#正交变换法">正交变换法</a>。<br />
+实际上即使不通过正交矩阵，仅仅通过可逆矩阵，就一定可以使实对称矩阵合同对角化。详见<a href="#配方法">配方法</a>。</p>
+</blockquote>
+<ul>
+<li><strong>实对称矩阵相似必合同</strong>。<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，则 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</li>
+</ul>
+<p>证 1：<strong><em>A</em></strong> 和 <strong><em>B</em></strong> 为同阶实对称矩阵，故必有正交矩阵 <span class="math inline">\(\boldsymbol{Q}_1,\boldsymbol{Q}_2\)</span>，使得</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; {\boldsymbol{Q}_1}^{-1}\boldsymbol{AQ}_1 = {\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda}_1 \\
+&amp; {\boldsymbol{Q}_2}^{-1}\boldsymbol{BQ}_2 = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2 = \boldsymbol{\Lambda}_2
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则必存在 <span class="math inline">\(\boldsymbol{\Lambda} = \boldsymbol{\Lambda}_1 = \boldsymbol{\Lambda}_2\)</span>，使得</p>
+<p><span class="math display">\[
+{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1 = \boldsymbol{\Lambda} = {\boldsymbol{Q}_2}^{\text{T}}\boldsymbol{BQ}_2
+\]</span></p>
+<p>等式两边左乘 <span class="math inline">\(\boldsymbol{Q}_2\)</span> 右乘 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}}\)</span>，因为 <span class="math inline">\({\boldsymbol{Q}_2}^{\text{T}} = {\boldsymbol{Q}_2}^{-1}\)</span>，故</p>
+<p><span class="math display">\[
+\boldsymbol{Q}_2{\boldsymbol{Q}_1}^{\text{T}}\boldsymbol{AQ}_1{\boldsymbol{Q}_2}^{\text{T}} = \boldsymbol{B}
+\]</span></p>
+<p>令 <span class="math inline">\(\boldsymbol{C} = \boldsymbol{Q}_1{\boldsymbol{Q}_2}^{\text{T}}\)</span>，则</p>
+<p><span class="math display">\[
+\boldsymbol{C}^{\text{T}}\boldsymbol{A}\boldsymbol{C} = \boldsymbol{B}
+\]</span></p>
+<p>因为 <strong><em>C</em></strong> 是可逆矩阵，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<p>证 2：<span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>，因为 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是实对称矩阵，故通过<a href="#正交变换法">正交变换法</a>得到的规范形的正、负惯性指数相同，故 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<blockquote>
+<p>注：反之，<strong>实对称矩阵合同无法推出相似</strong>。</p>
+</blockquote>
+<h3 id="二次型及其标准形和规范形">二次型及其标准形和规范形</h3>
+<ol type="1">
+<li>实二次型</li>
+</ol>
+<p><em>n</em> 元变量 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 的二次多项式</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n) =  &amp;a_{11}{x_1}^2 + a_{12} x_1x_2 +  \cdots + a_{1n}x_1x_n + \\
+&amp; a_{21}x_2x_1 + a_{22}{x_2}^2 +  \cdots + a_{2n}x_2x_n +\\
+&amp; \cdots \cdots+\\
+&amp;a_{n1}x_nx_1 + a_{n2} x_nx_2 +  \cdots + a_{nn}{x_n}^2 \\
+\end{aligned}
+\]</span></p>
+<p>称为 『<strong><em>n</em> 元二次型</strong>』，若 <span class="math inline">\(a_{ij} \in \mathbb{R}\:(i,j=1,2,\ldots,n)\)</span>，则称为『<strong>实二次型</strong>』。</p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}, \; \boldsymbol{A} = \begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\ a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn} \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x_1,x_2,\ldots,x_n)
+&amp; = [x_1,x_2,\ldots,x_n]\begin{bmatrix} a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\  a_{21} &amp;a_{22} &amp;\cdots &amp;a_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn}  \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} \\
+&amp; ={\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax}
+\end{aligned}
+\]</span></p>
+<p>称 <strong><em>A</em></strong> 为<strong>实二次型 <span class="math inline">\(f\)</span> 的矩阵</strong>，因为 <span class="math inline">\(a_{ij} = a_{ji}\)</span>，故 <strong><em>A</em></strong> 是实对称矩阵。</p>
+<ol start="2" type="1">
+<li>线性变换</li>
+</ol>
+<p>对于二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span>，若令</p>
+<p><span class="math display">\[
+\left\{
+\begin{aligned}
+&amp; x_1 = c_{11}y_1 + c_{12}y_2 + \cdots + c_{1n}y_n \\
+&amp; x_2 = c_{21}y_1 + c_{22}y_2 + \cdots + c_{2n}y_n \\
+&amp; \cdots \cdots \\
+&amp; x_1 = c_{n1}y_1 + c_{n2}y_2 + \cdots + c_{nn}y_n
+\end{aligned}
+\right.
+\]</span></p>
+<p>设 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\ x_2\\ \vdots \\ x_n \end{bmatrix},\; \boldsymbol{C} = \begin{bmatrix} c_{11} &amp;c_{12} &amp;\cdots &amp;c_{1n} \\ c_{21} &amp;c_{22} &amp;\cdots &amp;c_{2n} \\ \vdots &amp;\vdots &amp;\ddots &amp;\vdots \\ c_{n1} &amp;c_{n2} &amp;\cdots &amp;c_{nn} \end{bmatrix},\; \boldsymbol{y}= \begin{bmatrix} y_1 \\ y_2\\ \vdots \\ y_n \end{bmatrix}\)</span>，则有</p>
+<p><span class="math display">\[
+\boldsymbol{x} = \boldsymbol{Cy}
+\]</span></p>
+<p>称上式为从 <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> 到 <span class="math inline">\(y_1,y_2,\ldots,y_n\)</span> 的『<strong>线性变换</strong>』，若 <strong><em>C</em></strong> 是可逆矩阵，则称为『<strong>可逆线性变换</strong>』，若 <strong><em>C</em></strong> 是正交矩阵，则称为『<strong>正交变换</strong>』。</p>
+<p>紧跟着继续探讨，可得</p>
+<p><span class="math display">\[
+{\boldsymbol{x}}^{\text{T}}\boldsymbol{Ax} = {(\boldsymbol{Cy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Cy}) = {\boldsymbol{y}}^{\text{T}}\left({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC}\right) \boldsymbol{y}
+\]</span></p>
+<p>仅当 <span class="math inline">\({\boldsymbol{C}}^{\text{T}} \boldsymbol{AC} = \boldsymbol{B}\)</span> 即 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span> 时，二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n)\)</span> 可转化为 <span class="math inline">\(g(y_1,y_2,\ldots,y_n) = \boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span>。</p>
+<p>即 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 可转化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{By}\)</span> 的<strong>充分必要条件</strong>为 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{B}\)</span>。</p>
+<ol start="3" type="1">
+<li>二次型的标准形和规范形</li>
+</ol>
+<p>二次型的『<strong>标准形</strong>』：二次型中<strong>只含平方项</strong>，即形如</p>
+<p><span class="math display">\[
+d_1{x_1}^2 + d_2{x_2}^2 + \cdots + d_n{x_n}^2
+\]</span></p>
+<p>二次型的『<strong>规范形</strong>』：标准形中的系数 <span class="math inline">\(d_i\;(i = 1,2,\ldots,n)\)</span> 仅为 1、-1、0 之一，即形如</p>
+<p><span class="math display">\[
+{x_1}^2 + \cdots + {x_p}^2 - {x_{p+1}}^2 - \cdots - {x_{p+q}}^2
+\]</span></p>
+<p>其中 <em>p</em>、<em>q</em> 为<a href="#惯性定理">正、负惯性指数</a>。</p>
+<h3 id="惯性定理">惯性定理</h3>
+<p>无论二次型通过何种可逆线性变换化为规范形或标准形，其正项个数 <em>p</em>、负项个数 <em>q</em> 都是不变的，<em>p</em> 称为『<strong>正惯性指数</strong>』，<em>q</em> 称为『<strong>负惯性指数</strong>』。</p>
+<p><strong><em>A</em></strong> 是实对称矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计），故 <span class="math inline">\(r(\boldsymbol{A}) = p+q\)</span>。</p>
+<h3 id="正定二次型">正定二次型</h3>
+<p><em>n</em> 元二次型 <span class="math inline">\(f(x_1,x_2,\ldots,x_n) = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span>，若对于任意 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 \\x_2 \\ \vdots \\ x_n \end{bmatrix} \neq \boldsymbol{0}\)</span>，均有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>，则称 <span class="math inline">\(f\)</span> 为『<strong>正定二次型</strong>』，称 <strong><em>A</em></strong> 为『<strong>正定矩阵</strong>』。</p>
+<blockquote>
+<p>注：正定矩阵的前提是实对称矩阵。</p>
+</blockquote>
+<p><strong>二次型正定的充要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 对于 <span class="math inline">\(\forall \boldsymbol{x} \neq \boldsymbol{0}\)</span> 有 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax} &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow f\)</span> 的正惯性指数 <span class="math inline">\(p = n\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的特征值都大于零。</li>
+<li><span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>D</em></strong>，使得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{D}^{\text{T}}\boldsymbol{D}\)</span>。</li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A} \simeq \boldsymbol{E}\)</span></li>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 的所有『顺序主子式』大于零。</li>
+</ul>
+<p><strong>二次型正定的必要条件：</strong></p>
+<p><em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 正定</p>
+<ul>
+<li><span class="math inline">\(\Rightarrow a_{ii} &gt; 0\;(i =1,2,\ldots,n)\)</span></li>
+<li><span class="math inline">\(\Rightarrow\)</span> <strong><em>A</em></strong> 必可逆，且 <span class="math inline">\(\text{det}(\boldsymbol{A}) &gt; 0\)</span>。</li>
+<li><span class="math inline">\(\Rightarrow \boldsymbol{A}^{\text{T}},\boldsymbol{A}^{-1},\boldsymbol{A}^*,\boldsymbol{A}^k\;(k \in \mathbb{N}_+)\)</span> 均正定。</li>
+</ul>
+<p><strong>重要结论：</strong></p>
+<ul>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{A} + \boldsymbol{B}\)</span> 正定，<span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{bmatrix}\)</span> 正定。</li>
+<li>若 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 正定，则 <span class="math inline">\(\boldsymbol{AB}\)</span> 正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{AB} = \boldsymbol{BA}\)</span>。</li>
+</ul>
+<blockquote>
+<p>注：此处注意与正交矩阵区分。</p>
+</blockquote>
+<ul>
+<li><strong><em>A</em></strong> 既正交又正定 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} = \boldsymbol{E}\)</span>。</li>
+</ul>
+<h2 id="化二次型为标准形或规范形">化二次型为标准形或规范形</h2>
+<h3 id="正交变换法">正交变换法</h3>
+<p>将二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为标准形，即将 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span> 化为 <span class="math inline">\(\boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}\)</span>，其充分必要条件是 <span class="math inline">\(\boldsymbol{A} \simeq \boldsymbol{\Lambda}\)</span>。因为实对称矩阵必可以使用正交矩阵相似对角化，这是合同对角化的一种特殊情形，其本质是<strong>通过相似理论求出正交矩阵 <em>Q</em>，使得 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</strong></p>
+<p>对于 <em>n</em> 元二次型 <span class="math inline">\(f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax}\)</span></p>
+<ol type="1">
+<li>求 <strong><em>A</em></strong> 的特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span>。</li>
+<li>根据特征值 <span class="math inline">\(\lambda_i \;(i =1,2,\ldots,n)\)</span> 求出 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span>。</li>
+<li>对相同特征值对应的特征向量进行正交化、单位化，得到 <span class="math inline">\(\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n\)</span>。</li>
+<li>设 <span class="math inline">\(\boldsymbol{Q} = [\boldsymbol{\eta}_1, \boldsymbol{\eta}_2,\ldots,\boldsymbol{\eta}_n]\)</span>，则 <strong><em>Q</em></strong> 为正交矩阵，且 <span class="math inline">\(\boldsymbol{Q}^{-1}\boldsymbol{AQ} = \boldsymbol{Q}^{\text{T}}\boldsymbol{AQ} = \boldsymbol{\Lambda}\)</span>。</li>
+</ol>
+<p>则</p>
+<p><span class="math display">\[
+f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax} \xlongequal{\boldsymbol{x} = \boldsymbol{Qy}} {(\boldsymbol{Qy})}^{\text{T}}\boldsymbol{A}(\boldsymbol{Qy}) = \boldsymbol{y}^{\text{T}}\boldsymbol{Q}^{\text{T}}\boldsymbol{AQy} =  \boldsymbol{y}^{\text{T}}\boldsymbol{\Lambda y}
+\]</span></p>
+<blockquote>
+<p>注：因为正交变换法本质上是相似对角化，故得到的 <span class="math inline">\(\Lambda\)</span> 主对角线是 <strong><em>A</em></strong> 的特征值。所以<strong>正交变换法只能化为标准形，不能保证化为规范形</strong>。</p>
+</blockquote>
+<h3 id="配方法">配方法</h3>
+<p>即使不通过正交矩阵，实对称矩阵也必可以合同对角化，那就是使用配方法：</p>
+<ul>
+<li>若二次型含有平方项，则将某个变量的平方项与其有关的项合并在一起，配成一个完全平方项，直至配完所有项。</li>
+<li>若二次型不含平方项，则通过平方差公式创造平方项，然后再按照上一个步骤配方。</li>
+</ul>
+<blockquote>
+<p>注：配方法必可以将二次型化为规范形。</p>
+</blockquote>
+<h2 id="结句">结句</h2>
+<p>行列式、矩阵的幂、可逆矩阵、伴随矩阵、特征值和特征向量、相似理论、矩阵的合同、实对称矩阵、正交矩阵、正定矩阵所探讨的对象都是『方阵』。</p>
+<p>矩阵的初等变换、矩阵的秩、向量组、线性方程组所探讨的对象未必是方阵。</p>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -2276,8 +2276,14 @@ f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
 <li>构造辅助函数 <span class="math inline">\(F(x,y,\lambda) = f(x,y) + \lambda\varphi(x,y)\)</span></li>
 <li>令</li>
 </ul>
-<p>$$ { \begin{aligned} &amp; F'_x = f'_x + '_x = 0 \ &amp; F'_y = f'_y + '<em>y = 0 \ &amp; F'</em>{} = (x,y,z) = 0</p>
-<p>\end{aligned} . $$</p>
+<p><span class="math display">\[
+\left\{ \begin{aligned}
+&amp; F&#39;_x = f&#39;_x + \lambda \varphi&#39;_x = 0 \\
+&amp; F&#39;_y = f&#39;_y + \lambda \varphi&#39;_y = 0 \\
+&amp; F&#39;_{\lambda} = \varphi(x,y,z) = 0
+\end{aligned}
+\right.
+\]</span></p>
 <ul>
 <li>解上述方程组得到备选点 <span class="math inline">\(P_i\;(i = 1,2,\ldots)\)</span>，在备选点中计算最大值和最小值。</li>
 </ul>
@@ -3396,9 +3402,9 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <ul>
 <li><em>n</em> 阶矩阵一定有 <em>n</em> 个特征值（按重数计）。</li>
 <li>若 <span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span> 是 <strong><em>A</em></strong> 的特征值，则 <span class="math inline">\(\text{det}(\boldsymbol{A})= \lambda_1\lambda_2\cdots\lambda_n, \; \text{tr}(\boldsymbol{A}) = \lambda_1 + \lambda_2 +\cdots+\lambda_n\)</span>。</li>
-<li>根据上一条结论，方阵 <strong><em>A</em></strong> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <strong><em>A</em></strong> 的特征值。</li>
+<li>根据上一条结论，<strong>方阵 <em>A</em> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <em>A</em> 的特征值</strong>。</li>
 <li>上（下）三角矩阵、对角矩阵的特征值就是主对角线元素。</li>
-<li><p>下表要谨记：</p>
+<li><p><strong>下表要谨记：</strong></p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 11%" />
@@ -3457,7 +3463,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li><p><span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2\)</span> 是不同特征值对应的特征向量，则 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2\; (k_1 \neq 0,k_2 \neq 0)\)</span> 不是 <strong><em>A</em></strong> 的特征向量。</p></li>
 </ul>
 <h3 id="矩阵的相似">矩阵的相似</h3>
-<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong>是两个同阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>相似</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>相似</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
 <p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则：</p>
 <ul>
 <li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span></li>
