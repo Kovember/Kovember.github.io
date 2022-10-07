@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="zyhJFoyXt3Lg0LGPDZqhXcYYt2f0p3yDZqt8noeZ_-Q">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Oxygen Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
+  </script>
+
+  <meta name="description" content="概率论与数量统计-多维随机变量及其函数的分布">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多维随机变量及其函数的分布">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/27/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/index.html">
+<meta property="og:site_name" content="Cohanbb Wiki">
+<meta property="og:description" content="概率论与数量统计-多维随机变量及其函数的分布">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-27T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-10-07T15:22:38.844Z">
+<meta property="article:author" content="Cohanbb">
+<meta property="article:tag" content="Probability Theory">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/27/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>多维随机变量及其函数的分布 | Cohanbb Wiki</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Cohanbb Wiki</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Cohanbb Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-链接">
+
+    <a href="/link/" rel="section"><i class="fa fa-link fa-fw"></i>链接</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/27/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Cohanbb">
+      <meta itemprop="description" content="Technological blogs about Computer Science.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cohanbb Wiki">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多维随机变量及其函数的分布
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-27 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-27T22:24:35+08:00">2022-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-10-07 23:22:38" itemprop="dateModified" datetime="2022-10-07T23:22:38+08:00">2022-10-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index"><span itemprop="name">Mathematics</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>概率论与数量统计-多维随机变量及其函数的分布</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#基本概念">基本概念</a></li>
+<li><a href="#多维随机变量的分布">多维随机变量的分布</a>
+<ul>
+<li><a href="#联合分布">联合分布</a></li>
+<li><a href="#边缘分布">边缘分布</a></li>
+<li><a href="#条件分布">条件分布</a></li>
+<li><a href="#分布函数计算概率">分布函数计算概率</a></li>
+</ul></li>
+<li><a href="#多维随机变量函数的分布">多维随机变量函数的分布</a>
+<ul>
+<li><a href="#多维-一维">多维 - 一维</a>
+<ul>
+<li><a href="#离散型-离散型-离散型">(离散型, 离散型) - 离散型</a></li>
+<li><a href="#连续型-连续型-连续型">(连续型, 连续型) - 连续型</a></li>
+<li><a href="#离散型-连续型-连续型">(离散型, 连续型) - 连续型</a></li>
+</ul></li>
+<li><a href="#一维-多维">一维 - 多维</a></li>
+<li><a href="#多维-多维">多维 - 多维</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="基本概念">基本概念</h2>
+<ol type="1">
+<li>二维随机变量及其分布</li>
+</ol>
+<p>二维随机变量 <span class="math inline">\((X,Y)\)</span> 的『<strong>分布函数</strong>』为</p>
+<p><span class="math display">\[
+F(x,y) = P\{X \leq x, Y \leq y\}
+\]</span></p>
+<p>记作 <span class="math inline">\((X,Y) \sim F(x,y)\)</span>。</p>
+<p>根据随机变量的类型可分为：</p>
+<ul>
+<li>二维离散型随机变量：</li>
+</ul>
+<p>若二维随机变量 <span class="math inline">\((X,Y)\)</span> 只能取得有限对或可列对值 <span class="math inline">\((x_1,y_1),(x_2,y_2),\ldots\)</span>，则称 <span class="math inline">\((X,Y)\)</span> 为『<strong>二维离散型随机变量</strong>』。称</p>
+<p><span class="math display">\[
+p_{ij} = P\{X = x_i, Y = y_i\}\;(i,j = 1,2,\ldots)
+\]</span></p>
+<p>为 <span class="math inline">\((X,Y)\)</span> 的『<strong>分布律</strong>』或随机变量 <em>X</em> 和 <em>Y</em> 的『<strong>联合分布律</strong>』，记作 <span class="math inline">\((X,Y) \sim p_{ij}\)</span>，联合分布律常用表格的形式表示。<span class="math inline">\((X,Y) \sim p_{ij}\)</span> 的分布函数为</p>
+<p><span class="math display">\[
+F(x,y) = \sum_{x_i \leq x,y_i \leq y} p_{ij}
+\]</span></p>
+<ul>
+<li>二维连续型随机变量：</li>
+</ul>
+<p>若二维随机变量 <span class="math inline">\((X,Y)\)</span> 的分布函数 <span class="math inline">\(F(x,y)\)</span> 连续，且可表示为</p>
+<p><span class="math display">\[
+F(x,y) = \int_{-\infty}^y \int _{-\infty}^x f(u,v)\text{d}u\text{d}v\;\left((x,y) \in \mathbb{R}^2\right)
+\]</span></p>
+<p>其中 <span class="math inline">\(f(x,y)\)</span> 是非负可积函数，则称 <span class="math inline">\((X,Y)\)</span> 为『<strong>二维连续型随机变量</strong>』，称 <span class="math inline">\(f(x,y)\)</span> 为 <span class="math inline">\((X,Y)\)</span> 的『<strong>概率密度</strong>』或随机变量 <em>X</em> 和 <em>Y</em> 的『<strong>联合概率密度</strong>』，记作 <span class="math inline">\((X,Y) \sim f(x,y)\)</span>。</p>
+<ol start="2" type="1">
+<li>重要结论</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(F(x,y)\)</span> 是联合分布函数的充分必要条件：</p>
+<ul>
+<li>单调性</li>
+<li>右连续</li>
+<li>有界</li>
+<li>非负</li>
+</ul></li>
+<li><span class="math inline">\(p_{ij}\)</span> 是联合分布律 <span class="math inline">\(\Leftrightarrow p_{ij} \geq 0\)</span> 且 <span class="math inline">\(\sum_j\sum_i p_{ij}= 1\)</span>。</li>
+<li><p><span class="math inline">\(f(x,y)\)</span> 是联合密度函数 <span class="math inline">\(\Leftrightarrow f(x,y) \geq 0\)</span> 且 <span class="math inline">\(\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f(x,y) \text{d}x\text{d}y = 1\)</span>。</p></li>
+</ul>
+<h2 id="多维随机变量的分布">多维随机变量的分布</h2>
+<h3 id="联合分布">联合分布</h3>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim F(x,y) \Leftrightarrow X,Y\)</span> 有联合分布函数 <span class="math inline">\(F(x,y)\)</span>：
+<ul>
+<li><span class="math inline">\((X,Y) \sim p_{ij}\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+F(x,y) = \sum_{x_i \leq x,y_i \leq y} p_{ij}
+\]</span></p>
+<ul>
+<li><span class="math inline">\((X,Y) \sim f(x,y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+F(x,y) = \int_{-\infty}^y \int _{-\infty}^x f(u,v)\text{d}u\text{d}v\;\left((x,y) \in \mathbb{R}^2\right)
+\]</span></p></li>
+<li><span class="math inline">\(p_{ij}\)</span>：常与 <span class="math inline">\(P(A)\)</span> 结合。</li>
+<li><p>二维均匀分布：<span class="math inline">\((X,Y) \sim U(D)\)</span>：</p></li>
+</ul>
+<p><span class="math display">\[
+f(x,y) = \left\{ \begin{array}{ll} \frac{1}{S_D}, &amp;(x,y) \in D \\ 0, &amp;(x,y) \not\in D \end{array} \right.
+\]</span></p>
+<ul>
+<li>二维正态分布：<span class="math inline">\((X,Y) \sim N\left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f(x,y) = \frac{1}{2\pi \sigma_1\sigma_2}
+\]</span></p>
+<p>二维正态分布的重要结论：</p>
+<ul>
+<li>若 <span class="math inline">\((X,Y) \sim N\left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+X \sim N \left (\mu_1,\sigma^2 \right ),\; Y \sim N\left(\mu_2,\sigma^2\right), \; \rho_{XY} = \rho
+\]</span></p>
+<ul>
+<li><p>若 <span class="math inline">\((X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho \right)\)</span>，则 <span class="math inline">\(X,Y\)</span> <strong>相互独立 <span class="math inline">\(\Leftrightarrow \rho_{XY} = \rho = 0 \Leftrightarrow X,Y\)</span> 不相关</strong>。</p></li>
+<li><p>若 <span class="math inline">\(X \sim N \left(\mu_1,{\sigma_1}^2 \right),\; Y \sim N \left (\mu_2,{\sigma_2}^2 \right)\)</span> 且 <span class="math inline">\(X,Y\)</span> <strong>相互独立</strong>，则</p></li>
+</ul>
+<p><span class="math display">\[
+(X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;0 \right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\((X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\Rightarrow k_1X + k_2Y + C \sim N \left(k_1\mu_1+k_2\mu_2+C,{k_1}^2{\sigma_1}^2 + {k_2}^2{\sigma_2}^2 \right)\)</span> 其中 <span class="math inline">\(k_1,k_2\)</span> 不全为 0。</li>
+<li><span class="math inline">\((X,Y) \sim N,\; X&#39; = aX + bY ,\; Y&#39; = cX + dY\)</span>，且 <span class="math inline">\(\left|\begin{matrix} a &amp;b \\ c &amp;d\end{matrix}\right| \neq 0\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+(X&#39;,Y&#39;) \sim N
+\]</span></p>
+<blockquote>
+<p>以上的结论在二维以上情况下仍然成立。</p>
+</blockquote>
+<ul>
+<li>二维正态分布的条件分布仍是正态分布，即 <span class="math inline">\((X,Y) \sim N \Rightarrow f_{Y \vert X}(y \vert x) \sim N, \; f_{X \vert Y}(x \vert y) \sim N\)</span>。</li>
+</ul>
+<h3 id="边缘分布">边缘分布</h3>
+<p><strong>由联合分布可以推出边缘分布：</strong></p>
+<ul>
+<li><span class="math inline">\(F_X(x),F_Y(y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+F_X(x) = F(x, +\infty), \quad F_Y(y) = F(+\infty,y)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p_{i\cdot},p_{\cdot y}\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+p_{i\cdot} = \sum_j p_{ij}, \quad p_{\cdot j} = \sum_i p_{ij}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(f_X(x),f_Y(y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f_X(x) = \int_{-\infty}^{+\infty} f(x,y)\text{d}y, \quad f_Y(y) = \int_{-\infty}^{+\infty} f(x,y)\text{d}x
+\]</span></p>
+<p><strong>由边缘分布不能推出联合分布，除非 <span class="math inline">\(X,Y\)</span> 相互独立：</strong></p>
+<ul>
+<li><span class="math inline">\(X,Y\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \forall x,y,\; F(x,y) = F_X(x) F_Y(y)\)</span>。</li>
+<li><span class="math inline">\(X,Y\)</span> 相互独立，<span class="math inline">\((X,Y)\)</span> 为二维离散型随机变量 <span class="math inline">\(\Leftrightarrow \forall i,j, \; p_{ij} = p_{i\cdot}p_{\cdot j}\)</span>。</li>
+<li><span class="math inline">\(X,Y\)</span> 相互独立，<span class="math inline">\((X,Y)\)</span> 为二维连续型随机变量 <span class="math inline">\(\Leftrightarrow \forall x,y, \; f(x,y) = f_X(x)f_Y(y)\)</span>。</li>
+</ul>
+<h3 id="条件分布">条件分布</h3>
+<ul>
+<li><span class="math inline">\(P\{Y = y_j \vert X = x_i\},P\{X = x_i \vert Y = y_j\}\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P\{Y = y_j \vert X = x_i\} = \frac{P\{X = x_i,Y = y_j\}}{P\{X = x_i\}} = \frac{p_{ij}}{p_{i\cdot}}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(f_{Y\vert X}(y \vert x),f_{X\vert Y}(x\vert y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f_{Y \vert X}(y \vert x) = \frac{f(x,y)}{f_X(x)},\quad f_{X \vert Y}(X \vert Y) = \frac{f(x,y)}{f_Y(y)}
+\]</span></p>
+<p>重要结论：</p>
+<ul>
+<li>联合 = 边缘 <span class="math inline">\(\times\)</span> 条件。</li>
+<li>条件概率密度之比等于边缘概率密度之比：</li>
+</ul>
+<p><span class="math display">\[
+\frac{f_{Y \vert X} (y \vert x)}{f_{X \vert Y} (x \vert y)} = \frac{f_Y(y)}{f_X(x)}
+\]</span></p>
+<h3 id="分布函数计算概率">分布函数计算概率</h3>
+<ul>
+<li>若为离散型或连续型，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; (X,Y) \sim p_{ij} \Rightarrow P\{(X,Y) \in D\} = \sum_{(x_i,y_i) \in D}p_{ij} \\
+&amp; (X,Y) \sim f(x,y) \Rightarrow P\{(X,Y) \in D\} = \iint_Df(x,y) \text{d}\sigma
+\end{aligned}
+\]</span></p>
+<ul>
+<li>若为混合型分布，则使用<strong>全概率</strong>公式计算概率。</li>
+</ul>
+<p><span class="math display">\[
+\text{e.g.}
+\]</span></p>
+<h2 id="多维随机变量函数的分布">多维随机变量函数的分布</h2>
+<h3 id="多维---一维">多维 - 一维</h3>
+<h4 id="离散型-离散型---离散型">(离散型, 离散型) - 离散型</h4>
+<ol type="1">
+<li><p><span class="math inline">\((X,Y) \sim p_{ij}, \; Z = g(X,Y) \Rightarrow Z \sim q_i\)</span></p></li>
+<li><p>设 <span class="math inline">\(X \sim p_k, \; Y \sim q_k\)</span>，<span class="math inline">\(X,Y\)</span> 相互独立，则可求 <span class="math inline">\(X + Y,\; XY, \; \max(X,Y), \; \min(X,Y)\)</span> 等的概率分布，<strong>关键是写等价事件</strong>：</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\(Z = X + Y\)</span> 且 <span class="math inline">\(X,Y\)</span> 独立并取非负整数，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} &amp;= P\{X+Y = k\}\\
+&amp;= P\{X = 0\}P\{Y=k\} + P\{X =1\}P\{Y = k - 1\}+ \cdots + P\{X = k \}P\{Y = 0\}\\
+&amp;= p_0q_k + p_1q_{k-1} + \cdots   p_kq_0\;(k = 0,1,2,\ldots)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z = \max(X,Y)\)</span> 且 <span class="math inline">\(X,Y\)</span> 独立并取非负整数，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} = &amp;P\{\max(X,Y) = k\} \\
+= &amp;P\{X = k, Y=k\} + P\{X = k, Y=k-1\} + \cdots +P\{X = k, Y=0\}+ \\
+&amp; P\{X =k-1,Y=k\} + P\{X=k-2,Y=k\}+ \cdots + P\{X = 0,Y = k\} \\
+= &amp;p_kq_k + p_kq_{k-1} + \cdots + p_kq_0 + p_{k-1}q_k + p_{k-2}q_k + \cdots + p_0q_k \;(k =0,1,2,\ldots)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z = \min(X,Y)\)</span> 且 <span class="math inline">\(X,Y\)</span> 相互独立并取非负整数，且 <span class="math inline">\(X,Y \leq l\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} = &amp;P\{\min(X,Y) = k\} \\
+= &amp;P\{X = k, Y=k\} + P\{X = k, Y=k+1\} + \cdots +P\{X = k, Y=l\}+ \\
+&amp; P\{X =k+1,Y=k\} + P\{X=k+2,Y=k\}+ \cdots + P\{X = l,Y = k\} \\
+= &amp;p_kq_k + p_kq_{k+1} + \cdots + p_kq_l + p_{k+1}q_k + p_{k+2}q_k + \cdots + p_lq_k \;(k =0,1,2,\ldots,l)
+\end{aligned}
+\]</span></p>
+<h4 id="连续型-连续型---连续型">(连续型, 连续型) - 连续型</h4>
+<ol type="1">
+<li><strong>分布函数法</strong></li>
+</ol>
+<p>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = g(X,Y)\)</span>，则</p>
+<p><span class="math display">\[
+F_Z(z) = P\{g(X,Y) \leq z\} = \iint_{g(x,y) \leq z} f(x,y) \text{d}\sigma
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+f_Z(z) = F&#39;_Z(z)
+\]</span></p>
+<ol start="2" type="1">
+<li><strong>卷积公式法</strong></li>
+</ol>
+<p>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = g(X,Y)\)</span>，假如 <span class="math inline">\(Y = h(X,Z), \;X = l(Z,Y)\)</span>，则</p>
+<p><span class="math display">\[
+f_Z(z) = \int_{-\infty}^{+\infty} \left | \frac{\partial h}{\partial z}\right | f(x,h(x,z)) \text{d}x = \int_{-\infty}^{+\infty}\left | \frac{\partial l}{\partial z}\right | f(l(y,z),y) \text{d} y
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = X + Y\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} f(x,z-x) \text{d}x = \int_{-\infty}^{+\infty}f(z-y,y) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x) \text{d}x = \int_{-\infty}^{+ \infty}f_X(z-y)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = X - Y\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} f(x,x-z) \text{d}x = \int_{-\infty}^{+\infty}f(z+y,y) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty}f_X(x)f_Y(x-z) \text{d}x = \int_{-\infty}^{+ \infty}f_X(z+y)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = XY\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} \left | \frac{1}{x} \right | f\left(x,\frac{z}{x}\right) \text{d}x = \int_{-\infty}^{+\infty} \left | \frac{1}{y} \right | f\left( \frac{z}{y},y\right) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty} \left | \frac{1}{x} \right | f_X(x)f_Y\left( \frac{z}{x} \right) \text{d}x = \int_{-\infty}^{+ \infty} \left | \frac{1}{y} \right | f_X\left( \frac{z}{y} \right)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \frac{X}{Y}\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} |y| f(yz,y) \text{d}y \\
+&amp;= \int_{-\infty}^{+ \infty} |y| f_X(yz)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li><strong>最值函数的分布</strong></li>
+</ol>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \max(X,Y)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+F_Z(z) = P\{\max(X,Y) \leq Z\} = P\{X \leq z, Y \leq z\} = F(z,z)
+\]</span></p>
+<p>若 <span class="math inline">\(X,Y\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+F_Z(z) = F_x(z)F_Y(z)
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \min(X,Y)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= P\{\min(X,Y) \leq z\} = P\{\{X \leq z\} + \{Y \leq z\}\} \\
+&amp;= P\{X \leq z\} + P\{Y \leq z\} - P\{X \leq z,Y \leq z\} \\
+&amp;= F_X(z) + F_Y(z) - F(z,z)
+\end{aligned}
+\]</span></p>
+<p>若使用对立事件的思想，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= P\{\min(X,Y) \leq z\} = 1- P\{\min(X,Y) &gt; z\} \\
+&amp;= 1- P\{X &gt; z, Y &gt; z\}
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X,Y\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= F_X(z) + F_Y(z) - F_x(z)F_Y(z) \\
+&amp;= 1 - P\{X &gt; z\}P\{Y &gt; z\} = 1 - [1 - F_X(z)][1 - F_Y(z)]
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{\max}(z) &amp;= F_{X_1}(z)F_{X_2}(z) \cdots F_{X_n}(z) \\
+F_{\min}(z) &amp;= 1-[1-F_{X_1}(z)][1-F_{X_2}(z)]\cdots[1-F_{X_n}(z)]
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> 独立同分布，设 <span class="math inline">\(X_1, X_2, \ldots, X_n \sim F(x)\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{\max}(z) &amp;= [F(z)]^n \\
+F_{\min}(z) &amp;= 1-[1-F(z)]^n
+\end{aligned}
+\]</span></p>
+<h4 id="离散型-连续型---连续型">(离散型, 连续型) - 连续型</h4>
+<p>设 <span class="math inline">\(X \sim p_i,\; Y \sim f_Y(y), \; Z = g(X,Y)\)</span>，则</p>
+<ul>
+<li>若 <span class="math inline">\(X,Y\)</span> 相互独立，可用分布函数法与全概率公式求 <span class="math inline">\(F_Z(z)\)</span>。</li>
+<li>若 <span class="math inline">\(X,Y\)</span> 不独立，可用分布函数法，转化为等价事件再求。</li>
+</ul>
+<p>e.g.</p>
+<h3 id="一维---多维">一维 - 多维</h3>
+<ol type="1">
+<li>离散型 - (离散型, 离散型)</li>
+</ol>
+<p><span class="math display">\[
+X \sim p_i, \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+\]</span></p>
+<ol start="2" type="1">
+<li>连续型 - (离散型, 离散型)</li>
+</ol>
+<p><span class="math display">\[
+X \sim f(x), \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+\]</span></p>
+<h3 id="多维---多维">多维 - 多维</h3>
+<ol type="1">
+<li>(离散型, 离散型) - (离散型, 离散型)</li>
+</ol>
+<p><span class="math display">\[
+(X,Y) \sim p_{ij}, \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+\]</span></p>
+<ol start="2" type="1">
+<li>(连续型, 连续型) - (离散型, 离散型)</li>
+</ol>
+<p><span class="math display">\[
+(X,Y) \sim f(x,y), \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim p_{ij}
+\]</span></p>
+<ol start="3" type="1">
+<li>(离散型, 连续型) - (离散型, 离散型)</li>
+</ol>
+<p><span class="math display">\[
+X \sim p_i, \; Y \sim f_Y(y) ,\; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+\]</span></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Cohanbb
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cohanbb.github.io/2022/09/27/%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/" title="多维随机变量及其函数的分布">https://cohanbb.github.io/2022/09/27/多维随机变量及其函数的分布/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Probability-Theory/" rel="tag"># Probability Theory</a>
+          </div>
+
+        
+  <div class="post-widgets">
+    <div class="wp_rating">
+      <div id="wpac-rating"></div>
+    </div>
+  </div>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/26/%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/" rel="prev" title="一维随机变量及其函数的分布">
+      <i class="fa fa-chevron-left"></i> 一维随机变量及其函数的分布
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/28/%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" rel="next" title="数字特征">
+      数字特征 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">2.</span> <span class="nav-text">多维随机变量的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%94%E5%90%88%E5%88%86%E5%B8%83"><span class="nav-number">2.1.</span> <span class="nav-text">联合分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E5%88%86%E5%B8%83"><span class="nav-number">2.2.</span> <span class="nav-text">边缘分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="nav-number">2.3.</span> <span class="nav-text">条件分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E6%A6%82%E7%8E%87"><span class="nav-number">2.4.</span> <span class="nav-text">分布函数计算概率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">3.</span> <span class="nav-text">多维随机变量函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4---%E4%B8%80%E7%BB%B4"><span class="nav-number">3.1.</span> <span class="nav-text">多维 - 一维</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B-%E7%A6%BB%E6%95%A3%E5%9E%8B---%E7%A6%BB%E6%95%A3%E5%9E%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">(离散型, 离散型) - 离散型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B-%E8%BF%9E%E7%BB%AD%E5%9E%8B---%E8%BF%9E%E7%BB%AD%E5%9E%8B"><span class="nav-number">3.1.2.</span> <span class="nav-text">(连续型, 连续型) - 连续型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B-%E8%BF%9E%E7%BB%AD%E5%9E%8B---%E8%BF%9E%E7%BB%AD%E5%9E%8B"><span class="nav-number">3.1.3.</span> <span class="nav-text">(离散型, 连续型) - 连续型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4---%E5%A4%9A%E7%BB%B4"><span class="nav-number">3.2.</span> <span class="nav-text">一维 - 多维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4---%E5%A4%9A%E7%BB%B4"><span class="nav-number">3.3.</span> <span class="nav-text">多维 - 多维</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Cohanbb"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Cohanbb</p>
+  <div class="site-description" itemprop="description">Technological blogs about Computer Science.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    不得真假  不做挣扎  不惧笑话
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Cohanbb" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Cohanbb" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/m0_48857872" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;m0_48857872" rel="noopener" target="_blank"><i class="fa fa-keyboard fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cohanbb</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+  <script>
+  if (CONFIG.page.isPost) {
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id    : ,
+      el    : 'wpac-rating',
+      color : 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  }
+  </script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
