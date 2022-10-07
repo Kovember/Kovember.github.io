@@ -1,198 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git 教程及其远程仓库 GitHub</title>
-    <url>/2022/06/09/Git-%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h1 id="摘要">摘要</h1>
-<p>Git 是一个开源的分布式版本控制系统，是 Linus Torvalds 为 Linux 内核开发的开放源码的版本控制软件。与其他版本控制工具不同，Git 采用了分布式版本库的方式，同时还是一个内容管理系统，为不同设备和用户间的内容同步提供了便利。Git 目前被广泛运用在 GitHub、GitLab 以及中国的 Gitee 等代码托管和版本控制系统。</p>
-<hr>
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#摘要">摘要</a></li>
-<li><a href="#git-安装和配置">Git 安装和配置</a>
-<ul>
-<li><a href="#安装-git">安装 Git</a></li>
-<li><a href="#配置-git">配置 Git</a></li>
-</ul></li>
-<li><a href="#git-原理">Git 原理</a>
-<ul>
-<li><a href="#git-基本工作流程">Git 基本工作流程</a></li>
-<li><a href="#git-工作区-暂存区和版本库">Git 工作区、暂存区和版本库</a></li>
-<li><a href="#深入理解-git">深入理解 Git</a></li>
-</ul></li>
-<li><a href="#git-常用命令">Git 常用命令</a>
-<ul>
-<li><a href="#创建和克隆-git-仓库">创建和克隆 Git 仓库</a></li>
-<li><a href="#配置-git-1">配置 Git</a></li>
-<li><a href="#提交和修改">提交和修改</a></li>
-<li><a href="#分支">分支</a></li>
-</ul></li>
-<li><a href="#github">GitHub</a></li>
-<li><a href="#参考文献">参考文献</a></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr>
-<h1 id="git-安装和配置">Git 安装和配置</h1>
-<h2 id="安装-git">安装 Git</h2>
-<p>Git 有良好的跨平台性，目前支持在 Linux、MacOS、FreeBSD 和 Windows 平台上运行。</p>
-<p>Windows 上可进入官网下载 Git：<a href="http://git-scm.com/download/win">git download</a>，若无法下载或下载缓慢可使用国内镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/Git%20for%20Windows%202.36.1/">清华大学 git for windows update 镜像</a>，下载并安装成功后将 Git 的 bin 目录加入环境变量。</p>
-<p>Linux 上可以直接使用 shell，以 Debian 系为例：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install git</span><br></pre></td></tr></table></figure>
-<p>终端输入：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">git version 2.32.1</span><br></pre></td></tr></table></figure>
-<p>若终端输出 Git 的版本号，则证明安装成功。</p>
-<h2 id="配置-git">配置 Git</h2>
-<p>配置个人信息，终端输入用户名和邮箱地址：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="git-原理">Git 原理</h1>
-<h2 id="git-基本工作流程">Git 基本工作流程</h2>
-<ol type="1">
-<li>克隆 Git 资源到工作区。</li>
-<li>在工作区对资源进行修改。</li>
-<li>将工作区的资源提交。</li>
-<li>若发现提交的内容有问题，可以撤回提交。</li>
-</ol>
-<h2 id="git-工作区暂存区和版本库">Git 工作区、暂存区和版本库</h2>
-<ul>
-<li>工作区：本地的资源目录。</li>
-<li>暂存区：位于工作区的 .git/index 文件中。</li>
-<li>版本库：位于工作区的 .git 目录。</li>
-</ul>
-<p><img src="ACA7C7AA-A862-4052-A3D8-CCF726A39110.jpeg" /></p>
-<ul>
-<li>使用 <code>git init</code> 可使用当前目录作为 Git 仓库，该命令会在当前目录生成一个 <strong>.git</strong> 目录作为版本库。</li>
-<li>图中左侧为<strong>工作区</strong>，右侧为<strong>版本库</strong> 即 <strong>.git</strong> 目录，在版本库中有 <strong>index</strong> 文件代表<strong>暂存区</strong>。</li>
-<li><strong>HEAD</strong> 为游标文件指向最后一次提交的分支，master 文件中存放着对象库中 master 分支的提交信息。</li>
-<li><strong>objects</strong> 文件是 Git 的<strong>对象库</strong>，实际位于 .git/objects 目录，里面包含了文件内容、目录树等对象。</li>
-<li>当使用 <code>git add</code> 命令时，即工作区增加或修改文件时，index 会生成新的文件信息和目录树，同时工作区增加或修改的文件内容被写入 objects 中的一个新的对象中。</li>
-<li>当执行提交操作 <code>git commit</code> 的时候，index 中的目录树写入 objects 中，并生成一个提交信息，master 中写入这个提交信息，其中含有刚刚提交的目录树等信息。</li>
-<li>当执行 <code>git reset HEAD</code> 命令时，index 中的目录树会被重写，被 master 中提交信息的目录树所替换，但工作区不受影响。</li>
-<li>当执行 <code>git rm --cached &lt;file&gt;</code> 命令时，只从 index 中删除文件，工作区不受改变。</li>
-<li>当执行 <code>git checkout .</code> 或者 <code>git checkout -- &lt;file&gt;</code> 命令时，会用 index 中全部或指定的文件替换工作区的文件。这个操作非常危险，会清除工作区中未添加到 index 的改动。</li>
-<li>当执行 <code>git checkout HEAD .</code> 或者 <code>git checkout HEAD &lt;file&gt;</code> 命令时，会用 HEAD 指向 master 分支中全部或者部分文件替换 index 以及工作区的文件。这个操作也是极具危险性的，因为不仅会清空工作区中为提交的改动，也会清楚暂存区中未提交的改动。</li>
-</ul>
-<h2 id="深入理解-git">深入理解 Git</h2>
-<p>下面以实际的操作来更深刻地理解 Git：</p>
-<ol type="1">
-<li>首先生成一个目录 test 作为工作区，并初始化 git：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> <span class="built_in">test</span> </span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>可查看到初始化后的工作区有一个隐藏目录 .git，查看该目录的内容：</li>
-</ol>
-<p><img src="2022-05-30-22-48-10.png" /></p>
-<p>查看 .git/config 文件，并配置身份信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">$ git config user.name <span class="string">&quot;Cohanbb&quot;</span></span><br><span class="line">$ git config user.email <span class="string">&quot;cohanbb777@163.com&quot;</span></span><br><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">[user]</span><br><span class="line">    name = Cohanbb</span><br><span class="line">    email = cohanbb777@163.com</span><br></pre></td></tr></table></figure>
-<ol start="3" type="1">
-<li>新建一个文件 1.txt 添加内容『helloworld』，并使用 <code>git add 1.txt</code>，之后再次查看 .git 目录的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 1.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;helloworld&quot;</span> &gt; 1.txt</span><br><span class="line">$ <span class="built_in">cat</span> 1.txt</span><br><span class="line">helloworld</span><br><span class="line">$ git add 1.txt</span><br><span class="line"><span class="comment">#再次查看 .git 目录内容</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
-<p><img src="2022-05-30-23-08-01.png" /></p>
-<p>发现与之前相比多了两个文件：</p>
-<ul>
-<li>index 文件</li>
-<li>objects/31 目录以及目录下的文件 e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</li>
-</ul>
-<p>index 文件是暂存区，无法直接查看，objects/31 是新生成的对象，e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8 是以哈希为名的文件，使用 <code>git cat-file -p</code> 可以读取该文件的内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -p 31e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li>在工作区新建文件文件 2.txt 添加内容『1234』，并使用 <code>git add 2.txt</code>，再次查看 .git 目录的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 2.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 2.txt</span><br><span class="line">$ git add 2.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
-<p><img src="16540518361014.jpg" /></p>
-<p>发现 object 目录下生成了一个新的对象 81，使用 <code>git cat-file -p 81c545efebe5f57d4cab2ba9ec294c4b0cadf672</code> 进行读取得到 1234。</p>
-<ol start="5" type="1">
-<li>修改 1.txt 文件的内容，修改为 『1234』，并使用 <code>git add 1.txt</code>，再次查看 .git/objects 目录的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 1.txt</span><br><span class="line">$ git add 1.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
-<p><img src="16540524299481.jpg" /></p>
-<p>发现与之前没有任何该改变，故可知 objects 目录里的对象仅仅存储添加/修改的文件内容，与文件的名称无关。</p>
-<p>直接查看 index 文件的内容，发现是乱码，但可看到刚刚创建的文件名 1.txt 和 2.txt：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/index</span><br><span class="line">DIRCb���</span><br><span class="line">        ��b���</span><br><span class="line">              ��~3�����E����&#125;L�+��)LK</span><br><span class="line">                                     ��r1.txtb��P<span class="string">&quot;_�b��P&quot;</span>_�~3�����E����&#125;L�+��)LK</span><br><span class="line">                   ��r2.txt0�8��?D.JN��</span><br><span class="line"></span><br><span class="line">                                       u���</span><br></pre></td></tr></table></figure>
-<p>实际上 index 文件是虚拟的工作区，但仅仅是一个文件索引，包含了工作区的目录树，目录树上存储了各文件的文件名、文件的最终修改时间、文件的长度、文件的类型以及文件的哈希值。<br />
-文件的具体内容并未存储在 index，而是存储在 objects 目录之中。objects 目录中除了 info 和 pack 其他的目录名称都是两个字符构成，这是因为文件的哈希值有 40 位，取前两位作为目录，后 38 位作为目录下的文件名。</p>
-<p>在 objects 目录下，存有四种类型的哈希值：blob 型、tree 型、commit 型和 parent 型。</p>
-<ul>
-<li>blob 型用来存储添加/修改文件的内容</li>
-<li>tree 型存储某个目录下的文件信息，包括文件名、文件权限、文件的哈希值</li>
-<li>commit 型存储提交的信息</li>
-<li>parent 型存储上一次提交产生的 commit</li>
-</ul>
-<p>到这里仍然觉得一头雾水，再做一个实验来深刻理解他们的运作过程：</p>
-<ol type="1">
-<li>在刚刚实验的基础上，使用 <code>git commit</code> 命令进行提交，并查看 objects 目录的内容：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="string">&#x27;1&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
-<p><img src="16540563672772.jpg" /></p>
-<p>与之前向比多了哪些内容呢？多了两个新的对象：95 和 da，读取这两条哈希值的类型和内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 953ee820</span><br><span class="line">commit <span class="comment">#commit 型</span></span><br><span class="line">$ git cat-file -t dadc6837</span><br><span class="line">tree <span class="comment">#tree 型</span></span><br><span class="line">$ git cat-file -p 953ee820 </span><br><span class="line"><span class="comment">#commit 型的内容</span></span><br><span class="line">tree dadc6837ad6c06f0a9f21eb90a385f88338a97fa</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line"></span><br><span class="line">1 </span><br><span class="line">$ git cat-file -p dadc6837</span><br><span class="line"><span class="comment">#tree 型的内容</span></span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt </span><br></pre></td></tr></table></figure>
-<p>可看出 95 对象为 commit 型的哈希值，da 对象为 tree 型的哈希值，commit 里面存储了提交的目录树、作者和提交者的身份信息以及提交的名称。tree 里面存储了提交文件的权限、提交文件的哈希值及其类型、提交的文件名。</p>
-<ol start="2" type="1">
-<li>创建一个新的文件 3.txt 添加内容『1234』，并使用 <code>git add</code> 以及 <code>git commit</code> 提交：</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 3.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 3.txt</span><br><span class="line">$ git add 3.txt</span><br><span class="line">$ git commit -m <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
-<p><img src="16540575293261.jpg" /></p>
-<p>发现新增了 0b 和 93 两个新的对象，依然是读取他们的哈希类型和内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 0b8e2a12</span><br><span class="line">commit</span><br><span class="line">$ git cat-file -t 933c6a92</span><br><span class="line">tree</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">$ git cat-file -p 933c6a92</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    3.txt</span><br></pre></td></tr></table></figure>
-<p>发现这次的 commit 与上一次有所不同，即多了一个 parent 项，观察发现这一项是上一次提交产生的 commit。tree 里面存储了三个文件的信息。</p>
-<p>此时我们来查看一下 HEAD 的内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/HEAD </span><br><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
-<p>出现一个文件的路径，查看 refs/heads/master 文件的内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/refs/heads/master</span><br><span class="line">0b8e2a12653a0600b8d0f3bf34d2b32c5218b5d9</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-<p>发现 master 文件中存储着一个哈希值，正是刚刚提交所生成的 commit。</p>
-<p><strong>总结</strong><br />
-index 是工作区的一个文件索引，存储着各文件各版本的信息，但是并没有存放文件的具体内容，当执行 <code>git add</code> 操作，文件的具体内容被存放在 objects 中的 blob 对象中，当执行 <code>git commit</code> 操作，index 将目录树存入 objects 并生成了 commit 对象，HEAD 指向最后一次提交的分支，master 中存放刚生成的 commit 对象，包含 tree 对象、作者的身份信息等。</p>
-<h1 id="git-常用命令">Git 常用命令</h1>
-<h2 id="创建和克隆-git-仓库">创建和克隆 Git 仓库</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init <span class="comment">#初始化仓库</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; <span class="comment">#克隆仓库到本地</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; &lt;directory&gt; <span class="comment">#克隆仓库到指定目录下</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置-git-1">配置 Git</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list <span class="comment">#列出 git 配置</span></span><br><span class="line">git config -e <span class="comment">#编辑 git 配置</span></span><br><span class="line">git config -e --global <span class="comment">#编辑全局 git 配置 </span></span><br></pre></td></tr></table></figure>
-<h2 id="提交和修改">提交和修改</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;file1&gt; &lt;file2&gt; ... <span class="comment">#添加一个或者多个文件到暂存区</span></span><br><span class="line">git add &lt;<span class="built_in">dir</span>&gt; <span class="comment">#添加指定目录到缓存区</span></span><br><span class="line"></span><br><span class="line">git status <span class="comment">#查看上次提交之后有无对文件进行再次的修改</span></span><br><span class="line"></span><br><span class="line">git diff &lt;file&gt; <span class="comment">#显示缓存区和工作区文件的差异</span></span><br><span class="line">git diff --cached &lt;file&gt; <span class="comment">#显示暂存区和上一次提交的差异</span></span><br><span class="line"></span><br><span class="line">git commit &lt;file1&gt; &lt;file2&gt; ... -m &lt;message&gt; <span class="comment">#提交暂存区的文件到仓库区</span></span><br><span class="line">git commit -a <span class="comment">#不需要 git add 直接提交</span></span><br><span class="line"></span><br><span class="line">git checkout -- &lt;file&gt; <span class="comment">#将文件从暂存区恢复到工作区</span></span><br><span class="line">git checkout HEAD &lt;file&gt; <span class="comment">#将文件从版本库恢复到暂存区和工作区</span></span><br><span class="line"></span><br><span class="line">git reset --mixed &lt;HEAD&gt; <span class="comment">#重置暂存区与上一次提交的保持一致</span></span><br><span class="line">git reset --soft &lt;HEAD&gt; <span class="comment">#退回到某个版本 </span></span><br><span class="line">git reset --hard &lt;HEAD&gt; <span class="comment">#撤销工作区所有未提交的修改内容，将暂存区和工作区都回到上一次的版本，并删除之前的所有信息提交</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> -f &lt;file&gt; <span class="comment">#删除暂存区和工作区的文件</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt; <span class="comment">#仅仅删除暂存区的文件，工作区的文件仍然保留</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">mv</span> &lt;file&gt; &lt;newfile&gt; <span class="comment">#移动或重命名一个文件、目录或软链接</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> <span class="comment">#查看历史提交记录</span></span><br><span class="line">git blame &lt;file&gt; <span class="comment">#以列表的形式查看指定文件的修改历史</span></span><br><span class="line"></span><br><span class="line">git remote <span class="comment">#操作远程仓库</span></span><br><span class="line">git fetch <span class="comment"># 从远程仓库取代码库</span></span><br><span class="line">git pull <span class="comment">#下载远程代码并合并</span></span><br><span class="line">git push <span class="comment">#上传远程代码并合并</span></span><br></pre></td></tr></table></figure>
-<h2 id="分支">分支</h2>
-<p>每一种版本控制系统都支持分支，一个分支代表一条独立的开发线，使用分支意味着可以从开发主线上分离开，然后在不影响主线的同时继续工作。</p>
-<p>Git 的分支即意味着与 master 分支提交的内容独立，在 master 分支提交的内容不会影响其他分支，在其他分支提交的内容也不会影响 master。</p>
-<blockquote>
-<p>注意：在任何分支进行提交操作之前，工作区的修改内容在任何分支都可见，一旦有任何分支进行提交操作，则其他分支回到上次提交操作后的状态。</p>
-</blockquote>
-<p>基本使用方法：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch <span class="comment"># 列出分支</span></span><br><span class="line">git branch &lt;branchname&gt; <span class="comment">#创建分支</span></span><br><span class="line">git checkout &lt;branchname&gt; <span class="comment">#切换分支</span></span><br><span class="line">git merge &lt;branchname&gt; <span class="comment">#合并分支</span></span><br><span class="line">git branch -d  &lt;branchname&gt; <span class="comment">#删除分支</span></span><br></pre></td></tr></table></figure>
-<h1 id="github">GitHub</h1>
-<p>GitHub 是基于 Git 的代码托管和版本控制平台，可以在上面创建仓库或项目。</p>
-<p>首先需要注册一个 GitHub 账号，然后在本地创建 SSH KEY：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
-<p>公钥在 ~/.ssh/id_rsa.pub 中，进入 GitHub 进入 account settings 选择 SSH Keys，Add SSH Key，添加在电脑上生成的公钥。添加后使用下面的命令验证是否成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>会弹出警告，输入 yes 就行了。然后在本地配置 Git：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span>  </span><br></pre></td></tr></table></figure>
-<p>在 GitHub 新建一个仓库（repositry），譬如 mycode，然后即可在本地进行远程仓库操作：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> mycode <span class="comment">#创建本地仓库</span></span><br><span class="line">$ <span class="built_in">cd</span> mycode</span><br><span class="line">$ git init</span><br><span class="line">$ <span class="built_in">touch</span> hello.md</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;this is mycode&quot;</span> &gt; hello.md</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;添加 hello.md&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后添加远程仓库的 SSH 地址：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github.com:yourName/yourRepo.git</span><br></pre></td></tr></table></figure>
-<p>其中 yourName 是 GitHub 的用户名 yourRepo 是要上传的 GitHub 仓库名。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git push <span class="comment">#提交给远程仓库</span></span><br><span class="line">$ git pull <span class="comment">#从远程仓库获取代码并与本地的代码库合并</span></span><br></pre></td></tr></table></figure>
-<p>需要注意的一点是，GitHub 的默认主分支的名称不再是 master 而是 main，故最好将 Git 的默认主分支名称也改为 main：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global init.defaultBranch main</span><br></pre></td></tr></table></figure>
-<p>其他操作并不影响，上述与 master 有关的所有内容都替换 main 即可。</p>
-<h1 id="参考文献">参考文献</h1>
-<ul>
-<li>菜鸟教程. Git 教程[EB/OL]. <a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></li>
-<li>菜鸟教程. Github 简明教程[EB/OL]. <a href="https://www.runoob.com/w3cnote/git-guide.html">https://www.runoob.com/w3cnote/git-guide.html</a></li>
-<li>VGtime. Git基本原理介绍[EB/OL]. <a href="https://blog.csdn.net/JKR10000/article/details/110453547">https://blog.csdn.net/JKR10000/article/details/110453547</a></li>
-<li>raoxiaoya. git深入理解(一)：暂存区(Stage)，索引(index)[EB/OL]. <a href="https://blog.csdn.net/raoxiaoya/article/details/110824019">https://blog.csdn.net/raoxiaoya/article/details/110824019</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Efficient Technology</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML 与 CSS</title>
     <url>/2022/05/16/HTML%20%E4%B8%8E%20CSS/</url>
     <content><![CDATA[<p>前端 HTML 与 CSS 的基础知识整理。<br />
@@ -595,6 +403,198 @@ CSS 中表示字体大小有多种形式：
       </categories>
       <tags>
         <tag>Web 前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 教程及其远程仓库 GitHub</title>
+    <url>/2022/06/09/Git-%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="摘要">摘要</h1>
+<p>Git 是一个开源的分布式版本控制系统，是 Linus Torvalds 为 Linux 内核开发的开放源码的版本控制软件。与其他版本控制工具不同，Git 采用了分布式版本库的方式，同时还是一个内容管理系统，为不同设备和用户间的内容同步提供了便利。Git 目前被广泛运用在 GitHub、GitLab 以及中国的 Gitee 等代码托管和版本控制系统。</p>
+<hr>
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#摘要">摘要</a></li>
+<li><a href="#git-安装和配置">Git 安装和配置</a>
+<ul>
+<li><a href="#安装-git">安装 Git</a></li>
+<li><a href="#配置-git">配置 Git</a></li>
+</ul></li>
+<li><a href="#git-原理">Git 原理</a>
+<ul>
+<li><a href="#git-基本工作流程">Git 基本工作流程</a></li>
+<li><a href="#git-工作区-暂存区和版本库">Git 工作区、暂存区和版本库</a></li>
+<li><a href="#深入理解-git">深入理解 Git</a></li>
+</ul></li>
+<li><a href="#git-常用命令">Git 常用命令</a>
+<ul>
+<li><a href="#创建和克隆-git-仓库">创建和克隆 Git 仓库</a></li>
+<li><a href="#配置-git-1">配置 Git</a></li>
+<li><a href="#提交和修改">提交和修改</a></li>
+<li><a href="#分支">分支</a></li>
+</ul></li>
+<li><a href="#github">GitHub</a></li>
+<li><a href="#参考文献">参考文献</a></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr>
+<h1 id="git-安装和配置">Git 安装和配置</h1>
+<h2 id="安装-git">安装 Git</h2>
+<p>Git 有良好的跨平台性，目前支持在 Linux、MacOS、FreeBSD 和 Windows 平台上运行。</p>
+<p>Windows 上可进入官网下载 Git：<a href="http://git-scm.com/download/win">git download</a>，若无法下载或下载缓慢可使用国内镜像：<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/git-for-windows/git/Git%20for%20Windows%202.36.1/">清华大学 git for windows update 镜像</a>，下载并安装成功后将 Git 的 bin 目录加入环境变量。</p>
+<p>Linux 上可以直接使用 shell，以 Debian 系为例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ apt-get install git</span><br></pre></td></tr></table></figure>
+<p>终端输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br><span class="line">git version 2.32.1</span><br></pre></td></tr></table></figure>
+<p>若终端输出 Git 的版本号，则证明安装成功。</p>
+<h2 id="配置-git">配置 Git</h2>
+<p>配置个人信息，终端输入用户名和邮箱地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="git-原理">Git 原理</h1>
+<h2 id="git-基本工作流程">Git 基本工作流程</h2>
+<ol type="1">
+<li>克隆 Git 资源到工作区。</li>
+<li>在工作区对资源进行修改。</li>
+<li>将工作区的资源提交。</li>
+<li>若发现提交的内容有问题，可以撤回提交。</li>
+</ol>
+<h2 id="git-工作区暂存区和版本库">Git 工作区、暂存区和版本库</h2>
+<ul>
+<li>工作区：本地的资源目录。</li>
+<li>暂存区：位于工作区的 .git/index 文件中。</li>
+<li>版本库：位于工作区的 .git 目录。</li>
+</ul>
+<p><img src="ACA7C7AA-A862-4052-A3D8-CCF726A39110.jpeg" /></p>
+<ul>
+<li>使用 <code>git init</code> 可使用当前目录作为 Git 仓库，该命令会在当前目录生成一个 <strong>.git</strong> 目录作为版本库。</li>
+<li>图中左侧为<strong>工作区</strong>，右侧为<strong>版本库</strong> 即 <strong>.git</strong> 目录，在版本库中有 <strong>index</strong> 文件代表<strong>暂存区</strong>。</li>
+<li><strong>HEAD</strong> 为游标文件指向最后一次提交的分支，master 文件中存放着对象库中 master 分支的提交信息。</li>
+<li><strong>objects</strong> 文件是 Git 的<strong>对象库</strong>，实际位于 .git/objects 目录，里面包含了文件内容、目录树等对象。</li>
+<li>当使用 <code>git add</code> 命令时，即工作区增加或修改文件时，index 会生成新的文件信息和目录树，同时工作区增加或修改的文件内容被写入 objects 中的一个新的对象中。</li>
+<li>当执行提交操作 <code>git commit</code> 的时候，index 中的目录树写入 objects 中，并生成一个提交信息，master 中写入这个提交信息，其中含有刚刚提交的目录树等信息。</li>
+<li>当执行 <code>git reset HEAD</code> 命令时，index 中的目录树会被重写，被 master 中提交信息的目录树所替换，但工作区不受影响。</li>
+<li>当执行 <code>git rm --cached &lt;file&gt;</code> 命令时，只从 index 中删除文件，工作区不受改变。</li>
+<li>当执行 <code>git checkout .</code> 或者 <code>git checkout -- &lt;file&gt;</code> 命令时，会用 index 中全部或指定的文件替换工作区的文件。这个操作非常危险，会清除工作区中未添加到 index 的改动。</li>
+<li>当执行 <code>git checkout HEAD .</code> 或者 <code>git checkout HEAD &lt;file&gt;</code> 命令时，会用 HEAD 指向 master 分支中全部或者部分文件替换 index 以及工作区的文件。这个操作也是极具危险性的，因为不仅会清空工作区中为提交的改动，也会清楚暂存区中未提交的改动。</li>
+</ul>
+<h2 id="深入理解-git">深入理解 Git</h2>
+<p>下面以实际的操作来更深刻地理解 Git：</p>
+<ol type="1">
+<li>首先生成一个目录 test 作为工作区，并初始化 git：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> <span class="built_in">test</span> </span><br><span class="line">$ <span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>可查看到初始化后的工作区有一个隐藏目录 .git，查看该目录的内容：</li>
+</ol>
+<p><img src="2022-05-30-22-48-10.png" /></p>
+<p>查看 .git/config 文件，并配置身份信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">$ git config user.name <span class="string">&quot;Cohanbb&quot;</span></span><br><span class="line">$ git config user.email <span class="string">&quot;cohanbb777@163.com&quot;</span></span><br><span class="line">$ <span class="built_in">cat</span> .git/config</span><br><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">[user]</span><br><span class="line">    name = Cohanbb</span><br><span class="line">    email = cohanbb777@163.com</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>新建一个文件 1.txt 添加内容『helloworld』，并使用 <code>git add 1.txt</code>，之后再次查看 .git 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 1.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;helloworld&quot;</span> &gt; 1.txt</span><br><span class="line">$ <span class="built_in">cat</span> 1.txt</span><br><span class="line">helloworld</span><br><span class="line">$ git add 1.txt</span><br><span class="line"><span class="comment">#再次查看 .git 目录内容</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
+<p><img src="2022-05-30-23-08-01.png" /></p>
+<p>发现与之前相比多了两个文件：</p>
+<ul>
+<li>index 文件</li>
+<li>objects/31 目录以及目录下的文件 e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</li>
+</ul>
+<p>index 文件是暂存区，无法直接查看，objects/31 是新生成的对象，e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8 是以哈希为名的文件，使用 <code>git cat-file -p</code> 可以读取该文件的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -p 31e0fce560e96c8b357f5b8630c7d8fbeb0a3ec8</span><br><span class="line">helloworld</span><br></pre></td></tr></table></figure>
+<ol start="4" type="1">
+<li>在工作区新建文件文件 2.txt 添加内容『1234』，并使用 <code>git add 2.txt</code>，再次查看 .git 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 2.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 2.txt</span><br><span class="line">$ git add 2.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git</span><br></pre></td></tr></table></figure>
+<p><img src="16540518361014.jpg" /></p>
+<p>发现 object 目录下生成了一个新的对象 81，使用 <code>git cat-file -p 81c545efebe5f57d4cab2ba9ec294c4b0cadf672</code> 进行读取得到 1234。</p>
+<ol start="5" type="1">
+<li>修改 1.txt 文件的内容，修改为 『1234』，并使用 <code>git add 1.txt</code>，再次查看 .git/objects 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 1.txt</span><br><span class="line">$ git add 1.txt</span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
+<p><img src="16540524299481.jpg" /></p>
+<p>发现与之前没有任何该改变，故可知 objects 目录里的对象仅仅存储添加/修改的文件内容，与文件的名称无关。</p>
+<p>直接查看 index 文件的内容，发现是乱码，但可看到刚刚创建的文件名 1.txt 和 2.txt：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/index</span><br><span class="line">DIRCb���</span><br><span class="line">        ��b���</span><br><span class="line">              ��~3�����E����&#125;L�+��)LK</span><br><span class="line">                                     ��r1.txtb��P<span class="string">&quot;_�b��P&quot;</span>_�~3�����E����&#125;L�+��)LK</span><br><span class="line">                   ��r2.txt0�8��?D.JN��</span><br><span class="line"></span><br><span class="line">                                       u���</span><br></pre></td></tr></table></figure>
+<p>实际上 index 文件是虚拟的工作区，但仅仅是一个文件索引，包含了工作区的目录树，目录树上存储了各文件的文件名、文件的最终修改时间、文件的长度、文件的类型以及文件的哈希值。<br />
+文件的具体内容并未存储在 index，而是存储在 objects 目录之中。objects 目录中除了 info 和 pack 其他的目录名称都是两个字符构成，这是因为文件的哈希值有 40 位，取前两位作为目录，后 38 位作为目录下的文件名。</p>
+<p>在 objects 目录下，存有四种类型的哈希值：blob 型、tree 型、commit 型和 parent 型。</p>
+<ul>
+<li>blob 型用来存储添加/修改文件的内容</li>
+<li>tree 型存储某个目录下的文件信息，包括文件名、文件权限、文件的哈希值</li>
+<li>commit 型存储提交的信息</li>
+<li>parent 型存储上一次提交产生的 commit</li>
+</ul>
+<p>到这里仍然觉得一头雾水，再做一个实验来深刻理解他们的运作过程：</p>
+<ol type="1">
+<li>在刚刚实验的基础上，使用 <code>git commit</code> 命令进行提交，并查看 objects 目录的内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git commit -m <span class="string">&#x27;1&#x27;</span></span><br><span class="line">$ <span class="built_in">ls</span> -R .git/objects</span><br></pre></td></tr></table></figure>
+<p><img src="16540563672772.jpg" /></p>
+<p>与之前向比多了哪些内容呢？多了两个新的对象：95 和 da，读取这两条哈希值的类型和内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 953ee820</span><br><span class="line">commit <span class="comment">#commit 型</span></span><br><span class="line">$ git cat-file -t dadc6837</span><br><span class="line">tree <span class="comment">#tree 型</span></span><br><span class="line">$ git cat-file -p 953ee820 </span><br><span class="line"><span class="comment">#commit 型的内容</span></span><br><span class="line">tree dadc6837ad6c06f0a9f21eb90a385f88338a97fa</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654056297 +0000</span><br><span class="line"></span><br><span class="line">1 </span><br><span class="line">$ git cat-file -p dadc6837</span><br><span class="line"><span class="comment">#tree 型的内容</span></span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt </span><br></pre></td></tr></table></figure>
+<p>可看出 95 对象为 commit 型的哈希值，da 对象为 tree 型的哈希值，commit 里面存储了提交的目录树、作者和提交者的身份信息以及提交的名称。tree 里面存储了提交文件的权限、提交文件的哈希值及其类型、提交的文件名。</p>
+<ol start="2" type="1">
+<li>创建一个新的文件 3.txt 添加内容『1234』，并使用 <code>git add</code> 以及 <code>git commit</code> 提交：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">touch</span> 3.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;1234&quot;</span> &gt; 3.txt</span><br><span class="line">$ git add 3.txt</span><br><span class="line">$ git commit -m <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="16540575293261.jpg" /></p>
+<p>发现新增了 0b 和 93 两个新的对象，依然是读取他们的哈希类型和内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git cat-file -t 0b8e2a12</span><br><span class="line">commit</span><br><span class="line">$ git cat-file -t 933c6a92</span><br><span class="line">tree</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br><span class="line">$ git cat-file -p 933c6a92</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    1.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    2.txt</span><br><span class="line">100644 blob 81c545efebe5f57d4cab2ba9ec294c4b0cadf672    3.txt</span><br></pre></td></tr></table></figure>
+<p>发现这次的 commit 与上一次有所不同，即多了一个 parent 项，观察发现这一项是上一次提交产生的 commit。tree 里面存储了三个文件的信息。</p>
+<p>此时我们来查看一下 HEAD 的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/HEAD </span><br><span class="line">ref: refs/heads/master</span><br></pre></td></tr></table></figure>
+<p>出现一个文件的路径，查看 refs/heads/master 文件的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> .git/refs/heads/master</span><br><span class="line">0b8e2a12653a0600b8d0f3bf34d2b32c5218b5d9</span><br><span class="line">$ git cat-file -p 0b8e2a12</span><br><span class="line">tree 933c6a92d63f610f450ca5f9fe6003e5b2427a1b</span><br><span class="line">parent 953ee8209f81a27af0bb13d6f8ae8cc1a878056f</span><br><span class="line">author Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line">committer Cohanbb &lt;cohanbb777@163.com&gt; 1654057402 +0000</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>发现 master 文件中存储着一个哈希值，正是刚刚提交所生成的 commit。</p>
+<p><strong>总结</strong><br />
+index 是工作区的一个文件索引，存储着各文件各版本的信息，但是并没有存放文件的具体内容，当执行 <code>git add</code> 操作，文件的具体内容被存放在 objects 中的 blob 对象中，当执行 <code>git commit</code> 操作，index 将目录树存入 objects 并生成了 commit 对象，HEAD 指向最后一次提交的分支，master 中存放刚生成的 commit 对象，包含 tree 对象、作者的身份信息等。</p>
+<h1 id="git-常用命令">Git 常用命令</h1>
+<h2 id="创建和克隆-git-仓库">创建和克隆 Git 仓库</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init <span class="comment">#初始化仓库</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; <span class="comment">#克隆仓库到本地</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository&gt; &lt;directory&gt; <span class="comment">#克隆仓库到指定目录下</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置-git-1">配置 Git</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --list <span class="comment">#列出 git 配置</span></span><br><span class="line">git config -e <span class="comment">#编辑 git 配置</span></span><br><span class="line">git config -e --global <span class="comment">#编辑全局 git 配置 </span></span><br></pre></td></tr></table></figure>
+<h2 id="提交和修改">提交和修改</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add &lt;file1&gt; &lt;file2&gt; ... <span class="comment">#添加一个或者多个文件到暂存区</span></span><br><span class="line">git add &lt;<span class="built_in">dir</span>&gt; <span class="comment">#添加指定目录到缓存区</span></span><br><span class="line"></span><br><span class="line">git status <span class="comment">#查看上次提交之后有无对文件进行再次的修改</span></span><br><span class="line"></span><br><span class="line">git diff &lt;file&gt; <span class="comment">#显示缓存区和工作区文件的差异</span></span><br><span class="line">git diff --cached &lt;file&gt; <span class="comment">#显示暂存区和上一次提交的差异</span></span><br><span class="line"></span><br><span class="line">git commit &lt;file1&gt; &lt;file2&gt; ... -m &lt;message&gt; <span class="comment">#提交暂存区的文件到仓库区</span></span><br><span class="line">git commit -a <span class="comment">#不需要 git add 直接提交</span></span><br><span class="line"></span><br><span class="line">git checkout -- &lt;file&gt; <span class="comment">#将文件从暂存区恢复到工作区</span></span><br><span class="line">git checkout HEAD &lt;file&gt; <span class="comment">#将文件从版本库恢复到暂存区和工作区</span></span><br><span class="line"></span><br><span class="line">git reset --mixed &lt;HEAD&gt; <span class="comment">#重置暂存区与上一次提交的保持一致</span></span><br><span class="line">git reset --soft &lt;HEAD&gt; <span class="comment">#退回到某个版本 </span></span><br><span class="line">git reset --hard &lt;HEAD&gt; <span class="comment">#撤销工作区所有未提交的修改内容，将暂存区和工作区都回到上一次的版本，并删除之前的所有信息提交</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> -f &lt;file&gt; <span class="comment">#删除暂存区和工作区的文件</span></span><br><span class="line">git <span class="built_in">rm</span> --cached &lt;file&gt; <span class="comment">#仅仅删除暂存区的文件，工作区的文件仍然保留</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">mv</span> &lt;file&gt; &lt;newfile&gt; <span class="comment">#移动或重命名一个文件、目录或软链接</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span> <span class="comment">#查看历史提交记录</span></span><br><span class="line">git blame &lt;file&gt; <span class="comment">#以列表的形式查看指定文件的修改历史</span></span><br><span class="line"></span><br><span class="line">git remote <span class="comment">#操作远程仓库</span></span><br><span class="line">git fetch <span class="comment"># 从远程仓库取代码库</span></span><br><span class="line">git pull <span class="comment">#下载远程代码并合并</span></span><br><span class="line">git push <span class="comment">#上传远程代码并合并</span></span><br></pre></td></tr></table></figure>
+<h2 id="分支">分支</h2>
+<p>每一种版本控制系统都支持分支，一个分支代表一条独立的开发线，使用分支意味着可以从开发主线上分离开，然后在不影响主线的同时继续工作。</p>
+<p>Git 的分支即意味着与 master 分支提交的内容独立，在 master 分支提交的内容不会影响其他分支，在其他分支提交的内容也不会影响 master。</p>
+<blockquote>
+<p>注意：在任何分支进行提交操作之前，工作区的修改内容在任何分支都可见，一旦有任何分支进行提交操作，则其他分支回到上次提交操作后的状态。</p>
+</blockquote>
+<p>基本使用方法：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch <span class="comment"># 列出分支</span></span><br><span class="line">git branch &lt;branchname&gt; <span class="comment">#创建分支</span></span><br><span class="line">git checkout &lt;branchname&gt; <span class="comment">#切换分支</span></span><br><span class="line">git merge &lt;branchname&gt; <span class="comment">#合并分支</span></span><br><span class="line">git branch -d  &lt;branchname&gt; <span class="comment">#删除分支</span></span><br></pre></td></tr></table></figure>
+<h1 id="github">GitHub</h1>
+<p>GitHub 是基于 Git 的代码托管和版本控制平台，可以在上面创建仓库或项目。</p>
+<p>首先需要注册一个 GitHub 账号，然后在本地创建 SSH KEY：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">&quot;your email&quot;</span></span><br></pre></td></tr></table></figure>
+<p>公钥在 ~/.ssh/id_rsa.pub 中，进入 GitHub 进入 account settings 选择 SSH Keys，Add SSH Key，添加在电脑上生成的公钥。添加后使用下面的命令验证是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>会弹出警告，输入 yes 就行了。然后在本地配置 Git：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your name&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email&quot;</span>  </span><br></pre></td></tr></table></figure>
+<p>在 GitHub 新建一个仓库（repositry），譬如 mycode，然后即可在本地进行远程仓库操作：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> mycode <span class="comment">#创建本地仓库</span></span><br><span class="line">$ <span class="built_in">cd</span> mycode</span><br><span class="line">$ git init</span><br><span class="line">$ <span class="built_in">touch</span> hello.md</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;this is mycode&quot;</span> &gt; hello.md</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;添加 hello.md&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后添加远程仓库的 SSH 地址：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add origin git@github.com:yourName/yourRepo.git</span><br></pre></td></tr></table></figure>
+<p>其中 yourName 是 GitHub 的用户名 yourRepo 是要上传的 GitHub 仓库名。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git push <span class="comment">#提交给远程仓库</span></span><br><span class="line">$ git pull <span class="comment">#从远程仓库获取代码并与本地的代码库合并</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的一点是，GitHub 的默认主分支的名称不再是 master 而是 main，故最好将 Git 的默认主分支名称也改为 main：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global init.defaultBranch main</span><br></pre></td></tr></table></figure>
+<p>其他操作并不影响，上述与 master 有关的所有内容都替换 main 即可。</p>
+<h1 id="参考文献">参考文献</h1>
+<ul>
+<li>菜鸟教程. Git 教程[EB/OL]. <a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></li>
+<li>菜鸟教程. Github 简明教程[EB/OL]. <a href="https://www.runoob.com/w3cnote/git-guide.html">https://www.runoob.com/w3cnote/git-guide.html</a></li>
+<li>VGtime. Git基本原理介绍[EB/OL]. <a href="https://blog.csdn.net/JKR10000/article/details/110453547">https://blog.csdn.net/JKR10000/article/details/110453547</a></li>
+<li>raoxiaoya. git深入理解(一)：暂存区(Stage)，索引(index)[EB/OL]. <a href="https://blog.csdn.net/raoxiaoya/article/details/110824019">https://blog.csdn.net/raoxiaoya/article/details/110824019</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Efficient Technology</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -2020,15 +2020,10 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 <ul>
 <li><p>向量组的秩等于向量组张成的<a href="#向量空间和基">向量空间的维数</a>，向量组的极大线性无关组是向量组张成的向量空间的一组<a href="#向量空间和基">基</a>。</p></li>
 <li><p>两向量组 <span class="math inline">\(A: \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s, \; B:\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量『<strong>同维</strong>』，若 <em>A</em> 中的向量都可以由 <em>B</em> 线性表示，且 <em>B</em> 中的向量都可以由 <em>A</em> 线性表示 <span class="math inline">\(\Leftrightarrow A \cong B\)</span>。</p></li>
-<li><p>向量组 <em>A</em> 和 <em>B</em> 中的向量同维，则 <span class="math inline">\(A \cong B \Leftrightarrow r(A) = r(B) = r(A,B)\)</span>。</p></li>
+<li><p>向量组 <em>A</em> 和 <em>B</em> 中的向量同维，则 <span class="math inline">\(A \cong B \Leftrightarrow r(A) = r(B) = r(\{A,B\})\)</span>。</p></li>
 <li><p>向量组 <em>A</em> 和 <em>B</em> 等价 <span class="math inline">\(\Leftrightarrow \text{span}\{A\} = \text{span}\{B\}\)</span> 即两向量组张成的空间重合。</p></li>
-<li><p>两矩阵等价 <span class="math inline">\(\Leftrightarrow\)</span> 两矩阵的行向量组等价且两矩阵的列向量组等价。即</p></li>
-</ul>
-<p><span class="math display">\[
-\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B}) = r([\boldsymbol{A},\boldsymbol{B}]) = r\left(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix} \right)
-\]</span></p>
-<ul>
-<li>两矩阵的列向量组等价，两矩阵未必等价，两矩阵的行向量组未必等价。</li>
+<li><p>两矩阵列（行）等价 <span class="math inline">\(\Rightarrow\)</span> 两矩阵的列（行）向量组等价。</p></li>
+<li><p>两矩阵的列（行）向量组等价，两矩阵未必列（行）等价（必须同型）。</p></li>
 </ul>
 <h3 id="向量空间和基">向量空间和基</h3>
 <ol start="0" type="1">
@@ -5466,11 +5461,14 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 <li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow r(\boldsymbol{A+\boldsymbol{E}}) + r(\boldsymbol{A}-\boldsymbol{E}) = n\)</span></li>
 </ul>
 <h3 id="矩阵的等价和等价标准形">矩阵的等价和等价标准形</h3>
-<p><span class="math inline">\(\boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵，若 <span class="math inline">\(\boldsymbol{PAQ} = \boldsymbol{B}\)</span>，则称矩阵 <strong><em>A</em></strong> 『<strong>等价</strong>』于矩阵 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span>。</p>
+<p><span class="math inline">\(\boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵，若 <span class="math inline">\(\boldsymbol{PAQ} = \boldsymbol{B}\)</span>，则称矩阵 <strong><em>A</em></strong> 『<strong>等价</strong>』于矩阵 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span>。特别地，若 <span class="math inline">\(\boldsymbol{PA} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>行等价</strong>』于 <strong><em>B</em></strong>，<span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>列等价</strong>』于 <strong><em>B</em></strong>。</p>
 <p>推论：</p>
 <ul>
-<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等变换化为矩阵 <strong><em>B</em></strong>。</li>
 <li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow \boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{m \times n},\;r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span> 注意 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 必须<strong>同型</strong>。</li>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 行等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等行变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等列变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 行等价或列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Rightarrow \boldsymbol{A} \cong \boldsymbol{B}\)</span>。</li>
 </ul>
 <p>任何矩阵都可以通过有限次初等变换化为其『等价标准形』：</p>
 <p><span class="math display">\[
@@ -5529,9 +5527,8 @@ $$
 </ul></li>
 <li><span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{C}_{m \times s}\)</span>
 <ul>
-<li><strong><em>C</em></strong> 的列向量组可由 <strong><em>A</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{C}])\)</span>。</li>
-<li><strong><em>C</em></strong> 的行向量组可由 <strong><em>B</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{B}) = r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right)\)</span>。</li>
-<li>特别地，当 <strong><em>A</em></strong> 可逆，<strong><em>C</em></strong> 和 <strong><em>B</em></strong> 的行、列向量组等价；当 <strong><em>B</em></strong> 可逆，<strong><em>C</em></strong> 和 <strong><em>A</em></strong> 的行、列向量组等价。</li>
+<li><strong><em>C</em></strong> 的列向量组可由 <strong><em>A</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{C}])\)</span>。特别地，当 <strong><em>B</em></strong> 可逆，<strong><em>C</em></strong> 的列向量组和 <strong><em>A</em></strong> 的列向量组可以互相表示，即 <strong><em>C</em></strong> 的列向量组等价于 <strong><em>A</em></strong> 的列向量组。</li>
+<li><strong><em>C</em></strong> 的行向量组可由 <strong><em>B</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{B}) = r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right)\)</span>。特别地，当 <strong><em>A</em></strong> 可逆，<strong><em>C</em></strong> 的行向量组和 <strong><em>B</em></strong> 的行向量组可以互相表示，即 <strong><em>C</em></strong> 的行向量组等价于 <strong><em>B</em></strong> 的行向量组。</li>
 <li>若 <strong><em>A</em></strong> 列满秩，则 <span class="math inline">\(r(\boldsymbol{B}) = r(\boldsymbol{C}) =r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right) \Leftrightarrow\)</span> <strong><em>B</em></strong> 的行向量组与 <strong><em>C</em></strong> 的行向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Cx} = \boldsymbol{0}\)</span> 同解。</li>
 <li>若 <strong><em>B</em></strong> 行满秩，则 <span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{C}) =r([\boldsymbol{A},\boldsymbol{C}]) \Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组与 <strong><em>C</em></strong> 的列向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 同解。</li>
 <li>设 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B},\boldsymbol{C}\)</span> 均为 <em>n</em> 阶矩阵，若 <span class="math inline">\(\boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] =[\boldsymbol{\gamma}_1,\boldsymbol{\gamma}_2,\ldots,\boldsymbol{\gamma}_n] \xlongequal{\text{if}} [\lambda_1\boldsymbol{\beta}_1,\lambda_2\boldsymbol{\beta}_2,\ldots,\lambda_n\boldsymbol{\beta}_n]\)</span>，即 <span class="math inline">\(\boldsymbol{A\beta}_i = \lambda_i\boldsymbol{\beta}_i \;(i =1,2,\ldots,n)\)</span>，若 <span class="math inline">\(\boldsymbol{\beta}_i \neq \boldsymbol{0}\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_i\)</span> 为 <strong><em>A</em></strong> 的属于 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</li>
