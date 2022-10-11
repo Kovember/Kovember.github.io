@@ -29,7 +29,7 @@
 <meta property="og:description" content="线性代数-矩阵理论的概念与计算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-20T14:24:35.000Z">
-<meta property="article:modified_time" content="2022-10-08T15:36:11.199Z">
+<meta property="article:modified_time" content="2022-10-11T14:18:04.202Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-08 23:36:11" itemprop="dateModified" datetime="2022-10-08T23:36:11+08:00">2022-10-08</time>
+                <time title="修改时间：2022-10-11 22:18:04" itemprop="dateModified" datetime="2022-10-11T22:18:04+08:00">2022-10-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,14 +276,14 @@
 <li><a href="#逆矩阵">逆矩阵</a></li>
 <li><a href="#伴随矩阵">伴随矩阵</a></li>
 <li><a href="#分块矩阵">分块矩阵</a></li>
-<li><a href="#矩阵的秩">矩阵的秩</a></li>
 <li><a href="#矩阵的等价和等价标准形">矩阵的等价和等价标准形</a></li>
+<li><a href="#矩阵的秩">矩阵的秩</a></li>
 </ul></li>
 <li><a href="#计算">计算</a>
 <ul>
 <li><a href="#求矩阵的幂">求矩阵的幂</a></li>
 <li><a href="#求逆矩阵">求逆矩阵</a></li>
-<li><a href="#矩阵方程">矩阵方程</a></li>
+<li><a href="#矩阵方程的求解和重要结论">矩阵方程的求解和重要结论</a></li>
 </ul></li>
 </ul>
 <!-- /code_chunk_output -->
@@ -362,8 +362,8 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li><span class="math inline">\(\boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{n \times n},\; \boldsymbol{A}\boldsymbol{B} = \boldsymbol{E} \Leftrightarrow \boldsymbol{B}\boldsymbol{A} =\boldsymbol{E}\)</span></li>
 <li><span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^* = \boldsymbol{A}^*\boldsymbol{A}\)</span></li>
 </ul></li>
-<li>矩阵乘法不满足左右消去律：<span class="math inline">\(\boldsymbol{AB} = \boldsymbol{AC} \; \text{or} \; \boldsymbol{BA} = \boldsymbol{CA}\not\Rightarrow \boldsymbol{B} = \boldsymbol{C}\)</span>，除非 <strong><em>A</em></strong> 可逆。</li>
-<li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{O} \not\Rightarrow \boldsymbol{A} = \boldsymbol{O} \; \text{or}\; \boldsymbol{B} = \boldsymbol{O}\)</span></p></li>
+<li><p>矩阵乘法不满足左右消去律：<span class="math inline">\(\boldsymbol{AB} = \boldsymbol{AC} \; \text{or} \; \boldsymbol{BA} = \boldsymbol{CA}\not\Rightarrow \boldsymbol{B} = \boldsymbol{C}\)</span>，除非 <strong><em>A</em></strong> 可逆。</p></li>
+<li><p><span class="math inline">\(\boldsymbol{AB} = \boldsymbol{O} \not\Rightarrow \boldsymbol{A} = \boldsymbol{O} \; \text{or}\; \boldsymbol{B} = \boldsymbol{O}\)</span>。若 <strong><em>A</em></strong> 列满秩，则 <span class="math inline">\(\boldsymbol{B} = \boldsymbol{O}\)</span>，若 <strong><em>B</em></strong> 行满秩，则 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{O}\)</span>。</p></li>
 </ul>
 <h3 id="矩阵的转置">矩阵的转置</h3>
 <p>若矩阵 <span class="math inline">\(\boldsymbol{A} = [a_{ij}]_{m \times n}\)</span>，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的转置为 <span class="math inline">\(\boldsymbol{A}^{\text{T}} = [a_{ji}]_{n \times m}\)</span>，也就是 <span class="math inline">\(\boldsymbol{A}\)</span> 的第 <em>i</em> 行等于 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 的第 <em>i</em> 列，<span class="math inline">\(\boldsymbol{A}\)</span> 的第 <em>j</em> 列等于 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 的第 <em>j</em> 行。</p>
@@ -373,7 +373,7 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li><span class="math inline">\((\boldsymbol{A}+\boldsymbol{B})^{\text{T}} = \boldsymbol{A}^{\text{T}} + \boldsymbol{B}^{\text{T}}\)</span></li>
 <li><span class="math inline">\((k\boldsymbol{A})^{\text{T}} = k\boldsymbol{A}^{\text{T}}\)</span></li>
 <li><span class="math inline">\((\boldsymbol{A}\boldsymbol{B})^{\text{T}} = \boldsymbol{B}^{\text{T}}\boldsymbol{A}^{\text{T}}\)</span>（<strong>穿脱原则</strong>）</li>
-<li><span class="math inline">\(\text{det}\left(\boldsymbol{A}^{\text{T}}\right) =\text{det}(\boldsymbol{A})\)</span></li>
+<li><span class="math inline">\(\left|\boldsymbol{A}^{\text{T}}\right| = |\boldsymbol{A}|\)</span></li>
 </ul>
 <h3 id="初等矩阵">初等矩阵</h3>
 <p>矩阵有三种初等变换：</p>
@@ -438,17 +438,17 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li><span class="math inline">\({\left(\boldsymbol{A}^{-1}\right)}^{-1} = \boldsymbol{A}\)</span></li>
 <li><span class="math inline">\({(k\boldsymbol{A})}^{-1} = \frac{1}{k}\boldsymbol{A}^{-1} \;(k \neq 0)\)</span></li>
 <li><span class="math inline">\({(\boldsymbol{AB})}^{-1} =\boldsymbol{B}^{-1} \boldsymbol{A}^{-1}\)</span>（<strong>穿脱原则</strong>）</li>
-<li><span class="math inline">\(\text{det}\left(\boldsymbol{A}^{-1}\right) = \frac{1}{\text{det}(\boldsymbol{A})}\)</span></li>
+<li><span class="math inline">\(\left|\boldsymbol{A}^{-1}\right| = \frac{1}{\left | \boldsymbol{A}\right|}\)</span></li>
 </ul>
 <p><strong>重要结论：</strong></p>
-<p><span class="math inline">\(\boldsymbol{A}_{n \times n}\)</span> 可逆 $ () 0 r(<em>{n n}) = n</em>{n n} _{n}$。</p>
+<p><span class="math inline">\(\boldsymbol{A}_{n \times n}\)</span> 可逆 <span class="math inline">\(\Leftrightarrow |\boldsymbol{A}| \neq 0 \Leftrightarrow r(\boldsymbol{A}_{n \times n}) = n \Leftrightarrow \boldsymbol{A}_{n \times n} \cong \boldsymbol{E}_{n}\)</span>。</p>
 <p><strong><a href="#矩阵的秩">满秩</a>是可逆的充分必要条件，故可逆矩阵<a href="#矩阵的等价和等价标准形">等价</a>于同阶单位矩阵</strong>，即可逆矩阵可以由同阶单位矩阵通过有限次初等变换得到，因为矩阵乘单位矩阵满足交换律，故</p>
 <p><span class="math display">\[
 \boldsymbol{P} =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{E}\cdots\boldsymbol{P}_k = \boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{E} = \boldsymbol{E}\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k =\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k
 \]</span></p>
 <p>根据上述可知：</p>
 <ul>
-<li>可逆矩阵可由同阶单位矩阵通过<strong>有限次初等行变换或有限次初等列变换</strong>得到。</li>
+<li>可逆矩阵可由同阶单位矩阵通过<strong>有限次初等行变换或有限次初等列变换</strong>得到。即可逆矩阵<strong>行等价且列等价</strong>于同阶单位矩阵。</li>
 <li><strong>可逆矩阵等价于有限个初等矩阵的乘积。左乘可逆矩阵等价于做有限次初等行变换，右乘可逆矩阵等价于做有限次初等列变换。</strong></li>
 <li>可逆矩阵等价于有限个初等矩阵的乘积，故<strong>可逆矩阵乘可逆矩阵仍然是可逆矩阵</strong>。</li>
 </ul>
@@ -493,19 +493,42 @@ k_1\boldsymbol{A}_1 +k_2\boldsymbol{B}_1 &amp;k_1\boldsymbol{A}_2 +k_2\boldsymbo
 k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol{B}_4
 \end{matrix}\right] \\
 &amp;\left[\begin{matrix}
+\boldsymbol{A} &amp;\boldsymbol{B}
+\end{matrix}\right]
+\left[\begin{matrix}
+\boldsymbol{X} \\
+\boldsymbol{Y}
+\end{matrix}\right] =
+\left[\begin{matrix}
+\boldsymbol{AX}+\boldsymbol{BY}
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
+\boldsymbol{A} \\ \boldsymbol{B}  
+\end{matrix}\right]
+\left[\begin{matrix}
+\boldsymbol{X} &amp;\boldsymbol{Y}
+\end{matrix}\right] =
+\left[\begin{matrix}
+\boldsymbol{AX} &amp;\boldsymbol{AY} \\
+\boldsymbol{BX} &amp;\boldsymbol{BY}
+\end{matrix}\right] \\
+&amp;\left[\begin{matrix}
 \boldsymbol{A} &amp;\boldsymbol{B}\\
 \boldsymbol{C} &amp;\boldsymbol{D}
 \end{matrix}\right]
 \left[\begin{matrix}
-\boldsymbol{X} &amp;\boldsymbol{Y}\\
-\boldsymbol{Z} &amp;\boldsymbol{W}
+\boldsymbol{X} &amp;\boldsymbol{Z}\\
+\boldsymbol{Y} &amp;\boldsymbol{W}
 \end{matrix}\right] =
 \left[\begin{matrix}
-\boldsymbol{AX}+\boldsymbol{BZ} &amp;\boldsymbol{AY}+\boldsymbol{BW}\\
-\boldsymbol{CX}+\boldsymbol{BZ} &amp;\boldsymbol{CY}+\boldsymbol{DW}
+\boldsymbol{AX}+\boldsymbol{BY} &amp;\boldsymbol{AZ}+\boldsymbol{BW}\\
+\boldsymbol{CX}+\boldsymbol{DY} &amp;\boldsymbol{CZ}+\boldsymbol{DW}
 \end{matrix}\right] \\
 \end{aligned}
 \]</span></p>
+<blockquote>
+<p>注：上述乘法前提是对应的分块满足相乘的行列关系。</p>
+</blockquote>
 <ul>
 <li>转置、幂和逆运算：</li>
 </ul>
@@ -628,12 +651,40 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 \end{bmatrix}
 \]</span></p>
 <p>注：若 <span class="math inline">\(\boldsymbol{A}_i,\boldsymbol{B}_i\;(i=1,2,\ldots,s)\)</span> 均为常数，则 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 分别为『对角矩阵』和『反对角矩阵』，以上的性质仍成立。</p>
+<h3 id="矩阵的等价和等价标准形">矩阵的等价和等价标准形</h3>
+<p><span class="math inline">\(\boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵，若 <span class="math inline">\(\boldsymbol{PAQ} = \boldsymbol{B}\)</span>，则称矩阵 <strong><em>A</em></strong> 『<strong>等价</strong>』于矩阵 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span>。</p>
+<ul>
+<li>特别地，若 <span class="math inline">\(\boldsymbol{PA} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>行等价</strong>』于 <strong><em>B</em></strong>。</li>
+<li>若 <span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>列等价</strong>』于 <strong><em>B</em></strong>。</li>
+</ul>
+<p>重要结论：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow \boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{m \times n},\;r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span> 注意 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 必须<strong>同型</strong>。</li>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 行等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等行变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等列变换化为矩阵 <strong><em>B</em></strong>。</li>
+<li><strong><em>A</em></strong> 行等价或列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Rightarrow\)</span> <strong><em>A</em></strong> 等价于 <strong><em>B</em></strong>。</li>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow \boldsymbol{PAQ} \cong \boldsymbol{B},\; \boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵。</li>
+</ul>
+<p>任何矩阵都可以通过有限次初等行变换和初等列变换化为其『<strong>等价标准形</strong>』：</p>
+<p><span class="math display">\[
+\boldsymbol{A} \xrightarrow{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{A}\cdots \boldsymbol{P}_k} \left[
+\begin{matrix}
+\boldsymbol{E_r} &amp;\boldsymbol{O} \\
+\boldsymbol{O} &amp;\boldsymbol{O}
+\end{matrix}
+\right]
+\]</span></p>
 <h3 id="矩阵的秩">矩阵的秩</h3>
-<p>矩阵的秩的定义：<span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n}\)</span>，<strong><em>A</em></strong> 中最大的不为零的『子式』的阶数称为 <strong><em>A</em></strong> 的秩，记作 <span class="math inline">\(r(\boldsymbol{A})\)</span>。或者说若 <strong><em>A</em></strong> 存在 <em>k</em> 阶不为零子式，而任意 <span class="math inline">\(k + 1\)</span> 阶子式全为零或不存在，则 <span class="math inline">\(r(\boldsymbol{A}) = k\)</span>。</p>
+<p>矩阵的秩的定义：<span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n}\)</span>，<strong><em>A</em></strong> 中最大的不为零的『子式』的阶数称为 <strong><em>A</em></strong> 的秩，记作 <span class="math inline">\(r(\boldsymbol{A})\)</span>。</p>
+<p>或者说若 <strong><em>A</em></strong> <strong>存在</strong> <em>k</em> 阶不为零子式，而任意 <span class="math inline">\(k + 1\)</span> 阶子式全为零或不存在，则 <span class="math inline">\(r(\boldsymbol{A}) = k\)</span>。</p>
+<blockquote>
+<p>注：是存在 <em>k</em> 阶不为零子式，不是任意 <em>k</em> 阶子式都不为零。</p>
+</blockquote>
 <ol type="1">
-<li>阶梯形矩阵</li>
+<li><strong>阶梯形和行最简形矩阵</strong></li>
 </ol>
-<p>高斯消元法：对矩阵做初等行变换，从上到下依次消元，得到『阶梯形矩阵』。</p>
+<p>对矩阵做初等行变换，从上到下依次消元，可得到『<strong>阶梯形</strong>』矩阵。</p>
 <p><span class="math display">\[
 \text{e.g.} \; 
 \left[\begin{matrix}
@@ -663,11 +714,39 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 \end{matrix}
 \right]
 \]</span></p>
-<p>将矩阵化为阶梯形矩阵后，每一行从左至右第一个非零元素称为『主元』，主元所在的的列称为矩阵的『主元列』，其他列称为『自由列』。</p>
-<p>对阶梯形矩阵进行初等行变换，使每个主元等于 1，且每个主列除了主元为 1 外其他元素都为 0，称这样的矩阵为『行最简形矩阵』。</p>
+<p>将矩阵化为阶梯形矩阵后，每一行从左至右第一个非零元素称为『<strong>主元</strong>』，主元所在的的列称为矩阵的『<strong>主元列</strong>』，其他列称为『<strong>自由列</strong>』。</p>
 <p><strong>矩阵 <em>A</em> 的秩等于 <em>A</em> 的阶梯矩阵的『阶梯数』即主元（列）数。自由列数 <span class="math inline">\(s = n - r(\boldsymbol{A})\)</span>。</strong></p>
+<p>对阶梯形矩阵进行初等行变换，使每个主元等于 1，且每个主元列除了主元为 1 之外其他元素都为 0，称这样的矩阵为『<strong>行最简形</strong>』矩阵。</p>
+<p>任何矩阵都能通过<strong>初等行变换</strong>化为阶梯形和行最简形。</p>
 <ol start="2" type="1">
-<li>重要结论：</li>
+<li><strong>列满秩矩阵，行满秩矩阵，满秩矩阵</strong></li>
+</ol>
+<p>设矩阵 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n}\)</span></p>
+<ul>
+<li>若 <span class="math inline">\(r(\boldsymbol{A}) = m\)</span>，则称 <strong><em>A</em></strong> 为『<strong>行满秩</strong>』矩阵。</li>
+<li>若 <span class="math inline">\(r(\boldsymbol{A}) = n\)</span>，则称 <strong><em>A</em></strong> 为『<strong>列满秩</strong>』矩阵。</li>
+<li>若 <span class="math inline">\(r(\boldsymbol{A}) = m = n\)</span>，则称 <strong><em>A</em></strong> 为『<strong>满秩</strong>』矩阵（必须是方阵）。<strong><em>A</em></strong> 满秩 <span class="math inline">\(\Leftrightarrow |\boldsymbol{A}| \neq 0 \Leftrightarrow\)</span> <strong><em>A</em></strong> 可逆。</li>
+</ul>
+<p>设 <span class="math inline">\(\boldsymbol{Q}_{n \times n}\)</span> 为满秩矩阵，则 <strong><em>Q</em></strong> 行等价且列等价于 <em>n</em> 阶单位矩阵。即 <strong><em>Q</em></strong> 可通过有限次初等行（或列）变换化为单位矩阵：</p>
+<p><span class="math display">\[
+r(\boldsymbol{Q}_{n \times n}) = n \Leftrightarrow \boldsymbol{Q} \xrightarrow[\text{or} \; \boldsymbol{QP}_1\boldsymbol{P}_2 \cdots\boldsymbol{P}_k]{\boldsymbol{P}_1\boldsymbol{P}_2 \cdots  \boldsymbol{P}_k\boldsymbol{Q}} \boldsymbol{E}_n
+\]</span></p>
+<p>设 <span class="math inline">\(\boldsymbol{C}_{m \times n}\)</span> 为<strong>列满秩</strong>矩阵，则 <strong><em>C</em></strong> 的行最简形是 <span class="math inline">\(\begin{bmatrix} \boldsymbol{E}_n \\ \boldsymbol{O} \end{bmatrix}\)</span>。即 <strong><em>C</em></strong> 可通过有限次<strong>初等行变换</strong>化为 <span class="math inline">\(\begin{bmatrix} \boldsymbol{E}_n \\ \boldsymbol{O} \end{bmatrix}\)</span>：</p>
+<p><span class="math display">\[
+r(\boldsymbol{C}_{m \times n}) = n \Leftrightarrow \boldsymbol{C}\xrightarrow{\boldsymbol{P}_1\boldsymbol{P}_2 \cdots \boldsymbol{P}_k \boldsymbol{
+C}} \begin{bmatrix} \boldsymbol{E}_n \\ \boldsymbol{O} \end{bmatrix}
+\]</span></p>
+<p>相反，设 <span class="math inline">\(\boldsymbol{R}_{m \times n}\)</span> 为<strong>行满秩</strong>矩阵，则 <strong><em>R</em></strong> 可通过有限次<strong>初等列变换</strong>化为 <span class="math inline">\(\begin{bmatrix}\boldsymbol{E}_m &amp;\boldsymbol{O} \end{bmatrix}\)</span>：</p>
+<p><span class="math display">\[
+r(\boldsymbol{R}_{m \times n}) = m \Leftrightarrow \boldsymbol{R} \xrightarrow{\boldsymbol{RP}_1\boldsymbol{P}_2 \cdots\boldsymbol{P}_k}\begin{bmatrix}\boldsymbol{E}_m &amp;\boldsymbol{O} \end{bmatrix}
+\]</span></p>
+<p>综上可得：（理解为什么左乘列满秩，右乘行满秩不改变矩阵秩？）</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{CA} \cong \boldsymbol{PCA} \cong (\boldsymbol{PC})\boldsymbol{A} \cong \begin{bmatrix} \boldsymbol{E}_n \\ \boldsymbol{O} \end{bmatrix} \boldsymbol{A} =\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{O} \end{bmatrix}\)</span>，即 <span class="math inline">\(\boldsymbol{CA} \cong \begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{O} \end{bmatrix}\)</span>，故 <span class="math inline">\(r(\boldsymbol{A}) = r\left(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{CA} \end{bmatrix}\right)= r(\boldsymbol{CA}) \Leftrightarrow \boldsymbol{CA}\)</span> 的行向量组与 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组等价。</li>
+<li><span class="math inline">\(\boldsymbol{AR} \cong \boldsymbol{ARQ} \cong \boldsymbol{A}(\boldsymbol{RQ}) \cong \boldsymbol{A}\begin{bmatrix}\boldsymbol{E}_m &amp;\boldsymbol{O} \end{bmatrix} =\begin{bmatrix}\boldsymbol{A} &amp;\boldsymbol{O} \end{bmatrix}\)</span>，即 <span class="math inline">\(\boldsymbol{AR} \cong \begin{bmatrix}\boldsymbol{A} &amp;\boldsymbol{O} \end{bmatrix}\)</span>，故 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{AR}])= r(\boldsymbol{AR}) \Leftrightarrow \boldsymbol{AR}\)</span> 的列向量组与 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组等价。</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>重要结论</strong></li>
 </ol>
 <ul>
 <li><span class="math inline">\(r(\boldsymbol{A}_{n \times n}) \neq n \Leftrightarrow \left|\boldsymbol{A}\right| = 0\)</span></li>
@@ -679,6 +758,7 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 <li><span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{O} \Rightarrow r(\boldsymbol{A})+r(\boldsymbol{B}) \leq n\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A}, \boldsymbol{AB} ]), \; r(\boldsymbol{B}) = r\left ( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{AB} \end{bmatrix} \right)\)</span></li>
 <li>若 <strong><em>A</em></strong> 列满秩，则 <span class="math inline">\(n + r(\boldsymbol{B}) - n \leq r(\boldsymbol{A}_{m \times n} \boldsymbol{B}_{n \times s}) \leq \min(n,r(\boldsymbol{B})) = r(\boldsymbol{B})\)</span>，故 <span class="math inline">\(r(\boldsymbol{AB}) = r(\boldsymbol{B})\)</span>。同理若 <strong><em>B</em></strong> 行满秩，则 <span class="math inline">\(r(\boldsymbol{AB}) = r(\boldsymbol{A})\)</span>。即左乘列满秩，右乘行满秩，不改变矩阵的秩。</li>
+<li><span class="math inline">\(r(\boldsymbol{A}) \leq r([\boldsymbol{A}, \boldsymbol{B}]), \; r(\boldsymbol{B}) \leq r([\boldsymbol{A}, \boldsymbol{B}]), \; r(\boldsymbol{A}) \leq r\left(\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\right), \; r(\boldsymbol{B}) \leq r\left(\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\right)\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A}+\boldsymbol{B}) = r\left([\boldsymbol{A},\boldsymbol{B}]\begin{bmatrix}\boldsymbol{E} \\ \boldsymbol{E} \end{bmatrix}\right) \leq r([\boldsymbol{A},\boldsymbol{B}]) \leq r(\boldsymbol{A}) + r(\boldsymbol{B})\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A}+\boldsymbol{B}) = r\left([\boldsymbol{E},\boldsymbol{E}]\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\right) \leq r\left(\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\right) \leq r(\boldsymbol{A}) + r(\boldsymbol{B})\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A})+r(\boldsymbol{B}) = r\left(\left[ \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B}\end{matrix}\right]\right)\)</span></li>
@@ -686,25 +766,6 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 <li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{A} \Rightarrow r(\boldsymbol{A}) + r(\boldsymbol{A}-\boldsymbol{E}) = n\)</span></li>
 <li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow r(\boldsymbol{A+\boldsymbol{E}}) + r(\boldsymbol{A}-\boldsymbol{E}) = n\)</span></li>
 </ul>
-<h3 id="矩阵的等价和等价标准形">矩阵的等价和等价标准形</h3>
-<p><span class="math inline">\(\boldsymbol{P},\boldsymbol{Q}\)</span> 为可逆矩阵，若 <span class="math inline">\(\boldsymbol{PAQ} = \boldsymbol{B}\)</span>，则称矩阵 <strong><em>A</em></strong> 『<strong>等价</strong>』于矩阵 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span>。特别地，若 <span class="math inline">\(\boldsymbol{PA} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>行等价</strong>』于 <strong><em>B</em></strong>，<span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>列等价</strong>』于 <strong><em>B</em></strong>。</p>
-<p>推论：</p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow \boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{m \times n},\;r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span> 注意 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B}\)</span> 必须<strong>同型</strong>。</li>
-<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等变换化为矩阵 <strong><em>B</em></strong>。</li>
-<li><strong><em>A</em></strong> 行等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等行变换化为矩阵 <strong><em>B</em></strong>。</li>
-<li><strong><em>A</em></strong> 列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 可以通过有限次初等列变换化为矩阵 <strong><em>B</em></strong>。</li>
-<li><strong><em>A</em></strong> 行等价或列等价于 <strong><em>B</em></strong> <span class="math inline">\(\Rightarrow \boldsymbol{A} \cong \boldsymbol{B}\)</span>。</li>
-</ul>
-<p>任何矩阵都可以通过有限次初等变换化为其『等价标准形』：</p>
-<p><span class="math display">\[
-\boldsymbol{A} \xrightarrow{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{A}\cdots \boldsymbol{P}_k} \left[
-\begin{matrix}
-\boldsymbol{E_r} &amp;\boldsymbol{O} \\
-\boldsymbol{O} &amp;\boldsymbol{O}
-\end{matrix}
-\right]
-\]</span></p>
 <h2 id="计算">计算</h2>
 <h3 id="求矩阵的幂">求矩阵的幂</h3>
 <h3 id="求逆矩阵">求逆矩阵</h3>
@@ -731,7 +792,47 @@ k_1\boldsymbol{A}_3 +k_2\boldsymbol{B}_3&amp;k_1\boldsymbol{A}_4 +k_2\boldsymbol
 <li>变形得 <span class="math inline">\(\boldsymbol{AB} = \boldsymbol{E} \Rightarrow \boldsymbol{A}^{-1} = \boldsymbol{B}\)</span>。</li>
 <li>变形得 <span class="math inline">\(\boldsymbol{A} = \boldsymbol{BC} \Rightarrow \boldsymbol{A}^{-1} = \boldsymbol{C}^{-1}\boldsymbol{B}^{-1}\)</span>。</li>
 </ul>
-<h3 id="矩阵方程">矩阵方程</h3>
+<h3 id="矩阵方程的求解和重要结论">矩阵方程的求解和重要结论</h3>
+<ol type="1">
+<li><p>根据矩阵的运算性质进行化简，化简为形如 <span class="math inline">\(\boldsymbol{AX} = \boldsymbol{B}\)</span> 转化为求逆矩阵 <span class="math inline">\(\boldsymbol{X} = \boldsymbol{A}^{-1}\boldsymbol{B}\)</span>。</p></li>
+<li><p>若转化后矩阵不可逆，则通过线性方程组求解。</p></li>
+</ol>
+<p>重要结论：</p>
+<p><strong><em>B</em></strong> 的列向量组可由 <strong><em>A</em></strong> 的列向量组线性表示 <span class="math inline">\(\Leftrightarrow \boldsymbol{AX} = \boldsymbol{B}\)</span> 有解 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{B}])\)</span>。<strong><em>B</em></strong> 的行向量组可由 <strong><em>A</em></strong> 的行向量组线性表示 <span class="math inline">\(\Leftrightarrow \boldsymbol{XA} = \boldsymbol{B}\)</span> 有解 <span class="math inline">\(\Leftrightarrow r( \boldsymbol{A}) = r\left(\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B}\end{bmatrix}\right)\)</span>。</p>
+<p>矩阵方程 <span class="math inline">\(\boldsymbol{AX} = \boldsymbol{B}\)</span> 求解的一般步骤：</p>
+<ul>
+<li>若 <strong><em>A</em></strong> 满秩，相当于求逆矩阵：<span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{B} \end{bmatrix} \xrightarrow[\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{B}]{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{A}} \begin{bmatrix} \boldsymbol{E} &amp;\boldsymbol{A}^{-1}\boldsymbol{B}\end{bmatrix}\)</span> 即</li>
+</ul>
+<p><span class="math display">\[
+\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{B}\end{bmatrix} = \begin{bmatrix} \boldsymbol{E} &amp;\boldsymbol{A}^{-1}\boldsymbol{B}\end{bmatrix}, \; \boldsymbol{X} = \boldsymbol{A}^{-1}\boldsymbol{B}
+\]</span></p>
+<ul>
+<li>若 <strong><em>A</em></strong> 不满秩，初等行变换化 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A} &amp;\boldsymbol{B}\end{bmatrix}\)</span> 为阶梯型矩阵 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A}&#39; &amp;\boldsymbol{B}&#39;\end{bmatrix}\)</span>。
+<ul>
+<li>若 <span class="math inline">\(r(\boldsymbol{A}&#39;) \neq r(\begin{bmatrix} \boldsymbol{A}&#39; &amp;\boldsymbol{B}&#39;\end{bmatrix})\)</span>，则无解。</li>
+<li>若 <span class="math inline">\(r(\boldsymbol{A}&#39;) = r(\begin{bmatrix} \boldsymbol{A}&#39; &amp;\boldsymbol{B}&#39;\end{bmatrix})\)</span>，则有两种思路：
+<ul>
+<li><p>化为 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A}&#39; &amp;\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s\end{bmatrix}\)</span>，分别求出 <span class="math inline">\(\boldsymbol{A}&#39;\boldsymbol{x}_1 = \boldsymbol{\beta}_1,\boldsymbol{A}&#39;\boldsymbol{x}_2 = \boldsymbol{\beta}_2,\ldots,\boldsymbol{A}&#39;\boldsymbol{x}_s = \boldsymbol{\beta}_s\)</span> 的特解 <span class="math inline">\(\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \ldots,\boldsymbol{\xi}_s\)</span>，并求出 <span class="math inline">\(N(\boldsymbol{A})\)</span>，则</p>
+<p><span class="math display">\[
+\boldsymbol{X} = [\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \ldots,\boldsymbol{\xi}_s] + [k_1N(\boldsymbol{A}),k_2N(\boldsymbol{A}),\ldots,k_sN(\boldsymbol{A})]
+\]</span></p></li>
+<li><p>继续将 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A}&#39; &amp;\boldsymbol{B}&#39;\end{bmatrix}\)</span> 化为行最简形 <span class="math inline">\(\begin{bmatrix} \boldsymbol{J} &amp;\boldsymbol{B}&#39;&#39;\end{bmatrix}\)</span>。交换 <strong><em>J</em></strong> 的某两列，同时交换 <strong><em>X</em></strong> 的某两行，使方程化为 <span class="math inline">\(\begin{bmatrix} \boldsymbol{E} &amp;\boldsymbol{F} \\ \boldsymbol{O} &amp; \boldsymbol{O} \end{bmatrix} \boldsymbol{X}&#39; = \boldsymbol{B}&#39;&#39;\)</span>，则 <span class="math inline">\(N(\boldsymbol{A}) = \begin{bmatrix} -\boldsymbol{F} \\ \boldsymbol{E} \end{bmatrix}\begin{bmatrix}k_1 \\ k_2 \\ \vdots \\ k_{n-r(\boldsymbol{A})} \end{bmatrix}\)</span>，特解为 <span class="math inline">\(\boldsymbol{B}&#39;&#39;\)</span>，故方程组的通解为</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\boldsymbol{X} = \boldsymbol{B}&#39;&#39; + [l_1N(\boldsymbol{A}),l_2N(\boldsymbol{A}),\ldots,l_sN(\boldsymbol{A})] \\
+&amp;N(\boldsymbol{A}) = \begin{bmatrix} -\boldsymbol{F} \\ \boldsymbol{E} \end{bmatrix}\begin{bmatrix}k_1 \\ k_2 \\ \vdots \\ k_{n-r(\boldsymbol{A})} \end{bmatrix}
+\end{aligned}
+ \]</span></p>
+<blockquote>
+<p>线代 9 讲习题 5.13。</p>
+</blockquote></li>
+</ul></li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li>待定系数法：设出矩阵的系数，代入矩阵方程求解。</li>
+</ol>
+<p>对于形如 <span class="math inline">\(\boldsymbol{XA} = \boldsymbol{B}\)</span> 的矩阵方程，建议通过转置化为熟悉的形式求解 <span class="math inline">\({(\boldsymbol{XA})}^{\text{T}} = \boldsymbol{B}^{\text{T}} \rightarrow \boldsymbol{A}^{\text{T}}\boldsymbol{X}^{\text{T}} = \boldsymbol{B}^{\text{T}}\)</span>，求出 <span class="math inline">\(\boldsymbol{X}^{\text{T}}\)</span> 之后记得再转置回来。</p>
 <!--
 $$
 \text{上岸} = 
@@ -745,35 +846,27 @@ $$
 <li><span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{O}\)</span>
 <ul>
 <li><span class="math inline">\(r(\boldsymbol{A}) + r(\boldsymbol{B}) \leq n\)</span></li>
-<li><span class="math inline">\(\boldsymbol{B}\)</span> 的列向量都是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量。</li>
+<li><strong><em>B</em></strong> 的列向量都是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量。即 <span class="math inline">\(\boldsymbol{B} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s], \boldsymbol{A\beta}_i = \boldsymbol{0} \; (i =1,2,\ldots,s)\)</span>。</li>
 <li>若 <span class="math inline">\(\boldsymbol{B} \neq \boldsymbol{O}\)</span>，则 <strong><em>A</em></strong> 的列向量组线性相关。</li>
 <li>若 <span class="math inline">\(\boldsymbol{A} \neq \boldsymbol{O}\)</span>，则 <strong><em>B</em></strong> 的行向量组线性相关。</li>
 <li><strong><em>A</em></strong> 的任意行向量与 <strong><em>B</em></strong> 的任意列向量正交。</li>
-<li>设 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B},\boldsymbol{C}\)</span> 均为 <em>n</em> 阶矩阵，若 <span class="math inline">\(\boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] =[\boldsymbol{0},\boldsymbol{0},\ldots,\boldsymbol{0}] \xlongequal{\text{if}} [0\boldsymbol{\beta}_1,0\boldsymbol{\beta}_2,\ldots,0\boldsymbol{\beta}_n]\)</span>，即 <span class="math inline">\(\boldsymbol{A\beta}_i = 0\boldsymbol{\beta}_i \;(i =1,2,\ldots,n)\)</span>，若 <span class="math inline">\(\boldsymbol{\beta}_i \neq \boldsymbol{0}\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_i\)</span> 为 <strong><em>A</em></strong> 的属于 <span class="math inline">\(\lambda = 0\)</span> 的特征向量。</li>
+<li>设 <span class="math inline">\(\boldsymbol{A}\)</span> 为 <em>n</em> 阶矩阵，<span class="math inline">\(\boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s] =[\boldsymbol{0},\boldsymbol{0},\ldots,\boldsymbol{0}]\)</span> <span class="math inline">\(\xlongequal{\text{if}} [0\boldsymbol{\beta}_1,0\boldsymbol{\beta}_2,\ldots,0\boldsymbol{\beta}_s]\)</span>，即 <span class="math inline">\(\boldsymbol{A\beta}_i = 0\boldsymbol{\beta}_i \;(i =1,2,\ldots,s)\)</span>，若 <span class="math inline">\(\boldsymbol{\beta}_i \neq \boldsymbol{0}\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_i\)</span> 为 <strong><em>A</em></strong> 的属于 <span class="math inline">\(\lambda = 0\)</span> 的特征向量。</li>
 </ul></li>
 <li><span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{C}_{m \times s}\)</span>
 <ul>
-<li><strong><em>C</em></strong> 的列向量组可由 <strong><em>A</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{C}])\)</span>。特别地，当 <strong><em>B</em></strong> 可逆，<strong><em>C</em></strong> 的列向量组和 <strong><em>A</em></strong> 的列向量组可以互相表示，即 <strong><em>C</em></strong> 的列向量组等价于 <strong><em>A</em></strong> 的列向量组。</li>
-<li><strong><em>C</em></strong> 的行向量组可由 <strong><em>B</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{B}) = r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right)\)</span>。特别地，当 <strong><em>A</em></strong> 可逆，<strong><em>C</em></strong> 的行向量组和 <strong><em>B</em></strong> 的行向量组可以互相表示，即 <strong><em>C</em></strong> 的行向量组等价于 <strong><em>B</em></strong> 的行向量组。</li>
-<li>若 <strong><em>A</em></strong> 列满秩，则 <span class="math inline">\(r(\boldsymbol{B}) = r(\boldsymbol{C}) =r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right) \Leftrightarrow\)</span> <strong><em>B</em></strong> 的行向量组与 <strong><em>C</em></strong> 的行向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Cx} = \boldsymbol{0}\)</span> 同解。</li>
-<li>若 <strong><em>B</em></strong> 行满秩，则 <span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{C}) =r([\boldsymbol{A},\boldsymbol{C}]) \Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组与 <strong><em>C</em></strong> 的列向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 同解。</li>
-<li>设 <span class="math inline">\(\boldsymbol{A},\boldsymbol{B},\boldsymbol{C}\)</span> 均为 <em>n</em> 阶矩阵，若 <span class="math inline">\(\boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] =[\boldsymbol{\gamma}_1,\boldsymbol{\gamma}_2,\ldots,\boldsymbol{\gamma}_n] \xlongequal{\text{if}} [\lambda_1\boldsymbol{\beta}_1,\lambda_2\boldsymbol{\beta}_2,\ldots,\lambda_n\boldsymbol{\beta}_n]\)</span>，即 <span class="math inline">\(\boldsymbol{A\beta}_i = \lambda_i\boldsymbol{\beta}_i \;(i =1,2,\ldots,n)\)</span>，若 <span class="math inline">\(\boldsymbol{\beta}_i \neq \boldsymbol{0}\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_i\)</span> 为 <strong><em>A</em></strong> 的属于 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</li>
+<li><strong><em>C</em></strong> 的列向量组可由 <strong><em>A</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{C}])\)</span>。</li>
+<li>特别地，当 <strong><em>B</em></strong> 行满秩，则 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{C}]) = r(\boldsymbol{C}) \Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组与 <strong><em>C</em></strong> 的列向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 的列向量组和 <strong><em>C</em></strong> 的列向量组可以互相表示 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{A}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{C}^{\text{T}}\boldsymbol{x} = \boldsymbol{0}\)</span> 同解。</li>
+<li><strong><em>C</em></strong> 的行向量组可由 <strong><em>B</em></strong> 的列向量组线性表示。<span class="math inline">\(r(\boldsymbol{B}) = r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right)\)</span>。</li>
+<li>特别地，当 <strong><em>A</em></strong> 列满秩，则 <span class="math inline">\(r(\boldsymbol{B}) =r\left( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{C}\end{bmatrix}\right)= r(\boldsymbol{C}) \Leftrightarrow\)</span> <strong><em>B</em></strong> 的行向量组与 <strong><em>C</em></strong> 的行向量组等价 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>B</em></strong> 的行向量组和 <strong><em>C</em></strong> 的行向量组可以互相表示 <span class="math inline">\(\Leftrightarrow\)</span> 方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Cx} = \boldsymbol{0}\)</span> 同解。</li>
+<li>设 <span class="math inline">\(\boldsymbol{A}\)</span> 为 <em>n</em> 阶矩阵，<span class="math inline">\(\boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s] =[\boldsymbol{\gamma}_1,\boldsymbol{\gamma}_2,\ldots,\boldsymbol{\gamma}_s]\)</span> <span class="math inline">\(\xlongequal{\text{if}} [\lambda_1\boldsymbol{\beta}_1,\lambda_2\boldsymbol{\beta}_2,\ldots,\lambda_s\boldsymbol{\beta}_s]\)</span>，即 <span class="math inline">\(\boldsymbol{A\beta}_i = \lambda_i\boldsymbol{\beta}_i \;(i =1,2,\ldots,s)\)</span>，若 <span class="math inline">\(\boldsymbol{\beta}_i \neq \boldsymbol{0}\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_i\)</span> 为 <strong><em>A</em></strong> 的属于 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</li>
 </ul></li>
-</ul>
-<p>推论：矩阵方程 <span class="math inline">\(\boldsymbol{AX} = \boldsymbol{B}\)</span> 有解 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{B}])\)</span>。矩阵方程 <span class="math inline">\(\boldsymbol{XA} = \boldsymbol{B}\)</span> 有解 <span class="math inline">\(\Leftrightarrow r( \boldsymbol{A}) = r\left(\begin{bmatrix}\boldsymbol{A} \\ \boldsymbol{B}\end{bmatrix}\right)\)</span>。</p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{AX} = \boldsymbol{B}\)</span>，求 <strong><em>X</em></strong>：</li>
-</ul>
-<p><span class="math display">\[
-[\begin{matrix}\boldsymbol{A} &amp;\boldsymbol{B}\end{matrix}] \xrightarrow[\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k\boldsymbol{B}]{\boldsymbol{P}_1\boldsymbol{P}_2\cdots \boldsymbol{P}_k \boldsymbol{A}} [\begin{matrix}\boldsymbol{E} &amp;\boldsymbol{A}^{-1}\boldsymbol{B}\end{matrix}] ,\; \boldsymbol{X} = \boldsymbol{A}^{-1}\boldsymbol{B}
-\]</span></p>
-<ul>
 <li><strong><em>A</em></strong> 为 <em>n</em> 阶矩阵，则
 <ul>
 <li><span class="math inline">\(r(\boldsymbol{A}) = 1 \Leftrightarrow \boldsymbol{A}\)</span> 可表示为 <span class="math inline">\(\boldsymbol{\alpha\beta}^{\text{T}} \;(\boldsymbol{\alpha},\boldsymbol{\beta} \in \mathbb{R}^n)\)</span>。且 <span class="math inline">\(\text{tr}(\boldsymbol{A}) = \boldsymbol{\beta}^{\text{T}}\boldsymbol{\alpha}\)</span>。</li>
 <li><span class="math inline">\(r(\boldsymbol{A}) = 1 \Leftrightarrow \boldsymbol{A}^n = \boldsymbol{\alpha\beta}^{\text{T}}\boldsymbol{\alpha\beta}^{\text{T}}\cdots\boldsymbol{\alpha\beta}^{\text{T}} = \boldsymbol{\alpha}\left(\boldsymbol{\beta}^{\text{T}}\boldsymbol{\alpha}\right)\cdots \left(\boldsymbol{\beta}^{\text{T}}\boldsymbol{\alpha}\right)\boldsymbol{\beta}^{\text{T}} = [\text{tr}(\boldsymbol{A})]^{n-1}\boldsymbol{A}\)</span></li>
 <li><span class="math inline">\(r(\boldsymbol{A}) = 1 \Leftrightarrow \lambda_1,\lambda_2,\ldots,\lambda_{n-1} =0,\; \lambda_{n} = \text{tr}(\boldsymbol{A})\)</span>。则 <span class="math inline">\(\text{tr}(\boldsymbol{A}) \neq 0 \Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
 </ul></li>
+<li><strong><em>A</em></strong> 的每行元素之和均为 <em>k</em>，则 <span class="math inline">\(\boldsymbol{A} \begin{bmatrix} 1 \\ 1 \\ \vdots \\1 \end{bmatrix} = k\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span>，即 <em>k</em> 是 <strong><em>A</em></strong> 的特征值，<span class="math inline">\(\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span> 是 <strong><em>A</em></strong> 的属于特征值 <em>k</em> 的特征向量。</li>
 </ul>
 
     </div>
@@ -819,8 +912,8 @@ $$
       <i class="fa fa-chevron-left"></i> 多元函数微分学
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/09/22/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84/" rel="next" title="向量空间和线性方程组解的结构">
-      向量空间和线性方程组解的结构 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/09/22/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E4%B8%8E%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" rel="next" title="向量空间与线性方程组">
+      向量空间与线性方程组 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -880,7 +973,7 @@ $$
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵运算法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.</span> <span class="nav-text">初等矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">1.4.</span> <span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number">1.5.</span> <span class="nav-text">伴随矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="nav-number">1.6.</span> <span class="nav-text">分块矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵的秩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%AD%89%E4%BB%B7%E5%92%8C%E7%AD%89%E4%BB%B7%E6%A0%87%E5%87%86%E5%BD%A2"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵的等价和等价标准形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B9%82"><span class="nav-number">2.1.</span> <span class="nav-text">求矩阵的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">2.2.</span> <span class="nav-text">求逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">矩阵方程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵运算法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BD%AC%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的转置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.</span> <span class="nav-text">初等矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">1.4.</span> <span class="nav-text">逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5"><span class="nav-number">1.5.</span> <span class="nav-text">伴随矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%9D%97%E7%9F%A9%E9%98%B5"><span class="nav-number">1.6.</span> <span class="nav-text">分块矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%AD%89%E4%BB%B7%E5%92%8C%E7%AD%89%E4%BB%B7%E6%A0%87%E5%87%86%E5%BD%A2"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵的等价和等价标准形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.8.</span> <span class="nav-text">矩阵的秩</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B9%82"><span class="nav-number">2.1.</span> <span class="nav-text">求矩阵的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-number">2.2.</span> <span class="nav-text">求逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%96%B9%E7%A8%8B%E7%9A%84%E6%B1%82%E8%A7%A3%E5%92%8C%E9%87%8D%E8%A6%81%E7%BB%93%E8%AE%BA"><span class="nav-number">2.3.</span> <span class="nav-text">矩阵方程的求解和重要结论</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
