@@ -1415,13 +1415,14 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <li><a href="#离散型分布">离散型分布</a></li>
 <li><a href="#连续型分布">连续型分布</a></li>
 <li><a href="#混合型分布">混合型分布</a></li>
-<li><a href="#概率密度为分段函数的分布">概率密度为分段函数的分布</a></li>
+<li><a href="#根据分段概率密度函数求分布">根据分段概率密度函数求分布</a></li>
+<li><a href="#根据全集分解求分布">根据全集分解求分布</a></li>
 <li><a href="#分布函数求概率">分布函数求概率</a></li>
 </ul></li>
 <li><a href="#一维随机变量函数的分布">一维随机变量函数的分布</a>
 <ul>
 <li><a href="#离散型-离散型">离散型 - 离散型</a></li>
-<li><a href="#连续型-连续型">连续型 - 连续型</a></li>
+<li><a href="#连续型-连续型或混合型">连续型 - 连续型（或混合型）</a></li>
 <li><a href="#连续型-离散型">连续型 - 离散型</a></li>
 </ul></li>
 </ul>
@@ -1429,11 +1430,11 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <hr />
 <h2 id="基本概念">基本概念</h2>
 <ol type="1">
-<li>随机变量</li>
+<li><strong>随机变量</strong></li>
 </ol>
 <p>设随机试验 <em>E</em> 的样本空间为 <span class="math inline">\(\Omega = \{\omega\}\)</span>，若对于 <span class="math inline">\(\forall \omega \in \Omega\)</span>，都有唯一实数 <span class="math inline">\(X(\omega)\)</span> 与之对应，且对任意实数 <em>x</em>，<span class="math inline">\(\{\omega\vert X(\omega) \leq x, \omega \in \Omega\}\)</span> 是<strong>随机事件</strong>，则称定义在 <span class="math inline">\(\Omega\)</span> 上的实数单值函数 <span class="math inline">\(X(\omega)\)</span> 是『<strong>随机变量</strong>』，简记作 <em>X</em>。</p>
 <ol start="2" type="1">
-<li>分布函数</li>
+<li><strong>分布函数</strong></li>
 </ol>
 <p>设 <em>X</em> 是随机变量，<em>x</em> 是任意实数，称函数 <span class="math inline">\(F(x) = P\{X \leq x\}\;(x \in \mathbb{R})\)</span> 为随机变量 <em>X</em> 的『<strong>分布函数</strong>』，或称 <strong><em>X</em> 服从 <span class="math inline">\(F(x)\)</span> 分布</strong>，记作 <span class="math inline">\(X \sim F(x)\)</span>（与概率分布、概率密度的表示方法相同，但含义不同）。</p>
 <p>根据随机变量的类型可分为：</p>
@@ -1444,14 +1445,14 @@ K=\frac{\left|\varphi^{\prime}(t) \psi^{\prime \prime}(t)-\psi^{\prime}(t) \varp
 <p><span class="math display">\[
 p_i = P\{X = x_i\}\;(i=1,2,\ldots)
 \]</span></p>
-<p>为 <em>X</em> 的『<strong>分布律（列）</strong>』或『<strong>概率分布</strong>』，记作 <span class="math inline">\(X \sim p_i\)</span>，常用表格或矩阵的形式表示。<span class="math inline">\(X \sim p_i\)</span> 的分布函数为</p>
+<p>为 <em>X</em> 的『<strong>分布律（列）</strong>』或『<strong>概率分布</strong>』，记作 <span class="math inline">\(X \sim p_i\)</span>，常用表格或矩阵的形式表示。<span class="math inline">\(X \sim p_i\)</span> 的分布函数是<strong>阶梯型</strong>函数：</p>
 <p><span class="math display">\[
 F(x) = \sum_{x_i \leq x} p_i
 \]</span></p>
 <ul>
 <li>连续型随机变量及其分布：</li>
 </ul>
-<p>若随机变量 <em>X</em> 的分布函数是连续的，并可表示为</p>
+<p>若随机变量 <em>X</em> 的分布函数<strong>连续</strong>，并可表示为</p>
 <p><span class="math display">\[
 F(x) = \int_{-\infty}^x f(t) \text{d}t \;(x \in \mathbb{R})
 \]</span></p>
@@ -1460,10 +1461,10 @@ F(x) = \int_{-\infty}^x f(t) \text{d}t \;(x \in \mathbb{R})
 <p>注意：概率密度函数 <span class="math inline">\(f(x)\)</span> 可以不连续。</p>
 </blockquote>
 <ul>
-<li>混合型随机变量：既非离散也非连续的随机变量。</li>
+<li>混合型随机变量：分布函数既不是阶梯型函数，也不是连续函数的随机变量。</li>
 </ul>
 <ol start="3" type="1">
-<li>重要结论</li>
+<li><strong>重要结论</strong></li>
 </ol>
 <ul>
 <li><p><span class="math inline">\(F(x)\)</span> 是分布函数 <span class="math inline">\(\Leftrightarrow F(x)\)</span> 是单调不减、右连续（连续型随机变量的分布函数左右均连续）、非负、有界的函数，且 <span class="math inline">\(F(-\infty) = 0,\;F(+\infty) = 1\)</span>。</p>
@@ -1485,11 +1486,11 @@ F(x) = \sum_{x_i \leq x} p_i
 <p>伯努利试验： * 每次试验相对独立。 * 每次试验只有成功和失败两种结果。 * 每次试验成功的概率为 <em>p</em>。</p>
 </blockquote>
 <ul>
-<li>0 - 1 分布：</li>
+<li><strong>0 - 1 分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim B(1,p)\)</span>，<em>X</em> 为单次伯努利试验成功的次数。其分布律为 <span class="math inline">\(X \sim \left( \begin{matrix} 1 &amp;0 \\ p &amp;1-p\end{matrix} \right)\)</span>。</p>
 <ul>
-<li>二项分布：</li>
+<li><strong>二项分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim B(n,p)\)</span>，<em>X</em> 为 <em>n</em> 重伯努利试验成功的次数。其分布律为</p>
 <p><span class="math display">\[
@@ -1499,7 +1500,7 @@ P\{X = k\} = \text{C}_n^k p^k(1-p)^{n-k} \;(k = 1,2,\ldots,n)
 <p>注：随着 <em>k</em> 的增大，<span class="math inline">\(P\{x=k\}\)</span> 先上升到最大值然后下降，取最大值时的 <em>k</em> 是 <em>n</em> 次伯努利试验最可能的成功次数，设其为 <span class="math inline">\(k&#39;\)</span>。 * 当 <span class="math inline">\((n+1)p\)</span> 为整数时，<span class="math inline">\(k&#39; = (n+1)p, (n+1)p-1\)</span>。 * 当 <span class="math inline">\((n+1)p\)</span> 非整数时，<span class="math inline">\(k&#39; = [(n+1)p]\)</span>。</p>
 </blockquote>
 <ul>
-<li>几何分布：</li>
+<li><strong>几何分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim G(p)\)</span>，若干次伯努利试验，首次成功即停止，<em>X</em> 为试验次数。其分布律为</p>
 <p><span class="math display">\[
@@ -1507,14 +1508,14 @@ P\{X = k\} = p(1-p)^{k-1}\; (k =1,2,\ldots)
 \]</span></p>
 <p>注：几何分布属于离散型等待分布，具有<strong>无记忆性</strong>。</p>
 <ul>
-<li>超几何分布：</li>
+<li><strong>超几何分布</strong>：</li>
 </ul>
 <p>经典的古典概型，<em>N</em> 件商品中有 <em>M</em> 件正品，无放回取 <em>n</em> 次，则取到 <em>k</em> 个正品的概率为</p>
 <p><span class="math display">\[
 P\{X = k\} = \frac{\text{C}_M^k\text{C}_{N-M}^{n-k}}{\text{C}_N^n}
 \]</span></p>
 <ul>
-<li>泊松分布：</li>
+<li><strong>泊松分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim \pi(\lambda)\)</span>，<em>X</em> 表示某单位时间内随机事件发生的次数，<span class="math inline">\(\lambda\)</span> 表示单位时间内随机事件的平均发生率。其分布律为</p>
 <p><span class="math display">\[
@@ -1536,7 +1537,7 @@ F(x) = \int_{-\infty}^x f(t) \text{d}t \;(x \in \mathbb{R})
 </blockquote>
 <p>常见的连续型函数：</p>
 <ul>
-<li>均匀分布：</li>
+<li><strong>均匀分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim U(a,b)\)</span>，其概率密度函数为</p>
 <p><span class="math display">\[
@@ -1547,7 +1548,7 @@ f(x) = \left\{\begin{array}{ll} \frac{1}{b-a}, &amp;a &lt; x &lt; b \; \text{or}
 F(x) = \left\{\begin{array}{ll}0, &amp;x &lt; a \\ \frac{x-a}{b-a}, &amp;a \leq x &lt; b \\ 1, &amp; x \geq b\end{array}\right.
 \]</span></p>
 <ul>
-<li>指数分布：</li>
+<li><strong>指数分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim E(\lambda)\)</span>，其概率密度函数为</p>
 <p><span class="math display">\[
@@ -1559,10 +1560,13 @@ F(x) = \left\{ \begin{array}{ll} 1-\text{e}^{-\lambda x}, &amp; x \geq 0 \\ 0,&a
 \]</span></p>
 <p>注：指数分布属于连续型等待分布，具有<strong>无记忆性</strong>：</p>
 <p><span class="math display">\[
-P\{X \geq t+s\vert X \geq t\} = P\{X \geq s\}
+\begin{aligned}
+&amp; P\{X \geq t+s\vert X \geq t\} = P\{X \geq s\} \\
+&amp; P\{X \leq t+s\vert X \geq t\} = P\{X \leq s\}
+\end{aligned}
 \]</span></p>
 <ul>
-<li>正态分布：</li>
+<li><strong>正态分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim N \left(\mu,\sigma^2 \right)\)</span>，其概率密度函数为</p>
 <p><span class="math display">\[
@@ -1610,11 +1614,12 @@ F(x) = \Phi\left( \frac{x-\mu}{\sigma}\right)
 \sum_{i=1}^n k_iX_i + C \sim N\left(\sum_{i=1}^nk_1\mu_i+C,\sum_{i=1}^n{k_i}^2{\sigma}^2\right)
 \]</span></p>
 <h3 id="混合型分布">混合型分布</h3>
+<p>混合型随机变量的分布函数既不是阶梯型函数，也不是连续函数，常常是分段函数。</p>
 <p>设 <em>X</em> 是混合型分布，则使用<strong>定义法</strong>求分布函数：</p>
 <p><span class="math display">\[
 F(x) = P\{X \leq x \}
 \]</span></p>
-<h3 id="概率密度为分段函数的分布">概率密度为分段函数的分布</h3>
+<h3 id="根据分段概率密度函数求分布">根据分段概率密度函数求分布</h3>
 <p>设 <span class="math inline">\(X \sim f(x)\)</span>，若</p>
 <p><span class="math display">\[
 f(x) = \left\{ \begin{array}{ll} g_1(x), &amp; a \leq x &lt; b \\ g_2(x), &amp; b \leq x &lt; c \\ 0, &amp; \text{other situations}\end{array} \right.
@@ -1622,6 +1627,41 @@ f(x) = \left\{ \begin{array}{ll} g_1(x), &amp; a \leq x &lt; b \\ g_2(x), &amp; 
 <p>则</p>
 <p><span class="math display">\[
 F(x) = \left \{ \begin{array}{ll} 0, &amp;x &lt; a \\ \int_a^x g_1(t) \text{d}t, &amp; a\leq x  &lt;b \\ \int_a^b g_1(t)\text{d}t+\int_b^x g_2(t)\text{d}t, &amp; b \leq x &lt; c \\ 1, &amp; x \geq c \end{array}\right.
+\]</span></p>
+<h3 id="根据全集分解求分布">根据全集分解求分布</h3>
+<p><strong>核心思想：</strong></p>
+<ul>
+<li><strong>全集分解 + 全概率公式</strong></li>
+<li><p><strong>联合概率 = 边缘概率 <span class="math inline">\(\times\)</span> 条件概率</strong></p></li>
+<li><p>设 <span class="math inline">\(Y \sim p_j\)</span>，<span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> 是完备事件组，且 <span class="math inline">\(P\{Y = y_j \vert X_i\} \;(i =1,2,\ldots,n)\)</span> 已知，则</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+p_j &amp;= P\{Y = y_j\} = P\{Y =y _j, \Omega\} = \sum_{i=1}^n P\{Y = y_j,X_i\} \\&amp; =\sum_{i=1}^{n} P\{ X_i\} P\{Y = y_j \vert X = x_i\} = p_i q_{ij}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\(Y \sim p_j,\; X \sim p_i \;(i = 0,1,2,\ldots, n), \; P\{Y = y_j \vert X = x_i\} = q_{ij}\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+p_j &amp;= P\{Y = y_j\} = P\{Y =y _j, \Omega\} = \sum_{i=1}^n P\{Y = y_j,X = x_i\} \\&amp; =\sum_{i=1}^{n} P\{ X = x_i\} P\{Y = y_j \vert X = x_i\} = p_i q_{ij}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\(y \sim f_Y(y)\)</span>，<span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> 是完备事件组，且 <span class="math inline">\(f_{Y}(y \vert X_i) \;(i=1,2,\ldots,n)\)</span> 已知，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Y(y) &amp;= f_Y(y,\Omega) = \sum_{i=1}^n f_Y(y,X_i) \\
+&amp;= \sum_{i=1}^n P(X_i) f_Y(y \vert X_i)
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+F_Y(y)&amp;= P\{Y \leq y\} = P \{Y \leq y,\Omega\} = \sum_{i = 1}^n P\{ Y \leq y,X_i\} \\
+&amp;= \sum_{i=1}^n P\{X_i\}P\{Y \leq y\}
+\end{aligned}
 \]</span></p>
 <h3 id="分布函数求概率">分布函数求概率</h3>
 <p>设 <span class="math inline">\(X \sim F(x)\)</span>，则</p>
@@ -1650,7 +1690,7 @@ P\{X \in I\} = \int_I f(t) \text{d}t
 <p><span class="math display">\[
 Y \sim p_i = P\{Y = y_i\} = P\{Y = g(x_i)\} \;(i =1,2,\ldots)
 \]</span></p>
-<h3 id="连续型---连续型">连续型 - 连续型</h3>
+<h3 id="连续型---连续型或混合型">连续型 - 连续型（或混合型）</h3>
 <p>设 <span class="math inline">\(X \sim f_x(x), \; Y=g(X)\)</span>，则</p>
 <ol type="1">
 <li>分布函数法</li>
@@ -1973,7 +2013,7 @@ f = \boldsymbol{x}^{\text{T}}\boldsymbol{Ax} \xlongequal{\boldsymbol{x} = \bolds
 <li><a href="#概念">概念</a>
 <ul>
 <li><a href="#线性相关和线性无关">线性相关和线性无关</a></li>
-<li><a href="#向量组的秩">向量组的秩</a></li>
+<li><a href="#向量组的秩和等价">向量组的秩和等价</a></li>
 <li><a href="#向量空间和基">向量空间和基</a></li>
 </ul></li>
 <li><a href="#向量-向量关系与矩阵-矩阵乘法">向量-向量关系与矩阵-矩阵乘法</a></li>
@@ -2035,7 +2075,10 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 <blockquote>
 <p>故含有零向量的向量组一定线性相关。</p>
 </blockquote></li>
-<li><p>向量组 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2, \ldots, \boldsymbol{\beta}_t\)</span> 可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_s\)</span> 线性表示，且 <span class="math inline">\(t &gt; s\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2, \ldots, \boldsymbol{\beta}_t\)</span> 线性相关。</p></li>
+<li><p>向量组 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2, \ldots, \boldsymbol{\beta}_t\)</span> 可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_s\)</span> 线性表示，且 <span class="math inline">\(t &gt; s\)</span>，则 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2, \ldots, \boldsymbol{\beta}_t\)</span> 线性相关。</p>
+<blockquote>
+<p>以少表多，多的相关。</p>
+</blockquote></li>
 <li><p>向量组的向量个数大于向量的维数，则向量组线性相关。</p></li>
 <li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关，<span class="math inline">\(\boldsymbol{\beta},\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性相关，则 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可被 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，且表示方法唯一。</p></li>
 <li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{0}\)</span> 只有零解。<span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性相关 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{0}\)</span> 有非零解。</p></li>
@@ -2044,9 +2087,9 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 <blockquote>
 <p>逆否命题：向量组线性无关 <span class="math inline">\(\Rightarrow\)</span> 向量组内的部分向量也线性无关。</p>
 </blockquote></li>
-<li><p>如果一组 <em>n</em> 维向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_s\)</span> 线性无关，则在每个向量的相同位置同时添加 <em>m</em> 个分量所得的 <em>n</em> + <em>m</em> 维向量组 <span class="math inline">\(\boldsymbol{\alpha}^+_1,\boldsymbol{\alpha}^+_2, \ldots, \boldsymbol{\alpha}^+_s\)</span> 也线性无关。如果一组 <em>n</em> 维向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_s\)</span> 线性相关，则在每个向量的相同位置同时去掉若干个分量所得的向量组 <span class="math inline">\(\boldsymbol{\alpha}^-_1,\boldsymbol{\alpha}^-_2, \ldots, \boldsymbol{\alpha}^-_s\)</span> 也线性相关。</p>
+<li><p>如果一组 <em>n</em> 维向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_s\)</span> 线性无关，则在每个向量的相同位置同时添加若干个分量所得的向量组 <span class="math inline">\(\boldsymbol{\alpha}^+_1,\boldsymbol{\alpha}^+_2, \ldots, \boldsymbol{\alpha}^+_s\)</span> 仍线性无关。如果一组 <em>n</em> 维向量 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_s\)</span> 线性相关，则在每个向量的相同位置同时去掉若干个分量所得的向量组 <span class="math inline">\(\boldsymbol{\alpha}^-_1,\boldsymbol{\alpha}^-_2, \ldots, \boldsymbol{\alpha}^-_s\)</span> 仍线性相关。</p>
 <blockquote>
-<p>线性无关，则延长仍无关。线性相关，缩短仍相关。</p>
+<p>延长仍无关，缩短仍相关。</p>
 </blockquote></li>
 <li><p>初等行变换不改变矩阵的列向量的线性关系，初等列变换不改变矩阵的行向量组的线性关系。</p>
 <blockquote>
@@ -2054,20 +2097,43 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 </blockquote></li>
 <li><p>向量组内的向量两两正交 <span class="math inline">\(\Rightarrow\)</span> 向量组线性无关。</p></li>
 </ul>
-<h3 id="向量组的秩">向量组的秩</h3>
+<h3 id="向量组的秩和等价">向量组的秩和等价</h3>
 <p>向量组的秩等于向量组的『<strong>极大线性无关组</strong>』的向量个数，即向量组内最多找到 <em>r</em> 个线性无关的向量。</p>
 <ul>
 <li><p>向量组的秩等于向量组张成的<a href="#向量空间和基">向量空间的维数</a>，向量组的极大线性无关组是向量组张成的向量空间的一组<a href="#向量空间和基">基</a>。</p></li>
+<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 线性无关 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s) = s \Leftrightarrow r([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s]) = s\)</span>。</p></li>
 <li><p>两向量组 <span class="math inline">\(A: \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s, \; B:\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量『<strong>同维</strong>』，若 <em>A</em> 中的向量都可以由 <em>B</em> 线性表示，且 <em>B</em> 中的向量都可以由 <em>A</em> 线性表示 <span class="math inline">\(\Leftrightarrow A \cong B\)</span>。</p></li>
 <li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 和 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量同维，则 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> <span class="math inline">\(\Leftrightarrow r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s) = r(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t) = r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s,\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t)\)</span></p></li>
 <li><p><span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t \Leftrightarrow \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\} = \text{span}\{\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\}\)</span> 即两向量组张成的空间重合。</p></li>
 <li><p>两矩阵列（行）等价 <span class="math inline">\(\Rightarrow\)</span> 两矩阵的列（行）向量组等价。</p></li>
 <li><p>两矩阵的列（行）向量组等价，两矩阵<strong>未必</strong>列（行）等价（前提是同型）。</p></li>
-<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n\)</span> 和 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\)</span> 中的向量同维且含有的向量个数相同，则 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n \Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>Q</em></strong> 使得 <span class="math inline">\([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span>。</p>
+<li><p><span class="math inline">\([\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n] \boldsymbol{R}_{n \times s} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]\)</span>，则</p>
+<p><span class="math display">\[
+r(\boldsymbol{R}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s
+\]</span></p>
 <blockquote>
-<p>矩阵 <strong><em>A</em></strong> 与矩阵 <strong><em>B</em></strong> 列等价 <span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>Q</em></strong> 使得 <span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B}\)</span>。</p>
+<p>右乘行满秩矩阵的结论。</p>
 </blockquote></li>
+<li><p><span class="math inline">\(\boldsymbol{C}_{m \times n} \begin{bmatrix}{ \boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\alpha}_n }^{\text{T}}\end{bmatrix} = \begin{bmatrix} {\boldsymbol{\beta}_1}^{\text{T}} \\ {\boldsymbol{\beta}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\beta}_m}^{\text{T}} \end{bmatrix}\)</span>，则</p>
+<p><span class="math display">\[
+r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_m
+\]</span></p>
+<blockquote>
+<p>左乘列满秩矩阵的结论。</p>
+</blockquote></li>
+<li><p>特殊情况：两向量组含有的<strong>向量个数相同</strong>，则 $_1,_2,,_n _1,_2,,_n $ 存在可逆矩阵 <strong><em>Q</em></strong>，使得</p>
+<p><span class="math display">\[
+[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] \; \text{or} \; \boldsymbol{Q} \begin{bmatrix}{ \boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\alpha}_n }^{\text{T}}\end{bmatrix} = \begin{bmatrix} {\boldsymbol{\beta}_1}^{\text{T}} \\ {\boldsymbol{\beta}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\beta}_n}^{\text{T}} \end{bmatrix}
+\]</span></p>
+<blockquote>
+<p>存在可逆矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 与矩阵 <strong><em>B</em></strong> 列等价。<br />
+存在可逆矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{QA} = \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 与矩阵 <strong><em>B</em></strong> 行等价。</p>
+</blockquote></li>
+<li><p><span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n}\)</span> 线性无关并可被 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta_2},\ldots, \boldsymbol{\beta_n}\)</span>（向量个数相同）线性表示，则存在可逆矩阵 <strong><em>Q</em></strong>，使得</p></li>
 </ul>
+<p><span class="math display">\[
+[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\; (\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n} \cong \boldsymbol{\beta}_1,\boldsymbol{\beta_2},\ldots, \boldsymbol{\beta_n})
+ \]</span></p>
 <p>寻找向量组的极大无关组：</p>
 <ol type="1">
 <li>用矩阵表示列向量组，通过初等行变换化为阶梯形。得出向量组的秩 = 矩阵的秩 = 阶梯数 = <em>r</em>。</li>
@@ -2440,6 +2506,10 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 <ul>
 <li>设 <span class="math inline">\(k_1,k_2,\ldots,k_n\)</span> 使得向量满足题目中线性相关或线性无关的要求，然后推导出结果。</li>
 <li>化为抽象的矩阵方程，通过向量组的秩、矩阵的秩等结论推导出结论。</li>
+<li><p>形如 <span class="math inline">\(\boldsymbol{A\alpha}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\boldsymbol{\alpha}\)</span> 的抽象向量，通过 <span class="math inline">\(\boldsymbol{A}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\)</span> 的特征向量 <span class="math inline">\(\boldsymbol{\xi}_i\;(i=1,2,\ldots,n)\)</span> 表示：<span class="math inline">\(\boldsymbol{\alpha}= a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n\)</span>，设 <span class="math inline">\(\lambda_i\;(i=1,2,\ldots,n)\)</span> 是特征向量 <span class="math inline">\(\boldsymbol{\xi}_i \;(i=1,2,\ldots,n)\)</span> 的特征值，则</p>
+<p><span class="math display">\[
+\boldsymbol{A\alpha} = \boldsymbol{A}(a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n) = a_1\lambda_1\boldsymbol{\xi}_1 + a_2\lambda_2\boldsymbol{\xi}_2 + \cdots + a_n\lambda_n\boldsymbol{\xi}_n
+\]</span></p></li>
 </ul>
 ]]></content>
       <categories>
@@ -2781,323 +2851,386 @@ f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 <ul>
-<li><a href="#概念">概念</a>
-<ul>
 <li><a href="#基本概念">基本概念</a></li>
-<li><a href="#极限">极限</a></li>
-<li><a href="#连续">连续</a></li>
-<li><a href="#偏导数">偏导数</a></li>
-<li><a href="#可微">可微</a></li>
-<li><a href="#偏导数的连续性">偏导数的连续性</a></li>
-</ul></li>
-<li><a href="#计算">计算</a>
+<li><a href="#多维随机变量的分布">多维随机变量的分布</a>
 <ul>
-<li><a href="#多元复合函数求导">多元复合函数求导</a>
+<li><a href="#联合分布">联合分布</a></li>
+<li><a href="#边缘分布">边缘分布</a></li>
+<li><a href="#条件分布">条件分布</a></li>
+<li><a href="#分布函数计算概率">分布函数计算概率</a></li>
+</ul></li>
+<li><a href="#多维随机变量函数的分布">多维随机变量函数的分布</a>
 <ul>
-<li><a href="#全导数">全导数</a></li>
-<li><a href="#链式求导规则">链式求导规则</a></li>
-<li><a href="#全微分形式不变性">全微分形式不变性</a></li>
-</ul></li>
-<li><a href="#多元隐函数求导">多元隐函数求导</a>
+<li><a href="#多维-一维">多维 - 一维</a>
 <ul>
-<li><a href="#一个二元方程的隐函数">一个二元方程的隐函数</a></li>
-<li><a href="#一个多元方程的隐函数">一个多元方程的隐函数</a></li>
-<li><a href="#多元方程组的隐函数">多元方程组的隐函数</a></li>
+<li><a href="#离散型-离散型-离散型">(离散型, 离散型) - 离散型</a></li>
+<li><a href="#连续型-连续型-连续型">(连续型, 连续型) - 连续型</a></li>
+<li><a href="#离散型-连续型-连续型">(离散型, 连续型) - 连续型</a></li>
 </ul></li>
-<li><a href="#多元函数的极值和最值">多元函数的极值和最值</a>
-<ul>
-<li><a href="#二元函数的泰勒公式">二元函数的泰勒公式</a></li>
-<li><a href="#无条件极值">无条件极值</a></li>
-<li><a href="#条件极值">条件极值</a></li>
+<li><a href="#一维-多维">一维 - 多维</a></li>
+<li><a href="#多维-多维">多维 - 多维</a></li>
 </ul></li>
-<li><a href="#偏微分方程">偏微分方程</a></li>
-</ul></li>
-<li><a href="#多元函数微分学的几何应用">多元函数微分学的几何应用</a></li>
-<li><a href="#场论初步">场论初步</a></li>
 </ul>
 <!-- /code_chunk_output -->
 <hr />
-<h2 id="概念">概念</h2>
-<h3 id="基本概念">基本概念</h3>
+<h2 id="基本概念">基本概念</h2>
 <ol type="1">
-<li>邻域</li>
+<li><strong>二维随机变量及其分布</strong></li>
 </ol>
-<p>设 <em>M</em><sub>0</sub> 为平面上一个点，<span class="math inline">\(\delta\)</span> 为正数，<em>M</em> 为平面上的点，则 <span class="math inline">\(\{M \vert \rho(M_0,M) &lt; \delta\}\)</span> 为点 <em>M</em><sub>0</sub> 的『<strong><span class="math inline">\(\delta\)</span> 邻域</strong>』，记作 <span class="math inline">\(U(M_0,\delta)\)</span>，<span class="math inline">\(\{M \vert 0 &lt; \rho(M_0,M) &lt; \delta\}\)</span> 为点 <em>M</em><sub>0</sub> 的『<strong>去心 <span class="math inline">\(\delta\)</span> 邻域</strong>』，记作 <span class="math inline">\(\mathring{U}(M_0,\delta)\)</span>。</p>
+<p>二维随机变量 <span class="math inline">\((X,Y)\)</span> 的『<strong>分布函数</strong>』（或称随机变量 <span class="math inline">\(X,Y\)</span> 的『<strong>联合分布函数</strong>』）为</p>
+<p><span class="math display">\[
+F(x,y) = P\{X \leq x, Y \leq y\}
+\]</span></p>
+<p>记作 <span class="math inline">\((X,Y) \sim F(x,y)\)</span>。</p>
+<blockquote>
+<p>注：联合分布函数 <span class="math inline">\(F(x,y)\)</span> 指 <span class="math inline">\(X \leq x\)</span> 与 <span class="math inline">\(Y \leq y\)</span> 同时发生的概率。</p>
+</blockquote>
+<ul>
+<li>二维离散型随机变量：</li>
+</ul>
+<p>若二维随机变量 <span class="math inline">\((X,Y)\)</span> 只能取得有限对或可列对值 <span class="math inline">\((x_1,y_1),(x_2,y_2),\ldots\)</span>，则称 <span class="math inline">\((X,Y)\)</span> 为『<strong>二维离散型随机变量</strong>』。称</p>
+<p><span class="math display">\[
+p_{ij} = P\{X = x_i, Y = y_i\}\;(i,j = 1,2,\ldots)
+\]</span></p>
+<p>为 <span class="math inline">\((X,Y)\)</span> 的『<strong>分布律</strong>』或随机变量 <em>X</em> 和 <em>Y</em> 的『<strong>联合分布律</strong>』，记作 <span class="math inline">\((X,Y) \sim p_{ij}\)</span>，联合分布律常用表格的形式表示。<span class="math inline">\((X,Y) \sim p_{ij}\)</span> 的分布函数为</p>
+<p><span class="math display">\[
+F(x,y) = \sum_{x_i \leq x,y_i \leq y} p_{ij}
+\]</span></p>
+<ul>
+<li>二维连续型随机变量：</li>
+</ul>
+<p>若二维随机变量 <span class="math inline">\((X,Y)\)</span> 的分布函数 <span class="math inline">\(F(x,y)\)</span> 连续，且可表示为</p>
+<p><span class="math display">\[
+F(x,y) = \int_{-\infty}^y \int _{-\infty}^x f(u,v)\text{d}u\text{d}v\;\left((x,y) \in \mathbb{R}^2\right)
+\]</span></p>
+<p>其中 <span class="math inline">\(f(x,y)\)</span> 是非负可积函数，则称 <span class="math inline">\((X,Y)\)</span> 为『<strong>二维连续型随机变量</strong>』，称 <span class="math inline">\(f(x,y)\)</span> 为 <span class="math inline">\((X,Y)\)</span> 的『<strong>概率密度</strong>』或随机变量 <em>X</em> 和 <em>Y</em> 的『<strong>联合概率密度</strong>』，记作 <span class="math inline">\((X,Y) \sim f(x,y)\)</span>。</p>
 <ol start="2" type="1">
-<li>边界</li>
+<li><strong>重要结论</strong></li>
 </ol>
-<p>给定平面上的一个点集 <em>E</em>，若 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得 <span class="math inline">\(U(M,\delta) \subset E\)</span>，则 <em>M</em> 为点集 <em>E</em> 的『<strong>内点</strong>』。若 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得 <span class="math inline">\(U(M,\delta) \cap E = \varnothing\)</span>，则 <em>M</em> 为点集 <em>E</em> 的『<strong>外点</strong>』。若对于 <span class="math inline">\(\forall \delta &gt; 0\)</span>，<span class="math inline">\(U(M,\delta)\)</span> 中既有 <em>E</em> 中的点也有 <em>E</em> 外的点，则 <em>M</em> 为点集 <em>E</em> 的『<strong>边界点</strong>』。</p>
-<p>点集 <em>E</em> 的所有边界点的集合称为 <em>E</em> 的『<strong>边界</strong>』，记作 <span class="math inline">\(\partial E\)</span>。</p>
-<ol start="3" type="1">
-<li>区域</li>
-</ol>
-<p>设 <em>E</em> 是一个平面点集，对于其中的任意两点，都可用一条完全属于 <em>E</em> 的曲线将这两点连起来，则这样的 <em>E</em> 为『连通集』。连通的开集称为『<strong>开区域</strong>』，一个开区域和它的边界的并集称为『<strong>闭区域</strong>』。</p>
-<p>设 <em>E</em> 是一个区域，若其中任意一条不交叉的简单闭曲线的内部还在 <em>E</em> 内，则 <em>E</em> 称为『<strong>单连通区域</strong>』，否则称为『<strong>多连通区域</strong>』。</p>
-<ol start="4" type="1">
-<li>聚点</li>
-</ol>
-<p>设 <em>E</em> 是一个平面点集，<em>M</em><sub>0</sub> 是平面上一个点，若对于 <span class="math inline">\(\forall \delta &gt; 0\)</span>，总有 <span class="math inline">\(\mathring{U}(M_0,\delta) \cap E \neq \varnothing\)</span>，则称 <em>M</em><sub>0</sub> 为 <em>E</em> 的『<strong>聚点</strong>』。开区域的内点和边界点都是聚点，闭区域内的任何一点都是聚点。</p>
-<h3 id="极限">极限</h3>
-<p>设二元函数 <span class="math inline">\(f(P) = f(x,y)\)</span> 的定义域为 <em>D</em>，<span class="math inline">\(P(x_0,y_0)\)</span> 是 <em>D</em> 的聚点如果存在常数 <em>A</em>，对于 <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>，都 <span class="math inline">\(\exists \delta &gt; 0\)</span>，使得但点 <span class="math inline">\(P(x,y) \in D \cap \mathring{U}(P_0,\delta)\)</span> 时，都有</p>
+<ul>
+<li><p><span class="math inline">\(F(x,y)\)</span> 是联合分布函数的充分必要条件：</p>
+<ul>
+<li>非负。</li>
+<li>单调不减。</li>
+<li>右连续：<span class="math inline">\(F(x_0^+,y) = F(x_0,y), \; F(x,y_0^+) = F(x,y_0)\)</span></li>
+<li>有界：<span class="math inline">\(F(-\infty,y) = F(x,-\infty) = F(-\infty,-\infty) =0,\; F(+\infty,+\infty) = 1\)</span>。</li>
+</ul></li>
+<li><span class="math inline">\(p_{ij}\)</span> 是联合分布律 <span class="math inline">\(\Leftrightarrow p_{ij} \geq 0\)</span> 且 <span class="math inline">\(\sum_j\sum_i p_{ij}= 1\)</span>。</li>
+<li><p><span class="math inline">\(f(x,y)\)</span> 是联合密度函数 <span class="math inline">\(\Leftrightarrow f(x,y) \geq 0\)</span> 且 <span class="math inline">\(\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f(x,y) \text{d}x\text{d}y = 1\)</span>。</p></li>
+</ul>
+<h2 id="多维随机变量的分布">多维随机变量的分布</h2>
+<h3 id="联合分布">联合分布</h3>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim F(x,y) \Leftrightarrow X,Y\)</span> 有联合分布函数 <span class="math inline">\(F(x,y)\)</span>：
+<ul>
+<li><span class="math inline">\((X,Y) \sim p_{ij}\)</span>：</li>
+</ul>
 <p><span class="math display">\[
-\left|f(x,y) - A\right| &lt; \varepsilon
+F(x,y) = \sum_{x_i \leq x,y_i \leq y} p_{ij}
 \]</span></p>
-<p>则称 <em>A</em> 为 <span class="math inline">\(f(x,y)\)</span> 当 <span class="math inline">\((x,y) \to (x_0,y_0)\)</span> 时的『<strong>极限</strong>』，记作：</p>
+<ul>
+<li><span class="math inline">\((X,Y) \sim f(x,y)\)</span>：</li>
+</ul>
 <p><span class="math display">\[
-\lim_{(x,y) \to (x_0,y_0)}f(x,y) = A \; \text{or} \; f(x,y) \to A \;((x,y) \to (x_0,y_0))
+F(x,y) = \int_{-\infty}^y \int _{-\infty}^x f(u,v)\text{d}u\text{d}v\;\left((x,y) \in \mathbb{R}^2\right)
+\]</span></p></li>
+<li><span class="math inline">\(p_{ij}\)</span>：常与 <span class="math inline">\(P(A)\)</span> 结合。</li>
+<li><p><strong>二维均匀分布</strong>：<span class="math inline">\((X,Y) \sim U(D)\)</span>：</p></li>
+</ul>
+<p><span class="math display">\[
+f(x,y) = \left\{ \begin{array}{ll} \frac{1}{S_D}, &amp;(x,y) \in D \\ 0, &amp;(x,y) \not\in D \end{array} \right.
 \]</span></p>
-<h3 id="连续">连续</h3>
-<p>若 <span class="math inline">\(\lim_{(x,y) \to (x_0,y_0)} f(x,y) = f(x_0,y_0) \Leftrightarrow f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处『<strong>连续</strong>』。</p>
+<ul>
+<li><strong>二维正态分布</strong>：<span class="math inline">\((X,Y) \sim N\left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f(x,y) = \frac{1}{2\pi \sigma_1\sigma_2}
+\]</span></p>
+<p>二维正态分布的重要结论：</p>
+<ul>
+<li>若 <span class="math inline">\((X,Y) \sim N\left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+X \sim N \left (\mu_1,\sigma^2 \right ),\; Y \sim N\left(\mu_2,\sigma^2\right), \; \rho_{XY} = \rho
+\]</span></p>
+<ul>
+<li><p>若 <span class="math inline">\((X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho \right)\)</span>，则 <span class="math inline">\(X,Y\)</span> <strong>相互独立 <span class="math inline">\(\Leftrightarrow \rho_{XY} = \rho = 0 \Leftrightarrow X,Y\)</span> 不相关</strong>。</p></li>
+<li><p>若 <span class="math inline">\(X \sim N \left(\mu_1,{\sigma_1}^2 \right),\; Y \sim N \left (\mu_2,{\sigma_2}^2 \right)\)</span> 且 <span class="math inline">\(X,Y\)</span> <strong>相互独立</strong>，则</p></li>
+</ul>
+<p><span class="math display">\[
+(X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;0 \right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\((X,Y) \sim N \left(\mu_1,\mu_2;{\sigma_1}^2,{\sigma_2}^2;\rho\right)\Rightarrow k_1X + k_2Y + C \sim N \left(k_1\mu_1+k_2\mu_2+C,{k_1}^2{\sigma_1}^2 + {k_2}^2{\sigma_2}^2 \right)\)</span> 其中 <span class="math inline">\(k_1,k_2\)</span> 不全为 0。</li>
+<li><span class="math inline">\((X,Y) \sim N,\; X&#39; = aX + bY ,\; Y&#39; = cX + dY\)</span>，且 <span class="math inline">\(\left|\begin{matrix} a &amp;b \\ c &amp;d\end{matrix}\right| \neq 0\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+(X&#39;,Y&#39;) \sim N
+\]</span></p>
 <blockquote>
-<p>多元函数的间断点类型不在考试范围内。</p>
+<p>以上的结论在二维以上情况下仍然成立。</p>
 </blockquote>
+<ul>
+<li>二维正态分布的条件分布仍是正态分布，即 <span class="math inline">\((X,Y) \sim N \Rightarrow f_{Y \vert X}(y \vert x) \sim N, \; f_{X \vert Y}(x \vert y) \sim N\)</span>。</li>
+</ul>
+<h3 id="边缘分布">边缘分布</h3>
+<p><strong>由联合分布可以推出边缘分布：</strong></p>
+<ul>
+<li><span class="math inline">\(F_X(x),F_Y(y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+F_X(x) = F(x, +\infty), \quad F_Y(y) = F(+\infty,y)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p_{i\cdot},p_{\cdot y}\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+p_{i\cdot} = \sum_j p_{ij}, \quad p_{\cdot j} = \sum_i p_{ij}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(f_X(x),f_Y(y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f_X(x) = \int_{-\infty}^{+\infty} f(x,y)\text{d}y, \quad f_Y(y) = \int_{-\infty}^{+\infty} f(x,y)\text{d}x
+\]</span></p>
+<p><strong>由边缘分布不能推出联合分布，除非 <span class="math inline">\(X,Y\)</span> 相互独立：</strong></p>
+<ul>
+<li><span class="math inline">\(X,Y\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \forall x,y,\; F(x,y) = F_X(x) F_Y(y)\)</span>。</li>
+<li><span class="math inline">\(X,Y\)</span> 相互独立，<span class="math inline">\((X,Y)\)</span> 为二维离散型随机变量 <span class="math inline">\(\Leftrightarrow \forall i,j, \; p_{ij} = p_{i\cdot}p_{\cdot j}\)</span>。</li>
+<li><span class="math inline">\(X,Y\)</span> 相互独立，<span class="math inline">\((X,Y)\)</span> 为二维连续型随机变量 <span class="math inline">\(\Leftrightarrow \forall x,y, \; f(x,y) = f_X(x)f_Y(y)\)</span>。</li>
+</ul>
+<h3 id="条件分布">条件分布</h3>
+<ul>
+<li><span class="math inline">\(P\{Y = y_j \vert X = x_i\},P\{X = x_i \vert Y = y_j\}\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P\{Y = y_j \vert X = x_i\} = \frac{P\{X = x_i,Y = y_j\}}{P\{X = x_i\}} = \frac{p_{ij}}{p_{i\cdot}}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(f_{Y\vert X}(y \vert x),f_{X\vert Y}(x\vert y)\)</span>：</li>
+</ul>
+<p><span class="math display">\[
+f_{Y \vert X}(y \vert x) = \frac{f(x,y)}{f_X(x)},\quad f_{X \vert Y}(X \vert Y) = \frac{f(x,y)}{f_Y(y)}
+\]</span></p>
 <p>重要结论：</p>
 <ul>
-<li>偏导数存在 <span class="math inline">\(\not\Rightarrow\)</span> 函数连续。（与一元函数不同）</li>
-<li>偏导数连续 <span class="math inline">\(\Rightarrow\)</span> 函数连续。（充分不必要）</li>
-<li>可微 <span class="math inline">\(\Rightarrow\)</span> 函数连续。（充分不必要）</li>
+<li><strong>联合概率 = 边缘概率 <span class="math inline">\(\times\)</span> 条件概率</strong>。</li>
 </ul>
-<h3 id="偏导数">偏导数</h3>
-<p>设函数 <span class="math inline">\(z =f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 的某邻域内有定义，若极限</p>
-<p><span class="math display">\[
-\lim _{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}
-\]</span></p>
-<p>存在，则称此极限为 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处对 <em>x</em> 的『<strong>偏导数</strong>』，记作：</p>
-<p><span class="math display">\[
-f&#39;_x(x_0,y_0) \; \text{or} \;  z&#39;_x\bigg |_{x = x_0,y=y_0} \; \text{or} \; 
-\frac{\partial f}{\partial x} \bigg |_{x = x_0,y=y_0} \; \text{or} \; \frac{\partial z}{\partial x} \bigg |_{x = x_0,y=y_0} 
-\]</span></p>
-<p>故 <span class="math inline">\(f(x,y)\)</span> 的偏导数：</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; f&#39;_x(x_0,y_0) = \lim_{\Delta x \to 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x} = \lim_{x \to x_0}\frac{f(x,y) - f(x_0,y_0)}{x - x_0} \\
-&amp; f&#39;_y(x_0,y_0) = \lim_{\Delta y \to 0}\frac{f(x_0,y_0 + \Delta y)-f(x_0,y_0)}{\Delta y} = \lim_{y \to y_0}\frac{f(x,y) - f(x_0,y_0)}{y - y_0}
+P\{X = x_i,Y =y_j\} &amp;= P\{X = x_i\}P\{ Y = y_j \vert X_i = x_i\} \\
+f(x,y) &amp;= f_X(x) f_{Y\vert X}(y \vert x)
 \end{aligned}
 \]</span></p>
-<p>若函数 <span class="math inline">\(z = f(x,y)\)</span> 在区域 <em>D</em> 内的偏导数 <span class="math inline">\(f&#39;_x(x,y),f&#39;_y(x,y)\)</span> 仍具有偏导数，则它们的偏导数称为 <span class="math inline">\(f(x,y)\)</span> 的『<strong>二阶偏导数</strong>』，根据对变量求导的顺序不同分为四个二阶偏导数：</p>
+<ul>
+<li><p>若 <span class="math inline">\(X,Y\)</span> 相互独立，则 <span class="math inline">\(f_{X\vert Y}(x \vert y) = f_X(x),\; f_{Y \vert X}(y \vert x) = f_Y(y)\)</span>。</p></li>
+<li><p>条件概率密度之比等于边缘概率密度之比：</p></li>
+</ul>
+<p><span class="math display">\[
+\frac{f_{Y \vert X} (y \vert x)}{f_{X \vert Y} (x \vert y)} = \frac{f_Y(y)}{f_X(x)}
+\]</span></p>
+<h3 id="分布函数计算概率">分布函数计算概率</h3>
+<ul>
+<li>若为离散型或连续型，则</li>
+</ul>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \frac{\partial}{\partial x}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x^2} = f&#39;&#39;_{xx}(x,y), \quad \frac{\partial}{\partial y}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y^2} = f&#39;&#39;_{yy}(x,y), \\
-&amp; \frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right) = \frac{\partial^2 z}{\partial x\partial y} = f&#39;&#39;_{xy}(x,y), \quad \frac{\partial}{\partial x}\left(\frac{\partial z}{\partial y}\right) = \frac{\partial^2 z}{\partial y\partial x} = f&#39;&#39;_{yx}(x,y)
+&amp; (X,Y) \sim p_{ij} \Rightarrow P\{(X,Y) \in D\} = \sum_{(x_i,y_i) \in D}p_{ij} \\
+&amp; (X,Y) \sim f(x,y) \Rightarrow P\{(X,Y) \in D\} = \iint_Df(x,y) \text{d}\sigma
 \end{aligned}
 \]</span></p>
-<p>其中 <span class="math inline">\(f&#39;&#39;_{xy}(x,y),f&#39;&#39;_{yx}(x,y)\)</span> 称为『<strong>二阶混合偏导数</strong>』。</p>
-<blockquote>
-<p>注：求偏导数时把求导变量之外的变量视为<strong>常数</strong>。</p>
-</blockquote>
-<h3 id="可微">可微</h3>
-<p>函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处的『<strong>全增量</strong>』 <span class="math inline">\(\Delta z = f(x + \Delta x, y + \Delta y) - f(x,y)\)</span> 可表示为</p>
-<p><span class="math display">\[
-\Delta z = A\Delta x + B\Delta y + o(\rho)
-\]</span></p>
-<p>其中 <span class="math inline">\(\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}\)</span>，<span class="math inline">\(A,B\)</span> 不依赖于 <span class="math inline">\(\Delta x,\Delta y\)</span> 仅与 <span class="math inline">\(x,y\)</span> 有关，则称函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处『<strong>可微</strong>』，称 <span class="math inline">\(A\Delta x + B\Delta y\)</span> 为函数 <span class="math inline">\(z =f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处的『<strong>全微分</strong>』，记作：</p>
-<p><span class="math display">\[
-\text{d} z = A\Delta x + B\Delta y
-\]</span></p>
-<p>定理：若函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x,y)\)</span> 处可微，则函数在该点的偏导数必存在，则函数在该点的全微分为</p>
-<p><span class="math display">\[
-\begin{aligned}
-\text{d} z&amp; = f&#39;_x(x,y)\Delta x + f&#39;_y(x,y)\Delta y \\
-&amp; = \frac{\partial z}{\partial x}\text{d} x + \frac{\partial z}{\partial y}\text{d} y
-\end{aligned}
-\]</span></p>
-<p><strong>判断函数 <span class="math inline">\(z = f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处可微：</strong></p>
 <ul>
-<li>写出全增量 <span class="math inline">\(\Delta z = f(x_0 + \Delta x, y_0 + \Delta y)-f(x,y)\)</span>。</li>
-<li>写出线性增量 <span class="math inline">\(f&#39;_x(x_0,y_0)\Delta x + f&#39;_y(x_0,y_0)\Delta y\)</span>。</li>
-<li>计算极限</li>
+<li>若为混合型分布，则使用<strong>全概率</strong>公式计算概率。</li>
 </ul>
 <p><span class="math display">\[
-\lim_{\Delta x \to 0,\Delta y \to 0} \frac{\Delta z - (f&#39;_x(x_0,y_0)\Delta x + f&#39;_y(x_0,y_0)\Delta y)}{\sqrt{(\Delta x)^2 + (\Delta y)^2}}
+\text{e.g.}
 \]</span></p>
-<p>若该极限等于 0，则 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处可微，否则不可微。</p>
-<h3 id="偏导数的连续性">偏导数的连续性</h3>
-<p><strong>判断函数 <span class="math inline">\(z = f(x,y)\)</span> 在某特殊点 <span class="math inline">\((x_0,y_0)\)</span> 处（如分段点）偏导数是否连续：</strong></p>
-<ul>
-<li>定义法求 <span class="math inline">\(f&#39;_x(x_0,y_0),f&#39;_y(x_0,y_0)\)</span>。</li>
-<li>用公式法求 <span class="math inline">\(f&#39;_x(x,y),f&#39;_y(x,y)\)</span>。</li>
-<li>计算极限</li>
-</ul>
-<p><span class="math display">\[
-\lim_{x \to x_0,y \to y_0}f&#39;_x(x_0,y_0),\lim_{x \to x_0,y \to y_0}f&#39;_y(x_0,y_0)
-\]</span></p>
-<ul>
-<li>若求出的两个极限与定义法求出的偏导数相等，则 <span class="math inline">\(f(x,y)\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 处的偏导数连续。</li>
-</ul>
-<p>重要结论：</p>
-<ul>
-<li>偏导数连续 <span class="math inline">\(\Rightarrow\)</span> 可微 <span class="math inline">\(\Rightarrow\)</span> 偏导数存在。（都是充分不必要）</li>
-<li>偏导数连续 <span class="math inline">\(\Rightarrow\)</span> 二阶混合偏导数相等。</li>
-</ul>
-<h2 id="计算">计算</h2>
-<h3 id="多元复合函数求导">多元复合函数求导</h3>
-<h4 id="全导数">全导数</h4>
-<p>若 <span class="math inline">\(z =f(u,v),\; u = u(x),\; v = v(x)\)</span>，即 <em>z</em> 最终是关于单一变量 <em>x</em> 的函数，则 <span class="math inline">\(\frac{\text{d} z}{\text{d} x}\)</span> 称为该函数的『<strong>全导数</strong>』，记作：</p>
-<p><span class="math display">\[
-\frac{\text{d} z}{\text{d} x} = \frac{\partial z}{\partial u}\frac{\text{d} u}{\text{d} x} + \frac{\partial z}{\partial v}\frac{\text{d} v}{\text{d} x}
-\]</span></p>
-<h4 id="链式求导规则">链式求导规则</h4>
+<h2 id="多维随机变量函数的分布">多维随机变量函数的分布</h2>
+<h3 id="多维---一维">多维 - 一维</h3>
+<h4 id="离散型-离散型---离散型">(离散型, 离散型) - 离散型</h4>
 <ol type="1">
-<li><p>画出函数的<strong>复合结构图</strong>。</p></li>
-<li><p>对哪个变量求导，就寻找通向这个变量的<strong>所有路线</strong>。</p></li>
-<li><p>将所有路线求得的导数相加。</p></li>
+<li><p><span class="math inline">\((X,Y) \sim p_{ij}, \; Z = g(X,Y) \Rightarrow Z \sim q_i\)</span></p></li>
+<li><p>设 <span class="math inline">\(X \sim p_k, \; Y \sim q_k\)</span>，<span class="math inline">\(X,Y\)</span> 相互独立，则可求 <span class="math inline">\(X + Y,\; XY, \; \max(X,Y), \; \min(X,Y)\)</span> 等的概率分布，<strong>关键是写等价事件</strong>：</p></li>
+</ol>
+<ul>
+<li><span class="math inline">\(Z = X + Y\)</span> 且 <span class="math inline">\(X,Y\)</span> 独立并取非负整数，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} &amp;= P\{X+Y = k\}\\
+&amp;= P\{X = 0\}P\{Y=k\} + P\{X =1\}P\{Y = k - 1\}+ \cdots + P\{X = k \}P\{Y = 0\}\\
+&amp;= p_0q_k + p_1q_{k-1} + \cdots   p_kq_0\;(k = 0,1,2,\ldots)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z = \max(X,Y)\)</span> 且 <span class="math inline">\(X,Y\)</span> 独立并取非负整数，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} = &amp;P\{\max(X,Y) = k\} \\
+= &amp;P\{X = k, Y=k\} + P\{X = k, Y=k-1\} + \cdots +P\{X = k, Y=0\}+ \\
+&amp; P\{X =k-1,Y=k\} + P\{X=k-2,Y=k\}+ \cdots + P\{X = 0,Y = k\} \\
+= &amp;p_kq_k + p_kq_{k-1} + \cdots + p_kq_0 + p_{k-1}q_k + p_{k-2}q_k + \cdots + p_0q_k \;(k =0,1,2,\ldots)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z = \min(X,Y)\)</span> 且 <span class="math inline">\(X,Y\)</span> 相互独立并取非负整数，且 <span class="math inline">\(X,Y \leq l\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\{Z = k\} = &amp;P\{\min(X,Y) = k\} \\
+= &amp;P\{X = k, Y=k\} + P\{X = k, Y=k+1\} + \cdots +P\{X = k, Y=l\}+ \\
+&amp; P\{X =k+1,Y=k\} + P\{X=k+2,Y=k\}+ \cdots + P\{X = l,Y = k\} \\
+= &amp;p_kq_k + p_kq_{k+1} + \cdots + p_kq_l + p_{k+1}q_k + p_{k+2}q_k + \cdots + p_lq_k \;(k =0,1,2,\ldots,l)
+\end{aligned}
+\]</span></p>
+<h4 id="连续型-连续型---连续型">(连续型, 连续型) - 连续型</h4>
+<ol type="1">
+<li><strong>分布函数法</strong></li>
+</ol>
+<p>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = g(X,Y)\)</span>，则</p>
+<p><span class="math display">\[
+F_Z(z) = P\{g(X,Y) \leq z\} = \iint_{g(x,y) \leq z} f(x,y) \text{d}\sigma
+\]</span></p>
+<p>则</p>
+<p><span class="math display">\[
+f_Z(z) = F&#39;_Z(z)
+\]</span></p>
+<ol start="2" type="1">
+<li><strong>卷积公式法</strong></li>
+</ol>
+<p>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = g(X,Y)\)</span>，假如 <span class="math inline">\(Y = h(X,Z), \;X = l(Z,Y)\)</span>，则</p>
+<p><span class="math display">\[
+f_Z(z) = \int_{-\infty}^{+\infty} \left | \frac{\partial h}{\partial z}\right | f(x,h(x,z)) \text{d}x = \int_{-\infty}^{+\infty}\left | \frac{\partial l}{\partial z}\right | f(l(y,z),y) \text{d} y
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = X + Y\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} f(x,z-x) \text{d}x = \int_{-\infty}^{+\infty}f(z-y,y) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x) \text{d}x = \int_{-\infty}^{+ \infty}f_X(z-y)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = X - Y\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} f(x,x-z) \text{d}x = \int_{-\infty}^{+\infty}f(z+y,y) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty}f_X(x)f_Y(x-z) \text{d}x = \int_{-\infty}^{+ \infty}f_X(z+y)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = XY\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} \left | \frac{1}{x} \right | f\left(x,\frac{z}{x}\right) \text{d}x = \int_{-\infty}^{+\infty} \left | \frac{1}{y} \right | f\left( \frac{z}{y},y\right) \text{d}y \\
+&amp;=\int_{-\infty}^{+\infty} \left | \frac{1}{x} \right | f_X(x)f_Y\left( \frac{z}{x} \right) \text{d}x = \int_{-\infty}^{+ \infty} \left | \frac{1}{y} \right | f_X\left( \frac{z}{y} \right)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \frac{X}{Y}\)</span>，若 <span class="math inline">\(X,Y\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+f_Z(z) &amp;= \int_{-\infty}^{+\infty} |y| f(yz,y) \text{d}y \\
+&amp;= \int_{-\infty}^{+ \infty} |y| f_X(yz)f_Y(y) \text{d}y
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li><strong>最值函数的分布</strong></li>
+</ol>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \max(X,Y)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+F_Z(z) = P\{\max(X,Y) \leq Z\} = P\{X \leq z, Y \leq z\} = F(z,z)
+\]</span></p>
+<p>若 <span class="math inline">\(X,Y\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+F_Z(z) = F_x(z)F_Y(z)
+\]</span></p>
+<ul>
+<li>设 <span class="math inline">\((X,Y) \sim f(x,y), \; Z = \min(X,Y)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= P\{\min(X,Y) \leq z\} = P\{\{X \leq z\} + \{Y \leq z\}\} \\
+&amp;= P\{X \leq z\} + P\{Y \leq z\} - P\{X \leq z,Y \leq z\} \\
+&amp;= F_X(z) + F_Y(z) - F(z,z)
+\end{aligned}
+\]</span></p>
+<p>若使用对立事件的思想，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= P\{\min(X,Y) \leq z\} = 1- P\{\min(X,Y) &gt; z\} \\
+&amp;= 1- P\{X &gt; z, Y &gt; z\}
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X,Y\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_Z(z) &amp;= F_X(z) + F_Y(z) - F_x(z)F_Y(z) \\
+&amp;= 1 - P\{X &gt; z\}P\{Y &gt; z\} = 1 - [1 - F_X(z)][1 - F_Y(z)]
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{\max}(z) &amp;= F_{X_1}(z)F_{X_2}(z) \cdots F_{X_n}(z) \\
+F_{\min}(z) &amp;= 1-[1-F_{X_1}(z)][1-F_{X_2}(z)]\cdots[1-F_{X_n}(z)]
+\end{aligned}
+\]</span></p>
+<p>若 <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> 独立同分布，设 <span class="math inline">\(X_1, X_2, \ldots, X_n \sim F(x)\)</span>，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{\max}(z) &amp;= [F(z)]^n \\
+F_{\min}(z) &amp;= 1-[1-F(z)]^n
+\end{aligned}
+\]</span></p>
+<h4 id="离散型-连续型---连续型">(离散型, 连续型) - 连续型</h4>
+<p>设 <span class="math inline">\(X \sim p_i,\; Y \sim f_Y(y), \; Z = g(X,Y)\)</span>，则</p>
+<ul>
+<li>若 <span class="math inline">\(X,Y\)</span> 相互独立，可用分布函数法与全概率公式求 <span class="math inline">\(F_Z(z)\)</span>。</li>
+<li>若 <span class="math inline">\(X,Y\)</span> 不独立，可用分布函数法，转化为等价事件再求。</li>
+</ul>
+<p>e.g.</p>
+<h3 id="一维---多维">一维 - 多维</h3>
+<ol type="1">
+<li>离散型 - (离散型, 离散型)</li>
 </ol>
 <p><span class="math display">\[
-\text{e.g.} \;
-z = f(u,v,w),\; u =u(x,y),\; v = v(x),\; w = w(y) \\
+X \sim p_i, \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
-<p><img src="image/16644273534436.jpg" /> <span class="math display">\[
-\begin{aligned}
-&amp; \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\text{d} v}{\text{d} x}\\
-&amp; \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial w}\frac{\text{d} w}{\text{d} y}
-\end{aligned}
-\]</span></p>
-<p><strong>注：无论 <em>z</em> 对哪个变量求导，也无论 <em>z</em> 已经求了几阶导，求导后的新函数仍然具有与原本函数完全相同的复合结构。</strong></p>
-<h4 id="全微分形式不变性">全微分形式不变性</h4>
-<p>函数 <span class="math inline">\(z =f(u,v)\)</span> 可微，则其全微分为</p>
+<ol start="2" type="1">
+<li>连续型 - (离散型, 离散型)</li>
+</ol>
 <p><span class="math display">\[
-\text{d}z = \frac{\partial z}{\partial u}\text{d}u + \frac{\partial z}{\partial v}\text{d}v
+X \sim f(x), \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
-<p>若 <span class="math inline">\(u,v\)</span> 作为函数的中间变量，是自变量 <span class="math inline">\(x,y\)</span> 的可微函数 <span class="math inline">\(u =u(x,y),\;v=v(x,y)\)</span>，则复合函数 <span class="math inline">\(z = f(u(x,y),v(x,y))\)</span> 也是可微的，其全微分为</p>
+<h3 id="多维---多维">多维 - 多维</h3>
+<ol type="1">
+<li>(离散型, 离散型) - (离散型, 离散型)</li>
+</ol>
 <p><span class="math display">\[
-\text{d} z = \frac{\partial z}{\partial x}\text{d}x + \frac{\partial z}{\partial y}\text{d}y
+(X,Y) \sim p_{ij}, \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
-<h3 id="多元隐函数求导">多元隐函数求导</h3>
-<h4 id="一个二元方程的隐函数">一个二元方程的隐函数</h4>
-<p>设函数 <span class="math inline">\(F(x,y)\)</span> 在点 <span class="math inline">\(P(x_0,y_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(x_0,y_0) = 0,\;F&#39;_y(x_0,y_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y) = 0\)</span> 在点 <span class="math inline">\((x_0,y_0)\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(y = f(x)\)</span>，且有</p>
+<ol start="2" type="1">
+<li>(连续型, 连续型) - (离散型, 离散型)</li>
+</ol>
 <p><span class="math display">\[
-\frac{\text{d}y}{\text{d}x} = - \frac{F&#39;_x}{F&#39;_y}
+(X,Y) \sim f(x,y), \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim p_{ij}
 \]</span></p>
-<ul>
-<li><span class="math inline">\(x,y\)</span> 是当作<strong>独立的中间变量</strong>，不必在意 <span class="math inline">\(x,y\)</span> 之间的关系。之后的两个情景同理。</li>
-<li>推导：<span class="math inline">\(F(x,y(x))=0\)</span> 的复合结构如图：</li>
-</ul>
-<p><img src="image/16644267691822.jpg" /></p>
-<p>方程两侧对 <em>x</em> 求导：</p>
+<ol start="3" type="1">
+<li>(离散型, 连续型) - (离散型, 离散型)</li>
+</ol>
 <p><span class="math display">\[
-F&#39;_x \frac{\text{d}x}{\text{d}x} + F&#39;_y \frac{\text{d}y}{\text{d}x} = 0
+X \sim p_i, \; Y \sim f_Y(y) ,\; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
-<p>故当 <span class="math inline">\(F&#39;_y \neq 0\)</span> 时，<span class="math inline">\(\frac{\text{d}y}{\text{d}x} = - \frac{F&#39;_x}{F&#39;_y}\)</span>。</p>
-<h4 id="一个多元方程的隐函数">一个多元方程的隐函数</h4>
-<p>设函数 <span class="math inline">\(F(x,y,z)\)</span> 在点 <span class="math inline">\(P(x_0,y_0,z_0)\)</span> 的某一邻域内具有连续偏导数，若 <span class="math inline">\(F(P_0) = 0,\;F&#39;_z(P_0) \neq 0\)</span>，则方程 <span class="math inline">\(F(x,y,z) = 0\)</span> 在点 <span class="math inline">\(P_0\)</span> 的某一邻域内能唯一确定一个连续且具有连续导数的函数 <span class="math inline">\(z = z(x,y)\)</span>，且有</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial z}{\partial x} = -\frac{F&#39;_x}{F&#39;_z},\;\frac{\partial z}{\partial y} = -\frac{F&#39;_y}{F&#39;_z}
-\end{aligned}
-\]</span></p>
-<h4 id="多元方程组的隐函数">多元方程组的隐函数</h4>
-<p>设 <span class="math inline">\(\left\{ \begin{aligned}&amp;F(x,y,u,v) =0 \\ &amp;G(x,y,u,v) = 0 \end{aligned}\right.\)</span>，若记</p>
-<p><span class="math display">\[
-\left|\begin{matrix} F&#39;_u &amp;F&#39;_v \\ G&#39;_u &amp;G&#39;_v \end{matrix}\right | = \frac{\partial(F,G)}{\partial(u,v)}
-\]</span></p>
-<blockquote>
-<p>此处为二阶雅可比行列式。</p>
-</blockquote>
-<p>则当满足 <span class="math inline">\(\frac{\partial(F,G)}{\partial(u,v)} \neq 0\)</span> 时，可确定 <span class="math inline">\(\left\{ \begin{aligned}&amp;u=u(x,y)\\ &amp;v = v(x,y)\end{aligned}\right.\)</span>。</p>
-<p><img src="image/16644198249219.jpg" /></p>
-<p>且有</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\frac{\partial u}{\partial x} = -\frac{\frac{\partial(F,G)}{\partial (x,v)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \quad \frac{\partial v}{\partial x} = -\frac{\frac{\partial(F,G)}{\partial (u,x)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \\
-&amp;\frac{\partial u}{\partial y} = -\frac{\frac{\partial(F,G)}{\partial (y,v)}}{\frac{\partial (F,G)}{\partial (u,v)}}, \quad \frac{\partial v}{\partial y} = -\frac{\frac{\partial(F,G)}{\partial (u,y)}}{\frac{\partial (F,G)}{\partial (u,v)}}
-\end{aligned}
-\]</span></p>
-<p><strong>简单形式</strong>：设 <span class="math inline">\(\left\{ \begin{aligned}&amp;F(x,y,z) =0 \\ &amp;G(x,y,z) = 0 \end{aligned}\right.\)</span>，当满足 <span class="math inline">\(\frac{\partial(F,G)}{\partial(y,z)} \neq 0\)</span> 时，可确定 <span class="math inline">\(\left\{ \begin{aligned}&amp; y =y(x) \\ &amp;z =z(x) \end{aligned}\right.\)</span>，其复合结构图为</p>
-<p><img src="image/16644206705903.jpg" /></p>
-<p>且有</p>
-<p><span class="math display">\[
-\frac{\text{d}y}{\text{d}x} = \frac{\frac{\partial(F,G)}{\partial(x,z)}}{\frac{\partial(F,G)}{\partial(y,z)}}, \quad \frac{\text{d}z}{\text{d}x} = \frac{\frac{\partial(F,G)}{\partial(y,x)}}{\frac{\partial(F,G)}{\partial(y,z)}}
-\]</span></p>
-<h3 id="多元函数的极值和最值">多元函数的极值和最值</h3>
-<h4 id="二元函数的泰勒公式">二元函数的泰勒公式</h4>
-<p>设 <span class="math inline">\(f(x,y)\)</span> 二阶偏导数连续，记 <span class="math inline">\(P_0 = (x_0,y_0)\)</span>，<span class="math inline">\(\Delta x = x -x_0\)</span>，<span class="math inline">\(\Delta y = y -y_0\)</span>，则</p>
-<p><span class="math display">\[
-f(x, y)=f\left(x_{0}, y_{0}\right)+\left[\begin{array}{ll}
-f_{x}^{\prime} &amp; f_{y}^{\prime}
-\end{array}\right]_{P_0}\left[\begin{array}{c}
-\Delta x \\
-\Delta y
-\end{array}\right]+
-\frac{1}{2 !}
-\left[\begin{array}{ll}
-\Delta x &amp; \Delta y
-\end{array}\right]\left[\begin{array}{cc}
-f_{x x}^{\prime \prime} &amp; f_{x y}^{\prime \prime} \\
-f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
-\end{array}\right]_{P_0}\left[\begin{array}{l}
-\Delta x \\
-\Delta y
-\end{array}\right]+R_{2}
-\]</span></p>
-<h4 id="无条件极值">无条件极值</h4>
-<p><strong><span class="math inline">\(f(x,y)\)</span> 取极值的必要条件：</strong></p>
-<p>极值点必为驻点，设 <span class="math inline">\(P_0 = (x_0,y_0)\)</span> 为驻点，则</p>
-<p><span class="math display">\[
-\left\{\begin{aligned}&amp;f&#39;_x(x_0,y_0) = 0 \\ &amp;f&#39;_y(x_0,y_0) = 0 \end{aligned}\right. \Rightarrow \left[\begin{matrix}f&#39;_x &amp;f&#39;_y\end{matrix}\right]_{P_0}= \boldsymbol{0}
-\]</span></p>
-<p><strong><span class="math inline">\(f(x,y)\)</span> 取极值的充分条件：</strong></p>
-<p><span class="math display">\[
-\left[\begin{matrix}f&#39;_x &amp;f&#39;_y\end{matrix}\right]_{P_0}= \boldsymbol{0} \xrightarrow{Taylor} f(x,y) - f(x_0,y_0) = \frac{1}{2 !}
-\left[\begin{array}{ll}
-\Delta x &amp; \Delta y
-\end{array}\right]\left[\begin{array}{cc}
-f_{x x}^{\prime \prime} &amp; f_{x y}^{\prime \prime} \\
-f_{y x}^{\prime \prime} &amp; f_{y y}^{\prime \prime}
-\end{array}\right]_{P_0}\left[\begin{array}{l}
-\Delta x \\
-\Delta y
-\end{array}\right]+R_{2}
-\]</span></p>
-<p>记 <span class="math inline">\(\left\{ \begin{aligned} &amp;f&#39;&#39;_{xx}(x_0,y_0) = A \\ &amp; f&#39;&#39;_{xy}(x_0,y_0) = f&#39;&#39;_{yx}(x_0,y_0) = B \\ &amp;f&#39;&#39;_{yy}(x_0,y_0) = C \end{aligned}\right.\)</span>，则</p>
-<ul>
-<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 且 <span class="math inline">\(A &gt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 为极小值。</li>
-<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 且 <span class="math inline">\(A &lt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 为极大值。</li>
-<li>当 <span class="math inline">\(\Delta = AC - B^2 &gt; 0\)</span> 时，<span class="math inline">\(f(x_0,y_0)\)</span> 非极值。</li>
-<li>当 <span class="math inline">\(\Delta = AC - B^2= 0\)</span> 时，无法判别是否为极值。</li>
-</ul>
-<blockquote>
-<p>注：该充分条件<strong>不适用于三元及以上的函数</strong>。</p>
-</blockquote>
-<h4 id="条件极值">条件极值</h4>
-<p><strong>二元情况：</strong></p>
-<p>函数 <span class="math inline">\(u =f(x,y)\)</span> 在条件 <span class="math inline">\(\varphi(x,y) = 0\)</span> 下取得最值，则</p>
-<ul>
-<li>构造辅助函数 <span class="math inline">\(F(x,y,\lambda) = f(x,y) + \lambda\varphi(x,y)\)</span></li>
-<li>令</li>
-</ul>
-<p><span class="math display">\[
-\left\{ \begin{aligned}
-&amp; F&#39;_x = f&#39;_x + \lambda \varphi&#39;_x = 0 \\
-&amp; F&#39;_y = f&#39;_y + \lambda \varphi&#39;_y = 0 \\
-&amp; F&#39;_{\lambda} = \varphi(x,y,z) = 0
-\end{aligned}
-\right.
-\]</span></p>
-<ul>
-<li>解上述方程组得到备选点 <span class="math inline">\(P_i\;(i = 1,2,\ldots)\)</span>，在备选点中计算最大值和最小值。</li>
-</ul>
-<p><strong>三元情况：</strong></p>
-<p>函数 <span class="math inline">\(u =f(x,y,z)\)</span> 在条件 <span class="math inline">\(\left\{ \begin{aligned}&amp;\varphi(x,y,z) = 0 \\ &amp;\psi(x,y,z) = 0 \end{aligned}\right.\)</span> 下取得最值，则</p>
-<ul>
-<li>构造辅助函数 <span class="math inline">\(F(x,y,z,\lambda,\mu) = f(x,y,z) + \lambda\varphi(x,y,z) + \mu\psi(x,y,z)\)</span></li>
-<li>令</li>
-</ul>
-<p><span class="math display">\[
-\left\{ \begin{aligned}
-&amp; F&#39;_x = f&#39;_x + \lambda \varphi&#39;_x + \mu\psi&#39;_x= 0 \\
-&amp; F&#39;_y = f&#39;_y + \lambda \varphi&#39;_y + \mu\psi&#39;_y = 0 \\
-&amp; F&#39;_z = f&#39;_z + \lambda \varphi&#39;_z + \mu\psi&#39;_z = 0 \\
-&amp; F&#39;_{\lambda} = \varphi(x,y,z) = 0 \\
-&amp; F&#39;_{\mu} = \psi(x,y,z) = 0 
-\end{aligned}
-\right.
-\]</span></p>
-<ul>
-<li>解上述方程组得到备选点 <span class="math inline">\(P_i\;(i = 1,2,\ldots)\)</span>，在备选点中计算 <span class="math inline">\(f(P_i)\)</span> 最大值和最小值。</li>
-</ul>
-<h3 id="偏微分方程">偏微分方程</h3>
-<h2 id="多元函数微分学的几何应用">多元函数微分学的几何应用</h2>
-<h2 id="场论初步">场论初步</h2>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -4122,7 +4255,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <li><a href="#点估计">点估计</a>
 <ul>
 <li><a href="#矩估计">矩估计</a></li>
-<li><a href="#极大似然估计">极大似然估计</a></li>
+<li><a href="#最大似然估计">最大似然估计</a></li>
 <li><a href="#估计量的评价">估计量的评价</a></li>
 </ul></li>
 <li><a href="#区间估计和假设检验">区间估计和假设检验</a>
@@ -4179,7 +4312,7 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \]</span></p>
 <h3 id="中心极限定理">中心极限定理</h3>
 <p>中心极限定理只为说明一件事情，即大量独立同分布的随机变量的和服从正态分布。</p>
-<p><span class="math inline">\(\{X_n\} \;(n =1,2,\ldots)\)</span> 是独立同分布的随机变量序列，令 <span class="math inline">\(\mu = EX_i, \; \sigma^2 = DX_i\)</span>，则当 <span class="math inline">\(n \to \infty\)</span> 时，</p>
+<p><span class="math inline">\(\{X_n\} \;(n =1,2,\ldots)\)</span> 是独立同分布的随机变量序列，令 <span class="math inline">\(\mu = EX_i, \; \sigma^2 = DX_i\)</span>，则当 <span class="math inline">\(n \to \infty\)</span> 时，有</p>
 <p><span class="math display">\[
 \sum_{i=1}^n X_i \sim N(n\mu, n\sigma^2) \Rightarrow \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n} \sigma} \sim N(0,1)
 \]</span></p>
@@ -4232,7 +4365,7 @@ X_{(1)} = \min \{ X_1, X_2, \ldots, X_n \}, \; X_{(n)} = \max \{ X_1, X_2, \ldot
 \]</span></p>
 <h3 id="统计量的分布和概率密度">统计量的分布和概率密度</h3>
 <ol type="1">
-<li>正态分布</li>
+<li><strong>正态分布</strong></li>
 </ol>
 <p>若随机变量 <em>X</em> 的概率密度为</p>
 <p><span class="math display">\[
@@ -4244,7 +4377,7 @@ f(\mu) = \frac{1}{\sqrt{2 \pi} \sigma}
 \]</span></p>
 <p>若 <span class="math inline">\(X \sim N(0,1), \; P\{X &gt; \mu_\alpha\} = \alpha \; (0 &lt; \alpha &lt; 1)\)</span>，则称 <span class="math inline">\(\mu_\alpha\)</span> 为标准正态分布的<strong>上侧 <span class="math inline">\(\alpha\)</span> 分位数</strong>。</p>
 <ol start="2" type="1">
-<li><span class="math inline">\(\chi ^2\)</span> 分布</li>
+<li><strong><span class="math inline">\(\chi ^2\)</span> 分布</strong></li>
 </ol>
 <p>随机变量 <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> 相互独立，且 <span class="math inline">\(X_i \sim N(0,1) \;(i =1,2,\ldots, n)\)</span>，则 <span class="math inline">\(\sum_{i=1}^n {X_i}^2\)</span> 服从『<strong>自由度为 <em>n</em> 的 <span class="math inline">\(\chi^2\)</span> 分布</strong>』，记作：</p>
 <p><span class="math display">\[
@@ -4264,7 +4397,7 @@ P\{ \chi^2 &gt; \chi^2_\alpha(n)\} = \int _{\chi^2_\alpha(n)}^ {+\infty} f(x) \t
 <li>设 <span class="math inline">\(X_1 \sim \chi^2(n_1), \; X_2 \sim \chi^2(n_2), \; X_1,X_2\)</span> 相互独立，则 <span class="math inline">\(X_1 + X_2 \sim \chi^2(n_1 + n_2)\)</span>。</li>
 </ul>
 <ol start="3" type="1">
-<li><span class="math inline">\(t\)</span> 分布</li>
+<li><strong><span class="math inline">\(t\)</span> 分布</strong></li>
 </ol>
 <p>设随机变量 <span class="math inline">\(X \sim N(0,1), \; Y \sim \chi^2(n), \; X,Y\)</span> 相互独立，则 <span class="math inline">\(\frac{X}{\sqrt{Y/n}}\)</span> 服从『<strong>自由度为 <em>n</em> 的 <span class="math inline">\(t\)</span> 分布</strong>』，记作：</p>
 <p><span class="math display">\[
@@ -4276,7 +4409,7 @@ t = \frac{X}{\sqrt{Y/n}} \sim t(n)
 <li>设 <span class="math inline">\(t \sim t(n)\)</span>，则 <span class="math inline">\(P\{ t &gt; -t_\alpha(n)\} = P\{ t &gt; t_{1-\alpha}(n)\}\)</span>，故 <span class="math inline">\(t_{1- \alpha}(n) = -t_\alpha(n)\)</span>。</li>
 </ul>
 <ol start="4" type="1">
-<li><span class="math inline">\(F\)</span> 分布</li>
+<li><strong><span class="math inline">\(F\)</span> 分布</strong></li>
 </ol>
 <p>设随机变量 <span class="math inline">\(X \sim \chi^2(n_1), \; Y \sim \chi^2(n_2), \; X,Y\)</span> 相互独立，则 <span class="math inline">\(\frac{X/n_1}{Y/n_2}\)</span> 服从『<strong>自由度为 <span class="math inline">\((n_1,n_2)\)</span> 的 <span class="math inline">\(F\)</span> 分布</strong>』，记作：</p>
 <p><span class="math display">\[
@@ -4341,10 +4474,17 @@ F = \frac{X/n_1}{Y/n_2} \sim F(n_1,n_2)
 \end{aligned}
 \right.
 \]</span></p>
-<h3 id="极大似然估计">极大似然估计</h3>
+<h3 id="最大似然估计">最大似然估计</h3>
+<p>当未知参数 <span class="math inline">\(\theta\)</span> 取何值时，样本获得观测值 <span class="math inline">\(x_1,x_2, \ldots, x_n\)</span> 的概率最大，此时的 <span class="math inline">\(\theta\)</span> 值便为估计值 <span class="math inline">\(\hat\theta\)</span>。</p>
 <ul>
-<li><p>构造似然函数 <span class="math inline">\(L(x_1,x_2,\ldots,x_n; \theta)\)</span></p></li>
-<li></li>
+<li><p>构造似然函数 <span class="math inline">\(L(\theta) = \left \{ \begin{array}{ll} \prod_{i=1}^n p(\boldsymbol{x}; \theta) &amp; X \;\text{is} \; discrete\\ \prod_{i=1}^n f(\boldsymbol{x};\theta) &amp; X \;\text{is} \; continuous \end{array} \right.\)</span></p></li>
+<li>求估计：
+<ul>
+<li>若似然函数有驻点，则令 <span class="math inline">\(\frac{\text{d}L}{\text{d}\theta} = 0\)</span> 或 <span class="math inline">\(\frac{\text{d}\ln L}{\text{d}\theta} = 0\)</span>，解出 <span class="math inline">\(\hat\theta\)</span>。</li>
+<li>若似然函数无驻点（单调），则用定义法求 <span class="math inline">\(\hat\theta\)</span>。</li>
+<li>若似然函数为常数，则用定义法求 <span class="math inline">\(\hat\theta\)</span>，此时解可能不唯一。</li>
+<li>最大似然估计量的不变性：设 <span class="math inline">\(\hat\theta\)</span> 是 <span class="math inline">\(\theta\)</span> 的最大似然估计，函数 <span class="math inline">\(u = u(\theta)\)</span> 具有单值反函数 <span class="math inline">\(\theta = \theta(u)\)</span>，则 <span class="math inline">\(\hat u = u(\hat\theta)\)</span> 是 <span class="math inline">\(u(\theta)\)</span> 的最大似然估计。</li>
+</ul></li>
 </ul>
 <h3 id="估计量的评价">估计量的评价</h3>
 <ol type="1">
@@ -4375,13 +4515,13 @@ P\left \{\hat{\theta}_1(X_1,X_2,\ldots,X_n)&lt; \theta &lt; \hat{\theta}_2(X_1,X
 <li><span class="math inline">\(\sigma\)</span> 已知，由 <span class="math inline">\(\frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)\)</span> 可得置信区间为</li>
 </ul>
 <p><span class="math display">\[
-\overline{X} - \frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}} &lt; \overline{X} &lt; \overline{X} + \frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}}
+\left( \overline{X} - \frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}} , \overline{X} + \frac{\sigma}{\sqrt{n}}z_{\frac{\alpha}{2}} \right)
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\sigma\)</span> 未知，则 <span class="math inline">\(\frac{\overline{X} - \mu}{S / \sqrt{n}} \sim t(n-1)\)</span> 可得置信区间为</li>
 </ul>
 <p><span class="math display">\[
-\overline{X} - \frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}} (n-1)&lt; \overline{X} &lt; \overline{X} + \frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)
+\left( \overline{X} - \frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}} (n-1), \overline{X} + \frac{S}{\sqrt{n}}t_{\frac{\alpha}{2}}(n-1)\right)
 \]</span></p>
 <blockquote>
 <p>注：若求单侧置信限，则将上式的 <span class="math inline">\(\frac{\alpha}{2}\)</span> 改为 <span class="math inline">\(\alpha\)</span>。</p>
@@ -4447,6 +4587,181 @@ P\{ H_0 \; \text{is abandoned}\vert H_0 \; \text{is true}\}
 <p><span class="math display">\[
 P\{ H_0 \; \text{is accepted}\vert H_0 \; \text{is false}\}
 \]</span></p>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Probability Theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率论的预备知识</title>
+    <url>/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>概率论与数量统计-概率论的预备知识</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#古典概型">古典概型</a>
+<ul>
+<li><a href="#随机占位问题">随机占位问题</a></li>
+<li><a href="#随机抽样问题">随机抽样问题</a></li>
+</ul></li>
+<li><a href="#几何概型">几何概型</a></li>
+<li><a href="#重要公式">重要公式</a>
+<ul>
+<li><a href="#基本公式">基本公式</a></li>
+<li><a href="#对立事件的概率">对立事件的概率</a></li>
+<li><a href="#互斥事件的概率公式">互斥事件的概率公式</a></li>
+<li><a href="#条件概率">条件概率</a></li>
+<li><a href="#独立事件的概率">独立事件的概率</a></li>
+<li><a href="#不等关系">不等关系</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="古典概型">古典概型</h2>
+<h3 id="随机占位问题">随机占位问题</h3>
+<p>将 <em>n</em> 个可辨质点随机地分配到 <em>N</em> 个盒子中，则：</p>
+<ul>
+<li>每盒可容纳任意多个质点：有 <span class="math inline">\(N^n\)</span> 种分配方法。</li>
+<li>每盒可最多容纳一个质点：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种分配方法。</li>
+</ul>
+<p><em>n</em> 个小球的排列数：<span class="math inline">\(n!\)</span>。</p>
+<h3 id="随机抽样问题">随机抽样问题</h3>
+<ul>
+<li>先后有放回取 <em>n</em> 次：有 <span class="math inline">\(N^n\)</span> 种取法。</li>
+<li>先后无放回取 <em>n</em> 次：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种取法。</li>
+<li>任取 <em>n</em> 个：有 <span class="math inline">\(\text{C}_N^n = \frac{\text{P}_N^n}{n!}\)</span> 种取法。</li>
+</ul>
+<blockquote>
+<p><span class="math inline">\(\text{P}_N^n\)</span> 表示考虑先后顺序地无放回取 <em>n</em> 个的取法，<span class="math inline">\(\text{C}^n\)</span> 表示一次性取 <em>n</em> 个的取法，等价于无先后顺序且无放回地取 <em>n</em> 个，故 <span class="math inline">\(\text{C}_N^n\)</span> 等于 <span class="math inline">\(\text{P}_N^n\)</span> 除以排列数。</p>
+</blockquote>
+<h2 id="几何概型">几何概型</h2>
+<blockquote>
+<p>若 <span class="math inline">\(\Omega\)</span> 是一个可度量的几何区域，且样本点落入 <span class="math inline">\(\Omega\)</span> 的某一个可度量子区域 <em>A</em> 的可能性大小与 <em>A</em> 的几何度量成正比，而与 <em>A</em> 的位置与形状无关，称为『<strong>几何概型</strong>』。</p>
+</blockquote>
+<p><span class="math display">\[
+P(A) = \frac{S(A)}{S(\Omega)}
+\]</span></p>
+<h2 id="重要公式">重要公式</h2>
+<h3 id="基本公式">基本公式</h3>
+<ul>
+<li><span class="math inline">\(A \cup (B \cap C) =( A \cup B) \cap (A \cup C),\; A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
+<li><span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B},\;\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
+<li><span class="math inline">\(P(A + B) = P(A \cup B)\)</span></li>
+<li><span class="math inline">\(P(AB) = P(A \cap B) = P\{A,B\}\)</span></li>
+</ul>
+<h3 id="对立事件的概率">对立事件的概率</h3>
+<p><span class="math inline">\(P(A) = 1 - P(\overline{A})\)</span></p>
+<p>当求 <span class="math inline">\(P(A)\)</span> 比较困难，而求 <span class="math inline">\(P(\overline{A})\)</span> 比较容易时，适合使用此公式。</p>
+<h3 id="互斥事件的概率公式">互斥事件的概率公式</h3>
+<p><span class="math inline">\(A \cap B = \varnothing \Leftrightarrow P(AB) = 0 \Leftrightarrow A,B\)</span> 互斥。</p>
+<blockquote>
+<p>对立事件一定互斥。</p>
+</blockquote>
+<ul>
+<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 两两互斥，则</li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^nA_i\right) = \sum_{i =1}^nP(A_i)
+\]</span></p>
+<ul>
+<li><strong>分割互斥</strong>：<span class="math inline">\(A \cup B = A \cup \overline{A}B = A\overline{B}\cup B = A\overline{B}\cup AB \cup \overline{A}B\)</span>。转化为互斥事件，然后概率可直接相加。</li>
+<li><p><strong>全集分解</strong>：<span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> 为完备事件组，则 <span class="math inline">\(A = A\Omega =AB_1 \cup AB_2 \cup\cdots\cup AB_n\)</span>。</p>
+<blockquote>
+<p>两两互斥且和为 <span class="math inline">\(\Omega\)</span> 的事件组称为完备事件组。</p>
+</blockquote></li>
+<li><span class="math inline">\(P(A - B) = P(A\overline{B}) = P(A) - P(AB)\)</span></li>
+<li><span class="math inline">\(P(A+B) = P(A \cup \overline{A}B) = P(A) + P(\overline{A}B) = P(A) + P(B) - P(AB)\)</span></li>
+<li><p><span class="math inline">\(P(A+B+C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></p></li>
+</ul>
+<h3 id="条件概率">条件概率</h3>
+<ul>
+<li><span class="math inline">\(P(A \vert B) = \frac{P(AB)}{P(B)} \;(P(B) &gt; 0)\)</span></li>
+<li>可得结论：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P(AB) &amp;= P(B)P(A \vert B)\;(P(B) &gt; 0) \\
+&amp;= P(A)P(B \vert A) \;(P(A) &gt; 0) \\
+&amp;= P(A) + P(B) - P(A + B) \\
+&amp;= P(A) - P(A\overline{B})
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>全概率公式</strong>：若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 为完备事件组，<span class="math inline">\(P(A_i) &gt; 0\;(i =1,2,\ldots,n)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P(B) &amp;= P(B\Omega) = P(BA_1\cup BA_2 \cup \cdots \cup BA_n) \\
+&amp; = \sum_{i=1}^n P(A_i)P(B \vert A_i)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>贝叶斯公式</strong>：</li>
+</ul>
+<p><span class="math display">\[
+P(A_j \vert B) = \frac{P(A_jB)}{P(B)} = \frac{P(A_j)P(B\vert A_j)}{\sum_{i=1}^nP(A_i)P(B \vert A_i)}\;(j = 1,2,\ldots,n)
+\]</span></p>
+<h3 id="独立事件的概率">独立事件的概率</h3>
+<p>若 <span class="math inline">\(P(AB) = P(A)P(B) \Leftrightarrow A,B\)</span> <strong>相互独立</strong>。对于 <em>n</em> 个事件 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 个事件，若对于其中任意 <em>k</em> 个事件 <span class="math inline">\(A_{i_1},A_{i_2},\ldots,A_{i_k}\;(k = 2,\ldots,n)\)</span> 都有</p>
+<p><span class="math display">\[
+P(A_{i_1}A_{i_2}\cdots A_{i_k}) = P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})
+\]</span></p>
+<p>则称 <em>n</em> 个事件相互独立。</p>
+<p>譬如</p>
+<p><span class="math display">\[
+\begin{align}
+&amp; P(A_1A_2) = P(A_1)P(A_2) \\
+&amp; P(A_2A_3) = P(A_2)P(A_3) \\
+&amp; P(A_1A_3) = P(A_1)P(A_3) \\
+&amp; P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
+\end{align}
+\]</span></p>
+<p>可说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 相互独立，若无 (4) 式只能说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 两两独立。</p>
+<blockquote>
+<p>独立与互斥没什么关系。</p>
+</blockquote>
+<p>结论：</p>
+<ul>
+<li><span class="math inline">\(A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow A, \overline{B}\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, \overline{B}\)</span> 相互独立。</li>
+<li><span class="math inline">\(A,B,C,D\)</span> 相互独立，则对 <span class="math inline">\(A,B,C,D\)</span> 不含相同事件作运算得到的新事件也独立。</li>
+<li><span class="math inline">\(P(A) &gt; 0,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B)\)</span>。</li>
+<li><span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B \vert \overline{A}) = P(B)\)</span>。</li>
+<li><span class="math inline">\(P(A) = 0 \; \text{or} \; 1\)</span>，则 <span class="math inline">\(A\)</span> 与任意事件独立。</li>
+<li><p><span class="math inline">\(0 &lt;P(A) &lt; 1,\; 0 &lt; P(B) &lt; 1\)</span>，且 <span class="math inline">\(A,B\)</span> 互斥或存在包含关系，则 <span class="math inline">\(A,B\)</span> 一定不相互独立。</p></li>
+<li><p>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 相互独立，则</p></li>
+</ul>
+<p><span class="math display">\[
+P(A_1A_2\cdots A_n) = P(A_1)P(A_2)\cdots
+P(A_n)
+\]</span></p>
+<ul>
+<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\;(n &gt; 3)\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^nA_i}\right) \\ &amp; = 1 - P\left(\bigcap_{i=1}^n\overline{A_i} \right) \\
+&amp; = 1 - \prod_{i=1}^nP(\overline{A_i}) \\
+&amp; = 1 - \prod_{i=1}^n[1-P(A_i)]
+\end{aligned}
+\]</span></p>
+<h3 id="不等关系">不等关系</h3>
+<ul>
+<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
+<li>若 <span class="math inline">\(A \subseteq B\)</span>，则 <span class="math inline">\(P(A) \leq P(B)\)</span>。</li>
+<li><span class="math inline">\(AB \subseteq A \subseteq A + B \Rightarrow P(AB) \leq P(A) \leq P(A + B)\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \leq a\} = \{X \leq a\} \cap \{Y \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \leq a\} = \{X \leq a\} \cup \{Y \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \geq a\} = \{X \geq a\} \cup \{Y \geq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \geq a\} = \{X \geq a\} \cap \{Y \geq a\}\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \leq a\} \subseteq \{\min(X,Y) \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \geq a\} \subseteq \{\max(X,Y) \geq a\}\)</span></li>
+</ul>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -4743,178 +5058,6 @@ P\{ H_0 \; \text{is accepted}\vert H_0 \; \text{is false}\}
       </tags>
   </entry>
   <entry>
-    <title>概率论的预备知识</title>
-    <url>/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<p>概率论与数量统计-概率论的预备知识</p>
-<hr />
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#古典概型">古典概型</a>
-<ul>
-<li><a href="#随机占位问题">随机占位问题</a></li>
-<li><a href="#随机抽样问题">随机抽样问题</a></li>
-</ul></li>
-<li><a href="#几何概型">几何概型</a></li>
-<li><a href="#重要公式">重要公式</a>
-<ul>
-<li><a href="#基本公式">基本公式</a></li>
-<li><a href="#对立事件的概率">对立事件的概率</a></li>
-<li><a href="#互斥事件的概率公式">互斥事件的概率公式</a></li>
-<li><a href="#条件概率">条件概率</a></li>
-<li><a href="#独立事件的概率">独立事件的概率</a></li>
-<li><a href="#不等关系">不等关系</a></li>
-</ul></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr />
-<h2 id="古典概型">古典概型</h2>
-<h3 id="随机占位问题">随机占位问题</h3>
-<p>将 <em>n</em> 个可辨质点随机地分配到 <em>N</em> 个盒子中，则：</p>
-<ul>
-<li>每盒可容纳任意多个质点：有 <span class="math inline">\(N^n\)</span> 种分配方法。</li>
-<li>每盒可最多容纳一个质点：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种分配方法。</li>
-</ul>
-<p><em>n</em> 个小球的排列数：<span class="math inline">\(n!\)</span>。</p>
-<h3 id="随机抽样问题">随机抽样问题</h3>
-<ul>
-<li>先后有放回取 <em>n</em> 次：有 <span class="math inline">\(N^n\)</span> 种取法。</li>
-<li>先后无放回取 <em>n</em> 次：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种取法。</li>
-<li>任取 <em>n</em> 个：有 <span class="math inline">\(\text{C}_N^n = \frac{\text{P}_N^n}{n!}\)</span> 种取法。</li>
-</ul>
-<blockquote>
-<p><span class="math inline">\(\text{P}_N^n\)</span> 表示考虑先后顺序地无放回取 <em>n</em> 个的取法，<span class="math inline">\(\text{C}^n\)</span> 表示一次性取 <em>n</em> 个的取法，等价于无先后顺序且无放回地取 <em>n</em> 个，故 <span class="math inline">\(\text{C}_N^n\)</span> 等于 <span class="math inline">\(\text{P}_N^n\)</span> 除以排列数。</p>
-</blockquote>
-<h2 id="几何概型">几何概型</h2>
-<blockquote>
-<p>若 <span class="math inline">\(\Omega\)</span> 是一个可度量的几何区域，且样本点落入 <span class="math inline">\(\Omega\)</span> 的某一个可度量子区域 <em>A</em> 的可能性大小与 <em>A</em> 的几何度量成正比，而与 <em>A</em> 的位置与形状无关，称为『<strong>几何概型</strong>』。</p>
-</blockquote>
-<p><span class="math display">\[
-P(A) = \frac{S(A)}{S(\Omega)}
-\]</span></p>
-<h2 id="重要公式">重要公式</h2>
-<h3 id="基本公式">基本公式</h3>
-<ul>
-<li><span class="math inline">\(A \cup (B \cap C) =( A \cup B) \cap (A \cup C),\; A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
-<li><span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B},\;\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
-<li><span class="math inline">\(P(A + B) = P(A \cup B)\)</span></li>
-<li><span class="math inline">\(P(AB) = P(A \cap B) = P\{A,B\}\)</span></li>
-</ul>
-<h3 id="对立事件的概率">对立事件的概率</h3>
-<p><span class="math inline">\(P(A) = 1 - P(\overline{A})\)</span></p>
-<p>当求 <span class="math inline">\(P(A)\)</span> 比较困难，而求 <span class="math inline">\(P(\overline{A})\)</span> 比较容易时，适合使用此公式。</p>
-<h3 id="互斥事件的概率公式">互斥事件的概率公式</h3>
-<p><span class="math inline">\(A \cap B = \varnothing \Leftrightarrow P(AB) = 0 \Leftrightarrow A,B\)</span> 互斥。</p>
-<blockquote>
-<p>对立事件一定互斥。</p>
-</blockquote>
-<ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 两两互斥，则</li>
-</ul>
-<p><span class="math display">\[
-P\left( \bigcup_{i=1}^nA_i\right) = \sum_{i =1}^nP(A_i)
-\]</span></p>
-<ul>
-<li>分割互斥：<span class="math inline">\(A \cup B = A \cup \overline{A}B = A\overline{B}\cup B = A\overline{B}\cup AB \cup \overline{A}B\)</span>。转化为互斥事件，然后概率可直接相加。</li>
-<li><p>全集分解：<span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> 为完备事件组，则 <span class="math inline">\(A = A\Omega =AB_1 \cup AB_2 \cup\cdots\cup AB_n\)</span>。</p>
-<blockquote>
-<p>两两互斥且和为 <span class="math inline">\(\Omega\)</span> 的事件组称为完备事件组。</p>
-</blockquote></li>
-<li><span class="math inline">\(P(A - B) = P(A\overline{B}) = P(A) - P(AB)\)</span></li>
-<li><span class="math inline">\(P(A+B) = P(A \cup \overline{A}B) = P(A) + P(\overline{A}B) = P(A) + P(B) - P(AB)\)</span></li>
-<li><p><span class="math inline">\(P(A+B+C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></p></li>
-</ul>
-<h3 id="条件概率">条件概率</h3>
-<ul>
-<li><span class="math inline">\(P(A \vert B) = \frac{P(AB)}{P(B)} \;(P(B) &gt; 0)\)</span></li>
-<li>可得结论：</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P(AB) &amp;= P(B)P(A \vert B)\;(P(B) &gt; 0) \\
-&amp;= P(A)P(B \vert A) \;(P(A) &gt; 0) \\
-&amp;= P(A) + P(B) - P(A + B) \\
-&amp;= P(A) - P(A\overline{B})
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>全概率公式</strong>：若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 为完备事件组，<span class="math inline">\(P(A_i) &gt; 0\;(i =1,2,\ldots,n)\)</span>，则</li>
-</ul>
-<p><span class="math display">\[
-P(B) = \sum_{i=1}^n P(A_i)P(B \vert A_i)
-\]</span></p>
-<ul>
-<li><strong>贝叶斯公式</strong>：</li>
-</ul>
-<p><span class="math display">\[
-P(A_j \vert B) = \frac{P(A_jB)}{P(B)} = \frac{P(A_j)P(B\vert A_j)}{\sum_{i=1}^nP(A_i)P(B \vert A_i)}\;(j = 1,2,\ldots,n)
-\]</span></p>
-<h3 id="独立事件的概率">独立事件的概率</h3>
-<p>若 <span class="math inline">\(P(AB) = P(A)P(B) \Leftrightarrow A,B\)</span> <strong>相互独立</strong>。对于 <em>n</em> 个事件 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 个事件，若对于其中任意 <em>k</em> 个事件 <span class="math inline">\(A_{i_1},A_{i_2},\ldots,A_{i_k}\;(k = 2,\ldots,n)\)</span> 都有</p>
-<p><span class="math display">\[
-P(A_{i_1}A_{i_2}\cdots A_{i_k}) = P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})
-\]</span></p>
-<p>则称 <em>n</em> 个事件相互独立。</p>
-<p>譬如</p>
-<p><span class="math display">\[
-\begin{align}
-&amp; P(A_1A_2) = P(A_1)P(A_2) \\
-&amp; P(A_2A_3) = P(A_2)P(A_3) \\
-&amp; P(A_1A_3) = P(A_1)P(A_3) \\
-&amp; P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
-\end{align}
-\]</span></p>
-<p>可说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 相互独立，若无 (4) 式只能说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 两两独立。</p>
-<blockquote>
-<p>独立与互斥没什么关系。</p>
-</blockquote>
-<p>结论：</p>
-<ul>
-<li><span class="math inline">\(A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow A, \overline{B}\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, \overline{B}\)</span> 相互独立。</li>
-<li><span class="math inline">\(A,B,C,D\)</span> 相互独立，则对 <span class="math inline">\(A,B,C,D\)</span> 不含相同事件作运算得到的新事件也独立。</li>
-<li><span class="math inline">\(P(A) &gt; 0,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B)\)</span>。</li>
-<li><span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B \vert \overline{A}) = P(B)\)</span>。</li>
-<li><span class="math inline">\(P(A) = 0 \; \text{or} \; 1\)</span>，则 <span class="math inline">\(A\)</span> 与任意事件独立。</li>
-<li><p><span class="math inline">\(0 &lt;P(A) &lt; 1,\; 0 &lt; P(B) &lt; 1\)</span>，且 <span class="math inline">\(A,B\)</span> 互斥或存在包含关系，则 <span class="math inline">\(A,B\)</span> 一定不相互独立。</p></li>
-<li><p>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 相互独立，则</p></li>
-</ul>
-<p><span class="math display">\[
-P(A_1A_2\cdots A_n) = P(A_1)P(A_2)\cdots
-P(A_n)
-\]</span></p>
-<ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\;(n &gt; 3)\)</span> 相互独立，则</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^nA_i}\right) \\ &amp; = 1 - P\left(\bigcap_{i=1}^n\overline{A_i} \right) \\
-&amp; = 1 - \prod_{i=1}^nP(\overline{A_i}) \\
-&amp; = 1 - \prod_{i=1}^n[1-P(A_i)]
-\end{aligned}
-\]</span></p>
-<h3 id="不等关系">不等关系</h3>
-<ul>
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
-<li>若 <span class="math inline">\(A \subseteq B\)</span>，则 <span class="math inline">\(P(A) \leq P(B)\)</span>。</li>
-<li><span class="math inline">\(AB \subseteq A \subseteq A + B \Rightarrow P(AB) \leq P(A) \leq P(A + B)\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} = \{X \leq a\} \cap \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \leq a\} = \{X \leq a\} \cup \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \geq a\} = \{X \geq a\} \cup \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} = \{X \geq a\} \cap \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} \subseteq \{\min(X,Y) \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} \subseteq \{\max(X,Y) \geq a\}\)</span></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Probability Theory</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>相似理论</title>
     <url>/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<p>线性代数-相似理论的概念与计算。</p>
@@ -4968,7 +5111,7 @@ f_{\boldsymbol{A}}(\lambda) = |\lambda \boldsymbol{E} -\boldsymbol{A}| = \left|
 <ul>
 <li><em>n</em> 阶矩阵一定有 <em>n</em> 个特征值（按重数计）。</li>
 <li>若 <span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span> 是 <strong><em>A</em></strong> 的特征值，则 <span class="math inline">\(|\boldsymbol{A}|= \lambda_1\lambda_2\cdots\lambda_n\)</span>，<span class="math inline">\(\text{tr}(\boldsymbol{A}) = \lambda_1 + \lambda_2 +\cdots+\lambda_n\)</span>。</li>
-<li>根据上一条结论，<strong>方阵 <em>A</em> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <em>A</em> 的特征值</strong>。</li>
+<li>根据上一条结论，<strong>方阵 <em>A</em> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <em>A</em> 的特征值</strong>。<strong><em>A</em></strong> 不可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 是 <strong><em>A</em></strong> 的特征值，重数 <span class="math inline">\(\geq n -r(\boldsymbol{A})\)</span>。</li>
 <li>上（下）三角矩阵、对角矩阵的特征值就是主对角线元素。</li>
 <li><p><strong>下表要谨记：</strong></p>
 <table style="width:100%;">
@@ -5080,7 +5223,10 @@ f_{\boldsymbol{A}}(\lambda) = |\lambda \boldsymbol{E} -\boldsymbol{A}| = \left|
 <p>因为 <strong><em>P</em></strong> 可逆，故 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span> 线性无关，故得出结论：</p>
 <ul>
 <li><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em> 有 <em>n</em> 个线性无关的特征向量。</strong></li>
-<li><span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <strong><em>A</em></strong> 的 <em>n</em> 个（按重数计）特征值构成的对角矩阵，<strong><em>P</em></strong> 的列向量是 <strong><em>A</em></strong> 的特征向量，且 <strong><em>P</em></strong> 中特征向量的位置与 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 中特征值的位置相对应。</li>
+<li><p><strong><span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <em>A</em> 的 <em>n</em> 个（按重数计）特征值构成的对角矩阵，<em>P</em> 的列向量是 <em>A</em> 的特征向量，且 <em>P</em> 中特征向量的位置与 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 中特征值的位置相对应。</strong></p>
+<blockquote>
+<p>此性质不仅可用于相似对角化，且可用于通过特征值特征向量反求矩阵，<span class="math inline">\(\boldsymbol{A} = \boldsymbol{P\Lambda P}^{-1}\)</span>。</p>
+</blockquote></li>
 </ul>
 <ol start="2" type="1">
 <li><strong>重要结论</strong></li>
@@ -5319,6 +5465,7 @@ c_{m1} &amp;c_{m2} &amp;\cdots &amp;c_{ms}
 <li>若 <strong><em>A</em></strong> 可逆，则 <span class="math inline">\(\boldsymbol{A}^* = |\boldsymbol{A}|\boldsymbol{A}^{-1}\)</span>。</li>
 <li><span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}, \;(k\boldsymbol{A})^* = k^{n-1}\boldsymbol{A}^*\)</span></li>
 <li><span class="math inline">\((\boldsymbol{AB})^* = \boldsymbol{B}^*\boldsymbol{A}^*\)</span>（<strong>穿脱原则</strong>）</li>
+<li><span class="math inline">\(\text{tr}(\boldsymbol{A}^*) = A_{11} + A_{22} + \cdots + A_{nn}\)</span></li>
 <li><span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}\)</span>
 <ul>
 <li><span class="math inline">\(|\boldsymbol{A}^*| = |\boldsymbol{A}|^{n-1}\)</span></li>
