@@ -1473,7 +1473,7 @@ F(x) = \int_{-\infty}^x f(t) \text{d}t \;(x \in \mathbb{R})
 <ul>
 <li><p><span class="math inline">\(F(x)\)</span> 是分布函数 <span class="math inline">\(\Leftrightarrow F(x)\)</span> 是单调不减、右连续（连续型随机变量的分布函数左右均连续）、非负、有界的函数，且 <span class="math inline">\(F(-\infty) = 0,\;F(+\infty) = 1\)</span>。</p>
 <blockquote>
-<p>根据右连续性质，若 <span class="math inline">\(F(x)\)</span> 是分段函数，则在分段点 <em>x</em><sub>i</sub> 处应使用 <span class="math inline">\(x \ge x_i\)</span>。</p>
+<p>根据右连续性质，<span class="math inline">\(F(x)\)</span> 在分段点 <em>x</em><sub>i</sub> 处应使用 <span class="math inline">\(x \ge x_i\)</span>。</p>
 </blockquote></li>
 <li><span class="math inline">\(\{p_i\}\)</span> 是概率分布 <span class="math inline">\(\Leftrightarrow p_i \ge 0\)</span>，且 <span class="math inline">\(\sum_i p_i = 1\)</span>。</li>
 <li><p><span class="math inline">\(f(x)\)</span> 是概率密度函数 <span class="math inline">\(\Leftrightarrow f(x) \geq 0\)</span>，且 <span class="math inline">\(\int_{-\infty}^{+\infty} f(x) \text{d}x = 1\)</span>。</p></li>
@@ -1493,6 +1493,11 @@ F(x) = \sum_{x_i \leq x} p_i
 <li><strong>0 - 1 分布</strong>：</li>
 </ul>
 <p><span class="math inline">\(X \sim B(1,p)\)</span>，<em>X</em> 为单次伯努利试验成功的次数。其分布律为 <span class="math inline">\(X \sim \left( \begin{matrix} 1 &amp;0 \\ p &amp;1-p\end{matrix} \right)\)</span>。</p>
+<p>重要结论：</p>
+<p><span class="math inline">\(X_i\)</span> 独立同分布，<span class="math inline">\(X_i \sim B(1,p)\)</span>，则</p>
+<p><span class="math display">\[
+\sum_{i=1}^n X_i \sim B(n,p)
+\]</span></p>
 <ul>
 <li><strong>二项分布</strong>：</li>
 </ul>
@@ -1500,9 +1505,18 @@ F(x) = \sum_{x_i \leq x} p_i
 <p><span class="math display">\[
 P\{X = k\} = \text{C}_n^k p^k(1-p)^{n-k} \;(k = 1,2,\ldots,n)
 \]</span></p>
-<blockquote>
-<p>注：随着 <em>k</em> 的增大，<span class="math inline">\(P\{x=k\}\)</span> 先上升到最大值然后下降，取最大值时的 <em>k</em> 是 <em>n</em> 次伯努利试验最可能的成功次数，设其为 <span class="math inline">\(k&#39;\)</span>。 * 当 <span class="math inline">\((n+1)p\)</span> 为整数时，<span class="math inline">\(k&#39; = (n+1)p, (n+1)p-1\)</span>。 * 当 <span class="math inline">\((n+1)p\)</span> 非整数时，<span class="math inline">\(k&#39; = [(n+1)p]\)</span>。</p>
-</blockquote>
+<p>重要结论：</p>
+<ul>
+<li>随着 <em>k</em> 的增大，<span class="math inline">\(P\{x=k\}\)</span> 先上升到最大值然后下降，取最大值时的 <em>k</em> 是 <em>n</em> 次伯努利试验最可能的成功次数，设其为 <span class="math inline">\(k&#39;\)</span>。
+<ul>
+<li>当 <span class="math inline">\((n+1)p\)</span> 为整数时，<span class="math inline">\(k&#39; = (n+1)p, (n+1)p-1\)</span>。</li>
+<li>当 <span class="math inline">\((n+1)p\)</span> 非整数时，<span class="math inline">\(k&#39; = [(n+1)p]\)</span>。</li>
+</ul></li>
+<li><span class="math inline">\(X_i \sim B(n_i,p)\)</span>，且 <span class="math inline">\(X_i\;(i=1,2,\ldots,n)\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\sum_{i=1}^n X_i \sim B\left( \sum_{i=1}^n n_i,p\right)
+\]</span></p>
 <ul>
 <li><strong>几何分布</strong>：</li>
 </ul>
@@ -1521,7 +1535,7 @@ P\{X = k\} = \frac{\text{C}_M^k\text{C}_{N-M}^{n-k}}{\text{C}_N^n}
 <ul>
 <li><strong>泊松分布</strong>：</li>
 </ul>
-<p><span class="math inline">\(X \sim \pi(\lambda)\)</span>，<em>X</em> 表示某单位时间内随机事件发生的次数，<span class="math inline">\(\lambda\)</span> 表示单位时间内随机事件的平均发生率。其分布律为</p>
+<p><span class="math inline">\(X \sim P(\lambda)\)</span>，<em>X</em> 表示某单位时间内随机事件发生的次数，<span class="math inline">\(\lambda\)</span> 表示单位时间内随机事件的平均发生率。其分布律为</p>
 <p><span class="math display">\[
 P\{X = k\} = \frac{\text{e}^{-\lambda}\lambda^k}{k!} \;(k =1,2,\ldots)
 \]</span></p>
@@ -1530,6 +1544,11 @@ P\{X = k\} = \frac{\text{e}^{-\lambda}\lambda^k}{k!} \;(k =1,2,\ldots)
 \text{C}_n^kp^k(1-p)^{n-k} \approx \frac{\text{e}^{-\lambda}\lambda^k}{k!}
 \]</span></p>
 <p>当 <span class="math inline">\(n \geq 20,\; p \leq 0.05\)</span> 时逼近效果较好，当 <span class="math inline">\(n \geq 100, \; np \leq 10\)</span> 时逼近效果更佳。</p>
+<p>重要结论：</p>
+<p><span class="math inline">\(X_i \sim P(\lambda_i) \; (i =1,2,\ldots,n)\)</span>，且 <span class="math inline">\(X_i\)</span> 相互独立，则</p>
+<p><span class="math display">\[
+\sum_{i=1}^n X_i \sim P\left( \sum_{i=1}^n \lambda_i\right)
+\]</span></p>
 <h3 id="连续型分布">连续型分布</h3>
 <p><span class="math inline">\(X \sim f(x)\)</span>，则</p>
 <p><span class="math display">\[
@@ -1709,14 +1728,14 @@ P\{X \in I\} = \int_I f(t) \text{d}t
 \]</span></p>
 <h2 id="一维随机变量函数的分布">一维随机变量函数的分布</h2>
 <h3 id="离散型随机变量的函数的分布">离散型随机变量的函数的分布</h3>
-<p>设 <span class="math inline">\(X \sim p_i = P\{X = x_i\} \;(i =1,2,\ldots),\; Y =g(X)\)</span>，则</p>
+<p>设 <span class="math inline">\(X \sim p_i = P\{X = x_i\} \;(i =1,2,\ldots),\; Y =g(X)\)</span>，先确定 <span class="math inline">\(Y\)</span> 的所有可能取值 <span class="math inline">\(y_i\)</span>，则</p>
 <p><span class="math display">\[
 Y \sim p_i = P\{Y = y_i\} = P\{Y = g(x_i)\} \;(i =1,2,\ldots)
 \]</span></p>
 <h3 id="连续型随机变量的函数的分布">连续型随机变量的函数的分布</h3>
-<p>设 <span class="math inline">\(X \sim f_x(x), \; Y=g(X)\)</span>，则</p>
+<p>设 <span class="math inline">\(X \sim f_x(x), \; Y=g(X)\)</span>，先确定 <span class="math inline">\(Y\)</span> 的正概率区间，然后有两种思路：</p>
 <ol type="1">
-<li>分布函数法</li>
+<li><strong>分布函数法</strong></li>
 </ol>
 <p><span class="math display">\[
 F_Y(y) = P\{Y \leq y\} = P\{g(X) \leq y\} = \int _{g(x) \leq y} f_X(x) \text{d} x
@@ -1726,7 +1745,7 @@ F_Y(y) = P\{Y \leq y\} = P\{g(X) \leq y\} = \int _{g(x) \leq y} f_X(x) \text{d} 
 f_Y(y) = F&#39;_Y(y)
 \]</span></p>
 <ol start="2" type="1">
-<li>反函数法</li>
+<li><strong>反函数法</strong></li>
 </ol>
 <p>若 <span class="math inline">\(y = g(x)\)</span> 在 <span class="math inline">\((a,b)\)</span> 上是关于 <em>x</em> 的严格单调可导函数，则存在可导反函数 <span class="math inline">\(x = h(y) = g^{-1}(y)\)</span>，则</p>
 <ul>
@@ -2528,7 +2547,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 </ol>
 <ul>
 <li>设 <span class="math inline">\(k_1,k_2,\ldots,k_n\)</span> 使得向量满足题目中线性相关或线性无关的要求，然后推导出结果。</li>
-<li>化为抽象的矩阵方程，通过向量组的秩、矩阵的秩等结论推导出结论。</li>
+<li>化向量关系为抽象矩阵方程，通过向量组的秩、矩阵的秩等结论推导出结果。</li>
 <li><p>形如 <span class="math inline">\(\boldsymbol{A\alpha}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\boldsymbol{\alpha}\)</span> 的抽象向量，通过 <span class="math inline">\(\boldsymbol{A}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\)</span> 的特征向量 <span class="math inline">\(\boldsymbol{\xi}_i\;(i=1,2,\ldots,n)\)</span> 表示：<span class="math inline">\(\boldsymbol{\alpha}= a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n\)</span>，设 <span class="math inline">\(\lambda_i\;(i=1,2,\ldots,n)\)</span> 是特征向量 <span class="math inline">\(\boldsymbol{\xi}_i \;(i=1,2,\ldots,n)\)</span> 的特征值，则</p>
 <p><span class="math display">\[
 \boldsymbol{A\alpha} = \boldsymbol{A}(a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n) = a_1\lambda_1\boldsymbol{\xi}_1 + a_2\lambda_2\boldsymbol{\xi}_2 + \cdots + a_n\lambda_n\boldsymbol{\xi}_n
@@ -3072,7 +3091,7 @@ f(x,y) &amp;= f_X(x) f_{Y\vert X}(y \vert x)
 <h2 id="多维随机变量函数的分布">多维随机变量函数的分布</h2>
 <h3 id="多维随机变量到一维随机变量的函数的分布">多维随机变量到一维随机变量的函数的分布</h3>
 <h4 id="多维离散型随机变量的函数的分布">多维离散型随机变量的函数的分布</h4>
-<p><em>Z</em> 为离散型，则<strong>先确定 <em>Z</em> 的可能取值，然后一一求概率</strong>。</p>
+<p><strong>基本思路：先确定 <span class="math inline">\(Z\)</span> 的可能取值，然后一一求概率。</strong></p>
 <ol type="1">
 <li><p><span class="math inline">\((X,Y) \sim p_{ij}, \; Z = g(X,Y) \Rightarrow Z \sim q_i\)</span></p></li>
 <li><p>设 <span class="math inline">\(X \sim p_k, \; Y \sim q_k\)</span>，<span class="math inline">\(X,Y\)</span> 相互独立，则可求 <span class="math inline">\(X + Y,\; XY, \; \max(X,Y), \; \min(X,Y)\)</span> 等的概率分布，<strong>关键是写等价事件</strong>：</p></li>
@@ -3110,6 +3129,7 @@ P\{Z = k\} = &amp;P\{\min(X,Y) = k\} \\
 \end{aligned}
 \]</span></p>
 <h4 id="多维连续型随机变量的函数的分布">多维连续型随机变量的函数的分布</h4>
+<p>先确定 <span class="math inline">\(Z\)</span> 的正概率区间，然后有三种思路：</p>
 <ol type="1">
 <li><strong>分布函数法</strong></li>
 </ol>
@@ -3229,28 +3249,30 @@ F_{\min}(z) &amp;= 1-[1-F(z)]^n
 <h4 id="离散型与连续型随机变量的函数的分布">离散型与连续型随机变量的函数的分布</h4>
 <p>设 <span class="math inline">\(X \sim p_i,\; Y \sim f_Y(y), \; Z = g(X,Y)\)</span>，则</p>
 <ul>
-<li>若 <span class="math inline">\(X,Y\)</span> 相互独立，可用分布函数法与全集分解法求 <span class="math inline">\(F_Z(z)\)</span>。</li>
-<li>若 <span class="math inline">\(X,Y\)</span> 不独立，用分布函数法，转化为等价事件再求 <span class="math inline">\(F_Z(z)\)</span>。</li>
+<li>若 <span class="math inline">\(X,Y\)</span> 相互独立，用<strong>分布函数法以及全集分解法</strong>求 <span class="math inline">\(F_Z(z)\)</span>。</li>
+<li>若 <span class="math inline">\(X,Y\)</span> 不独立，用<strong>分布函数法，转化为等价事件</strong>求 <span class="math inline">\(F_Z(z)\)</span>。</li>
 </ul>
 <h3 id="多维随机变量到多维随机变量的函数的分布">多维随机变量到多维随机变量的函数的分布</h3>
 <ol type="1">
 <li>(离散型, 离散型) - (离散型, 离散型)</li>
 </ol>
 <p><span class="math display">\[
-(X,Y) \sim p_{ij}, \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+(X,Y) \sim p_{ij}, \; \left \{ \begin{aligned} U &amp;= g(X,Y) \\ V &amp;= h(X,Y) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
 <ol start="2" type="1">
 <li>(连续型, 连续型) - (离散型, 离散型)</li>
 </ol>
 <p><span class="math display">\[
-(X,Y) \sim f(x,y), \; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim p_{ij}
+(X,Y) \sim f(x,y), \; \left \{ \begin{aligned} U &amp;= g(X,Y) \\ V &amp;= h(X,Y) \end{aligned} \right. \Rightarrow (U,V) \sim p_{ij}
 \]</span></p>
+<p>使用分布函数法。</p>
 <ol start="3" type="1">
 <li>(离散型, 连续型) - (离散型, 离散型)</li>
 </ol>
 <p><span class="math display">\[
-X \sim p_i, \; Y \sim f_Y(y) ,\; \left \{ \begin{aligned} U &amp;= g(X) \\ V &amp;= h(X) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
+X \sim p_i, \; Y \sim f_Y(y) ,\; \left \{ \begin{aligned} U &amp;= g(X,Y) \\ V &amp;= h(X,Y) \end{aligned} \right. \Rightarrow (U,V) \sim q_{ij}
 \]</span></p>
+<p>使用分布函数法以及全集分解法。</p>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -3488,6 +3510,7 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 <li><a href="#数学期望">数学期望</a></li>
 <li><a href="#方差">方差</a></li>
 <li><a href="#常见分布的期望和方差">常见分布的期望和方差</a></li>
+<li><a href="#伽马函数">伽马函数</a></li>
 </ul></li>
 <li><a href="#协方差与相关系数">协方差与相关系数</a>
 <ul>
@@ -3548,7 +3571,7 @@ y = \text{e}^{\alpha x}(C_1 \cos \beta x+ C_2 \sin \beta x)
 \right.
 \]</span></p>
 <ol start="5" type="1">
-<li>重要结论</li>
+<li><strong>重要结论</strong></li>
 </ol>
 <ul>
 <li><span class="math inline">\(Ek = k,\; E(EX) = EX,\; E(f(EX)) = f(EX)\)</span></li>
@@ -3591,7 +3614,7 @@ f_Y(y) = n[F(y)]^{n-1}f(y), \quad f_Z(z) = n[1-F(z)]^{n-1}f(z)
 <li><span class="math inline">\(E(Z^2) = \int_{\infty}^{+\infty} z^2f_Z(z) \text{d}z,\;DZ = E\left(Z^2\right) - (EZ)^2\)</span></li>
 </ul>
 <ol start="3" type="1">
-<li>重要结论</li>
+<li><strong>重要结论</strong></li>
 </ol>
 <ul>
 <li><span class="math inline">\(DX \geq 0,\; E\left(X^2\right) = DX + (EX)^2 \geq (EX)^2\)</span></li>
@@ -3638,6 +3661,32 @@ D\left( \sum_{i=1}^n k_i X_i\right) = \sum_{i=1}^n {k_i}^2DX_i + 2\sum_{1 \leq i
 &amp;X \sim \chi^2(n), \; EX = n ,\; DX = 2n
 \end{aligned}
 \]</span></p>
+<h3 id="伽马函数">伽马函数</h3>
+<p>在此介绍一种特殊的积分：<span class="math inline">\(\Gamma\)</span> 函数，可以在概率论中更方便的计算积分。</p>
+<ol type="1">
+<li>引入</li>
+</ol>
+<p>积分</p>
+<p><span class="math display">\[
+I_n = \int _{0}^{+ \infty} x^n \text{e}^{-x}\text{d} x \; ( n \in \mathbf{N})
+\]</span></p>
+<p>由分部积分法可得</p>
+<p><span class="math display">\[
+I_n = -\int_0^{+\infty} x^n \text{de}^{-x} = -x^n \text{e}^{-x} \bigg|_0^{+\infty} + n\int_0^{+ \infty} x^{n-1} \text{e}^{-x} \text{d}x = nI_{n-1}
+\]</span></p>
+<p>又 <span class="math inline">\(I_0 = -\text{e}^{-x} \bigg|_0^{+ \infty} = 1\)</span>，故 <span class="math inline">\(I_n = n!\)</span>。</p>
+<ol start="2" type="1">
+<li><span class="math inline">\(\Gamma\)</span> 函数</li>
+</ol>
+<p><span class="math display">\[
+\Gamma (\alpha) = \int_0^{+\infty} x^{\alpha-1} \text{e}^{-x} \text{d} x \;(\alpha &gt; 0)
+\]</span></p>
+<p>可得 <span class="math inline">\(\Gamma (\alpha +1 ) = \alpha \Gamma (\alpha) \; (\alpha &gt; 0)\)</span>，故 <span class="math inline">\(\Gamma (n+1) = n! \;( n \in \mathbf{N})\)</span>。</p>
+<p>令 <span class="math inline">\(x = t^2\)</span>，则得到 <span class="math inline">\(\Gamma\)</span> 函数的令一种形式：</p>
+<p><span class="math display">\[
+\Gamma (\alpha) = 2 \int_0^{+\infty} t^{2\alpha - 1} \text{e}^{-t^2} \text{d} t
+\]</span></p>
+<p>且有 <span class="math inline">\(\Gamma \left( \frac{1}{2} \right) = 2\int_0^{+ \infty} e^{-t^2} \text{d}t = \sqrt{\pi}\)</span>。</p>
 <h2 id="协方差与相关系数">协方差与相关系数</h2>
 <h3 id="协方差">协方差</h3>
 <p><span class="math inline">\((X-EX)(Y-EY)\)</span> 的数学期望为随机变量 <span class="math inline">\(X,Y\)</span> 的『<strong>协方差</strong>』，记作 <span class="math inline">\(\text{Cov}(X,Y) = E\left[ (X-EX)(Y-EY) \right]\)</span>。</p>
@@ -3660,6 +3709,9 @@ D\left( \sum_{i=1}^n k_i X_i\right) = \sum_{i=1}^n {k_i}^2DX_i + 2\sum_{1 \leq i
 <p><span class="math display">\[
 \text{Cov}(X_1 + X_2,Y) = \text{Cov}(X_1,Y) + \text{Cov}(X_2,Y),\; \text{Cov}(X,Y_1 + Y_2) = \text{Cov}(X,Y_1) + \text{Cov}(X,Y_2)
 \]</span></p>
+<ul>
+<li>若 <span class="math inline">\(X_1,X_2\)</span> 独立同分布，则 <span class="math inline">\(\text{Cov}(X_1,X_2) = E(X_1X_2) - EX_1EX_2 = 0\)</span>。</li>
+</ul>
 <h3 id="相关系数">相关系数</h3>
 <p>定义随机变量 <span class="math inline">\(X,Y\)</span> 的『<strong>相关系数</strong>』以表示二者的<strong>线性</strong>相关程度：</p>
 <p><span class="math display">\[
@@ -3676,6 +3728,15 @@ D\left( \sum_{i=1}^n k_i X_i\right) = \sum_{i=1}^n {k_i}^2DX_i + 2\sum_{1 \leq i
 \begin{aligned}
 \rho_{XY} = 0 \Leftrightarrow &amp; \text{Cov}(X,Y) = 0 \Leftrightarrow E(XY) = EXEY \\
 \Leftrightarrow &amp; D(X \pm Y) = DX + DY
+\end{aligned}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\rho_{XY} = 1 \Leftrightarrow \text{Cov}(X,Y) = \sqrt{DX}\sqrt{DY}\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Leftrightarrow D(X + Y) = DX + DY + 2\sqrt{DX}\sqrt{DY} = \left( \sqrt{DX} + \sqrt{DY} \right)^2 \\
+&amp;\Leftrightarrow D(X + Y) = DX + DY - 2\sqrt{DX}\sqrt{DY} = \left( \sqrt{DX} - \sqrt{DY} \right)^2
 \end{aligned}
 \]</span></p>
 <h2 id="判断独立性和不相关性">判断独立性和不相关性</h2>
@@ -4302,6 +4363,13 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \frac{1}{n} \sum_{i=1}^n X_i \xrightarrow{P} E\left( \frac{1}{n} \sum_{i=1}^n X_i\right)
 \]</span></p>
 <ol type="1">
+<li>切比雪夫大数定律</li>
+</ol>
+<p>设 <span class="math inline">\(\{X_n\}\; (n =1,2,\ldots)\)</span> 是<strong>相互独立</strong>的随机变量序列，若 <span class="math inline">\(DX_i \;(i = 1,2,\ldots)\)</span> <strong>存在且一致有上界</strong>，即存在常数 <em>C</em>，使 <span class="math inline">\(DX_i \leq C \;(i =1,2,\ldots)\)</span> 均成立，则</p>
+<p><span class="math display">\[
+\frac{1}{n} \sum_{i=1}^n X_i  \xrightarrow{P} \frac{1}{n} \sum_{i = 1}^n EX_i
+\]</span></p>
+<ol start="2" type="1">
 <li>伯努利大数定律</li>
 </ol>
 <p>设 <span class="math inline">\(\mu_n\)</span> 是 <em>n</em> 重伯努利试验中事件 <em>A</em> 发生的次数，每次试验事件 <em>A</em> 发生的概率为 <em>p</em>，则</p>
@@ -4311,13 +4379,6 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <p>即对于 <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>，有</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} P\left\{  \left | \frac{\mu_n}{n} - p\right | &lt; \varepsilon \right \} = 1
-\]</span></p>
-<ol start="2" type="1">
-<li>切比雪夫大数定律</li>
-</ol>
-<p>设 <span class="math inline">\(\{X_n\}\; (n =1,2,\ldots)\)</span> 是<strong>相互独立</strong>的随机变量序列，若 <span class="math inline">\(DX_i \;(i = 1,2,\ldots)\)</span> <strong>存在且一致有上界</strong>，即存在常数 <em>C</em>，使 <span class="math inline">\(DX_i \leq C \;(i =1,2,\ldots)\)</span> 均成立，则 <span class="math inline">\(\{X_n\}\)</span> 服从大数定律：</p>
-<p><span class="math display">\[
-\frac{1}{n} \sum_{i=1}^n X_i  \xrightarrow{P} \frac{1}{n} \sum_{i = 1}^n EX_i
 \]</span></p>
 <ol start="3" type="1">
 <li>辛钦大数定律</li>
@@ -4331,14 +4392,18 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 \lim_{n \to \infty} P\left \{\left | \frac{1}{n} \sum_{i=1}^n X_i - \mu\right | &lt; \varepsilon \right \} = 1
 \]</span></p>
 <h3 id="中心极限定理">中心极限定理</h3>
-<p>中心极限定理只为说明一件事情，即大量独立同分布的随机变量的和服从正态分布。</p>
-<p><span class="math inline">\(\{X_n\} \;(n =1,2,\ldots)\)</span> 是独立同分布的随机变量序列，令 <span class="math inline">\(\mu = EX_i, \; \sigma^2 = DX_i\)</span>，则当 <span class="math inline">\(n \to \infty\)</span> 时，有</p>
+<p>中心极限定理只为说明一件事情，即大量独立同分布的随机变量的和（或均值）趋向于正态分布。</p>
+<p><span class="math inline">\(\{X_n\} \;(n =1,2,\ldots)\)</span> 是<strong>独立同分布</strong>（无论哪种分布）的随机变量序列，且 <span class="math inline">\(EX_i,DX_i\)</span> 均存在，令 <span class="math inline">\(\mu = EX_i, \; \sigma^2 = DX_i\)</span>，则当 <span class="math inline">\(n \to \infty\)</span> 时，有</p>
 <p><span class="math display">\[
 \sum_{i=1}^n X_i \sim N(n\mu, n\sigma^2) \Rightarrow \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n} \sigma} \sim N(0,1)
 \]</span></p>
 <p>即</p>
 <p><span class="math display">\[
 \lim_{n \to \infty} P\left \{ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n} \sigma} \leq x \right \} = \Phi(x)
+\]</span></p>
+<p>推论：当 <span class="math inline">\(n \to \infty\)</span> 时，有</p>
+<p><span class="math display">\[
+\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i \sim N \left ( \mu, \frac{\sigma^2}{n} \right)
 \]</span></p>
 <h2 id="统计量及其分布">统计量及其分布</h2>
 <h3 id="常见统计量">常见统计量</h3>
@@ -4348,11 +4413,37 @@ T(n)=T_1(n)+T_2(n)=O(f(n))+O(g(n))=O(max(f(n),g(n)))
 <p><span class="math display">\[
 \overline{X} = \frac{1}{n} \sum_{i=1}^n X_i
 \]</span></p>
+<p>重要结论：</p>
+<p>总体 <span class="math inline">\(X\)</span> 服从任意分布，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;E \overline{X} = E \left(\frac{1}{n} \sum_{i=1}^n X_i \right) =  \frac{1}{n} \sum_{i=1}^n EX_i =  \frac{1}{n} n EX= EX \\
+&amp;D \overline{X} = D\left ( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \sum_{i=1}^n DX_i = \frac{1}{n^2} n DX = \frac{DX}{n}
+\end{aligned}
+\]</span></p>
 <ul>
 <li>样本方差：</li>
 </ul>
 <p><span class="math display">\[
-S^2 = \frac{1}{n-1} \sum_{i=1}^n \left( X_i - \overline{X} \right)^2 = \frac{1}{n-1}  \left( \sum_{i=1}^n {X_i}^2 - n \overline{X}^2 \right)
+\begin{aligned}
+S^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n \left( X_i - \overline{X} \right)^2 \\
+&amp;= \frac{1}{n-1} \sum_{i=1}^n \left( {X_i}^2 + \overline{X}^2  - 2X_i\overline{X}\right) = \frac{1}{n-1} \left(\sum_{i=1}^n{X_i}^2 + n\overline{X}^2  - 2\overline{X}\sum_{i=1}^nX_i \right)\\
+&amp;= \frac{1}{n-1} \left( \sum_{i=1}^n {X_i}^2 - n\overline{X}^2\right)
+\end{aligned}
+\]</span></p>
+<p>重要结论：</p>
+<p>总体 <span class="math inline">\(X\)</span> 服从任意分布，则</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( S^2\right) &amp;= E\left[ \frac{1}{n-1} \left( \sum_{i=1}^n {X_i}^2 - n\overline{X}^2 \right) \right]= \frac{1}{n-1}\left[ E\left(\sum_{i=1}^n {X_i}^2\right) - nE\overline{X}^2 \right] \\
+&amp;= \frac{1}{n-1}\left[ nE\left( {X_i}^2 \right) - nE\overline{X}^2 \right] = \frac{1}{n-1} \left[n\left(DX + (EX)^2\right) - n\left( D\overline{X} + \left ( E\overline{X}\right)^2\right)\right] \\ 
+&amp;= \frac{n}{n-1}\left[DX + (EX)^2- \frac{DX}{n} - (EX)^2\right] \\
+&amp;= \frac{n}{n-1}\frac{n-1}{n}DX= DX
+\end{aligned}
+\]</span></p>
+<p>若总体 <span class="math inline">\(X \sim N\left( \mu,\sigma^2\right)\)</span>，则</p>
+<p><span class="math display">\[
+\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1) \Rightarrow D\left[\frac{(n-1)S^2}{\sigma^2} \right] = 2(n-1) \Rightarrow  D\left(S^2\right) = \frac{2\sigma^4}{n-1}
 \]</span></p>
 <ul>
 <li>样本标准差：</li>
@@ -4414,8 +4505,11 @@ P\{ \chi^2 &gt; \chi^2_\alpha(n)\} = \int _{\chi^2_\alpha(n)}^ {+\infty} f(x) \t
 <p><span class="math inline">\(\chi^2\)</span> 分布的概率密度：</p>
 <ul>
 <li>设 <span class="math inline">\(X \sim \chi^2(n)\)</span>，则 <span class="math inline">\(EX = n,\; DX = 2n\)</span>。</li>
-<li>设 <span class="math inline">\(X_1 \sim \chi^2(n_1), \; X_2 \sim \chi^2(n_2), \; X_1,X_2\)</span> 相互独立，则 <span class="math inline">\(X_1 + X_2 \sim \chi^2(n_1 + n_2)\)</span>。</li>
+<li>设 <span class="math inline">\(X_i \sim \chi^2(n_i)\)</span>，且 <span class="math inline">\(X_i\;(i=1,2,\ldots,n)\)</span> 相互独立，则</li>
 </ul>
+<p><span class="math display">\[
+\sum_{i=1}^n X_i \sim \chi^2\left( \sum_{i=1}^n n_i\right)
+\]</span></p>
 <ol start="3" type="1">
 <li><strong><span class="math inline">\(t\)</span> 分布</strong></li>
 </ol>
@@ -4459,7 +4553,7 @@ F = \frac{X/n_1}{Y/n_2} \sim F(n_1,n_2)
 <li><span class="math inline">\(\mu\)</span> 已知，则</li>
 </ul>
 <p><span class="math display">\[
-\frac{\sum_{i=1}^n (X_i - \mu)^2}{\sigma^2}  = \sum_{i=1}^n \left (\frac{X_i - \mu}{\sigma} \right)^2 \sim \chi^2(n)
+\frac{1}{\sigma^2}\sum_{i=1}^n (X_i - \mu)^2 = \sum_{i=1}^n \left (\frac{X_i - \mu}{\sigma} \right)^2 \sim \chi^2(n)
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> 未知，则</li>
@@ -4497,7 +4591,7 @@ F = \frac{X/n_1}{Y/n_2} \sim F(n_1,n_2)
 <h3 id="最大似然估计">最大似然估计</h3>
 <p>当未知参数 <span class="math inline">\(\theta\)</span> 取何值时，样本获得观测值 <span class="math inline">\(x_1,x_2, \ldots, x_n\)</span> 的概率最大，此时的 <span class="math inline">\(\theta\)</span> 值便为估计值 <span class="math inline">\(\hat\theta\)</span>。</p>
 <ul>
-<li><p>构造似然函数 <span class="math inline">\(L(\theta) = \left \{ \begin{array}{ll} \prod_{i=1}^n p(\boldsymbol{x}; \theta) &amp; X \;\text{is} \; discrete\\ \prod_{i=1}^n f(\boldsymbol{x};\theta) &amp; X \;\text{is} \; continuous \end{array} \right.\)</span></p></li>
+<li><p>构造似然函数 <span class="math inline">\(L(\theta) = \left \{ \begin{array}{ll} \prod_{i=1}^n p(\boldsymbol{x}; \theta),&amp; X \;\text{is} \; discrete\\ \prod_{i=1}^n f(\boldsymbol{x};\theta),&amp; X \;\text{is} \; continuous \end{array} \right.\)</span></p></li>
 <li>求估计：
 <ul>
 <li>若似然函数有驻点，则令 <span class="math inline">\(\frac{\text{d}L}{\text{d}\theta} = 0\)</span> 或 <span class="math inline">\(\frac{\text{d}\ln L}{\text{d}\theta} = 0\)</span>，解出 <span class="math inline">\(\hat\theta\)</span>。</li>
@@ -4607,181 +4701,6 @@ P\{ H_0 \; \text{is abandoned}\vert H_0 \; \text{is true}\}
 <p><span class="math display">\[
 P\{ H_0 \; \text{is accepted}\vert H_0 \; \text{is false}\}
 \]</span></p>
-]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Probability Theory</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率论的预备知识</title>
-    <url>/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<p>概率论与数量统计-概率论的预备知识</p>
-<hr />
-<span id="more"></span>
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#古典概型">古典概型</a>
-<ul>
-<li><a href="#随机占位问题">随机占位问题</a></li>
-<li><a href="#随机抽样问题">随机抽样问题</a></li>
-</ul></li>
-<li><a href="#几何概型">几何概型</a></li>
-<li><a href="#重要公式">重要公式</a>
-<ul>
-<li><a href="#基本公式">基本公式</a></li>
-<li><a href="#对立事件的概率">对立事件的概率</a></li>
-<li><a href="#互斥事件的概率公式">互斥事件的概率公式</a></li>
-<li><a href="#条件概率">条件概率</a></li>
-<li><a href="#独立事件的概率">独立事件的概率</a></li>
-<li><a href="#不等关系">不等关系</a></li>
-</ul></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr />
-<h2 id="古典概型">古典概型</h2>
-<h3 id="随机占位问题">随机占位问题</h3>
-<p>将 <em>n</em> 个可辨质点随机地分配到 <em>N</em> 个盒子中，则：</p>
-<ul>
-<li>每盒可容纳任意多个质点：有 <span class="math inline">\(N^n\)</span> 种分配方法。</li>
-<li>每盒可最多容纳一个质点：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种分配方法。</li>
-</ul>
-<p><em>n</em> 个小球的排列数：<span class="math inline">\(n!\)</span>。</p>
-<h3 id="随机抽样问题">随机抽样问题</h3>
-<ul>
-<li>先后有放回取 <em>n</em> 次：有 <span class="math inline">\(N^n\)</span> 种取法。</li>
-<li>先后无放回取 <em>n</em> 次：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种取法。</li>
-<li>任取 <em>n</em> 个：有 <span class="math inline">\(\text{C}_N^n = \frac{\text{P}_N^n}{n!}\)</span> 种取法。</li>
-</ul>
-<blockquote>
-<p><span class="math inline">\(\text{P}_N^n\)</span> 表示考虑先后顺序地无放回取 <em>n</em> 个的取法，<span class="math inline">\(\text{C}^n\)</span> 表示一次性取 <em>n</em> 个的取法，等价于无先后顺序且无放回地取 <em>n</em> 个，故 <span class="math inline">\(\text{C}_N^n\)</span> 等于 <span class="math inline">\(\text{P}_N^n\)</span> 除以排列数。</p>
-</blockquote>
-<h2 id="几何概型">几何概型</h2>
-<blockquote>
-<p>若 <span class="math inline">\(\Omega\)</span> 是一个可度量的几何区域，且样本点落入 <span class="math inline">\(\Omega\)</span> 的某一个可度量子区域 <em>A</em> 的可能性大小与 <em>A</em> 的几何度量成正比，而与 <em>A</em> 的位置与形状无关，称为『<strong>几何概型</strong>』。</p>
-</blockquote>
-<p><span class="math display">\[
-P(A) = \frac{S(A)}{S(\Omega)}
-\]</span></p>
-<h2 id="重要公式">重要公式</h2>
-<h3 id="基本公式">基本公式</h3>
-<ul>
-<li><span class="math inline">\(A \cup (B \cap C) =( A \cup B) \cap (A \cup C),\; A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
-<li><span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B},\;\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
-<li><span class="math inline">\(P(A + B) = P(A \cup B)\)</span></li>
-<li><span class="math inline">\(P(AB) = P(A \cap B) = P\{A,B\}\)</span></li>
-</ul>
-<h3 id="对立事件的概率">对立事件的概率</h3>
-<p><span class="math inline">\(P(A) = 1 - P(\overline{A})\)</span></p>
-<p>当求 <span class="math inline">\(P(A)\)</span> 比较困难，而求 <span class="math inline">\(P(\overline{A})\)</span> 比较容易时，适合使用此公式。</p>
-<h3 id="互斥事件的概率公式">互斥事件的概率公式</h3>
-<p><span class="math inline">\(A \cap B = \varnothing \Leftrightarrow P(AB) = 0 \Leftrightarrow A,B\)</span> 互斥。</p>
-<blockquote>
-<p>对立事件一定互斥。</p>
-</blockquote>
-<ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 两两互斥，则</li>
-</ul>
-<p><span class="math display">\[
-P\left( \bigcup_{i=1}^nA_i\right) = \sum_{i =1}^nP(A_i)
-\]</span></p>
-<ul>
-<li><strong>分割互斥</strong>：<span class="math inline">\(A \cup B = A \cup \overline{A}B = A\overline{B}\cup B = A\overline{B}\cup AB \cup \overline{A}B\)</span>。转化为互斥事件，然后概率可直接相加。</li>
-<li><p><strong>全集分解</strong>：<span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> 为完备事件组，则 <span class="math inline">\(A = A\Omega =AB_1 \cup AB_2 \cup\cdots\cup AB_n\)</span>。</p>
-<blockquote>
-<p>两两互斥且和为 <span class="math inline">\(\Omega\)</span> 的事件组称为完备事件组。</p>
-</blockquote></li>
-<li><span class="math inline">\(P(A - B) = P(A\overline{B}) = P(A) - P(AB)\)</span></li>
-<li><span class="math inline">\(P(A+B) = P(A \cup \overline{A}B) = P(A) + P(\overline{A}B) = P(A) + P(B) - P(AB)\)</span></li>
-<li><p><span class="math inline">\(P(A+B+C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></p></li>
-</ul>
-<h3 id="条件概率">条件概率</h3>
-<ul>
-<li><span class="math inline">\(P(A \vert B) = \frac{P(AB)}{P(B)} \;(P(B) &gt; 0)\)</span></li>
-<li>可得结论：</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P(AB) &amp;= P(B)P(A \vert B)\;(P(B) &gt; 0) \\
-&amp;= P(A)P(B \vert A) \;(P(A) &gt; 0) \\
-&amp;= P(A) + P(B) - P(A + B) \\
-&amp;= P(A) - P(A\overline{B})
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>全概率公式</strong>：若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 为完备事件组，<span class="math inline">\(P(A_i) &gt; 0\;(i =1,2,\ldots,n)\)</span>，则</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P(B) &amp;= P(B\Omega) = P(BA_1\cup BA_2 \cup \cdots \cup BA_n) \\
-&amp; = \sum_{i=1}^n P(A_i)P(B \vert A_i)
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>贝叶斯公式</strong>：</li>
-</ul>
-<p><span class="math display">\[
-P(A_j \vert B) = \frac{P(A_jB)}{P(B)} = \frac{P(A_j)P(B\vert A_j)}{\sum_{i=1}^nP(A_i)P(B \vert A_i)}\;(j = 1,2,\ldots,n)
-\]</span></p>
-<h3 id="独立事件的概率">独立事件的概率</h3>
-<p>若 <span class="math inline">\(P(AB) = P(A)P(B) \Leftrightarrow A,B\)</span> <strong>相互独立</strong>。对于 <em>n</em> 个事件 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 个事件，若对于其中任意 <em>k</em> 个事件 <span class="math inline">\(A_{i_1},A_{i_2},\ldots,A_{i_k}\;(k = 2,\ldots,n)\)</span> 都有</p>
-<p><span class="math display">\[
-P(A_{i_1}A_{i_2}\cdots A_{i_k}) = P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})
-\]</span></p>
-<p>则称 <em>n</em> 个事件相互独立。</p>
-<p>譬如</p>
-<p><span class="math display">\[
-\begin{align}
-&amp; P(A_1A_2) = P(A_1)P(A_2) \\
-&amp; P(A_2A_3) = P(A_2)P(A_3) \\
-&amp; P(A_1A_3) = P(A_1)P(A_3) \\
-&amp; P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
-\end{align}
-\]</span></p>
-<p>可说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 相互独立，若无 (4) 式只能说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 两两独立。</p>
-<blockquote>
-<p>独立与互斥没什么关系。</p>
-</blockquote>
-<p>结论：</p>
-<ul>
-<li><span class="math inline">\(A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow A, \overline{B}\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, \overline{B}\)</span> 相互独立。</li>
-<li><span class="math inline">\(A,B,C,D\)</span> 相互独立，则对 <span class="math inline">\(A,B,C,D\)</span> 不含相同事件作运算得到的新事件也独立。</li>
-<li><span class="math inline">\(P(A) &gt; 0,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B)\)</span>。</li>
-<li><span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B \vert \overline{A}) = P(B)\)</span>。</li>
-<li><span class="math inline">\(P(A) = 0 \; \text{or} \; 1\)</span>，则 <span class="math inline">\(A\)</span> 与任意事件独立。</li>
-<li><p><span class="math inline">\(0 &lt;P(A) &lt; 1,\; 0 &lt; P(B) &lt; 1\)</span>，且 <span class="math inline">\(A,B\)</span> 互斥或存在包含关系，则 <span class="math inline">\(A,B\)</span> 一定不相互独立。</p></li>
-<li><p>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 相互独立，则</p></li>
-</ul>
-<p><span class="math display">\[
-P(A_1A_2\cdots A_n) = P(A_1)P(A_2)\cdots
-P(A_n)
-\]</span></p>
-<ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\;(n &gt; 3)\)</span> 相互独立，则</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^nA_i}\right) \\ &amp; = 1 - P\left(\bigcap_{i=1}^n\overline{A_i} \right) \\
-&amp; = 1 - \prod_{i=1}^nP(\overline{A_i}) \\
-&amp; = 1 - \prod_{i=1}^n[1-P(A_i)]
-\end{aligned}
-\]</span></p>
-<h3 id="不等关系">不等关系</h3>
-<ul>
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
-<li>若 <span class="math inline">\(A \subseteq B\)</span>，则 <span class="math inline">\(P(A) \leq P(B)\)</span>。</li>
-<li><span class="math inline">\(AB \subseteq A \subseteq A + B \Rightarrow P(AB) \leq P(A) \leq P(A + B)\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} = \{X \leq a\} \cap \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \leq a\} = \{X \leq a\} \cup \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \geq a\} = \{X \geq a\} \cup \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} = \{X \geq a\} \cap \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} \subseteq \{\min(X,Y) \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} \subseteq \{\max(X,Y) \geq a\}\)</span></li>
-</ul>
 ]]></content>
       <categories>
         <category>Mathematics</category>
@@ -5075,6 +4994,387 @@ P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^n
       </categories>
       <tags>
         <tag>Calulus</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率论的预备知识</title>
+    <url>/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>概率论与数量统计-概率论的预备知识</p>
+<hr />
+<span id="more"></span>
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#古典概型">古典概型</a>
+<ul>
+<li><a href="#随机占位问题">随机占位问题</a></li>
+<li><a href="#随机抽样问题">随机抽样问题</a></li>
+</ul></li>
+<li><a href="#几何概型">几何概型</a></li>
+<li><a href="#重要公式">重要公式</a>
+<ul>
+<li><a href="#基本公式">基本公式</a></li>
+<li><a href="#对立事件的概率">对立事件的概率</a></li>
+<li><a href="#互斥事件的概率公式">互斥事件的概率公式</a></li>
+<li><a href="#条件概率">条件概率</a></li>
+<li><a href="#独立事件的概率">独立事件的概率</a></li>
+<li><a href="#不等关系">不等关系</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="古典概型">古典概型</h2>
+<h3 id="随机占位问题">随机占位问题</h3>
+<p>将 <em>n</em> 个可辨质点随机地分配到 <em>N</em> 个盒子中，则：</p>
+<ul>
+<li>每盒可容纳任意多个质点：有 <span class="math inline">\(N^n\)</span> 种分配方法。</li>
+<li>每盒可最多容纳一个质点：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种分配方法。</li>
+</ul>
+<p><em>n</em> 个小球的排列数：<span class="math inline">\(n!\)</span>。</p>
+<h3 id="随机抽样问题">随机抽样问题</h3>
+<ul>
+<li>先后有放回取 <em>n</em> 次：有 <span class="math inline">\(N^n\)</span> 种取法。</li>
+<li>先后无放回取 <em>n</em> 次：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种取法。</li>
+<li>任取 <em>n</em> 个：有 <span class="math inline">\(\text{C}_N^n = \frac{\text{P}_N^n}{n!}\)</span> 种取法。</li>
+</ul>
+<blockquote>
+<p><span class="math inline">\(\text{P}_N^n\)</span> 表示考虑先后顺序地无放回取 <em>n</em> 个的取法，<span class="math inline">\(\text{C}^n\)</span> 表示一次性取 <em>n</em> 个的取法，等价于无先后顺序且无放回地取 <em>n</em> 个，故 <span class="math inline">\(\text{C}_N^n\)</span> 等于 <span class="math inline">\(\text{P}_N^n\)</span> 除以排列数。</p>
+</blockquote>
+<h2 id="几何概型">几何概型</h2>
+<blockquote>
+<p>若 <span class="math inline">\(\Omega\)</span> 是一个可度量的几何区域，且样本点落入 <span class="math inline">\(\Omega\)</span> 的某一个可度量子区域 <em>A</em> 的可能性大小与 <em>A</em> 的几何度量成正比，而与 <em>A</em> 的位置与形状无关，称为『<strong>几何概型</strong>』。</p>
+</blockquote>
+<p><span class="math display">\[
+P(A) = \frac{S(A)}{S(\Omega)}
+\]</span></p>
+<h2 id="重要公式">重要公式</h2>
+<h3 id="基本公式">基本公式</h3>
+<ul>
+<li><span class="math inline">\(A \cup (B \cap C) =( A \cup B) \cap (A \cup C),\; A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
+<li><span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B},\;\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
+<li><span class="math inline">\(P(A + B) = P(A \cup B)\)</span></li>
+<li><span class="math inline">\(P(AB) = P(A \cap B) = P\{A,B\}\)</span></li>
+</ul>
+<h3 id="对立事件的概率">对立事件的概率</h3>
+<p><span class="math inline">\(P(A) = 1 - P(\overline{A})\)</span></p>
+<p>当求 <span class="math inline">\(P(A)\)</span> 比较困难，而求 <span class="math inline">\(P(\overline{A})\)</span> 比较容易时，适合使用此公式。</p>
+<h3 id="互斥事件的概率公式">互斥事件的概率公式</h3>
+<p><span class="math inline">\(A \cap B = \varnothing \Leftrightarrow P(AB) = 0 \Leftrightarrow A,B\)</span> 互斥。</p>
+<blockquote>
+<p>对立事件一定互斥。</p>
+</blockquote>
+<ul>
+<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 两两互斥，则</li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^nA_i\right) = \sum_{i =1}^nP(A_i)
+\]</span></p>
+<ul>
+<li><strong>分割互斥</strong>：<span class="math inline">\(A \cup B = A \cup \overline{A}B = A\overline{B}\cup B = A\overline{B}\cup AB \cup \overline{A}B\)</span>。转化为互斥事件，然后概率可直接相加。</li>
+<li><p><strong>全集分解</strong>：<span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> 为完备事件组，则 <span class="math inline">\(A = A\Omega =AB_1 \cup AB_2 \cup\cdots\cup AB_n\)</span>。</p>
+<blockquote>
+<p>两两互斥且和为 <span class="math inline">\(\Omega\)</span> 的事件组称为完备事件组。</p>
+</blockquote></li>
+<li><span class="math inline">\(P(A - B) = P(A\overline{B}) = P(A) - P(AB)\)</span></li>
+<li><span class="math inline">\(P(A+B) = P(A \cup \overline{A}B) = P(A) + P(\overline{A}B) = P(A) + P(B) - P(AB)\)</span></li>
+<li><p><span class="math inline">\(P(A+B+C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></p></li>
+</ul>
+<h3 id="条件概率">条件概率</h3>
+<ul>
+<li><span class="math inline">\(P(A \vert B) = \frac{P(AB)}{P(B)} \;(P(B) &gt; 0)\)</span></li>
+<li>可得结论：</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P(AB) &amp;= P(B)P(A \vert B)\;(P(B) &gt; 0) \\
+&amp;= P(A)P(B \vert A) \;(P(A) &gt; 0) \\
+&amp;= P(A) + P(B) - P(A + B) \\
+&amp;= P(A) - P(A\overline{B})
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>全概率公式</strong>：若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 为完备事件组，<span class="math inline">\(P(A_i) &gt; 0\;(i =1,2,\ldots,n)\)</span>，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P(B) &amp;= P(B\Omega) = P(BA_1\cup BA_2 \cup \cdots \cup BA_n) \\
+&amp; = \sum_{i=1}^n P(A_i)P(B \vert A_i)
+\end{aligned}
+\]</span></p>
+<ul>
+<li><strong>贝叶斯公式</strong>：</li>
+</ul>
+<p><span class="math display">\[
+P(A_j \vert B) = \frac{P(A_jB)}{P(B)} = \frac{P(A_j)P(B\vert A_j)}{\sum_{i=1}^nP(A_i)P(B \vert A_i)}\;(j = 1,2,\ldots,n)
+\]</span></p>
+<h3 id="独立事件的概率">独立事件的概率</h3>
+<p>若 <span class="math inline">\(P(AB) = P(A)P(B) \Leftrightarrow A,B\)</span> <strong>相互独立</strong>。对于 <em>n</em> 个事件 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 个事件，若对于其中任意 <em>k</em> 个事件 <span class="math inline">\(A_{i_1},A_{i_2},\ldots,A_{i_k}\;(k = 2,\ldots,n)\)</span> 都有</p>
+<p><span class="math display">\[
+P(A_{i_1}A_{i_2}\cdots A_{i_k}) = P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})
+\]</span></p>
+<p>则称 <em>n</em> 个事件相互独立。</p>
+<p>譬如</p>
+<p><span class="math display">\[
+\begin{align}
+&amp; P(A_1A_2) = P(A_1)P(A_2) \\
+&amp; P(A_2A_3) = P(A_2)P(A_3) \\
+&amp; P(A_1A_3) = P(A_1)P(A_3) \\
+&amp; P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
+\end{align}
+\]</span></p>
+<p>可说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 相互独立，若无 (4) 式只能说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 两两独立。</p>
+<blockquote>
+<p>独立与互斥没什么关系。</p>
+</blockquote>
+<p>结论：</p>
+<ul>
+<li><span class="math inline">\(A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow A, \overline{B}\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, \overline{B}\)</span> 相互独立。</li>
+<li><span class="math inline">\(A,B,C,D\)</span> 相互独立，则对 <span class="math inline">\(A,B,C,D\)</span> 不含相同事件作运算得到的新事件也独立。</li>
+<li><span class="math inline">\(P(A) &gt; 0,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B)\)</span>。</li>
+<li><span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B \vert \overline{A}) = P(B)\)</span>。</li>
+<li><span class="math inline">\(P(A) = 0 \; \text{or} \; 1\)</span>，则 <span class="math inline">\(A\)</span> 与任意事件独立。</li>
+<li><p><span class="math inline">\(0 &lt;P(A) &lt; 1,\; 0 &lt; P(B) &lt; 1\)</span>，且 <span class="math inline">\(A,B\)</span> 互斥或存在包含关系，则 <span class="math inline">\(A,B\)</span> 一定不相互独立。</p></li>
+<li><p>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 相互独立，则</p></li>
+</ul>
+<p><span class="math display">\[
+P(A_1A_2\cdots A_n) = P(A_1)P(A_2)\cdots
+P(A_n)
+\]</span></p>
+<ul>
+<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\;(n &gt; 3)\)</span> 相互独立，则</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^nA_i}\right) \\ &amp; = 1 - P\left(\bigcap_{i=1}^n\overline{A_i} \right) \\
+&amp; = 1 - \prod_{i=1}^nP(\overline{A_i}) \\
+&amp; = 1 - \prod_{i=1}^n[1-P(A_i)]
+\end{aligned}
+\]</span></p>
+<h3 id="不等关系">不等关系</h3>
+<ul>
+<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
+<li>若 <span class="math inline">\(A \subseteq B\)</span>，则 <span class="math inline">\(P(A) \leq P(B)\)</span>。</li>
+<li><span class="math inline">\(AB \subseteq A \subseteq A + B \Rightarrow P(AB) \leq P(A) \leq P(A + B)\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \leq a\} = \{X \leq a\} \cap \{Y \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \leq a\} = \{X \leq a\} \cup \{Y \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \geq a\} = \{X \geq a\} \cup \{Y \geq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \geq a\} = \{X \geq a\} \cap \{Y \geq a\}\)</span></li>
+<li><span class="math inline">\(\{\max(X,Y) \leq a\} \subseteq \{\min(X,Y) \leq a\}\)</span></li>
+<li><span class="math inline">\(\{\min(X,Y) \geq a\} \subseteq \{\max(X,Y) \geq a\}\)</span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Probability Theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>相似理论</title>
+    <url>/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>线性代数-相似理论的概念与计算。</p>
+<span id="more"></span>
+<hr />
+<p><strong>本文索引</strong></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#特征值和特征向量">特征值和特征向量</a></li>
+<li><a href="#矩阵的相似">矩阵的相似</a></li>
+<li><a href="#相似对角化">相似对角化</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<hr />
+<h2 id="概念">概念</h2>
+<h3 id="特征值和特征向量">特征值和特征向量</h3>
+<ol type="1">
+<li><strong><em>A</em></strong> 是 <em>n</em> 阶矩阵，<span class="math inline">\(\lambda\)</span> 是一个数，若存在 <em>n</em> 维非零列向量 <span class="math inline">\(\boldsymbol{\xi}\)</span>，使得</li>
+</ol>
+<p><span class="math display">\[
+\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi}
+\]</span></p>
+<p>则 <span class="math inline">\(\lambda\)</span> 是 <strong><em>A</em></strong> 的『<strong>特征值</strong>』，<span class="math inline">\(\boldsymbol{\xi}\)</span> 是 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda\)</span> 的『<strong>特征向量</strong>』。</p>
+<ol start="2" type="1">
+<li><strong>求特征值</strong></li>
+</ol>
+<p><span class="math inline">\(\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi} \Rightarrow (\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{\xi} = \boldsymbol{0}\)</span>，又因为 <span class="math inline">\(\boldsymbol{\xi} \neq 0\)</span>，即方程组 <span class="math inline">\((\lambda \boldsymbol{E} -\boldsymbol{A})x = 0\)</span> 有非零解，故</p>
+<p><span class="math display">\[
+f_{\boldsymbol{A}}(\lambda) = |\lambda \boldsymbol{E} -\boldsymbol{A}| = \left|
+\begin{matrix}
+\lambda - a_{11} &amp;-a_{12} &amp;\cdots &amp;-a_{1n} \\
+-a_{21} &amp;\lambda - a_{22} &amp;\cdots &amp;-a_{2n} \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+-a_{n1} &amp;-a_{n2} &amp;\cdots &amp;\lambda - a_{nn}
+\end{matrix}
+\right| = 0
+\]</span></p>
+<p>该式称为 <strong><em>A</em></strong> 的『特征方程』，是未知量 <span class="math inline">\(\lambda\)</span> 的 <em>n</em> 次方程，有 <em>n</em> 个根（按重数计）<span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span>。</p>
+<ol start="3" type="1">
+<li><strong>求特征向量</strong></li>
+</ol>
+<p>将求出的特征值 <span class="math inline">\(\lambda_i\)</span> 代回 <span class="math inline">\((\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)</span>，方程组的解向量即为 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</p>
+<p>特征值 <span class="math inline">\(\lambda_i\)</span> 对应的特征向量张成的向量空间，即 <span class="math inline">\(\lambda_i\boldsymbol{E} - \boldsymbol{A}\)</span> 的零空间，称为 <strong><em>A</em></strong> 的属于特征值 <span class="math inline">\(\lambda_i\)</span> 的『特征子空间』。</p>
+<ol start="4" type="1">
+<li><strong>重要结论</strong></li>
+</ol>
+<ul>
+<li><em>n</em> 阶矩阵一定有 <em>n</em> 个特征值（按重数计）。</li>
+<li>若 <span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span> 是 <strong><em>A</em></strong> 的特征值，则 <span class="math inline">\(|\boldsymbol{A}|= \lambda_1\lambda_2\cdots\lambda_n\)</span>，<span class="math inline">\(\text{tr}(\boldsymbol{A}) = \lambda_1 + \lambda_2 +\cdots+\lambda_n\)</span>。</li>
+<li>根据上一条结论，<strong>方阵 <em>A</em> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <em>A</em> 的特征值</strong>。<strong><em>A</em></strong> 不可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 是 <strong><em>A</em></strong> 的特征值，重数 <span class="math inline">\(\geq n -r(\boldsymbol{A})\)</span>。</li>
+<li>上（下）三角矩阵、对角矩阵的特征值就是主对角线元素。</li>
+<li><p><strong>下表要谨记：</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>矩阵</th>
+<th><span class="math inline">\(\boldsymbol{A}\)</span></th>
+<th><span class="math inline">\(k\boldsymbol{A}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^k\)</span></th>
+<th><span class="math inline">\(f(\boldsymbol{A})\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^{-1}\)</span></th>
+<th><span class="math inline">\(\boldsymbol{A}^*\)</span></th>
+<th><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>特征值</td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(k\lambda\)</span></td>
+<td><span class="math inline">\(\lambda^k\)</span></td>
+<td><span class="math inline">\(f(\lambda)\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td><span class="math inline">\(\frac{1}{\lambda}\)</span></td>
+<td><span class="math inline">\(\frac{\text{det}(\boldsymbol{A})}{\lambda}\)</span></td>
+<td><span class="math inline">\(\lambda\)</span></td>
+</tr>
+<tr class="even">
+<td>对应特征值的特征向量</td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td>未知</td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
+<td><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{\xi}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>推论：若 <span class="math inline">\(f(\boldsymbol{A}) = \boldsymbol{O}, \; \lambda\)</span> 是 <strong><em>A</em></strong> 任意特征值，则 <span class="math inline">\(f(\lambda)=0\)</span>。</p>
+<p>注意：<span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 特征值不变，但特征向量需要重新计算得出。</p></li>
+<li>代数重数 <span class="math inline">\(\geq\)</span> 几何重数：<em>k</em> 重特征值<strong>最多</strong>有 <em>k</em> 个线性无关的特征向量。</li>
+<li>不同特征值对应的特征向量必线性无关。</li>
+<li>根据解空间理论，同一特征值对应的特征向量的非零线性组合仍是该特征值对应的特征向量。</li>
+<li><span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2\)</span> 是不同特征值对应的特征向量，则 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2\; (k_1 \neq 0,k_2 \neq 0)\)</span> 不是 <strong><em>A</em></strong> 的特征向量。</li>
+<li><span class="math inline">\(\boldsymbol{Ax} = 0\boldsymbol{x} = \boldsymbol{0}\)</span> 即零特征值对应的特征向量是 <strong><em>A</em></strong> 的零空间，故零特征值一定有 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的特征向量。</li>
+<li><p><strong><em>A</em></strong> 的每行元素之和均为 <em>k</em>，则 <span class="math inline">\(\boldsymbol{A} \begin{bmatrix} 1 \\ 1 \\ \vdots \\1 \end{bmatrix} = k\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span>，即 <em>k</em> 是 <strong><em>A</em></strong> 的特征值，<span class="math inline">\(\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span> 是 <strong><em>A</em></strong> 的属于特征值 <em>k</em> 的特征向量。</p></li>
+</ul>
+<h3 id="矩阵的相似">矩阵的相似</h3>
+<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>相似</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span></li>
+<li><span class="math inline">\(|\boldsymbol{A}| = |\boldsymbol{B}|\)</span></li>
+<li><span class="math inline">\(\text{tr}(\boldsymbol{A}) = \text{tr}(\boldsymbol{B})\)</span></li>
+</ul>
+<blockquote>
+<p>这是 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span> 的基本必要条件，任何一个不成立则 <span class="math inline">\(\boldsymbol{A} \not\sim \boldsymbol{B}\)</span>。</p>
+</blockquote>
+<p>重要结论：</p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A}^{\text{T}} \sim \boldsymbol{B}^{\text{T}},\boldsymbol{A}^{-1} \sim \boldsymbol{B}^{-1},\boldsymbol{A}^* \sim \boldsymbol{B}^*\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow k\boldsymbol{A} \sim k\boldsymbol{B},\boldsymbol{A}^k \sim \boldsymbol{B}^k,f(\boldsymbol{A}) \sim f(\boldsymbol{B})\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Leftrightarrow \boldsymbol{B} \sim \boldsymbol{A}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{C} \Rightarrow \boldsymbol{A} \sim \boldsymbol{C}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{C},\boldsymbol{B} \sim \boldsymbol{D} \Rightarrow \left[\begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B} \end{matrix}\right] \sim \left[\begin{matrix} \boldsymbol{C} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{D} \end{matrix}\right]\)</span></li>
+</ul>
+<h3 id="相似对角化">相似对角化</h3>
+<p>对角矩阵的良好性质，对角矩阵 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}[ \lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>：</p>
+<ul>
+<li><span class="math inline">\(|\boldsymbol{\Lambda}| = \lambda_1\lambda_2\cdots\lambda_n\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^{\text{T}} = \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^{-1} = \text{diag}\left[\frac{1}{\lambda_1},\frac{1}{\lambda_2},\ldots,\frac{1}{\lambda_n}\right]\)</span></li>
+<li><span class="math inline">\(\boldsymbol{\Lambda}^k = \text{diag}\left[{\lambda_1}^k,{\lambda_2}^k,\ldots,{\lambda_n}^k\right]\)</span></li>
+</ul>
+<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>，则称 <strong><em>A</em></strong> 可以『<strong>相似对角化</strong>』，称 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的『相似标准形』。</p>
+<ol type="1">
+<li><strong>相似对角化的推导</strong></li>
+</ol>
+<p><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{AP} = \boldsymbol{\Lambda} \Rightarrow \boldsymbol{AP} = \boldsymbol{P\Lambda}\)</span>，令 <span class="math inline">\(\boldsymbol{P} = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n],\; \boldsymbol{\Lambda} = \text{diag}[\lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>，则</p>
+<p><span class="math display">\[
+\boldsymbol{A}[\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] \begin{bmatrix} \lambda_1 &amp;\; &amp;\; &amp;\; \\ \; &amp;\lambda_2 &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;\lambda_n\end{bmatrix}
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+[\boldsymbol{A\xi}_1,\boldsymbol{A\xi}_2,\ldots,\boldsymbol{A\xi}_n] =[\lambda_1\boldsymbol{\xi}_1,\lambda_2\boldsymbol{\xi}_2,\ldots,\lambda_n\boldsymbol{\xi}_n]
+\]</span></p>
+<p>故</p>
+<p><span class="math display">\[
+\boldsymbol{A\xi}_i = \lambda_i\boldsymbol{\xi}_i \;(i =1,2,\ldots,n)
+\]</span></p>
+<p>因为 <strong><em>P</em></strong> 可逆，故 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span> 线性无关，故得出结论：</p>
+<ul>
+<li><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em> 有 <em>n</em> 个线性无关的特征向量。</strong></li>
+<li><p><strong><span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <em>A</em> 的 <em>n</em> 个（按重数计）特征值构成的对角矩阵，<em>P</em> 的列向量是 <em>A</em> 的特征向量，且 <em>P</em> 中特征向量的位置与 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 中特征值的位置相对应。</strong></p>
+<blockquote>
+<p>此性质不仅可用于相似对角化，且可用于通过特征值特征向量反求矩阵，<span class="math inline">\(\boldsymbol{A} = \boldsymbol{P\Lambda P}^{-1}\)</span>。</p>
+</blockquote></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>重要结论</strong></li>
+</ol>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分必要条件：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 有 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li>几何重数等于代数重数，即 <em>k</em> 重特征值具有 <em>k</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow n_i = n - r(\lambda_i\boldsymbol{E}-\boldsymbol{A}) \Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分条件：</strong></p>
+<ul>
+<li><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li><strong><em>A</em></strong> 有 <em>n</em> 个不同的特征值 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{A} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
+<li><span class="math inline">\(r(\boldsymbol{A})=1\)</span> 且 <span class="math inline">\(\text{tr}(\boldsymbol{A}) \neq 0 \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>必要条件：</strong></p>
+<ul>
+<li><strong><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow n-r(\boldsymbol{A}) =\)</span> 零特征值的重数，则 <span class="math inline">\(r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计）。</strong></li>
+<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \not\Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>，但如果 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 均可相似对角化，则 <span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>。</li>
+<li>根据上一条结论，『<strong>实对称矩阵</strong>』 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 相似 <span class="math inline">\(\Leftrightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>。</li>
+</ul>
+<p>矩阵 <strong><em>A</em></strong> <strong>不可</strong>相似对角化的<strong>充分条件：</strong></p>
+<ul>
+<li><span class="math inline">\(\boldsymbol{A} \neq \boldsymbol{O},\boldsymbol{A}^k = \boldsymbol{O}\;(k \in \mathbb{N}_+,k &gt; 1) \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span></li>
+<li><strong><em>A</em></strong> 的特征值全为 <em>k</em>，但 <span class="math inline">\(\boldsymbol{A} \neq k\boldsymbol{E} \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span>。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -5642,17 +5942,14 @@ r(\boldsymbol{R}_{m \times n}) = m \Leftrightarrow \boldsymbol{R} \xrightarrow{\
 &amp;\boldsymbol{X} = \boldsymbol{B}&#39;&#39; + [l_1N(\boldsymbol{A}),l_2N(\boldsymbol{A}),\ldots,l_sN(\boldsymbol{A})] \\
 &amp;N(\boldsymbol{A}) = \begin{bmatrix} -\boldsymbol{F} \\ \boldsymbol{E} \end{bmatrix}\begin{bmatrix}k_1 \\ k_2 \\ \vdots \\ k_{n-r(\boldsymbol{A})} \end{bmatrix}
 \end{aligned}
- \]</span></p>
-<blockquote>
-<p>线代 9 讲习题 5.13。</p>
-</blockquote></li>
+ \]</span></p></li>
 </ul></li>
 </ul></li>
 </ul>
+<p>对于形如 <span class="math inline">\(\boldsymbol{XA} = \boldsymbol{B}\)</span> 的矩阵方程，建议通过转置化为熟悉的形式求解 <span class="math inline">\({(\boldsymbol{XA})}^{\text{T}} = \boldsymbol{B}^{\text{T}} \rightarrow \boldsymbol{A}^{\text{T}}\boldsymbol{X}^{\text{T}} = \boldsymbol{B}^{\text{T}}\)</span>，求出 <span class="math inline">\(\boldsymbol{X}^{\text{T}}\)</span> 之后记得再转置回来。</p>
 <ol start="3" type="1">
 <li>待定系数法：设出矩阵的系数，代入矩阵方程求解。</li>
 </ol>
-<p>对于形如 <span class="math inline">\(\boldsymbol{XA} = \boldsymbol{B}\)</span> 的矩阵方程，建议通过转置化为熟悉的形式求解 <span class="math inline">\({(\boldsymbol{XA})}^{\text{T}} = \boldsymbol{B}^{\text{T}} \rightarrow \boldsymbol{A}^{\text{T}}\boldsymbol{X}^{\text{T}} = \boldsymbol{B}^{\text{T}}\)</span>，求出 <span class="math inline">\(\boldsymbol{X}^{\text{T}}\)</span> 之后记得再转置回来。</p>
 <!--
 $$
 \text{上岸} = 
@@ -5687,212 +5984,6 @@ $$
 <li><span class="math inline">\(r(\boldsymbol{A}) = 1 \Leftrightarrow \lambda_1,\lambda_2,\ldots,\lambda_{n-1} =0,\; \lambda_{n} = \text{tr}(\boldsymbol{A})\)</span>。则 <span class="math inline">\(\text{tr}(\boldsymbol{A}) \neq 0 \Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
 </ul></li>
 <li><strong><em>A</em></strong> 的每行元素之和均为 <em>k</em>，则 <span class="math inline">\(\boldsymbol{A} \begin{bmatrix} 1 \\ 1 \\ \vdots \\1 \end{bmatrix} = k\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span>，即 <em>k</em> 是 <strong><em>A</em></strong> 的特征值，<span class="math inline">\(\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span> 是 <strong><em>A</em></strong> 的属于特征值 <em>k</em> 的特征向量。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Linear Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>相似理论</title>
-    <url>/2022/09/23/%E7%9B%B8%E4%BC%BC%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>线性代数-相似理论的概念与计算。</p>
-<span id="more"></span>
-<hr />
-<p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#概念">概念</a>
-<ul>
-<li><a href="#特征值和特征向量">特征值和特征向量</a></li>
-<li><a href="#矩阵的相似">矩阵的相似</a></li>
-<li><a href="#相似对角化">相似对角化</a></li>
-</ul></li>
-</ul>
-<!-- /code_chunk_output -->
-<hr />
-<h2 id="概念">概念</h2>
-<h3 id="特征值和特征向量">特征值和特征向量</h3>
-<ol type="1">
-<li><strong><em>A</em></strong> 是 <em>n</em> 阶矩阵，<span class="math inline">\(\lambda\)</span> 是一个数，若存在 <em>n</em> 维非零列向量 <span class="math inline">\(\boldsymbol{\xi}\)</span>，使得</li>
-</ol>
-<p><span class="math display">\[
-\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi}
-\]</span></p>
-<p>则 <span class="math inline">\(\lambda\)</span> 是 <strong><em>A</em></strong> 的『<strong>特征值</strong>』，<span class="math inline">\(\boldsymbol{\xi}\)</span> 是 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda\)</span> 的『<strong>特征向量</strong>』。</p>
-<ol start="2" type="1">
-<li><strong>求特征值</strong></li>
-</ol>
-<p><span class="math inline">\(\boldsymbol{A}\boldsymbol{\xi} = \lambda \boldsymbol{\xi} \Rightarrow (\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{\xi} = \boldsymbol{0}\)</span>，又因为 <span class="math inline">\(\boldsymbol{\xi} \neq 0\)</span>，即方程组 <span class="math inline">\((\lambda \boldsymbol{E} -\boldsymbol{A})x = 0\)</span> 有非零解，故</p>
-<p><span class="math display">\[
-f_{\boldsymbol{A}}(\lambda) = |\lambda \boldsymbol{E} -\boldsymbol{A}| = \left|
-\begin{matrix}
-\lambda - a_{11} &amp;-a_{12} &amp;\cdots &amp;-a_{1n} \\
--a_{21} &amp;\lambda - a_{22} &amp;\cdots &amp;-a_{2n} \\
-\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
--a_{n1} &amp;-a_{n2} &amp;\cdots &amp;\lambda - a_{nn}
-\end{matrix}
-\right| = 0
-\]</span></p>
-<p>该式称为 <strong><em>A</em></strong> 的『特征方程』，是未知量 <span class="math inline">\(\lambda\)</span> 的 <em>n</em> 次方程，有 <em>n</em> 个根（按重数计）<span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span>。</p>
-<ol start="3" type="1">
-<li><strong>求特征向量</strong></li>
-</ol>
-<p>将求出的特征值 <span class="math inline">\(\lambda_i\)</span> 代回 <span class="math inline">\((\lambda \boldsymbol{E} - \boldsymbol{A})\boldsymbol{x} = \boldsymbol{0}\)</span>，方程组的解向量即为 <strong><em>A</em></strong> 的对应于特征值 <span class="math inline">\(\lambda_i\)</span> 的特征向量。</p>
-<p>特征值 <span class="math inline">\(\lambda_i\)</span> 对应的特征向量张成的向量空间，即 <span class="math inline">\(\lambda_i\boldsymbol{E} - \boldsymbol{A}\)</span> 的零空间，称为 <strong><em>A</em></strong> 的属于特征值 <span class="math inline">\(\lambda_i\)</span> 的『特征子空间』。</p>
-<ol start="4" type="1">
-<li><strong>重要结论</strong></li>
-</ol>
-<ul>
-<li><em>n</em> 阶矩阵一定有 <em>n</em> 个特征值（按重数计）。</li>
-<li>若 <span class="math inline">\(\lambda_i \;(i = 1,2,\ldots,n)\)</span> 是 <strong><em>A</em></strong> 的特征值，则 <span class="math inline">\(|\boldsymbol{A}|= \lambda_1\lambda_2\cdots\lambda_n\)</span>，<span class="math inline">\(\text{tr}(\boldsymbol{A}) = \lambda_1 + \lambda_2 +\cdots+\lambda_n\)</span>。</li>
-<li>根据上一条结论，<strong>方阵 <em>A</em> 可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 不是 <em>A</em> 的特征值</strong>。<strong><em>A</em></strong> 不可逆 <span class="math inline">\(\Leftrightarrow 0\)</span> 是 <strong><em>A</em></strong> 的特征值，重数 <span class="math inline">\(\geq n -r(\boldsymbol{A})\)</span>。</li>
-<li>上（下）三角矩阵、对角矩阵的特征值就是主对角线元素。</li>
-<li><p><strong>下表要谨记：</strong></p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-<col style="width: 11%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>矩阵</th>
-<th><span class="math inline">\(\boldsymbol{A}\)</span></th>
-<th><span class="math inline">\(k\boldsymbol{A}\)</span></th>
-<th><span class="math inline">\(\boldsymbol{A}^k\)</span></th>
-<th><span class="math inline">\(f(\boldsymbol{A})\)</span></th>
-<th><span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span></th>
-<th><span class="math inline">\(\boldsymbol{A}^{-1}\)</span></th>
-<th><span class="math inline">\(\boldsymbol{A}^*\)</span></th>
-<th><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>特征值</td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(k\lambda\)</span></td>
-<td><span class="math inline">\(\lambda^k\)</span></td>
-<td><span class="math inline">\(f(\lambda)\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(\frac{1}{\lambda}\)</span></td>
-<td><span class="math inline">\(\frac{\text{det}(\boldsymbol{A})}{\lambda}\)</span></td>
-<td><span class="math inline">\(\lambda\)</span></td>
-</tr>
-<tr class="even">
-<td>对应特征值的特征向量</td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td>未知</td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td><span class="math inline">\(\boldsymbol{\xi}\)</span></td>
-<td><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{\xi}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>推论：若 <span class="math inline">\(f(\boldsymbol{A}) = \boldsymbol{O}, \; \lambda\)</span> 是 <strong><em>A</em></strong> 任意特征值，则 <span class="math inline">\(f(\lambda)=0\)</span>。</p>
-<p>注意：<span class="math inline">\(\boldsymbol{A}^{\text{T}}\)</span> 特征值不变，但特征向量需要重新计算得出。</p></li>
-<li>代数重数 <span class="math inline">\(\geq\)</span> 几何重数：<em>k</em> 重特征值<strong>最多</strong>有 <em>k</em> 个线性无关的特征向量。</li>
-<li>不同特征值对应的特征向量必线性无关。</li>
-<li>根据解空间理论，同一特征值对应的特征向量的非零线性组合仍是该特征值对应的特征向量。</li>
-<li><span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2\)</span> 是不同特征值对应的特征向量，则 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2\; (k_1 \neq 0,k_2 \neq 0)\)</span> 不是 <strong><em>A</em></strong> 的特征向量。</li>
-<li><span class="math inline">\(\boldsymbol{Ax} = 0\boldsymbol{x} = \boldsymbol{0}\)</span> 即零特征值对应的特征向量是 <strong><em>A</em></strong> 的零空间，故零特征值一定有 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的特征向量。</li>
-<li><p><strong><em>A</em></strong> 的每行元素之和均为 <em>k</em>，则 <span class="math inline">\(\boldsymbol{A} \begin{bmatrix} 1 \\ 1 \\ \vdots \\1 \end{bmatrix} = k\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span>，即 <em>k</em> 是 <strong><em>A</em></strong> 的特征值，<span class="math inline">\(\begin{bmatrix} 1 \\ 1 \\ \vdots \\ 1\end{bmatrix}\)</span> 是 <strong><em>A</em></strong> 的属于特征值 <em>k</em> 的特征向量。</p></li>
-</ul>
-<h3 id="矩阵的相似">矩阵的相似</h3>
-<p><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 是两个同阶方阵，若存在可逆矩阵 <strong><em>P</em></strong>，使得 <span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{A}\boldsymbol{P} = \boldsymbol{B}\)</span>，则称 <strong><em>A</em></strong> 『<strong>相似</strong>』于 <strong><em>B</em></strong>，记作 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>。</p>
-<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span>，则：</p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A} \cong \boldsymbol{B}\)</span></li>
-<li><span class="math inline">\(r(\boldsymbol{A}) = r(\boldsymbol{B})\)</span></li>
-<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span></li>
-<li><span class="math inline">\(|\boldsymbol{A}| = |\boldsymbol{B}|\)</span></li>
-<li><span class="math inline">\(\text{tr}(\boldsymbol{A}) = \text{tr}(\boldsymbol{B})\)</span></li>
-</ul>
-<blockquote>
-<p>这是 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B}\)</span> 的基本必要条件，任何一个不成立则 <span class="math inline">\(\boldsymbol{A} \not\sim \boldsymbol{B}\)</span>。</p>
-</blockquote>
-<p>重要结论：</p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow \boldsymbol{A}^{\text{T}} \sim \boldsymbol{B}^{\text{T}},\boldsymbol{A}^{-1} \sim \boldsymbol{B}^{-1},\boldsymbol{A}^* \sim \boldsymbol{B}^*\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Rightarrow k\boldsymbol{A} \sim k\boldsymbol{B},\boldsymbol{A}^k \sim \boldsymbol{B}^k,f(\boldsymbol{A}) \sim f(\boldsymbol{B})\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B} \Leftrightarrow \boldsymbol{B} \sim \boldsymbol{A}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{C} \Rightarrow \boldsymbol{A} \sim \boldsymbol{C}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{B},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda},\boldsymbol{B} \sim \boldsymbol{\Lambda} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{C},\boldsymbol{B} \sim \boldsymbol{D} \Rightarrow \left[\begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{B} \end{matrix}\right] \sim \left[\begin{matrix} \boldsymbol{C} &amp;\boldsymbol{O}\\ \boldsymbol{O} &amp;\boldsymbol{D} \end{matrix}\right]\)</span></li>
-</ul>
-<h3 id="相似对角化">相似对角化</h3>
-<p>对角矩阵的良好性质，对角矩阵 <span class="math inline">\(\boldsymbol{\Lambda} = \text{diag}[ \lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>：</p>
-<ul>
-<li><span class="math inline">\(|\boldsymbol{\Lambda}| = \lambda_1\lambda_2\cdots\lambda_n\)</span></li>
-<li><span class="math inline">\(\boldsymbol{\Lambda}^{\text{T}} = \boldsymbol{\Lambda}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{\Lambda}^{-1} = \text{diag}\left[\frac{1}{\lambda_1},\frac{1}{\lambda_2},\ldots,\frac{1}{\lambda_n}\right]\)</span></li>
-<li><span class="math inline">\(\boldsymbol{\Lambda}^k = \text{diag}\left[{\lambda_1}^k,{\lambda_2}^k,\ldots,{\lambda_n}^k\right]\)</span></li>
-</ul>
-<p>若 <span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>，则称 <strong><em>A</em></strong> 可以『<strong>相似对角化</strong>』，称 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的『相似标准形』。</p>
-<ol type="1">
-<li><strong>相似对角化的推导</strong></li>
-</ol>
-<p><span class="math inline">\(\boldsymbol{P}^{-1}\boldsymbol{AP} = \boldsymbol{\Lambda} \Rightarrow \boldsymbol{AP} = \boldsymbol{P\Lambda}\)</span>，令 <span class="math inline">\(\boldsymbol{P} = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n],\; \boldsymbol{\Lambda} = \text{diag}[\lambda_1,\lambda_2,\ldots,\lambda_n]\)</span>，则</p>
-<p><span class="math display">\[
-\boldsymbol{A}[\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] = [\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n] \begin{bmatrix} \lambda_1 &amp;\; &amp;\; &amp;\; \\ \; &amp;\lambda_2 &amp;\; &amp;\; \\ \; &amp;\; &amp;\ddots &amp;\; \\ \; &amp;\; &amp;\; &amp;\lambda_n\end{bmatrix}
-\]</span></p>
-<p>即</p>
-<p><span class="math display">\[
-[\boldsymbol{A\xi}_1,\boldsymbol{A\xi}_2,\ldots,\boldsymbol{A\xi}_n] =[\lambda_1\boldsymbol{\xi}_1,\lambda_2\boldsymbol{\xi}_2,\ldots,\lambda_n\boldsymbol{\xi}_n]
-\]</span></p>
-<p>故</p>
-<p><span class="math display">\[
-\boldsymbol{A\xi}_i = \lambda_i\boldsymbol{\xi}_i \;(i =1,2,\ldots,n)
-\]</span></p>
-<p>因为 <strong><em>P</em></strong> 可逆，故 <span class="math inline">\(\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\ldots,\boldsymbol{\xi}_n\)</span> 线性无关，故得出结论：</p>
-<ul>
-<li><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em> 有 <em>n</em> 个线性无关的特征向量。</strong></li>
-<li><p><strong><span class="math inline">\(\boldsymbol{\Lambda}\)</span> 是 <em>A</em> 的 <em>n</em> 个（按重数计）特征值构成的对角矩阵，<em>P</em> 的列向量是 <em>A</em> 的特征向量，且 <em>P</em> 中特征向量的位置与 <span class="math inline">\(\boldsymbol{\Lambda}\)</span> 中特征值的位置相对应。</strong></p>
-<blockquote>
-<p>此性质不仅可用于相似对角化，且可用于通过特征值特征向量反求矩阵，<span class="math inline">\(\boldsymbol{A} = \boldsymbol{P\Lambda P}^{-1}\)</span>。</p>
-</blockquote></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>重要结论</strong></li>
-</ol>
-<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分必要条件：</strong></p>
-<ul>
-<li><strong><em>A</em></strong> 有 <em>n</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
-<li>几何重数等于代数重数，即 <em>k</em> 重特征值具有 <em>k</em> 个线性无关的特征向量 <span class="math inline">\(\Leftrightarrow n_i = n - r(\lambda_i\boldsymbol{E}-\boldsymbol{A}) \Leftrightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
-</ul>
-<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>充分条件：</strong></p>
-<ul>
-<li><strong><em>A</em></strong> 是『<strong>实对称矩阵</strong>』 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
-<li><strong><em>A</em></strong> 有 <em>n</em> 个不同的特征值 <span class="math inline">\(\Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
-<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{A} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
-<li><span class="math inline">\(\boldsymbol{A}^2 = \boldsymbol{E} \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span></li>
-<li><span class="math inline">\(r(\boldsymbol{A})=1\)</span> 且 <span class="math inline">\(\text{tr}(\boldsymbol{A}) \neq 0 \Rightarrow \boldsymbol{A} \sim \boldsymbol{\Lambda}\)</span>。</li>
-</ul>
-<p><em>n</em> 阶矩阵 <strong><em>A</em></strong> 可相似对角化的<strong>必要条件：</strong></p>
-<ul>
-<li><strong><span class="math inline">\(\boldsymbol{A} \sim \boldsymbol{\Lambda} \Rightarrow n-r(\boldsymbol{A}) =\)</span> 零特征值的重数，则 <span class="math inline">\(r(\boldsymbol{A}) =\)</span> 非零特征值的个数（按重数计）。</strong></li>
-<li><span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \not\Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>，但如果 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 均可相似对角化，则 <span class="math inline">\(\lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}} \Rightarrow \boldsymbol{A} \sim \boldsymbol{B}\)</span>。</li>
-<li>根据上一条结论，『<strong>实对称矩阵</strong>』 <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 相似 <span class="math inline">\(\Leftrightarrow \lambda_{\boldsymbol{A}} = \lambda_{\boldsymbol{B}}\)</span>。</li>
-</ul>
-<p>矩阵 <strong><em>A</em></strong> <strong>不可</strong>相似对角化的<strong>充分条件：</strong></p>
-<ul>
-<li><span class="math inline">\(\boldsymbol{A} \neq \boldsymbol{O},\boldsymbol{A}^k = \boldsymbol{O}\;(k \in \mathbb{N}_+,k &gt; 1) \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span></li>
-<li><strong><em>A</em></strong> 的特征值全为 <em>k</em>，但 <span class="math inline">\(\boldsymbol{A} \neq k\boldsymbol{E} \Rightarrow \boldsymbol{A} \not\sim \boldsymbol{\Lambda}\)</span>。</li>
 </ul>
 ]]></content>
       <categories>
