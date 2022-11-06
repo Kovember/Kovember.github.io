@@ -29,7 +29,7 @@
 <meta property="og:description" content="线性代数-向量空间和线性方程组解的结构。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-22T14:24:35.000Z">
-<meta property="article:modified_time" content="2022-10-17T14:43:51.138Z">
+<meta property="article:modified_time" content="2022-11-06T14:47:37.027Z">
 <meta property="article:author" content="Cohanbb">
 <meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-17 22:43:51" itemprop="dateModified" datetime="2022-10-17T22:43:51+08:00">2022-10-17</time>
+                <time title="修改时间：2022-11-06 22:47:37" itemprop="dateModified" datetime="2022-11-06T22:47:37+08:00">2022-11-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,7 +290,7 @@
 <ol type="1">
 <li>向量</li>
 </ol>
-<p>向量（vector）这一概念被提出用以<strong>表示一组有序的数据（即数组）</strong>。<em>n</em> 个数构成的一个有序数组被称为一个 <em>n</em> 维『<strong>向量</strong>』。设 <span class="math inline">\(\boldsymbol{\alpha}=[a_1,a_2,\ldots,a_n]^{\text{T}}\)</span>，则 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 是一个 <em>n</em> 维『<strong>列向量</strong>』，<span class="math inline">\(\boldsymbol{\alpha}^{\text{T}} = [a_1,a_2,\ldots,a_n]\)</span> 是一个 <em>n</em> 维『<strong>行向量</strong>』。</p>
+<p>『<strong>向量</strong>』这一概念被提出用以<strong>表示一组有序的数据（即数组）</strong>。<em>n</em> 个数构成的一个有序数组被称为一个 <em>n</em> 维『<strong>向量</strong>』。设 <span class="math inline">\(\boldsymbol{\alpha}=[a_1,a_2,\ldots,a_n]^{\text{T}}\)</span>，则 <span class="math inline">\(\boldsymbol{\alpha}\)</span> 是一个 <em>n</em> 维『<strong>列向量</strong>』，<span class="math inline">\(\boldsymbol{\alpha}^{\text{T}} = [a_1,a_2,\ldots,a_n]\)</span> 是一个 <em>n</em> 维『<strong>行向量</strong>』。</p>
 <ul>
 <li>一般情况下，向量默认为列向量，使用列向量的转置来表示行向量。</li>
 <li><em>n</em> 维列向量可看作 <em>n</em> 行 1 列的矩阵，<em>n</em> 维行向量可看作 1 行 <em>n</em> 列的矩阵。</li>
@@ -303,7 +303,7 @@
 k_1\boldsymbol{\boldsymbol{\alpha}}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n
 \]</span></p>
 <p>称为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的『<strong>线性组合</strong>』。若向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能表示为向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的线性组合，则称向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 能被向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 『<strong>线性表示</strong>』。</p>
-<p>线性组合可以用<a href="#以向量的角度定义矩阵和矩阵乘法">矩阵乘列向量的方式</a>表示：</p>
+<p>线性组合可以用<a href="#向量关系与矩阵乘法">矩阵乘列向量的方式</a>表示：</p>
 <p><span class="math display">\[
 k_1 \boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alpha}_n = [\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n] \left[ \begin{matrix}k_1 \\k_2\\ \vdots \\k_n\end{matrix}\right]
 \]</span></p>
@@ -338,7 +338,10 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 <p>以少表多，多的相关。</p>
 </blockquote></li>
 <li><p>向量组的向量个数大于向量的维数，则向量组线性相关。</p></li>
-<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关，<span class="math inline">\(\boldsymbol{\beta},\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性相关，则 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可被 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，且表示方法唯一。</p></li>
+<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关，<span class="math inline">\(\boldsymbol{\beta},\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性相关，则 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可被 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，且表示方法唯一。</p>
+<blockquote>
+<p>推论：<span class="math inline">\(\boldsymbol{\beta}\)</span> 可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，则表示方法唯一 <span class="math inline">\(\Leftrightarrow \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关。</p>
+</blockquote></li>
 <li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性无关 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{0}\)</span> 只有零解。<span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性相关 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{0}\)</span> 有非零解。</p></li>
 <li><p>向量 <span class="math inline">\(\boldsymbol{\beta}\)</span> 可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{\beta}\)</span> 有解。<span class="math inline">\(\boldsymbol{\beta}\)</span> 不可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示 <span class="math inline">\(\Leftrightarrow [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{x} = \boldsymbol{\beta}\)</span> 无解。</p></li>
 <li><p>向量组内的部分向量线性相关 <span class="math inline">\(\Rightarrow\)</span> 整个向量组也线性相关。</p>
@@ -353,55 +356,44 @@ k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 +\cdots+ k_n\boldsymbol{\alp
 <blockquote>
 <p>譬如向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3\)</span> 做初等行变换得到 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2, \boldsymbol{\beta}_3\)</span>，若 <span class="math inline">\(k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 = \boldsymbol{\alpha}_3\)</span>，则 <span class="math inline">\(k_1\boldsymbol{\beta}_1 + k_2\boldsymbol{\beta}_2 = \boldsymbol{\beta}_3\)</span>。</p>
 </blockquote></li>
-<li><p>向量组内的向量两两正交 <span class="math inline">\(\Rightarrow\)</span> 向量组线性无关。</p></li>
+<li><p>向量组内的向量两两正交 <span class="math inline">\(\Rightarrow\)</span> 向量组线性无关。</p>
+<blockquote>
+<p>注：向量组内的向量两两线性无关 <span class="math inline">\(\not\Rightarrow\)</span> 向量组线性无关。</p>
+</blockquote></li>
 </ul>
 <h3 id="向量组的秩和等价">向量组的秩和等价</h3>
-<p>向量组的秩等于向量组的『<strong>极大线性无关组</strong>』的向量个数，即向量组内最多找到 <em>r</em> 个线性无关的向量。</p>
+<p>向量组的秩等于向量组的『<strong>极大线性无关组</strong>』的向量个数，即向量组 <span class="math inline">\(\mathcal{A}\)</span> 内最多找到 <span class="math inline">\(r(\mathcal{A})\)</span> 个线性无关的向量。</p>
 <ul>
 <li><p>向量组的秩等于向量组张成的<a href="#向量空间和基">向量空间的维数</a>，向量组的极大线性无关组是向量组张成的向量空间的一组<a href="#向量空间和基">基</a>。</p></li>
-<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 线性无关 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s) = s \Leftrightarrow r([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s]) = s\)</span>。</p></li>
-<li><p>两向量组 <span class="math inline">\(A: \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s, \; B:\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量『<strong>同维</strong>』，若 <em>A</em> 中的向量都可以由 <em>B</em> 线性表示，且 <em>B</em> 中的向量都可以由 <em>A</em> 线性表示 <span class="math inline">\(\Leftrightarrow A \cong B\)</span>。</p></li>
-<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 和 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量同维，则 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> <span class="math inline">\(\Leftrightarrow r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s) = r(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t) = r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s,\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t)\)</span></p></li>
+<li><p>向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 线性无关 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s) = s\)</span>。</p></li>
+<li><p>向量组 <span class="math inline">\(\mathcal{B}\)</span> 可由向量组 <span class="math inline">\(\mathcal{A}\)</span> 线性表示 <span class="math inline">\(\Leftrightarrow r(\mathcal{A}) = r(\mathcal{A},\mathcal{B}) \Rightarrow r(\mathcal{B}) \leq r(\mathcal{A})\)</span>。</p>
+<blockquote>
+<p>此处的 <span class="math inline">\(r(\mathcal{B}) \leq r(\mathcal{A})\)</span>，仅当 <span class="math inline">\(\mathcal{A} \cong \mathcal{B}\)</span> 时等号成立。</p>
+</blockquote></li>
+<li><p>向量组 <span class="math inline">\(\mathcal{A} : \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s, \; \mathcal{B}:\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量『<strong>同维</strong>』，若 <span class="math inline">\(\mathcal{A}\)</span> 中的向量都可以由 <span class="math inline">\(\mathcal{B}\)</span> 线性表示，且 <span class="math inline">\(\mathcal{B}\)</span> 中的向量都可以由 <span class="math inline">\(\mathcal{A}\)</span> 线性表示 <span class="math inline">\(\Leftrightarrow \mathcal{A} \cong \mathcal{B}\)</span>。</p></li>
+<li><p>向量组 <span class="math inline">\(\mathcal{A}:\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s,\; \mathcal{B} : \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\)</span> 中的向量同维，则 <span class="math inline">\(\mathcal{A} \cong \mathcal{B}\Leftrightarrow r(\mathcal{A}) = r(\mathcal{B}) = r(\mathcal{A},\mathcal{B})\)</span>。</p></li>
 <li><p><span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t \Leftrightarrow \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\} = \text{span}\{\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_t\}\)</span> 即两向量组张成的空间重合。</p></li>
-<li><p>两矩阵列（行）等价 <span class="math inline">\(\Rightarrow\)</span> 两矩阵的列（行）向量组等价。</p></li>
-<li><p>两矩阵的列（行）向量组等价，两矩阵<strong>未必</strong>列（行）等价（前提是同型）。</p></li>
-<li><p><span class="math inline">\([\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n] \boldsymbol{R}_{n \times s} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]\)</span>，则</p>
-<p><span class="math display">\[
-r(\boldsymbol{R}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s
-\]</span></p>
-<blockquote>
-<p>右乘行满秩矩阵的结论。</p>
-</blockquote></li>
-<li><p><span class="math inline">\(\boldsymbol{C}_{m \times n} \begin{bmatrix}{ \boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\alpha}_n }^{\text{T}}\end{bmatrix} = \begin{bmatrix} {\boldsymbol{\beta}_1}^{\text{T}} \\ {\boldsymbol{\beta}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\beta}_m}^{\text{T}} \end{bmatrix}\)</span>，则</p>
-<p><span class="math display">\[
-r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \ldots, \boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_m
-\]</span></p>
-<blockquote>
-<p>左乘列满秩矩阵的结论。</p>
-</blockquote></li>
-<li><p>特殊情况：两向量组含有的<strong>向量个数相同</strong>，则 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n \cong \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n \Leftrightarrow\)</span> 存在可逆矩阵 <strong><em>Q</em></strong>，使得</p>
-<p><span class="math display">\[
-[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] \; \text{or} \; \boldsymbol{Q} \begin{bmatrix}{ \boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\alpha}_n }^{\text{T}}\end{bmatrix} = \begin{bmatrix} {\boldsymbol{\beta}_1}^{\text{T}} \\ {\boldsymbol{\beta}_2}^{\text{T}} \\ \vdots \\ {\boldsymbol{\beta}_n}^{\text{T}} \end{bmatrix}
-\]</span></p>
-<blockquote>
-<p>存在可逆矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{AQ} = \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 与矩阵 <strong><em>B</em></strong> 列等价。<br />
-存在可逆矩阵 <strong><em>Q</em></strong>，使得 <span class="math inline">\(\boldsymbol{QA} = \boldsymbol{B} \Leftrightarrow\)</span> 矩阵 <strong><em>A</em></strong> 与矩阵 <strong><em>B</em></strong> 行等价。</p>
-</blockquote></li>
-<li><p><span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n}\)</span> 线性无关并可被 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta_2},\ldots, \boldsymbol{\beta_n}\)</span>（向量个数相同）线性表示，则存在可逆矩阵 <strong><em>Q</em></strong>，使得</p></li>
+<li><p>设向量组 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\)</span> 线性无关并可由向量组 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n\)</span>（<strong>向量个数相同</strong>）线性表示，则两向量组等价。</p></li>
+<li><p>两矩阵的列（行）向量组等价，两矩阵<strong>未必</strong>等价（前提是同型）。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{R}\)</span> 为行满秩矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{AR}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组等价。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{C}\)</span> 是列满秩矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{CA}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组等价。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{Q}\)</span> 是可逆矩阵 <span class="math inline">\(\Rightarrow \boldsymbol{AQ}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组等价，<span class="math inline">\(\boldsymbol{QA}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组等价。</p></li>
+<li><p>特殊情况 1：<span class="math inline">\(\boldsymbol{A}\boldsymbol{A}^{\text{T}}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组等价，<span class="math inline">\(\boldsymbol{A}^{\text{T}}\boldsymbol{A}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组等价。</p></li>
+<li><p>特殊情况 2：<span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n}\)</span> <strong>线性无关</strong>，且 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n} \cong \boldsymbol{\beta}_1,\boldsymbol{\beta_2},\ldots, \boldsymbol{\beta_n} \Leftrightarrow\)</span> 存在可逆矩阵 <span class="math inline">\(\boldsymbol{Q}\)</span>，使得</p></li>
 </ul>
 <p><span class="math display">\[
-[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\; (\boldsymbol{\alpha}_1,\boldsymbol{\alpha_2},\ldots, \boldsymbol{\alpha_n} \cong \boldsymbol{\beta}_1,\boldsymbol{\beta_2},\ldots, \boldsymbol{\beta_n})
+[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_n]\boldsymbol{Q} = [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]
  \]</span></p>
-<p>寻找向量组的极大无关组：</p>
-<ol type="1">
-<li>用矩阵表示列向量组，通过初等行变换化为阶梯形。得出向量组的秩 = 矩阵的秩 = 阶梯数 = <em>r</em>。</li>
-</ol>
+<ul>
+<li><p>寻找向量组的极大无关组的方法：</p>
+<ul>
+<li><p>用矩阵表示列向量组，通过初等行变换化为阶梯形。得出向量组的秩 = 矩阵的秩 = 阶梯数。</p>
 <blockquote>
 <p>初等行变换不改变列向量间的线性关系。</p>
-</blockquote>
-<ol start="2" type="1">
-<li>按列寻找 <em>r</em> 个线性无关的列向量即可。矩阵的主元列一定是极大无关组。</li>
-</ol>
+</blockquote></li>
+<li><p>按列寻找 <span class="math inline">\(r\)</span> 个线性无关的列向量即可。其中，矩阵的主元列一定是极大无关组。</p></li>
+</ul></li>
+</ul>
 <h3 id="向量空间和基">向量空间和基</h3>
 <ol start="0" type="1">
 <li>向量运算</li>
@@ -410,7 +402,7 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 <ul>
 <li>向量加法：<span class="math inline">\(\boldsymbol{\alpha} + \boldsymbol{\beta} = [a_1+b_1,a_2+b_2,\ldots,a_n+b_n]^{\text{T}}\)</span>。</li>
 <li>数乘：<span class="math inline">\(k\boldsymbol{\alpha} = [ka_1,ka_2,\ldots,ka_n]^{\text{T}}\)</span>。</li>
-<li>标准内积：<span class="math inline">\(\langle \boldsymbol{\alpha}, \boldsymbol{\beta}\rangle = \boldsymbol{\alpha} \cdot \boldsymbol{\beta} = \boldsymbol{\alpha}^{\text{T}}\boldsymbol{\beta} = \boldsymbol{\beta} ^{\text{T}}\boldsymbol{\alpha} = a_1b_1 + a_2b_2 +\ldots+a_nb_n\)</span>。</li>
+<li>标准内积：<span class="math inline">\(\langle \boldsymbol{\alpha}, \boldsymbol{\beta}\rangle = \boldsymbol{\alpha} \cdot \boldsymbol{\beta} = \boldsymbol{\alpha}^{\text{T}}\boldsymbol{\beta} = \boldsymbol{\beta} ^{\text{T}}\boldsymbol{\alpha} = a_1b_1 + a_2b_2 +\cdots+a_nb_n\)</span>。</li>
 <li>向量的模：<span class="math inline">\(\| \boldsymbol{\alpha} \| = \sqrt{\boldsymbol{\alpha} \cdot \boldsymbol{\alpha}} = \sqrt{\boldsymbol{\alpha}^{\text{T}}\boldsymbol{\alpha}}\)</span>。</li>
 <li><span class="math inline">\(\boldsymbol{\alpha} \perp \boldsymbol{\beta} \Leftrightarrow \boldsymbol{\alpha} \cdot \boldsymbol{\beta} = 0\)</span>。</li>
 </ul>
@@ -419,12 +411,12 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 </ol>
 <blockquote>
 <p>向量空间的公理化定义：</p>
-<p><span class="math inline">\(\mathbf{F}\)</span> 是一个域，<em>V</em> 是一个非空集合，<em>V</em> 在 <span class="math inline">\(\mathbf{F}\)</span> 上对两种运算封闭：</p>
+<p><span class="math inline">\(\mathbf{F}\)</span> 是一个域，<span class="math inline">\(V\)</span> 是一个非空集合，<span class="math inline">\(V\)</span> 在 <span class="math inline">\(\mathbf{F}\)</span> 上对两种运算封闭：</p>
 <ul>
 <li>向量加法：若 <span class="math inline">\(\boldsymbol{v,}\boldsymbol{w} \in V\)</span>，则 <span class="math inline">\(\boldsymbol{v} + \boldsymbol{w} \in V\)</span>。</li>
 <li>数乘：若 <span class="math inline">\(\lambda \in \mathbf{F},\;\boldsymbol{v} \in V\)</span>，则 <span class="math inline">\(\lambda \boldsymbol{v} \in V\)</span>。</li>
 </ul>
-<p>且这两种运算满足向量空间的八条公理，则 <em>V</em> 是 <span class="math inline">\(\mathbf{F}\)</span> 上的一个『<strong>向量空间</strong>』。</p>
+<p>且这两种运算满足向量空间的八条公理，则 <span class="math inline">\(V\)</span> 是 <span class="math inline">\(\mathbf{F}\)</span> 上的一个『<strong>向量空间</strong>』。</p>
 </blockquote>
 <p>简单定义：<span class="math inline">\(\mathbb{R}^n\)</span> 是<strong>所有 <em>n</em> 维实向量的集合</strong>，<span class="math inline">\(\mathbb{R}^n\)</span> 内任意向量组的线性组合仍属于 <span class="math inline">\(\mathbb{R}^n\)</span>，所以 <span class="math inline">\(\mathbb{R}^n\)</span> 是一个向量空间。</p>
 <blockquote>
@@ -441,39 +433,39 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 <ol start="2" type="1">
 <li>子空间</li>
 </ol>
-<p>若集合 <em>W</em> 是向量空间 <em>V</em> 的子集，且 <em>W</em> 也是一个向量空间，则称 <em>W</em> 是 <em>V</em> 的『子空间』。</p>
+<p>若集合 <span class="math inline">\(W\)</span> 是向量空间 <span class="math inline">\(V\)</span> 的子集，且 <span class="math inline">\(W\)</span> 也是一个向量空间，则称 <span class="math inline">\(W\)</span> 是 <span class="math inline">\(V\)</span> 的『子空间』。</p>
 <ol start="3" type="1">
 <li>张成</li>
 </ol>
-<p>向量空间 <em>V</em> 中一向量组 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的所有线性组合构成的向量集合称为这个向量组的『张成』，记作 <span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}\)</span>。</p>
+<p>向量空间 <span class="math inline">\(V\)</span> 中一向量组 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的所有线性组合构成的向量集合称为这个向量组的『张成』，记作 <span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}\)</span>。</p>
 <ul>
-<li><span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}\)</span> 一定是 <em>V</em> 的子空间。</li>
+<li><span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}\)</span> 一定是 <span class="math inline">\(V\)</span> 的子空间。</li>
 <li><span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 的极大线性无关组是 <span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}\)</span> 的一组基。</li>
-<li>如果 <span class="math inline">\(\text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\} = V\)</span>，即 <em>V</em> 中的所有向量都能被 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，则称 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 张成 <em>V</em>。</li>
+<li>如果 <span class="math inline">\(\text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\} = V\)</span>，即 <span class="math inline">\(V\)</span> 中的所有向量都能被 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 线性表示，则称 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 张成 <span class="math inline">\(V\)</span>。</li>
 </ul>
 <ol start="4" type="1">
 <li><strong>基</strong></li>
 </ol>
-<p>若向量空间 <em>V</em> 中一向量组 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 满足：</p>
+<p>若向量空间 <span class="math inline">\(V\)</span> 中一向量组 <span class="math inline">\(\mathcal{A} : \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 满足：</p>
 <ul>
 <li>是线性无关的。</li>
-<li>张成 <em>V</em>，即 <span class="math inline">\(\text{span} \{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\} = V\)</span>。</li>
+<li>张成 <span class="math inline">\(V\)</span>，即 <span class="math inline">\(\text{span} \{\mathcal{A}\} = V\)</span>。</li>
 </ul>
-<p>则 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 是向量空间 <em>V</em> 的一组『<strong>基</strong>』。所有基中含有的向量数目相同，表示向量空间的『<strong>维数</strong>』。</p>
+<p>则 <span class="math inline">\(\mathcal{A}\)</span> 是向量空间 <span class="math inline">\(V\)</span> 的一组『<strong>基</strong>』。<span class="math inline">\(V\)</span> 的所有基含有的向量数目相同，表示 <span class="math inline">\(V\)</span> 的『<strong>维数</strong>』。</p>
 <p><strong>一组基就是向量空间内的一个极大线性无关组，向量空间的维数等于向量空间内任意向量组的秩的最大值，即向量空间内任意线性无关组的最大向量个数。</strong></p>
 <blockquote>
 <p>注：向量空间的维数与向量的维数是不同的概念。仅当向量空间是 <span class="math inline">\(\mathbb{R}^n\)</span> 时，向量空间的维度等于向量空间中向量的维度等于 <em>n</em>。</p>
 </blockquote>
-<p><em>V</em> 上的任意向量 <strong><em>v</em></strong> 都可以被基线性表示：</p>
+<p><span class="math inline">\(V\)</span> 上的任意向量 <span class="math inline">\(\boldsymbol{v}\)</span> 都可以被基 <span class="math inline">\(\mathcal{A}\)</span> 线性表示：</p>
 <p><span class="math display">\[
 \boldsymbol{v} = x_1\boldsymbol{\alpha}_1 + x_2\boldsymbol{\alpha}_2 +\cdots+x_n\boldsymbol{\alpha}_n = \left[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\right]\left[\begin{matrix}x_1\\x_2\\ \vdots \\ x_n\end{matrix}\right]
 \]</span></p>
-<p>其中 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span> 称为 <strong><em>v</em></strong> 的『<strong>坐标</strong>』。</p>
+<p>其中 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span> 称为 <span class="math inline">\(\boldsymbol{v}\)</span> 在基 <span class="math inline">\(\mathcal{A}\)</span> 下的『<strong>坐标</strong>』。</p>
 <ol start="5" type="1">
 <li><strong>规范正交基</strong></li>
 </ol>
-<p>欧氏空间 <span class="math inline">\(\mathbb{R}^n\)</span> 的标准基 <span class="math inline">\(\boldsymbol{e}_1 = [1, 0, 0, \ldots,0]^{\text{T}}, \boldsymbol{e}_2 = [0, 1, 0,\ldots,0]^{\text{T}}, \ldots, \boldsymbol{e}_n = [0,\ldots,0,0,1]^{\text{T}}\)</span> 由一组两两正交的单位向量构成。这种标准基具有优良的性质，即在『<strong>正交变换</strong>』后依然会得到一组两两正交的向量构成的基。</p>
-<p>将欧氏空间的标准基推广到所有向量空间，把一组两两正交的单位向量构成的基称为『<strong>标准正交基</strong>』，或称『<strong>规范正交基</strong>』。</p>
+<p>欧氏空间 <span class="math inline">\(\mathbb{R}^n\)</span> 的标准基 <span class="math inline">\(\mathcal{E}: \boldsymbol{e}_1 = \begin{bmatrix}1\\ 0\\ 0 \\ \vdots \\ 0 \end{bmatrix}, \boldsymbol{e}_2 = \begin{bmatrix}0\\ 1\\ 0 \\ \vdots \\ 0 \end{bmatrix}, \ldots, \boldsymbol{e}_n = \begin{bmatrix}0\\ 0\\ 0 \\ \vdots \\ 1 \end{bmatrix}\)</span> 由一组两两正交的单位向量构成。这种标准基具有优良的性质，即在『<strong>正交变换</strong>』后依然会得到一组两两正交的向量构成的基。</p>
+<p>将欧氏空间的标准基推广到所有向量空间，把一组两两正交的单位向量构成的基称为『<strong>标准正交基</strong>』或『<strong>规范正交基</strong>』。</p>
 <p>任何一个线性无关的向量组都可以通过『<strong>施密特正交化</strong>』得到一个等价的正交向量组。即向量空间的任何一组基都可以使用施密特正交化得到正交基，再单位化得到规范正交基。</p>
 <p>若 <span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 是一组基，则：</p>
 <p><span class="math display">\[
@@ -495,31 +487,34 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 <ol start="6" type="1">
 <li><strong>基变换和坐标变换</strong></li>
 </ol>
-<p>若 <span class="math inline">\([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\)</span> 和 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 是向量空间 <em>V</em> 的两组基，且</p>
+<p>设 <span class="math inline">\(\mathcal{A}: \boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 和 <span class="math inline">\(\mathcal{B} :\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\)</span> 是向量空间 <span class="math inline">\(V\)</span> 的两组基，且</p>
 <p><span class="math display">\[
 [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{C}
 \]</span></p>
-<p>则矩阵 <strong><em>C</em></strong> 称为由基 <span class="math inline">\([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\)</span> 到基 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 的『<strong>过渡矩阵</strong>』。</p>
-<p>因为向量可表示为 <span class="math inline">\(\boldsymbol{v} = \left[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\right]\left[\begin{matrix}x_1\\x_2\\ \vdots \\ x_n\end{matrix}\right] =\left[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\right]\left[\begin{matrix}y_1\\y_2\\ \vdots \\ y_n\end{matrix}\right]\)</span>，故 <span class="math inline">\(\left[\begin{matrix}x_1\\x_2\\ \vdots \\ x_n\end{matrix}\right] = \boldsymbol{C}\left[\begin{matrix}y_1\\y_2\\ \vdots \\ y_n\end{matrix}\right]\)</span>。</p>
-<p>重要结论：</p>
+<p>则 <span class="math inline">\(\boldsymbol{C}\)</span> 称为由基 <span class="math inline">\(\mathcal{A}\)</span> 到基 <span class="math inline">\(\mathcal{B}\)</span> 的『<strong>过渡矩阵</strong>』。</p>
+<p>对于 <span class="math inline">\(V\)</span> 上的任意向量 <span class="math inline">\(\boldsymbol{v} = \left[\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\right]\left[\begin{matrix}x_1\\x_2\\ \vdots \\ x_n\end{matrix}\right] =\left[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\right]\left[\begin{matrix}y_1\\y_2\\ \vdots \\ y_n\end{matrix}\right]\)</span>，故 <span class="math inline">\(\left[\begin{matrix}x_1\\x_2\\ \vdots \\ x_n\end{matrix}\right] = \boldsymbol{C}\left[\begin{matrix}y_1\\y_2\\ \vdots \\ y_n\end{matrix}\right]\)</span>。</p>
+<p><strong>重要结论：</strong></p>
 <p>根据<a href="#向量组的秩和等价">向量组</a>的知识可知：过渡矩阵一定是可逆矩阵，且可逆矩阵一定可以将一组基化为另一组基。</p>
 <ul>
-<li>即若 <span class="math inline">\([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\)</span> 是一组基，且</li>
+<li>即若 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 是一组基，且</li>
 </ul>
 <p><span class="math display">\[
 [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{C}
 \]</span></p>
-<p>则 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 是一组基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是可逆矩阵。</p>
+<p>则 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\)</span> 是一组基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是可逆矩阵。</p>
+<blockquote>
+<p>推论：<span class="math inline">\(\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s\)</span> 是一个基础解系，则 <span class="math inline">\(\boldsymbol{\beta}_1, \boldsymbol{\beta}_2,\ldots ,\boldsymbol{\beta}_s\)</span> 是一个基础解系 <span class="math inline">\(\Leftrightarrow\)</span> 存在可逆矩阵 <span class="math inline">\(\boldsymbol{C}\)</span>，使得 <span class="math inline">\([\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2,\ldots ,\boldsymbol{\alpha}_s]\boldsymbol{C} = [\boldsymbol{\beta}_1, \boldsymbol{\beta}_2,\ldots ,\boldsymbol{\beta}_s]\)</span>。</p>
+</blockquote>
 <ul>
-<li>特别地，若 <span class="math inline">\([\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\)</span> 是一组规范正交基，且</li>
+<li>特别地，若 <span class="math inline">\(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\)</span> 是一组规范正交基，且</li>
 </ul>
 <p><span class="math display">\[
 [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n] = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\boldsymbol{C}
 \]</span></p>
-<p>则 <span class="math inline">\([\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n]\)</span> 是规范正交基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是正交矩阵。</p>
-<h2 id="向量-向量关系与矩阵-矩阵乘法">向量-向量关系与矩阵-矩阵乘法</h2>
+<p>则 <span class="math inline">\(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_n\)</span> 是规范正交基 <span class="math inline">\(\Leftrightarrow \boldsymbol{C}\)</span> 是正交矩阵。</p>
+<h2 id="向量关系与矩阵乘法">向量关系与矩阵乘法</h2>
 <p>此部分内容<strong>极度重要</strong>，不仅要学会<strong>从矩阵乘法推出向量关系</strong>，还要学会<strong>将向量关系表示为矩阵乘法的形式</strong>。</p>
-<p>一个 <em>m</em> 行 <em>n</em> 列的矩阵就是 <em>n</em> 个 <em>m</em> 维列向量，当然也可以是 <em>m</em> 个 <em>n</em> 维行向量：</p>
+<p>一个 <span class="math inline">\(m \times n\)</span> 阶矩阵就是 <em>n</em> 个 <em>m</em> 维列向量，当然也可以是 <em>m</em> 个 <em>n</em> 维行向量：</p>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n} = [\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_n] = 
 \left[
@@ -538,19 +533,19 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 <li><strong>矩阵乘向量：</strong></li>
 </ol>
 <ul>
-<li>矩阵乘列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的列向量组的线性组合：</li>
+<li>矩阵乘列向量：<span class="math inline">\(\boldsymbol{Ax}\)</span> 表示 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组的线性组合：</li>
 </ul>
 <p><span class="math display">\[
 \boldsymbol{A} \boldsymbol{x} = [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n]\left[ \begin{matrix}x_1 \\x_2\\ \vdots \\x_n\end{matrix}\right] = x_1\boldsymbol{\alpha}_1 + x_2\boldsymbol{\alpha}_2+\cdots+x_n\boldsymbol{\alpha}_n
 \]</span></p>
 <ul>
-<li>矩阵称列向量：<strong><em>Ax</em></strong> 表示 <strong><em>A</em></strong> 的每个行向量与列向量 <strong><em>x</em></strong> 的内积：</li>
+<li>矩阵称列向量：<span class="math inline">\(\boldsymbol{Ax}\)</span> 表示 <span class="math inline">\(\boldsymbol{A}\)</span> 的每个行向量与列向量 <span class="math inline">\(\boldsymbol{x}\)</span> 的内积：</li>
 </ul>
 <p><span class="math display">\[
-\boldsymbol{A} \boldsymbol{x} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\{\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] \boldsymbol{x}= \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \cdot \boldsymbol{x} \\ {\boldsymbol{\alpha}_2}^{\text{T}} \cdot \boldsymbol{x}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \cdot \boldsymbol{x}\end{matrix}\right]
+\boldsymbol{A} \boldsymbol{x} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\{\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] \boldsymbol{x}= \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \boldsymbol{x} \\ {\boldsymbol{\alpha}_2}^{\text{T}}\boldsymbol{x}\\ \vdots \\ {\boldsymbol{\alpha}_m}^{\text{T}}\boldsymbol{x}\end{matrix}\right]= \left[ \begin{matrix} {\boldsymbol{\alpha}_1}\cdot \boldsymbol{x} \\ {\boldsymbol{\alpha}_2} \cdot \boldsymbol{x}\\ \vdots \\ {\boldsymbol{\alpha}_m}\cdot \boldsymbol{x}\end{matrix}\right]
 \]</span></p>
 <ul>
-<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的行向量组的线性组合：</li>
+<li>行向量乘矩阵：<span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{B}\)</span> 表示 <span class="math inline">\(\boldsymbol{B}\)</span> 的行向量组的线性组合：</li>
 </ul>
 <p><span class="math display">\[
 \boldsymbol{x}^{\text{T}}\boldsymbol{B} = [x_1,x_2,\ldots,x_n]\left[
@@ -564,29 +559,34 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 = x_1 {\boldsymbol{\beta}_1}^{\text{T}} + x_2 {\boldsymbol{\beta}_2}^{\text{T}} + \cdots + x_n {\boldsymbol{\beta}_n}^{\text{T}}
 \]</span></p>
 <ul>
-<li>行向量乘矩阵：<strong><em>x</em></strong><sup>T</sup><strong><em>B</em></strong> 表示 <strong><em>B</em></strong> 的每个列向量与行向量 <strong><em>x</em></strong><sup>T</sup> 的内积：</li>
+<li>行向量乘矩阵：<span class="math inline">\(\boldsymbol{x}^{\text{T}}\boldsymbol{B}\)</span> 表示 <span class="math inline">\(\boldsymbol{B}\)</span> 的每个列向量与行向量 <span class="math inline">\(\boldsymbol{x}^{\text{T}}\)</span> 的内积：</li>
 </ul>
 <p><span class="math display">\[
+\begin{aligned}
 \boldsymbol{x}^{\text{T}}\boldsymbol{B} = \boldsymbol{x}^{\text{T}}
 \left[
 \boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s
 \right]
-= \left[
-\boldsymbol{x}^{\text{T}} \cdot \boldsymbol{\beta}_1,\boldsymbol{x}^{\text{T}}\cdot \boldsymbol{\beta}_2,\ldots,\boldsymbol{x}^{\text{T}}\cdot\boldsymbol{\beta}_s
+&amp;= \left[
+\boldsymbol{x}^{\text{T}} \boldsymbol{\beta}_1,\boldsymbol{x}^{\text{T}}\boldsymbol{\beta}_2,\ldots,\boldsymbol{x}^{\text{T}}\boldsymbol{\beta}_s
+\right]\\
+&amp;= \left[
+\boldsymbol{x} \cdot \boldsymbol{\beta}_1,\boldsymbol{x}\cdot \boldsymbol{\beta}_2,\ldots,\boldsymbol{x}\cdot\boldsymbol{\beta}_s
 \right]
+\end{aligned}
 \]</span></p>
 <ol start="2" type="1">
 <li><strong>矩阵乘矩阵</strong></li>
 </ol>
 <ul>
-<li><strong><em>AB</em></strong> 表示矩阵 <strong><em>A</em></strong> 与 <strong><em>B</em></strong> 的每个列向量相乘，即转化为矩阵乘列向量的形式：</li>
+<li><span class="math inline">\(\boldsymbol{AB}\)</span> 表示矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 与 <span class="math inline">\(\boldsymbol{B}\)</span> 的每个列向量相乘，即转化为矩阵乘列向量的形式：</li>
 </ul>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \boldsymbol{A}[\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s] = [\boldsymbol{A\beta}_1,\boldsymbol{A\beta}_2,\ldots,\boldsymbol{A\beta}_s]
 \]</span></p>
-<p>可得 <strong><em>AB</em></strong> 的 <em>s</em> 个列向量都是 <strong><em>A</em></strong> 的列向量组的线性组合，<strong><em>AB</em></strong> 的列向量组被 <strong><em>A</em></strong> 的列向量组线性表示。故有 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A}, \boldsymbol{AB} ])\)</span>。</p>
+<p>可得 <span class="math inline">\(\boldsymbol{AB}\)</span> 的 <em>s</em> 个列向量都是 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组的线性组合，<span class="math inline">\(\boldsymbol{AB}\)</span> 的列向量组被 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性表示。故有 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A}, \boldsymbol{AB} ])\)</span>。</p>
 <ul>
-<li><strong><em>AB</em></strong> 也可以表示矩阵 <strong><em>B</em></strong> 与 <strong><em>A</em></strong> 的每个行向量相乘，即转化为行向量乘矩阵的形式：</li>
+<li><span class="math inline">\(\boldsymbol{AB}\)</span> 也可以表示矩阵 <span class="math inline">\(\boldsymbol{B}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的每个行向量相乘，即转化为行向量乘矩阵的形式：</li>
 </ul>
 <p><span class="math display">\[
 \boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} =
@@ -607,20 +607,30 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 \end{matrix}
 \right]
 \]</span></p>
-<p>可得 <strong><em>AB</em></strong> 的 <em>m</em> 个行向量都是 <strong><em>B</em></strong> 的行向量组的线性组合，即 <strong><em>AB</em></strong> 的行向量组被 <strong><em>B</em></strong> 的行向量组线性表示，故有 <span class="math inline">\(r(\boldsymbol{B}) = r\left ( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{AB} \end{bmatrix} \right)\)</span>。</p>
+<p>可得 <span class="math inline">\(\boldsymbol{AB}\)</span> 的 <em>m</em> 个行向量都是 <span class="math inline">\(\boldsymbol{B}\)</span> 的行向量组的线性组合，即 <span class="math inline">\(\boldsymbol{AB}\)</span> 的行向量组被 <span class="math inline">\(\boldsymbol{B}\)</span> 的行向量组线性表示，故有 <span class="math inline">\(r(\boldsymbol{B}) = r\left ( \begin{bmatrix} \boldsymbol{B} \\ \boldsymbol{AB} \end{bmatrix} \right)\)</span>。</p>
 <ul>
-<li><strong><em>AB</em></strong> 表示 <strong><em>A</em></strong> 的每个行向量与 <strong><em>B</em></strong> 的每个列向量的内积：</li>
+<li><span class="math inline">\(\boldsymbol{AB}\)</span> 表示 <span class="math inline">\(\boldsymbol{A}\)</span> 的每个行向量与 <span class="math inline">\(\boldsymbol{B}\)</span> 的每个列向量的内积：</li>
 </ul>
 <p><span class="math display">\[
-\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\{\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]= 
-\left[
+\begin{aligned}
+\boldsymbol{A}_{m \times n}\boldsymbol{B}_{n \times s} = \left[ \begin{matrix} {\boldsymbol{\alpha}_1}^{\text{T}} \\ {\boldsymbol{\alpha}_2}^{\text{T}}\\ \vdots \\{\boldsymbol{\alpha}_m}^{\text{T}} \end{matrix}\right] [\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\ldots,\boldsymbol{\beta}_s]
+&amp;= \left[
 \begin{matrix}
-{\boldsymbol{\alpha}_1}^{\text{T}} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_1}^{\text{T}} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_1}^{\text{T}} \cdot\boldsymbol{\beta}_s \\
-{\boldsymbol{\alpha}_2}^{\text{T}} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_2}^{\text{T}} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_2}^{\text{T}} \cdot\boldsymbol{\beta}_s\\ 
+{\boldsymbol{\alpha}_1}^{\text{T}} \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_1}^{\text{T}} \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_1}^{\text{T}} \boldsymbol{\beta}_s \\
+{\boldsymbol{\alpha}_2}^{\text{T}} \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_2}^{\text{T}} \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_2}^{\text{T}} \boldsymbol{\beta}_s\\ 
 \vdots &amp; \vdots &amp;  \ddots&amp; \vdots\\ 
-{\boldsymbol{\alpha}_m}^{\text{T}} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_m}^{\text{T}} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_m}^{\text{T}} \cdot\boldsymbol{\beta}_s
+{\boldsymbol{\alpha}_m}^{\text{T}} \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_m}^{\text{T}} \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_m}^{\text{T}} \boldsymbol{\beta}_s
+\end{matrix}
+\right] \\
+&amp; =\left[
+\begin{matrix}
+{\boldsymbol{\alpha}_1} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_1} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_1} \cdot\boldsymbol{\beta}_s \\
+{\boldsymbol{\alpha}_2} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_2} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_2} \cdot\boldsymbol{\beta}_s\\ 
+\vdots &amp; \vdots &amp;  \ddots&amp; \vdots\\ 
+{\boldsymbol{\alpha}_m} \cdot \boldsymbol{\beta}_1 &amp;{\boldsymbol{\alpha}_m} \cdot \boldsymbol{\beta}_2&amp; \cdots &amp;{\boldsymbol{\alpha}_m}\cdot\boldsymbol{\beta}_s
 \end{matrix}
 \right]
+\end{aligned}
 \]</span></p>
 <h2 id="线性方程组解的结构">线性方程组解的结构</h2>
 <p>线性方程组可表示为矩阵与列向量相乘的形式：</p>
@@ -628,128 +638,150 @@ r(\boldsymbol{C}) = n \Rightarrow \boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, 
 <li>齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span>。</li>
 <li>非齐次方程组：<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span>。</li>
 </ul>
-<p><strong><em>A</em></strong> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<strong>0</strong> 为零向量，<strong><em>b</em></strong> 为 <em>m</em> 维列向量。<strong><em>x</em></strong> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <strong><em>v</em></strong> 为方程组的一个『<strong>解向量</strong>』。</p>
+<p><span class="math inline">\(\boldsymbol{A}\)</span> 为 <em>m</em> 行 <em>n</em> 列的矩阵，可视为 <em>n</em> 个 <em>m</em> 维列向量组。<span class="math inline">\(\boldsymbol{0}\)</span> 为零向量，<span class="math inline">\(\boldsymbol{b}\)</span> 为 <em>m</em> 维列向量。<span class="math inline">\(\boldsymbol{x}\)</span> 为 <em>n</em> 维列向量 <span class="math inline">\([x_1,x_2,\ldots,x_n]^{\text{T}}\)</span>，若当 <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}\)</span> 时方程组成立，则 <span class="math inline">\(\boldsymbol{v}\)</span> 为方程组的一个『<strong>解向量</strong>』。</p>
 <h3 id="矩阵的零空间">矩阵的零空间</h3>
 <p>假设向量 <span class="math inline">\(\boldsymbol{v}_1,\boldsymbol{v}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的任意两个解向量，<em>k</em> 为任意常数，则必有</p>
 <p><span class="math display">\[
 \boldsymbol{A}(k\boldsymbol{v}_1) = k\boldsymbol{A}\boldsymbol{v}_1 = 0,\;\boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_2) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_2 = \boldsymbol{0}
 \]</span></p>
-<p>即 <span class="math inline">\(k\boldsymbol{v}_1\)</span> 和 <span class="math inline">\(\boldsymbol{v}_1+\boldsymbol{v}_2\)</span> 仍是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量，故<strong>方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量的集合是一个向量空间</strong>。这个空间称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>解空间</strong>』，也称矩阵 <strong><em>A</em></strong> 的『<strong>零空间</strong>』，记作 <span class="math inline">\(N(\boldsymbol{A})\)</span>。<span class="math inline">\(N(\boldsymbol{A})\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 的子空间。即零空间可表示为：</p>
+<p>即 <span class="math inline">\(k\boldsymbol{v}_1\)</span> 和 <span class="math inline">\(\boldsymbol{v}_1+\boldsymbol{v}_2\)</span> 仍是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量，故<strong>方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量的集合是一个向量空间</strong>。这个空间称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>解空间</strong>』，也称矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的『<strong>零空间</strong>』，记作 <span class="math inline">\(N(\boldsymbol{A})\)</span>。<span class="math inline">\(N(\boldsymbol{A})\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 的子空间。即零空间可表示为：</p>
 <p><span class="math display">\[
 N(\boldsymbol{A}) = \{\boldsymbol{x} \in \mathbb{R}^n \vert  \boldsymbol{Ax} = \boldsymbol{0}\}
 \]</span></p>
 <ol type="1">
 <li><strong>解的非零性</strong></li>
 </ol>
-<p>根据<a href="#以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</a>中的描述，<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 表示 <strong><em>A</em></strong> 的每个行向量与列向量 <strong><em>x</em></strong> 的内积都为 0，即列向量 <strong><em>x</em></strong> 与 <strong><em>A</em></strong> 的行向量组正交，<strong>故 <span class="math inline">\(N(\boldsymbol{A})\)</span> 是 <em>A</em> 的行向量张成空间的正交补空间</strong>。</p>
+<p>根据<a href="#向量关系与矩阵乘法">向量关系与矩阵乘法</a>中的描述，<span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 表示 <span class="math inline">\(\boldsymbol{A}\)</span> 的每个行向量与列向量 <span class="math inline">\(\boldsymbol{x}\)</span> 的内积都为 0，即列向量 <span class="math inline">\(\boldsymbol{x}\)</span> 与 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组正交，<strong>故 <span class="math inline">\(N(\boldsymbol{A})\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量张成空间的正交补空间</strong>。</p>
 <ul>
-<li><p>如果 <strong><em>A</em></strong> 列满秩，即 <strong><em>A</em></strong> 的列向量组线性无关，根据<a href="#线性相关和线性无关">线性无关</a>的定义可知当且仅当 <strong><em>x</em></strong> 为零向量时 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 成立。即方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 有唯一（零）解，无非零解。</p></li>
-<li><p>如果 <strong><em>A</em></strong> 列不满秩，即 <span class="math inline">\(r(\boldsymbol{A}) &lt; n\)</span>，则 <strong><em>A</em></strong> 的列向量组线性相关，根据<a href="#线性相关和线性无关">线性相关</a>的定义，方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有非零解，假设非零解向量为 <strong><em>v</em></strong>，即 <span class="math inline">\(\boldsymbol{v} \in N(\boldsymbol{A})\)</span>，则 <span class="math inline">\(k\boldsymbol{v} \in N(\boldsymbol{A})\)</span>，<em>k</em> 为任意常数，故方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 有无穷多解。</p>
+<li><p>如果 <span class="math inline">\(\boldsymbol{A}\)</span> 列满秩，即 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性无关，根据<a href="#线性相关和线性无关">线性无关</a>的定义可知当且仅当 <span class="math inline">\(\boldsymbol{x}\)</span> 为零向量时 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 成立。即方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 有唯一（零）解，无非零解。</p></li>
+<li><p>如果 <span class="math inline">\(\boldsymbol{A}\)</span> 列不满秩，即 <span class="math inline">\(r(\boldsymbol{A}) &lt; n\)</span>，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性相关，根据<a href="#线性相关和线性无关">线性相关</a>的定义，方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有非零解，假设非零解向量为 <span class="math inline">\(\boldsymbol{v}\)</span>，即 <span class="math inline">\(\boldsymbol{v} \in N(\boldsymbol{A})\)</span>，则 <span class="math inline">\(k\boldsymbol{v} \in N(\boldsymbol{A})\)</span>，<em>k</em> 为任意常数，故方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 有无穷多解。</p>
 <blockquote>
-<p>推论：若 <strong><em>A</em></strong> 为方阵，则 <span class="math inline">\(|\boldsymbol{A}| = 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 有非零解。</p>
+<p>推论：若 <span class="math inline">\(\boldsymbol{A}\)</span> 为方阵，则 <span class="math inline">\(|\boldsymbol{A}| = 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 有非零解。</p>
 </blockquote></li>
-<li><p>如果 <span class="math inline">\(m &lt; n\)</span>，即 <strong><em>A</em></strong> 的列向量个数大于列向量的维数，则 <strong><em>A</em></strong> 的列向量组必线性相关，则方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有（无穷）非零解。</p></li>
+<li><p>如果 <span class="math inline">\(m &lt; n\)</span>，即 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量个数大于列向量的维数，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组必线性相关，则方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 必有（无穷）非零解。</p></li>
 </ul>
 <ol start="2" type="1">
 <li><strong>解的结构</strong></li>
 </ol>
 <ul>
-<li><p><span class="math inline">\(\boldsymbol{A}_{m \times n}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \boldsymbol{0}\)</span>，<strong><em>A</em></strong> 含有 <span class="math inline">\(r(\boldsymbol{A})\)</span> 个主元列，<span class="math inline">\(n-r(\boldsymbol{A})\)</span> 个自由列。<strong><em>A</em></strong> 的主元列对应的 <strong><em>x</em></strong> 中的分量称为『<strong>约束未知量</strong>』，<strong><em>A</em></strong> 的自由列对应的 <strong><em>x</em></strong> 中的分量称为『<strong>自由未知量</strong>』。自由未知量的值是任意取的，约束未知量的值由自由未知量决定，故 <span class="math inline">\(N(\boldsymbol{A})\)</span> 的维数取决于自由未知量的个数：<span class="math inline">\(\text{dim(}N(\boldsymbol{A})) = n -r(\boldsymbol{A})\)</span>。</p></li>
-<li><p><span class="math inline">\(N(\boldsymbol{A})\)</span> 便是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>通解</strong>』，<span class="math inline">\(N(\boldsymbol{A})\)</span> 的一组基称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>基础解系</strong>』，所以基础解系是 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的解向量。</p></li>
+<li><p><span class="math inline">\(\boldsymbol{A}_{m \times n}\begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix} = \boldsymbol{0}\)</span>，<span class="math inline">\(\boldsymbol{A}\)</span> 含有 <span class="math inline">\(r(\boldsymbol{A})\)</span> 个主元列，<span class="math inline">\(n-r(\boldsymbol{A})\)</span> 个自由列。<span class="math inline">\(\boldsymbol{A}\)</span> 的主元列对应的 <span class="math inline">\(\boldsymbol{x}\)</span> 中的分量称为『<strong>约束未知量</strong>』，<span class="math inline">\(\boldsymbol{A}\)</span> 的自由列对应的 <span class="math inline">\(\boldsymbol{x}\)</span> 中的分量称为『<strong>自由未知量</strong>』。自由未知量的值是任意取的，约束未知量的值由自由未知量决定，故 <span class="math inline">\(N(\boldsymbol{A})\)</span> 的维数取决于自由未知量的个数：<span class="math inline">\(\text{dim(}N(\boldsymbol{A})) = n -r(\boldsymbol{A})\)</span>。</p></li>
+<li><p><span class="math inline">\(N(\boldsymbol{A})\)</span> 的一组基称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>基础解系</strong>』，所以基础解系是 <span class="math inline">\(n - r(\boldsymbol{A})\)</span> 个线性无关的解向量 <span class="math inline">\(\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \ldots, \boldsymbol{\xi}_{n -r(\boldsymbol{A})}\)</span>，基础解系的线性组合称为方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的『<strong>通解</strong>』，记作</p></li>
 </ul>
+<p><span class="math display">\[
+\boldsymbol{x}_N = k_1\boldsymbol{\xi}_1 + k_2 \boldsymbol{\xi}_2 + \cdots + k_{n -r(\boldsymbol{A})}\boldsymbol{\xi}_{n -r(\boldsymbol{A})}
+\]</span></p>
 <h3 id="矩阵的列空间">矩阵的列空间</h3>
-<p>由 <strong><em>A</em></strong> 的列向量组张成的向量空间称为矩阵 <strong><em>A</em></strong> 的『<strong>列空间</strong>』，记作</p>
+<p>由 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组张成的向量空间称为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的『<strong>列空间</strong>』，记作</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{A} &amp;= [\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n] \\
 C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\ldots,\boldsymbol{\alpha}_n\}
 \end{aligned}
 \]</span></p>
-<p>列向量的维数为 <em>m</em>，故 <span class="math inline">\(C(\boldsymbol{A})\)</span> 是 <span class="math inline">\(\mathbb{R}^m\)</span> 的子空间。矩阵 <strong><em>A</em></strong> 的主列是 <strong><em>A</em></strong> 的列向量组的极大线性无关组，故<strong>矩阵 <em>A</em> 的主列是 <span class="math inline">\(C(\boldsymbol{A})\)</span> 的一组基</strong>，<strong>矩阵列空间的维数等于矩阵主列的个数等于矩阵的秩</strong>，即 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = r(\boldsymbol{A})\)</span>。</p>
+<p>列向量的维数为 <em>m</em>，故 <span class="math inline">\(C(\boldsymbol{A})\)</span> 是 <span class="math inline">\(\mathbb{R}^m\)</span> 的子空间。矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的主列是 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组的极大线性无关组，故<strong>矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的主列是 <span class="math inline">\(C(\boldsymbol{A})\)</span> 的一组基</strong>，<strong>矩阵列空间的维数等于矩阵主列的个数等于矩阵的秩</strong>，即 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = r(\boldsymbol{A})\)</span>。</p>
 <ol type="1">
 <li><strong>解的存在性</strong></li>
 </ol>
-<p>根据<a href="#以向量的角度定义矩阵和矩阵乘法">以向量的角度定义矩阵和矩阵乘法</a>中的描述，<span class="math inline">\(\boldsymbol{Ax}\)</span> 表示 <strong><em>A</em></strong> 的列向量组的线性组合，所以方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有解等价于 <strong><em>b</em></strong> 可以被 <strong><em>A</em></strong> 的列向量组线性表示，等价于 <span class="math inline">\(\boldsymbol{b} \in C(\boldsymbol{A})\)</span>。</p>
+<p>根据<a href="#向量关系与矩阵乘法">向量关系与矩阵乘法</a>中的描述，<span class="math inline">\(\boldsymbol{Ax}\)</span> 表示 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组的线性组合，所以方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有解等价于 <span class="math inline">\(\boldsymbol{b}\)</span> 可以被 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性表示，等价于 <span class="math inline">\(\boldsymbol{b} \in C(\boldsymbol{A})\)</span>。</p>
 <ul>
-<li><p>仅当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}])\)</span> 时，<strong><em>A</em></strong> 的列向量组与 <span class="math inline">\([\boldsymbol{A},\boldsymbol{b}]\)</span> 的列向量组等价 <span class="math inline">\(\Leftrightarrow \text{span}\{\boldsymbol{[A,b]}\} =\text{span}\{\boldsymbol{A}\} = C(\boldsymbol{A}) \Leftrightarrow \boldsymbol{b} \in C(\boldsymbol{A})\)</span>，故非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有解的充分必要条件是：<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}])\)</span>。</p></li>
-<li><p>当 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = m\)</span> 时，<span class="math inline">\(C(\boldsymbol{A}) = \mathbb{R}^m\)</span>，<strong><em>b</em></strong> 为 <em>m</em> 维列向量，<span class="math inline">\(\boldsymbol{b} \in \mathbb{R}^m\)</span>，即 <span class="math inline">\(\boldsymbol{b} \in C(\boldsymbol{A})\)</span>。故当 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = r(\boldsymbol{A}) = m\)</span> 即 <strong><em>A</em></strong> 行满秩时，非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 必有解。</p></li>
-<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}]) = n\)</span> 时，因为矩阵 <strong><em>A</em></strong> 列满秩，故 <strong><em>A</em></strong> 的列向量组线性无关，根据<a href="#线性相关和线性无关">定理 2</a>，<strong><em>b</em></strong> 能被 <strong><em>A</em></strong> 的列向量组线性表示，且表示法唯一，故非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解。</p></li>
-<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = m = n\)</span> 时，即方阵 <strong><em>A</em></strong> 满秩，结合上两条可知非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解。</p>
+<li><p>仅当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}])\)</span> 时，<span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组与 <span class="math inline">\([\boldsymbol{A},\boldsymbol{b}]\)</span> 的列向量组等价 <span class="math inline">\(\Leftrightarrow C([\boldsymbol{A},\boldsymbol{b}]) =C(\boldsymbol{A}) \Leftrightarrow \boldsymbol{b} \in C(\boldsymbol{A})\)</span>，故非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有解的充分必要条件是：<span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}])\)</span>。</p></li>
+<li><p>当 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = m\)</span> 时，<span class="math inline">\(C(\boldsymbol{A}) = \mathbb{R}^m\)</span>，<span class="math inline">\(\boldsymbol{b}\)</span> 为 <em>m</em> 维列向量，<span class="math inline">\(\boldsymbol{b} \in \mathbb{R}^m\)</span>，即 <span class="math inline">\(\boldsymbol{b} \in C(\boldsymbol{A})\)</span>。故当 <span class="math inline">\(\text{dim}(C(\boldsymbol{A})) = r(\boldsymbol{A}) = m\)</span> 即 <span class="math inline">\(\boldsymbol{A}\)</span> 行满秩时，非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 必有解。</p></li>
+<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}]) = n\)</span> 时，因为矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 列满秩，故 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性无关，根据<a href="#线性相关和线性无关">定理 2</a>，<span class="math inline">\(\boldsymbol{b}\)</span> 能被 <span class="math inline">\(\boldsymbol{A}\)</span> 的列向量组线性表示，且表示法唯一，故非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解。</p></li>
+<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = m = n\)</span> 时，即方阵 <span class="math inline">\(\boldsymbol{A}\)</span> 满秩，结合上两条可知非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解。</p>
 <blockquote>
 推论：
 <ul>
 <li><span class="math inline">\(|\boldsymbol{A}| \neq 0 \Rightarrow \boldsymbol{Ax} = \boldsymbol{b}\)</span> 必有（且唯一）解。</li>
-<li>若 <strong><em>A</em></strong> 为方阵，则 <span class="math inline">\(|\boldsymbol{A}| = 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{b}\)</span> 无解，<span class="math inline">\(|\boldsymbol{A}| \neq 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{b}\)</span> 有（且唯一）解。</li>
+<li>若 <span class="math inline">\(\boldsymbol{A}\)</span> 为方阵，则 <span class="math inline">\(|\boldsymbol{A}| = 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{b}\)</span> 无解，<span class="math inline">\(|\boldsymbol{A}| \neq 0 \Leftrightarrow \boldsymbol{Ax} = \boldsymbol{b}\)</span> 有（且唯一）解。</li>
 </ul>
 </blockquote></li>
-<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}]) &lt; n\)</span> 时，<strong><em>A</em></strong> 含有 <span class="math inline">\(n -r(\boldsymbol{A})\)</span> 个自由列，则 <strong><em>x</em></strong> 中含有 <span class="math inline">\(n -r(\boldsymbol{A})\)</span> 个自由变量，自由变量的取值是任意的，所以非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有无穷解。</p></li>
+<li><p>当 <span class="math inline">\(r(\boldsymbol{A}) = r([\boldsymbol{A},\boldsymbol{b}]) &lt; n\)</span> 时，<span class="math inline">\(\boldsymbol{A}\)</span> 含有 <span class="math inline">\(n -r(\boldsymbol{A})\)</span> 个自由列，则 <span class="math inline">\(\boldsymbol{x}\)</span> 中含有 <span class="math inline">\(n -r(\boldsymbol{A})\)</span> 个自由变量，自由变量的取值是任意的，所以非齐次线性方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有无穷解。</p></li>
 </ul>
 <ol start="2" type="1">
 <li><strong>解的结构</strong></li>
 </ol>
 <ul>
-<li><p>易证方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的通解无法构成向量空间。</p></li>
-<li><p>设 <span class="math inline">\(\boldsymbol{v}_1,\boldsymbol{v}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的两个解向量，则</p></li>
+<li><p>易证方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的通解无法构成向量空间，故非齐次方程组没有解空间。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{\eta}_1,\boldsymbol{\eta}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的两个解向量，则</p></li>
 </ul>
 <p><span class="math display">\[
-\boldsymbol{A}(\boldsymbol{v}_1 - \boldsymbol{v}_2) = \boldsymbol{A}\boldsymbol{v}_1 - \boldsymbol{A}\boldsymbol{v}_2 = \boldsymbol{b} - \boldsymbol{b} = \boldsymbol{0}
+\boldsymbol{A}(\boldsymbol{\eta}_1 - \boldsymbol{\eta}_2) = \boldsymbol{A}\boldsymbol{\eta}_1 - \boldsymbol{A}\boldsymbol{\eta}_2 = \boldsymbol{b} - \boldsymbol{b} = \boldsymbol{0}
 \]</span></p>
-<p>即 <span class="math inline">\(\boldsymbol{v}_1-\boldsymbol{v}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量。</p>
+<p>即 <span class="math inline">\(\boldsymbol{\eta}_1-\boldsymbol{\eta}_2\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解向量。</p>
 <ul>
-<li>设 <span class="math inline">\(\boldsymbol{v}_n \in N(\boldsymbol{A})\)</span>，则</li>
+<li>设 <span class="math inline">\(\boldsymbol{\xi} \in N(\boldsymbol{A})\)</span>，则</li>
 </ul>
 <p><span class="math display">\[
-\boldsymbol{A}(\boldsymbol{v}_1 + \boldsymbol{v}_n) = \boldsymbol{A}\boldsymbol{v}_1 + \boldsymbol{A}\boldsymbol{v}_n = \boldsymbol{b} + \boldsymbol{0} = \boldsymbol{b}
+\boldsymbol{A}(\boldsymbol{\eta}_1 + \boldsymbol{\xi}) = \boldsymbol{A}\boldsymbol{\eta}_1 + \boldsymbol{A}\boldsymbol{\xi} = \boldsymbol{b} + \boldsymbol{0} = \boldsymbol{b}
 \]</span></p>
-<p>即 <span class="math inline">\(\boldsymbol{v}_1 + \boldsymbol{v}_n\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解向量。</p>
-<p>重要结论：</p>
+<p>即 <span class="math inline">\(\boldsymbol{\eta}_1 + \boldsymbol{\xi}\)</span> 是方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解向量。</p>
+<p><strong>重要结论：</strong></p>
 <ul>
-<li><p>如果确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的一个<strong>特解</strong> <span class="math inline">\(\boldsymbol{v}_p\)</span> 并确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的<strong>解空间</strong> <span class="math inline">\(N(\boldsymbol{A})\)</span>，即可表示出方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的<strong>通解</strong> <span class="math inline">\(\boldsymbol{v}_p + N(\boldsymbol{A})\)</span>。</p></li>
-<li><p>方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> <strong>最多</strong>具有 <span class="math inline">\(n - r(\boldsymbol{A}) + 1\)</span> 个线性无关的解向量。反过来说，若方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 具有 <span class="math inline">\(t\)</span> 个线性无关的解向量，则 <span class="math inline">\(N(\boldsymbol{A})\)</span> 中<strong>最少</strong>含有 <span class="math inline">\(t-1\)</span> 个线性无关的向量。</p></li>
+<li>如果确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的一个<strong>特解</strong> <span class="math inline">\(\boldsymbol{\eta}^*\)</span> 并确定方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的<strong>通解</strong> <span class="math inline">\(\boldsymbol{x}_N\)</span>，即可表示出方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的<strong>通解</strong> <span class="math inline">\(\boldsymbol{\eta}^* + \boldsymbol{x}_N\)</span>。</li>
+<li>方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> <strong>最多</strong>具有 <span class="math inline">\(n - r(\boldsymbol{A}) + 1\)</span> 个线性无关的解向量。反过来说，若方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 具有 <span class="math inline">\(t\)</span> 个线性无关的解向量，则 <span class="math inline">\(N(\boldsymbol{A})\)</span> 中<strong>最少</strong>含有 <span class="math inline">\(t-1\)</span> 个线性无关的向量。</li>
 </ul>
 <ol start="3" type="1">
 <li><strong>非齐次方程组解的存在性与齐次方程组解的存在性的关系</strong></li>
 </ol>
 <ul>
 <li>若 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解 <span class="math inline">\(\Rightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 只有零解。（充分不必要）</li>
-<li>若 <strong><em>A</em></strong> 是方阵，则 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解 <span class="math inline">\(\Leftrightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 只有零解。（充分必要）</li>
+<li>若 <span class="math inline">\(\boldsymbol{A}\)</span> 是方阵，则 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有唯一解 <span class="math inline">\(\Leftrightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 只有零解。（充分必要）</li>
 <li>若 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 有无穷解 <span class="math inline">\(\Rightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 有非零解。（充分不必要）</li>
 </ul>
 <h3 id="同解和公共解">同解和公共解</h3>
 <ol type="1">
 <li><strong>同解方程组</strong></li>
 </ol>
-<p>设 <strong><em>P</em></strong> 为可逆矩阵，则</p>
+<ul>
+<li><p>设 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n},\boldsymbol{B} \in \mathbb{R}^{s \times n}\)</span>，若方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 具有完全相同的解，则</p>
+<ul>
+<li><p><span class="math inline">\(\Leftrightarrow N(\boldsymbol{A}) = N(\boldsymbol{B}) \Leftrightarrow \boldsymbol{A}\)</span> 和 <span class="math inline">\(\boldsymbol{B}\)</span> 的行向量组张成的空间重合 <span class="math inline">\(\Leftrightarrow \boldsymbol{A}\)</span> 和 <span class="math inline">\(\boldsymbol{B}\)</span> 的<strong>行向量组等价</strong> <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B}) = r\left(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix} \right)\)</span>。</p>
+<blockquote>
+<p>也需要掌握其反向使用。</p>
+</blockquote></li>
+<li><p><span class="math inline">\(\boldsymbol{A}\)</span> 和 <span class="math inline">\(\boldsymbol{B}\)</span> 的列向量间具有相同的线性关系。</p></li>
+</ul></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n},\boldsymbol{B} \in \mathbb{R}^{s \times n}\)</span>，若方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解均是方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 的解</p>
+<ul>
+<li><span class="math inline">\(\Leftrightarrow \boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解是 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 与 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 的公共解 <span class="math inline">\(\Leftrightarrow \boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\boldsymbol{x} = \boldsymbol{0}\)</span> 同解 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}) = r\left( \begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix} \right) \Leftrightarrow \boldsymbol{B}\)</span> <strong>的行向量组可由 <span class="math inline">\(\boldsymbol{A}\)</span> 的行向量组线性表示</strong>。</li>
+</ul>
+<blockquote>
+<p>也需要掌握其反向使用，设 <span class="math inline">\(\boldsymbol{M}\)</span> 为任意矩阵，则 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解均是<span class="math inline">\(\boldsymbol{MAx} = \boldsymbol{0}\)</span> 的解。</p>
+</blockquote></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{C}\)</span> 是<strong>列满秩</strong>矩阵，则 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 与 <span class="math inline">\(\boldsymbol{CAx} = \boldsymbol{0}\)</span> 同解。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{P}\)</span> 为可逆矩阵，则</p></li>
+</ul>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \boldsymbol{Ax} = \boldsymbol{0} \Leftrightarrow \boldsymbol{PAx} = \boldsymbol{0} \\
-&amp; \boldsymbol{Ax} = \boldsymbol{b} \Leftrightarrow \boldsymbol{PAx} = \boldsymbol{Pb}
+&amp; \boldsymbol{Ax} = \boldsymbol{0} \Rightarrow \boldsymbol{PAx} = \boldsymbol{0}, \;  \boldsymbol{PAx} = \boldsymbol{0} \Rightarrow \boldsymbol{P}^{-1}\boldsymbol{PAx} = \boldsymbol{Ax} = \boldsymbol{0}\\
+&amp; \boldsymbol{Ax} = \boldsymbol{b} \Rightarrow \boldsymbol{PAx} = \boldsymbol{Pb}, \; \boldsymbol{PAx} = \boldsymbol{Pb} \Rightarrow \boldsymbol{P}^{-1}\boldsymbol{PAx} = \boldsymbol{P}^{-1}\boldsymbol{Pb} \Rightarrow \boldsymbol{Ax} = \boldsymbol{b}
 \end{aligned}
 \]</span></p>
-<p>即对系数矩阵 <strong><em>A</em></strong> 做<strong>初等行变换</strong>不改变方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解，对增广矩阵 <span class="math inline">\([\boldsymbol{A},\boldsymbol{b}]\)</span> 做<strong>初等行变换</strong>不改变方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解。</p>
-<p>右乘可逆矩阵 <strong><em>Q</em></strong> 不能得到相同的结论，但有时可以更方便的解题：</p>
+<p>即对系数矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 做<strong>初等行变换</strong>不改变方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的解，对增广矩阵 <span class="math inline">\([\boldsymbol{A},\boldsymbol{b}]\)</span> 做<strong>初等行变换</strong>不改变方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span> 的解。</p>
+<blockquote>
+<p>右乘可逆矩阵 <span class="math inline">\(\boldsymbol{Q}\)</span> 不能得到相同的结论，但有时可以更方便的解题：</p>
 <p><span class="math display">\[
 \boldsymbol{AQQ}^{-1}\boldsymbol{x} = \boldsymbol{Ax}
 \]</span></p>
-<p>故对 <strong><em>A</em></strong> 做初等列变换（<strong>通常是互换两列</strong>），然后对 <strong><em>x</em></strong> 做相应的初等行变换（<strong>互换两行</strong>），不改变方程组的解。</p>
-<p>重要结论：若方程组 <span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{B}_{s \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 具有完全相同的解，则</p>
+<p>故对 <span class="math inline">\(\boldsymbol{A}\)</span> 做初等列变换（<strong>通常是互换两列</strong>），然后对 <span class="math inline">\(\boldsymbol{x}\)</span> 做相应的初等行变换（<strong>互换两行</strong>），方程组依然成立。</p>
+</blockquote>
 <ul>
-<li><span class="math inline">\(N(\boldsymbol{A}) = N(\boldsymbol{B}) \Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 的行向量组张成的空间重合 <span class="math inline">\(\Leftrightarrow\)</span> <strong><em>A</em></strong> 和 <strong><em>B</em></strong> 的行向量组等价 <span class="math inline">\(\Leftrightarrow r(\boldsymbol{A}) = r(\boldsymbol{B}) = r\left(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix} \right)\)</span>。</li>
-<li><strong><em>A</em></strong> 和 <strong><em>B</em></strong> 的列向量间具有相同的线性关系。</li>
+<li><p><span class="math inline">\(\boldsymbol{A}^{\text{T}}\boldsymbol{Ax} = \boldsymbol{0}\)</span> 与 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 同解。</p></li>
+<li><p>设 <span class="math inline">\(\boldsymbol{A}\)</span> 为 <em>n</em> 阶方阵，则 <span class="math inline">\(\boldsymbol{A}^n \boldsymbol{x} = \boldsymbol{0}\)</span> 与 <span class="math inline">\(\boldsymbol{A}^{n+1} \boldsymbol{x} = \boldsymbol{0}\)</span> 同解。</p></li>
 </ul>
 <ol start="2" type="1">
 <li><strong>两个方程组的公共解</strong></li>
 </ol>
 <ul>
-<li>方程组 <span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{B}_{s \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 的公共解是 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\boldsymbol{x} = \boldsymbol{0}\)</span> 的解。</li>
-<li>同理，方程组 <span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{x} = \boldsymbol{\alpha}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{B}_{s \times n}\boldsymbol{x} = \boldsymbol{\beta}\)</span> 的公共解是 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\boldsymbol{x} = \begin{bmatrix} \boldsymbol{\alpha} \\ \boldsymbol{\beta}\end{bmatrix}\)</span> 的解。</li>
-<li>求出方程组 <span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 的通解 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + \cdots + k_f\boldsymbol{\xi}_f\)</span>，代入方程组 <span class="math inline">\(\boldsymbol{B}_{s \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 得到 <span class="math inline">\(k_i\;(i =1,\ldots,f)\)</span> 之间到关系。</li>
-<li>方程组 <span class="math inline">\(\boldsymbol{A}_{m \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 的基础解系 <span class="math inline">\(\boldsymbol{\xi}_1,\ldots,\boldsymbol{\xi}_p\)</span>，方程组 <span class="math inline">\(\boldsymbol{B}_{s \times n}\boldsymbol{x} = \boldsymbol{0}\)</span> 的基础解系 <span class="math inline">\(\boldsymbol{\eta}_1,\ldots, \boldsymbol{\eta}_q\)</span>，则公共解 <span class="math inline">\(\boldsymbol{\gamma}\)</span> 满足：<span class="math inline">\(\boldsymbol{\gamma} = k_1\boldsymbol{\xi}_1 + \cdots + k_p\boldsymbol{\xi}_p = l_1\boldsymbol{\eta}_1 + \cdots + l_q\boldsymbol{\eta}_q\)</span>，故 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + \cdots + k_p\boldsymbol{\xi}_p - l_1\boldsymbol{\eta}_1 - \cdots - l_q\boldsymbol{\eta}_q = \boldsymbol{0}\)</span>，即</li>
+<li><p>设 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times n},\boldsymbol{B} \in \mathbb{R}^{s \times n}\)</span>，则方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 的公共解是 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\boldsymbol{x} = \boldsymbol{0}\)</span> 的解。</p></li>
+<li><p>同理，方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{\alpha}\)</span> 与方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{\beta}\)</span> 的公共解是 <span class="math inline">\(\begin{bmatrix} \boldsymbol{A} \\ \boldsymbol{B} \end{bmatrix}\boldsymbol{x} = \begin{bmatrix} \boldsymbol{\alpha} \\ \boldsymbol{\beta}\end{bmatrix}\)</span> 的解。</p></li>
+<li><p>求出方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的通解 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + \cdots + k_f\boldsymbol{\xi}_f\)</span>，代入方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 得到 <span class="math inline">\(k_i\;(i =1,\ldots,f)\)</span> 之间到关系。</p></li>
+<li><p>方程组 <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{0}\)</span> 的基础解系 <span class="math inline">\(\boldsymbol{\xi}_1,\ldots,\boldsymbol{\xi}_p\)</span>，方程组 <span class="math inline">\(\boldsymbol{Bx} = \boldsymbol{0}\)</span> 的基础解系 <span class="math inline">\(\boldsymbol{\eta}_1,\ldots, \boldsymbol{\eta}_q\)</span>，则公共解 <span class="math inline">\(\boldsymbol{\gamma}\)</span> 满足：<span class="math inline">\(\boldsymbol{\gamma} = k_1\boldsymbol{\xi}_1 + \cdots + k_p\boldsymbol{\xi}_p = l_1\boldsymbol{\eta}_1 + \cdots + l_q\boldsymbol{\eta}_q\)</span>，故 <span class="math inline">\(k_1\boldsymbol{\xi}_1 + \cdots + k_p\boldsymbol{\xi}_p - l_1\boldsymbol{\eta}_1 - \cdots - l_q\boldsymbol{\eta}_q = \boldsymbol{0}\)</span>，即</p></li>
 </ul>
 <p><span class="math display">\[
 [\boldsymbol{\xi}_1, \ldots,\boldsymbol{\xi}_p,\boldsymbol{\eta}_1,\ldots,\boldsymbol{\eta}_q] \begin{bmatrix} k_1 \\ \vdots \\ k_p \\ l_1 \\ \vdots \\ l_q \end{bmatrix} = \boldsymbol{0}
 \]</span></p>
-<p>求出该方程组的通解，根据通解中 <span class="math inline">\(k,l\)</span> 的位置代入 <span class="math inline">\(N(\boldsymbol{A})\)</span> 或 <span class="math inline">\(N(\boldsymbol{B})\)</span>，即可得到公共解的通解。</p>
+<p>求出该方程组的通解，根据通解中 <span class="math inline">\(k,l\)</span> 的位置与 <span class="math inline">\(\boldsymbol{\xi}_1,\ldots,\boldsymbol{\xi}_p\)</span> 或 <span class="math inline">\(\boldsymbol{\eta}_1,\ldots, \boldsymbol{\eta}_q\)</span> 结合，即可得到公共解的通解。</p>
 <blockquote>
 <p>线代 9 讲习题 5.15 6.12</p>
 </blockquote>
@@ -762,8 +794,8 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 <li>抽象型。题目没有给出具体向量，只提供了向量关系，此时的思路：</li>
 </ol>
 <ul>
-<li>设 <span class="math inline">\(k_1,k_2,\ldots,k_n\)</span> 使得向量满足题目中线性相关或线性无关的要求，然后推导出结果。</li>
-<li>化向量关系为抽象矩阵方程，通过向量组的秩、矩阵的秩等结论推导出结果。</li>
+<li><p>设 <span class="math inline">\(k_1,k_2,\ldots,k_n\)</span> 使得向量满足题目中线性相关或线性无关的要求，然后推导出结果。</p></li>
+<li><p>化向量关系为抽象矩阵方程，通过向量组的秩、矩阵的秩等结论推导出结论。</p></li>
 <li><p>形如 <span class="math inline">\(\boldsymbol{A\alpha}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\boldsymbol{\alpha}\)</span> 的抽象向量，通过 <span class="math inline">\(\boldsymbol{A}\)</span> 或 <span class="math inline">\(f(\boldsymbol{A})\)</span> 的特征向量 <span class="math inline">\(\boldsymbol{\xi}_i\;(i=1,2,\ldots,n)\)</span> 表示：<span class="math inline">\(\boldsymbol{\alpha}= a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n\)</span>，设 <span class="math inline">\(\lambda_i\;(i=1,2,\ldots,n)\)</span> 是特征向量 <span class="math inline">\(\boldsymbol{\xi}_i \;(i=1,2,\ldots,n)\)</span> 的特征值，则</p>
 <p><span class="math display">\[
 \boldsymbol{A\alpha} = \boldsymbol{A}(a_1\boldsymbol{\xi}_1 + a_2\boldsymbol{\xi}_2 + \cdots + a_n\boldsymbol{\xi}_n) = a_1\lambda_1\boldsymbol{\xi}_1 + a_2\lambda_2\boldsymbol{\xi}_2 + \cdots + a_n\lambda_n\boldsymbol{\xi}_n
@@ -874,7 +906,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E5%92%8C%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">线性相关和线性无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9%E5%92%8C%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.</span> <span class="nav-text">向量组的秩和等价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E5%9F%BA"><span class="nav-number">1.3.</span> <span class="nav-text">向量空间和基</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F-%E5%90%91%E9%87%8F%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%9F%A9%E9%98%B5-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">向量-向量关系与矩阵-矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">线性方程组解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵的零空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4"><span class="nav-number">3.2.</span> <span class="nav-text">矩阵的列空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%A7%A3%E5%92%8C%E5%85%AC%E5%85%B1%E8%A7%A3"><span class="nav-number">3.3.</span> <span class="nav-text">同解和公共解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">向量组解题思路</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E5%92%8C%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">线性相关和线性无关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9%E5%92%8C%E7%AD%89%E4%BB%B7"><span class="nav-number">1.2.</span> <span class="nav-text">向量组的秩和等价</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%E5%92%8C%E5%9F%BA"><span class="nav-number">1.3.</span> <span class="nav-text">向量空间和基</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">向量关系与矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E8%A7%A3%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">线性方程组解的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵的零空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%97%E7%A9%BA%E9%97%B4"><span class="nav-number">3.2.</span> <span class="nav-text">矩阵的列空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E8%A7%A3%E5%92%8C%E5%85%AC%E5%85%B1%E8%A7%A3"><span class="nav-number">3.3.</span> <span class="nav-text">同解和公共解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">向量组解题思路</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -890,7 +922,7 @@ C(\boldsymbol{A}) &amp;= \text{span}\{\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

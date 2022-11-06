@@ -21,20 +21,20 @@
     var CONFIG = {"hostname":"cohanbb.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./search.xml"};
   </script>
 
-  <meta name="description" content="概率论与数量统计-概率论的预备知识">
+  <meta name="description" content="线性代数-行列式的概念与计算。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论的预备知识">
-<meta property="og:url" content="https://cohanbb.github.io/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:title" content="行列式">
+<meta property="og:url" content="https://cohanbb.github.io/2022/09/18/%E8%A1%8C%E5%88%97%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Cohanbb Wiki">
-<meta property="og:description" content="概率论与数量统计-概率论的预备知识">
+<meta property="og:description" content="线性代数-行列式的概念与计算。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-26T04:24:35.000Z">
-<meta property="article:modified_time" content="2022-11-06T14:56:11.172Z">
+<meta property="article:published_time" content="2022-09-18T14:24:35.000Z">
+<meta property="article:modified_time" content="2022-11-06T14:55:09.970Z">
 <meta property="article:author" content="Cohanbb">
-<meta property="article:tag" content="Probability Theory">
+<meta property="article:tag" content="Linear Algebra">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://cohanbb.github.io/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/">
+<link rel="canonical" href="https://cohanbb.github.io/2022/09/18/%E8%A1%8C%E5%88%97%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>概率论的预备知识 | Cohanbb Wiki</title>
+  <title>行列式 | Cohanbb Wiki</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/">
+    <link itemprop="mainEntityOfPage" href="https://cohanbb.github.io/2022/09/18/%E8%A1%8C%E5%88%97%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          概率论的预备知识
+          行列式
         </h1>
 
         <div class="post-meta">
@@ -224,14 +224,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-09-26 12:24:35" itemprop="dateCreated datePublished" datetime="2022-09-26T12:24:35+08:00">2022-09-26</time>
+              <time title="创建时间：2022-09-18 22:24:35" itemprop="dateCreated datePublished" datetime="2022-09-18T22:24:35+08:00">2022-09-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-06 22:56:11" itemprop="dateModified" datetime="2022-11-06T22:56:11+08:00">2022-11-06</time>
+                <time title="修改时间：2022-11-06 22:55:09" itemprop="dateModified" datetime="2022-11-06T22:55:09+08:00">2022-11-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,177 +261,185 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>概率论与数量统计-概率论的预备知识</p>
-<hr />
+        <p>线性代数-行列式的概念与计算。</p>
 <span id="more"></span>
+<hr />
 <p><strong>本文索引</strong></p>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 <ul>
-<li><a href="#古典概型">古典概型</a>
+<li><a href="#概念">概念</a>
 <ul>
-<li><a href="#随机占位问题">随机占位问题</a></li>
-<li><a href="#随机抽样问题">随机抽样问题</a></li>
+<li><a href="#行列式的定义">行列式的定义</a></li>
+<li><a href="#克莱姆法则">克莱姆法则</a></li>
 </ul></li>
-<li><a href="#几何概型">几何概型</a></li>
-<li><a href="#重要公式">重要公式</a>
+<li><a href="#计算">计算</a>
 <ul>
-<li><a href="#基本公式">基本公式</a></li>
-<li><a href="#对立事件的概率">对立事件的概率</a></li>
-<li><a href="#互斥事件的概率公式">互斥事件的概率公式</a></li>
-<li><a href="#条件概率">条件概率</a></li>
-<li><a href="#独立事件的概率">独立事件的概率</a></li>
-<li><a href="#不等关系">不等关系</a></li>
+<li><a href="#求行列式">求行列式</a>
+<ul>
+<li><a href="#行列式的性质">行列式的性质</a></li>
+<li><a href="#基本行列式">基本行列式</a></li>
+<li><a href="#拉普拉斯行列式">拉普拉斯行列式</a></li>
+<li><a href="#范德蒙德行列式">范德蒙德行列式</a></li>
+<li><a href="#爪形行列式">爪形行列式</a></li>
+<li><a href="#行列和相等的行列式">行（列）和相等的行列式</a></li>
+<li><a href="#加边法求行列式">加边法求行列式</a></li>
+<li><a href="#递推法求行列式">递推法求行列式</a></li>
+<li><a href="#数学归纳法求行列式">数学归纳法求行列式</a></li>
+</ul></li>
+<li><a href="#求代数余子式">求代数余子式</a>
+<ul>
+<li><a href="#用行列式">用行列式</a></li>
+<li><a href="#用伴随矩阵和特征值">用伴随矩阵和特征值</a></li>
+</ul></li>
 </ul></li>
 </ul>
 <!-- /code_chunk_output -->
 <hr />
-<h2 id="古典概型">古典概型</h2>
-<p><span class="math display">\[
-P(A) = \frac{n(A)}{n(\Omega)}
-\]</span></p>
-<h3 id="随机占位问题">随机占位问题</h3>
-<p>将 <em>n</em> 个可辨质点随机地分配到 <em>N</em> 个盒子中，则：</p>
-<ul>
-<li>每盒可容纳任意多个质点：有 <span class="math inline">\(N^n\)</span> 种分配方法。</li>
-<li>每盒可最多容纳一个质点：有 <span class="math inline">\(\text{P}_N^n = \frac{N!}{(N-n) !}= N(N-1)\cdots(N-n+1)\)</span> 种分配方法。</li>
-</ul>
-<p><em>n</em> 个小球的排列数：<span class="math inline">\(n!\)</span>。</p>
-<h3 id="随机抽样问题">随机抽样问题</h3>
-<ul>
-<li>先后有放回取 <em>n</em> 次：有 <span class="math inline">\(N^n\)</span> 种取法。</li>
-<li>先后无放回取 <em>n</em> 次：有 <span class="math inline">\(\text{P}_N^n = N(N-1)\cdots(N-n+1)\)</span> 种取法。</li>
-<li>任取 <em>n</em> 个：有 <span class="math inline">\(\text{C}_N^n = \frac{\text{P}_N^n}{n!}\)</span> 种取法。</li>
-</ul>
+<h1 id="行列式">行列式</h1>
+<h2 id="概念">概念</h2>
+<h3 id="行列式的定义">行列式的定义</h3>
 <blockquote>
-<p><span class="math inline">\(\text{P}_N^n\)</span> 表示考虑先后顺序地无放回取 <em>n</em> 个的取法，<span class="math inline">\(\text{C}^n\)</span> 表示一次性取 <em>n</em> 个的取法，等价于无先后顺序且无放回地取 <em>n</em> 个，故 <span class="math inline">\(\text{C}_N^n\)</span> 等于 <span class="math inline">\(\text{P}_N^n\)</span> 除以排列数。</p>
+<p>行列式的公理化定义：</p>
+<p>函数 <span class="math inline">\(\mathcal{D}: \mathbb{R}^{n \times n} \to \mathbb{R}\)</span> 满足： * <span class="math inline">\(\mathcal{D}(\boldsymbol{\alpha}_1,\ldots, \lambda \boldsymbol{\alpha}_i, \ldots, \boldsymbol{\alpha}_n) = \lambda \mathcal{D}(\boldsymbol{\alpha}_1,\ldots,\boldsymbol{\alpha}_i, \ldots, \boldsymbol{\alpha}_n)\)</span> * <span class="math inline">\(\mathcal{D}(\boldsymbol{\alpha}_1,\ldots, \boldsymbol{\alpha}_i + \boldsymbol{\alpha}_j, \ldots, \boldsymbol{\alpha}_n) = \mathcal{D}(\boldsymbol{\alpha}_1,\ldots,\boldsymbol{\alpha}_i, \ldots, \boldsymbol{\alpha}_n)\)</span> * <span class="math inline">\(\mathcal{D}(\boldsymbol{E}) = 1\)</span></p>
+<p>则称 <span class="math inline">\(\mathcal{D}(\boldsymbol{A})\)</span> 为 <span class="math inline">\(\boldsymbol{A}\)</span> 的『<strong>行列式</strong>』。</p>
 </blockquote>
-<h2 id="几何概型">几何概型</h2>
-<blockquote>
-<p>若 <span class="math inline">\(\Omega\)</span> 是一个可度量的几何区域，且样本点落入 <span class="math inline">\(\Omega\)</span> 的某一个可度量子区域 <em>A</em> 的可能性大小与 <em>A</em> 的几何度量成正比，而与 <em>A</em> 的位置与形状无关，称为『<strong>几何概型</strong>』。</p>
-</blockquote>
+<p><strong>行列式的代数和定义</strong></p>
+<p>一个 <em>n</em> 阶矩阵 <span class="math inline">\(\boldsymbol{A}\)</span> 的行列式可直观定义为</p>
 <p><span class="math display">\[
-P(A) = \frac{S(A)}{S(\Omega)}
+\text{det} ( \boldsymbol{A}) = \sum_{j_1j_2\cdots j_n} (-1)^{\tau(j_1j_2\cdots j_n)} \prod_{i=1}^n a_{i j_{i}}
 \]</span></p>
-<h2 id="重要公式">重要公式</h2>
-<h3 id="基本公式">基本公式</h3>
+<p>其中 <span class="math inline">\(j_1j_2 \cdots j_n\)</span> 表示 <span class="math inline">\(\{1,2,\ldots,n\}\)</span> 的所有可能排列，<span class="math inline">\(\tau(j_1 j_2 \cdots j_n)\)</span> 表示排列 <span class="math inline">\(j_1 j_2 \cdots j_n\)</span> 的『<strong>逆序数</strong>』，逆序数被定义为排列中逆序数对的个数。</p>
+<p><strong>行列式的归纳定义</strong></p>
+<p>当 <span class="math inline">\(\boldsymbol{A} = [a]\)</span> 时，定义 <span class="math inline">\(\text{det}(\boldsymbol{A}) = a\)</span>。</p>
+<p>设 <span class="math inline">\(\mathbb{R}^{(n-1) \times (n-1)}\)</span> 上的矩阵的行列式已经被定义，则定义 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{n \times n}\)</span> 的行列式按第 <span class="math inline">\(i\;(i = 1,2,\ldots,n)\)</span> 行展开为</p>
+<p><span class="math display">\[
+\text{det}(\boldsymbol{A}) = \sum_{j=1}^n a_{ij} A_{ij}
+\]</span></p>
+<p>也可按第 <span class="math inline">\(j\;(j = 1,2,\ldots,n)\)</span> 列展开为</p>
+<p><span class="math display">\[
+\text{det}(\boldsymbol{A}) = \sum_{i=1}^n a_{ij} A_{ij}
+\]</span></p>
+<p>其中 <span class="math inline">\(A_{ij}\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的元素 <span class="math inline">\(a_{ij}\)</span> 的『<strong>代数余子式</strong>』，其被定义为</p>
+<p><span class="math display">\[
+A_{ij} = (-1)^{i+j} M_{ij}
+\]</span></p>
+<p>其中 <span class="math inline">\(M_{ij}\)</span> 是 <span class="math inline">\(\boldsymbol{A}\)</span> 的元素 <span class="math inline">\(a_{ij}\)</span> 的『<strong>余子式</strong>』，它被定义为 <span class="math inline">\(\boldsymbol{A}\)</span> 中除去第 <em>i</em> 行第 <em>j</em> 列后剩余元素按照原来的相对位置排成的新矩阵的行列式。</p>
+<h3 id="克莱姆法则">克莱姆法则</h3>
+<h2 id="计算">计算</h2>
+<h3 id="求行列式">求行列式</h3>
+<h4 id="行列式的性质">行列式的性质</h4>
 <ul>
-<li><span class="math inline">\(A \cup (B \cap C) =( A \cup B) \cap (A \cup C),\; A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span></li>
-<li><span class="math inline">\(\overline{A \cup B} = \overline{A} \cap \overline{B},\;\overline{A \cap B} = \overline{A} \cup \overline{B}\)</span></li>
-<li><span class="math inline">\(P(A + B) = P(A \cup B)\)</span></li>
-<li><span class="math inline">\(P(AB) = P(A \cap B) = P\{A,B\}\)</span></li>
+<li><span class="math inline">\(\left | \boldsymbol{A} \right | = \left | \boldsymbol{A}^{\text{T}} \right |\)</span></li>
+<li><span class="math inline">\(\boldsymbol{A},\boldsymbol{B} \in \mathbb{R}^{n \times n}, |\boldsymbol{AB}| = |\boldsymbol{A}||\boldsymbol{B}|\)</span></li>
+<li>将行列式的某一行（列）的 <span class="math inline">\(k \; (k \neq 0)\)</span> 加到另外一行（列），不改变行列式的值。</li>
+<li>行列式互换两行（列）的位置，行列式的值乘 <span class="math inline">\(-1\)</span>。</li>
+<li>行列式某一行（列）乘 <em>k</em>，则行列式的值乘 <em>k</em>。</li>
+<li>行列式中某行（列）元素全为 0，则行列式的值为 0。</li>
+<li>行列式中存在两行（列）成比例，则行列式的值为 0。</li>
 </ul>
-<h3 id="对立事件的概率">对立事件的概率</h3>
-<p><span class="math inline">\(P(A) = 1 - P(\overline{A})\)</span></p>
-<p>当求 <span class="math inline">\(P(A)\)</span> 比较困难，而求 <span class="math inline">\(P(\overline{A})\)</span> 比较容易时，适合使用此公式。</p>
-<h3 id="互斥事件的概率公式">互斥事件的概率公式</h3>
-<p><span class="math inline">\(A \cap B = \varnothing \Leftrightarrow A,B\)</span> 互斥 <span class="math inline">\(\Rightarrow P(AB) = 0\)</span>。</p>
-<blockquote>
-<p>注： * 对立事件一定互斥。 * <span class="math inline">\(P(AB) = 0 \not\Rightarrow A,B\)</span> 互斥。</p>
-</blockquote>
+<h4 id="基本行列式">基本行列式</h4>
 <ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 两两互斥，则</li>
+<li>主对角线行列式：</li>
 </ul>
 <p><span class="math display">\[
-P\left( \bigcup_{i=1}^nA_i\right) = \sum_{i =1}^nP(A_i)
+\left| \begin{matrix}a_{11} &amp;a_{12} &amp;\cdots &amp;a_{1n} \\
+0 &amp;a_{22} &amp;\cdots &amp;a_{2n} \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+0 &amp;0 &amp;\cdots &amp;a_{nn} \end{matrix} \right| = \left| \begin{matrix}a_{11} &amp;0 &amp;\cdots &amp;0 \\
+a_{21} &amp;a_{22} &amp;\cdots &amp;0\\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+a_{n1} &amp;a_{n2} &amp;\cdots &amp;a_{nn} \end{matrix} \right|
+= \left| \begin{matrix}a_{11} &amp;0 &amp;\cdots &amp;0 \\
+0 &amp;a_{22} &amp;\cdots &amp;0 \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+0 &amp;0 &amp;\cdots &amp;a_{nn} \end{matrix} \right| = a_{11}a_{22}\cdots a_{nn}
 \]</span></p>
 <ul>
-<li><strong>分割互斥</strong>：<span class="math inline">\(A \cup B = A \cup \overline{A}B = A\overline{B}\cup B = A\overline{B}\cup AB \cup \overline{A}B\)</span>。转化为互斥事件，然后概率可直接相加。</li>
-<li><p><strong>全集分解</strong>：<span class="math inline">\(B_1,B_2,\ldots,B_n\)</span> 为完备事件组，则 <span class="math inline">\(A = A\Omega =AB_1 \cup AB_2 \cup\cdots\cup AB_n\)</span>。</p>
-<blockquote>
-<p>两两互斥且和为 <span class="math inline">\(\Omega\)</span> 的事件组称为完备事件组。</p>
-</blockquote></li>
-<li><span class="math inline">\(P(A - B) = P(A\overline{B}) = P(A) - P(AB)\)</span></li>
-<li><p><span class="math inline">\(P(A+B) = P(A \cup \overline{A}B) = P(A) + P(\overline{A}B) = P(A) + P(B) - P(AB)\)</span></p>
-<blockquote>
-<p>以及其逆用：<span class="math inline">\(P(AB) = P(A) + P(B) - P(A+B)\)</span>。</p>
-</blockquote></li>
-<li><p><span class="math inline">\(P(A+B+C) = P(A) + P(B) + P(C) - P(AB) - P(BC) - P(AC) + P(ABC)\)</span></p></li>
+<li>副对角线行列式：</li>
 </ul>
-<h3 id="条件概率">条件概率</h3>
-<ul>
-<li><span class="math inline">\(P(A \vert B) = \frac{P(AB)}{P(B)} \;(P(B) &gt; 0)\)</span></li>
-<li><span class="math inline">\(P(A \vert B) + P(\overline{A} \vert B) = 1\)</span></li>
-<li>可得结论：</li>
-</ul>
+<p><span class="math display">\[
+\left| \begin{matrix} a_{11} &amp;\cdots &amp;a_{1,n-1} &amp;a_{1n} \\
+a_{21}  &amp;\cdots &amp;a_{2,n-1} &amp;0 \\
+\vdots  &amp; &amp;\vdots &amp;\vdots\\
+a_{n1}  &amp;\cdots &amp;0  &amp;0\end{matrix} \right| 
+= \left| \begin{matrix} 0 &amp;\cdots &amp;0 &amp;a_{1n} \\
+0  &amp;\cdots &amp;a_{2,n-1} &amp;a_{2n}\\
+\vdots  &amp; &amp;\vdots &amp;\vdots\\
+a_{n1}  &amp;\cdots &amp;a_{n,n-1} &amp;a_{nn}\end{matrix} \right|
+= \left| \begin{matrix} 0 &amp;\cdots &amp;0 &amp;a_{1n} \\
+0  &amp;\cdots &amp;a_{2,n-1} &amp;0 \\
+\vdots  &amp; &amp;\vdots &amp;\vdots\\
+a_{n1}  &amp;\cdots &amp;0  &amp;0\end{matrix} \right| = (-1)^{\frac{n(n-1)}{2}}a_{1n}a_{2,n-1}\cdots a_{n1}
+\]</span></p>
+<h4 id="拉普拉斯行列式">拉普拉斯行列式</h4>
+<p>设 <span class="math inline">\(\boldsymbol{A} \in \mathbb{R}^{m \times m}, \; \boldsymbol{B} \in \mathbb{R}^{n \times n}\)</span>，则</p>
 <p><span class="math display">\[
 \begin{aligned}
-P(AB) &amp;= P(B)P(A \vert B)\;(P(B) &gt; 0) \\
-&amp;= P(A)P(B \vert A) \;(P(A) &gt; 0) \\
-&amp;= P(A) + P(B) - P(A + B) \\
-&amp;= P(A) - P(A\overline{B})
+\left | \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O} \\ \boldsymbol{O} &amp;\boldsymbol{B} \end{matrix} \right| = \left | \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{C} \\ \boldsymbol{O} &amp;\boldsymbol{B} \end{matrix} \right|&amp; =\left | \begin{matrix} \boldsymbol{A} &amp;\boldsymbol{O} \\ \boldsymbol{C} &amp;\boldsymbol{B} \end{matrix} \right| = |\boldsymbol{A}| |\boldsymbol{B}| \\
+\left | \begin{matrix} \boldsymbol{O} &amp;\boldsymbol{A} \\ \boldsymbol{B} &amp;\boldsymbol{O} \end{matrix} \right| = \left | \begin{matrix} \boldsymbol{C} &amp;\boldsymbol{A} \\ \boldsymbol{B} &amp;\boldsymbol{O} \end{matrix} \right|&amp; =\left | \begin{matrix} \boldsymbol{O} &amp;\boldsymbol{A} \\ \boldsymbol{B} &amp;\boldsymbol{C} \end{matrix} \right| = (-1)^{mn} |\boldsymbol{A}| |\boldsymbol{B}|
 \end{aligned}
 \]</span></p>
+<h4 id="范德蒙德行列式">范德蒙德行列式</h4>
+<p><span class="math display">\[
+\left| \begin{matrix}
+1 &amp;1 &amp;\cdots &amp;1 \\
+x_1 &amp;x_2 &amp;\cdots &amp;x_n \\
+{x_1}^2 &amp;{x_2}^2 &amp;\cdots &amp;{x_n}^2 \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+{x_1}^{n-1} &amp;{x_2}^{n-1} &amp;\cdots &amp;{x_n}^{n-1}
+\end{matrix} \right|
+= \prod_{1 \leq i &lt; j \leq n} (x_j - x_i)
+\]</span></p>
+<h4 id="爪形行列式">爪形行列式</h4>
+<p>形如</p>
+<p><span class="math display">\[
+\left | \begin{matrix}
+a_1 - b_1 &amp;a_2 &amp;\cdots &amp;a_n \\
+a_1 &amp;a_2 - b_2 &amp;\cdots &amp;a_n \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+a_1 &amp;a_2 &amp;\cdots &amp;a_n -b_n
+\end{matrix} \right |
+\]</span></p>
+<p>的行列式，从第 2 行开始依次减第一行化为爪形：</p>
+<p><span class="math display">\[
+\left | \begin{matrix}
+a_1 - b_1 &amp;a_2 &amp;\cdots &amp;a_n \\
+b_1 &amp;-b_2 &amp;\cdots &amp;0 \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+b_1 &amp;0 &amp;\cdots &amp;-b_n
+\end{matrix} \right |
+\]</span></p>
+<p>然后让第一列依次加 <span class="math inline">\(\frac{b_1}{b_i} \;(i = 2,3,\ldots,n)\)</span> 倍的第 <em>i</em> 列，得上三角形：</p>
+<p><span class="math display">\[
+\left | \begin{matrix}
+-b_1 + \sum_{i=1}^n \frac{b_1}{b_i}a_i &amp;a_2 &amp;\cdots &amp;a_n \\
+0 &amp;-b_2 &amp;\cdots &amp;0 \\
+\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\
+0 &amp;0 &amp;\cdots &amp;-b_n
+\end{matrix} \right |
+\]</span></p>
+<h4 id="行列和相等的行列式">行（列）和相等的行列式</h4>
+<h4 id="加边法求行列式">加边法求行列式</h4>
+<h4 id="递推法求行列式">递推法求行列式</h4>
+<h4 id="数学归纳法求行列式">数学归纳法求行列式</h4>
+<h3 id="求代数余子式">求代数余子式</h3>
+<p>求代数余子式的和：</p>
+<h4 id="用行列式">用行列式</h4>
 <ul>
-<li><strong>全概率公式</strong>：若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 为完备事件组，<span class="math inline">\(P(A_i) &gt; 0\;(i =1,2,\ldots,n)\)</span>，则</li>
+<li><p>形如求 <span class="math inline">\(k_1A_{m1} + k_2A_{m2} + \cdots + k_nA_{mn}\)</span>，等于将矩阵的第 <span class="math inline">\(m\)</span> 行换为 <span class="math inline">\(k_1, k_2,\cdots,k_n\)</span>，然后求行列式的值。</p></li>
+<li><p>形如求 <span class="math inline">\(k_1M_{m1} + k_2M_{m2} + \cdots + k_nM_{mn}\)</span>，则将对应的元素换为 <span class="math inline">\((-1)^{m+i}k_i\)</span>，然后求行列式的值。</p></li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-P(B) &amp;= P(B\Omega) = P(BA_1\cup BA_2 \cup \cdots \cup BA_n) \\
-&amp; = \sum_{i=1}^n P(A_i)P(B \vert A_i)
-\end{aligned}
-\]</span></p>
-<ul>
-<li><strong>贝叶斯公式</strong>：</li>
-</ul>
-<p><span class="math display">\[
-P(A_j \vert B) = \frac{P(A_jB)}{P(B)} = \frac{P(A_j)P(B\vert A_j)}{\sum_{i=1}^nP(A_i)P(B \vert A_i)}\;(j = 1,2,\ldots,n)
-\]</span></p>
-<h3 id="独立事件的概率">独立事件的概率</h3>
-<p>若 <span class="math inline">\(P(AB) = P(A)P(B) \Leftrightarrow A,B\)</span> <strong>相互独立</strong>。对于 <em>n</em> 个事件 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 个事件，若对于其中任意 <em>k</em> 个事件 <span class="math inline">\(A_{i_1},A_{i_2},\ldots,A_{i_k}\;(k = 2,\ldots,n)\)</span> 都有</p>
-<p><span class="math display">\[
-P(A_{i_1}A_{i_2}\cdots A_{i_k}) = P(A_{i_1})P(A_{i_2})\cdots P(A_{i_k})
-\]</span></p>
-<p>则称 <em>n</em> 个事件相互独立。</p>
-<p>譬如</p>
-<p><span class="math display">\[
-\begin{align}
-&amp; P(A_1A_2) = P(A_1)P(A_2) \\
-&amp; P(A_2A_3) = P(A_2)P(A_3) \\
-&amp; P(A_1A_3) = P(A_1)P(A_3) \\
-&amp; P(A_1A_2A_3) = P(A_1)P(A_2)P(A_3)
-\end{align}
-\]</span></p>
-<p>可说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 相互独立，若无 (4) 式只能说明 <span class="math inline">\(A_1,A_2,A_3\)</span> 两两独立。</p>
+<p><strong>重要结论：</strong></p>
+<p>行列式错位展开值为 0。</p>
 <blockquote>
-<p>独立与互斥没什么关系。</p>
+<p>譬如求 <span class="math inline">\(a_{l1} A_{k1} + a_{l2} A_{k2} + \cdots + a_{ln} A_{kn} \; ( l \neq k)\)</span>，即将原矩阵的第 <span class="math inline">\(k\)</span> 行的元素换为第 <span class="math inline">\(l\)</span> 行的元素，则行列式有两行相等，故行列式的值为 0。</p>
 </blockquote>
-<p>结论：</p>
+<p>根据该结论，若 <span class="math inline">\(\boldsymbol{A}\)</span> 的第 <span class="math inline">\(m\)</span> 行（列）的元素为 <em>k</em>，则 <span class="math inline">\(\boldsymbol{A}\)</span> 的全部元素的代数余子式之和 <span class="math inline">\(= \frac{|\boldsymbol{A}|}{k}\)</span>。</p>
+<h4 id="用伴随矩阵和特征值">用伴随矩阵和特征值</h4>
 <ul>
-<li><span class="math inline">\(A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow A, \overline{B}\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow \overline{A}, \overline{B}\)</span> 相互独立。</li>
-<li><span class="math inline">\(A,B,C,D\)</span> 相互独立，则对 <span class="math inline">\(A,B,C,D\)</span> 不含相同事件作运算得到的新事件也独立。</li>
-<li><span class="math inline">\(P(A) &gt; 0,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B)\)</span>。</li>
-<li><span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) = P(B \vert \overline{A}) = P(B)\)</span>。</li>
-<li>根据上一条结论，<span class="math inline">\(0 &lt; P(A) &lt; 1,\;A,B\)</span> 相互独立 <span class="math inline">\(\Leftrightarrow P(B \vert A) + P(\overline{B} \vert \overline{A}) = 1\)</span>。</li>
-<li><span class="math inline">\(P(A) = 0 \; \text{or} \; 1\)</span>，则 <span class="math inline">\(A\)</span> 与任意事件独立。</li>
-<li><p><span class="math inline">\(0 &lt;P(A) &lt; 1,\; 0 &lt; P(B) &lt; 1\)</span>，且 <span class="math inline">\(A,B\)</span> 互斥或存在包含关系，则 <span class="math inline">\(A,B\)</span> 一定不相互独立。</p></li>
-<li><p>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\)</span> 相互独立，则</p></li>
-</ul>
-<p><span class="math display">\[
-P(A_1A_2\cdots A_n) = P(A_1)P(A_2)\cdots
-P(A_n)
-\]</span></p>
-<ul>
-<li>若 <span class="math inline">\(A_1,A_2,\ldots,A_n\;(n &gt; 3)\)</span> 相互独立，则</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^nA_i}\right) \\ &amp; = 1 - P\left(\bigcap_{i=1}^n\overline{A_i} \right) \\
-&amp; = 1 - \prod_{i=1}^nP(\overline{A_i}) \\
-&amp; = 1 - \prod_{i=1}^n[1-P(A_i)]
-\end{aligned}
-\]</span></p>
-<h3 id="不等关系">不等关系</h3>
-<ul>
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
-<li>若 <span class="math inline">\(A \subseteq B\)</span>，则 <span class="math inline">\(P(A) \leq P(B)\)</span>。</li>
-<li><span class="math inline">\(AB \subseteq A \; (\text{or} \; B) \subseteq A + B \Rightarrow P(AB) \leq P(A) \; (\text{or} \; P(B)) \leq P(A + B)\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} = \{X \leq a\} \cap \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \leq a\} = \{X \leq a\} \cup \{Y \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \geq a\} = \{X \geq a\} \cup \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} = \{X \geq a\} \cap \{Y \geq a\}\)</span></li>
-<li><span class="math inline">\(\{\max(X,Y) \leq a\} \subseteq \{\min(X,Y) \leq a\}\)</span></li>
-<li><span class="math inline">\(\{\min(X,Y) \geq a\} \subseteq \{\max(X,Y) \geq a\}\)</span></li>
+<li><p>形如求若干代数余子式的和。若 <span class="math inline">\(\boldsymbol{A}\)</span> 可逆，则 <span class="math inline">\(\boldsymbol{A}^* = |\boldsymbol{A}|\boldsymbol{A}^{-1}\)</span>。</p></li>
+<li><p>形如求 <span class="math inline">\(A_{11} + A_{22} + \cdots + A_{nn}\)</span>，等于求 <span class="math inline">\(\text{tr}(\boldsymbol{A}^*)\)</span>。若 <span class="math inline">\(\boldsymbol{A}\)</span> 可逆且特征值为 <span class="math inline">\(\lambda_i\;(i=1,2, \ldots,n)\)</span>，则 <span class="math inline">\(\boldsymbol{A}^*\)</span> 的特征值为 <span class="math inline">\(\frac{|\boldsymbol{A}|}{\lambda_i}\)</span>，又因为 <span class="math inline">\(|\boldsymbol{A}| = \prod_{i=1}^n \lambda_i\)</span>，故 <span class="math inline">\(\text{tr}(\boldsymbol{A}^*) = \sum_{i=1}^n \frac{\lambda_1 \lambda_2\cdots \lambda_n}{\lambda_i}\)</span>。</p></li>
 </ul>
 
     </div>
@@ -448,7 +456,7 @@ P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^n
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://cohanbb.github.io/2022/09/26/%E6%A6%82%E7%8E%87%E8%AE%BA%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/" title="概率论的预备知识">https://cohanbb.github.io/2022/09/26/概率论预备知识/</a>
+    <a href="https://cohanbb.github.io/2022/09/18/%E8%A1%8C%E5%88%97%E5%BC%8F/" title="行列式">https://cohanbb.github.io/2022/09/18/行列式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -459,7 +467,7 @@ P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^n
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Probability-Theory/" rel="tag"># Probability Theory</a>
+              <a href="/tags/Linear-Algebra/" rel="tag"># Linear Algebra</a>
           </div>
 
         
@@ -473,12 +481,12 @@ P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^n
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/09/25/%E4%BA%8C%E6%AC%A1%E5%9E%8B/" rel="prev" title="二次型">
-      <i class="fa fa-chevron-left"></i> 二次型
+    <a href="/2022/09/15/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6/" rel="prev" title="多元函数微分学">
+      <i class="fa fa-chevron-left"></i> 多元函数微分学
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/09/26/%E4%B8%80%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83/" rel="next" title="一维随机变量及其函数的分布">
-      一维随机变量及其函数的分布 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/09/20/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/" rel="next" title="矩阵理论">
+      矩阵理论 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -538,7 +546,7 @@ P\left( \bigcup_{i=1}^nA_i\right) &amp; = 1 - P\left(\overline{ \bigcup_{i =1}^n
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">古典概型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8D%A0%E4%BD%8D%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">随机占位问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%8A%BD%E6%A0%B7%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">随机抽样问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E6%A6%82%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">几何概型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E5%85%AC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">重要公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">基本公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E7%AB%8B%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87"><span class="nav-number">3.2.</span> <span class="nav-text">对立事件的概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E6%96%A5%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F"><span class="nav-number">3.3.</span> <span class="nav-text">互斥事件的概率公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="nav-number">3.4.</span> <span class="nav-text">条件概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87"><span class="nav-number">3.5.</span> <span class="nav-text">独立事件的概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E7%AD%89%E5%85%B3%E7%B3%BB"><span class="nav-number">3.6.</span> <span class="nav-text">不等关系</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">行列式的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B%E8%8E%B1%E5%A7%86%E6%B3%95%E5%88%99"><span class="nav-number">1.1.2.</span> <span class="nav-text">克莱姆法则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">求行列式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">行列式的性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">基本行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">拉普拉斯行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">范德蒙德行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%88%AA%E5%BD%A2%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">爪形行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%92%8C%E7%9B%B8%E7%AD%89%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">行（列）和相等的行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BE%B9%E6%B3%95%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">加边法求行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E6%B3%95%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">递推法求行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%92%E7%BA%B3%E6%B3%95%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">数学归纳法求行列式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E4%BB%A3%E6%95%B0%E4%BD%99%E5%AD%90%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">求代数余子式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">用行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5%E5%92%8C%E7%89%B9%E5%BE%81%E5%80%BC"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">用伴随矩阵和特征值</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
